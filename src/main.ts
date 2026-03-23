@@ -592,28 +592,29 @@ function renderPolicyCompact(): string {
   `
 }
 
-function renderChartCompact(): string {
-  return `
-    <div class="card compact">
-      <div class="card-header">
-        <div class="card-title">
-          <div class="card-title-icon">📈</div>
-          <span>市场趋势</span>
-        </div>
-        <div class="card-actions">
-          <button class="card-action active">1D</button>
-          <button class="card-action">1W</button>
-          <button class="card-action">1M</button>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="chart-container compact">
-          <canvas id="marketChart"></canvas>
-        </div>
-      </div>
-    </div>
-  `
-}
+// 市场趋势图表组件（保留以备后续使用）
+// function renderChartCompact(): string {
+//   return `
+//     <div class="card compact">
+//       <div class="card-header">
+//         <div class="card-title">
+//           <div class="card-title-icon">📈</div>
+//           <span>市场趋势</span>
+//         </div>
+//         <div class="card-actions">
+//           <button class="card-action active">1D</button>
+//           <button class="card-action">1W</button>
+//           <button class="card-action">1M</button>
+//         </div>
+//       </div>
+//       <div class="card-body">
+//         <div class="chart-container compact">
+//           <canvas id="marketChart"></canvas>
+//         </div>
+//       </div>
+//     </div>
+//   `
+// }
 
 function renderSentimentCompact(): string {
   return `
@@ -1215,19 +1216,20 @@ function renderAITechRadarCompact(): string {
   `
 }
 
-function renderGenericPage(title: string, icon: string): string {
-  return `
-    <div class="page-section active" id="page-generic">
-      <div class="main-container">
-        <div style="grid-column: 1 / -1; text-align: center; padding: 100px 20px;">
-          <div style="font-size: 64px; margin-bottom: 20px;">${icon}</div>
-          <h2 style="font-size: 24px; margin-bottom: 12px; color: var(--oritek-cyan);">${title}</h2>
-          <p style="color: var(--text-muted);">该模块正在开发中，敬请期待...</p>
-        </div>
-      </div>
-    </div>
-  `
-}
+// 通用页面渲染函数（保留以备后续使用）
+// function renderGenericPage(title: string, icon: string): string {
+//   return `
+//     <div class="page-section active" id="page-generic">
+//       <div class="main-container">
+//         <div style="grid-column: 1 / -1; text-align: center; padding: 100px 20px;">
+//           <div style="font-size: 64px; margin-bottom: 20px;">${icon}</div>
+//           <h2 style="font-size: 24px; margin-bottom: 12px; color: var(--oritek-cyan);">${title}</h2>
+//           <p style="color: var(--text-muted);">该模块正在开发中，敬请期待...</p>
+//         </div>
+//       </div>
+//     </div>
+//   `
+// }
 
 function renderApp(): string {
   const pageContent = currentPage === 'dashboard' ? renderDashboardPage() :
@@ -1317,8 +1319,7 @@ function initCharts() {
       scales: {
         x: {
           grid: {
-            color: 'rgba(148, 163, 184, 0.05)',
-            drawBorder: false
+            color: 'rgba(148, 163, 184, 0.05)'
           },
           ticks: {
             color: '#64748b',
@@ -1328,8 +1329,7 @@ function initCharts() {
         },
         y: {
           grid: {
-            color: 'rgba(148, 163, 184, 0.05)',
-            drawBorder: false
+            color: 'rgba(148, 163, 184, 0.05)'
           },
           ticks: {
             color: '#64748b',
@@ -1375,12 +1375,13 @@ function startAutoRefresh() {
   autoRefreshInterval = window.setInterval(refreshData, 5 * 60 * 1000)
 }
 
-function stopAutoRefresh() {
-  if (autoRefreshInterval) {
-    clearInterval(autoRefreshInterval)
-    autoRefreshInterval = null
-  }
-}
+// 停止自动刷新功能（保留以备后续使用）
+// function stopAutoRefresh() {
+//   if (autoRefreshInterval) {
+//     clearInterval(autoRefreshInterval)
+//     autoRefreshInterval = null
+//   }
+// }
 
 // ==================== 事件绑定 ====================
 
@@ -1522,12 +1523,10 @@ let scrollInterval: number | null = null
 
 function startAutoScroll() {
   // 每30秒自动滚动到页面不同位置，模拟实时监控效果
-  let scrollDirection = 1
   scrollInterval = window.setInterval(() => {
     const mainContent = document.querySelector('.main-content')
     if (!mainContent) return
     
-    const currentScroll = mainContent.scrollTop
     const maxScroll = mainContent.scrollHeight - mainContent.clientHeight
     
     // 随机滚动到不同位置
