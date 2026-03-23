@@ -1,0 +1,1945 @@
+/* ==================== 基础变量 ==================== */
+:root {
+  /* Oritek 品牌色 */
+  --oritek-blue: #0066ff;
+  --oritek-cyan: #00d4ff;
+  --oritek-green: #00ff88;
+  --oritek-orange: #ff9500;
+  --oritek-red: #ff3366;
+  --oritek-purple: #a855f7;
+  
+  /* 背景色 */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0f;
+  --bg-tertiary: #12121a;
+  --bg-card: rgba(15, 23, 42, 0.6);
+  --bg-card-hover: rgba(15, 23, 42, 0.8);
+  
+  /* 文字色 */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  /* 边框 */
+  --border-color: rgba(94, 234, 212, 0.1);
+  --border-glow: rgba(0, 212, 255, 0.3);
+  
+  /* 渐变 */
+  --gradient-primary: linear-gradient(135deg, var(--oritek-blue) 0%, var(--oritek-cyan) 100%);
+  --gradient-glow: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 102, 255, 0.2) 100%);
+  
+  /* 阴影 */
+  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.15);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+  
+  /* 字体 */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', Monaco, monospace;
+}
+
+/* ==================== 基础样式 ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==================== 应用容器 ==================== */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== 头部 ==================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+}
+
+.logo-accent {
+  color: var(--oritek-cyan);
+  font-weight: 500;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-item {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.active {
+  color: var(--oritek-cyan);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(0, 255, 136, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  background: var(--oritek-green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 8px var(--oritek-green);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.status-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--oritek-green);
+  font-family: var(--font-mono);
+}
+
+.last-update {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.header-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.header-btn.primary {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+
+.header-btn.primary:hover {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.header-btn.spinning {
+  animation: spin 1s linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== 主内容区 ==================== */
+.main-content {
+  flex: 1;
+  padding-top: 56px;
+}
+
+/* ==================== 指数滚动条 ==================== */
+.ticker-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.ticker-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.ticker-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.ticker-items {
+  display: flex;
+  gap: 24px;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.ticker-icon {
+  font-size: 14px;
+}
+
+.ticker-name {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.ticker-value {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.ticker-change {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ticker-change.up {
+  color: var(--oritek-green);
+}
+
+.ticker-change.down {
+  color: var(--oritek-red);
+}
+
+/* ==================== 紧凑版看板布局 ==================== */
+.dashboard-grid-compact {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  padding: 16px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==================== 卡片组件 ==================== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.card.compact {
+  border-radius: 10px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card.compact .card-header {
+  padding: 10px 14px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-title-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--gradient-glow);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.card.compact .card-title-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.card-action {
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 11px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card-action:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-action.active {
+  color: var(--oritek-cyan);
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.card-body {
+  padding: 14px 16px;
+}
+
+.card.compact .card-body {
+  padding: 10px 14px;
+}
+
+/* 超紧凑卡片 */
+.card.ultra-compact {
+  min-height: auto;
+}
+
+.card.ultra-compact .card-header {
+  padding: 8px 12px;
+}
+
+.card.ultra-compact .card-title {
+  font-size: 12px;
+}
+
+.card.ultra-compact .card-title-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 9px;
+}
+
+.card.ultra-compact .card-body {
+  padding: 8px 12px;
+}
+
+/* 三列横向布局 */
+.three-column-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.three-column-row .card {
+  margin: 0;
+}
+
+/* 两列横向布局 */
+.two-column-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.two-column-row .card {
+  margin: 0;
+}
+
+/* 紧凑列表样式 */
+.compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.compact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  font-size: 11px;
+  transition: all 0.2s;
+}
+
+.compact-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.compact-icon {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.compact-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.compact-time {
+  color: var(--text-muted);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.compact-badge {
+  font-size: 9px;
+  padding: 2px 6px;
+  background: rgba(0, 212, 255, 0.15);
+  border-radius: 4px;
+  color: var(--oritek-cyan);
+  flex-shrink: 0;
+}
+
+.compact-badge.closing {
+  background: rgba(255, 149, 0, 0.15);
+  color: var(--oritek-orange);
+}
+
+.compact-badge.closed {
+  background: rgba(100, 116, 139, 0.15);
+  color: var(--text-muted);
+}
+
+/* 数值更新动画 */
+.value-updated {
+  animation: valueFlash 0.5s ease;
+}
+
+@keyframes valueFlash {
+  0% { color: var(--oritek-cyan); text-shadow: 0 0 10px var(--oritek-cyan); }
+  100% { color: inherit; text-shadow: none; }
+}
+
+/* 自动滚动时隐藏滚动条但保持功能 */
+.main-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 212, 255, 0.3) transparent;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* ==================== 政策申报宽版模块 ==================== */
+.policy-wide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.policy-wide-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.policy-wide-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.policy-wide-item.open {
+  border-left-color: var(--oritek-green);
+}
+
+.policy-wide-item.closing {
+  border-left-color: var(--oritek-orange);
+}
+
+.policy-wide-item.closed {
+  border-left-color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.policy-wide-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.policy-wide-icon {
+  font-size: 18px;
+}
+
+.policy-wide-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.policy-wide-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.policy-wide-dept {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.policy-wide-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.policy-wide-amount {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--oritek-green);
+  font-family: var(--font-mono);
+}
+
+.policy-wide-deadline {
+  font-size: 11px;
+  color: var(--oritek-orange);
+}
+
+.policy-wide-status {
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--oritek-cyan);
+}
+
+.policy-wide-item.closing .policy-wide-status {
+  background: rgba(255, 149, 0, 0.1);
+  color: var(--oritek-orange);
+}
+
+/* ==================== 世界地图容器 ==================== */
+.world-map-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.world-map-container:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.world-map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.world-map-legend {
+  display: flex;
+  gap: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot.high {
+  background: var(--oritek-red);
+  box-shadow: 0 0 8px var(--oritek-red);
+}
+
+.legend-dot.medium {
+  background: var(--oritek-orange);
+  box-shadow: 0 0 8px var(--oritek-orange);
+}
+
+.legend-dot.low {
+  background: var(--oritek-cyan);
+  box-shadow: 0 0 8px var(--oritek-cyan);
+}
+
+.world-map {
+  position: relative;
+  padding: 20px;
+  background: 
+    radial-gradient(ellipse at 50% 50%, rgba(0, 102, 255, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 30%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
+    var(--bg-secondary);
+  min-height: 340px;
+}
+
+.world-map-svg {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+.world-continents path {
+  transition: all 0.3s ease;
+}
+
+.world-continents path:hover {
+  fill: rgba(51, 65, 85, 0.95);
+  stroke: rgba(94, 234, 212, 0.5);
+  filter: drop-shadow(0 0 10px rgba(94, 234, 212, 0.4));
+}
+
+/* 热点标记动画 */
+.hotspot-marker {
+  cursor: pointer;
+}
+
+.hotspot-marker:hover {
+  filter: drop-shadow(0 0 15px currentColor);
+}
+
+.hotspot-marker.high circle[fill] {
+  fill: var(--oritek-red);
+}
+
+.hotspot-marker.medium circle[fill] {
+  fill: var(--oritek-orange);
+}
+
+.hotspot-marker.low circle[fill] {
+  fill: var(--oritek-cyan);
+}
+
+.hotspot-marker.high circle[stroke] {
+  stroke: var(--oritek-red);
+}
+
+.hotspot-marker.medium circle[stroke] {
+  stroke: var(--oritek-orange);
+}
+
+.hotspot-marker.low circle[stroke] {
+  stroke: var(--oritek-cyan);
+}
+
+/* 热点信息卡片覆盖层 */
+.hotspot-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.hotspot-card {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
+}
+
+.hotspot-card:hover {
+  transform: translateY(-2px);
+  background: rgba(15, 23, 42, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hotspot-card.high {
+  border-left-color: var(--oritek-red);
+}
+
+.hotspot-card.medium {
+  border-left-color: var(--oritek-orange);
+}
+
+.hotspot-card.low {
+  border-left-color: var(--oritek-cyan);
+}
+
+.hotspot-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.hotspot-card-icon {
+  font-size: 12px;
+}
+
+.hotspot-card-region {
+  font-size: 11px;
+  color: var(--oritek-cyan);
+  font-weight: 500;
+}
+
+.hotspot-card-time {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.hotspot-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.hotspot-card-summary {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ==================== 市场表现模块 ==================== */
+.market-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.market-mini {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.market-mini:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.market-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.market-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.market-ticker {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.market-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.market-price {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.market-change {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+/* ==================== AI洞察模块 ==================== */
+.ai-insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ai-insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-right: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.ai-insight-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ai-insight-item.high {
+  border-right-color: var(--oritek-red);
+}
+
+.ai-insight-item.medium {
+  border-right-color: var(--oritek-orange);
+}
+
+.ai-insight-item.low {
+  border-right-color: var(--oritek-cyan);
+}
+
+.ai-insight-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.ai-insight-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ai-insight-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.ai-insight-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.ai-insight-source {
+  color: var(--oritek-cyan);
+}
+
+.ai-insight-impact {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* ==================== 创业公司与风投模块（投融资新闻事件） ==================== */
+.funding-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.funding-news-item {
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid var(--oritek-green);
+  transition: all 0.2s;
+}
+
+.funding-news-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.funding-news-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.funding-news-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.funding-news-amount {
+  color: var(--oritek-green);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.funding-news-investors {
+  color: var(--oritek-cyan);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.funding-news-time {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ==================== 科技动态模块 ==================== */
+.tech-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tech-news-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.tech-news-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tech-news-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.tech-news-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tech-news-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.tech-news-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.tech-news-heat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 50px;
+}
+
+.tech-news-heat span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--oritek-orange);
+  font-family: var(--font-mono);
+}
+
+.heat-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--oritek-orange), var(--oritek-red));
+  border-radius: 2px;
+  min-width: 20px;
+}
+
+/* ==================== 金融市场模块 ==================== */
+.financial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.financial-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.financial-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.financial-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.financial-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.financial-symbol {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.financial-value {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.financial-change {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.financial-change.down {
+  background: rgba(255, 51, 102, 0.1);
+}
+
+/* ==================== 政策申报模块 ==================== */
+.policy-app-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.policy-app-item {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.policy-app-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.policy-app-item.open {
+  border-left-color: var(--oritek-green);
+}
+
+.policy-app-item.closing {
+  border-left-color: var(--oritek-orange);
+}
+
+.policy-app-item.closed {
+  border-left-color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.policy-app-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.policy-app-icon {
+  font-size: 14px;
+}
+
+.policy-app-dept {
+  font-size: 10px;
+  padding: 2px 6px;
+  background: rgba(0, 102, 255, 0.15);
+  border-radius: 4px;
+  color: var(--oritek-blue);
+  font-weight: 500;
+}
+
+.policy-app-region {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.policy-app-status {
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.policy-app-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.policy-app-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.policy-app-amount {
+  color: var(--oritek-green);
+  font-weight: 600;
+}
+
+.policy-app-deadline {
+  color: var(--oritek-orange);
+  margin-left: auto;
+}
+
+/* ==================== 全球时政热点列表（备用） ==================== */
+.hotspot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hotspot-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.hotspot-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hotspot-item.critical {
+  border-left-color: var(--oritek-red);
+}
+
+.hotspot-item.warning {
+  border-left-color: var(--oritek-orange);
+}
+
+.hotspot-item.info {
+  border-left-color: var(--oritek-cyan);
+}
+
+.hotspot-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.hotspot-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hotspot-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.hotspot-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.hotspot-region {
+  font-size: 11px;
+  color: var(--oritek-cyan);
+}
+
+.hotspot-time {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.hotspot-summary {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ==================== 新闻流 ==================== */
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.news-feed.compact {
+  gap: 8px;
+}
+
+.news-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.news-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.news-item.critical {
+  border-left-color: var(--oritek-red);
+}
+
+.news-item.warning {
+  border-left-color: var(--oritek-orange);
+}
+
+.news-item.info {
+  border-left-color: var(--oritek-cyan);
+}
+
+.news-time {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+  width: 36px;
+}
+
+.news-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.news-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.news-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.news-tag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.news-tag.competitor {
+  background: rgba(168, 85, 247, 0.2);
+  color: var(--oritek-purple);
+}
+
+.news-tag.market {
+  background: rgba(0, 212, 255, 0.2);
+  color: var(--oritek-cyan);
+}
+
+.news-tag.policy {
+  background: rgba(255, 149, 0, 0.2);
+  color: var(--oritek-orange);
+}
+
+.news-tag.tech {
+  background: rgba(0, 255, 136, 0.2);
+  color: var(--oritek-green);
+}
+
+.news-tag.supply {
+  background: rgba(255, 51, 102, 0.2);
+  color: var(--oritek-red);
+}
+
+/* ==================== 预警列表 ==================== */
+.alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alert-list.compact {
+  gap: 6px;
+}
+
+.alert-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+}
+
+.alert-item.critical {
+  border-left-color: var(--oritek-red);
+  background: rgba(255, 51, 102, 0.05);
+}
+
+.alert-item.warning {
+  border-left-color: var(--oritek-orange);
+  background: rgba(255, 149, 0, 0.05);
+}
+
+.alert-item.info {
+  border-left-color: var(--oritek-cyan);
+}
+
+.alert-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.alert-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* ==================== 竞争对手行 ==================== */
+.competitor-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.competitor-mini {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.competitor-mini:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.competitor-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.competitor-price {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  margin-bottom: 2px;
+}
+
+.competitor-change {
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+.competitor-price.up,
+.competitor-change.up {
+  color: var(--oritek-green);
+}
+
+.competitor-price.down,
+.competitor-change.down {
+  color: var(--oritek-red);
+}
+
+/* ==================== 技术列表 ==================== */
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+}
+
+.tech-mini .tech-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--gradient-glow);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.tech-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tech-info .tech-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tech-heat-bar {
+  height: 3px;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.tech-heat-bar.hot {
+  background: linear-gradient(90deg, var(--oritek-red), var(--oritek-orange));
+}
+
+.tech-heat-bar.warm {
+  background: linear-gradient(90deg, var(--oritek-orange), var(--oritek-cyan));
+}
+
+.tech-heat-bar.cool {
+  background: linear-gradient(90deg, var(--oritek-cyan), var(--oritek-blue));
+}
+
+.tech-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ==================== 供应链列表 ==================== */
+.supply-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.supply-list.compact {
+  gap: 6px;
+}
+
+.supply-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+}
+
+.supply-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.supply-status.normal {
+  background: var(--oritek-green);
+  box-shadow: 0 0 8px var(--oritek-green);
+}
+
+.supply-status.warning {
+  background: var(--oritek-orange);
+  box-shadow: 0 0 8px var(--oritek-orange);
+}
+
+.supply-status.critical {
+  background: var(--oritek-red);
+  box-shadow: 0 0 8px var(--oritek-red);
+}
+
+.supply-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.supply-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.supply-region {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.supply-trend {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.supply-trend.up {
+  color: var(--oritek-red);
+}
+
+.supply-trend.down {
+  color: var(--oritek-green);
+}
+
+/* ==================== 时间线 ==================== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline.compact {
+  gap: 8px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  bottom: -20px;
+  width: 1px;
+  background: var(--border-color);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--oritek-cyan);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.timeline-item.urgent .timeline-dot {
+  border-color: var(--oritek-red);
+  background: var(--oritek-red);
+  box-shadow: 0 0 10px var(--oritek-red);
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+.timeline-date {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.timeline-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ==================== 舆情迷你版 ==================== */
+.sentiment-mini {
+  padding: 4px 0;
+}
+
+.sentiment-bar {
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.sentiment-segment {
+  height: 100%;
+  transition: width 0.3s;
+}
+
+.sentiment-segment.positive {
+  background: var(--oritek-green);
+}
+
+.sentiment-segment.neutral {
+  background: var(--oritek-cyan);
+}
+
+.sentiment-segment.negative {
+  background: var(--oritek-red);
+}
+
+.sentiment-legend-mini {
+  display: flex;
+  gap: 16px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.sentiment-legend-mini span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dot.positive {
+  background: var(--oritek-green);
+}
+
+.dot.neutral {
+  background: var(--oritek-cyan);
+}
+
+.dot.negative {
+  background: var(--oritek-red);
+}
+
+/* ==================== 图表容器 ==================== */
+.chart-container {
+  height: 200px;
+  position: relative;
+}
+
+.chart-container.compact {
+  height: 160px;
+}
+
+/* ==================== 统计行 ==================== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  transition: all 0.3s;
+}
+
+.stat-box:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-2px);
+}
+
+.stat-box.alert {
+  border-color: rgba(255, 51, 102, 0.3);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.stat-source {
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.stat-data-source {
+  font-size: 9px;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  margin-bottom: 4px;
+}
+
+.stat-value.up {
+  color: var(--oritek-green);
+}
+
+.stat-value.down {
+  color: var(--oritek-red);
+}
+
+.stat-value.neutral {
+  color: var(--text-primary);
+}
+
+.stat-change {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.stat-change.up {
+  color: var(--oritek-green);
+}
+
+.stat-change.down {
+  color: var(--oritek-red);
+}
+
+/* ==================== 页面区域 ==================== */
+.page-section {
+  display: none;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.page-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== 传统布局容器 ==================== */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 1200px) {
+  .dashboard-grid-compact {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .competitor-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 12px;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .dashboard-sidebar {
+    grid-template-columns: 1fr;
+  }
+  
+  .competitor-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
