@@ -1627,10 +1627,12 @@ async function init() {
       startNewsRotation() // 启动新闻轮播
       console.log('Auto features started')
 
-      // 渲染真实世界地图
+      // 强制渲染世界地图 - 使用 setTimeout 确保 DOM 完全加载
       console.log('Starting world map rendering...')
-      await renderRealWorldMap()
-      console.log('World map rendering completed')
+      setTimeout(async () => {
+        await renderRealWorldMap()
+        console.log('World map rendering completed')
+      }, 100)
     } catch (error) {
       console.error('Error during initialization:', error)
     }
@@ -1640,5 +1642,58 @@ async function init() {
 }
 
 init()
+
+// 全局函数，确保地图渲染不被 Tree Shaking
+window.renderWorldMapNow = async function() {
+  console.log('=== FORCE RENDERING WORLD MAP ===')
+  const container = document.querySelector('.world-map-container')
+  if (container) {
+    container.style.border = '5px solid yellow'
+    container.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:yellow;color:#000;padding:20px;font-size:18px;font-weight:bold;">🗺️ 强制渲染地图中...</div>')
+  }
+  await renderRealWorldMap()
+  console.log('=== WORLD MAP RENDERING COMPLETED ===')
+}
+
+// 页面加载完成后立即渲染地图
+setTimeout(() => {
+  console.log('=== PAGE LOADED, TRIGGERING MAP RENDER ===')
+  window.renderWorldMapNow()
+}, 500)
+
+// 注册全局事件监听器，确保地图渲染
+window.addEventListener('load', async () => {
+  console.log('=== WINDOW LOADED, CHECKING MAP ===')
+  
+  // 等待 1 秒确保所有脚本加载完成
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  
+  const container = document.querySelector('.world-map-container')
+  if (!container) {
+    console.error('=== MAP CONTAINER NOT FOUND ===')
+    return
+  }
+  
+  // 检查地图是否已渲染
+  const hasMapPaths = document.querySelector('.world-map-svg path')
+  if (!hasMapPaths) {
+    console.log('=== MAP NOT RENDERED, FORCING RENDER ===')
+    // 添加明显的视觉提示
+    container.style.border = '8px solid yellow !important'
+    container.style.position = 'relative'
+    container.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:yellow;color:#000;padding:30px;font-size:24px;font-weight:bold;z-index:9999;border:3px solid red;">🗺️ 强制渲染地图中...</div>')
+    
+    // 强制调用渲染函数
+    try {
+      await renderRealWorldMap()
+      console.log('=== MAP RENDER SUCCESS ===')
+    } catch (e) {
+      console.error('=== MAP RENDER FAILED ===', e)
+      container.insertAdjacentHTML('beforeend', `<div style="position:absolute;top:10px;right:10px;background:red;color:#fff;padding:10px;">错误: ${e}</div>`)
+    }
+  } else {
+    console.log('=== MAP ALREADY RENDERED ===')
+  }
+})
 
 console.log('Oritek World Monitor initialized')

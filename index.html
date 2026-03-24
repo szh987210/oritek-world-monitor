@@ -10,5 +10,21 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script type="module">
+      // 确保地图渲染被执行 - 如果 1 秒后地图还没渲染，强制调用
+      setTimeout(() => {
+        console.log('=== CHECKING MAP RENDER STATUS ===')
+        const mapContainer = document.querySelector('.world-map-container')
+        if (mapContainer && !document.querySelector('.world-map-svg path')) {
+          console.log('=== MAP NOT RENDERED, FORCING RENDER ===')
+          // 调用渲染函数
+          if (window.renderRealWorldMap) {
+            window.renderRealWorldMap()
+          } else if (window.dv) {
+            window.dv()
+          }
+        }
+      }, 1000)
+    </script>
   </body>
 </html>
