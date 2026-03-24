@@ -1538,8 +1538,21 @@ async function renderRealWorldMap() {
     })
     
     console.log('Hotspot markers rendered successfully')
+    
+    // 添加成功标记，让用户知道地图已渲染
+    const container = document.querySelector('.world-map-container')
+    if (container) {
+      container.style.border = '3px solid #00ff88'
+      container.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:10px;right:10px;background:#00ff88;color:#000;padding:5px 10px;border-radius:5px;font-size:12px;">🗺️ 地图已加载</div>')
+    }
   } catch (error) {
     console.error('Error rendering world map:', error)
+    // 显示错误信息
+    const container = document.querySelector('.world-map-container')
+    if (container) {
+      container.style.border = '3px solid red'
+      container.insertAdjacentHTML('beforeend', `<div style="position:absolute;top:10px;right:10px;background:red;color:#fff;padding:5px 10px;border-radius:5px;font-size:12px;">❌ 错误: ${error}</div>`)
+    }
   }
 }
 
