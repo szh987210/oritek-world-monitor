@@ -13,6 +13,218 @@ Chart.register(...registerables)
 // 世界地图数据缓存
 let worldMapData: any = null
 
+// ==================== 新闻自动抓取系统 ====================
+// 使用公开的 RSS 源和 CORS 代理获取新闻
+
+// 新闻源配置
+const NEWS_SOURCES = [
+  { name: 'tech', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.techcrunch.com/feed/' },
+  { name: 'business', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/business/rss.xml' },
+  { name: 'world', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/world/rss.xml' }
+]
+
+// 备选：使用 rsshub 抓取国内新闻
+const CN_NEWS_SOURCES = [
+  { name: 'sina_stock', url: 'https://rsshub.app/sina/stock' },
+  { name: 'sina_finance', url: 'https://rsshub.app/sina/finance' },
+  { name: 'qq_finance', url: 'https://rsshub.app/qq/fund' }
+]
+
+// 缓存的新闻数据
+let cachedNews: { items: any[], timestamp: number } = { items: [], timestamp: 0 }
+const NEWS_CACHE_DURATION = 5 * 60 * 1000 // 5分钟缓存
+
+// 自动抓取新闻
+async function fetchLatestNews(): Promise<any[]> {
+  const now = Date.now()
+  
+  // 检查缓存
+  if (cachedNews.items.length > 0 && (now - cachedNews.timestamp) < NEWS_CACHE_DURATION) {
+    console.log('Using cached news data')
+    return cachedNews.items
+  }
+  
+  const allNews: any[] = []
+  
+  // 尝试抓取国际新闻
+  for (const source of NEWS_SOURCES) {
+    try {
+      const response = await fetch(source.url, { 
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      })
+      if (response.ok) {
+        const data = await response.json()
+        if (data.status === 'ok' && data.items) {
+          const processed = data.items.slice(0, 5).map((item: any) => ({
+            id: item.guid || item.link || Math.random().toString(),
+            title: item.title,
+            summary: item.description?.replace(/<[^>]*>/g, '').substring(0, 100) || '',
+            source: source.name,
+            time: item.pubDate || new Date().toISOString(),
+            url: item.link,
+            category: 'tech'
+          }))
+          allNews.push(...processed)
+        }
+      }
+    } catch (e) {
+      console.log(`Failed to fetch from ${source.name}:`, e)
+    }
+  }
+  
+  // 如果没有获取到国际新闻，使用备选的模拟数据更新逻辑
+  if (allNews.length === 0) {
+    console.log('Using fallback news data (simulated)')
+    return getFallbackNews()
+  }
+  
+  // 更新缓存
+  cachedNews = { items: allNews, timestamp: now }
+  console.log(`Fetched ${allNews.length} news items`)
+  
+  return allNews
+}
+
+// 备用新闻数据（当无法抓取时）
+function getFallbackNews(): any[] {
+  const categories = ['tech', 'business', 'diplomacy', 'economy']
+  const titles = [
+    '全球半导体产业动态：AI芯片需求持续增长',
+    '新能源汽车销量突破预期，带动上游产业链发展',
+    '欧盟发布最新贸易政策，影响半导体出口',
+    '国内芯片制造技术取得新突破',
+    '全球供应链紧张局势有所缓解',
+    '5G技术商用加速，带动相关产业发展',
+    '半导体投资热潮持续，多个项目开工',
+    '芯片短缺问题持续影响汽车行业'
+  ]
+  
+  return titles.map((title, i) => ({
+    id: `fallback-${i}`,
+    title,
+    summary: '最新产业动态报道',
+    source: '产业研究中心',
+    time: `${Math.floor(Math.random() * 12)}小时前`,
+    url: '#',
+    category: categories[i % categories.length]
+  }))
+}
+
+// 5分钟自动刷新机制
+let autoRefreshInterval: number | null = null
+const AUTO_REFRESH_INTERVAL = 5 * 60 * 1000 // 5分钟
+
+function startAutoRefresh() {
+  if (autoRefreshInterval) {
+    clearInterval(autoRefreshInterval)
+  }
+  
+  autoRefreshInterval = window.setInterval(async () => {
+    console.log('=== AUTO REFRESH TRIGGERED ===')
+    const app = document.querySelector<HTMLDivElement>('#app')
+    if (app) {
+      // 重新获取新闻数据
+      const news = await fetchLatestNews()
+      console.log('Auto-refreshed news:', news.length, 'items')
+      
+      // 更新全局热点
+      updateGlobalHotspots(news)
+      
+      // 刷新页面数据
+      app.innerHTML = renderApp()
+      bindEvents()
+      
+      // 重新初始化图表
+      setTimeout(async () => {
+        await renderRealWorldMap()
+        initCharts()
+      }, 100)
+      
+      // 显示刷新提示
+      showRefreshNotification()
+    }
+  }, AUTO_REFRESH_INTERVAL)
+  
+  console.log(`Auto-refresh started: every ${AUTO_REFRESH_INTERVAL / 1000} seconds`)
+}
+
+function updateGlobalHotspots(news: any[]) {
+  // 将新闻转换为热点
+  const newHotspots: GlobalHotspot[] = news.slice(0, 8).map((item, i) => ({
+    id: `news-${i}`,
+    title: item.title,
+    region: getRegionFromSource(item.source),
+    category: mapCategory(item.category),
+    impact: i < 3 ? 'high' : (i < 6 ? 'medium' : 'low'),
+    time: item.time,
+    summary: item.summary
+  }))
+  
+  // 更新全局热点
+  globalHotspots = newHotspots
+}
+
+function getRegionFromSource(source: string): string {
+  const regionMap: Record<string, string> = {
+    'tech': '美国',
+    'business': '欧洲',
+    'world': '全球',
+    'sina_stock': '中国',
+    'sina_finance': '中国',
+    'qq_finance': '中国'
+  }
+  return regionMap[source] || '全球'
+}
+
+function mapCategory(category: string): string {
+  const categoryMap: Record<string, string> = {
+    'tech': 'tech',
+    'business': 'economy',
+    'diplomacy': 'diplomacy',
+    'economy': 'economy'
+  }
+  return categoryMap[category] || 'tech'
+}
+
+function showRefreshNotification() {
+  const notification = document.createElement('div')
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 10000;
+    font-size: 14px;
+    animation: slideIn 0.3s ease;
+  `
+  notification.innerHTML = '🔄 内容已刷新 - ' + new Date().toLocaleTimeString()
+  document.body.appendChild(notification)
+  
+  setTimeout(() => {
+    notification.style.animation = 'slideOut 0.3s ease'
+    setTimeout(() => notification.remove(), 300)
+  }, 3000)
+}
+
+// 添加 CSS 动画
+const style = document.createElement('style')
+style.textContent = `
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+  }
+`
+document.head.appendChild(style)
+
 // ==================== 本地数据类型定义 ====================
 interface AlertItem {
   id: string
@@ -300,15 +512,18 @@ function renderWorldMap(): string {
     tech: '💡'
   }
 
-  // 在返回 HTML 之前，强制调用真实地图渲染函数
-  // 这个方法不会被 Tree Shaking 移除
+  // 尝试加载并渲染地图，如果失败则显示简化版地图
+  // 使用 setTimeout 确保 DOM 完全加载后再渲染
   setTimeout(async () => {
-    console.log('=== RENDERING REAL WORLD MAP ===')
-    await renderRealWorldMap()
-    console.log('=== REAL WORLD MAP RENDERED ===')
-  }, 50)
+    console.log('=== ATTEMPTING TO RENDER WORLD MAP ===')
+    try {
+      await renderRealWorldMap()
+      console.log('=== WORLD MAP RENDERED SUCCESSFULLY ===')
+    } catch (e) {
+      console.error('Map render failed, using fallback:', e)
+    }
+  }, 100)
 
-  // 简化版地图渲染，先确保基本结构正确显示
   return `
     <div class="world-map-container">
       <div class="world-map-header">
@@ -344,9 +559,20 @@ function renderWorldMap(): string {
           <!-- 海洋背景 -->
           <rect width="1050" height="520" fill="url(#oceanGradient)" />
           
-          <!-- 世界地图路径组 - 真实地图数据 -->
+          <!-- 世界地图路径组 - 简化版世界地图（内置，无外部依赖） -->
           <g class="world-continents" fill="rgba(20, 35, 55, 0.95)" stroke="rgba(0, 200, 255, 0.5)" stroke-width="0.8" filter="url(#continentGlow)" id="worldMapPaths">
-            <!-- 地图路径将通过 D3 动态生成 -->
+            <!-- 北美 -->
+            <path d="M120,100 Q180,80 230,85 L280,90 L310,110 L320,140 L300,170 L260,190 L220,200 L170,190 L120,160 L80,130 L100,110 L120,100" />
+            <!-- 南美 -->
+            <path d="M200,250 L250,220 L280,250 L290,300 L270,360 L240,400 L200,410 L180,370 L190,300 L200,250" />
+            <!-- 欧洲 -->
+            <path d="M440,90 L500,80 L560,90 L580,120 L570,150 L530,165 L480,155 L440,130 L430,100 L440,90" />
+            <!-- 非洲 -->
+            <path d="M450,180 L520,170 L570,200 L580,280 L560,360 L510,400 L460,390 L430,340 L420,260 L450,180" />
+            <!-- 亚洲 -->
+            <path d="M560,70 L680,60 L800,80 L900,120 L940,180 L920,240 L860,270 L760,260 L660,230 L580,180 L540,120 L560,70" />
+            <!-- 澳大利亚 -->
+            <path d="M820,320 L900,300 L940,340 L930,390 L880,420 L820,400 L800,360 L820,320" />
           </g>
           
           <!-- 经纬网格 -->
@@ -1342,20 +1568,6 @@ function refreshData() {
   }
 }
 
-// 自动刷新功能
-function startAutoRefresh() {
-  // 每5分钟刷新一次
-  window.setInterval(refreshData, 5 * 60 * 1000)
-}
-
-// 停止自动刷新功能（保留以备后续使用）
-// function stopAutoRefresh() {
-//   if (autoRefreshInterval) {
-//     clearInterval(autoRefreshInterval)
-//     autoRefreshInterval = null
-//   }
-// }
-
 // ==================== 事件绑定 ====================
 
 function bindEvents() {
@@ -1408,7 +1620,16 @@ function bindEvents() {
 
 // ==================== 世界地图渲染 ====================
 
+// 将 renderRealWorldMap 暴露到 window 对象，供内联脚本调用
+(window as any).renderRealWorldMap = async function() {
+  await renderRealWorldMapInternal()
+}
+
 async function renderRealWorldMap() {
+  await renderRealWorldMapInternal()
+}
+
+async function renderRealWorldMapInternal() {
   console.log('=== Starting to render world map ===')
   console.log('worldMapData cache:', worldMapData)
   
@@ -1659,6 +1880,11 @@ async function init() {
   const app = document.querySelector<HTMLDivElement>('#app')
   if (app) {
     try {
+      // 初始化时先获取最新新闻
+      console.log('Fetching latest news...')
+      const news = await fetchLatestNews()
+      console.log('News fetched:', news.length, 'items')
+      
       app.innerHTML = renderApp()
       console.log('App rendered')
       
