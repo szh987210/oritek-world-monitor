@@ -1371,11 +1371,11 @@ function refreshData() {
   }
 }
 
-// 自动刷新功能（保留以备后续使用）
-// function startAutoRefresh() {
-//   // 每5分钟刷新一次
-//   autoRefreshInterval = window.setInterval(refreshData, 5 * 60 * 1000)
-// }
+// 自动刷新功能
+function startAutoRefresh() {
+  // 每5分钟刷新一次
+  window.setInterval(refreshData, 5 * 60 * 1000)
+}
 
 // 停止自动刷新功能（保留以备后续使用）
 // function stopAutoRefresh() {
@@ -1521,11 +1521,10 @@ async function renderRealWorldMap() {
 
 // ==================== 自动滚动功能 ====================
 
-let scrollInterval: number | null = null
-
+// 自动滚动功能
 function startAutoScroll() {
   // 每30秒自动滚动到页面不同位置，模拟实时监控效果
-  scrollInterval = window.setInterval(() => {
+  window.setInterval(() => {
     const mainContent = document.querySelector('.main-content')
     if (!mainContent) return
     
@@ -1540,20 +1539,12 @@ function startAutoScroll() {
   }, 30000) // 30秒滚动一次
 }
 
-// 停止自动滚动功能（保留以备后续使用）
-// function stopAutoScroll() {
-//   if (scrollInterval) {
-//     clearInterval(scrollInterval)
-//     scrollInterval = null
-//   }
-// }
+
 
 // 新闻自动轮播
-let newsRotationInterval: number | null = null
-
 function startNewsRotation() {
   // 每10秒更新一次新闻数据，模拟实时更新
-  newsRotationInterval = window.setInterval(() => {
+  window.setInterval(() => {
     // 随机更新一些数据
     industryIndices.forEach(idx => {
       idx.changePercent += (Math.random() - 0.5) * 0.3
@@ -1576,13 +1567,7 @@ function startNewsRotation() {
   }, 10000) // 10秒更新一次
 }
 
-// 停止新闻轮播功能（保留以备后续使用）
-// function stopNewsRotation() {
-//   if (newsRotationInterval) {
-//     clearInterval(newsRotationInterval)
-//     newsRotationInterval = null
-//   }
-// }
+
 
 // ==================== 初始化 ====================
 
