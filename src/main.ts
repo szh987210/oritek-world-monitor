@@ -277,7 +277,8 @@ const hotspotCoordinates: Record<string, { lon: number; lat: number }> = {
 }
 
 let currentPage = 'dashboard'
-let autoRefreshInterval: number | null = null
+// 自动刷新间隔（保留以备后续使用）
+// let autoRefreshInterval: number | null = null
 
 // ==================== 组件渲染函数 ====================
 
@@ -1370,10 +1371,11 @@ function refreshData() {
   }
 }
 
-function startAutoRefresh() {
-  // 每5分钟刷新一次
-  autoRefreshInterval = window.setInterval(refreshData, 5 * 60 * 1000)
-}
+// 自动刷新功能（保留以备后续使用）
+// function startAutoRefresh() {
+//   // 每5分钟刷新一次
+//   autoRefreshInterval = window.setInterval(refreshData, 5 * 60 * 1000)
+// }
 
 // 停止自动刷新功能（保留以备后续使用）
 // function stopAutoRefresh() {
@@ -1538,12 +1540,13 @@ function startAutoScroll() {
   }, 30000) // 30秒滚动一次
 }
 
-function stopAutoScroll() {
-  if (scrollInterval) {
-    clearInterval(scrollInterval)
-    scrollInterval = null
-  }
-}
+// 停止自动滚动功能（保留以备后续使用）
+// function stopAutoScroll() {
+//   if (scrollInterval) {
+//     clearInterval(scrollInterval)
+//     scrollInterval = null
+//   }
+// }
 
 // 新闻自动轮播
 let newsRotationInterval: number | null = null
@@ -1573,12 +1576,13 @@ function startNewsRotation() {
   }, 10000) // 10秒更新一次
 }
 
-function stopNewsRotation() {
-  if (newsRotationInterval) {
-    clearInterval(newsRotationInterval)
-    newsRotationInterval = null
-  }
-}
+// 停止新闻轮播功能（保留以备后续使用）
+// function stopNewsRotation() {
+//   if (newsRotationInterval) {
+//     clearInterval(newsRotationInterval)
+//     newsRotationInterval = null
+//   }
+// }
 
 // ==================== 初始化 ====================
 
