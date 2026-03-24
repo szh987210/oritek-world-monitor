@@ -1729,10 +1729,14 @@ async function renderRealWorldMapInternal() {
     const path = d3Geo.geoPath().projection(projection)
 
     // 渲染国家
-    const pathsGroup = svg.select('#worldMapPaths')
+    let pathsGroup = svg.select('#worldMapPaths')
     if (pathsGroup.empty()) {
-      console.error('Paths group #worldMapPaths not found, creating it')
-      svg.append('g').attr('id', 'worldMapPaths')
+      console.log('Creating new paths group')
+      pathsGroup = svg.append('g').attr('id', 'worldMapPaths')
+    } else {
+      console.log('Found existing paths group, clearing it')
+      // 清空现有的硬编码路径
+      pathsGroup.selectAll('*').remove()
     }
 
     console.log('Rendering', mapData.features.length, 'country paths')
