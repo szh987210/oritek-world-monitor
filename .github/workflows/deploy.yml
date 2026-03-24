@@ -33,6 +33,9 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: Copy public assets to dist
+        run: cp -r public/* dist/ 2>/dev/null || true
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
       

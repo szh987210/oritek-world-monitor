@@ -1418,7 +1418,7 @@ async function renderRealWorldMap() {
     if (!mapData) {
       console.log('Loading map data from server...')
       try {
-        const response = await fetch('/oritek-world-monitor/world-110m.json')
+        const response = await fetch('/oritek-world-monitor/world-110m.json?t=' + Date.now())
         console.log('Fetch response status:', response.status)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
