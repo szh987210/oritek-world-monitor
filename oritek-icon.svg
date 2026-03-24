@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="oritekGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00FF88;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="url(#oritekGrad)" stroke-width="3" filter="url(#glow)"/>
+  <circle cx="50" cy="50" r="38" fill="rgba(0,102,255,0.1)"/>
+  <path d="M50 20 L50 35 M50 65 L50 80 M20 50 L35 50 M65 50 L80 50" stroke="url(#oritekGrad)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="50" cy="50" r="12" fill="url(#oritekGrad)"/>
+  <path d="M30 30 L40 40 M60 60 L70 70 M70 30 L60 40 M40 60 L30 70" stroke="url(#oritekGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+</svg>
