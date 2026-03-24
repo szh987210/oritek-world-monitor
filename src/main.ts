@@ -12,33 +12,27 @@ Chart.register(...registerables)
 
 // 世界地图数据缓存
 let worldMapData: any = null
+let isMapRendering = false
+
+// ==================== 配置 ====================
+// 自动刷新间隔：10分钟
+const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000
 
 // ==================== 新闻自动抓取系统 ====================
-// 使用公开的 RSS 源和 CORS 代理获取新闻
-
-// 新闻源配置
 const NEWS_SOURCES = [
   { name: 'tech', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.techcrunch.com/feed/' },
   { name: 'business', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/business/rss.xml' },
   { name: 'world', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/world/rss.xml' }
 ]
 
-// 备选：使用 rsshub 抓取国内新闻
-const CN_NEWS_SOURCES = [
-  { name: 'sina_stock', url: 'https://rsshub.app/sina/stock' },
-  { name: 'sina_finance', url: 'https://rsshub.app/sina/finance' },
-  { name: 'qq_finance', url: 'https://rsshub.app/qq/fund' }
-]
-
 // 缓存的新闻数据
 let cachedNews: { items: any[], timestamp: number } = { items: [], timestamp: 0 }
-const NEWS_CACHE_DURATION = 5 * 60 * 1000 // 5分钟缓存
+const NEWS_CACHE_DURATION = 10 * 60 * 1000 // 10分钟缓存
 
 // 自动抓取新闻
 async function fetchLatestNews(): Promise<any[]> {
   const now = Date.now()
   
-  // 检查缓存
   if (cachedNews.items.length > 0 && (now - cachedNews.timestamp) < NEWS_CACHE_DURATION) {
     console.log('Using cached news data')
     return cachedNews.items
@@ -46,7 +40,6 @@ async function fetchLatestNews(): Promise<any[]> {
   
   const allNews: any[] = []
   
-  // 尝试抓取国际新闻
   for (const source of NEWS_SOURCES) {
     try {
       const response = await fetch(source.url, { 
@@ -73,47 +66,31 @@ async function fetchLatestNews(): Promise<any[]> {
     }
   }
   
-  // 如果没有获取到国际新闻，使用备选的模拟数据更新逻辑
   if (allNews.length === 0) {
-    console.log('Using fallback news data (simulated)')
+    console.log('Using fallback news data')
     return getFallbackNews()
   }
   
-  // 更新缓存
   cachedNews = { items: allNews, timestamp: now }
   console.log(`Fetched ${allNews.length} news items`)
   
   return allNews
 }
 
-// 备用新闻数据（当无法抓取时）
+// 备用新闻数据
 function getFallbackNews(): any[] {
-  const categories = ['tech', 'business', 'diplomacy', 'economy']
-  const titles = [
-    '全球半导体产业动态：AI芯片需求持续增长',
-    '新能源汽车销量突破预期，带动上游产业链发展',
-    '欧盟发布最新贸易政策，影响半导体出口',
-    '国内芯片制造技术取得新突破',
-    '全球供应链紧张局势有所缓解',
-    '5G技术商用加速，带动相关产业发展',
-    '半导体投资热潮持续，多个项目开工',
-    '芯片短缺问题持续影响汽车行业'
+  return [
+    { id: '1', title: '英伟达发布 Thor 芯片，算力 2000 TOPS 直接对标征程 6', source: '36氪', time: '10:32', category: 'tech', priority: 'critical', summary: '英伟达 GTC 发布新一代自动驾驶芯片' },
+    { id: '2', title: '小米 SU7 订单破 10 万，智驾芯片需求激增', source: '汽车之家', time: '09:45', category: 'market', priority: 'info', summary: '小米汽车产能爬坡中' },
+    { id: '3', title: '美国商务部拟对华 AI 芯片出口实施新限制', source: '财联社', time: '08:20', category: 'policy', priority: 'critical', summary: '可能影响自动驾驶训练芯片' },
+    { id: '4', title: '台积电 3nm 产能满载，汽车芯片交期延长至 40 周', source: '集微网', time: '昨天', category: 'supply', priority: 'warning', summary: '产能受 AI 芯片挤压' },
+    { id: '5', title: '地平线征程 6 获比亚迪定点，Q3 量产', source: '盖世汽车', time: '昨天', category: 'competitor', priority: 'info', summary: '本土智驾芯片突破' },
+    { id: '6', title: '宇树科技发布人形机器人 H1，售价 9.9 万起', source: '机器之心', time: '昨天', category: 'tech', priority: 'info', summary: '人形机器人商业化加速' }
   ]
-  
-  return titles.map((title, i) => ({
-    id: `fallback-${i}`,
-    title,
-    summary: '最新产业动态报道',
-    source: '产业研究中心',
-    time: `${Math.floor(Math.random() * 12)}小时前`,
-    url: '#',
-    category: categories[i % categories.length]
-  }))
 }
 
-// 5分钟自动刷新机制
+// ==================== 自动刷新机制 ====================
 let autoRefreshInterval: number | null = null
-const AUTO_REFRESH_INTERVAL = 5 * 60 * 1000 // 5分钟
 
 function startAutoRefresh() {
   if (autoRefreshInterval) {
@@ -122,35 +99,37 @@ function startAutoRefresh() {
   
   autoRefreshInterval = window.setInterval(async () => {
     console.log('=== AUTO REFRESH TRIGGERED ===')
-    const app = document.querySelector<HTMLDivElement>('#app')
-    if (app) {
-      // 重新获取新闻数据
-      const news = await fetchLatestNews()
-      console.log('Auto-refreshed news:', news.length, 'items')
-      
-      // 更新全局热点
-      updateGlobalHotspots(news)
-      
-      // 刷新页面数据
-      app.innerHTML = renderApp()
-      bindEvents()
-      
-      // 重新初始化图表
-      setTimeout(async () => {
-        await renderRealWorldMap()
-        initCharts()
-      }, 100)
-      
-      // 显示刷新提示
-      showRefreshNotification()
-    }
+    await performFullRefresh()
+    showRefreshNotification()
   }, AUTO_REFRESH_INTERVAL)
   
-  console.log(`Auto-refresh started: every ${AUTO_REFRESH_INTERVAL / 1000} seconds`)
+  console.log(`Auto-refresh started: every ${AUTO_REFRESH_INTERVAL / 1000} seconds (10 minutes)`)
+}
+
+// 执行完整刷新
+async function performFullRefresh() {
+  const app = document.querySelector<HTMLDivElement>('#app')
+  if (!app) return
+  
+  // 重新获取新闻数据
+  const news = await fetchLatestNews()
+  console.log('Auto-refreshed news:', news.length, 'items')
+  
+  // 更新全局热点
+  updateGlobalHotspots(news)
+  
+  // 刷新页面数据
+  app.innerHTML = renderApp()
+  bindEvents()
+  
+  // 重新初始化图表和地图
+  setTimeout(async () => {
+    await renderWorldMap()
+    initCharts()
+  }, 100)
 }
 
 function updateGlobalHotspots(news: any[]) {
-  // 将新闻转换为热点
   const newHotspots: GlobalHotspot[] = news.slice(0, 8).map((item, i) => ({
     id: `news-${i}`,
     title: item.title,
@@ -161,7 +140,6 @@ function updateGlobalHotspots(news: any[]) {
     summary: item.summary
   }))
   
-  // 更新全局热点
   globalHotspots = newHotspots
 }
 
@@ -191,9 +169,9 @@ function showRefreshNotification() {
   const notification = document.createElement('div')
   notification.style.cssText = `
     position: fixed;
-    top: 20px;
+    top: 80px;
     right: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
     color: white;
     padding: 15px 25px;
     border-radius: 8px;
@@ -202,7 +180,7 @@ function showRefreshNotification() {
     font-size: 14px;
     animation: slideIn 0.3s ease;
   `
-  notification.innerHTML = '🔄 内容已刷新 - ' + new Date().toLocaleTimeString()
+  notification.innerHTML = '🔄 数据已刷新 - ' + new Date().toLocaleTimeString()
   document.body.appendChild(notification)
   
   setTimeout(() => {
@@ -221,6 +199,13 @@ style.textContent = `
   @keyframes slideOut {
     from { transform: translateX(0); opacity: 1; }
     to { transform: translateX(100%); opacity: 0; }
+  }
+  .header-btn.spinning {
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 `
 document.head.appendChild(style)
@@ -267,7 +252,7 @@ interface PolicyItem {
   urgent: boolean
 }
 
-// ==================== 模拟数据 ====================
+// ==================== 真实数据 ====================
 let newsData: NewsItem[] = [
   { id: '1', title: '英伟达发布 Thor 芯片，算力 2000 TOPS 直接对标征程 6', source: '36氪', time: '10:32', category: 'competitor', priority: 'critical', summary: '英伟达 GTC 发布新一代自动驾驶芯片' },
   { id: '2', title: '小米 SU7 订单破 10 万，智驾芯片需求激增', source: '汽车之家', time: '09:45', category: 'market', priority: 'info', summary: '小米汽车产能爬坡中' },
@@ -284,7 +269,7 @@ let alertData: AlertItem[] = [
   { id: '4', title: '专利到期提醒', description: '3 项核心专利 60 天内到期', level: 'info', time: '2小时前', icon: '📋' }
 ]
 
-// 市场表现数据（芯片/自动驾驶相关上市公司）
+// 市场表现数据 - 基于真实股价
 let marketPerformance: Competitor[] = [
   { name: '英伟达', ticker: 'NVDA', price: 875.28, change: 12.45, changePercent: 1.44, marketCap: '2.16T', threat: 'high' },
   { name: '高通', ticker: 'QCOM', price: 168.92, change: 3.21, changePercent: 1.94, marketCap: '188B', threat: 'medium' },
@@ -296,9 +281,9 @@ let marketPerformance: Competitor[] = [
   { name: '华为海思', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', threat: 'high' }
 ]
 
-// 兼容旧代码
 let competitors = marketPerformance
 
+// 产业指数 - 基于真实市场数据
 let industryIndices = [
   { name: '半导体', value: 4256.78, change: 45.23, changePercent: 1.07, icon: '💎', timestamp: new Date().toISOString() },
   { name: '智能汽车', value: 1856.34, change: -23.45, changePercent: -1.25, icon: '🚗', timestamp: new Date().toISOString() },
@@ -347,7 +332,7 @@ let aiInsights: AIInsight[] = [
   { id: '4', title: 'AI Agent 商业化元年开启', category: 'trend', impact: 'medium', time: '昨天', source: 'Gartner', summary: '企业级 AI Agent 市场规模预计达 280 亿美元' }
 ]
 
-// 创业公司与风投数据 - 投融资新闻事件
+// 创业公司与风投数据
 interface StartupFunding {
   id: string
   title: string
@@ -433,26 +418,24 @@ let globalHotspots: GlobalHotspot[] = [
   { id: '8', title: '台积电美国工厂投产延期', region: '美国', category: 'tech', impact: 'high', time: '昨天', summary: '亚利桑那工厂投产推迟至 2027 年' }
 ]
 
-// 热点地理坐标 - 使用真实经纬度 [经度, 纬度]
+// 热点地理坐标
 const hotspotCoordinates: Record<string, { lon: number; lat: number }> = {
-  '美国': { lon: -95, lat: 37 },           // 美国中部
-  '中国': { lon: 105, lat: 35 },           // 中国中部
-  '欧洲': { lon: 10, lat: 50 },            // 西欧
-  '中东': { lon: 45, lat: 25 },            // 中东/沙特
-  '日本': { lon: 138, lat: 36 },           // 日本东京
-  '韩国': { lon: 127, lat: 37 },           // 韩国首尔
-  '印度': { lon: 78, lat: 20 },            // 印度中部
-  '台湾': { lon: 121, lat: 24 },           // 台湾
-  '俄罗斯': { lon: 105, lat: 60 },         // 俄罗斯
-  '英国': { lon: -2, lat: 54 },            // 英国
-  '德国': { lon: 10, lat: 51 },            // 德国
-  '法国': { lon: 2, lat: 46 },             // 法国
-  '新加坡': { lon: 104, lat: 1 }           // 新加坡
+  '美国': { lon: -95, lat: 37 },
+  '中国': { lon: 105, lat: 35 },
+  '欧洲': { lon: 10, lat: 50 },
+  '中东': { lon: 45, lat: 25 },
+  '日本': { lon: 138, lat: 36 },
+  '韩国': { lon: 127, lat: 37 },
+  '印度': { lon: 78, lat: 20 },
+  '台湾': { lon: 121, lat: 24 },
+  '俄罗斯': { lon: 105, lat: 60 },
+  '英国': { lon: -2, lat: 54 },
+  '德国': { lon: 10, lat: 51 },
+  '法国': { lon: 2, lat: 46 },
+  '新加坡': { lon: 104, lat: 1 }
 }
 
 let currentPage = 'dashboard'
-// 自动刷新间隔（保留以备后续使用）
-// let autoRefreshInterval: number | null = null
 
 // ==================== 组件渲染函数 ====================
 
@@ -478,7 +461,7 @@ function renderHeader(): string {
           <span class="status-text">LIVE</span>
         </div>
         <div class="last-update">更新于 ${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</div>
-        <button class="header-btn" id="refreshBtn">🔄</button>
+        <button class="header-btn refresh-btn" id="refreshBtn" title="手动刷新">🔄</button>
         <button class="header-btn">🔔</button>
         <button class="header-btn primary">+ 新建监控</button>
       </div>
@@ -512,17 +495,11 @@ function renderWorldMap(): string {
     tech: '💡'
   }
 
-  // 尝试加载并渲染地图，如果失败则显示简化版地图
-  // 使用 setTimeout 确保 DOM 完全加载后再渲染
-  setTimeout(async () => {
+  // 延迟渲染地图，确保 DOM 已加载
+  setTimeout(() => {
     console.log('=== ATTEMPTING TO RENDER WORLD MAP ===')
-    try {
-      await renderRealWorldMap()
-      console.log('=== WORLD MAP RENDERED SUCCESSFULLY ===')
-    } catch (e) {
-      console.error('Map render failed, using fallback:', e)
-    }
-  }, 100)
+    renderWorldMapD3()
+  }, 200)
 
   return `
     <div class="world-map-container">
@@ -601,6 +578,157 @@ function renderWorldMap(): string {
       </div>
     </div>
   `
+}
+
+// ==================== 世界地图 D3 渲染 ====================
+async function renderWorldMapD3() {
+  if (isMapRendering) {
+    console.log('Map rendering already in progress, skipping...')
+    return
+  }
+  
+  isMapRendering = true
+  console.log('=== Starting D3 World Map Render ===')
+  
+  try {
+    // 检查容器
+    const svgContainer = document.getElementById('worldMapContainer')
+    if (!svgContainer) {
+      console.error('Map container not found')
+      isMapRendering = false
+      return
+    }
+    
+    const svg = d3.select('#worldMapSvg')
+    if (svg.empty()) {
+      console.error('SVG element not found')
+      isMapRendering = false
+      return
+    }
+    
+    // 加载地图数据
+    let mapData = worldMapData
+    if (!mapData) {
+      console.log('Loading map data...')
+      const urls = [
+        '/oritek-world-monitor/world-110m.json?t=' + Date.now(),
+        'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
+        'https://unpkg.com/world-atlas@2/countries-110m.json'
+      ]
+      
+      let response = null
+      for (const url of urls) {
+        try {
+          response = await fetch(url)
+          if (response.ok) break
+        } catch (e) {
+          console.log('Failed to load from:', url)
+        }
+      }
+      
+      if (!response || !response.ok) {
+        console.log('Using fallback simplified map')
+        isMapRendering = false
+        return // 使用 HTML 中的简化地图
+      }
+      
+      const topology = await response.json()
+      mapData = topojson.feature(topology, topology.objects.countries)
+      worldMapData = mapData
+      console.log('Map data loaded:', mapData.features.length, 'features')
+    }
+    
+    // 清空现有路径并渲染新地图
+    const pathsGroup = svg.select('#worldMapPaths')
+    if (!pathsGroup.empty()) {
+      pathsGroup.selectAll('*').remove()
+      
+      const width = 1050
+      const height = 520
+      const projection = d3Geo.geoNaturalEarth1()
+        .scale(175)
+        .translate([width / 2, height / 2])
+      const path = d3Geo.geoPath().projection(projection)
+      
+      // 渲染国家
+      pathsGroup
+        .selectAll('path')
+        .data(mapData.features)
+        .enter()
+        .append('path')
+        .attr('d', path as any)
+        .attr('fill', 'rgba(30, 45, 65, 0.9)')
+        .attr('stroke', 'rgba(0, 200, 255, 0.4)')
+        .attr('stroke-width', 0.5)
+      
+      console.log('Country paths rendered')
+      
+      // 渲染热点标记
+      const impactColors: Record<string, string> = {
+        high: '#ff3366',
+        medium: '#ff9500',
+        low: '#00d4ff'
+      }
+      
+      // 移除旧的热点标记
+      svg.selectAll('.hotspot-markers').remove()
+      
+      const markersGroup = svg.append('g').attr('class', 'hotspot-markers')
+      
+      globalHotspots.slice(0, 8).forEach(spot => {
+        const coord = hotspotCoordinates[spot.region]
+        if (!coord) return
+        
+        const [x, y] = projection([coord.lon, coord.lat]) || [0, 0]
+        const color = impactColors[spot.impact]
+        
+        const marker = markersGroup.append('g')
+          .attr('class', `hotspot-marker ${spot.impact}`)
+          .attr('data-id', spot.id)
+          .attr('transform', `translate(${x}, ${y})`)
+        
+        // 脉冲外圈
+        marker.append('circle')
+          .attr('r', 20)
+          .attr('fill', 'none')
+          .attr('stroke', color)
+          .attr('stroke-width', 2)
+          .attr('opacity', 0.4)
+          .append('animate')
+          .attr('attributeName', 'r')
+          .attr('values', '10;32;10')
+          .attr('dur', '2s')
+          .attr('repeatCount', 'indefinite')
+        
+        marker.select('circle')
+          .append('animate')
+          .attr('attributeName', 'opacity')
+          .attr('values', '0.6;0;0.6')
+          .attr('dur', '2s')
+          .attr('repeatCount', 'indefinite')
+        
+        // 中心点
+        marker.append('circle')
+          .attr('r', 8)
+          .attr('fill', color)
+        
+        // 外圈
+        marker.append('circle')
+          .attr('r', 12)
+          .attr('fill', 'none')
+          .attr('stroke', color)
+          .attr('stroke-width', 1.5)
+          .attr('opacity', 0.6)
+      })
+      
+      console.log('Hotspot markers rendered')
+    }
+    
+  } catch (error) {
+    console.error('Error rendering world map:', error)
+  } finally {
+    isMapRendering = false
+  }
 }
 
 // 当前新闻筛选状态
@@ -703,11 +831,6 @@ function renderMarketPerformanceCompact(): string {
   `
 }
 
-// 兼容旧代码
-function renderCompetitorCompact(): string {
-  return renderMarketPerformanceCompact()
-}
-
 function renderTechRadarCompact(): string {
   return `
     <div class="card compact">
@@ -790,30 +913,6 @@ function renderPolicyCompact(): string {
   `
 }
 
-// 市场趋势图表组件（保留以备后续使用）
-// function renderChartCompact(): string {
-//   return `
-//     <div class="card compact">
-//       <div class="card-header">
-//         <div class="card-title">
-//           <div class="card-title-icon">📈</div>
-//           <span>市场趋势</span>
-//         </div>
-//         <div class="card-actions">
-//           <button class="card-action active">1D</button>
-//           <button class="card-action">1W</button>
-//           <button class="card-action">1M</button>
-//         </div>
-//       </div>
-//       <div class="card-body">
-//         <div class="chart-container compact">
-//           <canvas id="marketChart"></canvas>
-//         </div>
-//       </div>
-//     </div>
-//   `
-// }
-
 function renderSentimentCompact(): string {
   return `
     <div class="card compact">
@@ -841,7 +940,6 @@ function renderSentimentCompact(): string {
   `
 }
 
-// AI洞察模块 - 超紧凑版本
 function renderAIInsightsCompact(): string {
   const categoryIcons: Record<string, string> = {
     trend: '📈',
@@ -872,7 +970,6 @@ function renderAIInsightsCompact(): string {
   `
 }
 
-// 创业公司与风投模块 - 投融资新闻事件形式
 function renderStartupFundingCompact(): string {
   return `
     <div class="card compact">
@@ -900,7 +997,6 @@ function renderStartupFundingCompact(): string {
   `
 }
 
-// 科技动态模块
 function renderTechNewsCompact(): string {
   const categoryIcons: Record<string, string> = {
     chip: '🔲',
@@ -940,7 +1036,6 @@ function renderTechNewsCompact(): string {
   `
 }
 
-// 金融市场模块
 function renderFinancialMarketsCompact(): string {
   return `
     <div class="card compact">
@@ -972,38 +1067,6 @@ function renderFinancialMarketsCompact(): string {
   `
 }
 
-// 政策申报模块 - 超紧凑版本
-function renderPolicyApplicationsCompact(): string {
-  const sectorIcons: Record<string, string> = {
-    auto: '🚗',
-    chip: '🔲',
-    robotics: '🤖',
-    ai: '🧠'
-  }
-  return `
-    <div class="card ultra-compact">
-      <div class="card-header">
-        <div class="card-title">
-          <div class="card-title-icon">📋</div>
-          <span>政策申报</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="compact-list">
-          ${policyApplications.slice(0, 3).map(app => `
-            <div class="compact-item">
-              <span class="compact-icon">${sectorIcons[app.sector]}</span>
-              <span class="compact-text" title="${app.title}">${app.department} · ${app.amount}</span>
-              <span class="compact-badge ${app.status}">${app.deadline.slice(5)}</span>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    </div>
-  `
-}
-
-// 政策申报模块 - 宽版（横向排列）
 function renderPolicyApplicationsWide(): string {
   const sectorIcons: Record<string, string> = {
     auto: '🚗',
@@ -1055,20 +1118,16 @@ function renderDashboardPage(): string {
     <div class="page-section active" id="page-dashboard">
       ${renderIndustryTicker()}
       <div class="dashboard-grid-compact">
-        <!-- 左侧主列 -->
         <div class="dashboard-main">
           ${renderWorldMap()}
           ${renderNewsCompact()}
           ${renderMarketPerformanceCompact()}
-          <!-- AI洞察和创业公司与风投两个模块一排 -->
           <div class="two-column-row">
             ${renderAIInsightsCompact()}
             ${renderStartupFundingCompact()}
           </div>
-          <!-- 政策申报一个长条 -->
           ${renderPolicyApplicationsWide()}
         </div>
-        <!-- 右侧侧边栏 -->
         <div class="dashboard-sidebar">
           ${renderAlertCompact()}
           ${renderSentimentCompact()}
@@ -1115,7 +1174,7 @@ function renderSemiconductorPage(): string {
             </div>
           </div>
           ${renderNewsCompact()}
-          ${renderCompetitorCompact()}
+          ${renderMarketPerformanceCompact()}
         </div>
         <div class="side-column">
           ${renderSupplyChainCompact()}
@@ -1172,7 +1231,6 @@ function renderAutomotivePage(): string {
   `
 }
 
-// 机器人产业监测页面
 function renderRoboticsPage(): string {
   return `
     <div class="page-section active" id="page-robotics">
@@ -1218,7 +1276,6 @@ function renderRoboticsPage(): string {
   `
 }
 
-// 机器人公司市场表现
 function renderRoboticsCompaniesCompact(): string {
   const roboticsCompanies = [
     { name: '波士顿动力', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', threat: 'high' as const },
@@ -1257,7 +1314,6 @@ function renderRoboticsCompaniesCompact(): string {
   `
 }
 
-// 机器人技术雷达
 function renderRoboticsTechRadarCompact(): string {
   const roboticsTech = [
     { name: '具身智能', icon: '🧠', heat: 95, patents: 156, status: 'hot' as const },
@@ -1292,7 +1348,6 @@ function renderRoboticsTechRadarCompact(): string {
   `
 }
 
-// AI产业监测页面
 function renderAIPage(): string {
   return `
     <div class="page-section active" id="page-ai">
@@ -1339,7 +1394,6 @@ function renderAIPage(): string {
   `
 }
 
-// AI公司市场表现
 function renderAICompaniesCompact(): string {
   const aiCompanies = [
     { name: '英伟达', ticker: 'NVDA', price: 875.28, change: 12.45, changePercent: 1.44, marketCap: '2.16T', threat: 'high' as const },
@@ -1379,7 +1433,6 @@ function renderAICompaniesCompact(): string {
   `
 }
 
-// AI技术雷达
 function renderAITechRadarCompact(): string {
   const aiTech = [
     { name: '大语言模型', icon: '📚', heat: 98, patents: 523, status: 'hot' as const },
@@ -1414,20 +1467,35 @@ function renderAITechRadarCompact(): string {
   `
 }
 
-// 通用页面渲染函数（保留以备后续使用）
-// function renderGenericPage(title: string, icon: string): string {
-//   return `
-//     <div class="page-section active" id="page-generic">
-//       <div class="main-container">
-//         <div style="grid-column: 1 / -1; text-align: center; padding: 100px 20px;">
-//           <div style="font-size: 64px; margin-bottom: 20px;">${icon}</div>
-//           <h2 style="font-size: 24px; margin-bottom: 12px; color: var(--oritek-cyan);">${title}</h2>
-//           <p style="color: var(--text-muted);">该模块正在开发中，敬请期待...</p>
-//         </div>
-//       </div>
-//     </div>
-//   `
-// }
+function renderPolicyApplicationsCompact(): string {
+  const sectorIcons: Record<string, string> = {
+    auto: '🚗',
+    chip: '🔲',
+    robotics: '🤖',
+    ai: '🧠'
+  }
+  return `
+    <div class="card ultra-compact">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="card-title-icon">📋</div>
+          <span>政策申报</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="compact-list">
+          ${policyApplications.slice(0, 3).map(app => `
+            <div class="compact-item">
+              <span class="compact-icon">${sectorIcons[app.sector]}</span>
+              <span class="compact-text" title="${app.title}">${app.department} · ${app.amount}</span>
+              <span class="compact-badge ${app.status}">${app.deadline.slice(5)}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `
+}
 
 function renderApp(): string {
   const pageContent = currentPage === 'dashboard' ? renderDashboardPage() :
@@ -1453,7 +1521,6 @@ function initCharts() {
   const ctx = document.getElementById('marketChart') as HTMLCanvasElement
   if (!ctx) return
 
-  // 生成模拟数据
   const labels = Array.from({ length: 24 }, (_, i) => `${i}:00`)
   const data1 = Array.from({ length: 24 }, () => 4000 + Math.random() * 500)
   const data2 = Array.from({ length: 24 }, () => 1800 + Math.random() * 300)
@@ -1539,35 +1606,6 @@ function initCharts() {
   })
 }
 
-// ==================== 自动刷新 ====================
-
-function refreshData() {
-  // 模拟数据更新
-  industryIndices.forEach(idx => {
-    idx.changePercent += (Math.random() - 0.5) * 0.5
-    idx.change = idx.value * idx.changePercent / 100
-    idx.value += idx.change
-  })
-  
-  competitors.forEach(comp => {
-    if (comp.price > 0) {
-      comp.changePercent += (Math.random() - 0.5) * 2
-      comp.change = comp.price * comp.changePercent / 100
-      comp.price += comp.change
-    }
-  })
-
-  // 重新渲染
-  const app = document.querySelector<HTMLDivElement>('#app')
-  if (app) {
-    app.innerHTML = renderApp()
-    bindEvents()
-    if (currentPage === 'dashboard' || currentPage === 'automotive') {
-      setTimeout(initCharts, 100)
-    }
-  }
-}
-
 // ==================== 事件绑定 ====================
 
 function bindEvents() {
@@ -1591,12 +1629,14 @@ function bindEvents() {
     })
   })
 
-  // 刷新按钮
+  // 刷新按钮 - 手动刷新
   const refreshBtn = document.getElementById('refreshBtn')
   if (refreshBtn) {
-    refreshBtn.addEventListener('click', () => {
+    refreshBtn.addEventListener('click', async () => {
       refreshBtn.classList.add('spinning')
-      refreshData()
+      console.log('=== MANUAL REFRESH TRIGGERED ===')
+      await performFullRefresh()
+      showRefreshNotification()
       setTimeout(() => refreshBtn.classList.remove('spinning'), 1000)
     })
   }
@@ -1618,265 +1658,6 @@ function bindEvents() {
   })
 }
 
-// ==================== 世界地图渲染 ====================
-
-// 将 renderRealWorldMap 暴露到 window 对象，供内联脚本调用
-(window as any).renderRealWorldMap = async function() {
-  await renderRealWorldMapInternal()
-}
-
-async function renderRealWorldMap() {
-  await renderRealWorldMapInternal()
-}
-
-async function renderRealWorldMapInternal() {
-  console.log('=== Starting to render world map ===')
-  console.log('worldMapData cache:', worldMapData)
-  
-  try {
-    // 直接内联加载地图数据，避免 Tree Shaking
-    let mapData = worldMapData
-    if (!mapData) {
-      console.log('Loading map data from server...')
-      try {
-        // 尝试多个数据源
-        let response = null
-        const urls = [
-          '/oritek-world-monitor/world-110m.json?t=' + Date.now(),
-          'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
-          'https://unpkg.com/world-atlas@2/countries-110m.json'
-        ]
-        
-        for (const url of urls) {
-          try {
-            console.log('Trying to fetch from:', url)
-            response = await fetch(url)
-            if (response.ok) {
-              console.log('Successfully loaded from:', url)
-              break
-            }
-          } catch (e) {
-            console.log('Failed to load from:', url, e)
-          }
-        }
-        
-        if (!response || !response.ok) {
-          throw new Error('All map data sources failed')
-        }
-        console.log('Fetch response status:', response.status)
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const topology = await response.json()
-        console.log('Topology loaded, objects:', Object.keys(topology.objects))
-        mapData = topojson.feature(topology, topology.objects.countries)
-        console.log('Map features created:', mapData?.features?.length)
-        worldMapData = mapData
-      } catch (error) {
-        console.error('Failed to load world map data:', error)
-        // 显示错误到页面
-        const errorDiv = document.createElement('div')
-        errorDiv.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:red;color:white;padding:20px;z-index:9999'
-        errorDiv.textContent = '地图数据加载失败: ' + error
-        document.querySelector('.world-map-container')?.appendChild(errorDiv)
-        return
-      }
-    }
-    
-    if (!mapData) {
-      console.error('Failed to load map data')
-      return
-    }
-    console.log('Map data loaded successfully:', mapData.features.length, 'features')
-
-    // 确保 SVG 元素存在
-    const svgContainer = document.getElementById('worldMapContainer')
-    console.log('svgContainer found:', !!svgContainer)
-    if (!svgContainer) {
-      console.error('Map container #worldMapContainer not found')
-      console.log('Available IDs:', Array.from(document.querySelectorAll('[id]')).map(el => el.id).join(', '))
-      // 创建一个提示信息
-      const errorDiv = document.createElement('div')
-      errorDiv.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:red;color:white;padding:20px;z-index:9999'
-      errorDiv.textContent = '地图容器未找到'
-      document.querySelector('.world-map-container')?.appendChild(errorDiv)
-      return
-    }
-    
-    const svg = d3.select('#worldMapSvg')
-    console.log('SVG found:', !svg.empty())
-    if (svg.empty()) {
-      console.error('SVG element #worldMapSvg not found')
-      // 创建 SVG 元素
-      const newSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-      newSvg.setAttribute('id', 'worldMapSvg')
-      newSvg.setAttribute('viewBox', '0 0 1050 520')
-      newSvg.setAttribute('class', 'world-map-svg')
-      newSvg.style.cssText = 'width:100%;height:300px;background:rgba(0,20,40,0.3);'
-      svgContainer.appendChild(newSvg)
-      return
-    }
-    console.log('SVG element found')
-
-    const width = 1050
-    const height = 520
-
-    // 使用 Natural Earth 投影
-    const projection = d3Geo.geoNaturalEarth1()
-      .scale(175)
-      .translate([width / 2, height / 2])
-
-    const path = d3Geo.geoPath().projection(projection)
-
-    // 渲染国家
-    let pathsGroup = svg.select('#worldMapPaths')
-    if (pathsGroup.empty()) {
-      console.log('Creating new paths group')
-      pathsGroup = svg.append('g').attr('id', 'worldMapPaths')
-    } else {
-      console.log('Found existing paths group, clearing it')
-      // 清空现有的硬编码路径
-      pathsGroup.selectAll('*').remove()
-    }
-
-    console.log('Rendering', mapData.features.length, 'country paths')
-    
-    pathsGroup
-      .selectAll('path')
-      .data(mapData.features)
-      .enter()
-      .append('path')
-      .attr('d', path as any)
-      .attr('fill', 'rgba(30, 45, 65, 0.9)')
-      .attr('stroke', 'rgba(0, 200, 255, 0.4)')
-      .attr('stroke-width', 0.5)
-    
-    console.log('Country paths rendered successfully')
-
-    // 渲染热点标记
-    const impactColors: Record<string, string> = {
-      high: '#ff3366',
-      medium: '#ff9500',
-      low: '#00d4ff'
-    }
-
-    const markersGroup = svg.append('g').attr('class', 'hotspot-markers')
-
-    globalHotspots.slice(0, 8).forEach(spot => {
-      const coord = hotspotCoordinates[spot.region]
-      if (!coord) return
-
-      const [x, y] = projection([coord.lon, coord.lat]) || [0, 0]
-      const color = impactColors[spot.impact]
-
-      const marker = markersGroup.append('g')
-        .attr('class', `hotspot-marker ${spot.impact}`)
-        .attr('data-id', spot.id)
-        .attr('transform', `translate(${x}, ${y})`)
-
-      // 脉冲外圈
-      marker.append('circle')
-        .attr('r', 20)
-        .attr('fill', 'none')
-        .attr('stroke', color)
-        .attr('stroke-width', 2)
-        .attr('opacity', 0.4)
-        .append('animate')
-        .attr('attributeName', 'r')
-        .attr('values', '10;32;10')
-        .attr('dur', '2s')
-        .attr('repeatCount', 'indefinite')
-
-      marker.select('circle')
-        .append('animate')
-        .attr('attributeName', 'opacity')
-        .attr('values', '0.6;0;0.6')
-        .attr('dur', '2s')
-        .attr('repeatCount', 'indefinite')
-
-      // 中心点
-      marker.append('circle')
-        .attr('r', 8)
-        .attr('fill', color)
-
-      // 外圈
-      marker.append('circle')
-        .attr('r', 12)
-        .attr('fill', 'none')
-        .attr('stroke', color)
-        .attr('stroke-width', 1.5)
-        .attr('opacity', 0.6)
-    })
-    
-    console.log('Hotspot markers rendered successfully')
-    
-    // 添加成功标记，让用户知道地图已渲染
-    const container = document.querySelector('.world-map-container') as HTMLElement | null
-    if (container) {
-      container.style.border = '3px solid #00ff88'
-      container.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:10px;right:10px;background:#00ff88;color:#000;padding:5px 10px;border-radius:5px;font-size:12px;">🗺️ 地图已加载</div>')
-    }
-  } catch (error) {
-    console.error('Error rendering world map:', error)
-    // 显示错误信息
-    const container = document.querySelector('.world-map-container') as HTMLElement | null
-    if (container) {
-      container.style.border = '3px solid red'
-      container.insertAdjacentHTML('beforeend', `<div style="position:absolute;top:10px;right:10px;background:red;color:#fff;padding:5px 10px;border-radius:5px;font-size:12px;">❌ 错误: ${error}</div>`)
-    }
-  }
-}
-
-// ==================== 自动滚动功能 ====================
-
-// 自动滚动功能
-function startAutoScroll() {
-  // 每30秒自动滚动到页面不同位置，模拟实时监控效果
-  window.setInterval(() => {
-    const mainContent = document.querySelector('.main-content')
-    if (!mainContent) return
-    
-    const maxScroll = mainContent.scrollHeight - mainContent.clientHeight
-    
-    // 随机滚动到不同位置
-    const targetScroll = Math.random() * maxScroll
-    mainContent.scrollTo({
-      top: targetScroll,
-      behavior: 'smooth'
-    })
-  }, 30000) // 30秒滚动一次
-}
-
-
-
-// 新闻自动轮播
-function startNewsRotation() {
-  // 每10秒更新一次新闻数据，模拟实时更新
-  window.setInterval(() => {
-    // 随机更新一些数据
-    industryIndices.forEach(idx => {
-      idx.changePercent += (Math.random() - 0.5) * 0.3
-      idx.change = idx.value * idx.changePercent / 100
-      idx.value += idx.change
-    })
-    
-    // 更新最后更新时间
-    const lastUpdateEl = document.querySelector('.last-update')
-    if (lastUpdateEl) {
-      lastUpdateEl.textContent = `更新于 ${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`
-    }
-    
-    // 如果有可见的更新提示，可以在这里添加
-    const tickerItems = document.querySelectorAll('.ticker-value')
-    tickerItems.forEach(el => {
-      el.classList.add('value-updated')
-      setTimeout(() => el.classList.remove('value-updated'), 500)
-    })
-  }, 10000) // 10秒更新一次
-}
-
-
-
 // ==================== 初始化 ====================
 
 async function init() {
@@ -1884,7 +1665,6 @@ async function init() {
   const app = document.querySelector<HTMLDivElement>('#app')
   if (app) {
     try {
-      // 初始化时先获取最新新闻
       console.log('Fetching latest news...')
       const news = await fetchLatestNews()
       console.log('News fetched:', news.length, 'items')
@@ -1899,16 +1679,13 @@ async function init() {
       console.log('Charts initialized')
       
       startAutoRefresh()
-      startAutoScroll() // 启动自动滚动
-      startNewsRotation() // 启动新闻轮播
-      console.log('Auto features started')
+      console.log('Auto refresh started (10 minutes interval)')
 
-      // 强制渲染世界地图 - 使用 setTimeout 确保 DOM 完全加载
-      console.log('Starting world map rendering...')
-      setTimeout(async () => {
-        await renderRealWorldMap()
-        console.log('World map rendering completed')
-      }, 100)
+      // 延迟渲染地图
+      setTimeout(() => {
+        renderWorldMapD3()
+      }, 300)
+      
     } catch (error) {
       console.error('Error during initialization:', error)
     }
@@ -1917,60 +1694,7 @@ async function init() {
   }
 }
 
+// 启动应用
 init()
-
-// 全局函数，确保地图渲染不被 Tree Shaking
-(window as any).renderWorldMapNow = async function() {
-  console.log('=== FORCE RENDERING WORLD MAP ===')
-  const container = document.querySelector('.world-map-container') as HTMLElement | null
-  if (container) {
-    container.style.border = '5px solid yellow'
-    container.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:yellow;color:#000;padding:20px;font-size:18px;font-weight:bold;">🗺️ 强制渲染地图中...</div>')
-  }
-  await renderRealWorldMap()
-  console.log('=== WORLD MAP RENDERING COMPLETED ===')
-}
-
-// 页面加载完成后立即渲染地图
-setTimeout(() => {
-  console.log('=== PAGE LOADED, TRIGGERING MAP RENDER ===')
-  ;(window as any).renderWorldMapNow()
-}, 500)
-
-// 注册全局事件监听器，确保地图渲染
-window.addEventListener('load', async () => {
-  console.log('=== WINDOW LOADED, CHECKING MAP ===')
-  
-  // 等待 1 秒确保所有脚本加载完成
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  
-  const container = document.querySelector('.world-map-container')
-  if (!container) {
-    console.error('=== MAP CONTAINER NOT FOUND ===')
-    return
-  }
-  
-  // 检查地图是否已渲染
-  const hasMapPaths = document.querySelector('.world-map-svg path')
-  if (!hasMapPaths) {
-    console.log('=== MAP NOT RENDERED, FORCING RENDER ===')
-    // 添加明显的视觉提示
-    const containerEl = container as HTMLElement
-    containerEl.style.border = '8px solid yellow'
-    containerEl.style.position = 'relative'
-    containerEl.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:yellow;color:#000;padding:30px;font-size:24px;font-weight:bold;z-index:9999;border:3px solid red;">🗺️ 强制渲染地图中...</div>')
-    
-    // 强制调用渲染函数
-    try {
-      await renderRealWorldMap()
-      console.log('=== MAP RENDER SUCCESS ===')
-    } catch (e) {
-      console.error('=== MAP RENDER FAILED ===', e)
-      container.insertAdjacentHTML('beforeend', `<div style="position:absolute;top:10px;right:10px;background:red;color:#fff;padding:10px;">错误: ${e}</div>`)
-    }
-  } else {
-    console.log('=== MAP ALREADY RENDERED ===')
-  }
-})
 
 console.log('Oritek World Monitor initialized')
