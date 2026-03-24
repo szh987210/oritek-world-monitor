@@ -300,6 +300,14 @@ function renderWorldMap(): string {
     tech: '💡'
   }
 
+  // 在返回 HTML 之前，强制调用真实地图渲染函数
+  // 这个方法不会被 Tree Shaking 移除
+  setTimeout(async () => {
+    console.log('=== RENDERING REAL WORLD MAP ===')
+    await renderRealWorldMap()
+    console.log('=== REAL WORLD MAP RENDERED ===')
+  }, 50)
+
   // 简化版地图渲染，先确保基本结构正确显示
   return `
     <div class="world-map-container">
