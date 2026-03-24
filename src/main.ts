@@ -1418,7 +1418,30 @@ async function renderRealWorldMap() {
     if (!mapData) {
       console.log('Loading map data from server...')
       try {
-        const response = await fetch('/oritek-world-monitor/world-110m.json?t=' + Date.now())
+        // 尝试多个数据源
+        let response = null
+        const urls = [
+          '/oritek-world-monitor/world-110m.json?t=' + Date.now(),
+          'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
+          'https://unpkg.com/world-atlas@2/countries-110m.json'
+        ]
+        
+        for (const url of urls) {
+          try {
+            console.log('Trying to fetch from:', url)
+            response = await fetch(url)
+            if (response.ok) {
+              console.log('Successfully loaded from:', url)
+              break
+            }
+          } catch (e) {
+            console.log('Failed to load from:', url, e)
+          }
+        }
+        
+        if (!response || !response.ok) {
+          throw new Error('All map data sources failed')
+        }
         console.log('Fetch response status:', response.status)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
