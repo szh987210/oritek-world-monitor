@@ -3,6 +3,18 @@ import { Chart, registerables } from 'chart.js'
 import * as d3 from 'd3'
 import * as d3Geo from 'd3-geo'
 import * as topojson from 'topojson-client'
+import { 
+  fetchRealNews, 
+  fetchStockData, 
+  fetchIndustryIndices,
+  fetchGlobalHotspots,
+  dataRefreshManager,
+  API_CONFIG,
+  type NewsItem,
+  type StockData,
+  type IndustryIndex,
+  type GlobalHotspot
+} from './dataService'
 Chart.register(...registerables)
 
 // 世界地图数据缓存
@@ -12,7 +24,12 @@ let worldMapData: any = null
 async function loadWorldMapData() {
   if (worldMapData) return worldMapData
   try {
-    const response = await fetch('/world-110m.json')
+    // 使用相对路径，适配 GitHub Pages 部署
+    const baseUrl = import.meta.env.BASE_URL || '/'
+    const response = await fetch(`${baseUrl}world-110m.json`)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
     const topology = await response.json()
     // 将 TopoJSON 转换为 GeoJSON
     worldMapData = topojson.feature(topology, topology.objects.countries)
@@ -23,17 +40,7 @@ async function loadWorldMapData() {
   }
 }
 
-// ==================== 数据类型定义 ====================
-interface NewsItem {
-  id: string
-  title: string
-  source: string
-  time: string
-  category: 'competitor' | 'market' | 'policy' | 'tech' | 'supply'
-  priority: 'critical' | 'warning' | 'info'
-  summary: string
-}
-
+// ==================== 本地数据类型定义 ====================
 interface AlertItem {
   id: string
   title: string
@@ -51,14 +58,6 @@ interface Competitor {
   changePercent: number
   marketCap: string
   threat: 'high' | 'medium' | 'low'
-}
-
-interface IndustryIndex {
-  name: string
-  value: number
-  change: number
-  changePercent: number
-  icon: string
 }
 
 interface TechTrend {
@@ -83,8 +82,8 @@ interface PolicyItem {
   urgent: boolean
 }
 
-interface GlobalHotspot {
-  id: string
+// 从 dataService 导入的类型
+// NewsItem, IndustryIndex, GlobalHotspot 已从 './dataService' 导入
   title: string
   region: string
   category: 'conflict' | 'diplomacy' | 'economy' | 'tech'
