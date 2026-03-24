@@ -6,7 +6,11 @@ import * as topojson from 'topojson-client'
 import { 
   type NewsItem,
   type IndustryIndex,
-  type GlobalHotspot
+  type GlobalHotspot,
+  fetchRealNews,
+  fetchStockData,
+  fetchIndustryIndices,
+  fetchGlobalHotspots
 } from './dataService'
 Chart.register(...registerables)
 
@@ -29,52 +33,10 @@ const NEWS_SOURCES = [
 let cachedNews: { items: any[], timestamp: number } = { items: [], timestamp: 0 }
 const NEWS_CACHE_DURATION = 10 * 60 * 1000 // 10分钟缓存
 
-// 自动抓取新闻
-async function fetchLatestNews(): Promise<any[]> {
-  const now = Date.now()
-  
-  if (cachedNews.items.length > 0 && (now - cachedNews.timestamp) < NEWS_CACHE_DURATION) {
-    console.log('Using cached news data')
-    return cachedNews.items
-  }
-  
-  const allNews: any[] = []
-  
-  for (const source of NEWS_SOURCES) {
-    try {
-      const response = await fetch(source.url, { 
-        method: 'GET',
-        headers: { 'Accept': 'application/json' }
-      })
-      if (response.ok) {
-        const data = await response.json()
-        if (data.status === 'ok' && data.items) {
-          const processed = data.items.slice(0, 5).map((item: any) => ({
-            id: item.guid || item.link || Math.random().toString(),
-            title: item.title,
-            summary: item.description?.replace(/<[^>]*>/g, '').substring(0, 100) || '',
-            source: source.name,
-            time: item.pubDate || new Date().toISOString(),
-            url: item.link,
-            category: 'tech'
-          }))
-          allNews.push(...processed)
-        }
-      }
-    } catch (e) {
-      console.log(`Failed to fetch from ${source.name}:`, e)
-    }
-  }
-  
-  if (allNews.length === 0) {
-    console.log('Using fallback news data')
-    return getFallbackNews()
-  }
-  
-  cachedNews = { items: allNews, timestamp: now }
-  console.log(`Fetched ${allNews.length} news items`)
-  
-  return allNews
+// 获取最新新闻 - 使用真实数据
+async function fetchLatestNews(): Promise<NewsItem[]> {
+  console.log('Fetching latest news from data service...')
+  return await fetchRealNews()
 }
 
 // 备用新闻数据
@@ -108,25 +70,49 @@ function startAutoRefresh() {
 
 // 执行完整刷新
 async function performFullRefresh() {
+  console.log('=== PERFORMING FULL DATA REFRESH ===')
   const app = document.querySelector<HTMLDivElement>('#app')
   if (!app) return
   
-  // 重新获取新闻数据
-  const news = await fetchLatestNews()
-  console.log('Auto-refreshed news:', news.length, 'items')
-  
-  // 更新全局热点
-  updateGlobalHotspots(news)
-  
-  // 刷新页面数据
-  app.innerHTML = renderApp()
-  bindEvents()
-  
-  // 重新初始化图表和地图
-  setTimeout(async () => {
-    await renderWorldMap()
-    initCharts()
-  }, 100)
+  try {
+    // 并行获取所有数据
+    const [news, indices, hotspots] = await Promise.all([
+      fetchLatestNews(),
+      fetchIndustryIndices(),
+      fetchGlobalHotspots()
+    ])
+    
+    console.log('Refreshed data:', {
+      news: news.length,
+      indices: indices.length,
+      hotspots: hotspots.length
+    })
+    
+    // 更新全局数据
+    globalHotspots = hotspots
+    industryIndices = indices.map(idx => ({
+      name: idx.name,
+      value: idx.value,
+      change: idx.change,
+      changePercent: idx.changePercent,
+      icon: idx.icon,
+      timestamp: idx.timestamp
+    }))
+    
+    // 刷新页面数据
+    app.innerHTML = renderApp()
+    bindEvents()
+    
+    // 重新初始化图表和地图
+    setTimeout(async () => {
+      await renderWorldMapD3()
+      initCharts()
+    }, 100)
+    
+    console.log('=== FULL REFRESH COMPLETED ===')
+  } catch (error) {
+    console.error('Error during full refresh:', error)
+  }
 }
 
 function updateGlobalHotspots(news: any[]) {
@@ -610,8 +596,11 @@ async function renderWorldMapD3() {
     let mapData = worldMapData
     if (!mapData) {
       console.log('Loading map data...')
+      // 检测当前运行环境，动态构建路径
+      const isGitHubPages = window.location.hostname.includes('github.io')
+      const basePath = isGitHubPages ? '/oritek-world-monitor' : ''
       const urls = [
-        '/oritek-world-monitor/world-110m.json?t=' + Date.now(),
+        `${basePath}/world-110m.json?t=${Date.now()}`,
         'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
         'https://unpkg.com/world-atlas@2/countries-110m.json'
       ]
