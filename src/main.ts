@@ -1409,22 +1409,32 @@ function bindEvents() {
 // ==================== 世界地图渲染 ====================
 
 async function renderRealWorldMap() {
-  console.log('Starting to render world map...')
+  console.log('=== Starting to render world map ===')
+  console.log('worldMapData cache:', worldMapData)
   
   try {
     // 直接内联加载地图数据，避免 Tree Shaking
     let mapData = worldMapData
     if (!mapData) {
+      console.log('Loading map data from server...')
       try {
         const response = await fetch('/oritek-world-monitor/world-110m.json')
+        console.log('Fetch response status:', response.status)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
         const topology = await response.json()
+        console.log('Topology loaded, objects:', Object.keys(topology.objects))
         mapData = topojson.feature(topology, topology.objects.countries)
+        console.log('Map features created:', mapData?.features?.length)
         worldMapData = mapData
       } catch (error) {
         console.error('Failed to load world map data:', error)
+        // 显示错误到页面
+        const errorDiv = document.createElement('div')
+        errorDiv.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:red;color:white;padding:20px;z-index:9999'
+        errorDiv.textContent = '地图数据加载失败: ' + error
+        document.querySelector('.world-map-container')?.appendChild(errorDiv)
         return
       }
     }
@@ -1437,15 +1447,20 @@ async function renderRealWorldMap() {
 
     // 确保 SVG 元素存在
     const svgContainer = document.getElementById('worldMapContainer')
+    console.log('svgContainer found:', !!svgContainer)
     if (!svgContainer) {
       console.error('Map container #worldMapContainer not found')
+      console.log('Available IDs:', Array.from(document.querySelectorAll('[id]')).map(el => el.id).join(', '))
       // 创建一个提示信息
-      document.querySelector('.world-map-container')?.insertAdjacentHTML('beforeend', 
-        '<div style="color: red; padding: 20px;">地图容器未找到</div>')
+      const errorDiv = document.createElement('div')
+      errorDiv.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:red;color:white;padding:20px;z-index:9999'
+      errorDiv.textContent = '地图容器未找到'
+      document.querySelector('.world-map-container')?.appendChild(errorDiv)
       return
     }
     
     const svg = d3.select('#worldMapSvg')
+    console.log('SVG found:', !svg.empty())
     if (svg.empty()) {
       console.error('SVG element #worldMapSvg not found')
       // 创建 SVG 元素
