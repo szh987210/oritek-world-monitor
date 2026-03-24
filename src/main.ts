@@ -1437,85 +1437,113 @@ function bindEvents() {
 // ==================== 世界地图渲染 ====================
 
 async function renderRealWorldMap() {
-  const mapData = await loadWorldMapData()
-  if (!mapData) return
+  console.log('Starting to render world map...')
+  
+  try {
+    const mapData = await loadWorldMapData()
+    if (!mapData) {
+      console.error('Failed to load map data')
+      return
+    }
+    console.log('Map data loaded successfully:', mapData.features.length, 'features')
 
-  const svg = d3.select('#worldMapSvg')
-  const width = 1050
-  const height = 520
+    const svg = d3.select('#worldMapSvg')
+    if (svg.empty()) {
+      console.error('SVG element #worldMapSvg not found')
+      return
+    }
+    console.log('SVG element found')
 
-  // 使用 Natural Earth 投影
-  const projection = d3Geo.geoNaturalEarth1()
-    .scale(175)
-    .translate([width / 2, height / 2])
+    const width = 1050
+    const height = 520
 
-  const path = d3Geo.geoPath().projection(projection)
+    // 使用 Natural Earth 投影
+    const projection = d3Geo.geoNaturalEarth1()
+      .scale(175)
+      .translate([width / 2, height / 2])
 
-  // 渲染国家
-  svg.select('#worldMapPaths')
-    .selectAll('path')
-    .data(mapData.features)
-    .enter()
-    .append('path')
-    .attr('d', path as any)
-    .attr('fill', 'rgba(30, 45, 65, 0.9)')
-    .attr('stroke', 'rgba(0, 200, 255, 0.4)')
-    .attr('stroke-width', 0.5)
+    const path = d3Geo.geoPath().projection(projection)
 
-  // 渲染热点标记
-  const impactColors: Record<string, string> = {
-    high: '#ff3366',
-    medium: '#ff9500',
-    low: '#00d4ff'
+    // 渲染国家
+    const pathsGroup = svg.select('#worldMapPaths')
+    if (pathsGroup.empty()) {
+      console.error('Paths group #worldMapPaths not found, creating it')
+      svg.append('g').attr('id', 'worldMapPaths')
+    }
+
+    console.log('Rendering', mapData.features.length, 'country paths')
+    
+    pathsGroup
+      .selectAll('path')
+      .data(mapData.features)
+      .enter()
+      .append('path')
+      .attr('d', path as any)
+      .attr('fill', 'rgba(30, 45, 65, 0.9)')
+      .attr('stroke', 'rgba(0, 200, 255, 0.4)')
+      .attr('stroke-width', 0.5)
+    
+    console.log('Country paths rendered successfully')
+
+    // 渲染热点标记
+    const impactColors: Record<string, string> = {
+      high: '#ff3366',
+      medium: '#ff9500',
+      low: '#00d4ff'
+    }
+
+    const markersGroup = svg.append('g').attr('class', 'hotspot-markers')
+
+    globalHotspots.slice(0, 8).forEach(spot => {
+      const coord = hotspotCoordinates[spot.region]
+      if (!coord) return
+
+      const [x, y] = projection([coord.lon, coord.lat]) || [0, 0]
+      const color = impactColors[spot.impact]
+
+      const marker = markersGroup.append('g')
+        .attr('class', `hotspot-marker ${spot.impact}`)
+        .attr('data-id', spot.id)
+        .attr('transform', `translate(${x}, ${y})`)
+
+      // 脉冲外圈
+      marker.append('circle')
+        .attr('r', 20)
+        .attr('fill', 'none')
+        .attr('stroke', color)
+        .attr('stroke-width', 2)
+        .attr('opacity', 0.4)
+        .append('animate')
+        .attr('attributeName', 'r')
+        .attr('values', '10;32;10')
+        .attr('dur', '2s')
+        .attr('repeatCount', 'indefinite')
+
+      marker.select('circle')
+        .append('animate')
+        .attr('attributeName', 'opacity')
+        .attr('values', '0.6;0;0.6')
+        .attr('dur', '2s')
+        .attr('repeatCount', 'indefinite')
+
+      // 中心点
+      marker.append('circle')
+        .attr('r', 8)
+        .attr('fill', color)
+
+      // 外圈
+      marker.append('circle')
+        .attr('r', 12)
+        .attr('fill', 'none')
+        .attr('stroke', color)
+        .attr('stroke-width', 1.5)
+        .attr('opacity', 0.6)
+    })
+    
+    console.log('Hotspot markers rendered successfully')
+  } catch (error) {
+    console.error('Error rendering world map:', error)
   }
-
-  const markersGroup = svg.append('g').attr('class', 'hotspot-markers')
-
-  globalHotspots.slice(0, 8).forEach(spot => {
-    const coord = hotspotCoordinates[spot.region]
-    if (!coord) return
-
-    const [x, y] = projection([coord.lon, coord.lat]) || [0, 0]
-    const color = impactColors[spot.impact]
-
-    const marker = markersGroup.append('g')
-      .attr('class', `hotspot-marker ${spot.impact}`)
-      .attr('data-id', spot.id)
-      .attr('transform', `translate(${x}, ${y})`)
-
-    // 脉冲外圈
-    marker.append('circle')
-      .attr('r', 20)
-      .attr('fill', 'none')
-      .attr('stroke', color)
-      .attr('stroke-width', 2)
-      .attr('opacity', 0.4)
-      .append('animate')
-      .attr('attributeName', 'r')
-      .attr('values', '10;32;10')
-      .attr('dur', '2s')
-      .attr('repeatCount', 'indefinite')
-
-    marker.select('circle')
-      .append('animate')
-      .attr('attributeName', 'opacity')
-      .attr('values', '0.6;0;0.6')
-      .attr('dur', '2s')
-      .attr('repeatCount', 'indefinite')
-
-    // 中心点
-    marker.append('circle')
-      .attr('r', 8)
-      .attr('fill', color)
-
-    // 外圈
-    marker.append('circle')
-      .attr('r', 12)
-      .attr('fill', 'none')
-      .attr('stroke', color)
-      .attr('stroke-width', 1.5)
-      .attr('opacity', 0.6)
-  })
 }
 
 // ==================== 自动滚动功能 ====================
@@ -1571,17 +1599,33 @@ function startNewsRotation() {
 // ==================== 初始化 ====================
 
 async function init() {
+  console.log('Initializing Oritek World Monitor...')
   const app = document.querySelector<HTMLDivElement>('#app')
   if (app) {
-    app.innerHTML = renderApp()
-    bindEvents()
-    initCharts()
-    startAutoRefresh()
-    startAutoScroll() // 启动自动滚动
-    startNewsRotation() // 启动新闻轮播
+    try {
+      app.innerHTML = renderApp()
+      console.log('App rendered')
+      
+      bindEvents()
+      console.log('Events bound')
+      
+      initCharts()
+      console.log('Charts initialized')
+      
+      startAutoRefresh()
+      startAutoScroll() // 启动自动滚动
+      startNewsRotation() // 启动新闻轮播
+      console.log('Auto features started')
 
-    // 渲染真实世界地图
-    await renderRealWorldMap()
+      // 渲染真实世界地图
+      console.log('Starting world map rendering...')
+      await renderRealWorldMap()
+      console.log('World map rendering completed')
+    } catch (error) {
+      console.error('Error during initialization:', error)
+    }
+  } else {
+    console.error('App element not found')
   }
 }
 
