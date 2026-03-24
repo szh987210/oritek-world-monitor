@@ -24,9 +24,9 @@ let worldMapData: any = null
 async function loadWorldMapData() {
   if (worldMapData) return worldMapData
   try {
-    // 使用相对路径，适配 GitHub Pages 部署
-    const baseUrl = import.meta.env.BASE_URL || '/'
-    const response = await fetch(`${baseUrl}world-110m.json`)
+    // GitHub Pages 部署时，public 目录的文件在构建后位于根路径
+    // 使用相对路径 ./ 确保在不同部署路径下都能正确加载
+    const response = await fetch('./world-110m.json')
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
