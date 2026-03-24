@@ -4,14 +4,7 @@ import * as d3 from 'd3'
 import * as d3Geo from 'd3-geo'
 import * as topojson from 'topojson-client'
 import { 
-  fetchRealNews, 
-  fetchStockData, 
-  fetchIndustryIndices,
-  fetchGlobalHotspots,
-  dataRefreshManager,
-  API_CONFIG,
   type NewsItem,
-  type StockData,
   type IndustryIndex,
   type GlobalHotspot
 } from './dataService'
@@ -19,26 +12,6 @@ Chart.register(...registerables)
 
 // 世界地图数据缓存
 let worldMapData: any = null
-
-// 加载世界地图数据
-async function loadWorldMapData() {
-  if (worldMapData) return worldMapData
-  try {
-    // GitHub Pages 部署时，public 目录的文件在构建后位于根路径
-    // 使用相对路径 ./ 确保在不同部署路径下都能正确加载
-    const response = await fetch('./world-110m.json')
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
-    }
-    const topology = await response.json()
-    // 将 TopoJSON 转换为 GeoJSON
-    worldMapData = topojson.feature(topology, topology.objects.countries)
-    return worldMapData
-  } catch (error) {
-    console.error('Failed to load world map data:', error)
-    return null
-  }
-}
 
 // ==================== 本地数据类型定义 ====================
 interface AlertItem {
@@ -80,16 +53,6 @@ interface PolicyItem {
   title: string
   description: string
   urgent: boolean
-}
-
-// 从 dataService 导入的类型
-// NewsItem, IndustryIndex, GlobalHotspot 已从 './dataService' 导入
-  title: string
-  region: string
-  category: 'conflict' | 'diplomacy' | 'economy' | 'tech'
-  impact: 'high' | 'medium' | 'low'
-  time: string
-  summary: string
 }
 
 // ==================== 模拟数据 ====================
@@ -1441,7 +1404,23 @@ async function renderRealWorldMap() {
   console.log('Starting to render world map...')
   
   try {
-    const mapData = await loadWorldMapData()
+    // 直接内联加载地图数据，避免 Tree Shaking
+    let mapData = worldMapData
+    if (!mapData) {
+      try {
+        const response = await fetch('/oritek-world-monitor/world-110m.json')
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const topology = await response.json()
+        mapData = topojson.feature(topology, topology.objects.countries)
+        worldMapData = mapData
+      } catch (error) {
+        console.error('Failed to load world map data:', error)
+        return
+      }
+    }
+    
     if (!mapData) {
       console.error('Failed to load map data')
       return

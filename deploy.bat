@@ -1,55 +1,42 @@
 @echo off
-chcp 65001 >nul
-echo ==========================================
-echo   Oritek World Monitor - GitHub 部署脚本
-echo ==========================================
+echo ========================================
+echo  欧冶世界监测台 - 地图修复版部署
+echo ========================================
 echo.
 
-:: 检查是否输入了用户名
-if "%~1"=="" (
-    echo 使用方法: deploy.bat YOUR_GITHUB_USERNAME
-    echo 示例: deploy.bat zhangsan
-    pause
-    exit /b 1
+cd /d "%~dp0"
+
+echo [1/4] 安装依赖...
+call npm install
+if errorlevel 1 goto error
+
+echo [2/4] 构建项目...
+call npm run build
+if errorlevel 1 goto error
+
+echo [3/4] 初始化 Git 仓库（仅首次）...
+if not exist ".git" (
+    git init
+    git branch -M main
+    git remote add origin https://github.com/szh987210/oritek-world-monitor.git
 )
 
-set USERNAME=%~1
-
-echo [1/6] 初始化 Git 仓库...
-git init
-
-echo.
-echo [2/6] 配置 Git 用户信息...
-git config user.name "%USERNAME%"
-git config user.email "%USERNAME%@users.noreply.github.com"
-
-echo.
-echo [3/6] 添加所有文件...
+echo [4/4] 推送到 GitHub...
 git add .
+git commit -m "fix: 修复地图数据加载路径"
+git push -u origin main --force
 
 echo.
-echo [4/6] 提交代码...
-git commit -m "Initial commit: Oritek World Monitor v1.0"
+echo ========================================
+echo  部署完成！请等待约1分钟后刷新页面
+echo ========================================
+goto end
 
+:error
 echo.
-echo [5/6] 重命名分支...
-git branch -M main
+echo [错误] 构建或部署失败，请检查错误信息
+pause
+exit /b 1
 
-echo.
-echo [6/6] 关联并推送到 GitHub...
-git remote add origin https://github.com/%USERNAME%/oritek-world-monitor.git
-git push -u origin main
-
-echo.
-echo ==========================================
-echo   部署完成！
-echo ==========================================
-echo.
-echo 请按以下步骤操作：
-echo 1. 访问 https://github.com/%USERNAME%/oritek-world-monitor
-echo 2. 点击 Settings -> Pages
-echo 3. Source 选择 "GitHub Actions"
-echo 4. 等待 1-2 分钟后访问：
-echo    https://%USERNAME%.github.io/oritek-world-monitor/
-echo.
+:end
 pause
