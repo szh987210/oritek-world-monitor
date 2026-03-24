@@ -337,6 +337,7 @@ function renderWorldMap(): string {
     tech: '💡'
   }
 
+  // 简化版地图渲染，先确保基本结构正确显示
   return `
     <div class="world-map-container">
       <div class="world-map-header">
@@ -351,7 +352,7 @@ function renderWorldMap(): string {
         </div>
       </div>
       <div class="world-map" id="worldMapContainer">
-        <svg viewBox="0 0 1050 520" class="world-map-svg" preserveAspectRatio="xMidYMid meet" id="worldMapSvg">
+        <svg viewBox="0 0 1050 520" class="world-map-svg" preserveAspectRatio="xMidYMid meet" id="worldMapSvg" style="width:100%;height:300px;background:rgba(0,20,40,0.3);">
           <defs>
             <radialGradient id="oceanGradient" cx="50%" cy="50%" r="70%">
               <stop offset="0%" stop-color="rgba(0, 40, 100, 0.25)" />
