@@ -62,7 +62,7 @@ export interface GlobalHotspot {
   id: string
   title: string
   region: string
-  category: 'conflict' | 'diplomacy' | 'economy' | 'tech'
+  category: 'conflict' | 'diplomacy' | 'economy' | 'tech' | 'policy'
   impact: 'high' | 'medium' | 'low'
   time: string
   summary: string

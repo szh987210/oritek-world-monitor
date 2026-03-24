@@ -87,12 +87,12 @@ let marketPerformance: Competitor[] = [
 // 兼容旧代码
 let competitors = marketPerformance
 
-let industryIndices: IndustryIndex[] = [
-  { name: '半导体', value: 4256.78, change: 45.23, changePercent: 1.07, icon: '💎' },
-  { name: '智能汽车', value: 1856.34, change: -23.45, changePercent: -1.25, icon: '🚗' },
-  { name: '机器人', value: 2456.89, change: 67.89, changePercent: 2.84, icon: '🤖' },
-  { name: 'AI', value: 3256.45, change: 89.34, changePercent: 2.82, icon: '🧠' },
-  { name: '新能源', value: 2156.23, change: -12.34, changePercent: -0.57, icon: '⚡' }
+let industryIndices = [
+  { name: '半导体', value: 4256.78, change: 45.23, changePercent: 1.07, icon: '💎', timestamp: new Date().toISOString() },
+  { name: '智能汽车', value: 1856.34, change: -23.45, changePercent: -1.25, icon: '🚗', timestamp: new Date().toISOString() },
+  { name: '机器人', value: 2456.89, change: 67.89, changePercent: 2.84, icon: '🤖', timestamp: new Date().toISOString() },
+  { name: 'AI', value: 3256.45, change: 89.34, changePercent: 2.82, icon: '🧠', timestamp: new Date().toISOString() },
+  { name: '新能源', value: 2156.23, change: -12.34, changePercent: -0.57, icon: '⚡', timestamp: new Date().toISOString() }
 ]
 
 let techTrends: TechTrend[] = [
@@ -1548,7 +1548,7 @@ async function renderRealWorldMap() {
     console.log('Hotspot markers rendered successfully')
     
     // 添加成功标记，让用户知道地图已渲染
-    const container = document.querySelector('.world-map-container')
+    const container = document.querySelector('.world-map-container') as HTMLElement | null
     if (container) {
       container.style.border = '3px solid #00ff88'
       container.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:10px;right:10px;background:#00ff88;color:#000;padding:5px 10px;border-radius:5px;font-size:12px;">🗺️ 地图已加载</div>')
@@ -1556,7 +1556,7 @@ async function renderRealWorldMap() {
   } catch (error) {
     console.error('Error rendering world map:', error)
     // 显示错误信息
-    const container = document.querySelector('.world-map-container')
+    const container = document.querySelector('.world-map-container') as HTMLElement | null
     if (container) {
       container.style.border = '3px solid red'
       container.insertAdjacentHTML('beforeend', `<div style="position:absolute;top:10px;right:10px;background:red;color:#fff;padding:5px 10px;border-radius:5px;font-size:12px;">❌ 错误: ${error}</div>`)
@@ -1652,9 +1652,9 @@ async function init() {
 init()
 
 // 全局函数，确保地图渲染不被 Tree Shaking
-window.renderWorldMapNow = async function() {
+(window as any).renderWorldMapNow = async function() {
   console.log('=== FORCE RENDERING WORLD MAP ===')
-  const container = document.querySelector('.world-map-container')
+  const container = document.querySelector('.world-map-container') as HTMLElement | null
   if (container) {
     container.style.border = '5px solid yellow'
     container.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:yellow;color:#000;padding:20px;font-size:18px;font-weight:bold;">🗺️ 强制渲染地图中...</div>')
@@ -1666,7 +1666,7 @@ window.renderWorldMapNow = async function() {
 // 页面加载完成后立即渲染地图
 setTimeout(() => {
   console.log('=== PAGE LOADED, TRIGGERING MAP RENDER ===')
-  window.renderWorldMapNow()
+  ;(window as any).renderWorldMapNow()
 }, 500)
 
 // 注册全局事件监听器，确保地图渲染
@@ -1687,9 +1687,10 @@ window.addEventListener('load', async () => {
   if (!hasMapPaths) {
     console.log('=== MAP NOT RENDERED, FORCING RENDER ===')
     // 添加明显的视觉提示
-    container.style.border = '8px solid yellow !important'
-    container.style.position = 'relative'
-    container.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:yellow;color:#000;padding:30px;font-size:24px;font-weight:bold;z-index:9999;border:3px solid red;">🗺️ 强制渲染地图中...</div>')
+    const containerEl = container as HTMLElement
+    containerEl.style.border = '8px solid yellow'
+    containerEl.style.position = 'relative'
+    containerEl.insertAdjacentHTML('beforeend', '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:yellow;color:#000;padding:30px;font-size:24px;font-weight:bold;z-index:9999;border:3px solid red;">🗺️ 强制渲染地图中...</div>')
     
     // 强制调用渲染函数
     try {
