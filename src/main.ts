@@ -1427,9 +1427,26 @@ async function renderRealWorldMap() {
     }
     console.log('Map data loaded successfully:', mapData.features.length, 'features')
 
+    // 确保 SVG 元素存在
+    const svgContainer = document.getElementById('worldMapContainer')
+    if (!svgContainer) {
+      console.error('Map container #worldMapContainer not found')
+      // 创建一个提示信息
+      document.querySelector('.world-map-container')?.insertAdjacentHTML('beforeend', 
+        '<div style="color: red; padding: 20px;">地图容器未找到</div>')
+      return
+    }
+    
     const svg = d3.select('#worldMapSvg')
     if (svg.empty()) {
       console.error('SVG element #worldMapSvg not found')
+      // 创建 SVG 元素
+      const newSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+      newSvg.setAttribute('id', 'worldMapSvg')
+      newSvg.setAttribute('viewBox', '0 0 1050 520')
+      newSvg.setAttribute('class', 'world-map-svg')
+      newSvg.style.cssText = 'width:100%;height:300px;background:rgba(0,20,40,0.3);'
+      svgContainer.appendChild(newSvg)
       return
     }
     console.log('SVG element found')
