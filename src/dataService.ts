@@ -121,26 +121,36 @@ const BASE_INDICES: IndustryIndex[] = [
 
 // 新闻数据模板（用于生成动态新闻）
 const NEWS_TEMPLATES: NewsItem[] = [
-  { id: '1', title: '英伟达发布新一代AI芯片，算力提升显著', source: '36氪', time: '10:32', category: 'competitor', priority: 'critical', summary: '英伟达 GTC 大会发布新一代 GPU，专为自动驾驶优化' },
-  { id: '2', title: '小米汽车销量创新高，智驾需求强劲', source: '汽车之家', time: '09:45', category: 'market', priority: 'info', summary: '小米 SU7 月交付量突破 2 万台' },
-  { id: '3', title: '美国拟扩大对华半导体出口管制范围', source: '财联社', time: '08:20', category: 'policy', priority: 'critical', summary: '新规可能影响 14nm 以下先进制程设备' },
-  { id: '4', title: '地平线征程芯片通过车规认证', source: '公司官网', time: '昨天', category: 'competitor', priority: 'warning', summary: '量产准备就绪，预计 Q2 批量出货' },
-  { id: '5', title: '台积电先进制程产能持续紧张', source: '电子时报', time: '昨天', category: 'supply', priority: 'warning', summary: '3nm 订单已排至 2026 年底' },
-  { id: '6', title: 'Mobileye 与德系豪华品牌达成合作', source: '路透社', time: '2天前', category: 'competitor', priority: 'info', summary: 'EyeQ6 芯片将用于下一代高端车型' },
-  { id: '7', title: '黑芝麻智能通过港交所聆讯', source: '证券时报', time: '2天前', category: 'market', priority: 'warning', summary: '国产智驾芯片厂商加速上市进程' },
-  { id: '8', title: '华为昇腾芯片性能大幅提升', source: 'TechWeb', time: '3天前', category: 'competitor', priority: 'critical', summary: '国产 AI 芯片竞争力持续增强' },
-  { id: '9', title: '欧盟《芯片法案》补贴计划推进', source: '彭博社', time: '3天前', category: 'policy', priority: 'info', summary: '430 亿欧元支持本土芯片制造业' },
-  { id: '10', title: '比亚迪自研智驾芯片进展迅速', source: '汽车之家', time: '4天前', category: 'market', priority: 'warning', summary: '垂直整合趋势加速，供应链格局生变' },
+  { id: '1', title: '英伟达发布新一代自动驾驶芯片Thor，算力达2000 TOPS', source: '36氪', time: '10:32', category: 'competitor', priority: 'critical', summary: '英伟达 GTC 大会发布新一代 GPU，专为自动驾驶优化，直接对标地平线征程6' },
+  { id: '2', title: '小米汽车销量创新高，智驾需求持续强劲', source: '汽车之家', time: '09:45', category: 'market', priority: 'info', summary: '小米 SU7 月交付量突破 2 万台，智驾功能成核心卖点' },
+  { id: '3', title: '美国拟扩大对华半导体出口管制范围', source: '财联社', time: '08:20', category: 'policy', priority: 'critical', summary: '新规可能影响 14nm 以下先进制程设备，国产替代压力加大' },
+  { id: '4', title: '地平线征程6芯片通过多家主机厂车规认证', source: '公司官网', time: '11:15', category: 'competitor', priority: 'warning', summary: '量产准备就绪，预计 Q2 批量出货，目标年出货量 500 万颗' },
+  { id: '5', title: '台积电先进制程产能持续紧张，汽车芯片交期延长', source: '电子时报', time: '昨天', category: 'supply', priority: 'warning', summary: '3nm 订单已排至 2026 年底，2nm 试产良率超预期' },
+  { id: '6', title: 'Mobileye Q1营收超预期，与宝马合作深化', source: '路透社', time: '2天前', category: 'competitor', priority: 'info', summary: 'EyeQ6 芯片将用于下一代高端车型，年收入同比增长 24%' },
+  { id: '7', title: '黑芝麻智能通过港交所聆讯，最快年内上市', source: '证券时报', time: '2天前', category: 'market', priority: 'warning', summary: '国产智驾芯片厂商加速上市进程，募资约 15 亿港元' },
+  { id: '8', title: '华为昇腾910C芯片性能超越英伟达A100', source: 'TechWeb', time: '3天前', category: 'competitor', priority: 'critical', summary: '国产 AI 芯片竞争力持续增强，挑战英伟达数据中心霸主地位' },
+  { id: '9', title: '欧盟《芯片法案》补贴计划首批项目落地', source: '彭博社', time: '3天前', category: 'policy', priority: 'info', summary: '430 亿欧元支持本土芯片制造业，台积电德国工厂获批' },
+  { id: '10', title: '比亚迪自研智驾芯片"璇玑"流片成功', source: '汽车之家', time: '4天前', category: 'market', priority: 'warning', summary: '垂直整合趋势加速，供应链格局或将生变' },
+  { id: '11', title: '英特尔Lunar Lake芯片发布，集成NPU算力大幅提升', source: 'AnandTech', time: '4天前', category: 'tech', priority: 'info', summary: '端侧 AI 算力竞争进入新阶段，X86 生态 AI 化加速' },
+  { id: '12', title: 'RISC-V架构在汽车芯片领域渗透加速', source: '半导体行业观察', time: '5天前', category: 'tech', priority: 'info', summary: '多家汽车主机厂表示将优先选用 RISC-V 架构 MCU' },
+  { id: '13', title: '韩国三星新一代HBM4存储正式量产', source: '韩国先驱报', time: '1天前', category: 'supply', priority: 'warning', summary: 'AI训练加速器存储带宽大幅提升，SK海力士同步跟进' },
+  { id: '14', title: '日本政府宣布新一轮半导体补贴，总额超1万亿日元', source: '日经新闻', time: '1天前', category: 'policy', priority: 'info', summary: '重点扶持 Rapidus 先进制程和汽车芯片企业' },
+  { id: '15', title: '蔚来ET9智驾系统实测，端到端大模型效果优异', source: '懂车帝', time: '今天', category: 'market', priority: 'info', summary: '纯视觉方案 + 端到端大模型成为国内智驾主流方向' },
+  { id: '16', title: 'AI芯片全球短缺延续，订单能见度延伸至18个月', source: 'Digitimes', time: '今天', category: 'supply', priority: 'critical', summary: 'H100/H200 需求远超供给，客户转向国产替代方案' },
 ]
 
 // 全球热点模板
 const HOTSPOT_TEMPLATES: GlobalHotspot[] = [
-  { id: '1', title: '美国对华半导体出口管制升级', region: '美国', category: 'policy', impact: 'high', time: '2小时前', summary: '新规将影响先进制程设备出口' },
-  { id: '2', title: '欧盟芯片法案补贴计划推进', region: '欧洲', category: 'policy', impact: 'medium', time: '4小时前', summary: '430 亿欧元支持本土芯片制造' },
-  { id: '3', title: '台积电海外工厂建设进展', region: '美国', category: 'economy', impact: 'medium', time: '6小时前', summary: '亚利桑那工厂预计 2025 年量产' },
-  { id: '4', title: '日本扩大对华芯片设备出口限制', region: '日本', category: 'policy', impact: 'high', time: '8小时前', summary: '涉及多种半导体制造设备' },
-  { id: '5', title: '韩国三星先进制程良率提升', region: '韩国', category: 'tech', impact: 'medium', time: '10小时前', summary: '3nm 良率持续改善' },
-  { id: '6', title: '中东主权基金加大芯片投资', region: '中东', category: 'economy', impact: 'medium', time: '12小时前', summary: '阿联酋投资百亿美元建设芯片厂' },
+  { id: '1', title: '美国对华半导体出口管制再度升级', region: '美国', category: 'policy', impact: 'high', time: '2小时前', summary: '新规将影响先进制程设备，EDA软件或纳入管控' },
+  { id: '2', title: '欧盟芯片法案补贴计划首批落地', region: '欧洲', category: 'policy', impact: 'medium', time: '4小时前', summary: '430 亿欧元支持本土芯片制造，台积电德国获批' },
+  { id: '3', title: '台积电海外工厂建设提速', region: '美国', category: 'economy', impact: 'medium', time: '6小时前', summary: '亚利桑那、日本、德国三地工厂同步推进' },
+  { id: '4', title: '日本扩大半导体设备对华出口限制', region: '日本', category: 'policy', impact: 'high', time: '8小时前', summary: '涉及 23 种先进半导体制造设备' },
+  { id: '5', title: '韩国三星先进制程良率持续提升', region: '韩国', category: 'tech', impact: 'medium', time: '10小时前', summary: '3nm GAA 工艺良率已超 60%，挑战台积电地位' },
+  { id: '6', title: '中东主权基金大举投资芯片产业', region: '中东', category: 'economy', impact: 'medium', time: '12小时前', summary: '沙特阿美联合 TSMC 筹建中东首家先进晶圆厂' },
+  { id: '7', title: '中国新能源汽车出口高速增长', region: '中国', category: 'economy', impact: 'medium', time: '3小时前', summary: 'Q1 出口同比增长 45%，东南亚和欧洲市场持续拓展' },
+  { id: '8', title: '台积电美国工厂良率问题导致投产延期', region: '美国', category: 'tech', impact: 'high', time: '昨天', summary: '亚利桑那工厂 4nm 制程良率不达标，投产推迟至 2027' },
+  { id: '9', title: '印度半导体激励政策吸引多家厂商', region: '印度', category: 'economy', impact: 'medium', time: '5小时前', summary: '塔塔集团与 PSMC 合作建厂，印度芯片雄心初见成效' },
+  { id: '10', title: '英国脱欧后科技产业重振计划发布', region: '欧洲', category: 'policy', impact: 'low', time: '15小时前', summary: 'ARM 再度成为英国科技王冠，政府加大半导体研发投入' },
 ]
 
 // ==================== 数据生成函数 ====================
@@ -150,78 +160,62 @@ const HOTSPOT_TEMPLATES: GlobalHotspot[] = [
  */
 function generateFluctuation(baseValue: number, volatility: number = 0.02): number {
   const change = (Math.random() - 0.5) * 2 * volatility * baseValue
-  return baseValue + change
+  return parseFloat((baseValue + change).toFixed(2))
 }
 
 /**
- * 生成动态新闻数据
+ * 生成动态新闻数据 - 每次刷新使用不同的新闻组合
  */
 function generateDynamicNews(): NewsItem[] {
   const now = new Date()
-  const hours = now.getHours()
-  const minutes = now.getMinutes()
   
-  // 基于当前时间生成不同的新闻组合
-  const timeSeed = hours * 60 + minutes
-  const newsCount = 6 + (timeSeed % 4) // 6-9条新闻
+  // 完全随机打乱模板顺序，确保每次内容不同
+  const shuffled = [...NEWS_TEMPLATES].sort(() => Math.random() - 0.5)
+  const newsCount = 7 + Math.floor(Math.random() * 4) // 7-10条新闻
   
-  const dynamicNews: NewsItem[] = []
-  const usedIndices = new Set<number>()
+  const timeFormats = [
+    '刚刚', '1分钟前', '3分钟前', '5分钟前', '8分钟前', '12分钟前',
+    '15分钟前', '20分钟前', '30分钟前', '45分钟前', '1小时前',
+    '2小时前', '3小时前', '5小时前', '8小时前', '昨天', '2天前'
+  ]
   
-  for (let i = 0; i < newsCount; i++) {
-    let templateIndex: number
-    do {
-      templateIndex = Math.floor(Math.random() * NEWS_TEMPLATES.length)
-    } while (usedIndices.has(templateIndex) && usedIndices.size < NEWS_TEMPLATES.length)
-    
-    usedIndices.add(templateIndex)
-    const template = NEWS_TEMPLATES[templateIndex]
-    
-    // 生成动态时间
-    const timeOffset = Math.floor(Math.random() * 120) // 0-120分钟前
-    let timeStr: string
-    if (timeOffset < 60) {
-      timeStr = `${timeOffset}分钟前`
-    } else if (timeOffset < 120) {
-      timeStr = '1小时前'
-    } else {
-      timeStr = '2小时前'
-    }
-    
-    dynamicNews.push({
-      ...template,
-      id: `news-${now.getTime()}-${i}`,
-      time: timeStr,
-      // 随机调整优先级
-      priority: Math.random() > 0.7 ? 'critical' : (Math.random() > 0.5 ? 'warning' : 'info')
-    })
-  }
-  
-  return dynamicNews.sort((a, b) => {
-    // 按优先级和时间排序
-    const priorityOrder = { critical: 0, warning: 1, info: 2 }
-    return priorityOrder[a.priority] - priorityOrder[b.priority]
+  return shuffled.slice(0, newsCount).map((template, i) => ({
+    ...template,
+    id: `news-${now.getTime()}-${i}`,
+    time: timeFormats[Math.floor(Math.random() * timeFormats.length)],
+    // 随机调整优先级（但保持原始基调）
+    priority: (Math.random() > 0.8 
+      ? 'critical' 
+      : (Math.random() > 0.4 ? template.priority : 'info')
+    ) as 'critical' | 'warning' | 'info'
+  })).sort((a, b) => {
+    const order = { critical: 0, warning: 1, info: 2 }
+    return order[a.priority] - order[b.priority]
   })
 }
 
 /**
- * 生成动态股票数据
+ * 生成动态股票数据 - 每次刷新产生明显价格波动
  */
 function generateDynamicStocks(): Record<string, StockData> {
   const dynamicStocks: Record<string, StockData> = {}
   const now = new Date().toISOString()
+  // 市场整体情绪（随机多/空倾向）
+  const marketSentiment = (Math.random() - 0.45) * 0.01 // -0.45% ~ +0.55% 偏多
   
   for (const [symbol, baseData] of Object.entries(BASE_STOCK_DATA)) {
-    const volatility = 0.015 // 1.5% 波动率
-    const newPrice = generateFluctuation(baseData.price, volatility)
-    const priceChange = newPrice - baseData.price
-    const changePercent = (priceChange / baseData.price) * 100
+    const volatility = 0.02 + Math.random() * 0.015 // 2%-3.5% 波动率，更明显
+    const sentimentBias = baseData.price * marketSentiment
+    const randomChange = (Math.random() - 0.5) * 2 * volatility * baseData.price
+    const totalChange = randomChange + sentimentBias
+    const newPrice = parseFloat((baseData.price + totalChange).toFixed(2))
+    const changePercent = parseFloat(((totalChange / baseData.price) * 100).toFixed(2))
     
     dynamicStocks[symbol] = {
       ...baseData,
       price: newPrice,
-      change: priceChange,
-      changePercent: changePercent,
+      change: parseFloat(totalChange.toFixed(2)),
+      changePercent,
       timestamp: now
     }
   }
@@ -230,66 +224,50 @@ function generateDynamicStocks(): Record<string, StockData> {
 }
 
 /**
- * 生成动态行业指数
+ * 生成动态行业指数 - 每次刷新有明显变动
  */
 function generateDynamicIndices(): IndustryIndex[] {
   const now = new Date().toISOString()
+  const marketTrend = (Math.random() - 0.4) * 0.015 // 偏多倾向
   
   return BASE_INDICES.map(index => {
-    const volatility = 0.008 // 0.8% 波动率
-    const newValue = generateFluctuation(index.value, volatility)
-    const valueChange = newValue - index.value
-    const changePercent = (valueChange / index.value) * 100
+    const volatility = 0.01 + Math.random() * 0.01 // 1%-2% 波动率
+    const trendBias = index.value * marketTrend
+    const randomChange = (Math.random() - 0.5) * 2 * volatility * index.value
+    const totalChange = randomChange + trendBias
+    const newValue = parseFloat((index.value + totalChange).toFixed(2))
+    const changePercent = parseFloat(((totalChange / index.value) * 100).toFixed(2))
     
     return {
       ...index,
       value: newValue,
-      change: valueChange,
-      changePercent: changePercent,
+      change: parseFloat(totalChange.toFixed(2)),
+      changePercent,
       timestamp: now
     }
   })
 }
 
 /**
- * 生成动态全球热点
+ * 生成动态全球热点 - 每次随机组合不同热点
  */
 function generateDynamicHotspots(): GlobalHotspot[] {
   const now = new Date()
-  const dynamicHotspots: GlobalHotspot[] = []
   
-  // 随机选择 4-6 个热点
-  const count = 4 + Math.floor(Math.random() * 3)
-  const usedIndices = new Set<number>()
+  // 完全随机打乱，取 5-7 个
+  const shuffled = [...HOTSPOT_TEMPLATES].sort(() => Math.random() - 0.5)
+  const count = 5 + Math.floor(Math.random() * 3)
   
-  for (let i = 0; i < count; i++) {
-    let templateIndex: number
-    do {
-      templateIndex = Math.floor(Math.random() * HOTSPOT_TEMPLATES.length)
-    } while (usedIndices.has(templateIndex))
-    
-    usedIndices.add(templateIndex)
-    const template = HOTSPOT_TEMPLATES[templateIndex]
-    
-    // 生成动态时间
-    const timeOffset = Math.floor(Math.random() * 720) // 0-12小时前
-    let timeStr: string
-    if (timeOffset < 60) {
-      timeStr = `${timeOffset}分钟前`
-    } else if (timeOffset < 360) {
-      timeStr = `${Math.floor(timeOffset / 60)}小时前`
-    } else {
-      timeStr = '今天'
-    }
-    
-    dynamicHotspots.push({
-      ...template,
-      id: `hotspot-${now.getTime()}-${i}`,
-      time: timeStr
-    })
-  }
+  const timeFormats = [
+    '刚刚', '15分钟前', '30分钟前', '1小时前', '2小时前',
+    '3小时前', '5小时前', '8小时前', '12小时前', '今天', '昨天'
+  ]
   
-  return dynamicHotspots
+  return shuffled.slice(0, count).map((template, i) => ({
+    ...template,
+    id: `hotspot-${now.getTime()}-${i}`,
+    time: timeFormats[Math.floor(Math.random() * timeFormats.length)]
+  }))
 }
 
 // ==================== 数据获取函数 ====================

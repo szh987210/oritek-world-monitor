@@ -718,37 +718,73 @@ body {
   filter: drop-shadow(0 0 10px rgba(94, 234, 212, 0.4));
 }
 
+/* D3 渲染的国家路径 */
+path.country {
+  transition: fill 0.2s ease;
+}
+
+path.country:hover {
+  fill: #243d58 !important;
+  stroke: rgba(0, 200, 255, 0.6) !important;
+}
+
 /* 热点标记动画 */
 .hotspot-marker {
   cursor: pointer;
 }
 
 .hotspot-marker:hover {
-  filter: drop-shadow(0 0 15px currentColor);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
-.hotspot-marker.high circle[fill] {
+.hotspot-marker.impact-high circle {
+  stroke: var(--oritek-red);
+}
+.hotspot-marker.impact-high circle[fill="#ff3366"],
+.hotspot-marker.impact-high circle[fill] {
   fill: var(--oritek-red);
 }
 
-.hotspot-marker.medium circle[fill] {
-  fill: var(--oritek-orange);
-}
-
-.hotspot-marker.low circle[fill] {
-  fill: var(--oritek-cyan);
-}
-
-.hotspot-marker.high circle[stroke] {
-  stroke: var(--oritek-red);
-}
-
-.hotspot-marker.medium circle[stroke] {
+.hotspot-marker.impact-medium circle {
   stroke: var(--oritek-orange);
 }
 
-.hotspot-marker.low circle[stroke] {
+.hotspot-marker.impact-low circle {
   stroke: var(--oritek-cyan);
+}
+
+/* 地图 tooltip */
+#mapTooltip {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.map-tooltip-region {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--oritek-cyan);
+  margin-bottom: 4px;
+}
+
+.map-tooltip-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.map-tooltip-summary {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.map-tooltip-time {
+  font-size: 10px;
+  color: var(--text-muted);
 }
 
 /* 热点信息卡片覆盖层 */
