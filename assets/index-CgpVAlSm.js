@@ -78,17 +78,28 @@
         <button class="header-btn primary">+ 新建监控</button>
       </div>
     </header>
-  `}function fv(){return`
+  `}function fv(){let e=[{flag:`🇺🇸`,text:`NVIDIA GTC: Blackwell Ultra GPU delivers 4x AI performance boost`},{flag:`🇨🇳`,text:`地平线征程6芯片获多家主机厂量产定点，Q2批量出货`},{flag:`🇬🇧`,text:`Reuters: US tightens AI chip export controls, 120+ countries affected`},{flag:`🇯🇵`,text:`日经新闻：日本政府追加1万亿日元半导体补贴，扶持Rapidus先进制程`},{flag:`🇰🇷`,text:`KBS: Samsung HBM4 memory enters mass production for AI training servers`},{flag:`🇨🇳`,text:`华为昇腾910C算力测试超越英伟达A100，国产AI芯片竞争力提升`},{flag:`🇩🇪`,text:`Handelsblatt: TSMC Dresden fab on schedule, EU Chips Act funding secured`},{flag:`🇨🇳`,text:`比亚迪自研璇玑芯片流片成功，垂直整合战略加速落地`},{flag:`🇺🇸`,text:`WSJ: Apple M4 chip mass production begins, TSMC 3nm yield exceeds 70%`},{flag:`🇨🇳`,text:`工信部：智能网联汽车渗透率突破50%，本土芯片供应链持续完善`},{flag:`🇺🇸`,text:`Bloomberg: Qualcomm Snapdragon X Elite gains enterprise adoption momentum`},{flag:`🇨🇳`,text:`寒武纪MLU370出货量破百万，云端推理市场份额持续扩大`},{flag:`🇮🇳`,text:`ET: Tata Electronics begins iPhone component manufacturing in India`},{flag:`🇨🇳`,text:`Digitimes：台积电CoWoS封装产能翻倍，AI算力供给瓶颈有望缓解`},{flag:`🇸🇦`,text:`Arab News: Saudi Aramco invests $4B in advanced semiconductor manufacturing`}],t=[...e,...e];return`
     <div class="ticker-bar">
       <div class="ticker-label">产业指数</div>
       <div class="ticker-items">
-        ${$_.map(e=>`
+        ${[...$_,...$_].map(e=>`
           <div class="ticker-item">
             <span class="ticker-icon">${e.icon}</span>
             <span class="ticker-name">${e.name}</span>
             <span class="ticker-value">${e.value.toFixed(2)}</span>
             <span class="ticker-change ${e.change>=0?`up`:`down`}">${e.change>=0?`↑`:`↓`} ${Math.abs(e.changePercent).toFixed(2)}%</span>
           </div>
+        `).join(``)}
+      </div>
+    </div>
+    <div class="news-ticker-bar">
+      <div class="news-ticker-label">全球资讯</div>
+      <div class="news-ticker-track">
+        ${t.map(e=>`
+          <span class="news-ticker-item">
+            <span class="news-ticker-flag">${e.flag}</span>
+            <span class="news-ticker-text">${e.text}</span>
+          </span>
         `).join(``)}
       </div>
     </div>
@@ -105,6 +116,7 @@
           <span class="legend-item"><span class="legend-dot low"></span>低影响</span>
         </div>
       </div>
+      <!-- 地图区域 - 全宽展示 -->
       <div class="world-map" id="worldMapContainer">
         <svg viewBox="0 0 1600 800" class="world-map-svg" preserveAspectRatio="xMidYMid meet" id="worldMapSvg" style="width:100%;height:100%;display:block;background:rgba(0,10,30,0.4);">
           <defs>
@@ -115,24 +127,22 @@
           </defs>
           <rect class="map-bg" width="1600" height="800" fill="url(#oceanGradient)" />
         </svg>
-        
-        <!-- 热点 tooltip -->
+        <!-- 地图 tooltip -->
         <div id="mapTooltip" style="display:none;position:absolute;background:rgba(5,15,35,0.95);border:1px solid rgba(0,200,255,0.3);border-radius:6px;padding:10px 14px;pointer-events:none;z-index:100;min-width:200px;max-width:280px;backdrop-filter:blur(8px);"></div>
-        
-        <!-- 热点信息卡片 - 右侧悬浮 -->
-        <div class="hotspot-overlay">
-          ${cv.slice(0,6).map(t=>`
-            <div class="hotspot-card ${t.impact}" data-region="${t.region}">
-              <div class="hotspot-card-header">
-                <span class="hotspot-card-icon">${e[t.category]}</span>
-                <span class="hotspot-card-region">${t.region}</span>
-                <span class="hotspot-card-time">${t.time}</span>
-              </div>
-              <div class="hotspot-card-title">${t.title}</div>
-              <div class="hotspot-card-summary">${t.summary}</div>
+      </div>
+      <!-- 热点卡片区域 - 地图下方横向滚动 -->
+      <div class="hotspot-list">
+        ${cv.slice(0,8).map(t=>`
+          <div class="hotspot-card ${t.impact}" data-region="${t.region}">
+            <div class="hotspot-card-header">
+              <span class="hotspot-card-icon">${e[t.category]}</span>
+              <span class="hotspot-card-region">${t.region}</span>
+              <span class="hotspot-card-time">${t.time}</span>
             </div>
-          `).join(``)}
-        </div>
+            <div class="hotspot-card-title">${t.title}</div>
+            <div class="hotspot-card-summary">${t.summary}</div>
+          </div>
+        `).join(``)}
       </div>
     </div>
   `}async function mv(){if(V_){console.log(`Map rendering already in progress, skipping...`);return}V_=!0,console.log(`=== Starting D3 World Map Render ===`);try{if(!document.getElementById(`worldMapSvg`)){console.error(`SVG element #worldMapSvg not found in DOM`),V_=!1;return}let e=Vd(`#worldMapSvg`),t=1600,n=d_().scale(260).translate([t/2,420]),r=Gg().projection(n);e.selectAll(`g`).remove(),e.selectAll(`.hotspot-markers`).remove(),e.select(`rect.map-bg`).empty()&&e.insert(`rect`,`:first-child`).attr(`class`,`map-bg`).attr(`width`,t).attr(`height`,800).attr(`fill`,`rgba(0, 20, 40, 0.6)`);let i=e.append(`g`).attr(`id`,`mapGroup`),a=B_;if(!a){console.log(`Loading map TopoJSON data...`);let e=[window.location.hostname.includes(`github.io`)?`/oritek-world-monitor/world-110m.json`:`/world-110m.json`,`https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json`,`https://unpkg.com/world-atlas@2.0.2/countries-110m.json`];for(let t of e)try{console.log(`Fetching map data from:`,t);let e=await fetch(t);if(e.ok){let n=await e.json();if(n.objects&&n.objects.countries){a=v_(n,n.objects.countries),B_=a,console.log(`✅ Map loaded from ${t}: ${a.features.length} countries`);break}else if(n.objects&&n.objects.land){a=v_(n,n.objects.land),B_=a,console.log(`✅ Map loaded (land) from ${t}`);break}}}catch(e){console.warn(`Failed to load from:`,t,e.message)}}if(a&&a.features){let e=a.features;i.selectAll(`path.country`).data(e).enter().append(`path`).attr(`class`,`country`).attr(`d`,e=>r(e)||``).attr(`fill`,`#1a2d45`).attr(`stroke`,`rgba(0, 200, 255, 0.35)`).attr(`stroke-width`,.5).on(`mouseenter`,function(){Vd(this).attr(`fill`,`#243d58`)}).on(`mouseleave`,function(){Vd(this).attr(`fill`,`#1a2d45`)}),console.log(`✅ D3 rendered ${e.length} country paths`)}else console.warn(`All map sources failed, using built-in simplified continents`),gv(i);hv(e,n);let o=Bh()();i.append(`path`).datum(o).attr(`d`,r).attr(`fill`,`none`).attr(`stroke`,`rgba(0, 200, 255, 0.04)`).attr(`stroke-width`,.5)}catch(e){console.error(`Error rendering world map:`,e)}finally{V_=!1}}function hv(e,t){let n={high:`#ff3366`,medium:`#ff9500`,low:`#00d4ff`},r={high:28,medium:22,low:16};e.selectAll(`.hotspot-markers`).remove();let i=e.append(`g`).attr(`class`,`hotspot-markers`);cv.slice(0,8).forEach((e,a)=>{let o=lv[e.region];if(!o)return;let s=t([o.lon,o.lat]);if(!s)return;let[c,l]=s;if(c<0||c>1600||l<0||l>800)return;let u=n[e.impact],d=r[e.impact],f=`${1.5+a*.2}s`,p=i.append(`g`).attr(`class`,`hotspot-marker impact-${e.impact}`).attr(`data-id`,e.id).attr(`data-region`,e.region).attr(`transform`,`translate(${c}, ${l})`).style(`cursor`,`pointer`);p.append(`title`).text(`${e.region}: ${e.title}`);let m=p.append(`circle`).attr(`r`,8).attr(`fill`,`none`).attr(`stroke`,u).attr(`stroke-width`,1.5).attr(`opacity`,.7);m.append(`animate`).attr(`attributeName`,`r`).attr(`from`,8).attr(`to`,d).attr(`dur`,f).attr(`repeatCount`,`indefinite`),m.append(`animate`).attr(`attributeName`,`opacity`).attr(`from`,.7).attr(`to`,0).attr(`dur`,f).attr(`repeatCount`,`indefinite`),p.append(`circle`).attr(`r`,5).attr(`fill`,u).attr(`opacity`,.9),p.append(`circle`).attr(`r`,8).attr(`fill`,`none`).attr(`stroke`,u).attr(`stroke-width`,1).attr(`opacity`,.5),p.on(`mouseenter`,function(t){Vd(this).select(`circle[fill]`).attr(`r`,7).attr(`opacity`,1);let n=Vd(`#mapTooltip`);n.empty()||n.style(`display`,`block`).style(`left`,t.offsetX+15+`px`).style(`top`,t.offsetY-10+`px`).html(`
