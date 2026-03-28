@@ -551,17 +551,49 @@ function renderHeader(): string {
 }
 
 function renderIndustryTicker(): string {
+  // 全球资讯快讯 - 中英文混合
+  const globalHeadlines = [
+    { flag: '🇺🇸', text: 'NVIDIA GTC: Blackwell Ultra GPU delivers 4x AI performance boost' },
+    { flag: '🇨🇳', text: '地平线征程6芯片获多家主机厂量产定点，Q2批量出货' },
+    { flag: '🇬🇧', text: 'Reuters: US tightens AI chip export controls, 120+ countries affected' },
+    { flag: '🇯🇵', text: '日经新闻：日本政府追加1万亿日元半导体补贴，扶持Rapidus先进制程' },
+    { flag: '🇰🇷', text: 'KBS: Samsung HBM4 memory enters mass production for AI training servers' },
+    { flag: '🇨🇳', text: '华为昇腾910C算力测试超越英伟达A100，国产AI芯片竞争力提升' },
+    { flag: '🇩🇪', text: 'Handelsblatt: TSMC Dresden fab on schedule, EU Chips Act funding secured' },
+    { flag: '🇨🇳', text: '比亚迪自研璇玑芯片流片成功，垂直整合战略加速落地' },
+    { flag: '🇺🇸', text: 'WSJ: Apple M4 chip mass production begins, TSMC 3nm yield exceeds 70%' },
+    { flag: '🇨🇳', text: '工信部：智能网联汽车渗透率突破50%，本土芯片供应链持续完善' },
+    { flag: '🇺🇸', text: 'Bloomberg: Qualcomm Snapdragon X Elite gains enterprise adoption momentum' },
+    { flag: '🇨🇳', text: '寒武纪MLU370出货量破百万，云端推理市场份额持续扩大' },
+    { flag: '🇮🇳', text: 'ET: Tata Electronics begins iPhone component manufacturing in India' },
+    { flag: '🇨🇳', text: 'Digitimes：台积电CoWoS封装产能翻倍，AI算力供给瓶颈有望缓解' },
+    { flag: '🇸🇦', text: 'Arab News: Saudi Aramco invests $4B in advanced semiconductor manufacturing' },
+  ]
+  // 重复数组确保滚动无缝
+  const allHeadlines = [...globalHeadlines, ...globalHeadlines]
+
   return `
     <div class="ticker-bar">
       <div class="ticker-label">产业指数</div>
       <div class="ticker-items">
-        ${industryIndices.map(idx => `
+        ${[...industryIndices, ...industryIndices].map(idx => `
           <div class="ticker-item">
             <span class="ticker-icon">${idx.icon}</span>
             <span class="ticker-name">${idx.name}</span>
             <span class="ticker-value">${idx.value.toFixed(2)}</span>
             <span class="ticker-change ${idx.change >= 0 ? 'up' : 'down'}">${idx.change >= 0 ? '↑' : '↓'} ${Math.abs(idx.changePercent).toFixed(2)}%</span>
           </div>
+        `).join('')}
+      </div>
+    </div>
+    <div class="news-ticker-bar">
+      <div class="news-ticker-label">全球资讯</div>
+      <div class="news-ticker-track">
+        ${allHeadlines.map(h => `
+          <span class="news-ticker-item">
+            <span class="news-ticker-flag">${h.flag}</span>
+            <span class="news-ticker-text">${h.text}</span>
+          </span>
         `).join('')}
       </div>
     </div>
@@ -590,34 +622,33 @@ function renderWorldMap(): string {
           <span class="legend-item"><span class="legend-dot low"></span>低影响</span>
         </div>
       </div>
+      <!-- 地图区域 - 全宽展示 -->
       <div class="world-map" id="worldMapContainer">
-        <svg viewBox="0 0 1050 520" class="world-map-svg" preserveAspectRatio="xMidYMid meet" id="worldMapSvg" style="width:100%;height:320px;display:block;background:rgba(0,10,30,0.4);">
+        <svg viewBox="0 0 1600 800" class="world-map-svg" preserveAspectRatio="xMidYMid meet" id="worldMapSvg" style="width:100%;height:100%;display:block;background:rgba(0,10,30,0.4);">
           <defs>
             <radialGradient id="oceanGradient" cx="50%" cy="50%" r="70%">
               <stop offset="0%" stop-color="rgba(0, 40, 100, 0.3)" />
               <stop offset="100%" stop-color="rgba(0, 0, 0, 0)" />
             </radialGradient>
           </defs>
-          <rect class="map-bg" width="1050" height="520" fill="url(#oceanGradient)" />
+          <rect class="map-bg" width="1600" height="800" fill="url(#oceanGradient)" />
         </svg>
-        
-        <!-- 热点 tooltip -->
+        <!-- 地图 tooltip -->
         <div id="mapTooltip" style="display:none;position:absolute;background:rgba(5,15,35,0.95);border:1px solid rgba(0,200,255,0.3);border-radius:6px;padding:10px 14px;pointer-events:none;z-index:100;min-width:200px;max-width:280px;backdrop-filter:blur(8px);"></div>
-        
-        <!-- 热点信息卡片 -->
-        <div class="hotspot-overlay">
-          ${globalHotspots.slice(0, 4).map(spot => `
-            <div class="hotspot-card ${spot.impact}" data-region="${spot.region}">
-              <div class="hotspot-card-header">
-                <span class="hotspot-card-icon">${categoryIcons[spot.category]}</span>
-                <span class="hotspot-card-region">${spot.region}</span>
-                <span class="hotspot-card-time">${spot.time}</span>
-              </div>
-              <div class="hotspot-card-title">${spot.title}</div>
-              <div class="hotspot-card-summary">${spot.summary}</div>
+      </div>
+      <!-- 热点卡片区域 - 地图下方横向滚动 -->
+      <div class="hotspot-list">
+        ${globalHotspots.slice(0, 8).map(spot => `
+          <div class="hotspot-card ${spot.impact}" data-region="${spot.region}">
+            <div class="hotspot-card-header">
+              <span class="hotspot-card-icon">${categoryIcons[spot.category]}</span>
+              <span class="hotspot-card-region">${spot.region}</span>
+              <span class="hotspot-card-time">${spot.time}</span>
             </div>
-          `).join('')}
-        </div>
+            <div class="hotspot-card-title">${spot.title}</div>
+            <div class="hotspot-card-summary">${spot.summary}</div>
+          </div>
+        `).join('')}
       </div>
     </div>
   `
@@ -643,12 +674,12 @@ async function renderWorldMapD3() {
     }
     
     const svg = d3.select('#worldMapSvg')
-    const WIDTH = 1050
-    const HEIGHT = 520
+    const WIDTH = 1600
+    const HEIGHT = 800
     
-    // 定义投影（自然地球投影）
+    // 定义投影（自然地球投影）- 扩大比例尺以填充更多空间
     const projection = d3Geo.geoNaturalEarth1()
-      .scale(160)
+      .scale(260)
       .translate([WIDTH / 2, HEIGHT / 2 + 20])
     
     const pathGenerator = d3Geo.geoPath().projection(projection)
@@ -663,7 +694,7 @@ async function renderWorldMapD3() {
         .attr('class', 'map-bg')
         .attr('width', WIDTH)
         .attr('height', HEIGHT)
-        .attr('fill', 'rgba(0, 10, 25, 0.4)')
+        .attr('fill', 'rgba(0, 20, 40, 0.6)')
     }
     
     // 创建地图路径组
@@ -781,7 +812,7 @@ function renderHotspotMarkers(svg: any, projection: any) {
     const [x, y] = projected
     
     // 过滤掉投影到屏幕外的点
-    if (x < 0 || x > 1050 || y < 0 || y > 520) return
+    if (x < 0 || x > 1600 || y < 0 || y > 800) return
     
     const color = impactColors[spot.impact]
     const pulseMax = impactPulseSize[spot.impact]
@@ -1833,6 +1864,10 @@ function bindEvents() {
         if (currentPage === 'dashboard' || currentPage === 'automotive') {
           setTimeout(initCharts, 100)
         }
+        // CRITICAL: 重新渲染地图 - 修复筛选按钮导致地图消失的问题
+        requestAnimationFrame(() => {
+          setTimeout(() => renderWorldMapD3(), 150)
+        })
       }
     })
   })
