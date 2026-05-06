@@ -7,10 +7,12 @@ import {
   type NewsItem,
   type IndustryIndex,
   type GlobalHotspot,
+  type CompanyNews,
   fetchRealNews,
   fetchStockData,
   fetchIndustryIndices,
   fetchGlobalHotspots,
+  fetchCompanyNews,
   forceRefreshAll
 } from './dataService'
 Chart.register(...registerables)
@@ -170,7 +172,18 @@ async function performFullRefresh() {
             i === 1 ? `${Math.floor(Math.random() * 30) + 10}分钟前` :
             `${Math.floor(Math.random() * 3) + 1}小时前`
     }))
-    
+
+    // 9. 公司新闻（联网抓取）
+    try {
+      const freshCompanyNews = await fetchCompanyNews()
+      if (freshCompanyNews && freshCompanyNews.length > 0) {
+        companyNews = freshCompanyNews
+        console.log(`[performFullRefresh] 公司新闻已更新，${companyNews.length} 条`)
+      }
+    } catch (e) {
+      console.warn('[performFullRefresh] 公司新闻刷新失败:', e)
+    }
+
     // 重置地图渲染状态（不重置地图数据缓存）
     isMapRendering = false
     mapRenderRetryCount = 0
@@ -459,20 +472,7 @@ let techNews: TechNews[] = [
 ]
 
 // 公司新闻数据
-interface CompanyNews {
-  id: string
-  title: string
-  category: 'product' | 'event' | 'finance' | 'partner'
-  time: string
-  source: string
-}
-
-let companyNews: CompanyNews[] = [
-  { id: '1', title: '功夫565芯片通过车规认证', category: 'product', time: '今天 09:00', source: '欧冶半导体' },
-  { id: '2', title: '欧冶半导体亮相2026北京车展', category: 'event', time: '昨天 18:30', source: '欧冶半导体' },
-  { id: '3', title: 'Q1营收同比增长120%', category: 'finance', time: '昨天', source: '财报' },
-  { id: '4', title: '与比亚迪达成战略合作', category: 'partner', time: '3天前', source: '欧冶半导体' }
-]
+let companyNews: CompanyNews[] = []
 
 // 金融市场数据
 interface FinancialMarket {

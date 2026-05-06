@@ -24,6 +24,29 @@ export interface NewsItem {
   publishedAt?: string
 }
 
+// ==================== 联网新闻抓取配置 ====================
+const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json'
+const NEWS_RSS_SOURCES = [
+  // 中文科技/半导体/汽车新闻源
+  { name: '36氪',   url: 'https://36kr.com/feed',                     category: 'tech' as const },
+  { name: '虎嗅',   url: 'https://www.huxiu.com/rss/0.xml',          category: 'tech' as const },
+  { name: '车云网', url: 'http://www.cheyun.com/rss.xml',             category: 'market' as const },
+  { name: '集微网', url: 'https://laoyaoba.com/rss',                   category: 'tech' as const },
+  { name: '盖世汽车', url: 'https://auto.gasgoo.com/rss/',           category: 'market' as const },
+  // 英文科技/半导体新闻源
+  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/',          category: 'tech' as const },
+  { name: 'AnandTech',  url: 'https://www.anandtech.com/feeds.xml',   category: 'tech' as const },
+  { name: 'EE Times',   url: 'https://www.eetimes.com/feed/',         category: 'tech' as const },
+]
+
+// 全球热点RSS新闻源（国际新闻）
+const GLOBAL_HOTSPOT_SOURCES = [
+  { name: 'BBC世界',   url: 'https://feeds.bbci.co.uk/news/world/rss.xml',     region: '国际' },
+  { name: '路透社',    url: 'https://www.reutersagency.com/feed/?taxonomy=best-topics&post_type=best', region: '国际' },
+  { name: 'AI模型berg', url: 'https://www.bloomberg.com/feed/podcast/etf-iq', region: '国际' },
+  { name: '财联社',    url: 'https://www.cls.cn/rss',                         region: '中国' },
+]
+
 export interface StockData {
   symbol: string
   name: string
@@ -273,32 +296,129 @@ function generateDynamicHotspots(): GlobalHotspot[] {
 // ==================== 数据获取函数 ====================
 
 /**
- * 获取实时新闻数据
+ * 获取实时新闻数据（真正联网抓取RSS）
  */
 export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
-  console.log('Fetching real news data...')
+  console.log('[fetchRealNews] 开始联网抓取新闻...')
   
   const now = Date.now()
   const cacheExpiry = API_CONFIG.refreshInterval.news
   
   // 检查缓存是否过期
   if (now - lastFetchTime.news < cacheExpiry && cachedNews.length > 0) {
-    console.log('Using cached news data')
+    console.log('[fetchRealNews] 使用缓存新闻数据')
     if (category && category !== 'all') {
       return cachedNews.filter(n => n.category === category)
     }
     return cachedNews
   }
   
-  // 生成新的动态数据
-  console.log('Generating fresh news data...')
-  cachedNews = generateDynamicNews()
-  lastFetchTime.news = now
+  // 真正联网抓取
+  console.log('[fetchRealNews] 联网抓取中...')
+  try {
+    const allItems: NewsItem[] = []
+    
+    // 并行抓取所有RSS源（限制并发数，避免请求过多）
+    const sourcesToFetch = NEWS_RSS_SOURCES.slice(0, 6)
+    const results = await Promise.allSettled(
+      sourcesToFetch.map(async (source) => {
+        try {
+          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=`
+          const resp = await fetch(url, { 
+            mode: 'cors',
+            headers: { 'Accept': 'application/json' }
+          })
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+          const data = await resp.json()
+          if (data.status !== 'ok') throw new Error(data.message || 'RSS解析失败')
+          
+          const items: NewsItem[] = (data.items || []).slice(0, 4).map((item: any, idx: number) => {
+            const published = item.pubDate || item.publishedDate || new Date().toISOString()
+            return {
+              id: `news-${source.name}-${idx}-${Date.now()}`,
+              title: item.title?.replace(/<[^>]+>/g, '').slice(0, 80) || '无标题',
+              source: source.name,
+              time: formatTimeAgo(published),
+              category: source.category,
+              priority: inferPriority(item.title || '', source.category),
+              summary: (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 100),
+              url: item.link || '',
+              publishedAt: published
+            }
+          })
+          return items
+        } catch (e) {
+          console.warn(`[fetchRealNews] 抓取 ${source.name} 失败:`, e)
+          return []
+        }
+      })
+    )
+    
+    // 收集所有成功的结果
+    results.forEach(r => {
+      if (r.status === 'fulfilled' && r.value) {
+        allItems.push(...r.value)
+      }
+    })
+    
+    // 如果联网成功且拿到了数据，更新缓存
+    if (allItems.length > 0) {
+      console.log(`[fetchRealNews] 联网成功，获取 ${allItems.length} 条新闻`)
+      // 去重（按title）
+      const seen = new Set<string>()
+      cachedNews = allItems.filter(item => {
+        const key = item.title.slice(0, 30)
+        if (seen.has(key)) return false
+        seen.add(key)
+        return true
+      }).sort((a, b) => {
+        const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0
+        const tb = b.publishedAt ? new Date(b.publishedAt).getTime() : 0
+        return tb - ta
+      }).slice(0, 20)
+      lastFetchTime.news = now
+    } else {
+      console.warn('[fetchRealNews] 所有RSS源均失败，使用模板数据兜底')
+      cachedNews = generateDynamicNews()
+      lastFetchTime.news = now
+    }
+  } catch (e) {
+    console.error('[fetchRealNews] 联网异常，使用模板数据兜底:', e)
+    cachedNews = generateDynamicNews()
+    lastFetchTime.news = now
+  }
   
   if (category && category !== 'all') {
     return cachedNews.filter(n => n.category === category)
   }
   return cachedNews
+}
+
+/**
+ * 将发布时间转为"XX前"格式
+ */
+function formatTimeAgo(pubDate: string): string {
+  try {
+    const diff = Date.now() - new Date(pubDate).getTime()
+    const mins = Math.floor(diff / 60000)
+    if (mins < 60) return `${mins}分钟前`
+    const hours = Math.floor(mins / 60)
+    if (hours < 24) return `${hours}小时前`
+    const days = Math.floor(hours / 24)
+    return `${days}天前`
+  } catch {
+    return '近期'
+  }
+}
+
+/**
+ * 根据标题关键词推断优先级
+ */
+function inferPriority(title: string, category: string): 'critical' | 'warning' | 'info' {
+  const lower = title.toLowerCase()
+  if (lower.includes('禁令') || lower.includes('制裁') || lower.includes('暴跌') || lower.includes('断供')) return 'critical'
+  if (lower.includes('发布') || lower.includes('推出') || lower.includes('量产') || category === 'competitor') return 'warning'
+  return 'info'
 }
 
 /**
@@ -348,26 +468,124 @@ export async function fetchIndustryIndices(): Promise<IndustryIndex[]> {
 }
 
 /**
- * 获取全球热点数据
+ * 获取全球热点数据（真正联网抓取RSS）
  */
 export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
-  console.log('Fetching global hotspots...')
+  console.log('[fetchGlobalHotspots] 开始联网抓取全球热点...')
   
   const now = Date.now()
   const cacheExpiry = API_CONFIG.refreshInterval.hotspots
   
   // 检查缓存是否过期
   if (now - lastFetchTime.hotspots < cacheExpiry && cachedHotspots.length > 0) {
-    console.log('Using cached hotspots data')
+    console.log('[fetchGlobalHotspots] 使用缓存热点数据')
     return cachedHotspots
   }
   
-  // 生成新的动态数据
-  console.log('Generating fresh hotspots data...')
-  cachedHotspots = generateDynamicHotspots()
-  lastFetchTime.hotspots = now
+  // 真正联网抓取
+  console.log('[fetchGlobalHotspots] 联网抓取中...')
+  try {
+    const allItems: GlobalHotspot[] = []
+    
+    const results = await Promise.allSettled(
+      GLOBAL_HOTSPOT_SOURCES.map(async (source) => {
+        try {
+          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=`
+          const resp = await fetch(url, { mode: 'cors' })
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+          const data = await resp.json()
+          if (data.status !== 'ok') throw new Error(data.message || '解析失败')
+          
+          return (data.items || []).slice(0, 3).map((item: any, idx: number) => {
+            const published = item.pubDate || item.publishedDate || new Date().toISOString()
+            const title = (item.title || '无标题').replace(/<[^>]+>/g, '').slice(0, 60)
+            return {
+              id: `hotspot-${source.name}-${idx}-${Date.now()}`,
+              title,
+              region: inferRegion(title + (item.description||''), source.region),
+              category: inferHotspotCategory(title),
+              impact: inferImpact(title) as 'high' | 'medium' | 'low',
+              time: formatTimeAgo(published),
+              summary: (item.description || '').replace(/<[^>]+>/g, '').slice(0, 80),
+              source: source.name
+            } as GlobalHotspot
+          })
+        } catch (e) {
+          console.warn(`[fetchGlobalHotspots] 抓取 ${source.name} 失败:`, e)
+          return []
+        }
+      })
+    )
+    
+    results.forEach(r => {
+      if (r.status === 'fulfilled' && r.value) allItems.push(...r.value)
+    })
+    
+    if (allItems.length > 0) {
+      console.log(`[fetchGlobalHotspots] 联网成功，获取 ${allItems.length} 条热点`)
+      // 去重 + 按时间排序
+      const seen = new Set<string>()
+      cachedHotspots = allItems.filter(h => {
+        const key = h.title.slice(0, 25)
+        if (seen.has(key)) return false
+        seen.add(key)
+        return true
+      }).sort((a, b) => {
+        const ta = a.time.includes('分钟') ? parseInt(a.time) : (a.time.includes('小时') ? parseInt(a.time)*60 : 9999)
+        const tb = b.time.includes('分钟') ? parseInt(b.time) : (b.time.includes('小时') ? parseInt(b.time)*60 : 9999)
+        return ta - tb
+      }).slice(0, 10)
+      lastFetchTime.hotspots = now
+    } else {
+      console.warn('[fetchGlobalHotspots] 所有RSS源失败，使用模板数据兜底')
+      cachedHotspots = generateDynamicHotspots()
+      lastFetchTime.hotspots = now
+    }
+  } catch (e) {
+    console.error('[fetchGlobalHotspots] 联网异常，使用模板兜底:', e)
+    cachedHotspots = generateDynamicHotspots()
+    lastFetchTime.hotspots = now
+  }
   
   return cachedHotspots
+}
+
+/**
+ * 根据标题推断地区
+ */
+function inferRegion(text: string, fallback: string): string {
+  const t = text.toLowerCase()
+  if (t.includes('china') || t.includes('china') || t.includes('beijing') || t.includes('shanghai')) return '中国'
+  if (t.includes('usa') || t.includes('america') || t.includes('washington') || t.includes('silicon')) return '美国'
+  if (t.includes('europe') || t.includes('eu') || t.includes('germany') || t.includes('brussels')) return '欧洲'
+  if (t.includes('japan') || t.includes('tokyo') || t.includes('tsmc')) return '日本'
+  if (t.includes('korea') || t.includes('samsung') || t.includes('sk hynix')) return '韩国'
+  if (t.includes('taiwan') || t.includes('tsmc')) return '中国台湾'
+  if (t.includes('india') || t.includes('mumbai')) return '印度'
+  if (t.includes('middle east') || t.includes('saudi') || t.includes('uae')) return '中东'
+  return fallback
+}
+
+/**
+ * 推断热点类别
+ */
+function inferHotspotCategory(title: string): 'conflict' | 'diplomacy' | 'economy' | 'tech' | 'policy' {
+  const t = title.toLowerCase()
+  if (t.includes('war') || t.includes('conflict') || t.includes('sanction')) return 'conflict'
+  if (t.includes('policy') || t.includes('regulation') || t.includes('law')) return 'policy'
+  if (t.includes('tech') || t.includes('ai') || t.includes('chip') || t.includes('semiconductor')) return 'tech'
+  if (t.includes('economy') || t.includes('gdp') || t.includes('trade')) return 'economy'
+  return 'diplomacy'
+}
+
+/**
+ * 推断影响级别
+ */
+function inferImpact(title: string): string {
+  const t = title.toLowerCase()
+  if (t.includes('crisis') || t.includes('war') || t.includes('ban') || t.includes('sanction')) return 'high'
+  if (t.includes('deal') || t.includes('growth') || t.includes('launch')) return 'medium'
+  return 'low'
 }
 
 /**
@@ -449,3 +667,73 @@ export class DataRefreshManager {
 }
 
 export const dataRefreshManager = new DataRefreshManager()
+
+// ==================== 公司新闻联网抓取 ====================
+
+/**
+ * 抓取欧冶半导体相关新闻（RSS）
+ */
+export async function fetchCompanyNews(): Promise<CompanyNews[]> {
+  console.log('[fetchCompanyNews] 开始联网抓取公司新闻...')
+  try {
+    const sources = [
+      { name: '36氪',    url: 'https://36kr.com/feed' },
+      { name: '虎嗅',    url: 'https://www.huxiu.com/rss/0.xml' },
+      { name: '集微网',  url: 'https://laoyaoba.com/rss' },
+      { name: '盖世汽车', url: 'https://auto.gasgoo.com/rss/' },
+    ]
+    const allItems: CompanyNews[] = []
+    const results = await Promise.allSettled(
+      sources.map(async (s) => {
+        try {
+          const resp = await fetch(`${RSS2JSON_API}?rss_url=${encodeURIComponent(s.url)}&api_key=`, { mode: 'cors' })
+          if (!resp.ok) return []
+          const data = await resp.json()
+          if (data.status !== 'ok') return []
+          return (data.items || []).filter((item: any) => {
+            const t = (item.title || '').toLowerCase()
+            return t.includes('欧冶') || t.includes('半导体') || t.includes('智驾') || t.includes('芯片')
+          }).slice(0, 2).map((item: any, idx: number) => ({
+            id: `company-${s.name}-${idx}-${Date.now()}`,
+            title: (item.title || '').replace(/<[^>]+>/g, '').slice(0, 50),
+            category: inferCompanyCategory(item.title || ''),
+            time: formatTimeAgo(item.pubDate || item.publishedDate || new Date().toISOString()),
+            source: s.name
+          } as CompanyNews))
+        } catch { return [] }
+      })
+    )
+    results.forEach(r => { if (r.status === 'fulfilled') allItems.push(...r.value) })
+    
+    if (allItems.length > 0) {
+      console.log(`[fetchCompanyNews] 获取 ${allItems.length} 条公司相关新闻`)
+      return allItems.slice(0, 6)
+    }
+  } catch (e) {
+    console.warn('[fetchCompanyNews] 联网失败:', e)
+  }
+  // 兜底：返回模板数据
+  return [
+    { id: '1', title: '功夫565芯片通过车规认证', category: 'product', time: '今天 09:00', source: '欧冶半导体' },
+    { id: '2', title: '欧冶半导体亮相2026北京车展', category: 'event', time: '昨天 18:30', source: '欧冶半导体' },
+    { id: '3', title: 'Q1营收同比增长120%', category: 'finance', time: '昨天', source: '财报' },
+    { id: '4', title: '与比亚迪达成战略合作', category: 'partner', time: '3天前', source: '欧冶半导体' },
+  ]
+}
+
+function inferCompanyCategory(title: string): 'product' | 'event' | 'finance' | 'partner' {
+  const t = title.toLowerCase()
+  if (t.includes('营收') || t.includes('财报') || t.includes('利润')) return 'finance'
+  if (t.includes('合作') || t.includes('战略') || t.includes('签约')) return 'partner'
+  if (t.includes('发布') || t.includes('亮相') || t.includes('参展')) return 'event'
+  return 'product'
+}
+
+// 公司新闻接口（供 main.ts 使用）
+export interface CompanyNews {
+  id: string
+  title: string
+  category: 'product' | 'event' | 'finance' | 'partner'
+  time: string
+  source: string
+}
