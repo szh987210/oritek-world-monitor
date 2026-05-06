@@ -714,10 +714,10 @@ async function renderWorldMapD3() {
     svg.attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
 
     // ── 投影：按容器尺寸动态缩放（自然地球投影）──
-    // 将地图中心设为亚洲/中国（约东经120°，北纬30°）
+    // 用 rotate 旋转地球，让亚洲（中国）位于视图中心，不裁剪地图边缘
     const scale = Math.min(WIDTH / 3.2, HEIGHT / 1.7, 260)   // 最大 scale=260，与原逻辑一致
     const projection = d3Geo.geoNaturalEarth1()
-      .center([120, 30])  // 中心点设为中国东部（亚洲中心）
+      .rotate([-120, 0])  // 旋转地球：-120° 让中国位于视图中央，完整保留美洲
       .scale(scale)
       .translate([WIDTH / 2, HEIGHT / 2])
 
