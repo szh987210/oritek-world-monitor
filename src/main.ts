@@ -535,6 +535,7 @@ const hotspotCoordinates: Record<string, { lon: number; lat: number }> = {
   '韩国': { lon: 127, lat: 37 },
   '印度': { lon: 78, lat: 20 },
   '台湾': { lon: 121, lat: 24 },
+  '中国台湾': { lon: 121, lat: 24 },  // 别名兼容
   '俄罗斯': { lon: 105, lat: 60 },
   '英国': { lon: -2, lat: 54 },
   '德国': { lon: 10, lat: 51 },
@@ -712,9 +713,11 @@ async function renderWorldMapD3() {
     // 更新 SVG viewBox 尺寸（同步 CSS 宽高）
     svg.attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
 
-    // ── 投影：按容器尺寸动态缩放（自然地球投影） ──
+    // ── 投影：按容器尺寸动态缩放（自然地球投影）──
+    // 将地图中心设为亚洲/中国（约东经120°，北纬30°）
     const scale = Math.min(WIDTH / 3.2, HEIGHT / 1.7, 260)   // 最大 scale=260，与原逻辑一致
     const projection = d3Geo.geoNaturalEarth1()
+      .center([120, 30])  // 中心点设为中国东部（亚洲中心）
       .scale(scale)
       .translate([WIDTH / 2, HEIGHT / 2])
 
