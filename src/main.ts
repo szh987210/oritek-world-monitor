@@ -681,71 +681,80 @@ function renderWorldMap(): string {
 }
 
 // ==================== 世界地图 D3 渲染 ====================
+
+// ResizeObserver 实例（单例，页面生命周期内有效）
+let mapResizeObserver: ResizeObserver | null = null
+
 async function renderWorldMapD3() {
   if (isMapRendering) {
     console.log('Map rendering already in progress, skipping...')
     return
   }
-  
+
   isMapRendering = true
   console.log('=== Starting D3 World Map Render ===')
-  
+
   try {
-    // 等待 DOM 确实存在
     const svgEl = document.getElementById('worldMapSvg')
     if (!svgEl) {
       console.error('SVG element #worldMapSvg not found in DOM')
       isMapRendering = false
       return
     }
-    
+
     const svg = d3.select('#worldMapSvg')
-    const WIDTH = 1600
-    const HEIGHT = 800
-    
-    // 定义投影（自然地球投影）- 扩大比例尺以填充更多空间
+
+    // ── 自适应：获取 SVG 实际渲染尺寸 ──
+    const rect = svgEl.getBoundingClientRect()
+    const WIDTH  = Math.max(rect.width,  300)   // 最小 300px
+    const HEIGHT = Math.max(rect.height, 200)   // 最小 200px
+
+    // 更新 SVG viewBox 尺寸（同步 CSS 宽高）
+    svg.attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
+
+    // ── 投影：按容器尺寸动态缩放（自然地球投影） ──
+    const scale = Math.min(WIDTH / 3.2, HEIGHT / 1.7, 260)   // 最大 scale=260，与原逻辑一致
     const projection = d3Geo.geoNaturalEarth1()
-      .scale(260)
-      .translate([WIDTH / 2, HEIGHT / 2 + 20])
-    
+      .scale(scale)
+      .translate([WIDTH / 2, HEIGHT / 2])
+
     const pathGenerator = d3Geo.geoPath().projection(projection)
-    
-    // 清除所有旧内容（保留 defs 和 rect）
+
+    // 清除所有旧内容
     svg.selectAll('g').remove()
     svg.selectAll('.hotspot-markers').remove()
-    
-    // 确保背景 rect 存在
+
+    // 背景 rect
     if (svg.select('rect.map-bg').empty()) {
       svg.insert('rect', ':first-child')
         .attr('class', 'map-bg')
         .attr('width', WIDTH)
         .attr('height', HEIGHT)
         .attr('fill', 'rgba(0, 20, 40, 0.6)')
+    } else {
+      svg.select('rect.map-bg').attr('width', WIDTH).attr('height', HEIGHT)
     }
-    
-    // 创建地图路径组
+
     const mapGroup = svg.append('g').attr('id', 'mapGroup')
-    
-    // 加载地图 TopoJSON 数据
+
+    // ── 加载地图 TopoJSON ──
     let mapData = worldMapData
-    
+
     if (!mapData) {
       console.log('Loading map data...')
-      // 使用动态路径
       const basePath = getBasePath()
       const urls = [
         `${basePath}/world-110m.json`,
         'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
         'https://unpkg.com/world-atlas@2.0.2/countries-110m.json'
       ]
-      
+
       for (const url of urls) {
         try {
           console.log('Fetching map data from:', url)
           const resp = await fetch(url)
           if (resp.ok) {
             const topology = await resp.json()
-            // 检查格式是否正确
             if (topology.objects && topology.objects.countries) {
               mapData = topojson.feature(topology, topology.objects.countries)
               worldMapData = mapData
@@ -763,11 +772,9 @@ async function renderWorldMapD3() {
         }
       }
     }
-    
+
     if (mapData && (mapData as any).features) {
-      // ✅ 成功加载真实地图数据，用 D3 渲染
       const features = (mapData as any).features
-      
       mapGroup.selectAll('path.country')
         .data(features)
         .enter()
@@ -776,25 +783,19 @@ async function renderWorldMapD3() {
         .attr('d', (d: any) => pathGenerator(d) || '')
         .attr('fill', '#1a2d45')
         .attr('stroke', 'rgba(0, 200, 255, 0.35)')
-        .attr('stroke-width', 0.5)
-        .on('mouseenter', function() {
-          d3.select(this).attr('fill', '#243d58')
-        })
-        .on('mouseleave', function() {
-          d3.select(this).attr('fill', '#1a2d45')
-        })
-      
-      console.log(`✅ D3 rendered ${features.length} country paths`)
+        .attr('stroke-width', Math.max(0.3, WIDTH / 3200))   // 宽度缩小同步缩放
+        .on('mouseenter', function() { d3.select(this).attr('fill', '#243d58') })
+        .on('mouseleave',  function() { d3.select(this).attr('fill', '#1a2d45') })
+      console.log(`✅ D3 rendered ${features.length} country paths (${WIDTH.toFixed(0)}×${HEIGHT.toFixed(0)})`)
     } else {
-      // ❌ 所有外部源均失败，使用内置简化大陆轮廓
       console.warn('All map sources failed, using built-in simplified continents')
-      renderFallbackMap(mapGroup)
+      renderFallbackMap(mapGroup, projection)
     }
-    
-    // 渲染热点标记（无论用哪种地图都执行）
-    renderHotspotMarkers(svg, projection)
-    
-    // 添加经纬网格（美观）
+
+    // ── 渲染热点标记（自适应边界过滤） ──
+    renderHotspotMarkers(svg, projection, WIDTH, HEIGHT)
+
+    // ── 经纬网格 ──
     const graticule = d3Geo.geoGraticule()()
     mapGroup.append('path')
       .datum(graticule)
@@ -802,7 +803,10 @@ async function renderWorldMapD3() {
       .attr('fill', 'none')
       .attr('stroke', 'rgba(0, 200, 255, 0.04)')
       .attr('stroke-width', 0.5)
-    
+
+    // ── 注册 ResizeObserver（仅首次）──
+    setupMapResizeObserver(svgEl, WIDTH, HEIGHT)
+
   } catch (error) {
     console.error('Error rendering world map:', error)
   } finally {
@@ -810,8 +814,35 @@ async function renderWorldMapD3() {
   }
 }
 
-// 渲染热点标记
-function renderHotspotMarkers(svg: any, projection: any) {
+// ── ResizeObserver：容器大小变化时自动重绘地图 ──
+function setupMapResizeObserver(container: HTMLElement, lastW: number, lastH: number) {
+  if (mapResizeObserver) {
+    mapResizeObserver.disconnect()
+  }
+
+  mapResizeObserver = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      const { width, height } = entry.contentRect
+      // 尺寸变化超过 5px 才重绘，避免微小抖动触发
+      if (Math.abs(width - lastW) > 5 || Math.abs(height - lastH) > 5) {
+        console.log(`[ResizeObserver] Map size changed to ${width.toFixed(0)}×${height.toFixed(0)}, re-rendering...`)
+        isMapRendering = false   // 重置状态，允许重新渲染
+        renderWorldMapD3()
+      }
+    }
+  })
+
+  mapResizeObserver.observe(container)
+}
+
+// 渲染热点标记（支持自适应尺寸）
+function renderHotspotMarkers(svg: any, projection: any, WIDTH = 1600, HEIGHT = 800) {
+
+  // ── 热点数据兜底：若 globalHotspots 为空，使用默认数据 ──
+  const hotspotsToRender = (globalHotspots && globalHotspots.length > 0)
+    ? globalHotspots.slice(0, 8)
+    : getDefaultHotspots()
+
   const impactColors: Record<string, string> = {
     high: '#ff3366',
     medium: '#ff9500',
@@ -822,22 +853,22 @@ function renderHotspotMarkers(svg: any, projection: any) {
     medium: 22,
     low: 16
   }
-  
+
   // 移除旧的热点标记
   svg.selectAll('.hotspot-markers').remove()
-  
+
   const markersGroup = svg.append('g').attr('class', 'hotspot-markers')
-  
-  globalHotspots.slice(0, 8).forEach((spot, idx) => {
+
+  hotspotsToRender.forEach((spot, idx) => {
     const coord = hotspotCoordinates[spot.region]
     if (!coord) return
-    
+
     const projected = projection([coord.lon, coord.lat])
     if (!projected) return
     const [x, y] = projected
-    
-    // 过滤掉投影到屏幕外的点
-    if (x < 0 || x > 1600 || y < 0 || y > 800) return
+
+    // 过滤掉投影到屏幕外的点（使用动态尺寸）
+    if (x < -20 || x > WIDTH + 20 || y < -20 || y > HEIGHT + 20) return
     
     const color = impactColors[spot.impact]
     const pulseMax = impactPulseSize[spot.impact]
@@ -919,11 +950,25 @@ function renderHotspotMarkers(svg: any, projection: any) {
       })
   })
   
-  console.log(`✅ Hotspot markers rendered: ${globalHotspots.filter(s => hotspotCoordinates[s.region]).length} points`)
+  console.log(`✅ Hotspot markers rendered: ${hotspotsToRender.filter(s => hotspotCoordinates[s.region]).length} points`)
 }
 
-// 渲染简化版地图
-function renderFallbackMap(pathsGroup: any) {
+// 热点数据默认模板（兜底用）
+function getDefaultHotspots(): GlobalHotspot[] {
+  return [
+    { id: '1', title: '美国对华半导体出口管制再度升级', region: '美国',   category: 'policy',  impact: 'high',   time: '2小时前', summary: '新规将影响先进制程设备出口' },
+    { id: '2', title: '台积电先进制程产能持续紧张',     region: '中国台湾', category: 'tech',    impact: 'high',   time: '4小时前', summary: '3nm 订单已排至 2026 年底' },
+    { id: '3', title: '欧盟芯片法案补贴计划首批落地',   region: '欧洲',     category: 'policy',  impact: 'medium', time: '6小时前', summary: '430 亿欧元支持本土芯片制造' },
+    { id: '4', title: '中国新能源汽车出口高速增长',     region: '中国',     category: 'economy', impact: 'medium', time: '3小时前', summary: 'Q1 出口同比增长 45%' },
+    { id: '5', title: '日本扩大半导体设备对华出口限制', region: '日本',     category: 'policy',  impact: 'high',   time: '8小时前', summary: '涉及 23 种先进半导体制造设备' },
+    { id: '6', title: '韩国三星先进制程良率持续提升',   region: '韩国',     category: 'tech',    impact: 'medium', time: '10小时前', summary: '3nm GAA 工艺良率已超 60%' },
+    { id: '7', title: '中东主权基金大举投资芯片产业',   region: '中东',     category: 'economy', impact: 'medium', time: '12小时前', summary: '沙特阿美联合筹建中东首家先进晶圆厂' },
+    { id: '8', title: '印度半导体激励政策吸引多家厂商', region: '印度',     category: 'economy', impact: 'medium', time: '5小时前',  summary: '塔塔集团与 PSMC 合作建厂' },
+  ]
+}
+
+// 渲染简化版地图（支持投影参数）
+function renderFallbackMap(pathsGroup: any, projection?: any) {
   // 使用预定义的简化大陆路径
   const continents = [
     // 北美
