@@ -713,11 +713,13 @@ async function renderWorldMapD3() {
     // 更新 SVG viewBox 尺寸（同步 CSS 宽高）
     svg.attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
 
-    // ── 投影：按容器尺寸动态缩放（自然地球投影）──
-    // 用 rotate 旋转地球，让亚洲（中国）位于视图中心，不裁剪地图边缘
-    const scale = Math.min(WIDTH / 3.2, HEIGHT / 1.7, 260)   // 最大 scale=260，与原逻辑一致
+    // ── 投影：中美欧三地完整显示的自然地球投影 ──
+    // rotate([-60, 0]) 让大西洋/欧洲居中
+    // 中国(120°E)在右侧，美国(~100°W)在左侧，欧洲(0-30°E)在中央
+    // scale 增大以确保三地都在视野内
+    const scale = Math.min(WIDTH / 2.8, HEIGHT / 1.4, 320)
     const projection = d3Geo.geoNaturalEarth1()
-      .rotate([-120, 0])  // 旋转地球：-120° 让中国位于视图中央，完整保留美洲
+      .rotate([-60, 0])  // 旋转让欧洲/大西洋居中，三大区域完整显示
       .scale(scale)
       .translate([WIDTH / 2, HEIGHT / 2])
 
@@ -784,15 +786,53 @@ async function renderWorldMapD3() {
         .append('path')
         .attr('class', 'country')
         .attr('d', (d: any) => pathGenerator(d) || '')
-        .attr('fill', '#1a2d45')
-        .attr('stroke', 'rgba(0, 200, 255, 0.35)')
-        .attr('stroke-width', Math.max(0.3, WIDTH / 3200))   // 宽度缩小同步缩放
-        .on('mouseenter', function() { d3.select(this).attr('fill', '#243d58') })
-        .on('mouseleave',  function() { d3.select(this).attr('fill', '#1a2d45') })
+        .attr('fill', 'url(#landGradient)')
+        .attr('stroke', 'rgba(0, 180, 255, 0.4)')
+        .attr('stroke-width', Math.max(0.3, WIDTH / 3200))
+        .attr('filter', 'url(#landGlow)')
+        .on('mouseenter', function() { d3.select(this).attr('fill', '#2a5a7c').attr('stroke', 'rgba(0, 200, 255, 0.7)') })
+        .on('mouseleave',  function() { d3.select(this).attr('fill', 'url(#landGradient)').attr('stroke', 'rgba(0, 180, 255, 0.4)') })
       console.log(`✅ D3 rendered ${features.length} country paths (${WIDTH.toFixed(0)}×${HEIGHT.toFixed(0)})`)
     } else {
       console.warn('All map sources failed, using built-in simplified continents')
       renderFallbackMap(mapGroup, projection)
+    }
+
+    // 背景渐变 - 深海效果
+    const defs = svg.select('defs').empty() ? svg.insert('defs', ':first-child') : svg.select('defs')
+    
+    // 海洋渐变
+    if (defs.select('#oceanGradient').empty()) {
+      const gradient = defs.append('linearGradient')
+        .attr('id', 'oceanGradient')
+        .attr('x1', '0%').attr('y1', '0%')
+        .attr('x2', '0%').attr('y2', '100%')
+      gradient.append('stop').attr('offset', '0%').attr('stop-color', 'rgba(0, 40, 80, 0.8)')
+      gradient.append('stop').attr('offset', '100%').attr('stop-color', 'rgba(0, 15, 40, 0.9)')
+    }
+    
+    // 大陆渐变
+    if (defs.select('#landGradient').empty()) {
+      const gradient = defs.append('linearGradient')
+        .attr('id', 'landGradient')
+        .attr('x1', '0%').attr('y1', '0%')
+        .attr('x2', '100%').attr('y2', '100%')
+      gradient.append('stop').attr('offset', '0%').attr('stop-color', '#1a3d5c')
+      gradient.append('stop').attr('offset', '100%').attr('stop-color', '#0f2840')
+    }
+    
+    // 大陆发光效果
+    if (defs.select('#landGlow').empty()) {
+      const filter = defs.append('filter')
+        .attr('id', 'landGlow')
+        .attr('x', '-20%').attr('y', '-20%')
+        .attr('width', '140%').attr('height', '140%')
+      filter.append('feGaussianBlur').attr('stdDeviation', '2').attr('result', 'blur')
+      filter.append('feFlood').attr('flood-color', 'rgba(0, 180, 255, 0.3)').attr('result', 'color')
+      filter.append('feComposite').attr('in', 'color').attr('in2', 'blur').attr('operator', 'in').attr('result', 'glow')
+      const merge = filter.append('feMerge')
+      merge.append('feMergeNode').attr('in', 'glow')
+      merge.append('feMergeNode').attr('in', 'SourceGraphic')
     }
 
     // ── 渲染热点标记（自适应边界过滤） ──
@@ -804,8 +844,18 @@ async function renderWorldMapD3() {
       .datum(graticule)
       .attr('d', pathGenerator as any)
       .attr('fill', 'none')
-      .attr('stroke', 'rgba(0, 200, 255, 0.04)')
+      .attr('stroke', 'rgba(0, 150, 200, 0.15)')
       .attr('stroke-width', 0.5)
+      .attr('stroke-dasharray', '2,4')
+    
+    // ── 边框线（世界边缘） ──
+    const sphere: any = { type: 'Sphere' }
+    mapGroup.append('path')
+      .datum(sphere)
+      .attr('d', pathGenerator as any)
+      .attr('fill', 'url(#oceanGradient)')
+      .attr('stroke', 'rgba(0, 180, 255, 0.5)')
+      .attr('stroke-width', 1)
 
     // ── 注册 ResizeObserver（仅首次）──
     setupMapResizeObserver(svgEl, WIDTH, HEIGHT)
@@ -887,33 +937,53 @@ function renderHotspotMarkers(svg: any, projection: any, WIDTH = 1600, HEIGHT = 
     // tooltip 标题
     marker.append('title').text(`${spot.region}: ${spot.title}`)
     
+    // 发光效果（使用局部 defs）
+    const localDefs = svg.select('defs').empty() ? svg.insert('defs', ':first-child') : svg.select('defs')
+    const glowFilter = localDefs.select('#hotspotGlow').empty() 
+      ? localDefs.append('filter').attr('id', 'hotspotGlow').attr('x', '-100%').attr('y', '-100%').attr('width', '300%').attr('height', '300%')
+      : localDefs.select('#hotspotGlow')
+    if (localDefs.select('#hotspotGlow').selectAll('*').length === 0) {
+      const blur = glowFilter.append('feGaussianBlur').attr('stdDeviation', '4').attr('result', 'coloredBlur')
+      const merge = glowFilter.append('feMerge')
+      merge.append('feMergeNode').attr('in', 'coloredBlur')
+      merge.append('feMergeNode').attr('in', 'SourceGraphic')
+    }
+    
     // 脉冲外圈 - 使用 SMIL 动画（SVG 原生，对 r/opacity 属性有效）
     const pulseCircle = marker.append('circle')
-      .attr('r', 8)
+      .attr('r', 10)
       .attr('fill', 'none')
       .attr('stroke', color)
-      .attr('stroke-width', 1.5)
-      .attr('opacity', 0.7)
+      .attr('stroke-width', 2)
+      .attr('opacity', 0.8)
+      .attr('filter', 'url(#hotspotGlow)')
     
     pulseCircle.append('animate')
       .attr('attributeName', 'r')
-      .attr('from', 8)
-      .attr('to', pulseMax)
+      .attr('from', 10)
+      .attr('to', pulseMax + 8)
       .attr('dur', dur)
       .attr('repeatCount', 'indefinite')
     
     pulseCircle.append('animate')
       .attr('attributeName', 'opacity')
-      .attr('from', 0.7)
+      .attr('from', 0.8)
       .attr('to', 0)
       .attr('dur', dur)
       .attr('repeatCount', 'indefinite')
     
     // 实心中心点（静态）
     marker.append('circle')
-      .attr('r', 5)
+      .attr('r', 6)
       .attr('fill', color)
-      .attr('opacity', 0.9)
+      .attr('filter', 'url(#hotspotGlow)')
+      .attr('opacity', 0.95)
+    
+    // 内圈高亮
+    marker.append('circle')
+      .attr('r', 2)
+      .attr('fill', '#ffffff')
+      .attr('opacity', 0.8)
     
     // 外圈边框（静态）
     marker.append('circle')
