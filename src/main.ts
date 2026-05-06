@@ -458,6 +458,22 @@ let techNews: TechNews[] = [
   { id: '5', title: 'AWS 推出 Trainium3 训练芯片', category: 'cloud', time: '昨天', source: 'AWS', heat: 75 }
 ]
 
+// 公司新闻数据
+interface CompanyNews {
+  id: string
+  title: string
+  category: 'product' | 'event' | 'finance' | 'partner'
+  time: string
+  source: string
+}
+
+let companyNews: CompanyNews[] = [
+  { id: '1', title: '功夫565芯片通过车规认证', category: 'product', time: '今天 09:00', source: '欧冶半导体' },
+  { id: '2', title: '欧冶半导体亮相2026北京车展', category: 'event', time: '昨天 18:30', source: '欧冶半导体' },
+  { id: '3', title: 'Q1营收同比增长120%', category: 'finance', time: '昨天', source: '财报' },
+  { id: '4', title: '与比亚迪达成战略合作', category: 'partner', time: '3天前', source: '欧冶半导体' }
+]
+
 // 金融市场数据
 interface FinancialMarket {
   name: string
@@ -1149,6 +1165,41 @@ function renderSentimentCompact(): string {
   `
 }
 
+function renderCompanyNewsCompact(): string {
+  const categoryIcons: Record<string, string> = {
+    product: '💎',
+    event: '🎯',
+    finance: '📊',
+    partner: '🤝'
+  }
+  return `
+    <div class="card compact">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="card-title-icon">🏢</div>
+          <span>公司新闻</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="company-news-list">
+          ${companyNews.slice(0, 4).map(news => `
+            <div class="company-news-item">
+              <div class="company-news-icon">${categoryIcons[news.category]}</div>
+              <div class="company-news-content">
+                <div class="company-news-title">${news.title}</div>
+                <div class="company-news-meta">
+                  <span>${news.source}</span>
+                  <span>${news.time}</span>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `
+}
+
 function renderAIInsightsCompact(): string {
   const categoryIcons: Record<string, string> = {
     trend: '📈',
@@ -1340,6 +1391,7 @@ function renderDashboardPage(): string {
         <div class="dashboard-sidebar">
           ${renderAlertCompact()}
           ${renderSentimentCompact()}
+          ${renderCompanyNewsCompact()}
           ${renderTechRadarCompact()}
           ${renderTechNewsCompact()}
           ${renderSupplyChainCompact()}
