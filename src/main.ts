@@ -10,13 +10,16 @@ import {
   fetchRealNews,
   fetchStockData,
   fetchIndustryIndices,
-  fetchGlobalHotspots
+  fetchGlobalHotspots,
+  forceRefreshAll
 } from './dataService'
 Chart.register(...registerables)
 
 // 世界地图数据缓存
 let worldMapData: any = null
 let isMapRendering = false
+let mapRenderRetryCount = 0
+const MAX_MAP_RETRY = 3
 
 // ==================== 配置 ====================
 // 自动刷新间隔：10分钟
@@ -86,23 +89,26 @@ async function performFullRefresh() {
   }
   
   try {
-    // 并行获取所有数据
-    const [news, indices, hotspots] = await Promise.all([
-      fetchLatestNews(),
-      fetchIndustryIndices(),
-      fetchGlobalHotspots()
-    ])
+    // 强制刷新所有数据（清除缓存）
+    const refreshedData = await forceRefreshAll()
     
     console.log('Refreshed data:', {
-      news: news.length,
-      indices: indices.length,
-      hotspots: hotspots.length
+      news: refreshedData.news.length,
+      indices: refreshedData.indices.length,
+      hotspots: refreshedData.hotspots.length,
+      stocks: Object.keys(refreshedData.stocks).length
     })
     
-    // 关键：更新所有全局数据变量
-    newsData = news  // 更新新闻数据
-    globalHotspots = hotspots
-    industryIndices = indices.map(idx => ({
+    // ====== 更新所有全局数据 ======
+    
+    // 1. 新闻数据
+    newsData = refreshedData.news
+    
+    // 2. 全球热点
+    globalHotspots = refreshedData.hotspots
+    
+    // 3. 行业指数
+    industryIndices = refreshedData.indices.map(idx => ({
       name: idx.name,
       value: idx.value,
       change: idx.change,
@@ -111,20 +117,82 @@ async function performFullRefresh() {
       timestamp: idx.timestamp
     }))
     
-    // 刷新页面数据
+    // 4. 市场表现（竞争对手股价）
+    const stockSymbols = ['NVDA', 'QCOM', 'MBLY', '09660.HK', '02533.HK', '603893.SH']
+    const refreshedStocks = await fetchStockData(stockSymbols)
+    if (refreshedStocks.length > 0) {
+      marketPerformance = refreshedStocks.map(stock => ({
+        name: stock.name,
+        ticker: stock.symbol,
+        price: stock.price,
+        change: stock.change,
+        changePercent: stock.changePercent,
+        marketCap: stock.marketCap || '-',
+        threat: (stock.symbol === 'NVDA' || stock.symbol === '09660.HK' ? 'high' : 'medium') as 'high' | 'medium' | 'low'
+      }))
+      competitors = marketPerformance
+    }
+    
+    // 5. 金融市场数据（动态波动）
+    financialMarkets = financialMarkets.map(market => {
+      const volatility = market.type === 'crypto' ? 0.025 : (market.type === 'commodity' ? 0.008 : 0.006)
+      const delta = (Math.random() - 0.5) * 2 * volatility * market.value
+      const newValue = market.value + delta
+      const newChangePercent = market.changePercent + (Math.random() - 0.5) * 0.4
+      return {
+        ...market,
+        value: newValue,
+        change: delta,
+        changePercent: newChangePercent
+      }
+    })
+    
+    // 6. AI洞察数据（轮换显示）
+    const now = new Date()
+    const minuteSeed = now.getMinutes()
+    aiInsights = aiInsights.map((insight, i) => ({
+      ...insight,
+      time: i === minuteSeed % 4 ? '刚刚' : 
+            i < 2 ? `${Math.floor(Math.random() * 59) + 1}分钟前` : 
+            `${Math.floor(Math.random() * 5) + 1}小时前`
+    }))
+    
+    // 7. 科技动态热度更新
+    techNews = techNews.map(news => ({
+      ...news,
+      heat: Math.max(50, Math.min(99, news.heat + Math.floor((Math.random() - 0.5) * 10)))
+    }))
+    
+    // 8. 风险预警动态更新
+    alertData = alertData.map((alert, i) => ({
+      ...alert,
+      time: i === 0 ? `${Math.floor(Math.random() * 9) + 1}分钟前` :
+            i === 1 ? `${Math.floor(Math.random() * 30) + 10}分钟前` :
+            `${Math.floor(Math.random() * 3) + 1}小时前`
+    }))
+    
+    // 重置地图渲染状态（不重置地图数据缓存）
+    isMapRendering = false
+    mapRenderRetryCount = 0
+    
+    // 重新渲染整个页面
     app.innerHTML = renderApp()
     bindEvents()
     
     // 等待 DOM 更新后再渲染地图 - 使用 requestAnimationFrame 确保 DOM 已更新
     requestAnimationFrame(async () => {
       console.log('DOM updated, rendering map and charts...')
-      await renderWorldMapD3()
       initCharts()
+      await renderWorldMapD3()
       console.log('=== FULL REFRESH COMPLETED ===')
     })
     
   } catch (error) {
     console.error('Error during full refresh:', error)
+    // 出错也尝试重渲染
+    app.innerHTML = renderApp()
+    bindEvents()
+    setTimeout(() => renderWorldMapD3(), 300)
   }
 }
 
@@ -133,8 +201,8 @@ function updateGlobalHotspots(news: any[]) {
     id: `news-${i}`,
     title: item.title,
     region: getRegionFromSource(item.source),
-    category: mapCategory(item.category),
-    impact: i < 3 ? 'high' : (i < 6 ? 'medium' : 'low'),
+    category: mapCategory(item.category) as GlobalHotspot['category'],
+    impact: (i < 3 ? 'high' : (i < 6 ? 'medium' : 'low')) as GlobalHotspot['impact'],
     time: item.time,
     summary: item.summary
   }))
@@ -205,6 +273,30 @@ style.textContent = `
   @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+  }
+  @keyframes pulse-high {
+    0%, 100% { r: 10; opacity: 0.6; }
+    50% { r: 25; opacity: 0.2; }
+  }
+  @keyframes pulse-medium {
+    0%, 100% { r: 10; opacity: 0.6; }
+    50% { r: 22; opacity: 0.2; }
+  }
+  @keyframes pulse-low {
+    0%, 100% { r: 8; opacity: 0.6; }
+    50% { r: 18; opacity: 0.2; }
+  }
+  .hotspot-marker {
+    transition: transform 0.2s ease;
+  }
+  .hotspot-marker:hover {
+    transform: scale(1.3);
+  }
+  .continent-path, .country-path {
+    transition: fill 0.3s ease;
+  }
+  .continent-path:hover, .country-path:hover {
+    fill: rgba(40, 60, 90, 0.95) !important;
   }
 `
 document.head.appendChild(style)
@@ -469,17 +561,49 @@ function renderHeader(): string {
 }
 
 function renderIndustryTicker(): string {
+  // 全球资讯快讯 - 中英文混合
+  const globalHeadlines = [
+    { flag: '🇺🇸', text: 'NVIDIA GTC: Blackwell Ultra GPU delivers 4x AI performance boost' },
+    { flag: '🇨🇳', text: '地平线征程6芯片获多家主机厂量产定点，Q2批量出货' },
+    { flag: '🇬🇧', text: 'Reuters: US tightens AI chip export controls, 120+ countries affected' },
+    { flag: '🇯🇵', text: '日经新闻：日本政府追加1万亿日元半导体补贴，扶持Rapidus先进制程' },
+    { flag: '🇰🇷', text: 'KBS: Samsung HBM4 memory enters mass production for AI training servers' },
+    { flag: '🇨🇳', text: '华为昇腾910C算力测试超越英伟达A100，国产AI芯片竞争力提升' },
+    { flag: '🇩🇪', text: 'Handelsblatt: TSMC Dresden fab on schedule, EU Chips Act funding secured' },
+    { flag: '🇨🇳', text: '比亚迪自研璇玑芯片流片成功，垂直整合战略加速落地' },
+    { flag: '🇺🇸', text: 'WSJ: Apple M4 chip mass production begins, TSMC 3nm yield exceeds 70%' },
+    { flag: '🇨🇳', text: '工信部：智能网联汽车渗透率突破50%，本土芯片供应链持续完善' },
+    { flag: '🇺🇸', text: 'Bloomberg: Qualcomm Snapdragon X Elite gains enterprise adoption momentum' },
+    { flag: '🇨🇳', text: '寒武纪MLU370出货量破百万，云端推理市场份额持续扩大' },
+    { flag: '🇮🇳', text: 'ET: Tata Electronics begins iPhone component manufacturing in India' },
+    { flag: '🇨🇳', text: 'Digitimes：台积电CoWoS封装产能翻倍，AI算力供给瓶颈有望缓解' },
+    { flag: '🇸🇦', text: 'Arab News: Saudi Aramco invests $4B in advanced semiconductor manufacturing' },
+  ]
+  // 重复数组确保滚动无缝
+  const allHeadlines = [...globalHeadlines, ...globalHeadlines]
+
   return `
     <div class="ticker-bar">
       <div class="ticker-label">产业指数</div>
       <div class="ticker-items">
-        ${industryIndices.map(idx => `
+        ${[...industryIndices, ...industryIndices].map(idx => `
           <div class="ticker-item">
             <span class="ticker-icon">${idx.icon}</span>
             <span class="ticker-name">${idx.name}</span>
             <span class="ticker-value">${idx.value.toFixed(2)}</span>
             <span class="ticker-change ${idx.change >= 0 ? 'up' : 'down'}">${idx.change >= 0 ? '↑' : '↓'} ${Math.abs(idx.changePercent).toFixed(2)}%</span>
           </div>
+        `).join('')}
+      </div>
+    </div>
+    <div class="news-ticker-bar">
+      <div class="news-ticker-label">全球资讯</div>
+      <div class="news-ticker-track">
+        ${allHeadlines.map(h => `
+          <span class="news-ticker-item">
+            <span class="news-ticker-flag">${h.flag}</span>
+            <span class="news-ticker-text">${h.text}</span>
+          </span>
         `).join('')}
       </div>
     </div>
@@ -494,12 +618,7 @@ function renderWorldMap(): string {
     tech: '💡'
   }
 
-  // 延迟渲染地图，确保 DOM 已加载
-  setTimeout(() => {
-    console.log('=== ATTEMPTING TO RENDER WORLD MAP ===')
-    renderWorldMapD3()
-  }, 200)
-
+  // 注意：地图渲染将在 DOM 插入后由调用方触发，不在此处 setTimeout
   return `
     <div class="world-map-container">
       <div class="world-map-header">
@@ -513,67 +632,33 @@ function renderWorldMap(): string {
           <span class="legend-item"><span class="legend-dot low"></span>低影响</span>
         </div>
       </div>
+      <!-- 地图区域 - 全宽展示 -->
       <div class="world-map" id="worldMapContainer">
-        <svg viewBox="0 0 1050 520" class="world-map-svg" preserveAspectRatio="xMidYMid meet" id="worldMapSvg" style="width:100%;height:300px;background:rgba(0,20,40,0.3);">
+        <svg viewBox="0 0 1600 800" class="world-map-svg" preserveAspectRatio="xMidYMid meet" id="worldMapSvg" style="width:100%;height:100%;display:block;background:rgba(0,10,30,0.4);">
           <defs>
             <radialGradient id="oceanGradient" cx="50%" cy="50%" r="70%">
-              <stop offset="0%" stop-color="rgba(0, 40, 100, 0.25)" />
-              <stop offset="50%" stop-color="rgba(0, 20, 50, 0.12)" />
+              <stop offset="0%" stop-color="rgba(0, 40, 100, 0.3)" />
               <stop offset="100%" stop-color="rgba(0, 0, 0, 0)" />
             </radialGradient>
-            <filter id="continentGlow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="2" result="blur"/>
-              <feFlood flood-color="rgba(0, 200, 255, 0.25)" result="color"/>
-              <feComposite in="color" in2="blur" operator="in" result="shadow"/>
-              <feMerge>
-                <feMergeNode in="shadow"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
           </defs>
-          
-          <!-- 海洋背景 -->
-          <rect width="1050" height="520" fill="url(#oceanGradient)" />
-          
-          <!-- 世界地图路径组 - 简化版世界地图（内置，无外部依赖） -->
-          <g class="world-continents" fill="rgba(20, 35, 55, 0.95)" stroke="rgba(0, 200, 255, 0.5)" stroke-width="0.8" filter="url(#continentGlow)" id="worldMapPaths">
-            <!-- 北美 -->
-            <path d="M120,100 Q180,80 230,85 L280,90 L310,110 L320,140 L300,170 L260,190 L220,200 L170,190 L120,160 L80,130 L100,110 L120,100" />
-            <!-- 南美 -->
-            <path d="M200,250 L250,220 L280,250 L290,300 L270,360 L240,400 L200,410 L180,370 L190,300 L200,250" />
-            <!-- 欧洲 -->
-            <path d="M440,90 L500,80 L560,90 L580,120 L570,150 L530,165 L480,155 L440,130 L430,100 L440,90" />
-            <!-- 非洲 -->
-            <path d="M450,180 L520,170 L570,200 L580,280 L560,360 L510,400 L460,390 L430,340 L420,260 L450,180" />
-            <!-- 亚洲 -->
-            <path d="M560,70 L680,60 L800,80 L900,120 L940,180 L920,240 L860,270 L760,260 L660,230 L580,180 L540,120 L560,70" />
-            <!-- 澳大利亚 -->
-            <path d="M820,320 L900,300 L940,340 L930,390 L880,420 L820,400 L800,360 L820,320" />
-          </g>
-          
-          <!-- 经纬网格 -->
-          <g stroke="rgba(0, 200, 255, 0.05)" stroke-width="0.5">
-            ${Array.from({length: 22}, (_, i) => `<line x1="${i * 50}" y1="0" x2="${i * 50}" y2="520" />`).join('')}
-            ${Array.from({length: 11}, (_, i) => `<line x1="0" y1="${i * 52}" x2="1050" y2="${i * 52}" />`).join('')}
-          </g>
-          
-          <!-- 热点标记将由 D3 动态生成 -->
+          <rect class="map-bg" width="1600" height="800" fill="url(#oceanGradient)" />
         </svg>
-        
-        <!-- 热点信息卡片 -->
-        <div class="hotspot-overlay">
-          ${globalHotspots.slice(0, 4).map(spot => `
-            <div class="hotspot-card ${spot.impact}" data-region="${spot.region}">
-              <div class="hotspot-card-header">
-                <span class="hotspot-card-icon">${categoryIcons[spot.category]}</span>
-                <span class="hotspot-card-region">${spot.region}</span>
-                <span class="hotspot-card-time">${spot.time}</span>
-              </div>
-              <div class="hotspot-card-title">${spot.title}</div>
-              <div class="hotspot-card-summary">${spot.summary}</div>
+        <!-- 地图 tooltip -->
+        <div id="mapTooltip" style="display:none;position:absolute;background:rgba(5,15,35,0.95);border:1px solid rgba(0,200,255,0.3);border-radius:6px;padding:10px 14px;pointer-events:none;z-index:100;min-width:200px;max-width:280px;backdrop-filter:blur(8px);"></div>
+      </div>
+      <!-- 热点卡片区域 - 地图下方横向滚动 -->
+      <div class="hotspot-list">
+        ${globalHotspots.slice(0, 8).map(spot => `
+          <div class="hotspot-card ${spot.impact}" data-region="${spot.region}">
+            <div class="hotspot-card-header">
+              <span class="hotspot-card-icon">${categoryIcons[spot.category]}</span>
+              <span class="hotspot-card-region">${spot.region}</span>
+              <span class="hotspot-card-time">${spot.time}</span>
             </div>
-          `).join('')}
-        </div>
+            <div class="hotspot-card-title">${spot.title}</div>
+            <div class="hotspot-card-summary">${spot.summary}</div>
+          </div>
+        `).join('')}
       </div>
     </div>
   `
@@ -590,146 +675,269 @@ async function renderWorldMapD3() {
   console.log('=== Starting D3 World Map Render ===')
   
   try {
-    // 检查容器
-    const svgContainer = document.getElementById('worldMapContainer')
-    if (!svgContainer) {
-      console.error('Map container not found')
+    // 等待 DOM 确实存在
+    const svgEl = document.getElementById('worldMapSvg')
+    if (!svgEl) {
+      console.error('SVG element #worldMapSvg not found in DOM')
       isMapRendering = false
       return
     }
     
     const svg = d3.select('#worldMapSvg')
-    if (svg.empty()) {
-      console.error('SVG element not found')
-      isMapRendering = false
-      return
+    const WIDTH = 1600
+    const HEIGHT = 800
+    
+    // 定义投影（自然地球投影）- 扩大比例尺以填充更多空间
+    const projection = d3Geo.geoNaturalEarth1()
+      .scale(260)
+      .translate([WIDTH / 2, HEIGHT / 2 + 20])
+    
+    const pathGenerator = d3Geo.geoPath().projection(projection)
+    
+    // 清除所有旧内容（保留 defs 和 rect）
+    svg.selectAll('g').remove()
+    svg.selectAll('.hotspot-markers').remove()
+    
+    // 确保背景 rect 存在
+    if (svg.select('rect.map-bg').empty()) {
+      svg.insert('rect', ':first-child')
+        .attr('class', 'map-bg')
+        .attr('width', WIDTH)
+        .attr('height', HEIGHT)
+        .attr('fill', 'rgba(0, 20, 40, 0.6)')
     }
     
-    // 加载地图数据
+    // 创建地图路径组
+    const mapGroup = svg.append('g').attr('id', 'mapGroup')
+    
+    // 加载地图 TopoJSON 数据
     let mapData = worldMapData
+    
     if (!mapData) {
       console.log('Loading map data...')
       // 使用动态路径
       const basePath = getBasePath()
       const urls = [
-        `${basePath}/world-110m.json?t=${Date.now()}`,
+        `${basePath}/world-110m.json`,
         'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
-        'https://unpkg.com/world-atlas@2/countries-110m.json'
+        'https://unpkg.com/world-atlas@2.0.2/countries-110m.json'
       ]
       
-      let response = null
       for (const url of urls) {
         try {
-          response = await fetch(url)
-          if (response.ok) break
+          console.log('Fetching map data from:', url)
+          const resp = await fetch(url)
+          if (resp.ok) {
+            const topology = await resp.json()
+            // 检查格式是否正确
+            if (topology.objects && topology.objects.countries) {
+              mapData = topojson.feature(topology, topology.objects.countries)
+              worldMapData = mapData
+              console.log(`✅ Map loaded from ${url}: ${(mapData as any).features.length} countries`)
+              break
+            } else if (topology.objects && topology.objects.land) {
+              mapData = topojson.feature(topology, topology.objects.land)
+              worldMapData = mapData
+              console.log(`✅ Map loaded (land) from ${url}`)
+              break
+            }
+          }
         } catch (e) {
-          console.log('Failed to load from:', url)
+          console.warn('Failed to load from:', url, (e as Error).message)
         }
       }
-      
-      if (!response || !response.ok) {
-        console.log('Using fallback simplified map')
-        isMapRendering = false
-        return // 使用 HTML 中的简化地图
-      }
-      
-      const topology = await response.json()
-      mapData = topojson.feature(topology, topology.objects.countries)
-      worldMapData = mapData
-      console.log('Map data loaded:', mapData.features.length, 'features')
     }
     
-    // 清空现有路径并渲染新地图
-    const pathsGroup = svg.select('#worldMapPaths')
-    if (!pathsGroup.empty()) {
-      pathsGroup.selectAll('*').remove()
+    if (mapData && (mapData as any).features) {
+      // ✅ 成功加载真实地图数据，用 D3 渲染
+      const features = (mapData as any).features
       
-      const width = 1050
-      const height = 520
-      const projection = d3Geo.geoNaturalEarth1()
-        .scale(175)
-        .translate([width / 2, height / 2])
-      const path = d3Geo.geoPath().projection(projection)
-      
-      // 渲染国家
-      pathsGroup
-        .selectAll('path')
-        .data(mapData.features)
+      mapGroup.selectAll('path.country')
+        .data(features)
         .enter()
         .append('path')
-        .attr('d', path as any)
-        .attr('fill', 'rgba(30, 45, 65, 0.9)')
-        .attr('stroke', 'rgba(0, 200, 255, 0.4)')
+        .attr('class', 'country')
+        .attr('d', (d: any) => pathGenerator(d) || '')
+        .attr('fill', '#1a2d45')
+        .attr('stroke', 'rgba(0, 200, 255, 0.35)')
         .attr('stroke-width', 0.5)
+        .on('mouseenter', function() {
+          d3.select(this).attr('fill', '#243d58')
+        })
+        .on('mouseleave', function() {
+          d3.select(this).attr('fill', '#1a2d45')
+        })
       
-      console.log('Country paths rendered')
-      
-      // 渲染热点标记
-      const impactColors: Record<string, string> = {
-        high: '#ff3366',
-        medium: '#ff9500',
-        low: '#00d4ff'
-      }
-      
-      // 移除旧的热点标记
-      svg.selectAll('.hotspot-markers').remove()
-      
-      const markersGroup = svg.append('g').attr('class', 'hotspot-markers')
-      
-      globalHotspots.slice(0, 8).forEach(spot => {
-        const coord = hotspotCoordinates[spot.region]
-        if (!coord) return
-        
-        const [x, y] = projection([coord.lon, coord.lat]) || [0, 0]
-        const color = impactColors[spot.impact]
-        
-        const marker = markersGroup.append('g')
-          .attr('class', `hotspot-marker ${spot.impact}`)
-          .attr('data-id', spot.id)
-          .attr('transform', `translate(${x}, ${y})`)
-        
-        // 脉冲外圈
-        marker.append('circle')
-          .attr('r', 20)
-          .attr('fill', 'none')
-          .attr('stroke', color)
-          .attr('stroke-width', 2)
-          .attr('opacity', 0.4)
-          .append('animate')
-          .attr('attributeName', 'r')
-          .attr('values', '10;32;10')
-          .attr('dur', '2s')
-          .attr('repeatCount', 'indefinite')
-        
-        marker.select('circle')
-          .append('animate')
-          .attr('attributeName', 'opacity')
-          .attr('values', '0.6;0;0.6')
-          .attr('dur', '2s')
-          .attr('repeatCount', 'indefinite')
-        
-        // 中心点
-        marker.append('circle')
-          .attr('r', 8)
-          .attr('fill', color)
-        
-        // 外圈
-        marker.append('circle')
-          .attr('r', 12)
-          .attr('fill', 'none')
-          .attr('stroke', color)
-          .attr('stroke-width', 1.5)
-          .attr('opacity', 0.6)
-      })
-      
-      console.log('Hotspot markers rendered')
+      console.log(`✅ D3 rendered ${features.length} country paths`)
+    } else {
+      // ❌ 所有外部源均失败，使用内置简化大陆轮廓
+      console.warn('All map sources failed, using built-in simplified continents')
+      renderFallbackMap(mapGroup)
     }
+    
+    // 渲染热点标记（无论用哪种地图都执行）
+    renderHotspotMarkers(svg, projection)
+    
+    // 添加经纬网格（美观）
+    const graticule = d3Geo.geoGraticule()()
+    mapGroup.append('path')
+      .datum(graticule)
+      .attr('d', pathGenerator as any)
+      .attr('fill', 'none')
+      .attr('stroke', 'rgba(0, 200, 255, 0.04)')
+      .attr('stroke-width', 0.5)
     
   } catch (error) {
     console.error('Error rendering world map:', error)
   } finally {
     isMapRendering = false
   }
+}
+
+// 渲染热点标记
+function renderHotspotMarkers(svg: any, projection: any) {
+  const impactColors: Record<string, string> = {
+    high: '#ff3366',
+    medium: '#ff9500',
+    low: '#00d4ff'
+  }
+  const impactPulseSize: Record<string, number> = {
+    high: 28,
+    medium: 22,
+    low: 16
+  }
+  
+  // 移除旧的热点标记
+  svg.selectAll('.hotspot-markers').remove()
+  
+  const markersGroup = svg.append('g').attr('class', 'hotspot-markers')
+  
+  globalHotspots.slice(0, 8).forEach((spot, idx) => {
+    const coord = hotspotCoordinates[spot.region]
+    if (!coord) return
+    
+    const projected = projection([coord.lon, coord.lat])
+    if (!projected) return
+    const [x, y] = projected
+    
+    // 过滤掉投影到屏幕外的点
+    if (x < 0 || x > 1600 || y < 0 || y > 800) return
+    
+    const color = impactColors[spot.impact]
+    const pulseMax = impactPulseSize[spot.impact]
+    const dur = `${1.5 + idx * 0.2}s` // 错开动画时机
+    
+    const marker = markersGroup.append('g')
+      .attr('class', `hotspot-marker impact-${spot.impact}`)
+      .attr('data-id', spot.id)
+      .attr('data-region', spot.region)
+      .attr('transform', `translate(${x}, ${y})`)
+      .style('cursor', 'pointer')
+    
+    // tooltip 标题
+    marker.append('title').text(`${spot.region}: ${spot.title}`)
+    
+    // 脉冲外圈 - 使用 SMIL 动画（SVG 原生，对 r/opacity 属性有效）
+    const pulseCircle = marker.append('circle')
+      .attr('r', 8)
+      .attr('fill', 'none')
+      .attr('stroke', color)
+      .attr('stroke-width', 1.5)
+      .attr('opacity', 0.7)
+    
+    pulseCircle.append('animate')
+      .attr('attributeName', 'r')
+      .attr('from', 8)
+      .attr('to', pulseMax)
+      .attr('dur', dur)
+      .attr('repeatCount', 'indefinite')
+    
+    pulseCircle.append('animate')
+      .attr('attributeName', 'opacity')
+      .attr('from', 0.7)
+      .attr('to', 0)
+      .attr('dur', dur)
+      .attr('repeatCount', 'indefinite')
+    
+    // 实心中心点（静态）
+    marker.append('circle')
+      .attr('r', 5)
+      .attr('fill', color)
+      .attr('opacity', 0.9)
+    
+    // 外圈边框（静态）
+    marker.append('circle')
+      .attr('r', 8)
+      .attr('fill', 'none')
+      .attr('stroke', color)
+      .attr('stroke-width', 1)
+      .attr('opacity', 0.5)
+    
+    // hover 交互：显示详情浮窗
+    marker
+      .on('mouseenter', function(event: MouseEvent) {
+        d3.select(this).select('circle[fill]')
+          .attr('r', 7)
+          .attr('opacity', 1)
+        
+        // 显示浮窗
+        const tooltip = d3.select('#mapTooltip')
+        if (!tooltip.empty()) {
+          tooltip
+            .style('display', 'block')
+            .style('left', (event.offsetX + 15) + 'px')
+            .style('top', (event.offsetY - 10) + 'px')
+            .html(`
+              <div class="map-tooltip-region">${spot.region}</div>
+              <div class="map-tooltip-title">${spot.title}</div>
+              <div class="map-tooltip-summary">${spot.summary}</div>
+              <div class="map-tooltip-time">${spot.time}</div>
+            `)
+        }
+      })
+      .on('mouseleave', function() {
+        d3.select(this).select('circle[fill]')
+          .attr('r', 5)
+          .attr('opacity', 0.9)
+        d3.select('#mapTooltip').style('display', 'none')
+      })
+  })
+  
+  console.log(`✅ Hotspot markers rendered: ${globalHotspots.filter(s => hotspotCoordinates[s.region]).length} points`)
+}
+
+// 渲染简化版地图
+function renderFallbackMap(pathsGroup: any) {
+  // 使用预定义的简化大陆路径
+  const continents = [
+    // 北美
+    { name: '北美', d: 'M120,100 Q180,80 230,85 L280,90 L310,110 L320,140 L300,170 L260,190 L220,200 L170,190 L120,160 L80,130 L100,110 L120,100' },
+    // 南美
+    { name: '南美', d: 'M200,250 L250,220 L280,250 L290,300 L270,360 L240,400 L200,410 L180,370 L190,300 L200,250' },
+    // 欧洲
+    { name: '欧洲', d: 'M440,90 L500,80 L560,90 L580,120 L570,150 L530,165 L480,155 L440,130 L430,100 L440,90' },
+    // 非洲
+    { name: '非洲', d: 'M450,180 L520,170 L570,200 L580,280 L560,360 L510,400 L460,390 L430,340 L420,260 L450,180' },
+    // 亚洲
+    { name: '亚洲', d: 'M560,70 L680,60 L800,80 L900,120 L940,180 L920,240 L860,270 L760,260 L660,230 L580,180 L540,120 L560,70' },
+    // 澳大利亚
+    { name: '澳大利亚', d: 'M820,320 L900,300 L940,340 L930,390 L880,420 L820,400 L800,360 L820,320' }
+  ]
+  
+  pathsGroup
+    .selectAll('path')
+    .data(continents)
+    .enter()
+    .append('path')
+    .attr('d', (d: any) => d.d)
+    .attr('fill', 'rgba(30, 45, 65, 0.9)')
+    .attr('stroke', 'rgba(0, 200, 255, 0.4)')
+    .attr('stroke-width', 0.8)
+    .attr('class', 'continent-path')
+    .append('title')
+    .text((d: any) => d.name)
+  
+  console.log('Fallback map rendered with', continents.length, 'continents')
 }
 
 // 当前新闻筛选状态
@@ -1638,11 +1846,22 @@ function bindEvents() {
   const refreshBtn = document.getElementById('refreshBtn')
   if (refreshBtn) {
     refreshBtn.addEventListener('click', async () => {
+      if (refreshBtn.classList.contains('spinning')) return // 防止重复点击
       refreshBtn.classList.add('spinning')
+      refreshBtn.setAttribute('disabled', 'true')
       console.log('=== MANUAL REFRESH TRIGGERED ===')
-      await performFullRefresh()
-      showRefreshNotification()
-      setTimeout(() => refreshBtn.classList.remove('spinning'), 1000)
+      try {
+        await performFullRefresh()
+        showRefreshNotification()
+      } catch (e) {
+        console.error('Manual refresh failed:', e)
+      }
+      // performFullRefresh 会重渲染 DOM，需要重新获取按钮
+      const newBtn = document.getElementById('refreshBtn')
+      if (newBtn) {
+        newBtn.classList.remove('spinning')
+        newBtn.removeAttribute('disabled')
+      }
     })
   }
 
@@ -1661,6 +1880,10 @@ function bindEvents() {
             renderWorldMapD3()
           })
         }
+        // CRITICAL: 重新渲染地图 - 修复筛选按钮导致地图消失的问题
+        requestAnimationFrame(() => {
+          setTimeout(() => renderWorldMapD3(), 150)
+        })
       }
     })
   })
@@ -1673,12 +1896,15 @@ async function init() {
   const app = document.querySelector<HTMLDivElement>('#app')
   if (app) {
     try {
-      // 初始化所有数据
+      console.log('Fetching latest data...')
+      // 并行获取初始数据
       const [news, indices, hotspots] = await Promise.all([
         fetchLatestNews(),
         fetchIndustryIndices(),
         fetchGlobalHotspots()
       ])
+      
+      console.log('Data fetched:', news.length, 'news,', indices.length, 'indices,', hotspots.length, 'hotspots')
       
       // 初始化全局数据
       newsData = news
@@ -1712,13 +1938,21 @@ async function init() {
 
       // 延迟渲染地图，等待 DOM 更新
       requestAnimationFrame(() => {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
+          console.log('Triggering initial map render...')
           renderWorldMapD3()
-        }, 100)
+        })
       })
       
     } catch (error) {
       console.error('Error during initialization:', error)
+      // 即使出错也渲染基本页面
+      if (!app.innerHTML) {
+        app.innerHTML = renderApp()
+        bindEvents()
+        initCharts()
+      }
+      setTimeout(() => renderWorldMapD3(), 500)
     }
   } else {
     console.error('App element not found')
