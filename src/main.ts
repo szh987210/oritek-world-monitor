@@ -22,6 +22,14 @@ let isMapRendering = false
 // 自动刷新间隔：10分钟
 const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000
 
+// 获取基础路径 - 兼容开发和生产环境
+function getBasePath(): string {
+  // 检测是否在 GitHub Pages 环境
+  const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
+  const isGitHubPages = hostname.includes('github.io')
+  return isGitHubPages ? '/oritek-world-monitor' : ''
+}
+
 // ==================== 新闻自动抓取系统 ====================
 const NEWS_SOURCES = [
   { name: 'tech', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.techcrunch.com/feed/' },
@@ -72,7 +80,10 @@ function startAutoRefresh() {
 async function performFullRefresh() {
   console.log('=== PERFORMING FULL DATA REFRESH ===')
   const app = document.querySelector<HTMLDivElement>('#app')
-  if (!app) return
+  if (!app) {
+    console.error('App element not found')
+    return
+  }
   
   try {
     // 并行获取所有数据
@@ -88,7 +99,8 @@ async function performFullRefresh() {
       hotspots: hotspots.length
     })
     
-    // 更新全局数据
+    // 关键：更新所有全局数据变量
+    newsData = news  // 更新新闻数据
     globalHotspots = hotspots
     industryIndices = indices.map(idx => ({
       name: idx.name,
@@ -103,13 +115,14 @@ async function performFullRefresh() {
     app.innerHTML = renderApp()
     bindEvents()
     
-    // 重新初始化图表和地图
-    setTimeout(async () => {
+    // 等待 DOM 更新后再渲染地图 - 使用 requestAnimationFrame 确保 DOM 已更新
+    requestAnimationFrame(async () => {
+      console.log('DOM updated, rendering map and charts...')
       await renderWorldMapD3()
       initCharts()
-    }, 100)
+      console.log('=== FULL REFRESH COMPLETED ===')
+    })
     
-    console.log('=== FULL REFRESH COMPLETED ===')
   } catch (error) {
     console.error('Error during full refresh:', error)
   }
@@ -596,9 +609,8 @@ async function renderWorldMapD3() {
     let mapData = worldMapData
     if (!mapData) {
       console.log('Loading map data...')
-      // 检测当前运行环境，动态构建路径
-      const isGitHubPages = window.location.hostname.includes('github.io')
-      const basePath = isGitHubPages ? '/oritek-world-monitor' : ''
+      // 使用动态路径
+      const basePath = getBasePath()
       const urls = [
         `${basePath}/world-110m.json?t=${Date.now()}`,
         'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
@@ -1610,9 +1622,13 @@ function bindEvents() {
         if (app) {
           app.innerHTML = renderApp()
           bindEvents()
-          if (page === 'dashboard' || page === 'automotive') {
-            setTimeout(initCharts, 100)
-          }
+          // 等待 DOM 更新后重新渲染图表和地图
+          requestAnimationFrame(() => {
+            if (page === 'dashboard' || page === 'automotive') {
+              initCharts()
+              renderWorldMapD3()
+            }
+          })
         }
       }
     })
@@ -1640,7 +1656,10 @@ function bindEvents() {
         app.innerHTML = renderApp()
         bindEvents()
         if (currentPage === 'dashboard' || currentPage === 'automotive') {
-          setTimeout(initCharts, 100)
+          requestAnimationFrame(() => {
+            initCharts()
+            renderWorldMapD3()
+          })
         }
       }
     })
@@ -1654,9 +1673,30 @@ async function init() {
   const app = document.querySelector<HTMLDivElement>('#app')
   if (app) {
     try {
-      console.log('Fetching latest news...')
-      const news = await fetchLatestNews()
-      console.log('News fetched:', news.length, 'items')
+      // 初始化所有数据
+      const [news, indices, hotspots] = await Promise.all([
+        fetchLatestNews(),
+        fetchIndustryIndices(),
+        fetchGlobalHotspots()
+      ])
+      
+      // 初始化全局数据
+      newsData = news
+      globalHotspots = hotspots
+      industryIndices = indices.map(idx => ({
+        name: idx.name,
+        value: idx.value,
+        change: idx.change,
+        changePercent: idx.changePercent,
+        icon: idx.icon,
+        timestamp: idx.timestamp
+      }))
+      
+      console.log('Initial data loaded:', {
+        news: news.length,
+        indices: indices.length,
+        hotspots: hotspots.length
+      })
       
       app.innerHTML = renderApp()
       console.log('App rendered')
@@ -1670,10 +1710,12 @@ async function init() {
       startAutoRefresh()
       console.log('Auto refresh started (10 minutes interval)')
 
-      // 延迟渲染地图
-      setTimeout(() => {
-        renderWorldMapD3()
-      }, 300)
+      // 延迟渲染地图，等待 DOM 更新
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          renderWorldMapD3()
+        }, 100)
+      })
       
     } catch (error) {
       console.error('Error during initialization:', error)
