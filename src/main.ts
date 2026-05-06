@@ -713,15 +713,18 @@ async function renderWorldMapD3() {
     // 更新 SVG viewBox 尺寸（同步 CSS 宽高）
     svg.attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
 
-    // ── 投影：中美欧三地完整显示的自然地球投影 ──
-    // rotate([-60, 0]) 让大西洋/欧洲居中
-    // 中国(120°E)在右侧，美国(~100°W)在左侧，欧洲(0-30°E)在中央
-    // scale 增大以确保三地都在视野内
-    const scale = Math.min(WIDTH / 2.8, HEIGHT / 1.4, 320)
-    const projection = d3Geo.geoNaturalEarth1()
-      .rotate([-60, 0])  // 旋转让欧洲/大西洋居中，三大区域完整显示
-      .scale(scale)
+    // ── 投影：Equirectangular 等距圆柱投影 ──
+    // 特点：全球完整显示，无裁剪，高纬度地区变形
+    // 适合需要同时看到中国、美国、欧洲的应用场景
+    //
+    // 参数说明：
+    // - scale: 根据容器宽度计算，让全球宽度适配容器
+    // - translate: 中心点偏移
+    const equirectScale = WIDTH / (2 * Math.PI) * 0.95  // 略微缩小留边距
+    const projection = d3Geo.geoEquirectangular()
+      .scale(equirectScale)
       .translate([WIDTH / 2, HEIGHT / 2])
+      .precision(0.1)
 
     const pathGenerator = d3Geo.geoPath().projection(projection)
 
@@ -844,18 +847,17 @@ async function renderWorldMapD3() {
       .datum(graticule)
       .attr('d', pathGenerator as any)
       .attr('fill', 'none')
-      .attr('stroke', 'rgba(0, 150, 200, 0.15)')
+      .attr('stroke', 'rgba(0, 150, 200, 0.12)')
       .attr('stroke-width', 0.5)
-      .attr('stroke-dasharray', '2,4')
-    
-    // ── 边框线（世界边缘） ──
+
+    // ── 边框线（世界边缘）- Equirectangular 投影边框是矩形 ──
     const sphere: any = { type: 'Sphere' }
     mapGroup.append('path')
       .datum(sphere)
       .attr('d', pathGenerator as any)
       .attr('fill', 'url(#oceanGradient)')
-      .attr('stroke', 'rgba(0, 180, 255, 0.5)')
-      .attr('stroke-width', 1)
+      .attr('stroke', 'rgba(0, 180, 255, 0.6)')
+      .attr('stroke-width', 2)
 
     // ── 注册 ResizeObserver（仅首次）──
     setupMapResizeObserver(svgEl, WIDTH, HEIGHT)
