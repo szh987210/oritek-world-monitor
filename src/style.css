@@ -462,12 +462,11 @@ body {
   }
   
   .world-map {
-    min-height: 400px;
-    padding: 12px;
+    height: 50vw;
   }
-  
+
   .world-map-svg {
-    min-height: 380px;
+    min-height: 0;
   }
 }
 
@@ -479,12 +478,11 @@ body {
   }
   
   .world-map {
-    min-height: 350px;
-    padding: 8px;
+    height: 55vw;
   }
-  
+
   .world-map-svg {
-    min-height: 330px;
+    min-height: 0;
   }
 }
 
@@ -742,14 +740,16 @@ body {
 
 .world-map {
   position: relative;
-  padding: 0;
-  background: 
+  width: 100%;
+  /* 高度由 JS 中 D3 强制 2:1 viewBox，这里只设一个合理的 CSS 高度 */
+  height: 40vw;
+  min-height: 200px;
+  max-height: 500px;
+  background:
     radial-gradient(ellipse at 50% 50%, rgba(0, 102, 255, 0.08) 0%, transparent 60%),
     radial-gradient(ellipse at 30% 30%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
     var(--bg-secondary);
-  min-height: 500px;
-  height: 55vw;
-  max-height: 720px;
+  overflow: hidden;
 }
 
 .world-map-svg {
@@ -779,9 +779,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
   .world-map {
-    height: 70vw;
-    min-height: 280px;
-    max-height: 420px;
+    /* 移动端保持 2:1 比例 */
+    max-height: 280px;
   }
 }
 
@@ -790,9 +789,8 @@ body {
     grid-template-columns: 1fr;
   }
   .world-map {
-    height: 80vw;
-    min-height: 250px;
-    max-height: 360px;
+    /* 小屏保持 2:1 比例 */
+    max-height: 220px;
   }
 }
 

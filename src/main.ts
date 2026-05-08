@@ -708,9 +708,11 @@ async function renderWorldMapD3() {
     // ── 自适应：获取 SVG 实际渲染尺寸 ──
     const rect = svgEl.getBoundingClientRect()
     const WIDTH  = Math.max(rect.width,  300)   // 最小 300px
-    const HEIGHT = Math.max(rect.height, 200)   // 最小 200px
+    // 强制 2:1 比例：Equirectangular 投影的自然比例
+    // 忽略容器的 CSS 高度，始终用宽度的一半作为高度
+    const HEIGHT = Math.round(WIDTH / 2)
 
-    // 更新 SVG viewBox 尺寸（同步 CSS 宽高）
+    // 更新 SVG viewBox 尺寸（强制 2:1）
     svg.attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
 
     // ── 投影：Equirectangular 等距圆柱投影 ──
