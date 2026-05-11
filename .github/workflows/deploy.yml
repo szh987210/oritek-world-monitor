@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      - name: Build with cache-bust
+        run: npm run build:cachebust
 
       - name: Copy public assets to dist
         run: cp -r public/* dist/ 2>/dev/null || true

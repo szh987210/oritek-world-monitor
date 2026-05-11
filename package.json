@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:cachebust": "tsc && vite build && node scripts/cachebust.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
