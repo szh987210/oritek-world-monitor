@@ -805,10 +805,7 @@ async function renderWorldMapD3() {
       .attr('stroke', 'rgba(0, 180, 255, 0.6)')
       .attr('stroke-width', 2)
 
-    // ── 注册 ResizeObserver（仅首次）──
-    setupMapResizeObserver(svgEl, WIDTH, HEIGHT)
-
-    // 记录本次渲染的实际尺寸，供 ResizeObserver 对比
+    // ── 更新本次渲染的实际尺寸（ResizeObserver 回调将对比此值）──
     mapLastRenderedWidth = WIDTH
     mapLastRenderedHeight = HEIGHT
 
@@ -820,16 +817,16 @@ async function renderWorldMapD3() {
 }
 
 // ── ResizeObserver：容器大小变化时自动重绘地图 ──
-// 修复：使用模块级 mapLastRenderedWidth/Height 替代闭包参数，避免只触发一次
-function setupMapResizeObserver(container: HTMLElement, _initialW: number, _initialH: number) {
-  if (mapResizeObserver) {
-    mapResizeObserver.disconnect()
-  }
+// 正确做法：observer 仅在首次渲染时注册一次，后续 resize 触发时只重渲染，不重建 observer
+let _resizeObserverInitialized = false
+function setupMapResizeObserver(container: HTMLElement) {
+  if (_resizeObserverInitialized) return
+  _resizeObserverInitialized = true
 
   mapResizeObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
       const { width, height } = entry.contentRect
-      // 尺寸变化超过 5px 才重绘，且对比的是最近一次渲染的实际尺寸
+      // 尺寸变化超过 5px 才重绘，对比最近一次渲染的实际尺寸
       if (Math.abs(width - mapLastRenderedWidth) > 5 || Math.abs(height - mapLastRenderedHeight) > 5) {
         console.log(`[ResizeObserver] Map size changed to ${width.toFixed(0)}×${height.toFixed(0)}, re-rendering...`)
         isMapRendering = false   // 重置状态，允许重新渲染
