@@ -3,7 +3,7 @@ import { Chart, registerables } from 'chart.js'
 import * as d3 from 'd3'
 import * as d3Geo from 'd3-geo'
 import * as topojson from 'topojson-client'
-import { 
+import {
   type NewsItem,
   type IndustryIndex,
   type GlobalHotspot,
@@ -23,45 +23,25 @@ let isMapRendering = false
 let mapRenderRetryCount = 0
 const MAX_MAP_RETRY = 3
 
+// ResizeObserver 专用：跟踪上一次渲染的实际尺寸（避免闭包捕获初始值导致 resize 失效）
+let mapLastRenderedWidth = 0
+let mapLastRenderedHeight = 0
+
 // ==================== 配置 ====================
 // 自动刷新间隔：10分钟
 const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000
 
 // 获取基础路径 - 兼容开发和生产环境
 function getBasePath(): string {
-  // 检测是否在 GitHub Pages 环境
   const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
   const isGitHubPages = hostname.includes('github.io')
   return isGitHubPages ? '/oritek-world-monitor' : ''
 }
 
-// ==================== 新闻自动抓取系统 ====================
-const NEWS_SOURCES = [
-  { name: 'tech', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.techcrunch.com/feed/' },
-  { name: 'business', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/business/rss.xml' },
-  { name: 'world', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/world/rss.xml' }
-]
-
-// 缓存的新闻数据
-let cachedNews: { items: any[], timestamp: number } = { items: [], timestamp: 0 }
-const NEWS_CACHE_DURATION = 10 * 60 * 1000 // 10分钟缓存
-
-// 获取最新新闻 - 使用真实数据
+// 获取最新新闻（委托 dataService 处理联网抓取和缓存）
 async function fetchLatestNews(): Promise<NewsItem[]> {
   console.log('Fetching latest news from data service...')
   return await fetchRealNews()
-}
-
-// 备用新闻数据
-function getFallbackNews(): any[] {
-  return [
-    { id: '1', title: '英伟达发布 Thor 芯片，算力 2000 TOPS 直接对标征程 6', source: '36氪', time: '10:32', category: 'tech', priority: 'critical', summary: '英伟达 GTC 发布新一代自动驾驶芯片' },
-    { id: '2', title: '小米 SU7 订单破 10 万，智驾芯片需求激增', source: '汽车之家', time: '09:45', category: 'market', priority: 'info', summary: '小米汽车产能爬坡中' },
-    { id: '3', title: '美国商务部拟对华 AI 芯片出口实施新限制', source: '财联社', time: '08:20', category: 'policy', priority: 'critical', summary: '可能影响自动驾驶训练芯片' },
-    { id: '4', title: '台积电 3nm 产能满载，汽车芯片交期延长至 40 周', source: '集微网', time: '昨天', category: 'supply', priority: 'warning', summary: '产能受 AI 芯片挤压' },
-    { id: '5', title: '地平线征程 6 获比亚迪定点，Q3 量产', source: '盖世汽车', time: '昨天', category: 'competitor', priority: 'info', summary: '本土智驾芯片突破' },
-    { id: '6', title: '宇树科技发布人形机器人 H1，售价 9.9 万起', source: '机器之心', time: '昨天', category: 'tech', priority: 'info', summary: '人形机器人商业化加速' }
-  ]
 }
 
 // ==================== 自动刷新机制 ====================
@@ -207,42 +187,6 @@ async function performFullRefresh() {
     bindEvents()
     setTimeout(() => renderWorldMapD3(), 300)
   }
-}
-
-function updateGlobalHotspots(news: any[]) {
-  const newHotspots: GlobalHotspot[] = news.slice(0, 8).map((item, i) => ({
-    id: `news-${i}`,
-    title: item.title,
-    region: getRegionFromSource(item.source),
-    category: mapCategory(item.category) as GlobalHotspot['category'],
-    impact: (i < 3 ? 'high' : (i < 6 ? 'medium' : 'low')) as GlobalHotspot['impact'],
-    time: item.time,
-    summary: item.summary
-  }))
-  
-  globalHotspots = newHotspots
-}
-
-function getRegionFromSource(source: string): string {
-  const regionMap: Record<string, string> = {
-    'tech': '美国',
-    'business': '欧洲',
-    'world': '全球',
-    'sina_stock': '中国',
-    'sina_finance': '中国',
-    'qq_finance': '中国'
-  }
-  return regionMap[source] || '全球'
-}
-
-function mapCategory(category: string): string {
-  const categoryMap: Record<string, string> = {
-    'tech': 'tech',
-    'business': 'economy',
-    'diplomacy': 'diplomacy',
-    'economy': 'economy'
-  }
-  return categoryMap[category] || 'tech'
 }
 
 function showRefreshNotification() {
@@ -864,6 +808,10 @@ async function renderWorldMapD3() {
     // ── 注册 ResizeObserver（仅首次）──
     setupMapResizeObserver(svgEl, WIDTH, HEIGHT)
 
+    // 记录本次渲染的实际尺寸，供 ResizeObserver 对比
+    mapLastRenderedWidth = WIDTH
+    mapLastRenderedHeight = HEIGHT
+
   } catch (error) {
     console.error('Error rendering world map:', error)
   } finally {
@@ -872,7 +820,8 @@ async function renderWorldMapD3() {
 }
 
 // ── ResizeObserver：容器大小变化时自动重绘地图 ──
-function setupMapResizeObserver(container: HTMLElement, lastW: number, lastH: number) {
+// 修复：使用模块级 mapLastRenderedWidth/Height 替代闭包参数，避免只触发一次
+function setupMapResizeObserver(container: HTMLElement, _initialW: number, _initialH: number) {
   if (mapResizeObserver) {
     mapResizeObserver.disconnect()
   }
@@ -880,8 +829,8 @@ function setupMapResizeObserver(container: HTMLElement, lastW: number, lastH: nu
   mapResizeObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
       const { width, height } = entry.contentRect
-      // 尺寸变化超过 5px 才重绘，避免微小抖动触发
-      if (Math.abs(width - lastW) > 5 || Math.abs(height - lastH) > 5) {
+      // 尺寸变化超过 5px 才重绘，且对比的是最近一次渲染的实际尺寸
+      if (Math.abs(width - mapLastRenderedWidth) > 5 || Math.abs(height - mapLastRenderedHeight) > 5) {
         console.log(`[ResizeObserver] Map size changed to ${width.toFixed(0)}×${height.toFixed(0)}, re-rendering...`)
         isMapRendering = false   // 重置状态，允许重新渲染
         renderWorldMapD3()

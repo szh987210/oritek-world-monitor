@@ -26,6 +26,16 @@ export interface NewsItem {
 
 // ==================== 联网新闻抓取配置 ====================
 const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json'
+
+// 简单的 HTML 转义（防止 XSS）
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
 const NEWS_RSS_SOURCES = [
   // 中文科技/半导体/汽车新闻源
   { name: '36氪',   url: 'https://36kr.com/feed',                     category: 'tech' as const },
@@ -334,14 +344,16 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
           
           const items: NewsItem[] = (data.items || []).slice(0, 4).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
+            const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '')
+            const rawSummary = (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 100)
             return {
               id: `news-${source.name}-${idx}-${Date.now()}`,
-              title: item.title?.replace(/<[^>]+>/g, '').slice(0, 80) || '无标题',
+              title: escapeHtml(rawTitle.slice(0, 80)),
               source: source.name,
               time: formatTimeAgo(published),
               category: source.category,
-              priority: inferPriority(item.title || '', source.category),
-              summary: (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 100),
+              priority: inferPriority(rawTitle, source.category),
+              summary: escapeHtml(rawSummary),
               url: item.link || '',
               publishedAt: published
             }
@@ -498,15 +510,16 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
           
           return (data.items || []).slice(0, 3).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
-            const title = (item.title || '无标题').replace(/<[^>]+>/g, '').slice(0, 60)
+            const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '').slice(0, 60)
+            const rawDesc = (item.description || '').replace(/<[^>]+>/g, '').slice(0, 80)
             return {
               id: `hotspot-${source.name}-${idx}-${Date.now()}`,
-              title,
-              region: inferRegion(title + (item.description||''), source.region),
-              category: inferHotspotCategory(title),
-              impact: inferImpact(title) as 'high' | 'medium' | 'low',
+              title: escapeHtml(rawTitle),
+              region: inferRegion(rawTitle + rawDesc, source.region),
+              category: inferHotspotCategory(rawTitle),
+              impact: inferImpact(rawTitle) as 'high' | 'medium' | 'low',
               time: formatTimeAgo(published),
-              summary: (item.description || '').replace(/<[^>]+>/g, '').slice(0, 80),
+              summary: escapeHtml(rawDesc),
               source: source.name
             } as GlobalHotspot
           })
