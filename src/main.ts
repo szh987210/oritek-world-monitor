@@ -8,6 +8,7 @@ import {
   type IndustryIndex,
   type GlobalHotspot,
   type CompanyNews,
+  type NewsIndustry,
   fetchRealNews,
   fetchStockData,
   fetchIndustryIndices,
@@ -302,12 +303,28 @@ interface PolicyItem {
 
 // ==================== 真实数据 ====================
 let newsData: NewsItem[] = [
-  { id: '1', title: '英伟达发布 Thor 芯片，算力 2000 TOPS 直接对标征程 6', source: '36氪', time: '10:32', category: 'competitor', priority: 'critical', summary: '英伟达 GTC 发布新一代自动驾驶芯片' },
-  { id: '2', title: '小米 SU7 订单破 10 万，智驾芯片需求激增', source: '汽车之家', time: '09:45', category: 'market', priority: 'info', summary: '小米汽车产能爬坡中' },
-  { id: '3', title: '美国商务部拟对华 AI 芯片出口实施新限制', source: '财联社', time: '08:20', category: 'policy', priority: 'critical', summary: '可能影响自动驾驶训练芯片' },
-  { id: '4', title: '台积电 3nm 产能满载，汽车芯片交期延长至 40 周', source: '集微网', time: '昨天', category: 'supply', priority: 'warning', summary: '产能受 AI 芯片挤压' },
-  { id: '5', title: '地平线征程 6 获比亚迪定点，Q3 量产', source: '盖世汽车', time: '昨天', category: 'competitor', priority: 'info', summary: '本土智驾芯片突破' },
-  { id: '6', title: '宇树科技发布人形机器人 H1，售价 9.9 万起', source: '机器之心', time: '昨天', category: 'tech', priority: 'info', summary: '人形机器人商业化加速' }
+  // 半导体行业新闻
+  { id: '1', title: '英伟达发布 Thor 芯片，算力 2000 TOPS 直接对标征程 6', source: '36氪', time: '10:32', category: 'competitor', industry: 'semiconductor', priority: 'critical', summary: '英伟达 GTC 发布新一代自动驾驶芯片' },
+  { id: '2', title: '美国商务部拟对华 AI 芯片出口实施新限制', source: '财联社', time: '08:20', category: 'policy', industry: 'semiconductor', priority: 'critical', summary: '可能影响自动驾驶训练芯片' },
+  { id: '3', title: '台积电 3nm 产能满载，汽车芯片交期延长至 40 周', source: '集微网', time: '昨天', category: 'supply', industry: 'semiconductor', priority: 'warning', summary: '产能受 AI 芯片挤压' },
+  { id: '4', title: '地平线征程 6 获比亚迪定点，Q3 量产', source: '盖世汽车', time: '昨天', category: 'competitor', industry: 'semiconductor', priority: 'info', summary: '本土智驾芯片突破' },
+  { id: '5', title: '中芯国际 14nm 产能利用率突破 100%', source: '集微网', time: '今天', category: 'market', industry: 'semiconductor', priority: 'warning', summary: '国产替代加速推进' },
+  { id: '6', title: '荷兰 ASML 下一代 EUV 光刻机开始接受预订', source: 'EE Times', time: '昨天', category: 'tech', industry: 'semiconductor', priority: 'info', summary: 'High-NA EUV 技术进展' },
+  // 智能汽车行业新闻
+  { id: '7', title: '小米 SU7 订单破 10 万，智驾芯片需求激增', source: '汽车之家', time: '09:45', category: 'market', industry: 'automotive', priority: 'info', summary: '小米汽车产能爬坡中' },
+  { id: '8', title: '蔚来 ET9 城市 NOA 功能全量推送', source: '车云网', time: '今天', category: 'tech', industry: 'automotive', priority: 'info', summary: '端到端智驾方案落地' },
+  { id: '9', title: '比亚迪 2025 年智驾渗透率目标 80%', source: '盖世汽车', time: '昨天', category: 'market', industry: 'automotive', priority: 'warning', summary: '头部车企加速智驾标配' },
+  { id: '10', title: '华为鸿蒙智行月交付量突破 4 万台', source: '汽车之家', time: '昨天', category: 'market', industry: 'automotive', priority: 'info', summary: '生态协同效应显现' },
+  // 机器人行业新闻
+  { id: '11', title: '宇树科技发布人形机器人 H1，售价 9.9 万起', source: '机器之心', time: '昨天', category: 'tech', industry: 'robotics', priority: 'info', summary: '人形机器人商业化加速' },
+  { id: '12', title: 'Figure AI 与 BMW 合作机器人进入产线测试', source: 'TechCrunch', time: '今天', category: 'market', industry: 'robotics', priority: 'warning', summary: '工业机器人人机协作新阶段' },
+  { id: '13', title: '智元机器人完成 B+ 轮融资，估值超 20 亿', source: '36氪', time: '昨天', category: 'market', industry: 'robotics', priority: 'info', summary: '人形机器人赛道持续火热' },
+  { id: '14', title: '特斯拉 Optimus 将在上海工厂部署 1000 台', source: '机器之心', time: '2天前', category: 'market', industry: 'robotics', priority: 'warning', summary: '人形机器人规模化落地加速' },
+  // AI行业新闻
+  { id: '15', title: 'GPT-5 发布，多模态能力大幅提升', source: 'OpenAI', time: '今天', category: 'tech', industry: 'ai', priority: 'critical', summary: '下一代大语言模型能力飞跃' },
+  { id: '16', title: '中国大模型备案数量突破 300 个', source: '网信办', time: '昨天', category: 'policy', industry: 'ai', priority: 'info', summary: '生成式AI监管框架日趋完善' },
+  { id: '17', title: '端侧 AI 芯片需求激增 300%', source: 'Counterpoint', time: '昨天', category: 'market', industry: 'ai', priority: 'warning', summary: '手机/PC/汽车端侧推理成为新战场' },
+  { id: '18', title: 'AI Agent 商业化元年开启，企业级市场达 280 亿美元', source: 'Gartner', time: '3天前', category: 'market', industry: 'ai', priority: 'info', summary: '企业级 AI Agent 市场规模爆发' }
 ]
 
 let alertData: AlertItem[] = [
@@ -1027,17 +1044,31 @@ function renderFallbackMap(pathsGroup: any, projection?: any) {
 // 当前新闻筛选状态
 let currentNewsFilter: 'all' | 'competitor' | 'market' = 'all'
 
-function renderNewsCompact(): string {
-  const filteredNews = currentNewsFilter === 'all' 
-    ? newsData 
-    : newsData.filter(n => n.category === currentNewsFilter)
+function renderNewsCompact(industry: NewsIndustry = 'all'): string {
+  // 按行业和类型过滤新闻
+  let filteredNews = newsData
+  if (industry !== 'all') {
+    filteredNews = filteredNews.filter(n => n.industry === industry || n.industry === 'all')
+  }
+  
+  const filteredByCategory = currentNewsFilter === 'all' 
+    ? filteredNews 
+    : filteredNews.filter(n => n.category === currentNewsFilter)
+  
+  const industryName = {
+    'all': '全行业',
+    'semiconductor': '半导体',
+    'automotive': '智能汽车',
+    'robotics': '机器人',
+    'ai': 'AI'
+  }[industry] || '全行业'
   
   return `
     <div class="card compact">
       <div class="card-header">
         <div class="card-title">
           <div class="card-title-icon">📰</div>
-          <span>实时情报</span>
+          <span>实时情报 · ${industryName}</span>
         </div>
         <div class="card-actions">
           <button class="card-action ${currentNewsFilter === 'all' ? 'active' : ''}" data-filter="all">全部</button>
@@ -1047,7 +1078,7 @@ function renderNewsCompact(): string {
       </div>
       <div class="card-body">
         <div class="news-feed compact" id="newsFeed">
-          ${filteredNews.slice(0, 5).map(news => `
+          ${filteredByCategory.slice(0, 5).map(news => `
             <div class="news-item ${news.priority}">
               <div class="news-time">${news.time}</div>
               <div class="news-content">
@@ -1502,7 +1533,7 @@ function renderSemiconductorPage(): string {
               <div class="stat-data-source">数据来源: SIA</div>
             </div>
           </div>
-          ${renderNewsCompact()}
+          ${renderNewsCompact('semiconductor')}
           ${renderMarketPerformanceCompact()}
         </div>
         <div class="side-column">
@@ -1546,7 +1577,7 @@ function renderAutomotivePage(): string {
               <div class="stat-data-source">数据来源: BloombergNEF</div>
             </div>
           </div>
-          ${renderNewsCompact()}
+          ${renderNewsCompact('automotive')}
           ${renderMarketPerformanceCompact()}
           ${renderAIInsightsCompact()}
         </div>
@@ -1591,7 +1622,7 @@ function renderRoboticsPage(): string {
               <div class="stat-data-source">数据来源: GGII</div>
             </div>
           </div>
-          ${renderNewsCompact()}
+          ${renderNewsCompact('robotics')}
           ${renderRoboticsCompaniesCompact()}
           ${renderStartupFundingCompact()}
         </div>
@@ -1708,7 +1739,7 @@ function renderAIPage(): string {
               <div class="stat-data-source">数据来源: Counterpoint</div>
             </div>
           </div>
-          ${renderNewsCompact()}
+          ${renderNewsCompact('ai')}
           ${renderAICompaniesCompact()}
           ${renderAIInsightsCompact()}
         </div>

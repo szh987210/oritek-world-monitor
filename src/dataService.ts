@@ -18,6 +18,7 @@ export interface NewsItem {
   source: string
   time: string
   category: 'competitor' | 'market' | 'policy' | 'tech' | 'supply'
+  industry: 'semiconductor' | 'automotive' | 'robotics' | 'ai' | 'all'
   priority: 'critical' | 'warning' | 'info'
   summary: string
   url?: string
@@ -36,17 +37,29 @@ function escapeHtml(str: string): string {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;')
 }
-const NEWS_RSS_SOURCES = [
-  // 中文科技/半导体/汽车新闻源
-  { name: '36氪',   url: 'https://36kr.com/feed',                     category: 'tech' as const },
-  { name: '虎嗅',   url: 'https://www.huxiu.com/rss/0.xml',          category: 'tech' as const },
-  { name: '车云网', url: 'http://www.cheyun.com/rss.xml',             category: 'market' as const },
-  { name: '集微网', url: 'https://laoyaoba.com/rss',                   category: 'tech' as const },
-  { name: '盖世汽车', url: 'https://auto.gasgoo.com/rss/',           category: 'market' as const },
-  // 英文科技/半导体新闻源
-  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/',          category: 'tech' as const },
-  { name: 'AnandTech',  url: 'https://www.anandtech.com/feeds.xml',   category: 'tech' as const },
-  { name: 'EE Times',   url: 'https://www.eetimes.com/feed/',         category: 'tech' as const },
+
+export type NewsIndustry = 'semiconductor' | 'automotive' | 'robotics' | 'ai' | 'all'
+
+const NEWS_RSS_SOURCES: Array<{
+  name: string
+  url: string
+  category: 'tech' | 'market' | 'policy' | 'supply' | 'competitor'
+  industry: NewsIndustry
+}> = [
+  // 半导体行业
+  { name: '集微网', url: 'https://laoyaoba.com/rss',                   category: 'tech', industry: 'semiconductor' },
+  { name: 'AnandTech', url: 'https://www.anandtech.com/feeds.xml',   category: 'tech', industry: 'semiconductor' },
+  { name: 'EE Times', url: 'https://www.eetimes.com/feed/',          category: 'tech', industry: 'semiconductor' },
+  // 智能汽车行业
+  { name: '车云网', url: 'http://www.cheyun.com/rss.xml',            category: 'market', industry: 'automotive' },
+  { name: '盖世汽车', url: 'https://auto.gasgoo.com/rss/',           category: 'market', industry: 'automotive' },
+  // 机器人行业
+  { name: '机器之心', url: 'https://www.jiqizhixin.com/rss',         category: 'tech', industry: 'robotics' },
+  // AI行业
+  { name: '36氪',   url: 'https://36kr.com/feed',                    category: 'tech', industry: 'ai' },
+  { name: '虎嗅',   url: 'https://www.huxiu.com/rss/0.xml',         category: 'tech', industry: 'ai' },
+  // 通用科技
+  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/',         category: 'tech', industry: 'all' },
 ]
 
 // 全球热点RSS新闻源（国际新闻）
@@ -154,22 +167,28 @@ const BASE_INDICES: IndustryIndex[] = [
 
 // 新闻数据模板（用于生成动态新闻）
 const NEWS_TEMPLATES: NewsItem[] = [
-  { id: '1', title: '英伟达发布新一代自动驾驶芯片Thor，算力达2000 TOPS', source: '36氪', time: '10:32', category: 'competitor', priority: 'critical', summary: '英伟达 GTC 大会发布新一代 GPU，专为自动驾驶优化，直接对标地平线征程6' },
-  { id: '2', title: '小米汽车销量创新高，智驾需求持续强劲', source: '汽车之家', time: '09:45', category: 'market', priority: 'info', summary: '小米 SU7 月交付量突破 2 万台，智驾功能成核心卖点' },
-  { id: '3', title: '美国拟扩大对华半导体出口管制范围', source: '财联社', time: '08:20', category: 'policy', priority: 'critical', summary: '新规可能影响 14nm 以下先进制程设备，国产替代压力加大' },
-  { id: '4', title: '地平线征程6芯片通过多家主机厂车规认证', source: '公司官网', time: '11:15', category: 'competitor', priority: 'warning', summary: '量产准备就绪，预计 Q2 批量出货，目标年出货量 500 万颗' },
-  { id: '5', title: '台积电先进制程产能持续紧张，汽车芯片交期延长', source: '电子时报', time: '昨天', category: 'supply', priority: 'warning', summary: '3nm 订单已排至 2026 年底，2nm 试产良率超预期' },
-  { id: '6', title: 'Mobileye Q1营收超预期，与宝马合作深化', source: '路透社', time: '2天前', category: 'competitor', priority: 'info', summary: 'EyeQ6 芯片将用于下一代高端车型，年收入同比增长 24%' },
-  { id: '7', title: '黑芝麻智能通过港交所聆讯，最快年内上市', source: '证券时报', time: '2天前', category: 'market', priority: 'warning', summary: '国产智驾芯片厂商加速上市进程，募资约 15 亿港元' },
-  { id: '8', title: '华为昇腾910C芯片性能超越英伟达A100', source: 'TechWeb', time: '3天前', category: 'competitor', priority: 'critical', summary: '国产 AI 芯片竞争力持续增强，挑战英伟达数据中心霸主地位' },
-  { id: '9', title: '欧盟《芯片法案》补贴计划首批项目落地', source: '彭博社', time: '3天前', category: 'policy', priority: 'info', summary: '430 亿欧元支持本土芯片制造业，台积电德国工厂获批' },
-  { id: '10', title: '比亚迪自研智驾芯片"璇玑"流片成功', source: '汽车之家', time: '4天前', category: 'market', priority: 'warning', summary: '垂直整合趋势加速，供应链格局或将生变' },
-  { id: '11', title: '英特尔Lunar Lake芯片发布，集成NPU算力大幅提升', source: 'AnandTech', time: '4天前', category: 'tech', priority: 'info', summary: '端侧 AI 算力竞争进入新阶段，X86 生态 AI 化加速' },
-  { id: '12', title: 'RISC-V架构在汽车芯片领域渗透加速', source: '半导体行业观察', time: '5天前', category: 'tech', priority: 'info', summary: '多家汽车主机厂表示将优先选用 RISC-V 架构 MCU' },
-  { id: '13', title: '韩国三星新一代HBM4存储正式量产', source: '韩国先驱报', time: '1天前', category: 'supply', priority: 'warning', summary: 'AI训练加速器存储带宽大幅提升，SK海力士同步跟进' },
-  { id: '14', title: '日本政府宣布新一轮半导体补贴，总额超1万亿日元', source: '日经新闻', time: '1天前', category: 'policy', priority: 'info', summary: '重点扶持 Rapidus 先进制程和汽车芯片企业' },
-  { id: '15', title: '蔚来ET9智驾系统实测，端到端大模型效果优异', source: '懂车帝', time: '今天', category: 'market', priority: 'info', summary: '纯视觉方案 + 端到端大模型成为国内智驾主流方向' },
-  { id: '16', title: 'AI芯片全球短缺延续，订单能见度延伸至18个月', source: 'Digitimes', time: '今天', category: 'supply', priority: 'critical', summary: 'H100/H200 需求远超供给，客户转向国产替代方案' },
+  // 半导体行业
+  { id: '1', title: '英伟达发布新一代自动驾驶芯片Thor，算力达2000 TOPS', source: '36氪', time: '10:32', category: 'competitor', industry: 'semiconductor', priority: 'critical', summary: '英伟达 GTC 大会发布新一代 GPU，专为自动驾驶优化，直接对标地平线征程6' },
+  { id: '2', title: '美国拟扩大对华半导体出口管制范围', source: '财联社', time: '08:20', category: 'policy', industry: 'semiconductor', priority: 'critical', summary: '新规可能影响 14nm 以下先进制程设备，国产替代压力加大' },
+  { id: '3', title: '地平线征程6芯片通过多家主机厂车规认证', source: '公司官网', time: '11:15', category: 'competitor', industry: 'semiconductor', priority: 'warning', summary: '量产准备就绪，预计 Q2 批量出货，目标年出货量 500 万颗' },
+  { id: '4', title: '台积电先进制程产能持续紧张，汽车芯片交期延长', source: '电子时报', time: '昨天', category: 'supply', industry: 'semiconductor', priority: 'warning', summary: '3nm 订单已排至 2026 年底，2nm 试产良率超预期' },
+  { id: '5', title: 'Mobileye Q1营收超预期，与宝马合作深化', source: '路透社', time: '2天前', category: 'competitor', industry: 'semiconductor', priority: 'info', summary: 'EyeQ6 芯片将用于下一代高端车型，年收入同比增长 24%' },
+  { id: '6', title: '华为昇腾910C芯片性能超越英伟达A100', source: 'TechWeb', time: '3天前', category: 'competitor', industry: 'semiconductor', priority: 'critical', summary: '国产 AI 芯片竞争力持续增强，挑战英伟达数据中心霸主地位' },
+  { id: '7', title: '欧盟《芯片法案》补贴计划首批项目落地', source: '彭博社', time: '3天前', category: 'policy', industry: 'semiconductor', priority: 'info', summary: '430 亿欧元支持本土芯片制造业，台积电德国工厂获批' },
+  { id: '8', title: '英特尔Lunar Lake芯片发布，集成NPU算力大幅提升', source: 'AnandTech', time: '4天前', category: 'tech', industry: 'semiconductor', priority: 'info', summary: '端侧 AI 算力竞争进入新阶段，X86 生态 AI 化加速' },
+  { id: '9', title: 'RISC-V架构在汽车芯片领域渗透加速', source: '半导体行业观察', time: '5天前', category: 'tech', industry: 'semiconductor', priority: 'info', summary: '多家汽车主机厂表示将优先选用 RISC-V 架构 MCU' },
+  { id: '10', title: '韩国三星新一代HBM4存储正式量产', source: '韩国先驱报', time: '1天前', category: 'supply', industry: 'semiconductor', priority: 'warning', summary: 'AI训练加速器存储带宽大幅提升，SK海力士同步跟进' },
+  { id: '11', title: '日本政府宣布新一轮半导体补贴，总额超1万亿日元', source: '日经新闻', time: '1天前', category: 'policy', industry: 'semiconductor', priority: 'info', summary: '重点扶持 Rapidus 先进制程和汽车芯片企业' },
+  { id: '12', title: 'AI芯片全球短缺延续，订单能见度延伸至18个月', source: 'Digitimes', time: '今天', category: 'supply', industry: 'semiconductor', priority: 'critical', summary: 'H100/H200 需求远超供给，客户转向国产替代方案' },
+  // 智能汽车行业
+  { id: '13', title: '小米汽车销量创新高，智驾需求持续强劲', source: '汽车之家', time: '09:45', category: 'market', industry: 'automotive', priority: 'info', summary: '小米 SU7 月交付量突破 2 万台，智驾功能成核心卖点' },
+  { id: '14', title: '黑芝麻智能通过港交所聆讯，最快年内上市', source: '证券时报', time: '2天前', category: 'market', industry: 'automotive', priority: 'warning', summary: '国产智驾芯片厂商加速上市进程，募资约 15 亿港元' },
+  { id: '15', title: '比亚迪自研智驾芯片"璇玑"流片成功', source: '汽车之家', time: '4天前', category: 'market', industry: 'automotive', priority: 'warning', summary: '垂直整合趋势加速，供应链格局或将生变' },
+  { id: '16', title: '蔚来ET9智驾系统实测，端到端大模型效果优异', source: '懂车帝', time: '今天', category: 'market', industry: 'automotive', priority: 'info', summary: '纯视觉方案 + 端到端大模型成为国内智驾主流方向' },
+  // 机器人行业
+  { id: '17', title: 'Figure AI 发布新一代人形机器人', source: 'TechCrunch', time: '昨天', category: 'tech', industry: 'robotics', priority: 'warning', summary: '人形机器人商业化加速，多场景落地' },
+  // AI行业
+  { id: '18', title: 'GPT-5 发布，多模态能力大幅提升', source: 'OpenAI', time: '今天', category: 'tech', industry: 'ai', priority: 'critical', summary: '下一代大语言模型能力飞跃，推理能力提升 10 倍' },
 ]
 
 // 全球热点模板
@@ -352,6 +371,7 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
               source: source.name,
               time: formatTimeAgo(published),
               category: source.category,
+              industry: source.industry,
               priority: inferPriority(rawTitle, source.category),
               summary: escapeHtml(rawSummary),
               url: item.link || '',
