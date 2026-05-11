@@ -486,22 +486,51 @@ let globalHotspots: GlobalHotspot[] = [
   { id: '8', title: '台积电美国工厂投产延期', region: '美国', category: 'tech', impact: 'high', time: '昨天', summary: '亚利桑那工厂投产推迟至 2027 年' }
 ]
 
-// 热点地理坐标
+// 热点地理坐标（扩展完整版，覆盖所有主要热点区域）
 const hotspotCoordinates: Record<string, { lon: number; lat: number }> = {
+  // 北美
   '美国': { lon: -95, lat: 37 },
-  '中国': { lon: 105, lat: 35 },
+  '加拿大': { lon: -106, lat: 56 },
+  '墨西哥': { lon: -102, lat: 24 },
+  // 南美
+  '巴西': { lon: -52, lat: -10 },
+  '阿根廷': { lon: -64, lat: -34 },
+  // 欧洲
   '欧洲': { lon: 10, lat: 50 },
-  '中东': { lon: 45, lat: 25 },
-  '日本': { lon: 138, lat: 36 },
-  '韩国': { lon: 127, lat: 37 },
-  '印度': { lon: 78, lat: 20 },
-  '台湾': { lon: 121, lat: 24 },
-  '中国台湾': { lon: 121, lat: 24 },  // 别名兼容
-  '俄罗斯': { lon: 105, lat: 60 },
   '英国': { lon: -2, lat: 54 },
   '德国': { lon: 10, lat: 51 },
   '法国': { lon: 2, lat: 46 },
-  '新加坡': { lon: 104, lat: 1 }
+  '意大利': { lon: 12, lat: 42 },
+  '西班牙': { lon: -4, lat: 40 },
+  '荷兰': { lon: 5, lat: 52 },
+  '波兰': { lon: 20, lat: 52 },
+  // 亚洲
+  '中国': { lon: 105, lat: 35 },
+  '台湾': { lon: 121, lat: 24 },
+  '中国台湾': { lon: 121, lat: 24 },
+  '日本': { lon: 138, lat: 36 },
+  '韩国': { lon: 127, lat: 37 },
+  '印度': { lon: 78, lat: 20 },
+  '东南亚': { lon: 110, lat: 10 },
+  '新加坡': { lon: 104, lat: 1 },
+  '越南': { lon: 106, lat: 16 },
+  '泰国': { lon: 101, lat: 15 },
+  '印尼': { lon: 120, lat: -5 },
+  // 中东
+  '中东': { lon: 45, lat: 25 },
+  '沙特阿拉伯': { lon: 45, lat: 24 },
+  '阿联酋': { lon: 54, lat: 24 },
+  '伊朗': { lon: 53, lat: 32 },
+  '以色列': { lon: 35, lat: 31 },
+  // 非洲
+  '非洲': { lon: 20, lat: 10 },
+  '南非': { lon: 25, lat: -29 },
+  '埃及': { lon: 31, lat: 27 },
+  // 大洋洲
+  '澳大利亚': { lon: 134, lat: -25 },
+  '新西兰': { lon: 174, lat: -41 },
+  // 俄罗斯
+  '俄罗斯': { lon: 105, lat: 60 },
 }
 
 let currentPage = 'dashboard'
@@ -855,13 +884,15 @@ function setupMapResizeObserver(container: HTMLElement) {
   mapResizeObserver.observe(container)
 }
 
-// 渲染热点标记（支持自适应尺寸）
+// 渲染热点标记（支持自适应尺寸）- 修复闪烁问题
 function renderHotspotMarkers(svg: any, projection: any, WIDTH = 1600, HEIGHT = 800) {
 
-  // ── 热点数据兜底：若 globalHotspots 为空，使用默认数据 ──
-  const hotspotsToRender = (globalHotspots && globalHotspots.length > 0)
-    ? globalHotspots.slice(0, 8)
+  // ── 热点数据：显示更多热点（最多15个）并启用所有有坐标的热点 ──
+  const allHotspots = (globalHotspots && globalHotspots.length > 0)
+    ? globalHotspots
     : getDefaultHotspots()
+  // 显示所有有坐标的热点，不硬编码数量
+  const hotspotsToRender = allHotspots.filter(s => hotspotCoordinates[s.region])
 
   const impactColors: Record<string, string> = {
     high: '#ff3366',
@@ -960,32 +991,54 @@ function renderHotspotMarkers(svg: any, projection: any, WIDTH = 1600, HEIGHT = 
       .attr('stroke-width', 1)
       .attr('opacity', 0.5)
     
-    // hover 交互：显示详情浮窗
+    // hover 交互：显示详情浮窗 - 修复闪烁问题
     marker
       .on('mouseenter', function(event: MouseEvent) {
+        // 高亮当前标记
         d3.select(this).select('circle[fill]')
           .attr('r', 7)
           .attr('opacity', 1)
         
-        // 显示浮窗
+        // 显示浮窗 - 使用 clientX/clientY 配合容器定位，避免闪烁
         const tooltip = d3.select('#mapTooltip')
         if (!tooltip.empty()) {
-          tooltip
-            .style('display', 'block')
-            .style('left', (event.offsetX + 15) + 'px')
-            .style('top', (event.offsetY - 10) + 'px')
-            .html(`
-              <div class="map-tooltip-region">${spot.region}</div>
-              <div class="map-tooltip-title">${spot.title}</div>
-              <div class="map-tooltip-summary">${spot.summary}</div>
-              <div class="map-tooltip-time">${spot.time}</div>
-            `)
+          const container = document.querySelector('#worldMapContainer')
+          if (container) {
+            const rect = container.getBoundingClientRect()
+            const x = event.clientX - rect.left + 15
+            const y = event.clientY - rect.top - 10
+            tooltip
+              .style('display', 'block')
+              .style('left', x + 'px')
+              .style('top', y + 'px')
+              .html(`
+                <div class="map-tooltip-region">${spot.region}</div>
+                <div class="map-tooltip-title">${spot.title}</div>
+                <div class="map-tooltip-summary">${spot.summary}</div>
+                <div class="map-tooltip-time">${spot.time}</div>
+              `)
+          }
+        }
+      })
+      .on('mousemove', function(event: MouseEvent) {
+        // 鼠标移动时实时更新tooltip位置
+        const tooltip = d3.select('#mapTooltip')
+        if (!tooltip.empty()) {
+          const container = document.querySelector('#worldMapContainer')
+          if (container) {
+            const rect = container.getBoundingClientRect()
+            const x = event.clientX - rect.left + 15
+            const y = event.clientY - rect.top - 10
+            tooltip
+              .style('left', x + 'px')
+              .style('top', y + 'px')
+          }
         }
       })
       .on('mouseleave', function() {
         d3.select(this).select('circle[fill]')
-          .attr('r', 5)
-          .attr('opacity', 0.9)
+          .attr('r', 6)
+          .attr('opacity', 0.95)
         d3.select('#mapTooltip').style('display', 'none')
       })
   })

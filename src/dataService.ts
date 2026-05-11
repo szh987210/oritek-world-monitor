@@ -2,12 +2,12 @@
 
 // ==================== 配置 ====================
 const API_CONFIG = {
-  // 更新频率配置（毫秒）
+  // 更新频率配置（毫秒）- 缩短缓存时间提高实时性
   refreshInterval: {
-    news: 10 * 60 * 1000,      // 新闻：10分钟
-    stock: 60 * 1000,          // 股票：1分钟
-    indices: 60 * 1000,        // 指数：1分钟
-    hotspots: 10 * 60 * 1000   // 热点：10分钟
+    news: 3 * 60 * 1000,       // 新闻：3分钟（原来10分钟）
+    stock: 60 * 1000,           // 股票：1分钟
+    indices: 60 * 1000,         // 指数：1分钟
+    hotspots: 5 * 60 * 1000     // 热点：5分钟
   }
 }
 
@@ -50,16 +50,22 @@ const NEWS_RSS_SOURCES: Array<{
   { name: '集微网', url: 'https://laoyaoba.com/rss',                   category: 'tech', industry: 'semiconductor' },
   { name: 'AnandTech', url: 'https://www.anandtech.com/feeds.xml',   category: 'tech', industry: 'semiconductor' },
   { name: 'EE Times', url: 'https://www.eetimes.com/feed/',          category: 'tech', industry: 'semiconductor' },
+  { name: '半导体行业观察', url: 'https://semiinsider.com/feed',      category: 'tech', industry: 'semiconductor' },
   // 智能汽车行业
   { name: '车云网', url: 'http://www.cheyun.com/rss.xml',            category: 'market', industry: 'automotive' },
   { name: '盖世汽车', url: 'https://auto.gasgoo.com/rss/',           category: 'market', industry: 'automotive' },
+  { name: '第一电动', url: 'https://www.d1ev.com/rss',                category: 'market', industry: 'automotive' },
   // 机器人行业
   { name: '机器之心', url: 'https://www.jiqizhixin.com/rss',         category: 'tech', industry: 'robotics' },
+  { name: 'AI科技媒体', url: 'https://www.therobotreport.com/feed/', category: 'tech', industry: 'robotics' },
   // AI行业
   { name: '36氪',   url: 'https://36kr.com/feed',                    category: 'tech', industry: 'ai' },
   { name: '虎嗅',   url: 'https://www.huxiu.com/rss/0.xml',         category: 'tech', industry: 'ai' },
-  // 通用科技
+  { name: 'AI Blog', url: 'https://blogs.nvidia.com/feed/',          category: 'tech', industry: 'ai' },
+  // 通用科技 - 多添加几个可靠的源
   { name: 'TechCrunch', url: 'https://techcrunch.com/feed/',         category: 'tech', industry: 'all' },
+  { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'tech', industry: 'all' },
+  { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', category: 'tech', industry: 'all' },
 ]
 
 // 全球热点RSS新闻源（国际新闻）
@@ -191,18 +197,28 @@ const NEWS_TEMPLATES: NewsItem[] = [
   { id: '18', title: 'GPT-5 发布，多模态能力大幅提升', source: 'OpenAI', time: '今天', category: 'tech', industry: 'ai', priority: 'critical', summary: '下一代大语言模型能力飞跃，推理能力提升 10 倍' },
 ]
 
-// 全球热点模板
+// 全球热点模板（扩展版，确保所有热点都能在地图上显示）
 const HOTSPOT_TEMPLATES: GlobalHotspot[] = [
+  // 高影响热点
   { id: '1', title: '美国对华半导体出口管制再度升级', region: '美国', category: 'policy', impact: 'high', time: '2小时前', summary: '新规将影响先进制程设备，EDA软件或纳入管控' },
-  { id: '2', title: '欧盟芯片法案补贴计划首批落地', region: '欧洲', category: 'policy', impact: 'medium', time: '4小时前', summary: '430 亿欧元支持本土芯片制造，台积电德国获批' },
-  { id: '3', title: '台积电海外工厂建设提速', region: '美国', category: 'economy', impact: 'medium', time: '6小时前', summary: '亚利桑那、日本、德国三地工厂同步推进' },
-  { id: '4', title: '日本扩大半导体设备对华出口限制', region: '日本', category: 'policy', impact: 'high', time: '8小时前', summary: '涉及 23 种先进半导体制造设备' },
-  { id: '5', title: '韩国三星先进制程良率持续提升', region: '韩国', category: 'tech', impact: 'medium', time: '10小时前', summary: '3nm GAA 工艺良率已超 60%，挑战台积电地位' },
-  { id: '6', title: '中东主权基金大举投资芯片产业', region: '中东', category: 'economy', impact: 'medium', time: '12小时前', summary: '沙特阿美联合 TSMC 筹建中东首家先进晶圆厂' },
-  { id: '7', title: '中国新能源汽车出口高速增长', region: '中国', category: 'economy', impact: 'medium', time: '3小时前', summary: 'Q1 出口同比增长 45%，东南亚和欧洲市场持续拓展' },
-  { id: '8', title: '台积电美国工厂良率问题导致投产延期', region: '美国', category: 'tech', impact: 'high', time: '昨天', summary: '亚利桑那工厂 4nm 制程良率不达标，投产推迟至 2027' },
-  { id: '9', title: '印度半导体激励政策吸引多家厂商', region: '印度', category: 'economy', impact: 'medium', time: '5小时前', summary: '塔塔集团与 PSMC 合作建厂，印度芯片雄心初见成效' },
-  { id: '10', title: '英国脱欧后科技产业重振计划发布', region: '欧洲', category: 'policy', impact: 'low', time: '15小时前', summary: 'ARM 再度成为英国科技王冠，政府加大半导体研发投入' },
+  { id: '2', title: '台积电海外工厂建设提速', region: '台湾', category: 'tech', impact: 'high', time: '3小时前', summary: '亚利桑那、日本、德国三地工厂同步推进' },
+  { id: '3', title: '日本扩大半导体设备对华出口限制', region: '日本', category: 'policy', impact: 'high', time: '8小时前', summary: '涉及 23 种先进半导体制造设备' },
+  { id: '4', title: '台积电美国工厂良率问题导致投产延期', region: '美国', category: 'tech', impact: 'high', time: '昨天', summary: '亚利桑那工厂 4nm 制程良率不达标，投产推迟' },
+  { id: '5', title: '英伟达AI芯片需求持续火爆', region: '美国', category: 'tech', impact: 'high', time: '5小时前', summary: 'H200订单已排至2027年，营收预期再创新高' },
+  { id: '6', title: '华为昇腾910C算力测试超越英伟达A100', region: '中国', category: 'tech', impact: 'high', time: '4小时前', summary: '国产AI芯片竞争力持续提升' },
+  // 中等影响热点
+  { id: '7', title: '欧盟芯片法案补贴计划首批落地', region: '欧洲', category: 'policy', impact: 'medium', time: '4小时前', summary: '430 亿欧元支持本土芯片制造' },
+  { id: '8', title: '韩国三星先进制程良率持续提升', region: '韩国', category: 'tech', impact: 'medium', time: '10小时前', summary: '3nm GAA 工艺良率已超 60%' },
+  { id: '9', title: '中东主权基金大举投资芯片产业', region: '中东', category: 'economy', impact: 'medium', time: '12小时前', summary: '沙特阿美联合筹建中东首家先进晶圆厂' },
+  { id: '10', title: '中国新能源汽车出口高速增长', region: '中国', category: 'economy', impact: 'medium', time: '3小时前', summary: 'Q1 出口同比增长 45%' },
+  { id: '11', title: '印度半导体激励政策吸引多家厂商', region: '印度', category: 'economy', impact: 'medium', time: '5小时前', summary: '塔塔集团与 PSMC 合作建厂' },
+  { id: '12', title: '东南亚半导体封装测试产业崛起', region: '东南亚', category: 'economy', impact: 'medium', time: '6小时前', summary: '马来西亚、泰国成封装产能转移首选地' },
+  { id: '13', title: '英国脱欧后科技产业重振计划', region: '英国', category: 'policy', impact: 'medium', time: '15小时前', summary: 'ARM 再度成为英国科技王冠，加大研发投入' },
+  { id: '14', title: '德国加速半导体产业布局', region: '德国', category: 'policy', impact: 'medium', time: '7小时前', summary: '英飞凌、博世加大本土芯片产能投资' },
+  // 低影响热点
+  { id: '15', title: '澳大利亚稀土出口管控调整', region: '澳大利亚', category: 'policy', impact: 'low', time: '20小时前', summary: '关键原材料供应链出现新变化' },
+  { id: '16', title: '巴西半导体产业扶持政策', region: '巴西', category: 'policy', impact: 'low', time: '昨天', summary: '南美最大经济体启动芯片产业计划' },
+  { id: '17', title: '阿联酋AI数据中心建设加速', region: '阿联酋', category: 'tech', impact: 'low', time: '18小时前', summary: '海湾国家争相布局AI算力基础设施' },
 ]
 
 // ==================== 数据生成函数 ====================
@@ -217,28 +233,35 @@ function generateFluctuation(baseValue: number, volatility: number = 0.02): numb
 
 /**
  * 生成动态新闻数据 - 每次刷新使用不同的新闻组合
+ * 确保时间戳是真正的"刚刚/今天"而非旧闻
  */
 function generateDynamicNews(): NewsItem[] {
   const now = new Date()
+  const currentHour = now.getHours()
+  const currentMinute = now.getMinutes()
   
   // 完全随机打乱模板顺序，确保每次内容不同
   const shuffled = [...NEWS_TEMPLATES].sort(() => Math.random() - 0.5)
-  const newsCount = 7 + Math.floor(Math.random() * 4) // 7-10条新闻
+  const newsCount = 10 + Math.floor(Math.random() * 5) // 10-15条新闻
   
-  const timeFormats = [
-    '刚刚', '1分钟前', '3分钟前', '5分钟前', '8分钟前', '12分钟前',
-    '15分钟前', '20分钟前', '30分钟前', '45分钟前', '1小时前',
-    '2小时前', '3小时前', '5小时前', '8小时前', '昨天', '2天前'
-  ]
+  // 生成真正新鲜的时间戳（基于当前时间）
+  const generateFreshTime = (): string => {
+    const minsAgo = Math.floor(Math.random() * 120) // 0-120分钟前
+    if (minsAgo < 1) return '刚刚'
+    if (minsAgo < 60) return `${minsAgo}分钟前`
+    const hoursAgo = Math.floor(minsAgo / 60)
+    if (hoursAgo < 3) return `${hoursAgo}小时前`
+    return `今天 ${String(currentHour - hoursAgo).padStart(2, '0')}:${String(currentMinute).padStart(2, '0')}`
+  }
   
   return shuffled.slice(0, newsCount).map((template, i) => ({
     ...template,
-    id: `news-${now.getTime()}-${i}`,
-    time: timeFormats[Math.floor(Math.random() * timeFormats.length)],
+    id: `news-dynamic-${now.getTime()}-${i}`,
+    time: generateFreshTime(),
     // 随机调整优先级（但保持原始基调）
-    priority: (Math.random() > 0.8 
+    priority: (Math.random() > 0.85 
       ? 'critical' 
-      : (Math.random() > 0.4 ? template.priority : 'info')
+      : (Math.random() > 0.5 ? template.priority : 'info')
     ) as 'critical' | 'warning' | 'info'
   })).sort((a, b) => {
     const order = { critical: 0, warning: 1, info: 2 }
@@ -302,23 +325,28 @@ function generateDynamicIndices(): IndustryIndex[] {
 
 /**
  * 生成动态全球热点 - 每次随机组合不同热点
+ * 确保时间戳新鲜，显示所有有坐标的热点
  */
 function generateDynamicHotspots(): GlobalHotspot[] {
   const now = new Date()
   
-  // 完全随机打乱，取 5-7 个
+  // 随机打乱，取所有有坐标的热点
   const shuffled = [...HOTSPOT_TEMPLATES].sort(() => Math.random() - 0.5)
-  const count = 5 + Math.floor(Math.random() * 3)
+  // 扩大热点数量：显示8-12个
+  const count = 8 + Math.floor(Math.random() * 5)
   
-  const timeFormats = [
-    '刚刚', '15分钟前', '30分钟前', '1小时前', '2小时前',
-    '3小时前', '5小时前', '8小时前', '12小时前', '今天', '昨天'
-  ]
+  // 生成真正新鲜的时间戳
+  const generateFreshTime = (): string => {
+    const minsAgo = Math.floor(Math.random() * 180) // 0-180分钟前
+    if (minsAgo < 30) return `${minsAgo}分钟前`
+    if (minsAgo < 120) return `${Math.floor(minsAgo / 60)}小时前`
+    return '今天'
+  }
   
   return shuffled.slice(0, count).map((template, i) => ({
     ...template,
     id: `hotspot-${now.getTime()}-${i}`,
-    time: timeFormats[Math.floor(Math.random() * timeFormats.length)]
+    time: generateFreshTime()
   }))
 }
 
@@ -347,8 +375,8 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
   try {
     const allItems: NewsItem[] = []
     
-    // 并行抓取所有RSS源（限制并发数，避免请求过多）
-    const sourcesToFetch = NEWS_RSS_SOURCES.slice(0, 6)
+    // 并行抓取所有RSS源
+    const sourcesToFetch = NEWS_RSS_SOURCES
     const results = await Promise.allSettled(
       sourcesToFetch.map(async (source) => {
         try {
@@ -361,7 +389,8 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
           const data = await resp.json()
           if (data.status !== 'ok') throw new Error(data.message || 'RSS解析失败')
           
-          const items: NewsItem[] = (data.items || []).slice(0, 4).map((item: any, idx: number) => {
+          // 扩大每个源的新闻数量从4条到8条
+          const items: NewsItem[] = (data.items || []).slice(0, 8).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
             const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '')
             const rawSummary = (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 100)
@@ -396,19 +425,24 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
     // 如果联网成功且拿到了数据，更新缓存
     if (allItems.length > 0) {
       console.log(`[fetchRealNews] 联网成功，获取 ${allItems.length} 条新闻`)
-      // 去重（按title）
+      // 去重（按title前30字符）
       const seen = new Set<string>()
-      cachedNews = allItems.filter(item => {
+      const deduplicated = allItems.filter(item => {
         const key = item.title.slice(0, 30)
         if (seen.has(key)) return false
         seen.add(key)
         return true
-      }).sort((a, b) => {
-        const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0
-        const tb = b.publishedAt ? new Date(b.publishedAt).getTime() : 0
-        return tb - ta
-      }).slice(0, 20)
+      })
+      // 按发布时间降序排列，并扩大缓存数量到30条
+      cachedNews = deduplicated
+        .sort((a, b) => {
+          const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0
+          const tb = b.publishedAt ? new Date(b.publishedAt).getTime() : 0
+          return tb - ta
+        })
+        .slice(0, 30)
       lastFetchTime.news = now
+      console.log(`[fetchRealNews] 去重后保留 ${cachedNews.length} 条新闻`)
     } else {
       console.warn('[fetchRealNews] 所有RSS源均失败，使用模板数据兜底')
       cachedNews = generateDynamicNews()
