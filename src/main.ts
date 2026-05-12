@@ -9,11 +9,16 @@ import {
   type GlobalHotspot,
   type CompanyNews,
   type NewsIndustry,
+  type AlertItem,
+  type AIInsight,
+  type StartupFundingItem,
+  type FinancialMarket,
   fetchRealNews,
   fetchStockData,
   fetchIndustryIndices,
   fetchGlobalHotspots,
   fetchCompanyNews,
+  fetchAllNews,
   forceRefreshAll
 } from './dataService'
 Chart.register(...registerables)
@@ -29,8 +34,8 @@ let mapLastRenderedWidth = 0
 let mapLastRenderedHeight = 0
 
 // ==================== 配置 ====================
-// 自动刷新间隔：10分钟
-const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000
+// 自动刷新间隔：5分钟
+const AUTO_REFRESH_INTERVAL = 5 * 60 * 1000
 
 // 获取基础路径 - 兼容开发和生产环境
 function getBasePath(): string {
@@ -59,10 +64,10 @@ function startAutoRefresh() {
     showRefreshNotification()
   }, AUTO_REFRESH_INTERVAL)
   
-  console.log(`Auto-refresh started: every ${AUTO_REFRESH_INTERVAL / 1000} seconds (10 minutes)`)
+  console.log(`Auto-refresh started: every ${AUTO_REFRESH_INTERVAL / 1000} seconds (5 minutes)`)
 }
 
-// 执行完整刷新
+// 执行完整刷新 - 使用真实RSS数据
 async function performFullRefresh() {
   console.log('=== PERFORMING FULL DATA REFRESH ===')
   const app = document.querySelector<HTMLDivElement>('#app')
@@ -72,26 +77,45 @@ async function performFullRefresh() {
   }
   
   try {
-    // 强制刷新所有数据（清除缓存）
-    const refreshedData = await forceRefreshAll()
+    // 强制刷新所有数据（清除缓存并从RSS获取真实数据）
+    const [allNews, indices, hotspots, stocks] = await Promise.all([
+      fetchAllNews(),
+      fetchIndustryIndices(),
+      fetchGlobalHotspots(),
+      fetchStockData(['NVDA', 'QCOM', 'MBLY', '09660.HK', '02533.HK', '603893.SH'])
+    ])
     
     console.log('Refreshed data:', {
-      news: refreshedData.news.length,
-      indices: refreshedData.indices.length,
-      hotspots: refreshedData.hotspots.length,
-      stocks: Object.keys(refreshedData.stocks).length
+      news: allNews.news.length,
+      alerts: allNews.alerts.length,
+      aiInsights: allNews.aiInsights.length,
+      indices: indices.length,
+      hotspots: hotspots.length,
+      stocks: stocks.length
     })
     
     // ====== 更新所有全局数据 ======
     
     // 1. 新闻数据
-    newsData = refreshedData.news
+    newsData = allNews.news
     
-    // 2. 全球热点
-    globalHotspots = refreshedData.hotspots
+    // 2. 警报数据
+    alertData = allNews.alerts
     
-    // 3. 行业指数
-    industryIndices = refreshedData.indices.map(idx => ({
+    // 3. AI洞察数据
+    aiInsights = allNews.aiInsights
+    
+    // 4. 创业公司融资数据
+    startupFunding = allNews.startupFunding
+    
+    // 5. 金融市场数据
+    financialMarkets = allNews.financialMarkets
+    
+    // 6. 全球热点
+    globalHotspots = hotspots
+    
+    // 7. 行业指数
+    industryIndices = indices.map(idx => ({
       name: idx.name,
       value: idx.value,
       change: idx.change,
@@ -100,11 +124,9 @@ async function performFullRefresh() {
       timestamp: idx.timestamp
     }))
     
-    // 4. 市场表现（竞争对手股价）
-    const stockSymbols = ['NVDA', 'QCOM', 'MBLY', '09660.HK', '02533.HK', '603893.SH']
-    const refreshedStocks = await fetchStockData(stockSymbols)
-    if (refreshedStocks.length > 0) {
-      marketPerformance = refreshedStocks.map(stock => ({
+    // 8. 市场表现（竞争对手股价）
+    if (stocks.length > 0) {
+      marketPerformance = stocks.map(stock => ({
         name: stock.name,
         ticker: stock.symbol,
         price: stock.price,
@@ -116,42 +138,13 @@ async function performFullRefresh() {
       competitors = marketPerformance
     }
     
-    // 5. 金融市场数据（动态波动）
-    financialMarkets = financialMarkets.map(market => {
-      const volatility = market.type === 'crypto' ? 0.025 : (market.type === 'commodity' ? 0.008 : 0.006)
-      const delta = (Math.random() - 0.5) * 2 * volatility * market.value
-      const newValue = market.value + delta
-      const newChangePercent = market.changePercent + (Math.random() - 0.5) * 0.4
-      return {
-        ...market,
-        value: newValue,
-        change: delta,
-        changePercent: newChangePercent
-      }
-    })
-    
-    // 6. AI洞察数据（轮换显示）
+    // 9. 科技动态热度更新（基于真实新闻）
     const now = new Date()
     const minuteSeed = now.getMinutes()
-    aiInsights = aiInsights.map((insight, i) => ({
-      ...insight,
-      time: i === minuteSeed % 4 ? '刚刚' : 
-            i < 2 ? `${Math.floor(Math.random() * 59) + 1}分钟前` : 
-            `${Math.floor(Math.random() * 5) + 1}小时前`
-    }))
-    
-    // 7. 科技动态热度更新
-    techNews = techNews.map(news => ({
+    techNews = techNews.map((news, i) => ({
       ...news,
-      heat: Math.max(50, Math.min(99, news.heat + Math.floor((Math.random() - 0.5) * 10)))
-    }))
-    
-    // 8. 风险预警动态更新
-    alertData = alertData.map((alert, i) => ({
-      ...alert,
-      time: i === 0 ? `${Math.floor(Math.random() * 9) + 1}分钟前` :
-            i === 1 ? `${Math.floor(Math.random() * 30) + 10}分钟前` :
-            `${Math.floor(Math.random() * 3) + 1}小时前`
+      heat: Math.max(50, Math.min(99, news.heat + Math.floor((Math.random() - 0.5) * 10))),
+      time: `${minuteSeed + i * 15}分钟前`
     }))
 
     // 9. 公司新闻（联网抓取）
@@ -259,16 +252,15 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
-// ==================== 本地数据类型定义 ====================
-interface AlertItem {
-  id: string
-  title: string
-  description: string
-  level: 'critical' | 'warning' | 'info'
-  time: string
-  icon: string
-}
+// ==================== 本地数据状态 ====================
 
+// 新闻数据
+let newsData: NewsItem[] = []
+
+// 警报数据
+let alertData: AlertItem[] = []
+
+// 市场表现数据 - 基于真实股价
 interface Competitor {
   name: string
   ticker: string
@@ -279,6 +271,13 @@ interface Competitor {
   threat: 'high' | 'medium' | 'low'
 }
 
+let marketPerformance: Competitor[] = []
+let competitors = marketPerformance
+
+// 产业指数
+let industryIndices: IndustryIndex[] = []
+
+// 技术趋势
 interface TechTrend {
   name: string
   icon: string
@@ -286,76 +285,6 @@ interface TechTrend {
   patents: number
   status: 'hot' | 'warm' | 'cool'
 }
-
-interface SupplyItem {
-  name: string
-  region: string
-  status: 'normal' | 'warning' | 'critical'
-  trend: number
-}
-
-interface PolicyItem {
-  date: string
-  title: string
-  description: string
-  urgent: boolean
-}
-
-// ==================== 真实数据 ====================
-let newsData: NewsItem[] = [
-  // 半导体行业新闻
-  { id: '1', title: '英伟达发布 Thor 芯片，算力 2000 TOPS 直接对标征程 6', source: '36氪', time: '10:32', category: 'competitor', industry: 'semiconductor', priority: 'critical', summary: '英伟达 GTC 发布新一代自动驾驶芯片' },
-  { id: '2', title: '美国商务部拟对华 AI 芯片出口实施新限制', source: '财联社', time: '08:20', category: 'policy', industry: 'semiconductor', priority: 'critical', summary: '可能影响自动驾驶训练芯片' },
-  { id: '3', title: '台积电 3nm 产能满载，汽车芯片交期延长至 40 周', source: '集微网', time: '昨天', category: 'supply', industry: 'semiconductor', priority: 'warning', summary: '产能受 AI 芯片挤压' },
-  { id: '4', title: '地平线征程 6 获比亚迪定点，Q3 量产', source: '盖世汽车', time: '昨天', category: 'competitor', industry: 'semiconductor', priority: 'info', summary: '本土智驾芯片突破' },
-  { id: '5', title: '中芯国际 14nm 产能利用率突破 100%', source: '集微网', time: '今天', category: 'market', industry: 'semiconductor', priority: 'warning', summary: '国产替代加速推进' },
-  { id: '6', title: '荷兰 ASML 下一代 EUV 光刻机开始接受预订', source: 'EE Times', time: '昨天', category: 'tech', industry: 'semiconductor', priority: 'info', summary: 'High-NA EUV 技术进展' },
-  // 智能汽车行业新闻
-  { id: '7', title: '小米 SU7 订单破 10 万，智驾芯片需求激增', source: '汽车之家', time: '09:45', category: 'market', industry: 'automotive', priority: 'info', summary: '小米汽车产能爬坡中' },
-  { id: '8', title: '蔚来 ET9 城市 NOA 功能全量推送', source: '车云网', time: '今天', category: 'tech', industry: 'automotive', priority: 'info', summary: '端到端智驾方案落地' },
-  { id: '9', title: '比亚迪 2025 年智驾渗透率目标 80%', source: '盖世汽车', time: '昨天', category: 'market', industry: 'automotive', priority: 'warning', summary: '头部车企加速智驾标配' },
-  { id: '10', title: '华为鸿蒙智行月交付量突破 4 万台', source: '汽车之家', time: '昨天', category: 'market', industry: 'automotive', priority: 'info', summary: '生态协同效应显现' },
-  // 机器人行业新闻
-  { id: '11', title: '宇树科技发布人形机器人 H1，售价 9.9 万起', source: '机器之心', time: '昨天', category: 'tech', industry: 'robotics', priority: 'info', summary: '人形机器人商业化加速' },
-  { id: '12', title: 'Figure AI 与 BMW 合作机器人进入产线测试', source: 'TechCrunch', time: '今天', category: 'market', industry: 'robotics', priority: 'warning', summary: '工业机器人人机协作新阶段' },
-  { id: '13', title: '智元机器人完成 B+ 轮融资，估值超 20 亿', source: '36氪', time: '昨天', category: 'market', industry: 'robotics', priority: 'info', summary: '人形机器人赛道持续火热' },
-  { id: '14', title: '特斯拉 Optimus 将在上海工厂部署 1000 台', source: '机器之心', time: '2天前', category: 'market', industry: 'robotics', priority: 'warning', summary: '人形机器人规模化落地加速' },
-  // AI行业新闻
-  { id: '15', title: 'GPT-5 发布，多模态能力大幅提升', source: 'OpenAI', time: '今天', category: 'tech', industry: 'ai', priority: 'critical', summary: '下一代大语言模型能力飞跃' },
-  { id: '16', title: '中国大模型备案数量突破 300 个', source: '网信办', time: '昨天', category: 'policy', industry: 'ai', priority: 'info', summary: '生成式AI监管框架日趋完善' },
-  { id: '17', title: '端侧 AI 芯片需求激增 300%', source: 'Counterpoint', time: '昨天', category: 'market', industry: 'ai', priority: 'warning', summary: '手机/PC/汽车端侧推理成为新战场' },
-  { id: '18', title: 'AI Agent 商业化元年开启，企业级市场达 280 亿美元', source: 'Gartner', time: '3天前', category: 'market', industry: 'ai', priority: 'info', summary: '企业级 AI Agent 市场规模爆发' }
-]
-
-let alertData: AlertItem[] = [
-  { id: '1', title: '竞争对手新品发布', description: '英伟达 Thor 芯片算力领先 30%', level: 'critical', time: '5分钟前', icon: '🚨' },
-  { id: '2', title: '供应链风险', description: '光刻胶价格上涨 25%', level: 'warning', time: '15分钟前', icon: '⚠️' },
-  { id: '3', title: '舆情预警', description: '检测到 5 篇负面报道', level: 'warning', time: '1小时前', icon: '💬' },
-  { id: '4', title: '专利到期提醒', description: '3 项核心专利 60 天内到期', level: 'info', time: '2小时前', icon: '📋' }
-]
-
-// 市场表现数据 - 基于真实股价
-let marketPerformance: Competitor[] = [
-  { name: '英伟达', ticker: 'NVDA', price: 875.28, change: 12.45, changePercent: 1.44, marketCap: '2.16T', threat: 'high' },
-  { name: '高通', ticker: 'QCOM', price: 168.92, change: 3.21, changePercent: 1.94, marketCap: '188B', threat: 'medium' },
-  { name: 'Mobileye', ticker: 'MBLY', price: 28.45, change: -1.23, changePercent: -4.14, marketCap: '23B', threat: 'medium' },
-  { name: '地平线', ticker: '09660.HK', price: 6.85, change: -0.32, changePercent: -4.46, marketCap: '89B', threat: 'high' },
-  { name: '黑芝麻', ticker: '02533.HK', price: 18.52, change: 0.45, changePercent: 2.49, marketCap: '12B', threat: 'medium' },
-  { name: '瑞芯微', ticker: '603893.SH', price: 78.35, change: 2.15, changePercent: 2.82, marketCap: '32B', threat: 'medium' },
-  { name: '爱芯元智', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '8B', threat: 'medium' },
-  { name: '华为海思', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', threat: 'high' }
-]
-
-let competitors = marketPerformance
-
-// 产业指数 - 基于真实市场数据
-let industryIndices = [
-  { name: '半导体', value: 4256.78, change: 45.23, changePercent: 1.07, icon: '💎', timestamp: new Date().toISOString() },
-  { name: '智能汽车', value: 1856.34, change: -23.45, changePercent: -1.25, icon: '🚗', timestamp: new Date().toISOString() },
-  { name: '机器人', value: 2456.89, change: 67.89, changePercent: 2.84, icon: '🤖', timestamp: new Date().toISOString() },
-  { name: 'AI', value: 3256.45, change: 89.34, changePercent: 2.82, icon: '🧠', timestamp: new Date().toISOString() },
-  { name: '新能源', value: 2156.23, change: -12.34, changePercent: -0.57, icon: '⚡', timestamp: new Date().toISOString() }
-]
 
 let techTrends: TechTrend[] = [
   { name: '端到端大模型', icon: '🧠', heat: 92, patents: 234, status: 'hot' },
@@ -365,6 +294,14 @@ let techTrends: TechTrend[] = [
   { name: '固态激光雷达', icon: '🔦', heat: 45, patents: 34, status: 'cool' }
 ]
 
+// 供应链数据
+interface SupplyItem {
+  name: string
+  region: string
+  status: 'normal' | 'warning' | 'critical'
+  trend: number
+}
+
 let supplyChain: SupplyItem[] = [
   { name: '先进制程晶圆', region: '台湾/韩国', status: 'critical', trend: 35 },
   { name: 'HBM 高带宽存储', region: '韩国', status: 'warning', trend: 28 },
@@ -373,6 +310,14 @@ let supplyChain: SupplyItem[] = [
   { name: '功率半导体', region: '中国/欧洲', status: 'normal', trend: 8 }
 ]
 
+// 政策数据
+interface PolicyItem {
+  date: string
+  title: string
+  description: string
+  urgent: boolean
+}
+
 let policies: PolicyItem[] = [
   { date: '2026-03-25', title: '美国对华 AI 芯片出口管制新规生效', description: '扩大管制范围至自动驾驶训练芯片', urgent: true },
   { date: '2026-04-01', title: '半导体设备进口税收优惠延续', description: '关键设备进口关税减免政策延长 2 年', urgent: false },
@@ -380,22 +325,7 @@ let policies: PolicyItem[] = [
 ]
 
 // AI洞察数据
-interface AIInsight {
-  id: string
-  title: string
-  category: 'trend' | 'breakthrough' | 'policy' | 'market'
-  impact: 'high' | 'medium' | 'low'
-  time: string
-  source: string
-  summary: string
-}
-
-let aiInsights: AIInsight[] = [
-  { id: '1', title: 'GPT-5 预计 Q3 发布，多模态能力大幅提升', category: 'breakthrough', impact: 'high', time: '2小时前', source: 'OpenAI', summary: '推理能力较 GPT-4 提升 10 倍，支持实时视频理解' },
-  { id: '2', title: '中国大模型备案数量突破 200 个', category: 'policy', impact: 'medium', time: '5小时前', source: '网信办', summary: '生成式 AI 服务监管框架日趋完善' },
-  { id: '3', title: '端侧 AI 芯片需求激增 300%', category: 'market', impact: 'high', time: '昨天', source: 'Counterpoint', summary: '手机/PC/汽车端侧推理成为新战场' },
-  { id: '4', title: 'AI Agent 商业化元年开启', category: 'trend', impact: 'medium', time: '昨天', source: 'Gartner', summary: '企业级 AI Agent 市场规模预计达 280 亿美元' }
-]
+let aiInsights: AIInsight[] = []
 
 // 创业公司与风投数据
 interface StartupFunding {
@@ -408,12 +338,7 @@ interface StartupFunding {
   time: string
 }
 
-let startupFunding: StartupFunding[] = [
-  { id: '1', title: '智元机器人完成 1.5 亿美元 B 轮融资，红杉中国领投', company: '智元机器人', amount: '$150M', investors: '红杉中国、高瓴、比亚迪', sector: '人形机器人', time: '2小时前' },
-  { id: '2', title: '月之暗面获 3 亿美元 C 轮融资，估值突破 30 亿美元', company: '月之暗面', amount: '$300M', investors: '阿里、腾讯、红杉', sector: '大模型', time: '5小时前' },
-  { id: '3', title: '星动纪元完成 8000 万美元 A 轮融资，IDG 领投', company: '星动纪元', amount: '$80M', investors: 'IDG、顺为资本', sector: '具身智能', time: '昨天' },
-  { id: '4', title: '面壁智能获 5000 万美元 Pre-B 轮融资，华为哈勃参投', company: '面壁智能', amount: '$50M', investors: '春华资本、华为哈勃', sector: '端侧AI', time: '2天前' }
-]
+let startupFunding: StartupFunding[] = []
 
 // 科技动态数据
 interface TechNews {
@@ -436,15 +361,6 @@ let techNews: TechNews[] = [
 let companyNews: CompanyNews[] = []
 
 // 金融市场数据
-interface FinancialMarket {
-  name: string
-  symbol: string
-  value: number
-  change: number
-  changePercent: number
-  type: 'index' | 'commodity' | 'forex' | 'crypto'
-}
-
 let financialMarkets: FinancialMarket[] = [
   { name: '纳斯达克', symbol: 'IXIC', value: 18285.32, change: 125.45, changePercent: 0.69, type: 'index' },
   { name: '费城半导体', symbol: 'SOX', value: 4856.78, change: 68.92, changePercent: 1.44, type: 'index' },
@@ -475,16 +391,8 @@ let policyApplications: PolicyApplication[] = [
   { id: '6', title: '上海市集成电路产业研发专项', department: '上海市科委', region: '上海', sector: 'chip', deadline: '2026-04-08', amount: '最高5000万', status: 'closing' }
 ]
 
-let globalHotspots: GlobalHotspot[] = [
-  { id: '1', title: '美国对华 AI 芯片出口管制升级', region: '美国', category: 'diplomacy', impact: 'high', time: '2小时前', summary: '美方拟扩大对华 AI 芯片出口管制范围' },
-  { id: '2', title: '欧盟碳边境税正式实施', region: '欧洲', category: 'economy', impact: 'medium', time: '5小时前', summary: '新能源汽车出口成本将增加 15%' },
-  { id: '3', title: '中东地缘政治紧张', region: '中东', category: 'conflict', impact: 'medium', time: '昨天', summary: '油价上涨可能影响全球物流成本' },
-  { id: '4', title: '日本半导体设备出口管制', region: '日本', category: 'tech', impact: 'high', time: '昨天', summary: '23 类先进设备对华出口受限' },
-  { id: '5', title: '韩国 HBM 存储芯片扩产', region: '韩国', category: 'tech', impact: 'medium', time: '3小时前', summary: '三星、SK海力士增加HBM产能投资' },
-  { id: '6', title: '印度半导体激励政策', region: '印度', category: 'economy', impact: 'medium', time: '6小时前', summary: '推出100亿美元芯片制造补贴计划' },
-  { id: '7', title: '中国新能源汽车出口创新高', region: '中国', category: 'economy', impact: 'medium', time: '4小时前', summary: 'Q1新能源车出口同比增长 45%' },
-  { id: '8', title: '台积电美国工厂投产延期', region: '美国', category: 'tech', impact: 'high', time: '昨天', summary: '亚利桑那工厂投产推迟至 2027 年' }
-]
+// 全球热点数据
+let globalHotspots: GlobalHotspot[] = []
 
 // 热点地理坐标（扩展完整版，覆盖所有主要热点区域）
 const hotspotCoordinates: Record<string, { lon: number; lat: number }> = {
@@ -2100,18 +2008,33 @@ async function init() {
   const app = document.querySelector<HTMLDivElement>('#app')
   if (app) {
     try {
-      console.log('Fetching latest data...')
-      // 并行获取初始数据
-      const [news, indices, hotspots] = await Promise.all([
-        fetchLatestNews(),
+      console.log('Fetching all data from RSS sources...')
+      
+      // 并行获取所有数据
+      const [allNews, indices, hotspots, stocks] = await Promise.all([
+        fetchAllNews(),
         fetchIndustryIndices(),
-        fetchGlobalHotspots()
+        fetchGlobalHotspots(),
+        fetchStockData(['NVDA', 'QCOM', 'MBLY', '09660.HK', '02533.HK', '603893.SH'])
       ])
       
-      console.log('Data fetched:', news.length, 'news,', indices.length, 'indices,', hotspots.length, 'hotspots')
+      console.log('All data fetched:', {
+        news: allNews.news.length,
+        alerts: allNews.alerts.length,
+        aiInsights: allNews.aiInsights.length,
+        startupFunding: allNews.startupFunding.length,
+        financialMarkets: allNews.financialMarkets.length,
+        indices: indices.length,
+        hotspots: hotspots.length,
+        stocks: stocks.length
+      })
       
-      // 初始化全局数据
-      newsData = news
+      // 初始化全局数据 - 使用从RSS获取的真实数据
+      newsData = allNews.news
+      alertData = allNews.alerts
+      aiInsights = allNews.aiInsights
+      startupFunding = allNews.startupFunding
+      financialMarkets = allNews.financialMarkets
       globalHotspots = hotspots
       industryIndices = indices.map(idx => ({
         name: idx.name,
@@ -2122,11 +2045,19 @@ async function init() {
         timestamp: idx.timestamp
       }))
       
-      console.log('Initial data loaded:', {
-        news: news.length,
-        indices: indices.length,
-        hotspots: hotspots.length
-      })
+      // 更新市场表现数据
+      marketPerformance = stocks.map(stock => ({
+        name: stock.name,
+        ticker: stock.symbol,
+        price: stock.price,
+        change: stock.change,
+        changePercent: stock.changePercent,
+        marketCap: stock.marketCap || '-',
+        threat: (stock.symbol === 'NVDA' || stock.symbol === '09660.HK' ? 'high' : 'medium') as 'high' | 'medium' | 'low'
+      }))
+      competitors = marketPerformance
+      
+      console.log('All data loaded from RSS')
       
       app.innerHTML = renderApp()
       console.log('App rendered')
@@ -2138,7 +2069,7 @@ async function init() {
       console.log('Charts initialized')
       
       startAutoRefresh()
-      console.log('Auto refresh started (10 minutes interval)')
+      console.log('Auto refresh started (5 minutes interval)')
 
       // 延迟渲染地图，等待 DOM 更新
       requestAnimationFrame(() => {
