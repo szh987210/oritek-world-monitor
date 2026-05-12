@@ -578,7 +578,7 @@ function renderWorldMap(): string {
       </div>
       <!-- 热点卡片区域 - 地图下方横向滚动 -->
       <div class="hotspot-list">
-        ${globalHotspots.slice(0, 8).map(spot => `
+        ${globalHotspots.filter(s => hotspotCoordinates[s.region]).slice(0, 8).map(spot => `
           <div class="hotspot-card ${spot.impact}" data-region="${spot.region}">
             <div class="hotspot-card-header">
               <span class="hotspot-card-icon">${categoryIcons[spot.category]}</span>
@@ -2078,7 +2078,11 @@ async function init() {
       techTrends = generateTechTrendsFromNews(allNewsList)
       supplyChain = generateSupplyChainFromNews(allNewsList)
       policies = generatePoliciesFromNews(allNewsList)
-      policyApplications = generatePolicyApplicationsFromNews(allNewsList)
+      // 政策申报：仅在有匹配数据时才覆盖硬编码兜底数据
+      const generatedPolicyApps = generatePolicyApplicationsFromNews(allNewsList)
+      if (generatedPolicyApps.length > 0) {
+        policyApplications = generatedPolicyApps
+      }
       techNews = generateTechNewsFromNews(allNewsList)
       globalHeadlines = generateHeadlinesFromNews(allNewsList)
 
