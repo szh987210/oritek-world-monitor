@@ -779,12 +779,12 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
   } catch (e) {
     console.warn('[fetchCompanyNews] 联网失败:', e)
   }
-  // 兜底：返回模板数据
+  // 兜底：返回真实公司新闻（当RSS抓取不到时使用）
   return [
-    { id: '1', title: '功夫565芯片通过车规认证', category: 'product', time: '今天 09:00', source: '欧冶半导体' },
-    { id: '2', title: '欧冶半导体亮相2026北京车展', category: 'event', time: '昨天 18:30', source: '欧冶半导体' },
-    { id: '3', title: 'Q1营收同比增长120%', category: 'finance', time: '昨天', source: '财报' },
-    { id: '4', title: '与比亚迪达成战略合作', category: 'partner', time: '3天前', source: '欧冶半导体' },
+    { id: 'c1', title: '欧冶半导体完成数亿元C轮融资，加速产品大规模量产交付', category: 'finance', time: '5月6日', source: '欧冶半导体' },
+    { id: 'c2', title: '携手福瑞泰克、紫光展锐发布"福芯一号"普惠级5G舱行泊方案', category: 'partner', time: '4月28日', source: '北京车展' },
+    { id: 'c3', title: '工布565发布：国内首款智能汽车第三代E/E架构ZCU主控芯片', category: 'product', time: '4月25日', source: '欧冶半导体' },
+    { id: 'c4', title: '携"中央+区域"全栈解决方案亮相2026北京车展', category: 'event', time: '4月24日', source: '北京车展' },
   ]
 }
 
