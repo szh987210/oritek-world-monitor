@@ -68,11 +68,23 @@ const NEWS_RSS_SOURCES: Array<{
   { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', category: 'tech', industry: 'all' },
 ]
 
-// 全球热点RSS新闻源（国际新闻）
+// 全球热点RSS新闻源（国际新闻）- 扩展到更多权威媒体
 const GLOBAL_HOTSPOT_SOURCES = [
-  { name: 'BBC世界',   url: 'https://feeds.bbci.co.uk/news/world/rss.xml',     region: '国际' },
-  { name: '路透社',    url: 'https://www.reutersagency.com/feed/?taxonomy=best-topics&post_type=best', region: '国际' },
-  { name: '财联社',    url: 'https://www.cls.cn/rss',                         region: '中国' },
+  // 国际权威媒体
+  { name: 'BBC世界', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', region: '国际' },
+  { name: 'BBC科技', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', region: '国际' },
+  { name: 'CNN国际', url: 'https://rss.cnn.com/rss/edition_world.rss', region: '国际' },
+  { name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', region: '中东' },
+  { name: 'France24', url: 'https://www.france24.com/en/rss', region: '欧洲' },
+  { name: '德国之声', url: 'https://rss.dw.com/rdf/rss-de-all', region: '欧洲' },
+  { name: 'NHK世界', url: 'https://www3.nhk.or.jp/rss/news/cat0.xml', region: '日本' },
+  // 中国媒体
+  { name: '财联社', url: 'https://www.cls.cn/rss', region: '中国' },
+  { name: '环球时报', url: 'https://www.huanqiu.com/rss', region: '中国' },
+  { name: '参考消息', url: 'https://www.cankaoxiaoxi.com/rss/', region: '中国' },
+  // 科技产业
+  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', region: '美国' },
+  { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', region: '美国' },
 ]
 
 // 扩展RSS新闻源 - 覆盖所有版块
@@ -105,6 +117,18 @@ const EXTENDED_NEWS_SOURCES: Array<{
   // 金融财经
   { name: '华尔街见闻', url: 'https://wallstreetcn.com/rss',          category: 'finance', industry: 'all' },
   { name: '新浪财经', url: 'https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2514&k=&num=20&page=1', category: 'finance', industry: 'all' },
+  // 竞争动态 - 新增更多行业媒体
+  { name: 'Digitimes', url: 'https://www.digitimes.com/rss/news.xml', category: 'competitor', industry: 'semiconductor' },
+  { name: '电子工程世界', url: 'https://www.eeworld.com.cn/rss/',    category: 'competitor', industry: 'semiconductor' },
+  { name: 'OfWeek激光', url: 'https://www.ofweek.com/rss/',          category: 'competitor', industry: 'all' },
+  // 市场动态
+  { name: 'TrendForce', url: 'https://www.trendforce.com/feed/',    category: 'market', industry: 'semiconductor' },
+  { name: 'Counterpoint', url: 'https://www.counterpointresearch.com/feed/', category: 'market', industry: 'all' },
+  { name: 'IDC', url: 'https://www.idc.com/rss/rss',                 category: 'market', industry: 'all' },
+  { name: 'Gartner', url: 'https://www.gartner.com/rss/research',    category: 'market', industry: 'all' },
+  // 供应链动态
+  { name: '供应链管理', url: 'https://www.scmagazine.com/rss',        category: 'supply', industry: 'all' },
+  { name: 'SupplyChainBrain', url: 'https://www.supplychainbrain.com/rss/', category: 'supply', industry: 'all' },
   // 政策申报 - 国家级
   { name: '工信部-工信动态', url: 'https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=d3e2bede1bc045e2875fc7161c01db7d,028da85b0dbd4c9cb96fd5f421cd32b8,e4d6c56063fa4edca257cc2e24ad473c,161ae25e72be496f93cd1c1a79f5cc2b,ca517c97303b40cf80bd668b35f6148f', category: 'policy', industry: 'all' },
   { name: '工信部-文件发布', url: 'https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=925fa8f4afd44e53818794ed96d9876e,30f92eeafcfd4685984dfb793a2c5fff', category: 'policy', industry: 'all' },
@@ -619,30 +643,61 @@ export async function fetchAllNews(): Promise<{
 // 简单缓存
 const newsCache = new Map<string, { data: any, fetchTime: number }>()
 
-// 从新闻生成警报
+// 从新闻生成警报 - 优化版，确保来源多样性
 function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
   const alerts: AlertItem[] = []
-  const now = new Date()
+  const usedSources = new Set<string>()
   
-  // 从新闻中提取高优先级条目作为警报
-  news.filter(n => n.priority === 'critical' || n.priority === 'warning').slice(0, 4).forEach((n, i) => {
-    alerts.push({
-      id: `alert-${i}`,
-      title: n.title.slice(0, 30),
-      description: n.summary || n.source,
-      level: n.priority === 'critical' ? 'critical' : 'warning',
-      time: n.time,
-      icon: n.priority === 'critical' ? '🚨' : '⚠️'
-    })
-  })
+  // 获取高优先级新闻
+  const priorityNews = news.filter(n => n.priority === 'critical' || n.priority === 'warning')
+  
+  // 优先选取不同来源的新闻（最多3条，确保来源多样）
+  for (const n of priorityNews) {
+    if (alerts.length >= 3) break
+    if (!usedSources.has(n.source)) {
+      usedSources.add(n.source)
+      alerts.push({
+        id: `alert-${n.id}`,
+        title: n.title.slice(0, 30),
+        description: n.summary || n.source,
+        level: n.priority === 'critical' ? 'critical' : 'warning',
+        time: n.time,
+        icon: n.priority === 'critical' ? '🚨' : '⚠️'
+      })
+    }
+  }
+  
+  // 如果高优先级新闻不足，从最新新闻中补充（排除工信部）
+  if (alerts.length < 4) {
+    const otherSources = news.filter(n => 
+      !usedSources.has(n.source) && 
+      !n.source.includes('工信部') &&
+      !n.source.includes('发改委') &&
+      !n.source.includes('科创')
+    )
+    for (const n of otherSources.slice(0, 4 - alerts.length)) {
+      usedSources.add(n.source)
+      alerts.push({
+        id: `alert-${n.id}`,
+        title: n.title.slice(0, 30),
+        description: n.summary || n.source,
+        level: 'info',
+        time: n.time,
+        icon: '📰'
+      })
+    }
+  }
   
   // 确保至少有4条警报
-  if (alerts.length < 4) {
-    const defaultAlerts: AlertItem[] = [
-      { id: 'default-1', title: '供应链监测中', description: '暂无重大异常', level: 'info', time: '刚刚', icon: 'ℹ️' },
-      { id: 'default-2', title: '行业动态追踪', description: '持续关注竞品动向', level: 'info', time: '刚刚', icon: '📊' },
-    ]
-    alerts.push(...defaultAlerts.slice(0, 4 - alerts.length))
+  while (alerts.length < 4) {
+    alerts.push({
+      id: `default-${alerts.length}`,
+      title: '持续监测中',
+      description: '关注行业最新动态',
+      level: 'info',
+      time: '刚刚',
+      icon: 'ℹ️'
+    })
   }
   
   return alerts.slice(0, 4)
@@ -936,18 +991,59 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
 }
 
 /**
- * 根据标题推断地区
+ * 根据标题推断地区 - 增强版，覆盖更多关键词
  */
 function inferRegion(text: string, fallback: string): string {
   const t = text.toLowerCase()
-  if (t.includes('china') || t.includes('china') || t.includes('beijing') || t.includes('shanghai')) return '中国'
-  if (t.includes('usa') || t.includes('america') || t.includes('washington') || t.includes('silicon')) return '美国'
-  if (t.includes('europe') || t.includes('eu') || t.includes('germany') || t.includes('brussels')) return '欧洲'
-  if (t.includes('japan') || t.includes('tokyo') || t.includes('tsmc')) return '日本'
-  if (t.includes('korea') || t.includes('samsung') || t.includes('sk hynix')) return '韩国'
-  if (t.includes('taiwan') || t.includes('tsmc')) return '中国台湾'
-  if (t.includes('india') || t.includes('mumbai')) return '印度'
-  if (t.includes('middle east') || t.includes('saudi') || t.includes('uae')) return '中东'
+  // 中国
+  if (t.includes('china') || t.includes('chinese') || t.includes('beijing') || t.includes('shanghai') ||
+      t.includes('中国') || t.includes('北京') || t.includes('上海') || t.includes('深圳') || t.includes('华为') ||
+      t.includes('字节') || t.includes('阿里') || t.includes('腾讯')) return '中国'
+  // 美国
+  if (t.includes('usa') || t.includes('america') || t.includes('american') || t.includes('washington') ||
+      t.includes('silicon valley') || t.includes('trump') || t.includes('biden') || t.includes('美国'))
+    return '美国'
+  // 欧洲
+  if (t.includes('europe') || t.includes('eu ') || t.includes('e.u.') || t.includes('germany') ||
+      t.includes('france') || t.includes('brussels') || t.includes('european') || t.includes('英国') ||
+      t.includes('德国') || t.includes('法国') || t.includes('欧盟') || t.includes('荷兰') || t.includes('波兰'))
+    return '欧洲'
+  // 日本
+  if (t.includes('japan') || t.includes('japanese') || t.includes('tokyo') || t.includes('日本') ||
+      t.includes('东京') || t.includes('sony') || t.includes('松下') || t.includes('丰田'))
+    return '日本'
+  // 韩国
+  if (t.includes('korea') || t.includes('korean') || t.includes('samsung') || t.includes('sk hynix') ||
+      t.includes('韩国') || t.includes('首尔') || t.includes('lg'))
+    return '韩国'
+  // 台湾
+  if (t.includes('taiwan') || t.includes('taiwanese') || t.includes('tsmc') || t.includes('台积电') ||
+      t.includes('台湾') || t.includes('台北'))
+    return '中国台湾'
+  // 印度
+  if (t.includes('india') || t.includes('indian') || t.includes('mumbai') || t.includes('india') ||
+      t.includes('印度') || t.includes('孟买') || t.includes('新德里'))
+    return '印度'
+  // 中东
+  if (t.includes('middle east') || t.includes('saudi') || t.includes('uae') || t.includes('dubai') ||
+      t.includes('israel') || t.includes('iran') || t.includes('中东') || t.includes('沙特') ||
+      t.includes('以色列') || t.includes('伊朗') || t.includes('阿联酋'))
+    return '中东'
+  // 俄罗斯
+  if (t.includes('russia') || t.includes('russian') || t.includes('moscow') || t.includes('putin') ||
+      t.includes('俄罗斯') || t.includes('莫斯科') || t.includes('普京'))
+    return '俄罗斯'
+  // 澳大利亚
+  if (t.includes('australia') || t.includes('australian') || t.includes('sydney') || t.includes('澳大利亚'))
+    return '澳大利亚'
+  // 巴西
+  if (t.includes('brazil') || t.includes('brazilian') || t.includes('brazil'))
+    return '巴西'
+  // 东南亚
+  if (t.includes('southeast asia') || t.includes('vietnam') || t.includes('thailand') || t.includes('indonesia') ||
+      t.includes('malaysia') || t.includes('singapore') || t.includes('东南亚') || t.includes('越南') ||
+      t.includes('泰国') || t.includes('印尼') || t.includes('新加坡'))
+    return '东南亚'
   return fallback
 }
 
