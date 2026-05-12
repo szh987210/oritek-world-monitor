@@ -105,9 +105,21 @@ const EXTENDED_NEWS_SOURCES: Array<{
   // 金融财经
   { name: '华尔街见闻', url: 'https://wallstreetcn.com/rss',          category: 'finance', industry: 'all' },
   { name: '新浪财经', url: 'https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2514&k=&num=20&page=1', category: 'finance', industry: 'all' },
-  // 政策产业
-  { name: '工信微报', url: 'http://www.miit.gov.cn/rss/zcbd.xml',     category: 'policy', industry: 'all' },
-  { name: '国家发改委', url: 'https://www.ndrc.gov.cn/rss/jjsww.xml', category: 'policy', industry: 'all' },
+  // 政策申报 - 国家级
+  { name: '工信部-工信动态', url: 'https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=d3e2bede1bc045e2875fc7161c01db7d,028da85b0dbd4c9cb96fd5f421cd32b8,e4d6c56063fa4edca257cc2e24ad473c,161ae25e72be496f93cd1c1a79f5cc2b,ca517c97303b40cf80bd668b35f6148f', category: 'policy', industry: 'all' },
+  { name: '工信部-文件发布', url: 'https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=925fa8f4afd44e53818794ed96d9876e,30f92eeafcfd4685984dfb793a2c5fff', category: 'policy', industry: 'all' },
+  { name: '工信部-统计分析', url: 'https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=b5946cb121b84c30b9ac608467c9df4e,ebeccdcd21bc4eeb9655a8890e87c04c,4499228ad1ed4491978d3911ec38fc60,2b57d2422a8c4f949b02fd5d0a753f2f,d9555379620c4e7095df413df78a9b44,96b210928d904d67908fea56f48a94a2,68d05aa704fb4e239034ef1d049c0694,3d9348ccf48648c3bca81051247f2cfd,dcedd5deaf3d447eb4d5a9352b66c0da,e5fc1a23b2724746976d3677faf17eda,5cd5434387a446b781bd53dacabb5249,9c065b422224459589684ca26c1cfbc7,fd9f361e098341678659dd2684b6ffe0,f43f29b265ea45919ae8bcb5902a24fb,2142c551534147e997d76b6056e592db,eea09a06698f493fadcc9eb4ca2c42c8,eb37c4dda9074de0b7faac5cf8184486,1434685f08314ae8ae78f78b6a5a7915,53a9ffceae214c61a17d41fddb731804,50bf589f36614b7394522245a13fedae,f3380bf46bca4db5849a9215da6052ed', category: 'policy', industry: 'all' },
+  // 政策申报 - 上海市
+  { name: '上海市发改委', url: 'https://rsshub.feeddd.org/https://fgw.sh.gov.cn/col/col709/index.html', category: 'policy', industry: 'all' },
+  { name: '上海市经信委', url: 'https://rsshub.feeddd.org/https://sheitc.sh.gov.cn/zxgz/index.html', category: 'policy', industry: 'all' },
+  { name: '上海市科委-项目申报', url: 'https://rsshub.feeddd.org/https://stcsm.sh.gov.cn/zwgk/kyjhxm/xmsb/', category: 'policy', industry: 'all' },
+  { name: '上海普陀区-政策申报', url: 'https://rsshub.feeddd.org/https://www.shpt.gov.cn/zhengwu/zdxzjc-kwzhzw/', category: 'policy', industry: 'all' },
+  // 政策申报 - 广东省/深圳市
+  { name: '广东省发改委', url: 'https://rsshub.feeddd.org/https://drc.gd.gov.cn/tzgg/index.html', category: 'policy', industry: 'all' },
+  { name: '深圳市发改委', url: 'https://rsshub.feeddd.org/https://fgw.sz.gov.cn/zwgk/zdly/index.html', category: 'policy', industry: 'all' },
+  { name: '深圳市科创局-申报指南', url: 'https://rsshub.feeddd.org/https://stic.sz.gov.cn/xxgk/zdly/sbzn/index.html', category: 'policy', industry: 'all' },
+  { name: '深圳南山区-产业政策', url: 'https://rsshub.feeddd.org/https://www.szns.gov.cn/nsqfgj/gkmlpt/index', category: 'policy', industry: 'all' },
+  { name: '深圳南山区-工信局', url: 'https://rsshub.feeddd.org/https://www.szns.gov.cn/nsqjjcjj/gkmlpt/index', category: 'policy', industry: 'all' },
 ]
 
 export interface StockData {
