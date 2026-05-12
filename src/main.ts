@@ -19,7 +19,14 @@ import {
   fetchGlobalHotspots,
   fetchCompanyNews,
   fetchAllNews,
-  forceRefreshAll
+  forceRefreshAll,
+  generateSentimentFromNews,
+  generateHeadlinesFromNews,
+  generateTechNewsFromNews,
+  generateTechTrendsFromNews,
+  generateSupplyChainFromNews,
+  generatePoliciesFromNews,
+  generatePolicyApplicationsFromNews
 } from './dataService'
 Chart.register(...registerables)
 
@@ -260,6 +267,22 @@ let newsData: NewsItem[] = []
 // 警报数据
 let alertData: AlertItem[] = []
 
+// 舆情数据（从新闻情感分析派生）
+interface SentimentData {
+  positive: number
+  neutral: number
+  negative: number
+  positiveNews: string[]
+  negativeNews: string[]
+}
+let sentimentData: SentimentData = {
+  positive: 58,
+  neutral: 24,
+  negative: 18,
+  positiveNews: ['数据加载中...'],
+  negativeNews: ['数据加载中...']
+}
+
 // 市场表现数据 - 基于真实股价
 interface Competitor {
   name: string
@@ -277,7 +300,7 @@ let competitors = marketPerformance
 // 产业指数
 let industryIndices: IndustryIndex[] = []
 
-// 技术趋势
+// 技术趋势（从新闻分析技术热点）
 interface TechTrend {
   name: string
   icon: string
@@ -294,7 +317,7 @@ let techTrends: TechTrend[] = [
   { name: '固态激光雷达', icon: '🔦', heat: 45, patents: 34, status: 'cool' }
 ]
 
-// 供应链数据
+// 供应链数据（从新闻分析供应链状况）
 interface SupplyItem {
   name: string
   region: string
@@ -310,7 +333,7 @@ let supplyChain: SupplyItem[] = [
   { name: '功率半导体', region: '中国/欧洲', status: 'normal', trend: 8 }
 ]
 
-// 政策数据
+// 合规政策数据（从政策RSS新闻派生）
 interface PolicyItem {
   date: string
   title: string
@@ -340,11 +363,11 @@ interface StartupFunding {
 
 let startupFunding: StartupFunding[] = []
 
-// 科技动态数据
+// 科技动态数据（从新闻提取）
 interface TechNews {
   id: string
   title: string
-  category: 'chip' | 'auto' | 'robotics' | 'cloud'
+  category: 'chip' | 'auto' | 'robotics' | 'cloud' | 'ai'
   time: string
   source: string
   heat: number
@@ -360,7 +383,7 @@ let techNews: TechNews[] = [
 // 公司新闻数据
 let companyNews: CompanyNews[] = []
 
-// 金融市场数据
+// 金融市场数据（暂时保留硬编码，真实股票API需要付费）
 let financialMarkets: FinancialMarket[] = [
   { name: '纳斯达克', symbol: 'IXIC', value: 18285.32, change: 125.45, changePercent: 0.69, type: 'index' },
   { name: '费城半导体', symbol: 'SOX', value: 4856.78, change: 68.92, changePercent: 1.44, type: 'index' },
@@ -370,13 +393,13 @@ let financialMarkets: FinancialMarket[] = [
   { name: '黄金', symbol: 'XAU', value: 2185.30, change: 12.50, changePercent: 0.57, type: 'commodity' }
 ]
 
-// 政策申报数据
+// 政策申报数据（从政策RSS新闻派生）
 interface PolicyApplication {
   id: string
   title: string
   department: string
   region: string
-  sector: 'auto' | 'chip' | 'robotics' | 'ai'
+  sector: string
   deadline: string
   amount: string
   status: 'open' | 'closing' | 'closed'
@@ -475,25 +498,17 @@ function renderHeader(): string {
   `
 }
 
+// 资讯快讯数据（从新闻派生）
+interface HeadlineItem {
+  flag: string
+  text: string
+}
+let globalHeadlines: HeadlineItem[] = [
+  { flag: '🔄', text: '正在加载全球产业资讯...' },
+  { flag: '📡', text: '数据获取中，请稍候...' }
+]
+
 function renderIndustryTicker(): string {
-  // 全球资讯快讯 - 中英文混合
-  const globalHeadlines = [
-    { flag: '🇺🇸', text: 'NVIDIA GTC: Blackwell Ultra GPU delivers 4x AI performance boost' },
-    { flag: '🇨🇳', text: '地平线征程6芯片获多家主机厂量产定点，Q2批量出货' },
-    { flag: '🇬🇧', text: 'Reuters: US tightens AI chip export controls, 120+ countries affected' },
-    { flag: '🇯🇵', text: '日经新闻：日本政府追加1万亿日元半导体补贴，扶持Rapidus先进制程' },
-    { flag: '🇰🇷', text: 'KBS: Samsung HBM4 memory enters mass production for AI training servers' },
-    { flag: '🇨🇳', text: '华为昇腾910C算力测试超越英伟达A100，国产AI芯片竞争力提升' },
-    { flag: '🇩🇪', text: 'Handelsblatt: TSMC Dresden fab on schedule, EU Chips Act funding secured' },
-    { flag: '🇨🇳', text: '比亚迪自研璇玑芯片流片成功，垂直整合战略加速落地' },
-    { flag: '🇺🇸', text: 'WSJ: Apple M4 chip mass production begins, TSMC 3nm yield exceeds 70%' },
-    { flag: '🇨🇳', text: '工信部：智能网联汽车渗透率突破50%，本土芯片供应链持续完善' },
-    { flag: '🇺🇸', text: 'Bloomberg: Qualcomm Snapdragon X Elite gains enterprise adoption momentum' },
-    { flag: '🇨🇳', text: '寒武纪MLU370出货量破百万，云端推理市场份额持续扩大' },
-    { flag: '🇮🇳', text: 'ET: Tata Electronics begins iPhone component manufacturing in India' },
-    { flag: '🇨🇳', text: 'Digitimes：台积电CoWoS封装产能翻倍，AI算力供给瓶颈有望缓解' },
-    { flag: '🇸🇦', text: 'Arab News: Saudi Aramco invests $4B in advanced semiconductor manufacturing' },
-  ]
   // 重复数组确保滚动无缝
   const allHeadlines = [...globalHeadlines, ...globalHeadlines]
 
@@ -1210,14 +1225,14 @@ function renderSentimentCompact(): string {
       <div class="card-body">
         <div class="sentiment-mini">
           <div class="sentiment-bar">
-            <div class="sentiment-segment positive" style="width: 58%"></div>
-            <div class="sentiment-segment neutral" style="width: 24%"></div>
-            <div class="sentiment-segment negative" style="width: 18%"></div>
+            <div class="sentiment-segment positive" style="width: ${sentimentData.positive}%"></div>
+            <div class="sentiment-segment neutral" style="width: ${sentimentData.neutral}%"></div>
+            <div class="sentiment-segment negative" style="width: ${sentimentData.negative}%"></div>
           </div>
           <div class="sentiment-legend-mini">
-            <span><span class="dot positive"></span>正面 58%</span>
-            <span><span class="dot neutral"></span>中性 24%</span>
-            <span><span class="dot negative"></span>负面 18%</span>
+            <span><span class="dot positive"></span>正面 ${sentimentData.positive}%</span>
+            <span><span class="dot neutral"></span>中性 ${sentimentData.neutral}%</span>
+            <span><span class="dot negative"></span>负面 ${sentimentData.negative}%</span>
           </div>
         </div>
       </div>
@@ -2056,7 +2071,17 @@ async function init() {
         threat: (stock.symbol === 'NVDA' || stock.symbol === '09660.HK' ? 'high' : 'medium') as 'high' | 'medium' | 'low'
       }))
       competitors = marketPerformance
-      
+
+      // 从新闻派生各类数据
+      const allNewsList = allNews.news
+      sentimentData = generateSentimentFromNews(allNewsList)
+      techTrends = generateTechTrendsFromNews(allNewsList)
+      supplyChain = generateSupplyChainFromNews(allNewsList)
+      policies = generatePoliciesFromNews(allNewsList)
+      policyApplications = generatePolicyApplicationsFromNews(allNewsList)
+      techNews = generateTechNewsFromNews(allNewsList)
+      globalHeadlines = generateHeadlinesFromNews(allNewsList)
+
       console.log('All data loaded from RSS')
       
       app.innerHTML = renderApp()

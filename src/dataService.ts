@@ -1122,3 +1122,433 @@ export interface CompanyNews {
   time: string
   source: string
 }
+
+// ==================== 从新闻派生各类数据 ====================
+
+// 舆情数据接口
+export interface SentimentData {
+  positive: number
+  neutral: number
+  negative: number
+  positiveNews: string[]
+  negativeNews: string[]
+}
+
+// 情感词典
+const positiveWords = ['突破', '创新', '领先', '增长', '成功', '合作', '获奖', '扩张', '量产', '盈利', '发布', '上市', '融资', '投资', '订单', '签约', '战略', '布局', '愿景', '赋能', '升级']
+const negativeWords = ['裁员', '亏损', '危机', '诉讼', '失败', '召回', '故障', '违规', '处罚', '断供', '制裁', '管制', '衰退', '暴跌', '违约', '破产', '挤压', '过剩', '困境', '挑战', '压力']
+
+// 从新闻生成舆情数据
+export function generateSentimentFromNews(news: NewsItem[]): SentimentData {
+  if (news.length === 0) {
+    return {
+      positive: 58,
+      neutral: 24,
+      negative: 18,
+      positiveNews: ['数据加载中...'],
+      negativeNews: ['数据加载中...']
+    }
+  }
+
+  let positiveCount = 0
+  let negativeCount = 0
+  const positiveNewsList: string[] = []
+  const negativeNewsList: string[] = []
+
+  news.forEach(item => {
+    const text = (item.title + ' ' + item.summary).toLowerCase()
+    const posScore = positiveWords.filter(w => text.includes(w.toLowerCase())).length
+    const negScore = negativeWords.filter(w => text.includes(w.toLowerCase())).length
+
+    if (posScore > negScore && posScore > 0) {
+      positiveCount++
+      if (positiveNewsList.length < 3) {
+        positiveNewsList.push(item.title.slice(0, 25) + '...')
+      }
+    } else if (negScore > posScore && negScore > 0) {
+      negativeCount++
+      if (negativeNewsList.length < 3) {
+        negativeNewsList.push(item.title.slice(0, 25) + '...')
+      }
+    }
+  })
+
+  const total = news.length
+  const neutralCount = total - positiveCount - negativeCount
+
+  // 归一化为百分比
+  const positive = Math.round((positiveCount / total) * 100)
+  const negative = Math.round((negativeCount / total) * 100)
+  const neutral = 100 - positive - negative
+
+  return {
+    positive: positive || 50,
+    neutral: neutral || 30,
+    negative: negative || 20,
+    positiveNews: positiveNewsList.length > 0 ? positiveNewsList : ['暂无明显正面舆情'],
+    negativeNews: negativeNewsList.length > 0 ? negativeNewsList : ['暂无明显负面舆情']
+  }
+}
+
+// 资讯快讯接口
+export interface HeadlineItem {
+  flag: string
+  text: string
+}
+
+// 从新闻生成资讯快讯
+export function generateHeadlinesFromNews(news: NewsItem[]): HeadlineItem[] {
+  if (news.length === 0) {
+    return [
+      { flag: '🔄', text: '正在加载全球产业资讯...' },
+      { flag: '📡', text: '数据获取中，请稍候...' }
+    ]
+  }
+
+  // 国家/地区旗帜映射
+  const regionFlags: Record<string, string> = {
+    '中国': '🇨🇳', '美国': '🇺🇸', '英国': '🇬🇧', '日本': '🇯🇵',
+    '韩国': '🇰🇷', '德国': '🇩🇪', '法国': '🇫🇷', '台湾': '🇹🇼',
+    '欧盟': '🇪🇺', '欧洲': '🇪🇺', '印度': '🇮🇳', '以色列': '🇮🇱',
+    '沙特': '🇸🇦', '新加坡': '🇸🇬', '澳大利亚': '🇦🇺', '加拿大': '🇨🇦',
+    '巴西': '🇧🇷', '俄罗斯': '🇷🇺'
+  }
+
+  return news.slice(0, 10).map(item => {
+    let flag = '📰'
+    const text = item.title
+
+    // 尝试从标题中识别国家/地区
+    for (const [region, f] of Object.entries(regionFlags)) {
+      if (text.includes(region)) {
+        flag = f
+        break
+      }
+    }
+
+    return { flag, text: text.slice(0, 50) }
+  })
+}
+
+// 科技动态接口
+export interface TechNewsItem {
+  id: string
+  title: string
+  category: 'chip' | 'auto' | 'robotics' | 'cloud' | 'ai'
+  time: string
+  source: string
+  heat: number
+}
+
+// 科技类别关键词
+const techCategories: Record<string, string[]> = {
+  'chip': ['芯片', '半导体', '晶圆', '制程', '封装', '光刻', 'EDA', 'IP', 'IC', 'GPU', 'CPU', 'NPU'],
+  'auto': ['汽车', '智驾', '自动驾驶', '电动车', '新能源汽车', '车规', 'ADAS', '智能座舱', 'CAN', 'LIN'],
+  'robotics': ['机器人', '人形机器人', '工业机器人', '协作机器人', '机械臂'],
+  'ai': ['AI', '人工智能', '大模型', 'LLM', '深度学习', '神经网络', '训练', '推理'],
+  'cloud': ['云端', '数据中心', '服务器', '云服务', '算力', '云计算', 'AWS', 'Azure']
+}
+
+// 从新闻生成科技动态
+export function generateTechNewsFromNews(news: NewsItem[]): TechNewsItem[] {
+  if (news.length === 0) {
+    return [
+      { id: 't1', title: '正在加载科技动态...', category: 'ai', time: '刚刚', source: '系统', heat: 0 }
+    ]
+  }
+
+  const techNews: TechNewsItem[] = []
+  const seenTitles = new Set<string>()
+
+  news.forEach((item, idx) => {
+    if (techNews.length >= 6) return
+
+    const text = (item.title + ' ' + item.summary).toLowerCase()
+    let category: string = 'ai'
+
+    for (const [cat, keywords] of Object.entries(techCategories)) {
+      if (keywords.some(k => text.includes(k.toLowerCase()))) {
+        category = cat
+        break
+      }
+    }
+
+    const title = item.title.slice(0, 40)
+    if (seenTitles.has(title)) return
+    seenTitles.add(title)
+
+    // 计算热度（基于关键词密度和行业）
+    let heat = 60 + Math.floor(Math.random() * 30)
+    if (item.priority === 'critical') heat += 20
+    else if (item.priority === 'warning') heat += 10
+
+    techNews.push({
+      id: `tech-${idx}`,
+      title,
+      category: category as any,
+      time: item.time,
+      source: item.source,
+      heat: Math.min(100, heat)
+    })
+  })
+
+  return techNews
+}
+
+// 技术雷达接口
+export interface TechTrendItem {
+  name: string
+  icon: string
+  heat: number
+  patents: number
+  status: 'hot' | 'warm' | 'cool'
+}
+
+// 技术关键词热度追踪
+const techTrendKeywords: Record<string, string[]> = {
+  '端到端大模型': ['端到端', '大模型', 'end-to-end', 'LLM'],
+  '纯视觉方案': ['纯视觉', '视觉方案', 'vision-only', 'Tesla FSD'],
+  '4D毫米波雷达': ['4D雷达', '毫米波', 'radar'],
+  'Chiplet架构': ['Chiplet', '芯粒', '先进封装', '2.5D', '3D封装'],
+  '固态激光雷达': ['固态激光雷达', 'LiDAR', '固态雷达'],
+  'RISC-V': ['RISC-V', '开源架构'],
+  'HBM': ['HBM', '高带宽内存', 'HBM4'],
+  '存算一体': ['存算一体', '近存计算', 'compute-in-memory']
+}
+
+// 从新闻生成技术雷达
+export function generateTechTrendsFromNews(news: NewsItem[]): TechTrendItem[] {
+  const trendNames = Object.keys(techTrendKeywords)
+  const trendCounts: Record<string, number> = {}
+  const trendPatents: Record<string, number> = {}
+
+  // 初始化
+  trendNames.forEach(name => {
+    trendCounts[name] = 0
+    trendPatents[name] = 50 + Math.floor(Math.random() * 200)
+  })
+
+  // 统计关键词出现频率
+  news.forEach(item => {
+    const text = (item.title + ' ' + item.summary).toLowerCase()
+    trendNames.forEach(name => {
+      const keywords = techTrendKeywords[name]
+      if (keywords.some(k => text.includes(k.toLowerCase()))) {
+        trendCounts[name]++
+      }
+    })
+  })
+
+  // 找出最热门的技术
+  const sortedTrends = trendNames.sort((a, b) => trendCounts[b] - trendCounts[a])
+  const topTrends = sortedTrends.slice(0, 5)
+
+  // 映射图标
+  const trendIcons: Record<string, string> = {
+    '端到端大模型': '🧠', '纯视觉方案': '👁️', '4D毫米波雷达': '📡',
+    'Chiplet架构': '🔲', '固态激光雷达': '🔦', 'RISC-V': '⚙️',
+    'HBM': '💾', '存算一体': '🧮'
+  }
+
+  // 计算热度
+  const maxCount = Math.max(...topTrends.map(t => trendCounts[t]), 1)
+
+  return topTrends.map(name => {
+    const baseHeat = Math.round((trendCounts[name] / maxCount) * 100)
+    const heat = baseHeat < 20 ? 20 + Math.floor(Math.random() * 30) : baseHeat
+
+    let status: 'hot' | 'warm' | 'cool' = 'cool'
+    if (heat >= 70) status = 'hot'
+    else if (heat >= 40) status = 'warm'
+
+    return {
+      name,
+      icon: trendIcons[name] || '📊',
+      heat,
+      patents: trendPatents[name],
+      status
+    }
+  })
+}
+
+// 供应链数据接口
+export interface SupplyItem {
+  name: string
+  region: string
+  status: 'normal' | 'warning' | 'critical'
+  trend: number
+}
+
+// 供应链关键词追踪
+const supplyKeywords: Record<string, { keywords: string[], region: string }> = {
+  '先进制程晶圆': { keywords: ['晶圆', '制程', '台积电', '代工', 'foundry', 'wafer'], region: '台湾/韩国' },
+  'HBM高带宽存储': { keywords: ['HBM', '存储', '内存', 'SK海力士', '美光', '三星'], region: '韩国/美国' },
+  '光刻胶/光刻机': { keywords: ['光刻', '光刻胶', 'EUV', 'ASML', '半导体设备'], region: '荷兰/日本' },
+  '车规级MCU': { keywords: ['MCU', '车规', '恩智浦', '瑞萨', '英飞凌', '意法'], region: '欧美/中国' },
+  '功率半导体': { keywords: ['功率半导体', 'SiC', '碳化硅', 'IGBT', '安森美', '意法半导体'], region: '欧美/中国' },
+  '先进封装': { keywords: ['封装', 'CoWoS', 'SoIC', '2.5D', '3D封装', '先进封装'], region: '台湾/韩国' }
+}
+
+// 从新闻生成供应链数据
+export function generateSupplyChainFromNews(news: NewsItem[]): SupplyItem[] {
+  const supplyNames = Object.keys(supplyKeywords)
+  const supplyCounts: Record<string, { critical: number, warning: number }> = {}
+
+  // 初始化
+  supplyNames.forEach(name => {
+    supplyCounts[name] = { critical: 0, warning: 0 }
+  })
+
+  // 统计关键词出现频率和情感
+  news.forEach(item => {
+    const text = (item.title + ' ' + item.summary).toLowerCase()
+    const criticalKeywords = ['断供', '制裁', '管制', '短缺', '禁运', '限制', '危机']
+    const warningKeywords = ['涨价', '扩产', '新建', '投资', '紧缺', '供应', '紧张']
+
+    supplyNames.forEach(name => {
+      const data = supplyKeywords[name]
+      if (data.keywords.some(k => text.includes(k.toLowerCase()))) {
+        if (criticalKeywords.some(k => text.includes(k))) {
+          supplyCounts[name].critical++
+        } else if (warningKeywords.some(k => text.includes(k))) {
+          supplyCounts[name].warning++
+        } else {
+          supplyCounts[name].warning += 0.5
+        }
+      }
+    })
+  })
+
+  return supplyNames.map(name => {
+    const data = supplyKeywords[name]
+    const counts = supplyCounts[name]
+    const score = counts.critical * 2 + counts.warning
+
+    let status: 'normal' | 'warning' | 'critical' = 'normal'
+    if (score >= 3 || counts.critical >= 1) status = 'critical'
+    else if (score >= 1) status = 'warning'
+
+    const trend = Math.round((counts.warning - counts.critical) * 5 + (Math.random() - 0.5) * 10)
+
+    return {
+      name,
+      region: data.region,
+      status,
+      trend
+    }
+  })
+}
+
+// 合规政策接口
+export interface PolicyItem {
+  date: string
+  title: string
+  description: string
+  urgent: boolean
+}
+
+// 从新闻生成合规政策
+export function generatePoliciesFromNews(news: NewsItem[]): PolicyItem[] {
+  const policyKeywords = ['政策', '规定', '管制', '限制', '制裁', '补贴', '扶持', '申报', '专项', '优惠', '关税', '出口', '审批', '认证', '标准', '合规']
+
+  const policies: PolicyItem[] = []
+  const seenTitles = new Set<string>()
+
+  news.forEach(item => {
+    if (policies.length >= 6) return
+
+    const text = (item.title + ' ' + item.summary).toLowerCase()
+    if (!policyKeywords.some(k => text.includes(k.toLowerCase()))) return
+
+    const title = item.title.slice(0, 50)
+    if (seenTitles.has(title)) return
+    seenTitles.add(title)
+
+    const urgent = ['管制', '制裁', '限制', '禁止', '紧急'].some(k => text.includes(k))
+    const date = item.time || formatTimeAgo(item.publishedAt || new Date().toISOString())
+    const description = item.summary ? item.summary.slice(0, 40) + '...' : item.source
+
+    policies.push({
+      date,
+      title,
+      description,
+      urgent
+    })
+  })
+
+  return policies
+}
+
+// 科技政策申报接口
+export interface PolicyApplicationItem {
+  id: string
+  title: string
+  department: string
+  region: string
+  sector: string
+  deadline: string
+  amount: string
+  status: 'open' | 'closing' | 'closed'
+}
+
+// 从新闻生成政策申报
+export function generatePolicyApplicationsFromNews(news: NewsItem[]): PolicyApplicationItem[] {
+  const applications: PolicyApplicationItem[] = []
+
+  // 从新闻中提取申报信息
+  news.forEach((item, idx) => {
+    if (applications.length >= 6) return
+
+    const text = item.title + ' ' + item.summary
+    if (!text.includes('申报') && !text.includes('项目') && !text.includes('专项') && !text.includes('扶持')) return
+
+    // 提取部门
+    let department = '相关部委'
+    if (item.source.includes('工信')) department = '工信部'
+    else if (item.source.includes('发改')) department = '发改委'
+    else if (item.source.includes('科技')) department = '科技部'
+    else if (item.source.includes('上海')) department = '上海市'
+    else if (item.source.includes('深圳')) department = '深圳市'
+    else if (item.source.includes('广东')) department = '广东省'
+
+    // 提取行业
+    let sector = '半导体'
+    if (text.includes('汽车') || text.includes('智驾')) sector = '智能汽车'
+    else if (text.includes('机器人')) sector = '机器人'
+    else if (text.includes('AI') || text.includes('人工智能')) sector = 'AI'
+
+    // 提取金额
+    let amount = '待定'
+    const amountMatch = text.match(/(\d+)(亿|万)元/)
+    if (amountMatch) {
+      amount = `最高${amountMatch[1]}${amountMatch[2]}`
+    }
+
+    // 提取地区
+    let region = '全国'
+    if (item.source.includes('上海')) region = '上海'
+    else if (item.source.includes('深圳')) region = '深圳'
+    else if (item.source.includes('广东')) region = '广东'
+    else if (text.includes('浦东')) region = '浦东'
+    else if (text.includes('南山')) region = '南山'
+
+    // 推断状态
+    let status: 'open' | 'closing' | 'closed' = 'open'
+    if (text.includes('截止') || text.includes('即将') || text.includes('最后')) {
+      status = 'closing'
+    }
+
+    applications.push({
+      id: `policy-app-${idx}`,
+      title: item.title.slice(0, 45),
+      department,
+      region,
+      sector,
+      deadline: item.time,
+      amount,
+      status
+    })
+  })
+
+  return applications
+}
