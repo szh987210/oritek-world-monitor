@@ -234,18 +234,107 @@ style.textContent = `
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
-  @keyframes pulse-high {
-    0%, 100% { r: 10; opacity: 0.6; }
-    50% { r: 25; opacity: 0.2; }
+
+  /* ========== 热点地图脉冲动画 ========== */
+  @keyframes hs-pulse-high {
+    0%   { r: 10px; opacity: 0.9; stroke-width: 2.5px; }
+    50%  { r: 30px; opacity: 0.15; stroke-width: 1px; }
+    100% { r: 10px; opacity: 0.9; stroke-width: 2.5px; }
   }
-  @keyframes pulse-medium {
-    0%, 100% { r: 10; opacity: 0.6; }
-    50% { r: 22; opacity: 0.2; }
+  @keyframes hs-ring-high {
+    0%   { r: 14px; opacity: 0.5; }
+    50%  { r: 38px; opacity: 0; }
+    100% { r: 14px; opacity: 0.5; }
   }
-  @keyframes pulse-low {
-    0%, 100% { r: 8; opacity: 0.6; }
-    50% { r: 18; opacity: 0.2; }
+  @keyframes hs-pulse-medium {
+    0%   { r: 10px; opacity: 0.9; stroke-width: 2.5px; }
+    50%  { r: 26px; opacity: 0.15; stroke-width: 1px; }
+    100% { r: 10px; opacity: 0.9; stroke-width: 2.5px; }
   }
+  @keyframes hs-ring-medium {
+    0%   { r: 14px; opacity: 0.5; }
+    50%  { r: 32px; opacity: 0; }
+    100% { r: 14px; opacity: 0.5; }
+  }
+  @keyframes hs-pulse-low {
+    0%   { r: 8px; opacity: 0.9; stroke-width: 2px; }
+    50%  { r: 20px; opacity: 0.2; stroke-width: 1px; }
+    100% { r: 8px; opacity: 0.9; stroke-width: 2px; }
+  }
+  @keyframes hs-ring-low {
+    0%   { r: 12px; opacity: 0.4; }
+    50%  { r: 26px; opacity: 0; }
+    100% { r: 12px; opacity: 0.4; }
+  }
+
+  /* 热点脉冲圆圈应用动画 */
+  .hs-pulse-high {
+    animation: hs-pulse-high 2s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  .hs-ring-high {
+    animation: hs-ring-high 2s ease-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  .hs-pulse-medium {
+    animation: hs-pulse-medium 2.2s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  .hs-ring-medium {
+    animation: hs-ring-medium 2.2s ease-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  .hs-pulse-low {
+    animation: hs-pulse-low 2.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  .hs-ring-low {
+    animation: hs-ring-low 2.5s ease-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  /* ========== 公司新闻滚动播放 ========== */
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .company-news-marquee-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+  .company-news-marquee-wrap::before,
+  .company-news-marquee-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 40px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .company-news-marquee-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-card), transparent);
+  }
+  .company-news-marquee-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-card), transparent);
+  }
+  .company-news-track {
+    display: flex;
+    gap: 16px;
+    animation: marquee 28s linear infinite;
+    width: max-content;
+  }
+  .company-news-track:hover {
+    animation-play-state: paused;
+  }
+
   .hotspot-marker {
     transition: transform 0.2s ease;
   }
@@ -872,41 +961,39 @@ function renderHotspotMarkers(svg: any, projection: any, WIDTH = 1600, HEIGHT = 
       merge.append('feMergeNode').attr('in', 'SourceGraphic')
     }
     
-    // 脉冲外圈 - 使用 SMIL 动画（SVG 原生，对 r/opacity 属性有效）
-    const pulseCircle = marker.append('circle')
+    // 外圈脉冲环 - 使用 CSS 动画（更流畅的呼吸效果）
+    const animClass = `hs-pulse-${spot.impact}`
+    marker.append('circle')
+      .attr('class', animClass)
       .attr('r', 10)
       .attr('fill', 'none')
       .attr('stroke', color)
-      .attr('stroke-width', 2)
-      .attr('opacity', 0.8)
+      .attr('stroke-width', 2.5)
+      .attr('opacity', 0.9)
       .attr('filter', 'url(#hotspotGlow)')
-    
-    pulseCircle.append('animate')
-      .attr('attributeName', 'r')
-      .attr('from', 10)
-      .attr('to', pulseMax + 8)
-      .attr('dur', dur)
-      .attr('repeatCount', 'indefinite')
-    
-    pulseCircle.append('animate')
-      .attr('attributeName', 'opacity')
-      .attr('from', 0.8)
-      .attr('to', 0)
-      .attr('dur', dur)
-      .attr('repeatCount', 'indefinite')
-    
-    // 实心中心点（静态）
+
+    // 第二层外扩脉冲（更大范围）
+    marker.append('circle')
+      .attr('class', `hs-ring-${spot.impact}`)
+      .attr('r', 14)
+      .attr('fill', 'none')
+      .attr('stroke', color)
+      .attr('stroke-width', 1)
+      .attr('opacity', 0.5)
+      .attr('filter', 'url(#hotspotGlow)')
+
+    // 实心中心点
     marker.append('circle')
       .attr('r', 6)
       .attr('fill', color)
       .attr('filter', 'url(#hotspotGlow)')
       .attr('opacity', 0.95)
-    
+
     // 内圈高亮
     marker.append('circle')
-      .attr('r', 2)
+      .attr('r', 2.5)
       .attr('fill', '#ffffff')
-      .attr('opacity', 0.8)
+      .attr('opacity', 0.9)
     
     // 外圈边框（静态）
     marker.append('circle')
@@ -1330,8 +1417,30 @@ function renderCompanyNewsCompact(): string {
     { id: 'fc3', title: '欧冶完成新一轮战略融资，加速车家AI融合产品量产', category: 'finance' as const, time: '5月1日', source: '欧冶半导体' },
     { id: 'fc4', title: '工布565进入多个头部车企智能座舱评估流程', category: 'event' as const, time: '5月10日', source: '行业媒体' }
   ]
-  const displayNews = companyNews.length >= 2 ? companyNews.slice(0, 4) : fallbackCompanyNews
-  return `
+  const displayNews = companyNews.length >= 2 ? companyNews.slice(0, 6) : fallbackCompanyNews
+
+  // 渲染单条新闻（用于静态展示和滚动轨道）
+  const renderNewsItem = (news: any) => `
+    <div class="company-news-item">
+      <div class="company-news-icon">${categoryIcons[news.category] || '📰'}</div>
+      <div class="company-news-content">
+        <div class="company-news-title">${news.title}</div>
+        <div class="company-news-meta">
+          <span class="company-cat-tag">${categoryLabels[news.category] || news.category}</span>
+          <span>${news.source}</span>
+          <span>${news.time}</span>
+        </div>
+      </div>
+    </div>`
+
+  // 静态展示模式（新闻>=3条时显示完整列表）
+  const staticMode = displayNews.length >= 3
+
+  if (staticMode) {
+    // 静态模式：上方展示3条，下方滚动播放其余
+    const staticNews = displayNews.slice(0, 3)
+    const scrollNews = displayNews.slice(3)
+    return `
     <div class="card compact">
       <div class="card-header">
         <div class="card-title">
@@ -1341,23 +1450,35 @@ function renderCompanyNewsCompact(): string {
       </div>
       <div class="card-body">
         <div class="company-news-list">
-          ${displayNews.map(news => `
-            <div class="company-news-item">
-              <div class="company-news-icon">${categoryIcons[news.category] || '📰'}</div>
-              <div class="company-news-content">
-                <div class="company-news-title">${news.title}</div>
-                <div class="company-news-meta">
-                  <span class="company-cat-tag">${categoryLabels[news.category] || news.category}</span>
-                  <span>${news.source}</span>
-                  <span>${news.time}</span>
-                </div>
-              </div>
-            </div>
-          `).join('')}
+          ${staticNews.map(renderNewsItem).join('')}
+        </div>
+        ${scrollNews.length > 0 ? `
+        <div class="company-news-marquee-wrap">
+          <div class="company-news-track">
+            ${[...scrollNews, ...scrollNews].map(renderNewsItem).join('')}
+          </div>
+        </div>` : ''}
+      </div>
+    </div>`
+  }
+
+  // 滚动模式（新闻不足3条时全量滚动）
+  return `
+    <div class="card compact">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="card-title-icon">🏢</div>
+          <span>公司新闻</span>
         </div>
       </div>
-    </div>
-  `
+      <div class="card-body">
+        <div class="company-news-marquee-wrap">
+          <div class="company-news-track">
+            ${[...displayNews, ...displayNews].map(renderNewsItem).join('')}
+          </div>
+        </div>
+      </div>
+    </div>`
 }
 
 function renderAIInsightsCompact(): string {
@@ -1377,7 +1498,7 @@ function renderAIInsightsCompact(): string {
       </div>
       <div class="card-body">
         <div class="compact-list">
-          ${aiInsights.slice(0, 3).map(insight => `
+          ${aiInsights.slice(0, 6).map(insight => `
             <div class="compact-item">
               <span class="compact-icon">${categoryIcons[insight.category]}</span>
               <span class="compact-text" title="${insight.title}">${insight.title}</span>
@@ -1401,7 +1522,7 @@ function renderStartupFundingCompact(): string {
       </div>
       <div class="card-body">
         <div class="funding-news-list">
-          ${startupFunding.slice(0, 3).map(startup => `
+          ${startupFunding.slice(0, 6).map(startup => `
             <div class="funding-news-item">
               <div class="funding-news-title">${startup.title}</div>
               <div class="funding-news-meta">
