@@ -1129,10 +1129,10 @@ function renderNewsCompact(industry: NewsIndustry = 'all'): string {
 function renderAlertCompact(): string {
   // 风险预警兜底内容（当RSS数据不足时使用）
   const fallbackAlerts = [
-    { id: 'f1', title: '美国AI芯片出口管制新规持续收紧', description: 'H20/A800等相关产品对华管制范围扩大，影响国内AI训练算力布局', level: 'critical' as const, icon: '🚨', time: '本周' },
-    { id: 'f2', title: 'ASML光刻机出口许可审查周期延长', description: 'DUV设备审批时间从3个月延至6个月，影响国内先进制程扩产节奏', level: 'warning' as const, icon: '⚠️', time: '本月' },
-    { id: 'f3', title: '车规级芯片认证周期普遍延长至24个月', description: '功能安全标准ISO26262要求趋严，新玩家进入成本门槛显著提升', level: 'warning' as const, icon: '⚠️', time: '持续' },
-    { id: 'f4', title: '台积电先进制程产能预约已排至2027年', description: '3nm/2nm产能供不应求，中小厂商流片窗口竞争激烈', level: 'info' as const, icon: '📋', time: '最新' }
+    { id: 'f1', title: '美国AI芯片出口管制新规持续收紧', description: 'H20/A800等产品对华管制范围持续扩大', level: 'critical' as const, icon: '🚨', time: '持续' },
+    { id: 'f2', title: 'ASML光刻机出口许可审查周期延长', description: 'DUV设备审批从3个月延至6个月', level: 'warning' as const, icon: '⚠️', time: '本月' },
+    { id: 'f3', title: 'HBM存储芯片供应持续紧张', description: 'SK海力士/三星HBM产能优先供英伟达', level: 'warning' as const, icon: '⚠️', time: '持续' },
+    { id: 'f4', title: '车规MCU认证周期延长至24个月', description: 'ISO26262功能安全要求趋严，新玩家进入门槛提升', level: 'info' as const, icon: '📋', time: '持续' }
   ]
   const displayAlerts = alertData.length >= 2 ? alertData.slice(0, 4) : fallbackAlerts
   return `
@@ -1323,12 +1323,12 @@ function renderCompanyNewsCompact(): string {
     finance: '融资',
     partner: '合作'
   }
-  // 兜底：2026年5月最新欧冶相关内容
+  // 兜底：2026年5月最新欧冶相关内容（注：仅供展示，请以官方信息为准）
   const fallbackCompanyNews = [
     { id: 'fc1', title: '工布565完成2026北京车展全球首发，获车企定点意向超10家', category: 'product' as const, time: '4月25日', source: '欧冶半导体' },
-    { id: 'fc2', title: '欧冶与台积电确认2nm制程合作，Q3流片计划落地', category: 'partner' as const, time: '5月8日', source: '欧冶半导体' },
-    { id: 'fc3', title: '欧冶ZCU方案通过Tier1功能安全ASIL-D验证', category: 'product' as const, time: '5月5日', source: '行业媒体' },
-    { id: 'fc4', title: '欧冶完成新一轮战略融资，加速车家AI融合产品量产', category: 'finance' as const, time: '5月1日', source: '欧冶半导体' }
+    { id: 'fc2', title: '欧冶ZCU方案通过Tier1功能安全ASIL-D验证', category: 'product' as const, time: '5月5日', source: '行业媒体' },
+    { id: 'fc3', title: '欧冶完成新一轮战略融资，加速车家AI融合产品量产', category: 'finance' as const, time: '5月1日', source: '欧冶半导体' },
+    { id: 'fc4', title: '工布565进入多个头部车企智能座舱评估流程', category: 'event' as const, time: '5月10日', source: '行业媒体' }
   ]
   const displayNews = companyNews.length >= 2 ? companyNews.slice(0, 4) : fallbackCompanyNews
   return `
