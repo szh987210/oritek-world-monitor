@@ -1304,9 +1304,9 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
           return (data.items || []).filter((item: any) => {
             const t = ((item.title || '') + ' ' + (item.description || '')).toLowerCase()
             // 匹配欧冶半导体专有名词及变体，防止其他公司新闻混入
-            return /欧冶|orytek|工布|ZCU|龙泉(?![^<]*>)/.test(t) ||
+            return /欧冶|oritek|LQ560|GB565|工布|ZCU|龙泉(?![^<]*>)/.test(t) ||
               t.includes('纯钧') || t.includes('福芯') ||
-              t.includes('orytek') || t.includes('zcu')
+              t.includes('oritek') || t.includes('lq560') || t.includes('gb565') || t.includes('zcu')
           }).slice(0, 3).map((item: any, idx: number) => ({
             id: `company-${s.name}-${idx}-${Date.now()}`,
             title: (item.title || '').replace(/<[^>]+>/g, '').slice(0, 50),
