@@ -571,6 +571,113 @@ const hotspotCoordinates: Record<string, { lon: number; lat: number }> = {
 
 let currentPage = 'dashboard'
 
+// ==================== 骨架屏渲染 ====================
+
+function renderSkeleton(): string {
+  const sk = (w = '100%', h = '14px', mt = '0') =>
+    `<div class="skeleton" style="width:${w};height:${h};margin-top:${mt};border-radius:4px;"></div>`
+  const skCard = (title: string) => `
+    <div class="card compact skeleton-card" style="animation:none;">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="card-title-icon skeleton" style="width:20px;height:20px;border-radius:4px;"></div>
+          <div class="skeleton" style="width:${60 + Math.random() * 40}px;height:14px;border-radius:4px;"></div>
+        </div>
+      </div>
+      <div class="card-body" style="display:flex;flex-direction:column;gap:8px;">
+        ${sk('85%')}
+        ${sk('70%')}
+        ${sk('90%')}
+        ${sk('60%')}
+      </div>
+    </div>
+  `
+
+  return `
+    <div class="app-container">
+      ${renderHeader()}
+      <div class="ticker-bar" style="margin-top:var(--header-height);background:rgba(0,10,30,0.6);border-bottom:1px solid var(--border-color);padding:8px 16px;display:flex;align-items:center;gap:12px;overflow:hidden;">
+        <div class="skeleton" style="width:80px;height:12px;border-radius:4px;flex-shrink:0;"></div>
+        <div style="display:flex;gap:20px;flex:1;overflow:hidden;">
+          <div class="skeleton" style="width:100px;height:12px;border-radius:4px;"></div>
+          <div class="skeleton" style="width:120px;height:12px;border-radius:4px;"></div>
+          <div class="skeleton" style="width:90px;height:12px;border-radius:4px;"></div>
+          <div class="skeleton" style="width:110px;height:12px;border-radius:4px;"></div>
+        </div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="grid-cell main-cell">
+          <div class="stats-row">
+            ${[1,2,3,4].map(() => `
+              <div class="stat-box" style="animation:none;">
+                <div class="skeleton" style="width:60%;height:11px;border-radius:4px;margin-bottom:10px;"></div>
+                <div class="skeleton" style="width:80%;height:28px;border-radius:4px;margin-bottom:8px;"></div>
+                <div class="skeleton" style="width:40%;height:11px;border-radius:4px;"></div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="card" style="animation:none;">
+            <div class="card-header">
+              <div class="card-title">
+                <div class="skeleton" style="width:20px;height:20px;border-radius:4px;"></div>
+                <div class="skeleton" style="width:100px;height:14px;border-radius:4px;"></div>
+              </div>
+              <div class="card-actions">
+                ${['全部','竞争','市场','科技','政策','供应链'].map(t =>
+                  `<button class="card-action skeleton" style="width:${30 + t.length * 7}px;height:24px;border-radius:4px;opacity:0.4;"></button>`
+                ).join('')}
+              </div>
+            </div>
+            <div class="card-body">
+              ${[1,2,3,4,5,6].map(() => `
+                <div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+                  <div class="skeleton" style="width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px;"></div>
+                  <div style="flex:1;">
+                    <div class="skeleton" style="width:85%;height:13px;border-radius:4px;margin-bottom:6px;"></div>
+                    <div class="skeleton" style="width:50%;height:10px;border-radius:4px;"></div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          <div class="world-map-container" style="animation:none;">
+            <div class="world-map-header">
+              <div class="card-title">
+                <div class="skeleton" style="width:20px;height:20px;border-radius:4px;"></div>
+                <div class="skeleton" style="width:100px;height:14px;border-radius:4px;"></div>
+              </div>
+            </div>
+            <div class="world-map" id="worldMapContainer" style="position:relative;">
+              <div id="mapLoadingOverlay" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:10;">
+                <div style="font-size:32px;animation:pulse 1.5s ease-in-out infinite;">🌍</div>
+                <div class="skeleton" style="width:200px;height:4px;border-radius:2px;overflow:hidden;position:relative;">
+                  <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,212,255,0.5),transparent);animation:shimmer 1s infinite;background-size:200% 100%;"></div>
+                </div>
+                <div style="color:var(--text-muted);font-size:12px;">正在加载地图数据...</div>
+              </div>
+              <svg viewBox="0 0 1600 800" class="world-map-svg" id="worldMapSvg" style="width:100%;height:100%;display:block;opacity:0.3;background:rgba(0,10,30,0.4);">
+                <defs>
+                  <radialGradient id="oceanGradient" cx="50%" cy="50%" r="70%">
+                    <stop offset="0%" stop-color="rgba(0, 40, 100, 0.3)" />
+                    <stop offset="100%" stop-color="rgba(0, 0, 0, 0)" />
+                  </radialGradient>
+                </defs>
+                <rect class="map-bg" width="1600" height="800" fill="url(#oceanGradient)" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="grid-cell side-cell">
+          ${skCard('风险预警')}
+          ${skCard('舆情监控')}
+          ${skCard('科技动态')}
+          ${skCard('合规政策')}
+        </div>
+      </div>
+    </div>
+  `
+}
+
 // ==================== 组件渲染函数 ====================
 
 function renderHeader(): string {
@@ -889,7 +996,45 @@ async function renderWorldMapD3() {
     console.error('Error rendering world map:', error)
   } finally {
     isMapRendering = false
+    // P3-3: 移除地图加载遮罩
+    const overlay = document.getElementById('mapLoadingOverlay')
+    if (overlay) {
+      overlay.style.transition = 'opacity 0.4s ease'
+      overlay.style.opacity = '0'
+      setTimeout(() => overlay.remove(), 400)
+    }
+    // P3-4: 启动数字计数动画
+    setTimeout(() => animateCountUp(), 200)
   }
+}
+
+// P3-4: 数字计数递增动画
+function animateCountUp() {
+  document.querySelectorAll('[data-count-target]').forEach(el => {
+    const target = parseFloat((el as HTMLElement).dataset.countTarget || '0')
+    const decimals = parseInt((el as HTMLElement).dataset.countDecimals || '0')
+    const prefix = (el as HTMLElement).dataset.countPrefix || ''
+    const suffix = (el as HTMLElement).dataset.countSuffix || ''
+    const useComma = (el as HTMLElement).dataset.countComma === 'true'
+    const duration = 800
+    const start = performance.now()
+    const animate = (now: number) => {
+      const elapsed = now - start
+      const progress = Math.min(elapsed / duration, 1)
+      // easeOutExpo
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress)
+      const current = target * eased
+      let formatted = current.toFixed(decimals)
+      if (useComma) {
+        const parts = formatted.split('.')
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+        formatted = parts.join('.')
+      }
+      el.textContent = prefix + formatted + suffix
+      if (progress < 1) requestAnimationFrame(animate)
+    }
+    requestAnimationFrame(animate)
+  })
 }
 
 // ── ResizeObserver：容器大小变化时自动重绘地图 ──
@@ -1731,25 +1876,25 @@ function renderSemiconductorPage(): string {
           <div class="stats-row">
             <div class="stat-box">
               <div class="stat-label">半导体指数 <span class="stat-source">(费城半导体指数 SOX)</span></div>
-              <div class="stat-value up">4,256.78</div>
+              <div class="stat-value up" data-count-target="4256.78" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">4,256.78</div>
               <div class="stat-change up">+1.07%</div>
               <div class="stat-data-source">数据来源: Bloomberg</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">晶圆厂产能 <span class="stat-source">(全球先进制程)</span></div>
-              <div class="stat-value up">92%</div>
+              <div class="stat-value up" data-count-target="92" data-count-decimals="0" data-count-prefix="" data-count-suffix="%">92%</div>
               <div class="stat-change up">+5%</div>
               <div class="stat-data-source">数据来源: SEMI</div>
             </div>
             <div class="stat-box alert">
               <div class="stat-label">芯片交期 <span class="stat-source">(全球平均)</span></div>
-              <div class="stat-value down">40周</div>
+              <div class="stat-value down" data-count-target="40" data-count-decimals="0" data-count-prefix="" data-count-suffix="周">40周</div>
               <div class="stat-change up">+8周</div>
               <div class="stat-data-source">数据来源: Susquehanna</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">Q1 营收 <span class="stat-source">(全球半导体产业)</span></div>
-              <div class="stat-value up">$156B</div>
+              <div class="stat-value up" data-count-target="156" data-count-decimals="0" data-count-prefix="$" data-count-suffix="B">$156B</div>
               <div class="stat-change up">+23%</div>
               <div class="stat-data-source">数据来源: SIA</div>
             </div>
@@ -1775,25 +1920,25 @@ function renderAutomotivePage(): string {
           <div class="stats-row">
             <div class="stat-box">
               <div class="stat-label">汽车指数 <span class="stat-source">(中证智能汽车指数)</span></div>
-              <div class="stat-value down">1,856.34</div>
+              <div class="stat-value down" data-count-target="1856.34" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">1,856.34</div>
               <div class="stat-change down">-1.25%</div>
               <div class="stat-data-source">数据来源: 中证指数</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">新能源车销量 <span class="stat-source">(中国月度)</span></div>
-              <div class="stat-value up">285万</div>
+              <div class="stat-value up" data-count-target="285" data-count-decimals="0" data-count-prefix="" data-count-suffix="万">285万</div>
               <div class="stat-change up">+15%</div>
               <div class="stat-data-source">数据来源: 中汽协</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">智驾渗透率 <span class="stat-source">(L2+级辅助驾驶)</span></div>
-              <div class="stat-value up">32%</div>
+              <div class="stat-value up" data-count-target="32" data-count-decimals="0" data-count-prefix="" data-count-suffix="%">32%</div>
               <div class="stat-change up">+8%</div>
               <div class="stat-data-source">数据来源: 高工智能汽车</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">电池价格 <span class="stat-source">(三元锂电芯)</span></div>
-              <div class="stat-value down">$45/kWh</div>
+              <div class="stat-value down" data-count-target="45" data-count-decimals="0" data-count-prefix="$" data-count-suffix="/kWh">$45/kWh</div>
               <div class="stat-change down">-12%</div>
               <div class="stat-data-source">数据来源: BloombergNEF</div>
             </div>
@@ -1937,25 +2082,25 @@ function renderAIPage(): string {
           <div class="stats-row">
             <div class="stat-box">
               <div class="stat-label">AI指数 <span class="stat-source">(中证人工智能主题指数)</span></div>
-              <div class="stat-value up">3,256.45</div>
+              <div class="stat-value up" data-count-target="3256.45" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">3,256.45</div>
               <div class="stat-change up">+2.82%</div>
               <div class="stat-data-source">数据来源: 中证指数</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">大模型备案数 <span class="stat-source">(中国生成式AI)</span></div>
-              <div class="stat-value up">218个</div>
+              <div class="stat-value up" data-count-target="218" data-count-decimals="0" data-count-prefix="" data-count-suffix="个">218个</div>
               <div class="stat-change up">+35%</div>
               <div class="stat-data-source">数据来源: 网信办</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">AI算力规模 <span class="stat-source">(中国智能算力)</span></div>
-              <div class="stat-value up">850 EFLOPS</div>
+              <div class="stat-value up" data-count-target="850" data-count-decimals="0" data-count-prefix="" data-count-suffix=" EFLOPS">850 EFLOPS</div>
               <div class="stat-change up">+68%</div>
               <div class="stat-data-source">数据来源: IDC/浪潮</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">端侧AI渗透率 <span class="stat-source">(智能手机/PC)</span></div>
-              <div class="stat-value up">28%</div>
+              <div class="stat-value up" data-count-target="28" data-count-decimals="0" data-count-prefix="" data-count-suffix="%">28%</div>
               <div class="stat-change up">+12%</div>
               <div class="stat-data-source">数据来源: Counterpoint</div>
             </div>
@@ -2195,27 +2340,77 @@ function initCharts() {
 
 // ==================== 事件绑定 ====================
 
+// P3-2: 页面切换过渡动画
+function switchPage(targetPage: string) {
+  const app = document.querySelector<HTMLDivElement>('#app')
+  if (!app || targetPage === currentPage) return
+
+  // 短暂淡出后切换
+  app.style.opacity = '0'
+  app.style.transition = 'opacity 0.15s ease'
+  setTimeout(() => {
+    currentPage = targetPage
+    app.innerHTML = renderApp()
+    app.style.opacity = '1'
+    bindEvents()
+    requestAnimationFrame(() => {
+      if (targetPage === 'dashboard' || targetPage === 'automotive') {
+        initCharts()
+        renderWorldMapD3()
+      }
+    })
+  }, 150)
+}
+
 function bindEvents() {
+  // P3-5: 全局键盘快捷键
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
+    const tag = (e.target as HTMLElement).tagName
+    const inInput = tag === 'INPUT' || tag === 'TEXTAREA'
+
+    // / 或 Ctrl+K → 聚焦搜索框
+    if (!inInput && (e.key === '/' || (e.ctrlKey && e.key === 'k'))) {
+      e.preventDefault()
+      const inp = document.getElementById('newsSearchInput') as HTMLInputElement
+      inp?.focus()
+      return
+    }
+
+    // F5 或 R（大写）→ 手动刷新
+    if (e.key === 'F5' || (e.key === 'r' && !inInput)) {
+      e.preventDefault()
+      const btn = document.getElementById('refreshBtn')
+      if (btn && !btn.classList.contains('spinning')) {
+        btn.click()
+      }
+      return
+    }
+
+    // ← / → → 切换页面
+    if (!inInput && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+      const pages = ['dashboard', 'semiconductor', 'automotive', 'robotics', 'ai']
+      const idx = pages.indexOf(currentPage)
+      let next = idx + (e.key === 'ArrowRight' ? 1 : -1)
+      if (next < 0) next = pages.length - 1
+      if (next >= pages.length) next = 0
+      const navItems = document.querySelectorAll('.nav-item')
+      navItems.forEach(item => {
+        if (item.getAttribute('data-page') === pages[next]) {
+          item.classList.add('active')
+        } else {
+          item.classList.remove('active')
+        }
+      })
+      switchPage(pages[next])
+    }
+  })
+
   // 导航交互
   document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => {
-      document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'))
-      item.classList.add('active')
       const page = item.getAttribute('data-page')
       if (page) {
-        currentPage = page
-        const app = document.querySelector<HTMLDivElement>('#app')
-        if (app) {
-          app.innerHTML = renderApp()
-          bindEvents()
-          // 等待 DOM 更新后重新渲染图表和地图
-          requestAnimationFrame(() => {
-            if (page === 'dashboard' || page === 'automotive') {
-              initCharts()
-              renderWorldMapD3()
-            }
-          })
-        }
+        switchPage(page)
       }
     })
   })
@@ -2337,6 +2532,10 @@ async function init() {
   console.log('Initializing Oritek World Monitor...')
   const app = document.querySelector<HTMLDivElement>('#app')
   if (app) {
+    // 先展示骨架屏，提升感知加载速度
+    app.innerHTML = renderSkeleton()
+    console.log('Skeleton screen displayed')
+
     try {
       console.log('Fetching all data from RSS sources...')
       
@@ -2418,14 +2617,12 @@ async function init() {
       startAutoRefresh()
       console.log('Auto refresh started (5 minutes interval)')
 
-      // 延迟渲染地图，等待 DOM 更新
+      // 延迟渲染地图，等待骨架屏移除后 DOM 稳定
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          console.log('Triggering initial map render...')
-          renderWorldMapD3()
-          // 启动实时情报自动滚动
-          setTimeout(() => startIntelAutoScroll(), 800)
-        })
+        console.log('Triggering initial map render...')
+        renderWorldMapD3()
+        // 启动实时情报自动滚动
+        setTimeout(() => startIntelAutoScroll(), 800)
       })
       
     } catch (error) {
