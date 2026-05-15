@@ -373,7 +373,7 @@ async function fetchFinancialRSSData(): Promise<{ stocks: Record<string, StockDa
   try {
     const results = await Promise.allSettled(
       FINANCIAL_RSS_SOURCES.map(async (src) => {
-        const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(src.url)}&api_key=&count=15`
+        const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(src.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f&count=15`
         const resp = await fetch(url, { mode: 'cors' })
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
         const data = await resp.json()
@@ -517,7 +517,7 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
     const results = await Promise.allSettled(
       sourcesToFetch.map(async (source) => {
         try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=`
+          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f`
           const resp = await fetch(url, { 
             mode: 'cors',
             headers: { 'Accept': 'application/json' }
@@ -628,7 +628,7 @@ export async function fetchAllNews(): Promise<{
     const results = await Promise.allSettled(
       EXTENDED_NEWS_SOURCES.map(async (source) => {
         try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=`
+          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f`
           const resp = await fetch(url, { 
             mode: 'cors',
             headers: { 'Accept': 'application/json' }
@@ -1054,7 +1054,7 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
     const results = await Promise.allSettled(
       GLOBAL_HOTSPOT_SOURCES.map(async (source) => {
         try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=`
+          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f`
           const resp = await fetch(url, { mode: 'cors' })
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
           const data = await resp.json()
@@ -1299,7 +1299,7 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
     const results = await Promise.allSettled(
       sources.map(async (s) => {
         try {
-          const resp = await fetch(`${RSS2JSON_API}?rss_url=${encodeURIComponent(s.url)}&api_key=`, { mode: 'cors' })
+          const resp = await fetch(`${RSS2JSON_API}?rss_url=${encodeURIComponent(s.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f`, { mode: 'cors' })
           if (!resp.ok) return []
           const data = await resp.json()
           if (data.status !== 'ok') return []
