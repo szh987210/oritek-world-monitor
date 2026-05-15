@@ -486,6 +486,36 @@ body {
   background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, transparent 60%);
 }
 
+/* 离线/错误状态 */
+.status.status-error {
+  background: rgba(255, 51, 102, 0.08);
+  border-color: rgba(255, 51, 102, 0.3);
+}
+.status.status-error::before {
+  background: linear-gradient(135deg, rgba(255, 51, 102, 0.06) 0%, transparent 60%);
+}
+.status-indicator.error {
+  background: var(--oritek-red);
+  box-shadow: 0 0 8px var(--oritek-red);
+  animation: pulse-red 1.5s infinite;
+}
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+.status-text:has(+ .status-indicator.error),
+.status-error .status-text {
+  color: var(--oritek-red);
+}
+
+/* 更新失败提示 */
+.update-error {
+  color: var(--oritek-red);
+  font-size: 11px;
+  cursor: default;
+  font-family: var(--font-mono);
+}
+
 .status-indicator {
   width: 6px;
   height: 6px;

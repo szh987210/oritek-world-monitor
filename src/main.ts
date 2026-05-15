@@ -30,6 +30,10 @@ import {
 } from './dataService'
 Chart.register(...registerables)
 
+// 网络/连接状态追踪
+let isOnline = true
+let lastNetworkError = ''
+
 // 世界地图数据缓存
 let worldMapData: any = null
 let isMapRendering = false
@@ -182,6 +186,8 @@ async function performFullRefresh() {
     // 重置地图渲染状态（不重置地图数据缓存）
     isMapRendering = false
     mapRenderRetryCount = 0
+    isOnline = true
+    lastNetworkError = ''
     
     // 重新渲染整个页面
     app.innerHTML = renderApp()
@@ -198,6 +204,8 @@ async function performFullRefresh() {
     })
   } catch (error) {
     console.error('Error during full refresh:', error)
+    isOnline = false
+    lastNetworkError = error instanceof Error ? error.message : '网络连接失败'
     // 出错也尝试重渲染
     app.innerHTML = renderApp()
     bindEvents()
@@ -585,14 +593,12 @@ function renderHeader(): string {
         </nav>
       </div>
       <div class="header-right">
-        <div class="status">
-          <div class="status-indicator"></div>
-          <span class="status-text">LIVE</span>
+        <div class="status ${isOnline ? '' : 'status-error'}">
+          <div class="status-indicator ${isOnline ? '' : 'error'}"></div>
+          <span class="status-text">${isOnline ? 'LIVE' : '离线'}</span>
         </div>
-        <div class="last-update">更新于 ${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</div>
+        <div class="last-update">${lastNetworkError ? `<span class="update-error" title="${lastNetworkError}">⚠️ 更新失败</span>` : `更新于 ${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`}</div>
         <button class="header-btn refresh-btn" id="refreshBtn" title="手动刷新">🔄</button>
-        <button class="header-btn">🔔</button>
-        <button class="header-btn primary">+ 新建监控</button>
       </div>
     </header>
   `
@@ -2335,6 +2341,9 @@ async function init() {
       techNews = generateTechNewsFromNews(allNewsList)
       globalHeadlines = generateHeadlinesFromNews(allNewsList)
 
+      // 成功：标记在线状态
+      isOnline = true
+      lastNetworkError = ''
       console.log('All data loaded from RSS')
       
       app.innerHTML = renderApp()
@@ -2361,6 +2370,8 @@ async function init() {
       
     } catch (error) {
       console.error('Error during initialization:', error)
+      isOnline = false
+      lastNetworkError = error instanceof Error ? error.message : '初始化失败'
       // 即使出错也渲染基本页面
       if (!app.innerHTML) {
         app.innerHTML = renderApp()
