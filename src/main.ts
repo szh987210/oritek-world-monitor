@@ -2350,6 +2350,9 @@ function switchPage(targetPage: string) {
   app.style.transition = 'opacity 0.15s ease'
   setTimeout(() => {
     currentPage = targetPage
+    // 切换页面时重置新闻筛选为全部
+    currentNewsFilter = 'all'
+    newsSearchQuery = ''
     app.innerHTML = renderApp()
     app.style.opacity = '1'
     bindEvents()
@@ -2364,7 +2367,11 @@ function switchPage(targetPage: string) {
 
 function bindEvents() {
   // P3-5: 全局键盘快捷键
-  document.addEventListener('keydown', (e: KeyboardEvent) => {
+  // 先移除旧监听器防止重复绑定（使用命名函数引用）
+  if ((window as any).__monitorKeyHandler) {
+    document.removeEventListener('keydown', (window as any).__monitorKeyHandler)
+  }
+  const keyHandler = (e: KeyboardEvent) => {
     const tag = (e.target as HTMLElement).tagName
     const inInput = tag === 'INPUT' || tag === 'TEXTAREA'
 
@@ -2403,7 +2410,9 @@ function bindEvents() {
       })
       switchPage(pages[next])
     }
-  })
+  }
+  ;(window as any).__monitorKeyHandler = keyHandler
+  document.addEventListener('keydown', keyHandler)
 
   // 导航交互
   document.querySelectorAll('.nav-item').forEach(item => {
@@ -2496,10 +2505,6 @@ function bindEvents() {
             renderWorldMapD3()
           })
         }
-        // CRITICAL: 重新渲染地图 - 修复筛选按钮导致地图消失的问题
-        requestAnimationFrame(() => {
-          setTimeout(() => renderWorldMapD3(), 150)
-        })
       }
     })
   })
