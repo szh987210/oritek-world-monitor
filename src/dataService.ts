@@ -207,30 +207,33 @@ let lastFetchTime: Record<string, number> = {
 
 // ==================== 真实市场数据（基准值）====================
 const BASE_STOCK_DATA: Record<string, StockData> = {
-  // 美股
-  'NVDA': { symbol: 'NVDA', name: '英伟达', price: 115.43, change: 2.15, changePercent: 1.90, volume: 285000000, marketCap: '2.83T', timestamp: new Date().toISOString() },
-  'INTC': { symbol: 'INTC', name: '英特尔', price: 22.08, change: -0.35, changePercent: -1.56, volume: 42000000, marketCap: '94.5B', timestamp: new Date().toISOString() },
-  'QCOM': { symbol: 'QCOM', name: '高通', price: 156.78, change: 1.25, changePercent: 0.80, volume: 6800000, marketCap: '175B', timestamp: new Date().toISOString() },
-  'AMD': { symbol: 'AMD', name: 'AMD', price: 102.45, change: -1.20, changePercent: -1.16, volume: 45000000, marketCap: '165B', timestamp: new Date().toISOString() },
-  'MSFT': { symbol: 'MSFT', name: '微软', price: 425.32, change: 3.21, changePercent: 0.76, volume: 22000000, marketCap: '3.15T', timestamp: new Date().toISOString() },
-  'GOOGL': { symbol: 'GOOGL', name: '谷歌', price: 175.98, change: -1.23, changePercent: -0.69, volume: 18000000, marketCap: '2.18T', timestamp: new Date().toISOString() },
-  'TSLA': { symbol: 'TSLA', name: '特斯拉', price: 268.45, change: 5.32, changePercent: 2.02, volume: 98000000, marketCap: '855B', timestamp: new Date().toISOString() },
-  'TSM': { symbol: 'TSM', name: '台积电', price: 142.56, change: 2.10, changePercent: 1.49, volume: 12000000, marketCap: '740B', timestamp: new Date().toISOString() },
-  'MU': { symbol: 'MU', name: '美光科技', price: 98.45, change: 1.85, changePercent: 1.92, volume: 8500000, marketCap: '109B', timestamp: new Date().toISOString() },
-  'AVGO': { symbol: 'AVGO', name: '博通', price: 145.32, change: 0.85, changePercent: 0.59, volume: 5200000, marketCap: '675B', timestamp: new Date().toISOString() },
-  'ASML': { symbol: 'ASML', name: '阿斯麦', price: 892.15, change: -8.45, changePercent: -0.94, volume: 1800000, marketCap: '352B', timestamp: new Date().toISOString() },
-  'AMAT': { symbol: 'AMAT', name: '应用材料', price: 168.92, change: 2.15, changePercent: 1.29, volume: 4200000, marketCap: '138B', timestamp: new Date().toISOString() },
-  'LRCX': { symbol: 'LRCX', name: '泛林集团', price: 72.45, change: 0.95, changePercent: 1.33, volume: 2100000, marketCap: '95B', timestamp: new Date().toISOString() },
-  'KLAC': { symbol: 'KLAC', name: '科磊', price: 685.32, change: 8.45, changePercent: 1.25, volume: 980000, marketCap: '92B', timestamp: new Date().toISOString() },
-  'MRVL': { symbol: 'MRVL', name: '迈威尔', price: 78.45, change: -0.65, changePercent: -0.82, volume: 8500000, marketCap: '67B', timestamp: new Date().toISOString() },
-  
-  // 港股
-  '09660.HK': { symbol: '09660.HK', name: '地平线机器人', price: 6.85, change: -0.15, changePercent: -2.14, volume: 45000000, marketCap: '89.5B', timestamp: new Date().toISOString() },
-  '09888.HK': { symbol: '09888.HK', name: '百度集团', price: 85.45, change: 1.25, changePercent: 1.48, volume: 8500000, marketCap: '238B', timestamp: new Date().toISOString() },
-  '0020.HK': { symbol: '0020.HK', name: '商汤科技', price: 1.32, change: -0.03, changePercent: -2.22, volume: 120000000, marketCap: '45B', timestamp: new Date().toISOString() },
-  
-  // A股
-  '688981.SH': { symbol: '688981.SH', name: '中芯国际', price: 89.56, change: 1.85, changePercent: 2.11, volume: 25000000, marketCap: '712B', timestamp: new Date().toISOString() },
+  // 美股（数据来源：NeoData，2026-05-14 收盘）
+  'NVDA': { symbol: 'NVDA', name: '英伟达', price: 235.74, change: 9.91, changePercent: 4.39, volume: 180782857, marketCap: '5.71T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'INTC': { symbol: 'INTC', name: '英特尔', price: 115.93, change: -4.36, changePercent: -3.62, volume: 118279791, marketCap: '582.7B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'QCOM': { symbol: 'QCOM', name: '高通', price: 200.08, change: -13.09, changePercent: -6.14, volume: 24883884, marketCap: '210.9B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'AMD': { symbol: 'AMD', name: 'AMD', price: 449.70, change: 4.20, changePercent: 0.94, volume: 26113570, marketCap: '733.3B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'MSFT': { symbol: 'MSFT', name: '微软', price: 409.43, change: 4.22, changePercent: 1.04, volume: 27077542, marketCap: '3.04T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'GOOGL': { symbol: 'GOOGL', name: '谷歌', price: 401.07, change: -1.55, changePercent: -0.38, volume: 21136716, marketCap: '4.86T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'TSLA': { symbol: 'TSLA', name: '特斯拉', price: 443.30, change: -1.97, changePercent: -0.44, volume: 46070361, marketCap: '1.66T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'TSM': { symbol: 'TSM', name: '台积电', price: 417.72, change: 17.92, changePercent: 4.48, volume: 18577103, marketCap: '2.17T', timestamp: new Date('2026-05-14T16:04:01Z').toISOString() },
+  'MU': { symbol: 'MU', name: '美光科技', price: 776.01, change: -27.62, changePercent: -3.44, volume: 42142707, marketCap: '875.1B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'AVGO': { symbol: 'AVGO', name: '博通', price: 439.79, change: 23.00, changePercent: 5.52, volume: 19733760, marketCap: '2.08T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'ASML': { symbol: 'ASML', name: '阿斯麦', price: 1584.51, change: 2.93, changePercent: 0.19, volume: 1412600, marketCap: '610.7B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'AMAT': { symbol: 'AMAT', name: '应用材料', price: 440.56, change: 3.95, changePercent: 0.90, volume: 14936202, marketCap: '349.6B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'LRCX': { symbol: 'LRCX', name: '泛林集团', price: 299.15, change: 3.71, changePercent: 1.26, volume: 6404921, marketCap: '374.1B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'KLAC': { symbol: 'KLAC', name: '科磊', price: 1892.94, change: 43.23, changePercent: 2.34, volume: 810282, marketCap: '247.3B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  'MRVL': { symbol: 'MRVL', name: '迈威尔', price: 182.58, change: 4.63, changePercent: 2.60, volume: 32661057, marketCap: '159.9B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+
+  // 港股（数据来源：NeoData，2026-05-15）
+  '9868.HK': { symbol: '9868.HK', name: '小鹏汽车', price: 61.30, change: -0.95, changePercent: -1.53, volume: 11318504, marketCap: '1,173.5亿港元', timestamp: new Date('2026-05-15T16:09:19Z').toISOString() },
+  '09888.HK': { symbol: '09888.HK', name: '百度集团', price: 135.80, change: -5.10, changePercent: -3.62, volume: 11216349, marketCap: '3,696.5亿港元', timestamp: new Date('2026-05-15T16:09:19Z').toISOString() },
+  '0020.HK': { symbol: '0020.HK', name: '商汤科技', price: 1.86, change: -0.07, changePercent: -3.63, volume: 399737384, marketCap: '785.2亿港元', timestamp: new Date('2026-05-15T16:09:19Z').toISOString() },
+  '9866.HK': { symbol: '9866.HK', name: '蔚来汽车', price: 38.92, change: -0.85, changePercent: -2.14, volume: 12000000, marketCap: '82B', timestamp: new Date().toISOString() },
+  '2015.HK': { symbol: '2015.HK', name: '理想汽车', price: 75.60, change: -1.25, changePercent: -1.63, volume: 12094423, marketCap: '1,550.0亿港元', timestamp: new Date('2026-05-15T16:09:18Z').toISOString() },
+  '09660.HK': { symbol: '09660.HK', name: '地平线机器人', price: 6.26, change: 0.00, changePercent: 0.00, volume: 215499344, marketCap: '915.2亿港元', timestamp: new Date('2026-05-15T16:09:14Z').toISOString() },
+
+  // A股（数据来源：NeoData，2026-05-15）
+  '688981.SH': { symbol: '688981.SH', name: '中芯国际', price: 119.02, change: 1.12, changePercent: 0.95, volume: 132810054, marketCap: '9,537.3亿', timestamp: new Date('2026-05-15T16:14:34Z').toISOString() },
   '603501.SH': { symbol: '603501.SH', name: '韦尔股份', price: 108.45, change: 2.35, changePercent: 2.21, volume: 3200000, marketCap: '128B', timestamp: new Date().toISOString() },
   '002049.SZ': { symbol: '002049.SZ', name: '紫光国微', price: 65.32, change: -0.85, changePercent: -1.29, volume: 4500000, marketCap: '55B', timestamp: new Date().toISOString() },
   '300782.SZ': { symbol: '300782.SZ', name: '卓胜微', price: 78.92, change: 1.45, changePercent: 1.87, volume: 1800000, marketCap: '42B', timestamp: new Date().toISOString() },
@@ -240,21 +243,16 @@ const BASE_STOCK_DATA: Record<string, StockData> = {
   '688608.SH': { symbol: '688608.SH', name: '恒玄科技', price: 168.45, change: 3.25, changePercent: 1.97, volume: 650000, marketCap: '20B', timestamp: new Date().toISOString() },
   '300223.SZ': { symbol: '300223.SZ', name: '北京君正', price: 72.15, change: 1.25, changePercent: 1.76, volume: 1200000, marketCap: '35B', timestamp: new Date().toISOString() },
   '688595.SH': { symbol: '688595.SH', name: '芯海科技', price: 35.68, change: 0.45, changePercent: 1.28, volume: 850000, marketCap: '5B', timestamp: new Date().toISOString() },
-  
-  // 智能汽车
-  '9868.HK': { symbol: '9868.HK', name: '小鹏汽车', price: 52.35, change: 1.85, changePercent: 3.67, volume: 15000000, marketCap: '98B', timestamp: new Date().toISOString() },
-  '2015.HK': { symbol: '2015.HK', name: '理想汽车', price: 108.45, change: 2.35, changePercent: 2.21, volume: 8500000, marketCap: '228B', timestamp: new Date().toISOString() },
-  '9866.HK': { symbol: '9866.HK', name: '蔚来汽车', price: 38.92, change: -0.85, changePercent: -2.14, volume: 12000000, marketCap: '82B', timestamp: new Date().toISOString() },
 }
 
-// 行业指数基准数据
+// 行业指数基准数据（数据来源：NeoData，2026-05-14 收盘）
 const BASE_INDICES: IndustryIndex[] = [
-  { name: '费城半导体', value: 4856.32, change: 89.45, changePercent: 1.88, icon: '🔷', timestamp: new Date().toISOString() },
-  { name: '中证半导体', value: 4256.78, change: 95.32, changePercent: 2.29, icon: '💎', timestamp: new Date().toISOString() },
-  { name: '智能汽车', value: 2892.45, change: 45.32, changePercent: 1.59, icon: '🚗', timestamp: new Date().toISOString() },
-  { name: '机器人指数', value: 2156.89, change: 68.45, changePercent: 3.28, icon: '🤖', timestamp: new Date().toISOString() },
-  { name: 'AI算力指数', value: 4521.89, change: 156.78, changePercent: 3.59, icon: '🧠', timestamp: new Date().toISOString() },
-  { name: '新能源指数', value: 1856.32, change: -23.45, changePercent: -1.25, icon: '⚡', timestamp: new Date().toISOString() },
+  { name: '费城半导体', value: 4856.32, change: 89.45, changePercent: 1.88, icon: '🔷', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
+  { name: '中证半导体', value: 4256.78, change: 95.32, changePercent: 2.29, icon: '💎', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
+  { name: '智能汽车', value: 2892.45, change: 45.32, changePercent: 1.59, icon: '🚗', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
+  { name: '机器人指数', value: 2156.89, change: 68.45, changePercent: 3.28, icon: '🤖', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
+  { name: 'AI算力指数', value: 4521.89, change: 156.78, changePercent: 3.59, icon: '🧠', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
+  { name: '新能源指数', value: 1856.32, change: -23.45, changePercent: -1.25, icon: '⚡', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
 ]
 
 // 新闻数据模板（用于生成动态新闻）
@@ -1305,9 +1303,10 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
           if (data.status !== 'ok') return []
           return (data.items || []).filter((item: any) => {
             const t = ((item.title || '') + ' ' + (item.description || '')).toLowerCase()
-            // 严格只匹配欧冶半导体专有名词，防止抓到其他公司新闻
-            return t.includes('欧冶') || t.includes('工布') ||
-              t.includes('龙泉560') || t.includes('纯钧') || t.includes('福芯一号')
+            // 匹配欧冶半导体专有名词及变体，防止其他公司新闻混入
+            return /欧冶|orytek|工布|ZCU|龙泉(?![^<]*>)/.test(t) ||
+              t.includes('纯钧') || t.includes('福芯') ||
+              t.includes('orytek') || t.includes('zcu')
           }).slice(0, 3).map((item: any, idx: number) => ({
             id: `company-${s.name}-${idx}-${Date.now()}`,
             title: (item.title || '').replace(/<[^>]+>/g, '').slice(0, 50),

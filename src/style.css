@@ -194,6 +194,43 @@ body {
   .side-column {
     width: 100%;
   }
+  /* 移动端头部优化 */
+  .header {
+    padding: 0 10px;
+  }
+  .header-left {
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+  .logo-text {
+    display: none;
+  }
+  .header-right {
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .header-right .status-text,
+  .header-right .last-update {
+    display: none;
+  }
+  .header-btn.primary {
+    display: none;
+  }
+  .nav {
+    max-width: calc(100vw - 130px);
+  }
+  .nav-item {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+  /* 看板卡片移动端 */
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .industry-ticker {
+    font-size: 10px;
+  }
 }
 
 /* 统计卡片 */
