@@ -2550,6 +2550,32 @@ path.country:hover {
   letter-spacing: 0.3px;
 }
 
+/* ==================== 公司新闻无限滚动 ==================== */
+.company-news-marquee-wrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.company-news-track {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  animation: marqueeScroll 40s linear infinite;
+  padding-bottom: 4px;
+}
+
+.company-news-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .tech-cat-label {
   padding: 2px 7px;
   border-radius: 4px;

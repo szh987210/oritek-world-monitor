@@ -3,6 +3,7 @@ import { Chart, registerables } from 'chart.js'
 import * as d3 from 'd3'
 import * as d3Geo from 'd3-geo'
 import * as topojson from 'topojson-client'
+import { getBasePath } from './renderHelpers'
 import {
   type NewsItem,
   type IndustryIndex,
@@ -53,13 +54,6 @@ let marketChartInstance: Chart | null = null
 // ==================== 配置 ====================
 // 自动刷新间隔：5分钟
 const AUTO_REFRESH_INTERVAL = 5 * 60 * 1000
-
-// 获取基础路径 - 兼容开发和生产环境
-function getBasePath(): string {
-  const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
-  const isGitHubPages = hostname.includes('github.io')
-  return isGitHubPages ? '/oritek-world-monitor' : ''
-}
 
 // 获取最新新闻（委托 dataService 处理联网抓取和缓存）
 async function fetchLatestNews(): Promise<NewsItem[]> {

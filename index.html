@@ -11,6 +11,18 @@
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
     <script type="module">
+      // Service Worker 注册（缓存 world-110m.json）
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(reg => {
+            console.log('[SW] Registered:', reg.scope)
+          }).catch(e => {
+            console.warn('[SW] Registration failed:', e)
+          })
+        })
+      }
+    </script>
+    <script type="module">
       // 确保地图渲染被执行 - 如果 1 秒后地图还没渲染，强制调用
       setTimeout(() => {
         console.log('=== CHECKING MAP RENDER STATUS ===')
