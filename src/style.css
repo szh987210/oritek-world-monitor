@@ -1885,6 +1885,17 @@ path.country:hover {
   margin-bottom: 5px;
   line-height: 1.4;
   letter-spacing: 0.1px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.news-title:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.news-title:focus-visible {
+  outline: 2px solid var(--accent);
+  border-radius: 2px;
 }
 
 .news-meta {
@@ -2404,6 +2415,13 @@ path.country:hover {
   color: var(--text-primary);
   margin-bottom: 5px;
   line-height: 1.4;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.company-news-title:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .company-news-meta {

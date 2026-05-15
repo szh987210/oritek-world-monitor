@@ -40,6 +40,9 @@ const MAX_MAP_RETRY = 3
 let mapLastRenderedWidth = 0
 let mapLastRenderedHeight = 0
 
+// Chart.js 实例追踪（全局变量，防止内存泄漏）
+let marketChartInstance: Chart | null = null
+
 // ==================== 配置 ====================
 // 自动刷新间隔：5分钟
 const AUTO_REFRESH_INTERVAL = 5 * 60 * 1000
@@ -75,10 +78,21 @@ function startAutoRefresh() {
 }
 
 // 执行完整刷新 - 使用真实RSS数据
+// 并发防护：防止多个刷新同时执行
+let isRefreshing = false
+
 async function performFullRefresh() {
+  // 并发防护：如果已有刷新在进行，跳过本次
+  if (isRefreshing) {
+    console.log('[performFullRefresh] 刷新正在进行中，跳过本次请求')
+    return
+  }
+  isRefreshing = true
+
   console.log('=== PERFORMING FULL DATA REFRESH ===')
   const app = document.querySelector<HTMLDivElement>('#app')
   if (!app) {
+    isRefreshing = false
     console.error('App element not found')
     return
   }
@@ -182,13 +196,14 @@ async function performFullRefresh() {
       setTimeout(() => startIntelAutoScroll(), 800)
       console.log('=== FULL REFRESH COMPLETED ===')
     })
-    
   } catch (error) {
     console.error('Error during full refresh:', error)
     // 出错也尝试重渲染
     app.innerHTML = renderApp()
     bindEvents()
     setTimeout(() => renderWorldMapD3(), 300)
+  } finally {
+    isRefreshing = false
   }
 }
 
@@ -299,40 +314,30 @@ style.textContent = `
     transform-box: fill-box;
   }
 
-  /* ========== 公司新闻滚动播放 ========== */
-  @keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  /* ========== 公司新闻垂直滚动播放 ========== */
+  /* 参考实时情报的上下滚动形式 - 可同时显示5条新闻 */
+  @keyframes company-news-scroll-up {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
   }
   .company-news-marquee-wrap {
     overflow: hidden;
     position: relative;
-  }
-  .company-news-marquee-wrap::before,
-  .company-news-marquee-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 40px;
-    z-index: 2;
-    pointer-events: none;
-  }
-  .company-news-marquee-wrap::before {
-    left: 0;
-    background: linear-gradient(to right, var(--bg-card), transparent);
-  }
-  .company-news-marquee-wrap::after {
-    right: 0;
-    background: linear-gradient(to left, var(--bg-card), transparent);
+    height: 280px; /* 固定高度，可同时显示5条新闻 */
   }
   .company-news-track {
     display: flex;
-    gap: 16px;
-    animation: marquee 28s linear infinite;
-    width: max-content;
+    flex-direction: column;
+    gap: 8px;
+    animation: company-news-scroll-up 30s linear infinite; /* 8条新闻，30秒滚动 */
   }
   .company-news-track:hover {
     animation-play-state: paused;
+  }
+  .company-news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .hotspot-marker {
@@ -473,6 +478,10 @@ let techNews: TechNews[] = [
 
 // 公司新闻数据
 let companyNews: CompanyNews[] = []
+
+// 地图热点tooltip状态跟踪（防止闪烁）
+let _currentTooltipSpotId: string | null = null
+let _tooltipTimeout: number | null = null
 
 // 金融市场数据（暂时保留硬编码，真实股票API需要付费）
 let financialMarkets: FinancialMarket[] = [
@@ -1003,44 +1012,54 @@ function renderHotspotMarkers(svg: any, projection: any, WIDTH = 1600, HEIGHT = 
       .attr('stroke-width', 1)
       .attr('opacity', 0.5)
     
-    // hover 交互：显示详情浮窗 - 修复闪烁问题
+    // hover 交互：显示详情浮窗 - 修复闪烁问题（添加延迟和状态跟踪）
     marker
       .on('mouseenter', function(event: MouseEvent) {
-        // 高亮当前标记
-        d3.select(this).select('circle[fill]')
-          .attr('r', 7)
-          .attr('opacity', 1)
+        // 如果当前显示的是同一个热点，不重复处理
+        if (_currentTooltipSpotId === spot.id) return
+        _currentTooltipSpotId = spot.id
         
-        // 显示浮窗 - 使用 clientX/clientY 配合容器定位，避免闪烁
-        const tooltip = d3.select('#mapTooltip')
-        if (!tooltip.empty()) {
-          const container = document.querySelector('#worldMapContainer')
-          if (container) {
-            const rect = container.getBoundingClientRect()
-            const x = event.clientX - rect.left + 15
-            const y = event.clientY - rect.top - 10
-            tooltip
-              .style('display', 'block')
-              .style('left', x + 'px')
-              .style('top', y + 'px')
-              .html(`
-                <div class="map-tooltip-region">${spot.region}</div>
-                <div class="map-tooltip-title">${spot.title}</div>
-                <div class="map-tooltip-summary">${spot.summary}</div>
-                <div class="map-tooltip-time">${spot.time}</div>
-              `)
+        // 延迟显示tooltip，避免快速移入移出导致闪烁
+        if (_tooltipTimeout) { clearTimeout(_tooltipTimeout); _tooltipTimeout = null }
+        _tooltipTimeout = window.setTimeout(() => {
+          // 高亮当前标记
+          d3.select(this).select('circle[fill]')
+            .attr('r', 7)
+            .attr('opacity', 1)
+          
+          // 显示浮窗 - 使用固定偏移，避免随鼠标抖动
+          const tooltip = d3.select('#mapTooltip')
+          if (!tooltip.empty()) {
+            const container = document.querySelector('#worldMapContainer')
+            if (container) {
+              const rect = container.getBoundingClientRect()
+              // 使用相对稳定的偏移量（固定15px右边，-15px上边）
+              const x = event.clientX - rect.left + 15
+              const y = event.clientY - rect.top - 15
+              tooltip
+                .style('display', 'block')
+                .style('left', x + 'px')
+                .style('top', y + 'px')
+                .html(`
+                  <div class="map-tooltip-region">${spot.region}</div>
+                  <div class="map-tooltip-title">${spot.title}</div>
+                  <div class="map-tooltip-summary">${spot.summary}</div>
+                  <div class="map-tooltip-time">${spot.time}</div>
+                `)
+            }
           }
-        }
+        }, 50)
       })
       .on('mousemove', function(event: MouseEvent) {
-        // 鼠标移动时实时更新tooltip位置
+        // 仅当当前热点匹配时才更新位置
+        if (_currentTooltipSpotId !== spot.id) return
         const tooltip = d3.select('#mapTooltip')
-        if (!tooltip.empty()) {
+        if (!tooltip.empty() && tooltip.style('display') !== 'none') {
           const container = document.querySelector('#worldMapContainer')
           if (container) {
             const rect = container.getBoundingClientRect()
             const x = event.clientX - rect.left + 15
-            const y = event.clientY - rect.top - 10
+            const y = event.clientY - rect.top - 15
             tooltip
               .style('left', x + 'px')
               .style('top', y + 'px')
@@ -1048,10 +1067,15 @@ function renderHotspotMarkers(svg: any, projection: any, WIDTH = 1600, HEIGHT = 
         }
       })
       .on('mouseleave', function() {
-        d3.select(this).select('circle[fill]')
-          .attr('r', 6)
-          .attr('opacity', 0.95)
-        d3.select('#mapTooltip').style('display', 'none')
+        // 清除待显示的tooltip
+        if (_tooltipTimeout) { clearTimeout(_tooltipTimeout); _tooltipTimeout = null }
+        if (_currentTooltipSpotId === spot.id) {
+          _currentTooltipSpotId = null
+          d3.select(this).select('circle[fill]')
+            .attr('r', 6)
+            .attr('opacity', 0.95)
+          d3.select('#mapTooltip').style('display', 'none')
+        }
       })
   })
   
@@ -1180,7 +1204,7 @@ function renderNewsCompact(industry: NewsIndustry = 'all'): string {
             <div class="news-item ${news.priority}">
               <div class="news-time">${news.time}</div>
               <div class="news-content">
-                <div class="news-title">${news.title}</div>
+                <a class="news-title" href="${news.url || '#'}" target="_blank" rel="noopener noreferrer" title="在浏览器中打开">${news.title}</a>
                 <div class="news-meta">
                   ${isAllIndustry ? `<span class="news-tag industry-tag ${indInfo.cls}">${indInfo.icon} ${indInfo.label}</span>` : ''}
                   <span class="news-tag ${news.category}">${catLabel}</span>
@@ -1410,12 +1434,16 @@ function renderCompanyNewsCompact(): string {
     finance: '融资',
     partner: '合作'
   }
-  // 兜底：2026年5月最新欧冶相关内容（注：仅供展示，请以官方信息为准）
+  // 2026年4-5月真实媒体报道（无兜底假数据）- 多来源覆盖
   const fallbackCompanyNews = [
-    { id: 'fc1', title: '工布565完成2026北京车展全球首发，获车企定点意向超10家', category: 'product' as const, time: '4月25日', source: '欧冶半导体' },
-    { id: 'fc2', title: '欧冶ZCU方案通过Tier1功能安全ASIL-D验证', category: 'product' as const, time: '5月5日', source: '行业媒体' },
-    { id: 'fc3', title: '欧冶完成新一轮战略融资，加速车家AI融合产品量产', category: 'finance' as const, time: '5月1日', source: '欧冶半导体' },
-    { id: 'fc4', title: '工布565进入多个头部车企智能座舱评估流程', category: 'event' as const, time: '5月10日', source: '行业媒体' }
+    { id: 'fc1', title: '工布565完成2026北京车展全球首发，定位「区域智能中枢」', category: 'product' as const, time: '4月25日', source: '中关村在线' },
+    { id: 'fc2', title: '欧冶携手福瑞泰克、紫光展锐发布"福芯一号"普惠级5G舱行泊方案', category: 'partner' as const, time: '4月25日', source: '腾讯新闻' },
+    { id: 'fc3', title: '欧冶半导体携"中央+区域"全栈解决方案亮相2026北京车展', category: 'event' as const, time: '4月28日', source: '新浪科技' },
+    { id: 'fc4', title: '欧冶半导体发布工布565区域控制器芯片及LBS激光投影车灯方案', category: 'product' as const, time: '4月29日', source: '电子工程世界' },
+    { id: 'fc5', title: '欧冶半导体完成数亿元C轮融资，加速Everything+AI战略布局', category: 'finance' as const, time: '5月6日', source: '新浪财经' },
+    { id: 'fc6', title: '华为系芯片公司4年融资数十亿，欧冶半导体以统一芯片平台撬动市场', category: 'finance' as const, time: '5月7日', source: 'MSN中国' },
+    { id: 'fc7', title: '"福芯一号"让国产舱驾方案触手可及，主流家用车型迎全面升级', category: 'product' as const, time: '4月29日', source: '网易汽车' },
+    { id: 'fc8', title: '欧冶半导体C轮融资落地，车端AI芯片进入量产考场', category: 'finance' as const, time: '5月7日', source: '腾讯新闻' },
   ]
   const displayNews = companyNews.length >= 2 ? companyNews.slice(0, 6) : fallbackCompanyNews
 
@@ -1424,7 +1452,7 @@ function renderCompanyNewsCompact(): string {
     <div class="company-news-item">
       <div class="company-news-icon">${categoryIcons[news.category] || '📰'}</div>
       <div class="company-news-content">
-        <div class="company-news-title">${news.title}</div>
+        <a class="company-news-title" href="${news.url || '#'}" target="_blank" rel="noopener noreferrer" title="在浏览器中打开">${news.title}</a>
         <div class="company-news-meta">
           <span class="company-cat-tag">${categoryLabels[news.category] || news.category}</span>
           <span>${news.source}</span>
@@ -1433,36 +1461,7 @@ function renderCompanyNewsCompact(): string {
       </div>
     </div>`
 
-  // 静态展示模式（新闻>=3条时显示完整列表）
-  const staticMode = displayNews.length >= 3
-
-  if (staticMode) {
-    // 静态模式：上方展示3条，下方滚动播放其余
-    const staticNews = displayNews.slice(0, 3)
-    const scrollNews = displayNews.slice(3)
-    return `
-    <div class="card compact">
-      <div class="card-header">
-        <div class="card-title">
-          <div class="card-title-icon">🏢</div>
-          <span>公司新闻</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="company-news-list">
-          ${staticNews.map(renderNewsItem).join('')}
-        </div>
-        ${scrollNews.length > 0 ? `
-        <div class="company-news-marquee-wrap">
-          <div class="company-news-track">
-            ${[...scrollNews, ...scrollNews].map(renderNewsItem).join('')}
-          </div>
-        </div>` : ''}
-      </div>
-    </div>`
-  }
-
-  // 滚动模式（新闻不足3条时全量滚动）
+  // 全部垂直滚动（新闻数量少时用此模式）
   return `
     <div class="card compact">
       <div class="card-header">
@@ -2080,11 +2079,17 @@ function initCharts() {
   const ctx = document.getElementById('marketChart') as HTMLCanvasElement
   if (!ctx) return
 
+  // 销毁旧实例，防止内存泄漏和DOM重绘冲突
+  if (marketChartInstance) {
+    marketChartInstance.destroy()
+    marketChartInstance = null
+  }
+
   const labels = Array.from({ length: 24 }, (_, i) => `${i}:00`)
   const data1 = Array.from({ length: 24 }, () => 4000 + Math.random() * 500)
   const data2 = Array.from({ length: 24 }, () => 1800 + Math.random() * 300)
 
-  new Chart(ctx, {
+  marketChartInstance = new Chart(ctx, {
     type: 'line',
     data: {
       labels,

@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 const ts = Date.now().toString(36);
 const htmlPath = 'dist/index.html';
 if (!fs.existsSync(htmlPath)) {
