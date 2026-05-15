@@ -34,6 +34,9 @@ Chart.register(...registerables)
 let isOnline = true
 let lastNetworkError = ''
 
+// 新闻搜索状态
+let newsSearchQuery = ''
+
 // 世界地图数据缓存
 let worldMapData: any = null
 let isMapRendering = false
@@ -593,6 +596,10 @@ function renderHeader(): string {
         </nav>
       </div>
       <div class="header-right">
+        <div class="header-search">
+          <input type="text" id="newsSearchInput" placeholder="搜索新闻..." value="${newsSearchQuery}" autocomplete="off" />
+          <span class="search-icon">🔍</span>
+        </div>
         <div class="status ${isOnline ? '' : 'status-error'}">
           <div class="status-indicator ${isOnline ? '' : 'error'}"></div>
           <span class="status-text">${isOnline ? 'LIVE' : '离线'}</span>
@@ -1163,22 +1170,38 @@ function renderNewsCompact(industry: NewsIndustry = 'all'): string {
   if (industry !== 'all') {
     filteredNews = filteredNews.filter(n => n.industry === industry || n.industry === 'all')
   }
-  
-  const filteredByCategory = currentNewsFilter === 'all' 
-    ? filteredNews 
-    : filteredNews.filter(n => n.category === currentNewsFilter)
+
+  // 新闻全文搜索
+  if (newsSearchQuery.trim()) {
+    const q = newsSearchQuery.toLowerCase().trim()
+    filteredNews = filteredNews.filter(n =>
+      n.title.toLowerCase().includes(q) ||
+      (n.summary && n.summary.toLowerCase().includes(q)) ||
+      n.source.toLowerCase().includes(q) ||
+      n.category.toLowerCase().includes(q)
+    )
+  }
+
+  const filteredByCategory = newsSearchQuery.trim()
+    ? filteredNews  // 搜索时显示所有匹配结果，不按分类筛选
+    : (currentNewsFilter === 'all'
+      ? filteredNews
+      : filteredNews.filter(n => n.category === currentNewsFilter))
 
   // 全行业模式：显示更多条目（15条），其他行业页面显示8条
   const displayCount = industry === 'all' ? 15 : 8
   const displayNews = filteredByCategory.slice(0, displayCount)
-  
-  const industryName = {
+  const hasSearch = newsSearchQuery.trim()
+
+  const industryName = hasSearch
+    ? `搜索: "${newsSearchQuery}"`
+    : ({
     'all': '全行业',
     'semiconductor': '半导体',
     'automotive': '智能汽车',
     'robotics': '机器人',
     'ai': 'AI'
-  }[industry] || '全行业'
+  }[industry] || '全行业')
 
   // 全行业模式下按行业颜色分组展示，并启用自动滚动
   const isAllIndustry = industry === 'all'
@@ -2222,6 +2245,49 @@ function bindEvents() {
       if (newBtn) {
         newBtn.classList.remove('spinning')
         newBtn.removeAttribute('disabled')
+      }
+    })
+  }
+
+  // 新闻全文搜索
+  const searchInput = document.getElementById('newsSearchInput') as HTMLInputElement
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      newsSearchQuery = searchInput.value
+      const app = document.querySelector<HTMLDivElement>('#app')
+      if (app) {
+        app.innerHTML = renderApp()
+        bindEvents()
+        // 聚焦回搜索框
+        const newInput = document.getElementById('newsSearchInput') as HTMLInputElement
+        if (newInput) {
+          newInput.focus()
+          newInput.setSelectionRange(newInput.value.length, newInput.value.length)
+        }
+        if (currentPage === 'dashboard' || currentPage === 'automotive') {
+          requestAnimationFrame(() => {
+            initCharts()
+            renderWorldMapD3()
+          })
+        }
+      }
+    })
+    // 回车键搜索
+    searchInput.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        searchInput.value = ''
+        newsSearchQuery = ''
+        const app = document.querySelector<HTMLDivElement>('#app')
+        if (app) {
+          app.innerHTML = renderApp()
+          bindEvents()
+          if (currentPage === 'dashboard' || currentPage === 'automotive') {
+            requestAnimationFrame(() => {
+              initCharts()
+              renderWorldMapD3()
+            })
+          }
+        }
       }
     })
   }

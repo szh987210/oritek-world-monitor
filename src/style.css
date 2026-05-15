@@ -467,6 +467,46 @@ body {
   flex-shrink: 0;
 }
 
+/* 新闻搜索框 */
+.header-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.header-search input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 5px 28px 5px 10px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  outline: none;
+  width: 120px;
+  transition: all 0.2s ease;
+}
+.header-search input::placeholder {
+  color: var(--text-muted);
+}
+.header-search input:focus {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--oritek-cyan);
+  width: 180px;
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.15);
+}
+.header-search .search-icon {
+  position: absolute;
+  right: 8px;
+  font-size: 11px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* 响应式：移动端隐藏搜索框 */
+@media (max-width: 900px) {
+  .header-search { display: none; }
+}
+
 .status {
   display: flex;
   align-items: center;
