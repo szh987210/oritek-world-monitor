@@ -94,43 +94,75 @@ const EXTENDED_NEWS_SOURCES: Array<{
   category: 'tech' | 'market' | 'policy' | 'supply' | 'competitor' | 'ai' | 'robotics' | 'auto' | 'finance' | 'general'
   industry: NewsIndustry
 }> = [
-  // 半导体行业
-  { name: '集微网', url: 'https://laoyaoba.com/rss',                   category: 'tech', industry: 'semiconductor' },
-  { name: 'AnandTech', url: 'https://www.anandtech.com/feeds.xml',   category: 'tech', industry: 'semiconductor' },
-  { name: 'EE Times', url: 'https://www.eetimes.com/feed/',          category: 'tech', industry: 'semiconductor' },
-  { name: '半导体行业观察', url: 'https://semiinsider.com/feed',      category: 'tech', industry: 'semiconductor' },
-  // 智能汽车行业
-  { name: '车云网', url: 'http://www.cheyun.com/rss.xml',            category: 'auto', industry: 'automotive' },
-  { name: '盖世汽车', url: 'https://auto.gasgoo.com/rss/',           category: 'auto', industry: 'automotive' },
-  { name: '第一电动', url: 'https://www.d1ev.com/rss',                category: 'auto', industry: 'automotive' },
-  // 机器人行业
-  { name: '机器之心', url: 'https://www.jiqizhixin.com/rss',         category: 'robotics', industry: 'robotics' },
-  { name: 'AI科技媒体', url: 'https://www.therobotreport.com/feed/', category: 'robotics', industry: 'robotics' },
-  // AI行业
-  { name: '36氪',   url: 'https://36kr.com/feed',                    category: 'ai', industry: 'ai' },
-  { name: '虎嗅',   url: 'https://www.huxiu.com/rss/0.xml',         category: 'ai', industry: 'ai' },
-  { name: 'AI Blog', url: 'https://blogs.nvidia.com/feed/',          category: 'ai', industry: 'ai' },
-  // 通用科技 - 多添加几个可靠的源
-  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/',         category: 'general', industry: 'all' },
+  // ========== 半导体行业 ==========
+  // Semiconductor Today: 覆盖全球半导体行业新闻，含英伟达/高通/英特尔等竞争动态
+  { name: 'Semiconductor Today', url: 'https://www.semiconductor-today.com/rss/news.xml', category: 'tech', industry: 'semiconductor' },
+  // EETimes Semiconductors: 半导体行业权威媒体，覆盖芯片设计/制造/竞争动态
+  { name: 'EE Times半导体', url: 'https://www.eetimes.com/tag/semiconductors/feed/', category: 'tech', industry: 'semiconductor' },
+  // TechXplore 半导体: 半导体技术新闻，含竞争格局
+  { name: 'TechXplore半导体', url: 'https://techxplore.com/rss-feed/semiconductors-news/', category: 'tech', industry: 'semiconductor' },
+  // Semiconductor Engineering: 先进制程/封装/竞争情报
+  { name: 'Semi Engineering', url: 'https://semiengineering.com/feed/', category: 'tech', industry: 'semiconductor' },
+
+  // ========== 智能汽车行业 ==========
+  // 盖世汽车行业栏目: 智能汽车行业动态、市场竞争（需加www前缀）
+  { name: '盖世汽车-行业', url: 'https://www.gasgoo.com/ClassRss.aspx?ClassId=108', category: 'auto', industry: 'automotive' },
+  // 盖世汽车智能网联: 智驾/座舱/竞争格局
+  { name: '盖世汽车-智驾', url: 'https://www.gasgoo.com/ClassRss.aspx?ClassId=601', category: 'auto', industry: 'automotive' },
+  // 盖世汽车新技术: 汽车芯片/AI座舱/竞争技术
+  { name: '盖世汽车-新技术', url: 'https://www.gasgoo.com/ClassRss.aspx?ClassId=409', category: 'auto', industry: 'automotive' },
+  // 新浪汽车RSS
+  { name: '新浪汽车', url: 'https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2514&k=&num=20&page=1', category: 'auto', industry: 'automotive' },
+
+  // ========== 机器人行业 ==========
+  // Robot.tv: 每日机器人新闻，含人形机器人/工业机器人竞争动态
+  { name: 'Robot.tv', url: 'https://news.robot.tv/feed.xml', category: 'robotics', industry: 'robotics' },
+  // SemiEngineering: 机器人/AI自动化覆盖，含竞争情报
+  { name: 'Semi Engineering', url: 'https://semiengineering.com/feed/', category: 'robotics', industry: 'robotics' },
+
+  // ========== AI行业 ==========
+  // 36氪: 覆盖AI/芯片/创业投资
+  { name: '36氪', url: 'https://36kr.com/feed', category: 'ai', industry: 'ai' },
+  // NVIDIA Blog: AI芯片竞争/产品发布
+  { name: 'NVIDIA Blog', url: 'https://blogs.nvidia.com/feed/', category: 'ai', industry: 'ai' },
+  // TechCrunch AI: AI创业投资动态
+  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', category: 'ai', industry: 'ai' },
+
+  // ========== 通用科技 ==========
+  // The Verge: 科技行业综合
   { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'general', industry: 'all' },
+  // Ars Technica: 深度科技报道
   { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', category: 'general', industry: 'all' },
-  // 金融财经
-  { name: '华尔街见闻', url: 'https://wallstreetcn.com/rss',          category: 'finance', industry: 'all' },
+
+  // ========== 金融财经 ==========
+  // 新浪财经: A股/港股/美股指数
   { name: '新浪财经', url: 'https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2514&k=&num=20&page=1', category: 'finance', industry: 'all' },
-  // 竞争动态
-  { name: 'Digitimes', url: 'https://www.digitimes.com/rss/news.xml', category: 'competitor', industry: 'semiconductor' },
-  { name: '电子工程世界', url: 'https://www.eeworld.com.cn/rss/',    category: 'competitor', industry: 'semiconductor' },
-  { name: 'OfWeek激光', url: 'https://www.ofweek.com/rss/',          category: 'competitor', industry: 'all' },
-  // 市场动态
-  { name: 'TrendForce', url: 'https://www.trendforce.com/feed/',    category: 'market', industry: 'semiconductor' },
-  { name: 'Counterpoint', url: 'https://www.counterpointresearch.com/feed/', category: 'market', industry: 'all' },
-  { name: 'IDC', url: 'https://www.idc.com/rss/rss',                 category: 'market', industry: 'all' },
-  // 供应链动态
-  { name: '供应链管理', url: 'https://www.scmagazine.com/rss',        category: 'supply', industry: 'all' },
+
+  // ========== 竞争动态 (competitor) ==========
+  // Digitimes 每日: 台湾半导体产业链竞争情报
+  { name: 'Digitimes每日', url: 'https://www.digitimes.com/rss/daily.xml', category: 'competitor', industry: 'semiconductor' },
+  // SemiWiki: 半导体社区讨论，含竞争格局分析
+  { name: 'SemiWiki', url: 'https://semiwiki.com/feed/', category: 'competitor', industry: 'semiconductor' },
+  // Evertiq: 欧洲半导体行业新闻
+  { name: 'Evertiq', url: 'https://feeds2.feedburner.com/EvertiqCom/All', category: 'competitor', industry: 'semiconductor' },
+
+  // ========== 市场动态 (market) ==========
+  // Semiconductor Digest: 市场分析与趋势（含AI/半导体市场数据）
+  { name: 'Semi Digest', url: 'https://www.semiconductor-digest.com/feed/', category: 'market', industry: 'semiconductor' },
+  // SemiAnalysis: 半导体市场分析/竞争情报
+  { name: 'SemiAnalysis', url: 'https://semianalysis.com/feed/', category: 'market', industry: 'semiconductor' },
+  // TechXplore 半导体: 半导体技术/市场新闻
+  { name: 'TechXplore半导体', url: 'https://techxplore.com/rss-feed/semiconductors-news/', category: 'market', industry: 'semiconductor' },
+
+  // ========== 供应链动态 ==========
+  // Semiconductor Today 供应链: 产能/材料/设备
+  { name: 'Semi Today供应链', url: 'https://www.semiconductor-today.com/rss/news.xml', category: 'supply', industry: 'semiconductor' },
+  // SupplyChainBrain: 供应链管理
   { name: 'SupplyChainBrain', url: 'https://www.supplychainbrain.com/rss/', category: 'supply', industry: 'all' },
-  // 行业动态 - 精简政策来源，保留核心
-  { name: '工信部-公告', url: 'https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=925fa8f4afd44e53818794ed96d9876e,30f92eeafcfd4685984dfb793a2c5fff', category: 'policy', industry: 'all' },
-  { name: '深圳发改委', url: 'https://rsshub.feeddd.org/https://fgw.sz.gov.cn/zwgk/zdly/index.html', category: 'policy', industry: 'all' },
+
+  // ========== 政策动态 ==========
+  // 工信部 RSSHub 代理
+  { name: '工信部公告', url: 'https://rsshub.feeddd.org/https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=925fa8f4afd44e53818794ed96d9876e,30f92eeafcfd4685984dfb793a2c5fff', category: 'policy', industry: 'all' },
 ]
 
 // 财经/市场数据专用RSS源（用于替代随机数）
