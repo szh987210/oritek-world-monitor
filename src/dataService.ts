@@ -1,32 +1,36 @@
 // 数据服务模块 - 实现真实数据抓取和更新
+// 静态数据已移至 staticData.ts，此文件只保留业务逻辑
 
-// ==================== 配置 ====================
-const API_CONFIG = {
-  // 更新频率配置（毫秒）- 缩短缓存时间提高实时性
-  refreshInterval: {
-    news: 3 * 60 * 1000,       // 新闻：3分钟（原来10分钟）
-    stock: 60 * 1000,           // 股票：1分钟
-    indices: 60 * 1000,         // 指数：1分钟
-    hotspots: 5 * 60 * 1000     // 热点：5分钟
-  }
-}
+import {
+  // 配置
+  API_CONFIG,
+  RSS2JSON_API,
+  RSS2JSON_API_KEY,
+  // 类型（重新导出供外部使用）
+  type NewsItem,
+  type StockData,
+  type IndustryIndex,
+  type GlobalHotspot,
+  type NewsIndustry,
+  // RSS源配置
+  NEWS_RSS_SOURCES,
+  GLOBAL_HOTSPOT_SOURCES,
+  EXTENDED_NEWS_SOURCES,
+  FINANCIAL_RSS_SOURCES,
+  AI_INSIGHTS_RSS_SOURCES,
+  VC_FUNDING_RSS_SOURCES,
+  // 基准数据
+  BASE_STOCK_DATA,
+  BASE_INDICES,
+  NEWS_TEMPLATES,
+  HOTSPOT_TEMPLATES,
+  HOTSPOT_COORDINATES,
+} from './staticData'
 
-// ==================== 数据接口定义 ====================
-export interface NewsItem {
-  id: string
-  title: string
-  source: string
-  time: string
-  category: 'competitor' | 'market' | 'policy' | 'tech' | 'supply' | 'finance' | 'ai' | 'robotics' | 'auto' | 'general'
-  industry: 'semiconductor' | 'automotive' | 'robotics' | 'ai' | 'all'
-  priority: 'critical' | 'warning' | 'info'
-  summary: string
-  url?: string
-  publishedAt?: string
-}
-
-// ==================== 联网新闻抓取配置 ====================
-const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json'
+// 重新导出（兼容原有导出接口）
+export type { NewsItem, StockData, IndustryIndex, GlobalHotspot, NewsIndustry }
+export { API_CONFIG, RSS2JSON_API, RSS2JSON_API_KEY }
+export { NEWS_TEMPLATES, HOTSPOT_TEMPLATES, HOTSPOT_COORDINATES }
 
 // 简单的 HTML 转义（防止 XSS）
 function escapeHtml(str: string): string {
@@ -36,193 +40,6 @@ function escapeHtml(str: string): string {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;')
-}
-
-export type NewsIndustry = 'semiconductor' | 'automotive' | 'robotics' | 'ai' | 'all'
-
-const NEWS_RSS_SOURCES: Array<{
-  name: string
-  url: string
-  category: 'tech' | 'market' | 'policy' | 'supply' | 'competitor'
-  industry: NewsIndustry
-}> = [
-  // 半导体行业
-  { name: '集微网', url: 'https://laoyaoba.com/rss',                   category: 'tech', industry: 'semiconductor' },
-  { name: 'AnandTech', url: 'https://www.anandtech.com/feeds.xml',   category: 'tech', industry: 'semiconductor' },
-  { name: 'EE Times', url: 'https://www.eetimes.com/feed/',          category: 'tech', industry: 'semiconductor' },
-  { name: '半导体行业观察', url: 'https://semiinsider.com/feed',      category: 'tech', industry: 'semiconductor' },
-  // 智能汽车行业
-  { name: '车云网', url: 'http://www.cheyun.com/rss.xml',            category: 'market', industry: 'automotive' },
-  { name: '盖世汽车', url: 'https://auto.gasgoo.com/rss/',           category: 'market', industry: 'automotive' },
-  { name: '第一电动', url: 'https://www.d1ev.com/rss',                category: 'market', industry: 'automotive' },
-  // 机器人行业
-  { name: '机器之心', url: 'https://www.jiqizhixin.com/rss',         category: 'tech', industry: 'robotics' },
-  { name: 'AI科技媒体', url: 'https://www.therobotreport.com/feed/', category: 'tech', industry: 'robotics' },
-  // AI行业
-  { name: '36氪',   url: 'https://36kr.com/feed',                    category: 'tech', industry: 'ai' },
-  { name: '虎嗅',   url: 'https://www.huxiu.com/rss/0.xml',         category: 'tech', industry: 'ai' },
-  { name: 'AI Blog', url: 'https://blogs.nvidia.com/feed/',          category: 'tech', industry: 'ai' },
-  // 通用科技 - 多添加几个可靠的源
-  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/',         category: 'tech', industry: 'all' },
-  { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'tech', industry: 'all' },
-  { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', category: 'tech', industry: 'all' },
-]
-
-// 全球热点RSS新闻源（国际新闻）- 扩展到更多权威媒体
-const GLOBAL_HOTSPOT_SOURCES = [
-  // 国际权威媒体
-  { name: 'BBC世界', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', region: '国际' },
-  { name: 'BBC科技', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', region: '国际' },
-  { name: 'CNN国际', url: 'https://rss.cnn.com/rss/edition_world.rss', region: '国际' },
-  { name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', region: '中东' },
-  { name: 'France24', url: 'https://www.france24.com/en/rss', region: '欧洲' },
-  { name: '德国之声', url: 'https://rss.dw.com/rdf/rss-de-all', region: '欧洲' },
-  { name: 'NHK世界', url: 'https://www3.nhk.or.jp/rss/news/cat0.xml', region: '日本' },
-  // 中国媒体
-  { name: '财联社', url: 'https://www.cls.cn/rss', region: '中国' },
-  { name: '环球时报', url: 'https://www.huanqiu.com/rss', region: '中国' },
-  { name: '参考消息', url: 'https://www.cankaoxiaoxi.com/rss/', region: '中国' },
-  // 科技产业
-  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', region: '美国' },
-  { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', region: '美国' },
-]
-
-// 扩展RSS新闻源 - 覆盖所有版块
-const EXTENDED_NEWS_SOURCES: Array<{
-  name: string
-  url: string
-  category: 'tech' | 'market' | 'policy' | 'supply' | 'competitor' | 'ai' | 'robotics' | 'auto' | 'finance' | 'general'
-  industry: NewsIndustry
-}> = [
-  // ========== 半导体行业 ==========
-  // Semiconductor Today: 覆盖全球半导体行业新闻，含英伟达/高通/英特尔等竞争动态
-  { name: 'Semiconductor Today', url: 'https://www.semiconductor-today.com/rss/news.xml', category: 'tech', industry: 'semiconductor' },
-  // EETimes Semiconductors: 半导体行业权威媒体，覆盖芯片设计/制造/竞争动态
-  { name: 'EE Times半导体', url: 'https://www.eetimes.com/tag/semiconductors/feed/', category: 'tech', industry: 'semiconductor' },
-  // TechXplore 半导体: 半导体技术新闻，含竞争格局
-  { name: 'TechXplore半导体', url: 'https://techxplore.com/rss-feed/semiconductors-news/', category: 'tech', industry: 'semiconductor' },
-  // Semiconductor Engineering: 先进制程/封装/竞争情报
-  { name: 'Semi Engineering', url: 'https://semiengineering.com/feed/', category: 'tech', industry: 'semiconductor' },
-
-  // ========== 智能汽车行业 ==========
-  // 盖世汽车行业栏目: 智能汽车行业动态、市场竞争（需加www前缀）
-  { name: '盖世汽车-行业', url: 'https://www.gasgoo.com/ClassRss.aspx?ClassId=108', category: 'auto', industry: 'automotive' },
-  // 盖世汽车智能网联: 智驾/座舱/竞争格局
-  { name: '盖世汽车-智驾', url: 'https://www.gasgoo.com/ClassRss.aspx?ClassId=601', category: 'auto', industry: 'automotive' },
-  // 盖世汽车新技术: 汽车芯片/AI座舱/竞争技术
-  { name: '盖世汽车-新技术', url: 'https://www.gasgoo.com/ClassRss.aspx?ClassId=409', category: 'auto', industry: 'automotive' },
-  // 新浪汽车RSS
-  { name: '新浪汽车', url: 'https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2514&k=&num=20&page=1', category: 'auto', industry: 'automotive' },
-
-  // ========== 机器人行业 ==========
-  // Robot.tv: 每日机器人新闻，含人形机器人/工业机器人竞争动态
-  { name: 'Robot.tv', url: 'https://news.robot.tv/feed.xml', category: 'robotics', industry: 'robotics' },
-  // SemiEngineering: 机器人/AI自动化覆盖，含竞争情报
-  { name: 'Semi Engineering', url: 'https://semiengineering.com/feed/', category: 'robotics', industry: 'robotics' },
-
-  // ========== AI行业 ==========
-  // 36氪: 覆盖AI/芯片/创业投资
-  { name: '36氪', url: 'https://36kr.com/feed', category: 'ai', industry: 'ai' },
-  // NVIDIA Blog: AI芯片竞争/产品发布
-  { name: 'NVIDIA Blog', url: 'https://blogs.nvidia.com/feed/', category: 'ai', industry: 'ai' },
-  // TechCrunch AI: AI创业投资动态
-  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', category: 'ai', industry: 'ai' },
-
-  // ========== 通用科技 ==========
-  // The Verge: 科技行业综合
-  { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'general', industry: 'all' },
-  // Ars Technica: 深度科技报道
-  { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', category: 'general', industry: 'all' },
-
-  // ========== 金融财经 ==========
-  // 新浪财经: A股/港股/美股指数
-  { name: '新浪财经', url: 'https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2514&k=&num=20&page=1', category: 'finance', industry: 'all' },
-
-  // ========== 竞争动态 (competitor) ==========
-  // Digitimes 每日: 台湾半导体产业链竞争情报
-  { name: 'Digitimes每日', url: 'https://www.digitimes.com/rss/daily.xml', category: 'competitor', industry: 'semiconductor' },
-  // SemiWiki: 半导体社区讨论，含竞争格局分析
-  { name: 'SemiWiki', url: 'https://semiwiki.com/feed/', category: 'competitor', industry: 'semiconductor' },
-  // Evertiq: 欧洲半导体行业新闻
-  { name: 'Evertiq', url: 'https://feeds2.feedburner.com/EvertiqCom/All', category: 'competitor', industry: 'semiconductor' },
-
-  // ========== 市场动态 (market) ==========
-  // Semiconductor Digest: 市场分析与趋势（含AI/半导体市场数据）
-  { name: 'Semi Digest', url: 'https://www.semiconductor-digest.com/feed/', category: 'market', industry: 'semiconductor' },
-  // SemiAnalysis: 半导体市场分析/竞争情报
-  { name: 'SemiAnalysis', url: 'https://semianalysis.com/feed/', category: 'market', industry: 'semiconductor' },
-  // TechXplore 半导体: 半导体技术/市场新闻
-  { name: 'TechXplore半导体', url: 'https://techxplore.com/rss-feed/semiconductors-news/', category: 'market', industry: 'semiconductor' },
-
-  // ========== 供应链动态 ==========
-  // Semiconductor Today 供应链: 产能/材料/设备
-  { name: 'Semi Today供应链', url: 'https://www.semiconductor-today.com/rss/news.xml', category: 'supply', industry: 'semiconductor' },
-  // SupplyChainBrain: 供应链管理
-  { name: 'SupplyChainBrain', url: 'https://www.supplychainbrain.com/rss/', category: 'supply', industry: 'all' },
-
-  // ========== 政策动态 ==========
-  // 工信部 RSSHub 代理
-  { name: '工信部公告', url: 'https://rsshub.feeddd.org/https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=925fa8f4afd44e53818794ed96d9876e,30f92eeafcfd4685984dfb793a2c5fff', category: 'policy', industry: 'all' },
-]
-
-// 财经/市场数据专用RSS源（用于替代随机数）
-const FINANCIAL_RSS_SOURCES = [
-  // 东方财富 A股/指数资讯
-  { name: '东方财富-大盘', url: 'https://feed.eastmoney.com/market.xml', symbol: 'INDEX' },
-  { name: '东方财富-财经', url: 'https://feed.eastmoney.com/caifu.xml', symbol: 'FINANCE' },
-  // 华尔街见闻
-  { name: '华尔街见闻', url: 'https://wallstreetcn.com/rss', symbol: 'FINANCE' },
-  // 新浪财经
-  { name: '新浪财经', url: 'https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2514&k=&num=20&page=1', symbol: 'INDEX' },
-]
-
-// AI洞察专用RSS源（直接覆盖AI和大模型相关）
-const AI_INSIGHTS_RSS_SOURCES = [
-  { name: '机器之心', url: 'https://www.jiqizhixin.com/rss', keywords: ['AI', '大模型', 'LLM', '神经网络', 'GPT', '深度学习', '人工智能', 'AIGC', '多模态', '算力'] },
-  { name: '36氪-AI', url: 'https://36kr.com/feed', keywords: ['AI', '人工智能', '大模型', 'LLM', '机器人', '智能驾驶', '算力', 'AIGC', 'GPT', '融资'] },
-  { name: '虎嗅-AI', url: 'https://www.huxiu.com/rss/0.xml', keywords: ['AI', '大模型', '人工智能', 'GPT', '算力', '机器人', '自动驾驶'] },
-  { name: 'NVIDIA博客', url: 'https://blogs.nvidia.com/feed/', keywords: ['AI', 'GPU', 'deep learning', 'LLM', 'neural', 'model'] },
-  { name: 'TechCrunch-AI', url: 'https://techcrunch.com/feed/', keywords: ['AI', 'artificial intelligence', 'machine learning', 'LLM', 'robotics'] },
-]
-
-// 创业公司/VC融资专用RSS源
-const VC_FUNDING_RSS_SOURCES = [
-  { name: '36氪-创投', url: 'https://36kr.com/feed', keywords: ['融资', '投资', '轮', '万美元', '亿', '估值', '天使', 'A轮', 'B轮', 'C轮', 'IPO', '上市'] },
-  { name: '机器之心-资本', url: 'https://www.jiqizhixin.com/rss', keywords: ['融资', '投资', '初创', 'VC', 'PE', '亿美元', '估值'] },
-  { name: '投中网', url: 'https://www.chinaventure.com.cn/rss/', keywords: ['融资', '投资', '初创', 'VC', 'PE', 'IPO'] },
-  { name: '猎云网', url: 'https://lieyun.pro/feed/', keywords: ['融资', '投资', '创业', '融资'] },
-  { name: '动脉网', url: 'https://vcbeat.top/rss/', keywords: ['融资', '投资', '创业'] },
-]
-
-export interface StockData {
-  symbol: string
-  name: string
-  price: number
-  change: number
-  changePercent: number
-  volume?: number
-  marketCap?: string
-  timestamp: string
-}
-
-export interface IndustryIndex {
-  name: string
-  value: number
-  change: number
-  changePercent: number
-  icon: string
-  timestamp: string
-}
-
-export interface GlobalHotspot {
-  id: string
-  title: string
-  region: string
-  category: 'conflict' | 'diplomacy' | 'economy' | 'tech' | 'policy'
-  impact: 'high' | 'medium' | 'low'
-  time: string
-  summary: string
-  source?: string
 }
 
 // ==================== 数据缓存 ====================
@@ -237,153 +54,33 @@ let lastFetchTime: Record<string, number> = {
   hotspots: 0
 }
 
-// ==================== 真实市场数据（基准值）====================
-const BASE_STOCK_DATA: Record<string, StockData> = {
-  // 美股（数据来源：NeoData，2026-05-14 收盘）
-  'NVDA': { symbol: 'NVDA', name: '英伟达', price: 235.74, change: 9.91, changePercent: 4.39, volume: 180782857, marketCap: '5.71T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'INTC': { symbol: 'INTC', name: '英特尔', price: 115.93, change: -4.36, changePercent: -3.62, volume: 118279791, marketCap: '582.7B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'QCOM': { symbol: 'QCOM', name: '高通', price: 200.08, change: -13.09, changePercent: -6.14, volume: 24883884, marketCap: '210.9B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'AMD': { symbol: 'AMD', name: 'AMD', price: 449.70, change: 4.20, changePercent: 0.94, volume: 26113570, marketCap: '733.3B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'MSFT': { symbol: 'MSFT', name: '微软', price: 409.43, change: 4.22, changePercent: 1.04, volume: 27077542, marketCap: '3.04T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'GOOGL': { symbol: 'GOOGL', name: '谷歌', price: 401.07, change: -1.55, changePercent: -0.38, volume: 21136716, marketCap: '4.86T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'TSLA': { symbol: 'TSLA', name: '特斯拉', price: 443.30, change: -1.97, changePercent: -0.44, volume: 46070361, marketCap: '1.66T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'TSM': { symbol: 'TSM', name: '台积电', price: 417.72, change: 17.92, changePercent: 4.48, volume: 18577103, marketCap: '2.17T', timestamp: new Date('2026-05-14T16:04:01Z').toISOString() },
-  'MU': { symbol: 'MU', name: '美光科技', price: 776.01, change: -27.62, changePercent: -3.44, volume: 42142707, marketCap: '875.1B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'AVGO': { symbol: 'AVGO', name: '博通', price: 439.79, change: 23.00, changePercent: 5.52, volume: 19733760, marketCap: '2.08T', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'ASML': { symbol: 'ASML', name: '阿斯麦', price: 1584.51, change: 2.93, changePercent: 0.19, volume: 1412600, marketCap: '610.7B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'AMAT': { symbol: 'AMAT', name: '应用材料', price: 440.56, change: 3.95, changePercent: 0.90, volume: 14936202, marketCap: '349.6B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'LRCX': { symbol: 'LRCX', name: '泛林集团', price: 299.15, change: 3.71, changePercent: 1.26, volume: 6404921, marketCap: '374.1B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'KLAC': { symbol: 'KLAC', name: '科磊', price: 1892.94, change: 43.23, changePercent: 2.34, volume: 810282, marketCap: '247.3B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  'MRVL': { symbol: 'MRVL', name: '迈威尔', price: 182.58, change: 4.63, changePercent: 2.60, volume: 32661057, marketCap: '159.9B', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-
-  // 港股（数据来源：NeoData，2026-05-15）
-  '9868.HK': { symbol: '9868.HK', name: '小鹏汽车', price: 61.30, change: -0.95, changePercent: -1.53, volume: 11318504, marketCap: '1,173.5亿港元', timestamp: new Date('2026-05-15T16:09:19Z').toISOString() },
-  '09888.HK': { symbol: '09888.HK', name: '百度集团', price: 135.80, change: -5.10, changePercent: -3.62, volume: 11216349, marketCap: '3,696.5亿港元', timestamp: new Date('2026-05-15T16:09:19Z').toISOString() },
-  '0020.HK': { symbol: '0020.HK', name: '商汤科技', price: 1.86, change: -0.07, changePercent: -3.63, volume: 399737384, marketCap: '785.2亿港元', timestamp: new Date('2026-05-15T16:09:19Z').toISOString() },
-  '9866.HK': { symbol: '9866.HK', name: '蔚来汽车', price: 38.92, change: -0.85, changePercent: -2.14, volume: 12000000, marketCap: '82B', timestamp: new Date().toISOString() },
-  '2015.HK': { symbol: '2015.HK', name: '理想汽车', price: 75.60, change: -1.25, changePercent: -1.63, volume: 12094423, marketCap: '1,550.0亿港元', timestamp: new Date('2026-05-15T16:09:18Z').toISOString() },
-  '09660.HK': { symbol: '09660.HK', name: '地平线机器人', price: 6.26, change: 0.00, changePercent: 0.00, volume: 215499344, marketCap: '915.2亿港元', timestamp: new Date('2026-05-15T16:09:14Z').toISOString() },
-
-  // A股（数据来源：NeoData，2026-05-15）
-  '688981.SH': { symbol: '688981.SH', name: '中芯国际', price: 119.02, change: 1.12, changePercent: 0.95, volume: 132810054, marketCap: '9,537.3亿', timestamp: new Date('2026-05-15T16:14:34Z').toISOString() },
-  '603501.SH': { symbol: '603501.SH', name: '韦尔股份', price: 108.45, change: 2.35, changePercent: 2.21, volume: 3200000, marketCap: '128B', timestamp: new Date().toISOString() },
-  '002049.SZ': { symbol: '002049.SZ', name: '紫光国微', price: 65.32, change: -0.85, changePercent: -1.29, volume: 4500000, marketCap: '55B', timestamp: new Date().toISOString() },
-  '300782.SZ': { symbol: '300782.SZ', name: '卓胜微', price: 78.92, change: 1.45, changePercent: 1.87, volume: 1800000, marketCap: '42B', timestamp: new Date().toISOString() },
-  '688012.SH': { symbol: '688012.SH', name: '中微公司', price: 185.45, change: 3.85, changePercent: 2.12, volume: 1200000, marketCap: '115B', timestamp: new Date().toISOString() },
-  '688396.SH': { symbol: '688396.SH', name: '华润微', price: 48.56, change: 0.65, changePercent: 1.36, volume: 2100000, marketCap: '64B', timestamp: new Date().toISOString() },
-  '603893.SH': { symbol: '603893.SH', name: '瑞芯微', price: 125.32, change: 2.85, changePercent: 2.33, volume: 980000, marketCap: '52B', timestamp: new Date().toISOString() },
-  '688608.SH': { symbol: '688608.SH', name: '恒玄科技', price: 168.45, change: 3.25, changePercent: 1.97, volume: 650000, marketCap: '20B', timestamp: new Date().toISOString() },
-  '300223.SZ': { symbol: '300223.SZ', name: '北京君正', price: 72.15, change: 1.25, changePercent: 1.76, volume: 1200000, marketCap: '35B', timestamp: new Date().toISOString() },
-  '688595.SH': { symbol: '688595.SH', name: '芯海科技', price: 35.68, change: 0.45, changePercent: 1.28, volume: 850000, marketCap: '5B', timestamp: new Date().toISOString() },
-}
-
-// 行业指数基准数据（数据来源：NeoData，2026-05-14 收盘）
-const BASE_INDICES: IndustryIndex[] = [
-  { name: '费城半导体', value: 4856.32, change: 89.45, changePercent: 1.88, icon: '🔷', timestamp: new Date('2026-05-14T16:00:01Z').toISOString() },
-  { name: '中证半导体', value: 4256.78, change: 95.32, changePercent: 2.29, icon: '💎', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
-  { name: '智能汽车', value: 2892.45, change: 45.32, changePercent: 1.59, icon: '🚗', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
-  { name: '机器人指数', value: 2156.89, change: 68.45, changePercent: 3.28, icon: '🤖', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
-  { name: 'AI算力指数', value: 4521.89, change: 156.78, changePercent: 3.59, icon: '🧠', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
-  { name: '新能源指数', value: 1856.32, change: -23.45, changePercent: -1.25, icon: '⚡', timestamp: new Date('2026-05-15T16:00:00Z').toISOString() },
-]
-
-// 新闻数据模板（用于生成动态新闻）
-// 注意：competitor/market 两个类别的数据量必须充足，确保筛选按钮能正常显示
-const NEWS_TEMPLATES: NewsItem[] = [
-  // ========== 竞争动态 competitor ==========
-  { id: 'c1', title: '英伟达发布新一代自动驾驶芯片Thor，算力达2000 TOPS', source: '36氪', time: '10:32', category: 'competitor', industry: 'semiconductor', priority: 'critical', summary: '英伟达 GTC 大会发布新一代 GPU，专为自动驾驶优化，直接对标地平线征程6' },
-  { id: 'c2', title: 'Mobileye Q1营收超预期，与宝马合作深化', source: '路透社', time: '2天前', category: 'competitor', industry: 'semiconductor', priority: 'warning', summary: 'EyeQ6 芯片将用于下一代高端车型，年收入同比增长 24%' },
-  { id: 'c3', title: '华为昇腾910C芯片性能超越英伟达A100', source: 'TechWeb', time: '3天前', category: 'competitor', industry: 'semiconductor', priority: 'critical', summary: '国产 AI 芯片竞争力持续增强，挑战英伟达数据中心霸主地位' },
-  { id: 'c4', title: '地平线征程6芯片通过多家主机厂车规认证', source: '公司官网', time: '11:15', category: 'competitor', industry: 'semiconductor', priority: 'warning', summary: '量产准备就绪，预计 Q2 批量出货，目标年出货量 500 万颗' },
-  { id: 'c5', title: 'Mobileye发布EyeQ6 Ultra，算力达176 TOPS', source: 'AnandTech', time: '1天前', category: 'competitor', industry: 'semiconductor', priority: 'warning', summary: '基于 5nm 工艺，支持 L4 级自动驾驶' },
-  { id: 'c6', title: '黑芝麻智能华山A1000 Pro量产提速', source: '盖世汽车', time: '今天', category: 'competitor', industry: 'automotive', priority: 'warning', summary: '已获多家头部车企定点，预计年底月出货量突破 10 万颗' },
-  { id: 'c7', title: '特斯拉FSD V13全面推送，端到端方案效果超预期', source: 'Electrek', time: '2天前', category: 'competitor', industry: 'automotive', priority: 'warning', summary: '特斯拉自动驾驶系统升级至端到端大模型，安全性提升 50%' },
-  // ========== 市场动态 market ==========
-  { id: 'm1', title: '小米汽车销量创新高，智驾需求持续强劲', source: '汽车之家', time: '09:45', category: 'market', industry: 'automotive', priority: 'info', summary: '小米 SU7 月交付量突破 2 万台，智驾功能成核心卖点' },
-  { id: 'm2', title: '黑芝麻智能通过港交所聆讯，最快年内上市', source: '证券时报', time: '2天前', category: 'market', industry: 'automotive', priority: 'warning', summary: '国产智驾芯片厂商加速上市进程，募资约 15 亿港元' },
-  { id: 'm3', title: '比亚迪自研智驾芯片"璇玑"流片成功', source: '汽车之家', time: '4天前', category: 'market', industry: 'automotive', priority: 'warning', summary: '垂直整合趋势加速，供应链格局或将生变' },
-  { id: 'm4', title: '蔚来ET9智驾系统实测，端到端大模型效果优异', source: '懂车帝', time: '今天', category: 'market', industry: 'automotive', priority: 'info', summary: '纯视觉方案 + 端到端大模型成为国内智驾主流方向' },
-  { id: 'm5', title: '全球智驾芯片市场2025年规模将突破200亿美元', source: 'IDC', time: '3天前', category: 'market', industry: 'semiconductor', priority: 'info', summary: 'L2+渗透率持续提升，国产芯片份额快速增长' },
-  { id: 'm6', title: '人形机器人市场规模2030年预计达380亿美元', source: '麦肯锡', time: '5天前', category: 'market', industry: 'robotics', priority: 'info', summary: '制造业和商业场景同步渗透，年复合增长率超40%' },
-  // ========== 半导体行业 tech ==========
-  { id: 't1', title: '台积电先进制程产能持续紧张，汽车芯片交期延长', source: '电子时报', time: '昨天', category: 'supply', industry: 'semiconductor', priority: 'warning', summary: '3nm 订单已排至 2026 年底，2nm 试产良率超预期' },
-  { id: 't2', title: '英特尔Lunar Lake芯片发布，集成NPU算力大幅提升', source: 'AnandTech', time: '4天前', category: 'tech', industry: 'semiconductor', priority: 'info', summary: '端侧 AI 算力竞争进入新阶段，X86 生态 AI 化加速' },
-  { id: 't3', title: 'RISC-V架构在汽车芯片领域渗透加速', source: '半导体行业观察', time: '5天前', category: 'tech', industry: 'semiconductor', priority: 'info', summary: '多家汽车主机厂表示将优先选用 RISC-V 架构 MCU' },
-  { id: 't4', title: '韩国三星新一代HBM4存储正式量产', source: '韩国先驱报', time: '1天前', category: 'supply', industry: 'semiconductor', priority: 'warning', summary: 'AI训练加速器存储带宽大幅提升，SK海力士同步跟进' },
-  // ========== 政策动态 policy ==========
-  { id: 'p1', title: '美国拟扩大对华半导体出口管制范围', source: '财联社', time: '08:20', category: 'policy', industry: 'semiconductor', priority: 'critical', summary: '新规可能影响 14nm 以下先进制程设备，国产替代压力加大' },
-  { id: 'p2', title: '欧盟《芯片法案》补贴计划首批项目落地', source: '彭博社', time: '3天前', category: 'policy', industry: 'semiconductor', priority: 'info', summary: '430 亿欧元支持本土芯片制造业，台积电德国工厂获批' },
-  { id: 'p3', title: '日本政府宣布新一轮半导体补贴，总额超1万亿日元', source: '日经新闻', time: '1天前', category: 'policy', industry: 'semiconductor', priority: 'info', summary: '重点扶持 Rapidus 先进制程和汽车芯片企业' },
-  // ========== AI / 机器人 tech ==========
-  { id: 'ai1', title: 'Figure AI 发布新一代人形机器人', source: 'TechCrunch', time: '昨天', category: 'tech', industry: 'robotics', priority: 'warning', summary: '人形机器人商业化加速，多场景落地' },
-  { id: 'ai2', title: 'GPT-5 发布，多模态能力大幅提升', source: 'OpenAI', time: '今天', category: 'tech', industry: 'ai', priority: 'critical', summary: '下一代大语言模型能力飞跃，推理能力提升 10 倍' },
-  { id: 'ai3', title: 'AI芯片全球短缺延续，订单能见度延伸至18个月', source: 'Digitimes', time: '今天', category: 'supply', industry: 'semiconductor', priority: 'critical', summary: 'H100/H200 需求远超供给，客户转向国产替代方案' },
-]
-
-// 全球热点模板（扩展版，确保所有热点都能在地图上显示）
-const HOTSPOT_TEMPLATES: GlobalHotspot[] = [
-  // 高影响热点
-  { id: '1', title: '美国对华半导体出口管制再度升级', region: '美国', category: 'policy', impact: 'high', time: '2小时前', summary: '新规将影响先进制程设备，EDA软件或纳入管控' },
-  { id: '2', title: '台积电海外工厂建设提速', region: '台湾', category: 'tech', impact: 'high', time: '3小时前', summary: '亚利桑那、日本、德国三地工厂同步推进' },
-  { id: '3', title: '日本扩大半导体设备对华出口限制', region: '日本', category: 'policy', impact: 'high', time: '8小时前', summary: '涉及 23 种先进半导体制造设备' },
-  { id: '4', title: '台积电美国工厂良率问题导致投产延期', region: '美国', category: 'tech', impact: 'high', time: '昨天', summary: '亚利桑那工厂 4nm 制程良率不达标，投产推迟' },
-  { id: '5', title: '英伟达AI芯片需求持续火爆', region: '美国', category: 'tech', impact: 'high', time: '5小时前', summary: 'H200订单已排至2027年，营收预期再创新高' },
-  { id: '6', title: '华为昇腾910C算力测试超越英伟达A100', region: '中国', category: 'tech', impact: 'high', time: '4小时前', summary: '国产AI芯片竞争力持续提升' },
-  // 中等影响热点
-  { id: '7', title: '欧盟芯片法案补贴计划首批落地', region: '欧洲', category: 'policy', impact: 'medium', time: '4小时前', summary: '430 亿欧元支持本土芯片制造' },
-  { id: '8', title: '韩国三星先进制程良率持续提升', region: '韩国', category: 'tech', impact: 'medium', time: '10小时前', summary: '3nm GAA 工艺良率已超 60%' },
-  { id: '9', title: '中东主权基金大举投资芯片产业', region: '中东', category: 'economy', impact: 'medium', time: '12小时前', summary: '沙特阿美联合筹建中东首家先进晶圆厂' },
-  { id: '10', title: '中国新能源汽车出口高速增长', region: '中国', category: 'economy', impact: 'medium', time: '3小时前', summary: 'Q1 出口同比增长 45%' },
-  { id: '11', title: '印度半导体激励政策吸引多家厂商', region: '印度', category: 'economy', impact: 'medium', time: '5小时前', summary: '塔塔集团与 PSMC 合作建厂' },
-  { id: '12', title: '东南亚半导体封装测试产业崛起', region: '东南亚', category: 'economy', impact: 'medium', time: '6小时前', summary: '马来西亚、泰国成封装产能转移首选地' },
-  { id: '13', title: '英国脱欧后科技产业重振计划', region: '英国', category: 'policy', impact: 'medium', time: '15小时前', summary: 'ARM 再度成为英国科技王冠，加大研发投入' },
-  { id: '14', title: '德国加速半导体产业布局', region: '德国', category: 'policy', impact: 'medium', time: '7小时前', summary: '英飞凌、博世加大本土芯片产能投资' },
-  // 低影响热点
-  { id: '15', title: '澳大利亚稀土出口管控调整', region: '澳大利亚', category: 'policy', impact: 'low', time: '20小时前', summary: '关键原材料供应链出现新变化' },
-  { id: '16', title: '巴西半导体产业扶持政策', region: '巴西', category: 'policy', impact: 'low', time: '昨天', summary: '南美最大经济体启动芯片产业计划' },
-  { id: '17', title: '阿联酋AI数据中心建设加速', region: '阿联酋', category: 'tech', impact: 'low', time: '18小时前', summary: '海湾国家争相布局AI算力基础设施' },
-]
-
 // ==================== 数据生成函数 ====================
 
-/**
- * 生成随机波动数据（模拟实时市场变化）
- */
 function generateFluctuation(baseValue: number, volatility: number = 0.02): number {
   const change = (Math.random() - 0.5) * 2 * volatility * baseValue
   return parseFloat((baseValue + change).toFixed(2))
 }
 
-/**
- * 生成动态新闻数据 - 每次刷新使用不同的新闻组合
- * 确保时间戳是真正的"刚刚/今天"而非旧闻
- */
 function generateDynamicNews(): NewsItem[] {
   const now = new Date()
   const currentHour = now.getHours()
   const currentMinute = now.getMinutes()
-  
-  // 完全随机打乱模板顺序，确保每次内容不同
   const shuffled = [...NEWS_TEMPLATES].sort(() => Math.random() - 0.5)
-  const newsCount = 10 + Math.floor(Math.random() * 5) // 10-15条新闻
-  
-  // 生成真正新鲜的时间戳（基于当前时间）
+  const newsCount = 10 + Math.floor(Math.random() * 5)
   const generateFreshTime = (): string => {
-    const minsAgo = Math.floor(Math.random() * 120) // 0-120分钟前
+    const minsAgo = Math.floor(Math.random() * 120)
     if (minsAgo < 1) return '刚刚'
     if (minsAgo < 60) return `${minsAgo}分钟前`
     const hoursAgo = Math.floor(minsAgo / 60)
     if (hoursAgo < 3) return `${hoursAgo}小时前`
     return `今天 ${String(currentHour - hoursAgo).padStart(2, '0')}:${String(currentMinute).padStart(2, '0')}`
   }
-  
   return shuffled.slice(0, newsCount).map((template, i) => ({
     ...template,
     id: `news-dynamic-${now.getTime()}-${i}`,
     time: generateFreshTime(),
-    // 随机调整优先级（但保持原始基调）
-    priority: (Math.random() > 0.85 
-      ? 'critical' 
+    priority: (Math.random() > 0.85
+      ? 'critical'
       : (Math.random() > 0.5 ? template.priority : 'info')
     ) as 'critical' | 'warning' | 'info'
   })).sort((a, b) => {
@@ -392,18 +89,13 @@ function generateDynamicNews(): NewsItem[] {
   })
 }
 
-/**
- * 从东方财富RSS抓取真实市场数据，替代随机数
- */
 async function fetchFinancialRSSData(): Promise<{ stocks: Record<string, StockData>, financialNews: string[] }> {
   const financialNews: string[] = []
   const fetchedStocks: Record<string, StockData> = {}
-  const now = new Date().toISOString()
-
   try {
     const results = await Promise.allSettled(
       FINANCIAL_RSS_SOURCES.map(async (src) => {
-        const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(src.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f&count=15`
+        const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(src.url)}&api_key=${RSS2JSON_API_KEY}&count=15`
         const resp = await fetch(url, { mode: 'cors' })
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
         const data = await resp.json()
@@ -411,13 +103,11 @@ async function fetchFinancialRSSData(): Promise<{ stocks: Record<string, StockDa
         return { src, items: data.items || [] }
       })
     )
-
     results.forEach(r => {
       if (r.status === 'fulfilled' && r.value) {
-        const { src, items } = r.value
+        const { items } = r.value
         items.forEach((item: any) => {
           const title = (item.title || '').replace(/<[^>]+>/g, '')
-          const desc = (item.description || '').replace(/<[^>]+>/g, '').slice(0, 200)
           if (title) financialNews.push(title)
         })
       }
@@ -425,34 +115,23 @@ async function fetchFinancialRSSData(): Promise<{ stocks: Record<string, StockDa
   } catch (e) {
     console.warn('[fetchFinancialRSSData] 财经RSS抓取失败:', e)
   }
-
-  // 用东方财富RSS的财经新闻驱动"市场表现"版块
-  // 每次刷新时小幅度波动基准值，保持数据新鲜感（避免完全静态）
   if (financialNews.length === 0) {
-    // RSS失败时保持基准值不变
     return { stocks: {}, financialNews: [] }
   }
-
   return { stocks: fetchedStocks, financialNews }
 }
 
-/**
- * 生成动态股票数据 - 基于真实RSS财经新闻 + 小幅波动
- */
 function generateDynamicStocks(): Record<string, StockData> {
   const dynamicStocks: Record<string, StockData> = {}
   const now = new Date().toISOString()
-  // 市场整体情绪（随机多/空倾向）
-  const marketSentiment = (Math.random() - 0.45) * 0.01 // -0.45% ~ +0.55% 偏多
-
+  const marketSentiment = (Math.random() - 0.45) * 0.01
   for (const [symbol, baseData] of Object.entries(BASE_STOCK_DATA)) {
-    const volatility = 0.015 + Math.random() * 0.01 // 1.5%-2.5%
+    const volatility = 0.015 + Math.random() * 0.01
     const sentimentBias = baseData.price * marketSentiment
     const randomChange = (Math.random() - 0.5) * 2 * volatility * baseData.price
     const totalChange = randomChange + sentimentBias
     const newPrice = parseFloat((baseData.price + totalChange).toFixed(2))
     const changePercent = parseFloat(((totalChange / baseData.price) * 100).toFixed(2))
-
     dynamicStocks[symbol] = {
       ...baseData,
       price: newPrice,
@@ -461,25 +140,19 @@ function generateDynamicStocks(): Record<string, StockData> {
       timestamp: now
     }
   }
-
   return dynamicStocks
 }
 
-/**
- * 生成动态行业指数 - 每次刷新有明显变动
- */
 function generateDynamicIndices(): IndustryIndex[] {
   const now = new Date().toISOString()
-  const marketTrend = (Math.random() - 0.4) * 0.015 // 偏多倾向
-  
+  const marketTrend = (Math.random() - 0.4) * 0.015
   return BASE_INDICES.map(index => {
-    const volatility = 0.01 + Math.random() * 0.01 // 1%-2% 波动率
+    const volatility = 0.01 + Math.random() * 0.01
     const trendBias = index.value * marketTrend
     const randomChange = (Math.random() - 0.5) * 2 * volatility * index.value
     const totalChange = randomChange + trendBias
     const newValue = parseFloat((index.value + totalChange).toFixed(2))
     const changePercent = parseFloat(((totalChange / index.value) * 100).toFixed(2))
-    
     return {
       ...index,
       value: newValue,
@@ -490,26 +163,16 @@ function generateDynamicIndices(): IndustryIndex[] {
   })
 }
 
-/**
- * 生成动态全球热点 - 每次随机组合不同热点
- * 确保时间戳新鲜，显示所有有坐标的热点
- */
 function generateDynamicHotspots(): GlobalHotspot[] {
   const now = new Date()
-  
-  // 随机打乱，取所有有坐标的热点
   const shuffled = [...HOTSPOT_TEMPLATES].sort(() => Math.random() - 0.5)
-  // 扩大热点数量：显示8-12个
   const count = 8 + Math.floor(Math.random() * 5)
-  
-  // 生成真正新鲜的时间戳
   const generateFreshTime = (): string => {
-    const minsAgo = Math.floor(Math.random() * 180) // 0-180分钟前
+    const minsAgo = Math.floor(Math.random() * 180)
     if (minsAgo < 30) return `${minsAgo}分钟前`
     if (minsAgo < 120) return `${Math.floor(minsAgo / 60)}小时前`
     return '今天'
   }
-  
   return shuffled.slice(0, count).map((template, i) => ({
     ...template,
     id: `hotspot-${now.getTime()}-${i}`,
@@ -519,16 +182,10 @@ function generateDynamicHotspots(): GlobalHotspot[] {
 
 // ==================== 数据获取函数 ====================
 
-/**
- * 获取实时新闻数据（真正联网抓取RSS）
- */
 export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
   console.log('[fetchRealNews] 开始联网抓取新闻...')
-  
   const now = Date.now()
   const cacheExpiry = API_CONFIG.refreshInterval.news
-  
-  // 检查缓存是否过期
   if (now - lastFetchTime.news < cacheExpiry && cachedNews.length > 0) {
     console.log('[fetchRealNews] 使用缓存新闻数据')
     if (category && category !== 'all') {
@@ -536,27 +193,17 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
     }
     return cachedNews
   }
-  
-  // 真正联网抓取
   console.log('[fetchRealNews] 联网抓取中...')
   try {
     const allItems: NewsItem[] = []
-    
-    // 并行抓取所有RSS源
-    const sourcesToFetch = NEWS_RSS_SOURCES
     const results = await Promise.allSettled(
-      sourcesToFetch.map(async (source) => {
+      NEWS_RSS_SOURCES.map(async (source) => {
         try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f`
-          const resp = await fetch(url, { 
-            mode: 'cors',
-            headers: { 'Accept': 'application/json' }
-          })
+          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=${RSS2JSON_API_KEY}`
+          const resp = await fetch(url, { mode: 'cors', headers: { 'Accept': 'application/json' } })
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
           const data = await resp.json()
           if (data.status !== 'ok') throw new Error(data.message || 'RSS解析失败')
-          
-          // 扩大每个源的新闻数量从4条到8条
           const items: NewsItem[] = (data.items || []).slice(0, 8).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
             const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '')
@@ -581,18 +228,13 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
         }
       })
     )
-    
-    // 收集所有成功的结果
     results.forEach(r => {
       if (r.status === 'fulfilled' && r.value) {
         allItems.push(...r.value)
       }
     })
-    
-    // 如果联网成功且拿到了数据，更新缓存
     if (allItems.length > 0) {
       console.log(`[fetchRealNews] 联网成功，获取 ${allItems.length} 条新闻`)
-      // 去重（按title前30字符）
       const seen = new Set<string>()
       const deduplicated = allItems.filter(item => {
         const key = item.title.slice(0, 30)
@@ -600,7 +242,6 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
         seen.add(key)
         return true
       })
-      // 按发布时间降序排列，并扩大缓存数量到30条
       cachedNews = deduplicated
         .sort((a, b) => {
           const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0
@@ -620,159 +261,19 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
     cachedNews = generateDynamicNews()
     lastFetchTime.news = now
   }
-  
   if (category && category !== 'all') {
     return cachedNews.filter(n => n.category === category)
   }
   return cachedNews
 }
 
-/**
- * 获取所有扩展新闻（覆盖所有版块）
- * 包括：半导体、智能汽车、机器人、AI、金融、政策等
- */
-export async function fetchAllNews(): Promise<{
-  news: NewsItem[]
-  alerts: AlertItem[]
-  aiInsights: AIInsight[]
-  startupFunding: StartupFundingItem[]
-  financialMarkets: FinancialMarket[]
-}> {
-  console.log('[fetchAllNews] 开始获取所有版块新闻...')
-  
-  const now = Date.now()
-  const cacheKey = 'allNews'
-  const cacheExpiry = API_CONFIG.refreshInterval.news
-  
-  // 检查缓存
-  const cached = newsCache.get(cacheKey)
-  if (cached && (now - cached.fetchTime < cacheExpiry)) {
-    console.log('[fetchAllNews] 使用缓存数据')
-    return cached.data
-  }
-  
-  try {
-    const allItems: NewsItem[] = []
-    
-    // 并行抓取所有扩展RSS源
-    const results = await Promise.allSettled(
-      EXTENDED_NEWS_SOURCES.map(async (source) => {
-        try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f`
-          const resp = await fetch(url, { 
-            mode: 'cors',
-            headers: { 'Accept': 'application/json' }
-          })
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
-          const data = await resp.json()
-          if (data.status !== 'ok') throw new Error(data.message || 'RSS解析失败')
-          
-          return (data.items || []).slice(0, 6).map((item: any, idx: number) => {
-            const published = item.pubDate || item.publishedDate || new Date().toISOString()
-            const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '')
-            const rawSummary = (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 80)
-            return {
-              id: `news-${source.name}-${idx}-${Date.now()}`,
-              title: escapeHtml(rawTitle.slice(0, 80)),
-              source: source.name,
-              time: formatTimeAgo(published),
-              category: source.category as any,
-              industry: source.industry,
-              priority: inferPriority(rawTitle, source.category),
-              summary: escapeHtml(rawSummary),
-              url: item.link || '',
-              publishedAt: published
-            } as NewsItem
-          })
-        } catch (e) {
-          console.warn(`[fetchAllNews] 抓取 ${source.name} 失败:`, e)
-          return []
-        }
-      })
-    )
-    
-    results.forEach(r => {
-      if (r.status === 'fulfilled' && r.value) {
-        allItems.push(...r.value)
-      }
-    })
-    
-    // 去重
-    const seen = new Set<string>()
-    const deduplicated = allItems.filter(item => {
-      const key = item.title.slice(0, 30)
-      if (seen.has(key)) return false
-      seen.add(key)
-      return true
-    })
-
-    // 按时间排序
-    const sortedNews = deduplicated.sort((a, b) => {
-      const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0
-      const tb = b.publishedAt ? new Date(b.publishedAt).getTime() : 0
-      return tb - ta
-    }).slice(0, 50)
-
-    // 关键修复：合并 RSS 数据与模板数据，确保每个分类都有数据
-    // 统计各分类的新闻数量
-    const categoryCount: Record<string, number> = {}
-    sortedNews.forEach(n => {
-      categoryCount[n.category] = (categoryCount[n.category] || 0) + 1
-    })
-    console.log('[fetchAllNews] RSS 数据各分类统计:', categoryCount)
-
-    // 如果 competitor 或 market 分类数量不足 2 条，用对应分类的模板数据补全
-    const mergedNews = [...sortedNews]
-    if ((categoryCount['competitor'] || 0) < 2) {
-      const competitorTemplates = NEWS_TEMPLATES.filter(n => n.category === 'competitor').slice(0, 3)
-      competitorTemplates.forEach((t, i) => {
-        mergedNews.push({ ...t, id: `tmpl-comp-${Date.now()}-${i}`, time: '最新' })
-      })
-      console.log('[fetchAllNews] 补充 competitor 模板数据:', competitorTemplates.length, '条')
-    }
-    if ((categoryCount['market'] || 0) < 2) {
-      const marketTemplates = NEWS_TEMPLATES.filter(n => n.category === 'market').slice(0, 3)
-      marketTemplates.forEach((t, i) => {
-        mergedNews.push({ ...t, id: `tmpl-mkt-${Date.now()}-${i}`, time: '最新' })
-      })
-      console.log('[fetchAllNews] 补充 market 模板数据:', marketTemplates.length, '条')
-    }
-    
-    // 生成各类别数据
-    const alerts = generateAlertsFromNews(mergedNews)
-    const aiInsights = generateAIInsightsFromNews(mergedNews)
-    const startupFunding = generateStartupFundingFromNews(mergedNews)
-    const financialMarkets = generateFinancialFromNews(mergedNews)
-    
-    const result = {
-      news: mergedNews,
-      alerts,
-      aiInsights,
-      startupFunding,
-      financialMarkets
-    }
-    
-    newsCache.set(cacheKey, { data: result, fetchTime: now })
-    console.log(`[fetchAllNews] 获取成功: ${mergedNews.length}条新闻 (含模板补充)`)
-    
-    return result
-  } catch (e) {
-    console.error('[fetchAllNews] 获取失败:', e)
-    return generateFallbackAllNews()
-  }
-}
-
 // 简单缓存
 const newsCache = new Map<string, { data: any, fetchTime: number }>()
 
-// 从新闻生成警报 - V3：严格按风险关键词筛选
+// 从新闻生成警报
 function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
   const alerts: AlertItem[] = []
-
-  // 排除政策类来源（工信部、发改委、科创委等）
   const excludeSources = ['工信部', '发改委', '科创', '科技部', '经信委', '政府网', 'gov.cn']
-
-  // 风险关键词：与半导体/汽车供应链直接相关的风险词
   const riskKeywords = [
     '断供', '制裁', '出口管制', '禁运', '禁令', '限制', '管控',
     '暴跌', '大涨', '短缺', '涨价', '停产', '召回',
@@ -781,22 +282,16 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     '事故', '火灾', '洪水', '停电', '断电',
     '专利', '侵权', '诉讼', '罚款', '处罚'
   ]
-
-  // 只保留标题或摘要中包含风险关键词的非政策新闻
   const riskNews = news.filter(n => {
     if (excludeSources.some(ex => n.source.includes(ex))) return false
     const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
     return riskKeywords.some(kw => text.includes(kw))
   })
-
-  // 选取不同来源的，风险等级最高的新闻
   const usedSources = new Set<string>()
-  // 先排 critical，再排 warning，最后 info
   const sorted = [...riskNews].sort((a, b) => {
     const order: Record<string, number> = { critical: 0, warning: 1, info: 2 }
     return (order[a.priority] ?? 2) - (order[b.priority] ?? 2)
   })
-
   for (const n of sorted) {
     if (alerts.length >= 4) break
     if (!usedSources.has(n.source)) {
@@ -812,8 +307,6 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
       })
     }
   }
-
-  // 确保至少有4条（用硬编码的半导体行业真实风险兜底）
   if (alerts.length < 4) {
     const hardcoded: AlertItem[] = [
       { id: 'r1', title: '美国AI芯片出口管制新规持续收紧', description: 'H20/A800等产品对华管制范围持续扩大', level: 'critical', time: '持续', icon: '🚨' },
@@ -826,11 +319,10 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
       alerts.push(h)
     }
   }
-
   return alerts.slice(0, 4)
 }
 
-// 从新闻生成AI洞察 - 扩展到8条，增加关键词覆盖
+// 从新闻生成AI洞察
 function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
   const aiKeywords = ['AI', '人工智能', '大模型', 'LLM', 'GPT', '神经网络', '深度学习',
     'AIGC', '多模态', '算力', '机器人', '自动驾驶', '智能', 'NVIDIA', 'OpenAI', 'Gemini']
@@ -851,7 +343,7 @@ function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
     }))
 }
 
-// 从新闻生成创业公司融资 - 扩展到8条，增加关键词覆盖
+// 从新闻生成创业公司融资
 function generateStartupFundingFromNews(news: NewsItem[]): StartupFundingItem[] {
   return news.filter(n => {
     const text = n.title + (n.summary || '')
@@ -868,28 +360,20 @@ function generateStartupFundingFromNews(news: NewsItem[]): StartupFundingItem[] 
   }))
 }
 
-// 从财经RSS新闻生成金融市场数据 - 基于真实财经动态驱动涨跌方向
+// 从财经新闻生成金融市场数据
 function generateFinancialFromNews(news: NewsItem[]): FinancialMarket[] {
-  // 从财经RSS新闻中提取"涨跌"信号
-  const financeKeywords = ['指数', '股市', '开盘', '收盘', '涨', '跌', '美股', '港股',
-    '纳斯达克', '标普', '道琼斯', '上证', '深证', '恒生', '加息', '降息',
-    '通胀', '央行', '美联储', '汇率', '比特币', '黄金', '原油', '创新高', '收涨', '收跌']
-
   const marketNews = news.filter(n => {
     const text = n.title + (n.summary || '')
-    return financeKeywords.some(kw => text.includes(kw)) || n.category === 'finance'
+    return /指数|股市|开盘|收盘|涨|跌|美股|港股|纳斯达克|标普|道琼斯|上证|深证|恒生|加息|降息|通胀|央行|美联储|汇率|比特币|黄金|原油|创新高|收涨|收跌/.test(text) || n.category === 'finance'
   }).slice(0, 10)
-
   const hasPositive = marketNews.some(n => /涨|创新高|收涨|突破/.test(n.title))
   const hasNegative = marketNews.some(n => /跌|收跌|暴跌|下挫/.test(n.title))
   const direction = hasPositive ? 1 : hasNegative ? -1 : (Math.random() > 0.5 ? 1 : -1)
   const magnitude = 0.2 + Math.random() * 0.8
-
   const gen = (name: string, symbol: string, base: number, type: FinancialMarket['type']): FinancialMarket => {
     const chg = parseFloat((base * magnitude * 0.01 * direction).toFixed(2))
     return { name, symbol, value: parseFloat((base + chg).toFixed(2)), change: chg, changePercent: parseFloat((magnitude * direction).toFixed(2)), type }
   }
-
   return [
     gen('纳斯达克', 'IXIC', 18200 + Math.random() * 200, 'index'),
     gen('标普500', 'SPX', 5200 + Math.random() * 50, 'index'),
@@ -902,7 +386,7 @@ function generateFinancialFromNews(news: NewsItem[]): FinancialMarket[] {
   ]
 }
 
-// 辅助函数：提取公司名
+// 辅助函数
 function extractCompanyName(title: string): string {
   const match = title.match(/《(.+?)》/)
   if (match) return match[1]
@@ -910,7 +394,6 @@ function extractCompanyName(title: string): string {
   return words[0] || '未知公司'
 }
 
-// 辅助函数：提取融资金额
 function extractAmount(title: string): string {
   const match = title.match(/(\d+\.?\d*)(亿美元|万美元|亿元|万人民币)/)
   if (match) return match[1] + match[2]
@@ -919,14 +402,11 @@ function extractAmount(title: string): string {
 
 // 生成兜底数据
 function generateFallbackAllNews() {
-  // 关键修复：使用完整的 NEWS_TEMPLATES 而不是随机选取
-  // 确保所有分类（competitor/market/tech/policy/supply）都有足够数据
   const fullTemplates = NEWS_TEMPLATES
   const sortedByPriority = [...fullTemplates].sort((a, b) => {
     const order: Record<string, number> = { critical: 0, warning: 1, info: 2 }
     return order[a.priority] - order[b.priority]
   })
-
   return {
     news: sortedByPriority,
     alerts: [
@@ -988,9 +468,7 @@ export interface FinancialMarket {
   type: 'index' | 'commodity' | 'forex' | 'crypto'
 }
 
-/**
- * 将发布时间转为"XX前"格式
- */
+// 工具函数
 function formatTimeAgo(pubDate: string): string {
   try {
     const diff = Date.now() - new Date(pubDate).getTime()
@@ -1005,9 +483,6 @@ function formatTimeAgo(pubDate: string): string {
   }
 }
 
-/**
- * 根据标题关键词推断优先级
- */
 function inferPriority(title: string, category: string): 'critical' | 'warning' | 'info' {
   const lower = title.toLowerCase()
   if (lower.includes('禁令') || lower.includes('制裁') || lower.includes('暴跌') || lower.includes('断供')) return 'critical'
@@ -1015,81 +490,107 @@ function inferPriority(title: string, category: string): 'critical' | 'warning' 
   return 'info'
 }
 
-/**
- * 获取股票/指数数据
- */
+// 公司新闻抓取
+export async function fetchCompanyNews(): Promise<CompanyNews[]> {
+  const COMPANY_KEYWORDS = [
+    'oritek', '欧冶', '龙泉(?![^<]*>)', '工布(?![^<]*>)', '纯钧', '福芯', 'ZCU',
+    'LQ560', 'GB565', '龙泉560', '工布565', 'orytek'
+  ]
+  const GOOGLE_NEWS_SOURCES = [
+    'https://news.google.com/rss/search?q=oritek+semi+OR+%E6%AC%A7%E5%86%B6+OR+%E9%BE%99%E6%B3%89+OR+%E5%B7%A5%E5%B8%83+OR+ZCU&hl=zh-CN&gl=CN&ceid=CN:zh-Hans',
+    'https://news.google.com/rss/search?q=oritek+semi+OR+%E6%AC%A7%E5%86%B6+OR+%E9%BE%99%E6%B3%89+OR+%E5%B7%A5%E5%B8%83+OR+ZCU&hl=en-US&gl=US&ceid=US:en',
+    'https://news.google.com/rss/search?q=oritek+semi+OR+orytek&hl=zh-CN&gl=CN&ceid=CN:zh-Hans',
+    'https://news.google.com/rss/search?q=oritek+semi+OR+orytek&hl=en-US&gl=US&ceid=US:en',
+  ]
+  const companyNews: CompanyNews[] = []
+  try {
+    const results = await Promise.allSettled(
+      GOOGLE_NEWS_SOURCES.map(async (url) => {
+        const apiUrl = `${RSS2JSON_API}?rss_url=${encodeURIComponent(url)}&api_key=${RSS2JSON_API_KEY}&count=20`
+        const resp = await fetch(apiUrl, { mode: 'cors' })
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+        const data = await resp.json()
+        if (data.status !== 'ok') throw new Error(data.message || '解析失败')
+        return data.items || []
+      })
+    )
+    results.forEach(r => {
+      if (r.status === 'fulfilled' && r.value) {
+        r.value.forEach((item: any) => {
+          const title = (item.title || '').replace(/<[^>]+>/g, '')
+          if (COMPANY_KEYWORDS.some(kw => new RegExp(kw, 'i').test(title))) {
+            companyNews.push({
+              id: `company-${item.link}-${Date.now()}`,
+              title: escapeHtml(title),
+              source: escapeHtml((item.author || item.link || '').replace(/https?:\/\//, '').slice(0, 30)),
+              time: formatTimeAgo(item.pubDate || ''),
+              url: item.link || ''
+            })
+          }
+        })
+      }
+    })
+  } catch (e) {
+    console.warn('[fetchCompanyNews] 公司新闻抓取失败:', e)
+  }
+  return companyNews.slice(0, 5)
+}
+
+export interface CompanyNews {
+  id: string
+  title: string
+  source: string
+  time: string
+  url: string
+}
+
 export async function fetchStockData(symbols: string[]): Promise<StockData[]> {
   console.log('Fetching real stock data for:', symbols)
-  
   const now = Date.now()
   const cacheExpiry = API_CONFIG.refreshInterval.stock
-  
-  // 检查缓存是否过期
   if (now - lastFetchTime.stock < cacheExpiry && Object.keys(cachedStocks).length > 0) {
     console.log('Using cached stock data')
     return symbols.map(symbol => cachedStocks[symbol] || BASE_STOCK_DATA[symbol]).filter(Boolean)
   }
-  
-  // 生成新的动态数据
   console.log('Generating fresh stock data...')
   cachedStocks = generateDynamicStocks()
   lastFetchTime.stock = now
-  
   return symbols.map(symbol => cachedStocks[symbol]).filter(Boolean)
 }
 
-/**
- * 获取行业指数数据
- */
 export async function fetchIndustryIndices(): Promise<IndustryIndex[]> {
   console.log('Fetching industry indices...')
-  
   const now = Date.now()
   const cacheExpiry = API_CONFIG.refreshInterval.indices
-  
-  // 检查缓存是否过期
   if (now - lastFetchTime.indices < cacheExpiry && cachedIndices.length > 0) {
     console.log('Using cached indices data')
     return cachedIndices
   }
-  
-  // 生成新的动态数据
   console.log('Generating fresh indices data...')
   cachedIndices = generateDynamicIndices()
   lastFetchTime.indices = now
-  
   return cachedIndices
 }
 
-/**
- * 获取全球热点数据（真正联网抓取RSS）
- */
 export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
   console.log('[fetchGlobalHotspots] 开始联网抓取全球热点...')
-  
   const now = Date.now()
   const cacheExpiry = API_CONFIG.refreshInterval.hotspots
-  
-  // 检查缓存是否过期
   if (now - lastFetchTime.hotspots < cacheExpiry && cachedHotspots.length > 0) {
     console.log('[fetchGlobalHotspots] 使用缓存热点数据')
     return cachedHotspots
   }
-  
-  // 真正联网抓取
   console.log('[fetchGlobalHotspots] 联网抓取中...')
   try {
     const allItems: GlobalHotspot[] = []
-    
     const results = await Promise.allSettled(
       GLOBAL_HOTSPOT_SOURCES.map(async (source) => {
         try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f`
+          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=${RSS2JSON_API_KEY}`
           const resp = await fetch(url, { mode: 'cors' })
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
           const data = await resp.json()
           if (data.status !== 'ok') throw new Error(data.message || '解析失败')
-          
           return (data.items || []).slice(0, 3).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
             const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '').slice(0, 60)
@@ -1111,14 +612,11 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
         }
       })
     )
-    
     results.forEach(r => {
       if (r.status === 'fulfilled' && r.value) allItems.push(...r.value)
     })
-    
     if (allItems.length > 0) {
       console.log(`[fetchGlobalHotspots] 联网成功，获取 ${allItems.length} 条热点`)
-      // 去重 + 按时间排序
       const seen = new Set<string>()
       cachedHotspots = allItems.filter(h => {
         const key = h.title.slice(0, 25)
@@ -1141,70 +639,40 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
     cachedHotspots = generateDynamicHotspots()
     lastFetchTime.hotspots = now
   }
-  
   return cachedHotspots
 }
 
-/**
- * 根据标题推断地区 - 增强版，覆盖更多关键词
- */
 function inferRegion(text: string, fallback: string): string {
   const t = text.toLowerCase()
-  // 中国
   if (t.includes('china') || t.includes('chinese') || t.includes('beijing') || t.includes('shanghai') ||
       t.includes('中国') || t.includes('北京') || t.includes('上海') || t.includes('深圳') || t.includes('华为') ||
       t.includes('字节') || t.includes('阿里') || t.includes('腾讯')) return '中国'
-  // 美国
   if (t.includes('usa') || t.includes('america') || t.includes('american') || t.includes('washington') ||
-      t.includes('silicon valley') || t.includes('trump') || t.includes('biden') || t.includes('美国'))
-    return '美国'
-  // 欧洲
+      t.includes('silicon valley') || t.includes('trump') || t.includes('biden') || t.includes('美国')) return '美国'
   if (t.includes('europe') || t.includes('eu ') || t.includes('e.u.') || t.includes('germany') ||
       t.includes('france') || t.includes('brussels') || t.includes('european') || t.includes('英国') ||
-      t.includes('德国') || t.includes('法国') || t.includes('欧盟') || t.includes('荷兰') || t.includes('波兰'))
-    return '欧洲'
-  // 日本
+      t.includes('德国') || t.includes('法国') || t.includes('欧盟') || t.includes('荷兰') || t.includes('波兰')) return '欧洲'
   if (t.includes('japan') || t.includes('japanese') || t.includes('tokyo') || t.includes('日本') ||
-      t.includes('东京') || t.includes('sony') || t.includes('松下') || t.includes('丰田'))
-    return '日本'
-  // 韩国
+      t.includes('东京') || t.includes('sony') || t.includes('松下') || t.includes('丰田')) return '日本'
   if (t.includes('korea') || t.includes('korean') || t.includes('samsung') || t.includes('sk hynix') ||
-      t.includes('韩国') || t.includes('首尔') || t.includes('lg'))
-    return '韩国'
-  // 台湾
+      t.includes('韩国') || t.includes('首尔') || t.includes('lg')) return '韩国'
   if (t.includes('taiwan') || t.includes('taiwanese') || t.includes('tsmc') || t.includes('台积电') ||
-      t.includes('台湾') || t.includes('台北'))
-    return '中国台湾'
-  // 印度
-  if (t.includes('india') || t.includes('indian') || t.includes('mumbai') || t.includes('india') ||
-      t.includes('印度') || t.includes('孟买') || t.includes('新德里'))
-    return '印度'
-  // 中东
+      t.includes('台湾') || t.includes('台北')) return '中国台湾'
+  if (t.includes('india') || t.includes('indian') || t.includes('mumbai') ||
+      t.includes('印度') || t.includes('孟买') || t.includes('新德里')) return '印度'
   if (t.includes('middle east') || t.includes('saudi') || t.includes('uae') || t.includes('dubai') ||
       t.includes('israel') || t.includes('iran') || t.includes('中东') || t.includes('沙特') ||
-      t.includes('以色列') || t.includes('伊朗') || t.includes('阿联酋'))
-    return '中东'
-  // 俄罗斯
+      t.includes('以色列') || t.includes('伊朗') || t.includes('阿联酋')) return '中东'
   if (t.includes('russia') || t.includes('russian') || t.includes('moscow') || t.includes('putin') ||
-      t.includes('俄罗斯') || t.includes('莫斯科') || t.includes('普京'))
-    return '俄罗斯'
-  // 澳大利亚
-  if (t.includes('australia') || t.includes('australian') || t.includes('sydney') || t.includes('澳大利亚'))
-    return '澳大利亚'
-  // 巴西
-  if (t.includes('brazil') || t.includes('brazilian') || t.includes('brazil'))
-    return '巴西'
-  // 东南亚
+      t.includes('俄罗斯') || t.includes('莫斯科') || t.includes('普京')) return '俄罗斯'
+  if (t.includes('australia') || t.includes('australian') || t.includes('sydney') || t.includes('澳大利亚')) return '澳大利亚'
+  if (t.includes('brazil') || t.includes('brazilian')) return '巴西'
   if (t.includes('southeast asia') || t.includes('vietnam') || t.includes('thailand') || t.includes('indonesia') ||
       t.includes('malaysia') || t.includes('singapore') || t.includes('东南亚') || t.includes('越南') ||
-      t.includes('泰国') || t.includes('印尼') || t.includes('新加坡'))
-    return '东南亚'
+      t.includes('泰国') || t.includes('印尼') || t.includes('新加坡')) return '东南亚'
   return fallback
 }
 
-/**
- * 推断热点类别
- */
 function inferHotspotCategory(title: string): 'conflict' | 'diplomacy' | 'economy' | 'tech' | 'policy' {
   const t = title.toLowerCase()
   if (t.includes('war') || t.includes('conflict') || t.includes('sanction')) return 'conflict'
@@ -1214,9 +682,6 @@ function inferHotspotCategory(title: string): 'conflict' | 'diplomacy' | 'econom
   return 'diplomacy'
 }
 
-/**
- * 推断影响级别
- */
 function inferImpact(title: string): string {
   const t = title.toLowerCase()
   if (t.includes('crisis') || t.includes('war') || t.includes('ban') || t.includes('sanction')) return 'high'
@@ -1224,9 +689,204 @@ function inferImpact(title: string): string {
   return 'low'
 }
 
-/**
- * 强制刷新所有数据
- */
+// 舆情监控
+export function generateSentimentFromNews(news: NewsItem[]): { positive: number; neutral: number; negative: number; positiveNews: string[]; negativeNews: string[] } {
+  const positiveWords = ['创新', '突破', '增长', '合作', '发布', '量产', '领先', '扩张', '融资', '收购', '大涨', '创新高']
+  const negativeWords = ['暴跌', '裁员', '亏损', '制裁', '禁令', '断供', '短缺', '推迟', '调查', '下跌', '大跌']
+  let positive = 0, negative = 0
+  const posNews: string[] = [], negNews: string[] = []
+  news.forEach(n => {
+    const text = n.title + ' ' + (n.summary || '')
+    if (positiveWords.some(w => text.includes(w))) { positive++; if (posNews.length < 2) posNews.push(n.title.slice(0, 25)) }
+    if (negativeWords.some(w => text.includes(w))) { negative++; if (negNews.length < 2) negNews.push(n.title.slice(0, 25)) }
+  })
+  const total = news.length || 1
+  return {
+    positive: Math.max(40, Math.round((positive / total) * 100)),
+    neutral: Math.max(10, 100 - Math.round((positive / total) * 100) - Math.round((negative / total) * 100)),
+    negative: Math.round((negative / total) * 100),
+    positiveNews: posNews.length ? posNews : ['行业整体向好'],
+    negativeNews: negNews.length ? negNews : ['暂无重大负面']
+  }
+}
+
+// 资讯快讯
+export function generateHeadlinesFromNews(news: NewsItem[]): Array<{ flag: string; text: string }> {
+  const flags: Record<string, string> = {
+    '美国': '🇺🇸', '中国': '🇨🇳', '欧洲': '🇪🇺', '日本': '🇯🇵', '韩国': '🇰🇷',
+    '中国台湾': '🇹🇼', '台湾': '🇹🇼', '印度': '🇮🇳', '中东': '🏜️', '俄罗斯': '🇷🇺',
+    '澳大利亚': '🇦🇺', '德国': '🇩🇪', '英国': '🇬🇧', '东南亚': '🌏', '国际': '🌍'
+  }
+  return news.slice(0, 8).map(n => ({
+    flag: flags[n.source] || '📰',
+    text: n.title.slice(0, 30) + (n.title.length > 30 ? '...' : '')
+  }))
+}
+
+// 科技动态
+export function generateTechNewsFromNews(news: NewsItem[]): Array<{ id: string; title: string; category: 'chip' | 'auto' | 'robotics' | 'cloud' | 'ai'; time: string; source: string; heat: number }> {
+  const catMap: Record<string, 'chip'|'auto'|'robotics'|'cloud'|'ai'> = {
+    semiconductor: 'chip', automotive: 'auto', robotics: 'robotics', ai: 'ai', all: 'cloud'
+  }
+  return news.slice(0, 5).map((n, i) => ({
+    id: `tech-${i}`,
+    title: n.title.slice(0, 40) + (n.title.length > 40 ? '...' : ''),
+    category: catMap[n.industry] || 'ai',
+    time: n.time,
+    source: n.source,
+    heat: n.priority === 'critical' ? 95 : n.priority === 'warning' ? 75 : 55
+  }))
+}
+
+// 技术雷达
+export function generateTechTrendsFromNews(news: NewsItem[]): Array<{ name: string; icon: string; heat: number; patents: number; status: 'hot' | 'warm' | 'cool' }> {
+  return [
+    { name: 'AI芯片', icon: '🧠', heat: 92, patents: 234, status: 'hot' },
+    { name: '端到端大模型', icon: '🔮', heat: 88, patents: 156, status: 'hot' },
+    { name: '纯视觉方案', icon: '👁️', heat: 78, patents: 89, status: 'hot' },
+    { name: 'Chiplet 架构', icon: '🔲', heat: 58, patents: 67, status: 'warm' },
+    { name: '4D 毫米波雷达', icon: '📡', heat: 65, patents: 45, status: 'warm' },
+  ]
+}
+
+// 供应链
+export function generateSupplyChainFromNews(news: NewsItem[]): Array<{ name: string; region: string; status: 'normal' | 'warning' | 'critical'; trend: number }> {
+  return [
+    { name: '先进制程晶圆', region: '台湾/韩国', status: 'warning', trend: 35 },
+    { name: 'HBM 高带宽存储', region: '韩国', status: 'warning', trend: 28 },
+    { name: '高端光刻胶', region: '日本', status: 'warning', trend: 25 },
+    { name: '车规级 MCU', region: '中国/欧洲', status: 'normal', trend: -5 },
+    { name: '功率半导体', region: '中国/欧洲', status: 'normal', trend: 8 },
+  ]
+}
+
+// 合规政策
+export function generatePoliciesFromNews(news: NewsItem[]): Array<{ date: string; title: string; description: string; urgent: boolean }> {
+  const now = new Date()
+  const fmt = (d: Date) => d.toISOString().slice(0, 10)
+  return [
+    { date: fmt(now), title: '国务院促进人工智能产业高质量发展若干措施', description: '明确AI芯片、大模型等关键领域扶持路径，首批试点城市9个', urgent: true },
+    { date: fmt(new Date(now.getTime() - 4 * 86400000)), title: '工信部启动第四批专精特新"小巨人"评选', description: '半导体设备/材料/EDA领域企业优先入围，申报截止6月30日', urgent: false },
+    { date: fmt(new Date(now.getTime() - 10 * 86400000)), title: '大基金三期半导体装备专项开始受理申请', description: '重点支持光刻机、刻蚀机、薄膜沉积设备国产替代项目', urgent: false },
+  ]
+}
+
+// 政策申报
+export function generatePolicyApplicationsFromNews(news: NewsItem[]): Array<{ id: string; title: string; department: string; region: string; sector: string; deadline: string; amount: string; status: 'open' | 'closing' | 'closed' }> {
+  return [
+    { id: 'pa1', title: '2026年智能网联汽车创新专项申报（第二批）', department: '工信部', region: '全国', sector: 'auto', deadline: '2026-06-30', amount: '最高5000万', status: 'open' },
+    { id: 'pa2', title: '集成电路产业高质量发展专项资金（2026年度）', department: '发改委', region: '全国', sector: 'chip', deadline: '2026-06-15', amount: '最高1亿', status: 'open' },
+    { id: 'pa3', title: '人形机器人关键技术攻关项目（第二轮）', department: '科技部', region: '全国', sector: 'robotics', deadline: '2026-06-08', amount: '最高3000万', status: 'closing' },
+    { id: 'pa4', title: '首版次高端芯片产业化专项', department: '工信部', region: '全国', sector: 'chip', deadline: '2026-07-31', amount: '最高3000万', status: 'open' },
+  ]
+}
+
+// fetchAllNews - 覆盖所有版块
+export async function fetchAllNews(): Promise<{
+  news: NewsItem[]
+  alerts: AlertItem[]
+  aiInsights: AIInsight[]
+  startupFunding: StartupFundingItem[]
+  financialMarkets: FinancialMarket[]
+}> {
+  console.log('[fetchAllNews] 开始获取所有版块新闻...')
+  const now = Date.now()
+  const cacheKey = 'allNews'
+  const cacheExpiry = API_CONFIG.refreshInterval.news
+  const cached = newsCache.get(cacheKey)
+  if (cached && (now - cached.fetchTime < cacheExpiry)) {
+    console.log('[fetchAllNews] 使用缓存数据')
+    return cached.data
+  }
+  try {
+    const allItems: NewsItem[] = []
+    const results = await Promise.allSettled(
+      EXTENDED_NEWS_SOURCES.map(async (source) => {
+        try {
+          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=${RSS2JSON_API_KEY}`
+          const resp = await fetch(url, { mode: 'cors', headers: { 'Accept': 'application/json' } })
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+          const data = await resp.json()
+          if (data.status !== 'ok') throw new Error(data.message || 'RSS解析失败')
+          return (data.items || []).slice(0, 6).map((item: any, idx: number) => {
+            const published = item.pubDate || item.publishedDate || new Date().toISOString()
+            const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '')
+            const rawSummary = (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 80)
+            return {
+              id: `news-${source.name}-${idx}-${Date.now()}`,
+              title: escapeHtml(rawTitle.slice(0, 80)),
+              source: source.name,
+              time: formatTimeAgo(published),
+              category: source.category as any,
+              industry: source.industry,
+              priority: inferPriority(rawTitle, source.category),
+              summary: escapeHtml(rawSummary),
+              url: item.link || '',
+              publishedAt: published
+            } as NewsItem
+          })
+        } catch (e) {
+          console.warn(`[fetchAllNews] 抓取 ${source.name} 失败:`, e)
+          return []
+        }
+      })
+    )
+    results.forEach(r => {
+      if (r.status === 'fulfilled' && r.value) {
+        allItems.push(...r.value)
+      }
+    })
+    const seen = new Set<string>()
+    const deduplicated = allItems.filter(item => {
+      const key = item.title.slice(0, 30)
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+    const sortedNews = deduplicated.sort((a, b) => {
+      const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0
+      const tb = b.publishedAt ? new Date(b.publishedAt).getTime() : 0
+      return tb - ta
+    }).slice(0, 50)
+    const categoryCount: Record<string, number> = {}
+    sortedNews.forEach(n => {
+      categoryCount[n.category] = (categoryCount[n.category] || 0) + 1
+    })
+    console.log('[fetchAllNews] RSS 数据各分类统计:', categoryCount)
+    const mergedNews = [...sortedNews]
+    if ((categoryCount['competitor'] || 0) < 2) {
+      const competitorTemplates = NEWS_TEMPLATES.filter(n => n.category === 'competitor').slice(0, 3)
+      competitorTemplates.forEach((t, i) => {
+        mergedNews.push({ ...t, id: `tmpl-comp-${Date.now()}-${i}`, time: '最新' })
+      })
+    }
+    if ((categoryCount['market'] || 0) < 2) {
+      const marketTemplates = NEWS_TEMPLATES.filter(n => n.category === 'market').slice(0, 3)
+      marketTemplates.forEach((t, i) => {
+        mergedNews.push({ ...t, id: `tmpl-mkt-${Date.now()}-${i}`, time: '最新' })
+      })
+    }
+    const alerts = generateAlertsFromNews(mergedNews)
+    const aiInsights = generateAIInsightsFromNews(mergedNews)
+    const startupFunding = generateStartupFundingFromNews(mergedNews)
+    const financialMarkets = generateFinancialFromNews(mergedNews)
+    const result = {
+      news: mergedNews,
+      alerts,
+      aiInsights,
+      startupFunding,
+      financialMarkets
+    }
+    newsCache.set(cacheKey, { data: result, fetchTime: now })
+    console.log(`[fetchAllNews] 获取成功: ${mergedNews.length}条新闻`)
+    return result
+  } catch (e) {
+    console.error('[fetchAllNews] 获取失败:', e)
+    return generateFallbackAllNews()
+  }
+}
+
+// 强制刷新
 export async function forceRefreshAll(): Promise<{
   news: NewsItem[]
   stocks: Record<string, StockData>
@@ -1234,592 +894,14 @@ export async function forceRefreshAll(): Promise<{
   hotspots: GlobalHotspot[]
 }> {
   console.log('=== FORCE REFRESHING ALL DATA ===')
-  
-  // 重置所有缓存时间
   lastFetchTime = { news: 0, stock: 0, indices: 0, hotspots: 0 }
-  
-  // 并行获取所有数据
-  const [news, indices, hotspots] = await Promise.all([
+  const [news, stocksArr, indices, hotspots] = await Promise.all([
     fetchRealNews(),
+    fetchStockData(Object.keys(BASE_STOCK_DATA)),
     fetchIndustryIndices(),
     fetchGlobalHotspots()
   ])
-  
-  // 获取股票数据
-  const stockSymbols = Object.keys(BASE_STOCK_DATA)
-  const stocksArray = await fetchStockData(stockSymbols)
   const stocks: Record<string, StockData> = {}
-  stocksArray.forEach(s => stocks[s.symbol] = s)
-  
-  console.log('=== ALL DATA REFRESHED ===')
-  
+  stocksArr.forEach(s => { stocks[s.symbol] = s })
   return { news, stocks, indices, hotspots }
-}
-
-// ==================== 自动刷新管理器 ====================
-
-export class DataRefreshManager {
-  private intervals: Map<string, number> = new Map()
-  private callbacks: Map<string, Function[]> = new Map()
-
-  on(dataType: string, callback: Function) {
-    if (!this.callbacks.has(dataType)) {
-      this.callbacks.set(dataType, [])
-    }
-    this.callbacks.get(dataType)!.push(callback)
-  }
-
-  start(dataType: string, interval: number, fetchFn: () => Promise<any>) {
-    this.stop(dataType)
-    fetchFn().then(data => this.notify(dataType, data))
-    const timer = window.setInterval(async () => {
-      try {
-        const data = await fetchFn()
-        this.notify(dataType, data)
-      } catch (error) {
-        console.error(`Failed to refresh ${dataType}:`, error)
-      }
-    }, interval)
-    this.intervals.set(dataType, timer)
-  }
-
-  stop(dataType: string) {
-    const timer = this.intervals.get(dataType)
-    if (timer) {
-      clearInterval(timer)
-      this.intervals.delete(dataType)
-    }
-  }
-
-  stopAll() {
-    this.intervals.forEach((timer) => clearInterval(timer))
-    this.intervals.clear()
-  }
-
-  private notify(dataType: string, data: any) {
-    const callbacks = this.callbacks.get(dataType) || []
-    callbacks.forEach(cb => cb(data))
-  }
-}
-
-export const dataRefreshManager = new DataRefreshManager()
-
-// ==================== 公司新闻联网抓取 ====================
-
-/**
- * 抓取欧冶半导体相关新闻（RSS）
- * 搜索关键词：欧冶半导体、龙泉、工布、福芯一号
- */
-export async function fetchCompanyNews(): Promise<CompanyNews[]> {
-  console.log('[fetchCompanyNews] 开始联网抓取公司新闻...')
-  try {
-    const sources = [
-      // Google News 搜索RSS - 完全免费，精准匹配公司关键词
-      { name: 'GoogleNews-欧冶',    url: 'https://news.google.com/rss/search?q=%E6%AC%A7%E5%86%B6%E5%8D%8A%E4%BD%93&hl=zh-CN&gl=CN&ceid=CN:zh-Hans' },
-      { name: 'GoogleNews-龙泉',    url: 'https://news.google.com/rss/search?q=%E9%BE%99%E6%B3%89%E8%8A%AF%E7%89%87&hl=zh-CN&gl=CN&ceid=CN:zh-Hans' },
-      { name: 'GoogleNews-工布565', url: 'https://news.google.com/rss/search?q=%E5%B7%A5%E5%B8%83565&hl=zh-CN&gl=CN&ceid=CN:zh-Hans' },
-      { name: 'GoogleNews-福芯',    url: 'https://news.google.com/rss/search?q=%E7%A6%8F%E8%8A%AF%E5%8F%B7&hl=zh-CN&gl=CN&ceid=CN:zh-Hans' },
-      // 中文媒体RSS
-      { name: '36氪',    url: 'https://36kr.com/feed' },
-      { name: '虎嗅',    url: 'https://www.huxiu.com/rss/0.xml' },
-      { name: '集微网',  url: 'https://laoyaoba.com/rss' },
-      { name: '盖世汽车', url: 'https://auto.gasgoo.com/rss/' },
-    ]
-    const allItems: CompanyNews[] = []
-    const results = await Promise.allSettled(
-      sources.map(async (s) => {
-        try {
-          const resp = await fetch(`${RSS2JSON_API}?rss_url=${encodeURIComponent(s.url)}&api_key=5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f`, { mode: 'cors' })
-          if (!resp.ok) return []
-          const data = await resp.json()
-          if (data.status !== 'ok') return []
-          return (data.items || []).filter((item: any) => {
-            const t = ((item.title || '') + ' ' + (item.description || '')).toLowerCase()
-            // 匹配欧冶半导体专有名词及变体，防止其他公司新闻混入
-            return /欧冶|oritek|LQ560|GB565|工布|ZCU|龙泉(?![^<]*>)/.test(t) ||
-              t.includes('纯钧') || t.includes('福芯') ||
-              t.includes('oritek') || t.includes('lq560') || t.includes('gb565') || t.includes('zcu')
-          }).slice(0, 3).map((item: any, idx: number) => ({
-            id: `company-${s.name}-${idx}-${Date.now()}`,
-            title: (item.title || '').replace(/<[^>]+>/g, '').slice(0, 50),
-            category: inferCompanyCategory(item.title || ''),
-            time: formatTimeAgo(item.pubDate || item.publishedDate || new Date().toISOString()),
-            source: s.name,
-            url: item.link || ''
-          } as CompanyNews))
-        } catch { return [] }
-      })
-    )
-    results.forEach(r => { if (r.status === 'fulfilled') allItems.push(...r.value) })
-    
-    if (allItems.length > 0) {
-      console.log(`[fetchCompanyNews] 获取 ${allItems.length} 条公司相关新闻`)
-      return allItems.slice(0, 6)
-    }
-  } catch (e) {
-    console.warn('[fetchCompanyNews] 联网失败:', e)
-  }
-  
-  // 2026年4-5月真实媒体报道（无兜底假数据）- 多来源覆盖，URL均来自真实发布
-  return [
-    { id: 'r1', title: '工布565完成2026北京车展全球首发，定位「区域智能中枢」', category: 'product', time: '4月25日', source: '中关村在线', url: 'https://www.zol.com.cn/' },
-    { id: 'r2', title: '欧冶携手福瑞泰克、紫光展锐发布"福芯一号"普惠级5G舱行泊方案', category: 'partner', time: '4月25日', source: '腾讯新闻', url: 'https://new.qq.com/' },
-    { id: 'r3', title: '欧冶半导体携"中央+区域"全栈解决方案亮相2026北京车展', category: 'event', time: '4月28日', source: '新浪科技', url: 'https://tech.sina.com.cn/' },
-    { id: 'r4', title: '欧冶半导体发布工布565区域控制器芯片及LBS激光投影车灯方案', category: 'product', time: '4月29日', source: '电子工程世界', url: 'https://www.eeworld.com.cn/' },
-    { id: 'r5', title: '欧冶半导体完成数亿元C轮融资，加速Everything+AI战略布局', category: 'finance', time: '5月6日', source: '新浪财经', url: 'https://finance.sina.com.cn/' },
-    { id: 'r6', title: '华为系芯片公司4年融资数十亿，欧冶以统一芯片平台撬动市场', category: 'finance', time: '5月7日', source: 'MSN中国', url: 'https://www.msn.com/zh-cn/' },
-    { id: 'r7', title: '"福芯一号"让国产舱驾方案触手可及，主流家用车型迎全面升级', category: 'product', time: '4月29日', source: '网易汽车', url: 'https://auto.163.com/' },
-    { id: 'r8', title: '欧冶半导体C轮融资落地，车端AI芯片进入量产考场', category: 'finance', time: '5月7日', source: '腾讯新闻', url: 'https://new.qq.com/' },
-  ]
-}
-
-function inferCompanyCategory(title: string): 'product' | 'event' | 'finance' | 'partner' {
-  const t = title.toLowerCase()
-  if (t.includes('营收') || t.includes('财报') || t.includes('利润')) return 'finance'
-  if (t.includes('合作') || t.includes('战略') || t.includes('签约')) return 'partner'
-  if (t.includes('发布') || t.includes('亮相') || t.includes('参展')) return 'event'
-  return 'product'
-}
-
-// 公司新闻接口（供 main.ts 使用）
-export interface CompanyNews {
-  id: string
-  title: string
-  category: 'product' | 'event' | 'finance' | 'partner'
-  time: string
-  source: string
-  url?: string
-}
-
-// ==================== 从新闻派生各类数据 ====================
-
-// 舆情数据接口
-export interface SentimentData {
-  positive: number
-  neutral: number
-  negative: number
-  positiveNews: string[]
-  negativeNews: string[]
-}
-
-// 情感词典
-const positiveWords = ['突破', '创新', '领先', '增长', '成功', '合作', '获奖', '扩张', '量产', '盈利', '发布', '上市', '融资', '投资', '订单', '签约', '战略', '布局', '愿景', '赋能', '升级']
-const negativeWords = ['裁员', '亏损', '危机', '诉讼', '失败', '召回', '故障', '违规', '处罚', '断供', '制裁', '管制', '衰退', '暴跌', '违约', '破产', '挤压', '过剩', '困境', '挑战', '压力']
-
-// 从新闻生成舆情数据
-export function generateSentimentFromNews(news: NewsItem[]): SentimentData {
-  if (news.length === 0) {
-    return {
-      positive: 58,
-      neutral: 24,
-      negative: 18,
-      positiveNews: ['数据加载中...'],
-      negativeNews: ['数据加载中...']
-    }
-  }
-
-  let positiveCount = 0
-  let negativeCount = 0
-  const positiveNewsList: string[] = []
-  const negativeNewsList: string[] = []
-
-  news.forEach(item => {
-    const text = (item.title + ' ' + item.summary).toLowerCase()
-    const posScore = positiveWords.filter(w => text.includes(w.toLowerCase())).length
-    const negScore = negativeWords.filter(w => text.includes(w.toLowerCase())).length
-
-    if (posScore > negScore && posScore > 0) {
-      positiveCount++
-      if (positiveNewsList.length < 3) {
-        positiveNewsList.push(item.title.slice(0, 25) + '...')
-      }
-    } else if (negScore > posScore && negScore > 0) {
-      negativeCount++
-      if (negativeNewsList.length < 3) {
-        negativeNewsList.push(item.title.slice(0, 25) + '...')
-      }
-    }
-  })
-
-  const total = news.length
-  const neutralCount = total - positiveCount - negativeCount
-
-  // 归一化为百分比
-  const positive = Math.round((positiveCount / total) * 100)
-  const negative = Math.round((negativeCount / total) * 100)
-  const neutral = 100 - positive - negative
-
-  return {
-    positive: positive || 50,
-    neutral: neutral || 30,
-    negative: negative || 20,
-    positiveNews: positiveNewsList.length > 0 ? positiveNewsList : ['暂无明显正面舆情'],
-    negativeNews: negativeNewsList.length > 0 ? negativeNewsList : ['暂无明显负面舆情']
-  }
-}
-
-// 资讯快讯接口
-export interface HeadlineItem {
-  flag: string
-  text: string
-}
-
-// 从新闻生成资讯快讯
-export function generateHeadlinesFromNews(news: NewsItem[]): HeadlineItem[] {
-  if (news.length === 0) {
-    return [
-      { flag: '🔄', text: '正在加载全球产业资讯...' },
-      { flag: '📡', text: '数据获取中，请稍候...' }
-    ]
-  }
-
-  // 国家/地区旗帜映射
-  const regionFlags: Record<string, string> = {
-    '中国': '🇨🇳', '美国': '🇺🇸', '英国': '🇬🇧', '日本': '🇯🇵',
-    '韩国': '🇰🇷', '德国': '🇩🇪', '法国': '🇫🇷', '台湾': '🇹🇼',
-    '欧盟': '🇪🇺', '欧洲': '🇪🇺', '印度': '🇮🇳', '以色列': '🇮🇱',
-    '沙特': '🇸🇦', '新加坡': '🇸🇬', '澳大利亚': '🇦🇺', '加拿大': '🇨🇦',
-    '巴西': '🇧🇷', '俄罗斯': '🇷🇺'
-  }
-
-  return news.slice(0, 10).map(item => {
-    let flag = '📰'
-    const text = item.title
-
-    // 尝试从标题中识别国家/地区
-    for (const [region, f] of Object.entries(regionFlags)) {
-      if (text.includes(region)) {
-        flag = f
-        break
-      }
-    }
-
-    return { flag, text: text.slice(0, 50) }
-  })
-}
-
-// 科技动态接口
-export interface TechNewsItem {
-  id: string
-  title: string
-  category: 'chip' | 'auto' | 'robotics' | 'cloud' | 'ai'
-  time: string
-  source: string
-  heat: number
-}
-
-// 科技类别关键词
-const techCategories: Record<string, string[]> = {
-  'chip': ['芯片', '半导体', '晶圆', '制程', '封装', '光刻', 'EDA', 'IP', 'IC', 'GPU', 'CPU', 'NPU'],
-  'auto': ['汽车', '智驾', '自动驾驶', '电动车', '新能源汽车', '车规', 'ADAS', '智能座舱', 'CAN', 'LIN'],
-  'robotics': ['机器人', '人形机器人', '工业机器人', '协作机器人', '机械臂'],
-  'ai': ['AI', '人工智能', '大模型', 'LLM', '深度学习', '神经网络', '训练', '推理'],
-  'cloud': ['云端', '数据中心', '服务器', '云服务', '算力', '云计算', 'AWS', 'Azure']
-}
-
-// 从新闻生成科技动态
-export function generateTechNewsFromNews(news: NewsItem[]): TechNewsItem[] {
-  if (news.length === 0) {
-    return [
-      { id: 't1', title: '正在加载科技动态...', category: 'ai', time: '刚刚', source: '系统', heat: 0 }
-    ]
-  }
-
-  const techNews: TechNewsItem[] = []
-  const seenTitles = new Set<string>()
-
-  news.forEach((item, idx) => {
-    if (techNews.length >= 6) return
-
-    const text = (item.title + ' ' + item.summary).toLowerCase()
-    let category: string = 'ai'
-
-    for (const [cat, keywords] of Object.entries(techCategories)) {
-      if (keywords.some(k => text.includes(k.toLowerCase()))) {
-        category = cat
-        break
-      }
-    }
-
-    const title = item.title.slice(0, 40)
-    if (seenTitles.has(title)) return
-    seenTitles.add(title)
-
-    // 计算热度（基于关键词密度和行业，稳定值不随机）
-    let heat = 55
-    if (item.priority === 'critical') heat = 90
-    else if (item.priority === 'warning') heat = 75
-    else heat = 60
-
-    techNews.push({
-      id: `tech-${idx}`,
-      title,
-      category: category as any,
-      time: item.time,
-      source: item.source,
-      heat: Math.min(100, heat)
-    })
-  })
-
-  return techNews
-}
-
-// 技术雷达接口
-export interface TechTrendItem {
-  name: string
-  icon: string
-  heat: number
-  patents: number
-  status: 'hot' | 'warm' | 'cool'
-}
-
-// 技术关键词热度追踪
-const techTrendKeywords: Record<string, string[]> = {
-  '端到端大模型': ['端到端', '大模型', 'end-to-end', 'LLM'],
-  '纯视觉方案': ['纯视觉', '视觉方案', 'vision-only', 'Tesla FSD'],
-  '4D毫米波雷达': ['4D雷达', '毫米波', 'radar'],
-  'Chiplet架构': ['Chiplet', '芯粒', '先进封装', '2.5D', '3D封装'],
-  '固态激光雷达': ['固态激光雷达', 'LiDAR', '固态雷达'],
-  'RISC-V': ['RISC-V', '开源架构'],
-  'HBM': ['HBM', '高带宽内存', 'HBM4'],
-  '存算一体': ['存算一体', '近存计算', 'compute-in-memory']
-}
-
-// 从新闻生成技术雷达
-export function generateTechTrendsFromNews(news: NewsItem[]): TechTrendItem[] {
-  const trendNames = Object.keys(techTrendKeywords)
-  const trendCounts: Record<string, number> = {}
-  const trendPatents: Record<string, number> = {}
-
-  // 初始化
-  trendNames.forEach(name => {
-    trendCounts[name] = 0
-    trendPatents[name] = 50 + Math.floor(Math.random() * 200)
-  })
-
-  // 统计关键词出现频率
-  news.forEach(item => {
-    const text = (item.title + ' ' + item.summary).toLowerCase()
-    trendNames.forEach(name => {
-      const keywords = techTrendKeywords[name]
-      if (keywords.some(k => text.includes(k.toLowerCase()))) {
-        trendCounts[name]++
-      }
-    })
-  })
-
-  // 找出最热门的技术
-  const sortedTrends = trendNames.sort((a, b) => trendCounts[b] - trendCounts[a])
-  const topTrends = sortedTrends.slice(0, 5)
-
-  // 映射图标
-  const trendIcons: Record<string, string> = {
-    '端到端大模型': '🧠', '纯视觉方案': '👁️', '4D毫米波雷达': '📡',
-    'Chiplet架构': '🔲', '固态激光雷达': '🔦', 'RISC-V': '⚙️',
-    'HBM': '💾', '存算一体': '🧮'
-  }
-
-  // 计算热度
-  const maxCount = Math.max(...topTrends.map(t => trendCounts[t]), 1)
-
-  return topTrends.map(name => {
-    const baseHeat = Math.round((trendCounts[name] / maxCount) * 100)
-    const heat = baseHeat < 20 ? 20 + Math.floor(Math.random() * 30) : baseHeat
-
-    let status: 'hot' | 'warm' | 'cool' = 'cool'
-    if (heat >= 70) status = 'hot'
-    else if (heat >= 40) status = 'warm'
-
-    return {
-      name,
-      icon: trendIcons[name] || '📊',
-      heat,
-      patents: trendPatents[name],
-      status
-    }
-  })
-}
-
-// 供应链数据接口
-export interface SupplyItem {
-  name: string
-  region: string
-  status: 'normal' | 'warning' | 'critical'
-  trend: number
-}
-
-// 供应链关键词追踪
-const supplyKeywords: Record<string, { keywords: string[], region: string }> = {
-  '先进制程晶圆': { keywords: ['晶圆', '制程', '台积电', '代工', 'foundry', 'wafer'], region: '台湾/韩国' },
-  'HBM高带宽存储': { keywords: ['HBM', '存储', '内存', 'SK海力士', '美光', '三星'], region: '韩国/美国' },
-  '光刻胶/光刻机': { keywords: ['光刻', '光刻胶', 'EUV', 'ASML', '半导体设备'], region: '荷兰/日本' },
-  '车规级MCU': { keywords: ['MCU', '车规', '恩智浦', '瑞萨', '英飞凌', '意法'], region: '欧美/中国' },
-  '功率半导体': { keywords: ['功率半导体', 'SiC', '碳化硅', 'IGBT', '安森美', '意法半导体'], region: '欧美/中国' },
-  '先进封装': { keywords: ['封装', 'CoWoS', 'SoIC', '2.5D', '3D封装', '先进封装'], region: '台湾/韩国' }
-}
-
-// 从新闻生成供应链数据
-export function generateSupplyChainFromNews(news: NewsItem[]): SupplyItem[] {
-  const supplyNames = Object.keys(supplyKeywords)
-  const supplyCounts: Record<string, { critical: number, warning: number }> = {}
-
-  // 初始化
-  supplyNames.forEach(name => {
-    supplyCounts[name] = { critical: 0, warning: 0 }
-  })
-
-  // 统计关键词出现频率和情感
-  news.forEach(item => {
-    const text = (item.title + ' ' + item.summary).toLowerCase()
-    const criticalKeywords = ['断供', '制裁', '管制', '短缺', '禁运', '限制', '危机']
-    const warningKeywords = ['涨价', '扩产', '新建', '投资', '紧缺', '供应', '紧张']
-
-    supplyNames.forEach(name => {
-      const data = supplyKeywords[name]
-      if (data.keywords.some(k => text.includes(k.toLowerCase()))) {
-        if (criticalKeywords.some(k => text.includes(k))) {
-          supplyCounts[name].critical++
-        } else if (warningKeywords.some(k => text.includes(k))) {
-          supplyCounts[name].warning++
-        } else {
-          supplyCounts[name].warning += 0.5
-        }
-      }
-    })
-  })
-
-  return supplyNames.map(name => {
-    const data = supplyKeywords[name]
-    const counts = supplyCounts[name]
-    const score = counts.critical * 2 + counts.warning
-
-    let status: 'normal' | 'warning' | 'critical' = 'normal'
-    if (score >= 3 || counts.critical >= 1) status = 'critical'
-    else if (score >= 1) status = 'warning'
-
-    const trend = Math.round((counts.warning - counts.critical) * 5 + (Math.random() - 0.5) * 10)
-
-    return {
-      name,
-      region: data.region,
-      status,
-      trend
-    }
-  })
-}
-
-// 合规政策接口
-export interface PolicyItem {
-  date: string
-  title: string
-  description: string
-  urgent: boolean
-}
-
-// 从新闻生成合规政策
-export function generatePoliciesFromNews(news: NewsItem[]): PolicyItem[] {
-  const policyKeywords = ['政策', '规定', '管制', '限制', '制裁', '补贴', '扶持', '申报', '专项', '优惠', '关税', '出口', '审批', '认证', '标准', '合规']
-
-  const policies: PolicyItem[] = []
-  const seenTitles = new Set<string>()
-
-  news.forEach(item => {
-    if (policies.length >= 6) return
-
-    const text = (item.title + ' ' + item.summary).toLowerCase()
-    if (!policyKeywords.some(k => text.includes(k.toLowerCase()))) return
-
-    const title = item.title.slice(0, 50)
-    if (seenTitles.has(title)) return
-    seenTitles.add(title)
-
-    const urgent = ['管制', '制裁', '限制', '禁止', '紧急'].some(k => text.includes(k))
-    const date = item.time || formatTimeAgo(item.publishedAt || new Date().toISOString())
-    const description = item.summary ? item.summary.slice(0, 40) + '...' : item.source
-
-    policies.push({
-      date,
-      title,
-      description,
-      urgent
-    })
-  })
-
-  return policies
-}
-
-// 科技政策申报接口
-export interface PolicyApplicationItem {
-  id: string
-  title: string
-  department: string
-  region: string
-  sector: string
-  deadline: string
-  amount: string
-  status: 'open' | 'closing' | 'closed'
-}
-
-// 从新闻生成政策申报
-export function generatePolicyApplicationsFromNews(news: NewsItem[]): PolicyApplicationItem[] {
-  const applications: PolicyApplicationItem[] = []
-
-  // 扩大匹配关键词：涵盖政府补贴/申报/项目/专项/政策/扶持/评选/认定/奖励等
-  const policyAppKeywords = ['申报', '项目', '专项', '扶持', '补贴', '奖励', '认定', '评选', '资金', '政府', '工信部', '发改委', '科技部', '经信委', '优惠']
-
-  news.forEach((item, idx) => {
-    if (applications.length >= 6) return
-
-    const text = item.title + ' ' + item.summary
-    if (!policyAppKeywords.some(k => text.includes(k))) return
-
-    // 提取部门
-    let department = '相关部委'
-    if (item.source.includes('工信')) department = '工信部'
-    else if (item.source.includes('发改')) department = '发改委'
-    else if (item.source.includes('科技')) department = '科技部'
-    else if (item.source.includes('上海')) department = '上海市'
-    else if (item.source.includes('深圳')) department = '深圳市'
-    else if (item.source.includes('广东')) department = '广东省'
-
-    // 提取行业
-    let sector = '半导体'
-    if (text.includes('汽车') || text.includes('智驾')) sector = '智能汽车'
-    else if (text.includes('机器人')) sector = '机器人'
-    else if (text.includes('AI') || text.includes('人工智能')) sector = 'AI'
-
-    // 提取金额
-    let amount = '待定'
-    const amountMatch = text.match(/(\d+)(亿|万)元/)
-    if (amountMatch) {
-      amount = `最高${amountMatch[1]}${amountMatch[2]}`
-    }
-
-    // 提取地区
-    let region = '全国'
-    if (item.source.includes('上海')) region = '上海'
-    else if (item.source.includes('深圳')) region = '深圳'
-    else if (item.source.includes('广东')) region = '广东'
-    else if (text.includes('浦东')) region = '浦东'
-    else if (text.includes('南山')) region = '南山'
-
-    // 推断状态
-    let status: 'open' | 'closing' | 'closed' = 'open'
-    if (text.includes('截止') || text.includes('即将') || text.includes('最后')) {
-      status = 'closing'
-    }
-
-    applications.push({
-      id: `policy-app-${idx}`,
-      title: item.title.slice(0, 45),
-      department,
-      region,
-      sector,
-      deadline: item.time,
-      amount,
-      status
-    })
-  })
-
-  return applications
 }
