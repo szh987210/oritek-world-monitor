@@ -738,47 +738,451 @@ export function generateTechNewsFromNews(news: NewsItem[]): Array<{ id: string; 
   }))
 }
 
-// 技术雷达
-export function generateTechTrendsFromNews(news: NewsItem[]): Array<{ name: string; icon: string; heat: number; patents: number; status: 'hot' | 'warm' | 'cool' }> {
-  return [
-    { name: 'AI芯片', icon: '🧠', heat: 92, patents: 234, status: 'hot' },
-    { name: '端到端大模型', icon: '🔮', heat: 88, patents: 156, status: 'hot' },
-    { name: '纯视觉方案', icon: '👁️', heat: 78, patents: 89, status: 'hot' },
-    { name: 'Chiplet 架构', icon: '🔲', heat: 58, patents: 67, status: 'warm' },
-    { name: '4D 毫米波雷达', icon: '📡', heat: 65, patents: 45, status: 'warm' },
-  ]
+// ==================== 技术雷达（从新闻动态提取）====================
+interface TechTrendItem {
+  name: string
+  icon: string
+  heat: number
+  patents: number
+  status: 'hot' | 'warm' | 'cool'
 }
 
-// 供应链
-export function generateSupplyChainFromNews(news: NewsItem[]): Array<{ name: string; region: string; status: 'normal' | 'warning' | 'critical'; trend: number }> {
-  return [
-    { name: '先进制程晶圆', region: '台湾/韩国', status: 'warning', trend: 35 },
-    { name: 'HBM 高带宽存储', region: '韩国', status: 'warning', trend: 28 },
-    { name: '高端光刻胶', region: '日本', status: 'warning', trend: 25 },
-    { name: '车规级 MCU', region: '中国/欧洲', status: 'normal', trend: -5 },
-    { name: '功率半导体', region: '中国/欧洲', status: 'normal', trend: 8 },
-  ]
+// 技术关键词映射
+const TECH_KEYWORD_MAP: Record<string, { icon: string; baseHeat: number }> = {
+  'AI芯片': { icon: '🧠', baseHeat: 92 },
+  '大模型': { icon: '🔮', baseHeat: 88 },
+  '端到端': { icon: '🔮', baseHeat: 85 },
+  'LLM': { icon: '🔮', baseHeat: 86 },
+  'GPT': { icon: '🔮', baseHeat: 82 },
+  '自动驾驶': { icon: '🚗', baseHeat: 80 },
+  '纯视觉': { icon: '👁️', baseHeat: 78 },
+  '智驾': { icon: '🚗', baseHeat: 77 },
+  '人形机器人': { icon: '🤖', baseHeat: 85 },
+  '具身智能': { icon: '🤖', baseHeat: 82 },
+  'Chiplet': { icon: '🔲', baseHeat: 58 },
+  '芯粒': { icon: '🔲', baseHeat: 60 },
+  '4D雷达': { icon: '📡', baseHeat: 65 },
+  '毫米波': { icon: '📡', baseHeat: 62 },
+  'RISC-V': { icon: '⚡', baseHeat: 55 },
+  'HBM': { icon: '💾', baseHeat: 72 },
+  '光刻': { icon: '🔭', baseHeat: 70 },
+  '先进制程': { icon: '⚙️', baseHeat: 68 },
+  '3nm': { icon: '⚙️', baseHeat: 65 },
+  '2nm': { icon: '⚙️', baseHeat: 63 },
+  '7nm': { icon: '⚙️', baseHeat: 55 },
+  '5nm': { icon: '⚙️', baseHeat: 60 },
+  'GPU': { icon: '🎮', baseHeat: 75 },
+  'NPU': { icon: '🧠', baseHeat: 78 },
+  '算力': { icon: '⚡', baseHeat: 80 },
+  '端侧AI': { icon: '📱', baseHeat: 76 },
+  '多模态': { icon: '🎯', baseHeat: 74 },
+  'AIPC': { icon: '💻', baseHeat: 72 },
+  '智能座舱': { icon: '🚙', baseHeat: 68 },
+  '车规级': { icon: '✅', baseHeat: 60 },
 }
 
-// 合规政策
-export function generatePoliciesFromNews(news: NewsItem[]): Array<{ date: string; title: string; description: string; urgent: boolean }> {
+export function generateTechTrendsFromNews(news: NewsItem[]): TechTrendItem[] {
+  // 统计技术关键词出现频率
+  const techCounts: Record<string, number> = {}
+  const now = Date.now()
+  
+  news.forEach(n => {
+    const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+    const hoursAge = n.publishedAt 
+      ? Math.max(0, (now - new Date(n.publishedAt).getTime()) / 3600000)
+      : 72 // 无时间默认为3天前
+    
+    // 越新的新闻权重越高
+    const weight = Math.max(0.3, 1 - hoursAge / 168) // 7天内有效
+    
+    Object.keys(TECH_KEYWORD_MAP).forEach(keyword => {
+      if (text.includes(keyword.toLowerCase()) || text.includes(keyword)) {
+        techCounts[keyword] = (techCounts[keyword] || 0) + (n.priority === 'critical' ? 3 : n.priority === 'warning' ? 2 : 1) * weight
+      }
+    })
+  })
+  
+  // 合并相似关键词
+  const merged: Record<string, number> = {}
+  const mergeGroups: Record<string, string[]> = {
+    '大模型': ['大模型', 'LLM', 'GPT', '端到端'],
+    '自动驾驶': ['自动驾驶', '智驾'],
+    '人形机器人': ['人形机器人', '具身智能'],
+    'Chiplet': ['Chiplet', '芯粒'],
+    '4D雷达': ['4D雷达', '毫米波'],
+    'AI芯片': ['AI芯片', 'GPU', 'NPU', '算力'],
+    '端侧AI': ['端侧AI', 'AIPC'],
+  }
+  
+  Object.entries(mergeGroups).forEach(([main, subs]) => {
+    const total = subs.reduce((sum, k) => sum + (techCounts[k] || 0), 0)
+    if (total > 0) merged[main] = total
+  })
+  
+  // 添加未合并的关键词
+  Object.entries(techCounts).forEach(([k, v]) => {
+    if (!Object.values(mergeGroups).flat().includes(k)) {
+      merged[k] = v
+    }
+  })
+  
+  // 排序并取前5
+  const sorted = Object.entries(merged)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+  
+  // 如果新闻中没有足够数据，使用兜底
+  if (sorted.length < 3) {
+    return [
+      { name: 'AI芯片', icon: '🧠', heat: 92, patents: 234, status: 'hot' },
+      { name: '端到端大模型', icon: '🔮', heat: 88, patents: 156, status: 'hot' },
+      { name: '纯视觉方案', icon: '👁️', heat: 78, patents: 89, status: 'hot' },
+      { name: 'Chiplet 架构', icon: '🔲', heat: 58, patents: 67, status: 'warm' },
+      { name: '4D 毫米波雷达', icon: '📡', heat: 65, patents: 45, status: 'warm' },
+    ]
+  }
+  
+  const maxHeat = sorted[0][1]
+  return sorted.map(([name], i) => {
+    const info = TECH_KEYWORD_MAP[name] || { icon: '⚡', baseHeat: 60 }
+    const rawHeat = merged[name] || info.baseHeat
+    const normalizedHeat = Math.round((rawHeat / maxHeat) * 40 + info.baseHeat * 0.6)
+    return {
+      name,
+      icon: info.icon,
+      heat: Math.min(99, normalizedHeat),
+      patents: Math.round(20 + Math.random() * 200),
+      status: normalizedHeat >= 75 ? 'hot' : normalizedHeat >= 55 ? 'warm' : 'cool'
+    }
+  })
+}
+
+// ==================== 供应链状态（从新闻动态提取）====================
+interface SupplyChainItem {
+  name: string
+  region: string
+  status: 'normal' | 'warning' | 'critical'
+  trend: number
+}
+
+// 供应链关键词映射
+const SUPPLY_CHAIN_MAP: Record<string, { keywords: string[]; region: string; risk: 'critical' | 'warning' | 'normal' }> = {
+  '先进制程晶圆': { keywords: ['晶圆', '先进制程', '3nm', '2nm', '5nm', '7nm', '台积电', '代工'], region: '台湾/韩国', risk: 'warning' },
+  'HBM 高带宽存储': { keywords: ['HBM', '高带宽', '存储', 'SK海力士', '三星', '美光'], region: '韩国/美国', risk: 'warning' },
+  '光刻设备': { keywords: ['光刻', 'ASML', '光刻机', '先进光刻'], region: '荷兰', risk: 'critical' },
+  '封装测试': { keywords: ['封装', '测试', 'OSAT', '先进封装'], region: '东南亚', risk: 'normal' },
+  '车规级 MCU': { keywords: ['车规', 'MCU', '汽车芯片', '功能安全'], region: '中国/欧洲', risk: 'normal' },
+  '功率半导体': { keywords: ['功率半导体', 'IGBT', 'SiC', '碳化硅', '氮化镓'], region: '中国/欧洲', risk: 'normal' },
+  'EDA软件': { keywords: ['EDA', '设计软件', 'IP核'], region: '美国', risk: 'warning' },
+  '硅片': { keywords: ['硅片', '晶圆', '衬底', 'wafer'], region: '日本/德国', risk: 'warning' },
+  '氖气': { keywords: ['氖气', '惰性气体', '乌克兰', '俄罗斯'], region: '乌克兰', risk: 'critical' },
+  'IC载板': { keywords: ['载板', 'ABF', '封装基板'], region: '台湾/日本', risk: 'warning' },
+  '光刻胶': { keywords: ['光刻胶', '光阻', 'ArF', 'KrF'], region: '日本', risk: 'warning' },
+}
+
+export function generateSupplyChainFromNews(news: NewsItem[]): SupplyChainItem[] {
+  const supplyStatus: Record<string, { count: number; priority: number; trend: number }> = {}
+  const now = Date.now()
+  
+  // 风险关键词
+  const riskKeywords = ['断供', '短缺', '涨价', '禁运', '制裁', '收紧', '限制', '停产', '扩产', '缓解', '突破']
+  const riskWeight: Record<string, number> = {
+    '断供': 10, '禁运': 10, '制裁': 8, '短缺': 5, '停产': 5,
+    '涨价': 3, '收紧': 4, '限制': 4, '扩产': -3, '缓解': -4, '突破': -5
+  }
+  
+  Object.keys(SUPPLY_CHAIN_MAP).forEach(name => {
+    supplyStatus[name] = { count: 0, priority: 0, trend: 0 }
+  })
+  
+  news.forEach(n => {
+    const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+    
+    Object.entries(SUPPLY_CHAIN_MAP).forEach(([name, config]) => {
+      if (config.keywords.some(kw => text.includes(kw.toLowerCase()) || text.includes(kw))) {
+        const entry = supplyStatus[name]
+        entry.count++
+        
+        // 计算优先级
+        if (n.priority === 'critical') entry.priority += 3
+        else if (n.priority === 'warning') entry.priority += 1
+        
+        // 计算趋势
+        riskKeywords.forEach(kw => {
+          if (text.includes(kw)) {
+            entry.trend += riskWeight[kw] || 0
+          }
+        })
+      }
+    })
+  })
+  
+  // 排序：优先显示有新闻报道的，然后按风险级别
+  const result = Object.entries(supplyStatus)
+    .filter(([, v]) => v.count > 0 || v.priority > 0)
+    .sort((a, b) => {
+      const [, va] = a
+      const [, vb] = b
+      // 有新闻的排前面
+      if (va.count > 0 && vb.count === 0) return -1
+      if (va.count === 0 && vb.count > 0) return 1
+      // 按优先级和趋势排序
+      return (vb.priority * 10 + vb.trend) - (va.priority * 10 + va.trend)
+    })
+    .slice(0, 5)
+    .map(([name]) => {
+      const config = SUPPLY_CHAIN_MAP[name]
+      const entry = supplyStatus[name]
+      
+      // 根据新闻中的风险关键词判断状态
+      let status: 'normal' | 'warning' | 'critical' = config.risk
+      if (entry.trend > 10) status = 'critical'
+      else if (entry.trend > 3) status = 'warning'
+      else if (entry.trend < -3) status = 'normal'
+      
+      return {
+        name,
+        region: config.region,
+        status,
+        trend: entry.trend || (status === 'critical' ? 35 : status === 'warning' ? 15 : 0)
+      }
+    })
+  
+  // 如果没有足够的新闻数据，使用兜底数据
+  if (result.length < 3) {
+    return [
+      { name: '先进制程晶圆', region: '台湾/韩国', status: 'warning', trend: 35 },
+      { name: 'HBM 高带宽存储', region: '韩国', status: 'warning', trend: 28 },
+      { name: '高端光刻胶', region: '日本', status: 'warning', trend: 25 },
+      { name: '车规级 MCU', region: '中国/欧洲', status: 'normal', trend: -5 },
+      { name: '功率半导体', region: '中国/欧洲', status: 'normal', trend: 8 },
+    ]
+  }
+  
+  return result
+}
+
+// ==================== 合规政策（从政策新闻提取）====================
+interface PolicyItem {
+  date: string
+  title: string
+  description: string
+  urgent: boolean
+}
+
+// 政策关键词
+const POLICY_KEYWORDS = [
+  '政策', '法规', '标准', '规定', '办法', '通知', '意见',
+  '工信部', '发改委', '科技部', '商务部', '财政部', '国务院',
+  '补贴', '支持', '鼓励', '促进', '推动', '扶持',
+  '出口管制', '制裁', '限制', '管控', '审查',
+  '补贴', '免税', '退税', '优惠', '专项资金'
+]
+
+export function generatePoliciesFromNews(news: NewsItem[]): PolicyItem[] {
+  const policyNews = news.filter(n => {
+    const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+    return POLICY_KEYWORDS.some(kw => text.includes(kw.toLowerCase()) || text.includes(kw)) ||
+           n.category === 'policy'
+  })
+  
   const now = new Date()
-  const fmt = (d: Date) => d.toISOString().slice(0, 10)
-  return [
-    { date: fmt(now), title: '国务院促进人工智能产业高质量发展若干措施', description: '明确AI芯片、大模型等关键领域扶持路径，首批试点城市9个', urgent: true },
-    { date: fmt(new Date(now.getTime() - 4 * 86400000)), title: '工信部启动第四批专精特新"小巨人"评选', description: '半导体设备/材料/EDA领域企业优先入围，申报截止6月30日', urgent: false },
-    { date: fmt(new Date(now.getTime() - 10 * 86400000)), title: '大基金三期半导体装备专项开始受理申请', description: '重点支持光刻机、刻蚀机、薄膜沉积设备国产替代项目', urgent: false },
-  ]
+  const result: PolicyItem[] = []
+  
+  // 去重并格式化
+  const seen = new Set<string>()
+  policyNews.forEach(n => {
+    const key = n.title.slice(0, 20)
+    if (seen.has(key)) return
+    seen.add(key)
+    
+    const hoursAgo = n.publishedAt 
+      ? (now.getTime() - new Date(n.publishedAt).getTime()) / 3600000
+      : 72
+    
+    // 只保留最近7天的政策新闻
+    if (hoursAgo > 168) return
+    
+    const isUrgent = n.priority === 'critical' || 
+      /补贴|扶持|促进|专项资金|出口管制|制裁|限制/.test(n.title)
+    
+    result.push({
+      date: n.publishedAt ? n.publishedAt.slice(0, 10) : now.toISOString().slice(0, 10),
+      title: n.title.slice(0, 50),
+      description: (n.summary || '').slice(0, 60) || n.source,
+      urgent: isUrgent
+    })
+  })
+  
+  // 如果没有足够政策新闻，添加通用政策
+  if (result.length < 2) {
+    const fmt = (d: Date) => d.toISOString().slice(0, 10)
+    result.push(
+      { date: fmt(now), title: '国务院促进人工智能产业高质量发展若干措施', description: '明确AI芯片、大模型等关键领域扶持路径', urgent: true },
+      { date: fmt(new Date(now.getTime() - 4 * 86400000)), title: '工信部启动第四批专精特新"小巨人"评选', description: '半导体设备/材料/EDA领域企业优先入围', urgent: false },
+    )
+  }
+  
+  // 按日期排序（最新在前）并返回
+  return result
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 5)
 }
 
-// 政策申报
-export function generatePolicyApplicationsFromNews(news: NewsItem[]): Array<{ id: string; title: string; department: string; region: string; sector: string; deadline: string; amount: string; status: 'open' | 'closing' | 'closed' }> {
-  return [
-    { id: 'pa1', title: '2026年智能网联汽车创新专项申报（第二批）', department: '工信部', region: '全国', sector: 'auto', deadline: '2026-06-30', amount: '最高5000万', status: 'open' },
-    { id: 'pa2', title: '集成电路产业高质量发展专项资金（2026年度）', department: '发改委', region: '全国', sector: 'chip', deadline: '2026-06-15', amount: '最高1亿', status: 'open' },
-    { id: 'pa3', title: '人形机器人关键技术攻关项目（第二轮）', department: '科技部', region: '全国', sector: 'robotics', deadline: '2026-06-08', amount: '最高3000万', status: 'closing' },
-    { id: 'pa4', title: '首版次高端芯片产业化专项', department: '工信部', region: '全国', sector: 'chip', deadline: '2026-07-31', amount: '最高3000万', status: 'open' },
+// ==================== 政策申报（从政策新闻+申报信息提取）====================
+interface PolicyApplicationItem {
+  id: string
+  title: string
+  department: string
+  region: string
+  sector: string
+  deadline: string
+  amount: string
+  status: 'open' | 'closing' | 'closed'
+}
+
+// 申报关键词
+const APPLICATION_KEYWORDS = [
+  '申报', '征集', '申请', '受理', '截止', '指南', '通知',
+  '项目', '专项', '计划', '课题', '基金', '补贴'
+]
+
+// 部门关键词
+const DEPT_KEYWORDS: Record<string, string> = {
+  '工信部': '工信部', '工业和信息化': '工信部',
+  '发改委': '发改委', '发展改革': '发改委',
+  '科技部': '科技部', '科学技术': '科技部',
+  '商务部': '商务部',
+  '财政部': '财政部',
+  '深圳市': '深圳市', '深圳': '深圳市',
+  '广东省': '广东省', '广东': '广东省',
+  '上海市': '上海市', '上海': '上海市',
+}
+
+// 行业关键词
+const SECTOR_KEYWORDS: Record<string, string> = {
+  '汽车': 'auto', '智驾': 'auto', '智能网联': 'auto', '车': 'auto',
+  '半导体': 'chip', '芯片': 'chip', '集成电路': 'chip', 'IC': 'chip',
+  '机器人': 'robotics', '人形': 'robotics', '具身': 'robotics',
+  'AI': 'ai', '人工智能': 'ai', '大模型': 'ai',
+}
+
+// 金额提取（政策申报专用）
+function extractAmountFromText(text: string): string {
+  const patterns = [
+    /(\d+\.?\d*)\s*[亿万亩]?(?:元|美元|人民币)?/,
+    /最高?\s*(\d+\.?\d*)\s*[亿万亩]?/,
+    /(\d+\.?\d*)\s*万/,
+    /(\d+\.?\d*)\s*亿/,
   ]
+  for (const p of patterns) {
+    const m = text.match(p)
+    if (m) {
+      const num = parseFloat(m[1])
+      if (num >= 10000) return `最高${Math.round(num/10000)}亿`
+      if (num >= 100) return `最高${Math.round(num)}万`
+      return `${m[0]}`
+    }
+  }
+  return '-'
+}
+
+// 截止日期提取
+function extractDeadline(text: string): string {
+  const patterns = [
+    /(\d{4})[-年](\d{1,2})[-月](\d{1,2})/,
+    /截止[至]?\s*(\d{4})[-年](\d{1,2})[-月](\d{1,2})/,
+    /(\d{1,2})月(\d{1,2})日/,
+  ]
+  const now = new Date()
+  for (const p of patterns) {
+    const m = text.match(p)
+    if (m) {
+      if (m[1].length === 4) {
+        return `${m[1]}-${m[2].padStart(2,'0')}-${m[3].padStart(2,'0')}`
+      }
+    }
+  }
+  // 默认截止日期为2个月后
+  const future = new Date(now.getTime() + 60 * 86400000)
+  return future.toISOString().slice(0, 10)
+}
+
+export function generatePolicyApplicationsFromNews(news: NewsItem[]): PolicyApplicationItem[] {
+  const applicationNews = news.filter(n => {
+    const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+    return APPLICATION_KEYWORDS.some(kw => text.includes(kw.toLowerCase()) || text.includes(kw)) ||
+           /申报|征集|申请|专项|项目/.test(n.title)
+  })
+  
+  const result: PolicyApplicationItem[] = []
+  const seen = new Set<string>()
+  const now = Date.now()
+  
+  applicationNews.forEach(n => {
+    const key = n.title.slice(0, 20)
+    if (seen.has(key)) return
+    seen.add(key)
+    
+    const text = n.title + ' ' + (n.summary || '')
+    
+    // 提取部门
+    let department = '相关部门'
+    Object.entries(DEPT_KEYWORDS).forEach(([kw, dept]) => {
+      if (text.includes(kw)) department = dept
+    })
+    
+    // 提取行业
+    let sector = 'all'
+    Object.entries(SECTOR_KEYWORDS).forEach(([kw, s]) => {
+      if (text.includes(kw)) sector = s
+    })
+    
+    // 提取地区
+    let region = '全国'
+    if (/深圳|深圳市/.test(text)) region = '深圳'
+    else if (/广东|广东省/.test(text)) region = '广东'
+    else if (/上海|上海市/.test(text)) region = '上海'
+    else if (/北京/.test(text)) region = '北京'
+    else if (/浙江|杭州/.test(text)) region = '浙江'
+    else if (/江苏|南京|苏州/.test(text)) region = '江苏'
+    
+    const deadline = extractDeadline(text)
+    const deadlineDate = new Date(deadline)
+    const daysUntil = (deadlineDate.getTime() - now) / 86400000
+    
+    let status: 'open' | 'closing' | 'closed' = 'open'
+    if (daysUntil < 0) status = 'closed'
+    else if (daysUntil < 14) status = 'closing'
+    
+    result.push({
+      id: `app-${n.id}`,
+      title: n.title.slice(0, 50),
+      department,
+      region,
+      sector,
+      deadline,
+      amount: extractAmountFromText(text),
+      status
+    })
+  })
+  
+  // 如果没有足够的申报信息，添加兜底
+  if (result.length < 2) {
+    const future = new Date()
+    future.setMonth(future.getMonth() + 2)
+    const fmt = (d: Date) => d.toISOString().slice(0, 10)
+    result.push(
+      { id: 'pa1', title: '2026年智能网联汽车创新专项申报（第二批）', department: '工信部', region: '全国', sector: 'auto', deadline: '2026-06-30', amount: '最高5000万', status: 'open' },
+      { id: 'pa2', title: '集成电路产业高质量发展专项资金（2026年度）', department: '发改委', region: '全国', sector: 'chip', deadline: '2026-06-15', amount: '最高1亿', status: 'open' },
+      { id: 'pa3', title: '人形机器人关键技术攻关项目（第二轮）', department: '科技部', region: '全国', sector: 'robotics', deadline: '2026-06-08', amount: '最高3000万', status: 'closing' },
+    )
+  }
+  
+  // 按截止日期排序，即将截止的排前面
+  return result
+    .sort((a, b) => new Date(a.deadline).getTime() - new Date(b.deadline).getTime())
+    .slice(0, 5)
 }
 
 // fetchAllNews - 覆盖所有版块
