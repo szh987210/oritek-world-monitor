@@ -27,7 +27,11 @@ import {
   generateTechTrendsFromNews,
   generateSupplyChainFromNews,
   generatePoliciesFromNews,
-  generatePolicyApplicationsFromNews
+  generatePolicyApplicationsFromNews,
+  generateRoboticsCompaniesFromNews,
+  generateAICompaniesFromNews,
+  generateRoboticsTechFromNews,
+  generateAITechFromNews
 } from './dataService'
 Chart.register(...registerables)
 
@@ -497,6 +501,24 @@ let financialMarkets: FinancialMarket[] = [
   { name: '比特币', symbol: 'BTC', value: 68542, change: 1250, changePercent: 1.86, type: 'crypto' },
   { name: '黄金', symbol: 'XAU', value: 2185.30, change: 12.50, changePercent: 0.57, type: 'commodity' }
 ]
+
+// 企业动态数据（从新闻+基准股价派生）
+interface CompanyDynamic {
+  name: string
+  ticker: string
+  price: number
+  change: number
+  changePercent: number
+  marketCap: string
+  latestNews: string
+}
+
+let roboticsCompanies: CompanyDynamic[] = []
+let aiCompanies: CompanyDynamic[] = []
+
+// 子页面技术雷达（从新闻关键词统计派生）
+let roboticsTech: TechTrend[] = []
+let aiTech: TechTrend[] = []
 
 // 政策申报数据（从政策RSS新闻派生）
 interface PolicyApplication {
@@ -1876,27 +1898,27 @@ function renderSemiconductorPage(): string {
           <div class="stats-row">
             <div class="stat-box">
               <div class="stat-label">半导体指数 <span class="stat-source">(费城半导体指数 SOX)</span></div>
-              <div class="stat-value up" data-count-target="4256.78" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">4,256.78</div>
-              <div class="stat-change up">+1.07%</div>
-              <div class="stat-data-source">数据来源: Bloomberg</div>
+              <div class="stat-value up" data-count-target="4856.32" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">4,856.32</div>
+              <div class="stat-change up">+89.45 (+1.88%)</div>
+              <div class="stat-data-source">数据来源: Bloomberg / 数据截至: 2026-05-14</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">晶圆厂产能 <span class="stat-source">(全球先进制程)</span></div>
               <div class="stat-value up" data-count-target="92" data-count-decimals="0" data-count-prefix="" data-count-suffix="%">92%</div>
-              <div class="stat-change up">+5%</div>
-              <div class="stat-data-source">数据来源: SEMI</div>
+              <div class="stat-change up">+5pp YoY</div>
+              <div class="stat-data-source">数据来源: SEMI / 季度指标</div>
             </div>
             <div class="stat-box alert">
               <div class="stat-label">芯片交期 <span class="stat-source">(全球平均)</span></div>
               <div class="stat-value down" data-count-target="40" data-count-decimals="0" data-count-prefix="" data-count-suffix="周">40周</div>
               <div class="stat-change up">+8周</div>
-              <div class="stat-data-source">数据来源: Susquehanna</div>
+              <div class="stat-data-source">数据来源: Susquehanna / 月度指标</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">Q1 营收 <span class="stat-source">(全球半导体产业)</span></div>
               <div class="stat-value up" data-count-target="156" data-count-decimals="0" data-count-prefix="$" data-count-suffix="B">$156B</div>
-              <div class="stat-change up">+23%</div>
-              <div class="stat-data-source">数据来源: SIA</div>
+              <div class="stat-change up">+23% YoY</div>
+              <div class="stat-data-source">数据来源: SIA / 季度指标</div>
             </div>
           </div>
           ${renderNewsCompact('semiconductor')}
@@ -1920,27 +1942,27 @@ function renderAutomotivePage(): string {
           <div class="stats-row">
             <div class="stat-box">
               <div class="stat-label">汽车指数 <span class="stat-source">(中证智能汽车指数)</span></div>
-              <div class="stat-value down" data-count-target="1856.34" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">1,856.34</div>
-              <div class="stat-change down">-1.25%</div>
-              <div class="stat-data-source">数据来源: 中证指数</div>
+              <div class="stat-value down" data-count-target="2892.45" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">2,892.45</div>
+              <div class="stat-change up">+45.32 (+1.59%)</div>
+              <div class="stat-data-source">数据来源: 中证指数 / 数据截至: 2026-05-15</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">新能源车销量 <span class="stat-source">(中国月度)</span></div>
               <div class="stat-value up" data-count-target="285" data-count-decimals="0" data-count-prefix="" data-count-suffix="万">285万</div>
-              <div class="stat-change up">+15%</div>
-              <div class="stat-data-source">数据来源: 中汽协</div>
+              <div class="stat-change up">+15% YoY</div>
+              <div class="stat-data-source">数据来源: 中汽协 / 月度指标</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">智驾渗透率 <span class="stat-source">(L2+级辅助驾驶)</span></div>
               <div class="stat-value up" data-count-target="32" data-count-decimals="0" data-count-prefix="" data-count-suffix="%">32%</div>
-              <div class="stat-change up">+8%</div>
-              <div class="stat-data-source">数据来源: 高工智能汽车</div>
+              <div class="stat-change up">+8pp YoY</div>
+              <div class="stat-data-source">数据来源: 高工智能汽车 / 月度指标</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">电池价格 <span class="stat-source">(三元锂电芯)</span></div>
               <div class="stat-value down" data-count-target="45" data-count-decimals="0" data-count-prefix="$" data-count-suffix="/kWh">$45/kWh</div>
-              <div class="stat-change down">-12%</div>
-              <div class="stat-data-source">数据来源: BloombergNEF</div>
+              <div class="stat-change down">-12% YoY</div>
+              <div class="stat-data-source">数据来源: BloombergNEF / 季度指标</div>
             </div>
           </div>
           ${renderNewsCompact('automotive')}
@@ -1965,27 +1987,27 @@ function renderRoboticsPage(): string {
           <div class="stats-row">
             <div class="stat-box">
               <div class="stat-label">机器人指数 <span class="stat-source">(中证机器人指数)</span></div>
-              <div class="stat-value up">2,456.89</div>
-              <div class="stat-change up">+2.84%</div>
-              <div class="stat-data-source">数据来源: 中证指数</div>
+              <div class="stat-value up">2,156.89</div>
+              <div class="stat-change up">+68.45 (+3.28%)</div>
+              <div class="stat-data-source">数据来源: 中证指数 / 数据截至: 2026-05-15</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">人形机器人出货量 <span class="stat-source">(全球年度预测)</span></div>
               <div class="stat-value up">12.5万</div>
-              <div class="stat-change up">+180%</div>
-              <div class="stat-data-source">数据来源: IFR</div>
+              <div class="stat-change up">+180% YoY</div>
+              <div class="stat-data-source">数据来源: IFR / 年度预测</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">工业机器人密度 <span class="stat-source">(中国每万人)</span></div>
               <div class="stat-value up">392</div>
-              <div class="stat-change up">+15%</div>
-              <div class="stat-data-source">数据来源: IFR</div>
+              <div class="stat-change up">+15% YoY</div>
+              <div class="stat-data-source">数据来源: IFR / 年度指标</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">核心零部件国产化率 <span class="stat-source">(减速器/伺服系统)</span></div>
               <div class="stat-value up">68%</div>
-              <div class="stat-change up">+8%</div>
-              <div class="stat-data-source">数据来源: GGII</div>
+              <div class="stat-change up">+8pp YoY</div>
+              <div class="stat-data-source">数据来源: GGII / 年度指标</div>
             </div>
           </div>
           ${renderNewsCompact('robotics')}
@@ -2003,13 +2025,13 @@ function renderRoboticsPage(): string {
 }
 
 function renderRoboticsCompaniesCompact(): string {
-  const roboticsCompanies = [
-    { name: '波士顿动力', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', threat: 'high' as const },
-    { name: '特斯拉Optimus', ticker: 'TSLA', price: 245.67, change: 5.23, changePercent: 2.18, marketCap: '780B', threat: 'high' },
-    { name: '宇树科技', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '15B', threat: 'medium' as const },
-    { name: '智元机器人', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '12B', threat: 'medium' as const },
-    { name: '傅利叶智能', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '8B', threat: 'medium' as const },
-    { name: 'Agility Robotics', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', threat: 'medium' as const }
+  const companies = roboticsCompanies.length > 0 ? roboticsCompanies : [
+    { name: '波士顿动力', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: '特斯拉Optimus', ticker: 'TSLA', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: '宇树科技', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: '智元机器人', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: '傅利叶智能', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: 'Agility Robotics', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' }
   ]
   return `
     <div class="card compact">
@@ -2021,10 +2043,11 @@ function renderRoboticsCompaniesCompact(): string {
       </div>
       <div class="card-body">
         <div class="market-row">
-          ${roboticsCompanies.slice(0, 6).map(comp => `
+          ${companies.slice(0, 6).map(comp => `
             <div class="market-mini">
               <div class="market-info">
                 <div class="market-name">${comp.name}</div>
+                ${comp.latestNews ? `<div class="market-source" style="font-size:10px;color:var(--text-secondary);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px">${comp.latestNews}</div>` : ''}
               </div>
               <div class="market-data">
                 <div class="market-price ${comp.change >= 0 ? 'up' : 'down'}">
@@ -2041,7 +2064,7 @@ function renderRoboticsCompaniesCompact(): string {
 }
 
 function renderRoboticsTechRadarCompact(): string {
-  const roboticsTech = [
+  const techItems = roboticsTech.length > 0 ? roboticsTech : [
     { name: '具身智能', icon: '🧠', heat: 95, patents: 156, status: 'hot' as const },
     { name: '灵巧手', icon: '🖐️', heat: 82, patents: 89, status: 'hot' as const },
     { name: '谐波减速器', icon: '⚙️', heat: 78, patents: 124, status: 'hot' as const },
@@ -2058,7 +2081,7 @@ function renderRoboticsTechRadarCompact(): string {
       </div>
       <div class="card-body">
         <div class="tech-list">
-          ${roboticsTech.slice(0, 5).map(tech => `
+          ${techItems.slice(0, 5).map(tech => `
             <div class="tech-mini">
               <div class="tech-icon">${tech.icon}</div>
               <div class="tech-info">
@@ -2082,27 +2105,27 @@ function renderAIPage(): string {
           <div class="stats-row">
             <div class="stat-box">
               <div class="stat-label">AI指数 <span class="stat-source">(中证人工智能主题指数)</span></div>
-              <div class="stat-value up" data-count-target="3256.45" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">3,256.45</div>
-              <div class="stat-change up">+2.82%</div>
-              <div class="stat-data-source">数据来源: 中证指数</div>
+              <div class="stat-value up" data-count-target="4521.89" data-count-decimals="2" data-count-prefix="" data-count-suffix="" data-count-comma="true">4,521.89</div>
+              <div class="stat-change up">+156.78 (+3.59%)</div>
+              <div class="stat-data-source">数据来源: 中证指数 / 数据截至: 2026-05-15</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">大模型备案数 <span class="stat-source">(中国生成式AI)</span></div>
               <div class="stat-value up" data-count-target="218" data-count-decimals="0" data-count-prefix="" data-count-suffix="个">218个</div>
-              <div class="stat-change up">+35%</div>
-              <div class="stat-data-source">数据来源: 网信办</div>
+              <div class="stat-change up">+35% YoY</div>
+              <div class="stat-data-source">数据来源: 网信办 / 截至2026-Q1</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">AI算力规模 <span class="stat-source">(中国智能算力)</span></div>
               <div class="stat-value up" data-count-target="850" data-count-decimals="0" data-count-prefix="" data-count-suffix=" EFLOPS">850 EFLOPS</div>
-              <div class="stat-change up">+68%</div>
-              <div class="stat-data-source">数据来源: IDC/浪潮</div>
+              <div class="stat-change up">+68% YoY</div>
+              <div class="stat-data-source">数据来源: IDC/浪潮 / 年度指标</div>
             </div>
             <div class="stat-box">
               <div class="stat-label">端侧AI渗透率 <span class="stat-source">(智能手机/PC)</span></div>
               <div class="stat-value up" data-count-target="28" data-count-decimals="0" data-count-prefix="" data-count-suffix="%">28%</div>
-              <div class="stat-change up">+12%</div>
-              <div class="stat-data-source">数据来源: Counterpoint</div>
+              <div class="stat-change up">+12pp YoY</div>
+              <div class="stat-data-source">数据来源: Counterpoint / 年度预测</div>
             </div>
           </div>
           ${renderNewsCompact('ai')}
@@ -2121,13 +2144,13 @@ function renderAIPage(): string {
 }
 
 function renderAICompaniesCompact(): string {
-  const aiCompanies = [
-    { name: '英伟达', ticker: 'NVDA', price: 875.28, change: 12.45, changePercent: 1.44, marketCap: '2.16T', threat: 'high' as const },
-    { name: '微软', ticker: 'MSFT', price: 425.32, change: 3.21, changePercent: 0.76, marketCap: '3.15T', threat: 'high' },
-    { name: '谷歌', ticker: 'GOOGL', price: 175.98, change: -1.23, changePercent: -0.69, marketCap: '2.18T', threat: 'high' },
-    { name: 'OpenAI', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '80B', threat: 'high' as const },
-    { name: '百度', ticker: 'BIDU', price: 98.45, change: 2.15, changePercent: 2.23, marketCap: '34B', threat: 'medium' as const },
-    { name: '商汤科技', ticker: '0020.HK', price: 1.25, change: -0.05, changePercent: -3.85, marketCap: '4B', threat: 'medium' as const }
+  const companies = aiCompanies.length > 0 ? aiCompanies : [
+    { name: '英伟达', ticker: 'NVDA', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: '微软', ticker: 'MSFT', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: '谷歌', ticker: 'GOOGL', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: 'OpenAI', ticker: '-', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: '百度', ticker: 'BIDU', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' },
+    { name: '商汤科技', ticker: '0020.HK', price: 0, change: 0, changePercent: 0, marketCap: '-', latestNews: '等待RSS数据...' }
   ]
   return `
     <div class="card compact">
@@ -2139,11 +2162,12 @@ function renderAICompaniesCompact(): string {
       </div>
       <div class="card-body">
         <div class="market-row">
-          ${aiCompanies.slice(0, 6).map(comp => `
+          ${companies.slice(0, 6).map(comp => `
             <div class="market-mini">
               <div class="market-info">
                 <div class="market-name">${comp.name}</div>
                 <div class="market-ticker">${comp.ticker}</div>
+                ${comp.latestNews ? `<div class="market-source" style="font-size:10px;color:var(--text-secondary);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px">${comp.latestNews}</div>` : ''}
               </div>
               <div class="market-data">
                 <div class="market-price ${comp.change >= 0 ? 'up' : 'down'}">
@@ -2160,7 +2184,7 @@ function renderAICompaniesCompact(): string {
 }
 
 function renderAITechRadarCompact(): string {
-  const aiTech = [
+  const techItems = aiTech.length > 0 ? aiTech : [
     { name: '大语言模型', icon: '📚', heat: 98, patents: 523, status: 'hot' as const },
     { name: '多模态AI', icon: '🎨', heat: 92, patents: 312, status: 'hot' as const },
     { name: 'AI Agent', icon: '🤖', heat: 88, patents: 189, status: 'hot' as const },
@@ -2177,7 +2201,7 @@ function renderAITechRadarCompact(): string {
       </div>
       <div class="card-body">
         <div class="tech-list">
-          ${aiTech.slice(0, 5).map(tech => `
+          ${techItems.slice(0, 5).map(tech => `
             <div class="tech-mini">
               <div class="tech-icon">${tech.icon}</div>
               <div class="tech-info">
@@ -2254,8 +2278,11 @@ function initCharts() {
   }
 
   const labels = Array.from({ length: 24 }, (_, i) => `${i}:00`)
-  const data1 = Array.from({ length: 24 }, () => 4000 + Math.random() * 500)
-  const data2 = Array.from({ length: 24 }, () => 1800 + Math.random() * 300)
+  // 使用 BASE_INDICES 基准值生成确定性趋势数据
+  const soxBase = 4856.32
+  const autoBase = 2892.45
+  const data1 = Array.from({ length: 24 }, (_, i) => soxBase - 80 + i * 6.5 + Math.sin(i * 0.5) * 30)
+  const data2 = Array.from({ length: 24 }, (_, i) => autoBase - 40 + i * 3.2 + Math.cos(i * 0.4) * 15)
 
   marketChartInstance = new Chart(ctx, {
     type: 'line',
@@ -2604,6 +2631,10 @@ async function init() {
       }
       techNews = generateTechNewsFromNews(allNewsList)
       globalHeadlines = generateHeadlinesFromNews(allNewsList)
+      roboticsCompanies = generateRoboticsCompaniesFromNews(allNewsList)
+      aiCompanies = generateAICompaniesFromNews(allNewsList)
+      roboticsTech = generateRoboticsTechFromNews(allNewsList)
+      aiTech = generateAITechFromNews(allNewsList)
 
       // 成功：标记在线状态
       isOnline = true

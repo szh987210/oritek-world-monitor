@@ -65,10 +65,11 @@ function generateDynamicNews(): NewsItem[] {
   const now = new Date()
   const currentHour = now.getHours()
   const currentMinute = now.getMinutes()
-  const shuffled = [...NEWS_TEMPLATES].sort(() => Math.random() - 0.5)
-  const newsCount = 10 + Math.floor(Math.random() * 5)
+  const shuffled = [...NEWS_TEMPLATES]
+  const newsCount = 10
   const generateFreshTime = (): string => {
-    const minsAgo = Math.floor(Math.random() * 120)
+    const idx = newsCount - 1 - shuffled.indexOf(shuffled.find((_, j) => true)!)
+    const minsAgo = idx * 12
     if (minsAgo < 1) return '刚刚'
     if (minsAgo < 60) return `${minsAgo}分钟前`
     const hoursAgo = Math.floor(minsAgo / 60)
@@ -79,10 +80,7 @@ function generateDynamicNews(): NewsItem[] {
     ...template,
     id: `news-dynamic-${now.getTime()}-${i}`,
     time: generateFreshTime(),
-    priority: (Math.random() > 0.85
-      ? 'critical'
-      : (Math.random() > 0.5 ? template.priority : 'info')
-    ) as 'critical' | 'warning' | 'info'
+    priority: template.priority
   })).sort((a, b) => {
     const order = { critical: 0, warning: 1, info: 2 }
     return order[a.priority] - order[b.priority]
@@ -124,19 +122,9 @@ async function fetchFinancialRSSData(): Promise<{ stocks: Record<string, StockDa
 function generateDynamicStocks(): Record<string, StockData> {
   const dynamicStocks: Record<string, StockData> = {}
   const now = new Date().toISOString()
-  const marketSentiment = (Math.random() - 0.45) * 0.01
   for (const [symbol, baseData] of Object.entries(BASE_STOCK_DATA)) {
-    const volatility = 0.015 + Math.random() * 0.01
-    const sentimentBias = baseData.price * marketSentiment
-    const randomChange = (Math.random() - 0.5) * 2 * volatility * baseData.price
-    const totalChange = randomChange + sentimentBias
-    const newPrice = parseFloat((baseData.price + totalChange).toFixed(2))
-    const changePercent = parseFloat(((totalChange / baseData.price) * 100).toFixed(2))
     dynamicStocks[symbol] = {
       ...baseData,
-      price: newPrice,
-      change: parseFloat(totalChange.toFixed(2)),
-      changePercent,
       timestamp: now
     }
   }
@@ -145,28 +133,16 @@ function generateDynamicStocks(): Record<string, StockData> {
 
 function generateDynamicIndices(): IndustryIndex[] {
   const now = new Date().toISOString()
-  const marketTrend = (Math.random() - 0.4) * 0.015
-  return BASE_INDICES.map(index => {
-    const volatility = 0.01 + Math.random() * 0.01
-    const trendBias = index.value * marketTrend
-    const randomChange = (Math.random() - 0.5) * 2 * volatility * index.value
-    const totalChange = randomChange + trendBias
-    const newValue = parseFloat((index.value + totalChange).toFixed(2))
-    const changePercent = parseFloat(((totalChange / index.value) * 100).toFixed(2))
-    return {
-      ...index,
-      value: newValue,
-      change: parseFloat(totalChange.toFixed(2)),
-      changePercent,
-      timestamp: now
-    }
-  })
+  return BASE_INDICES.map(index => ({
+    ...index,
+    timestamp: now
+  }))
 }
 
 function generateDynamicHotspots(): GlobalHotspot[] {
   const now = new Date()
   const shuffled = [...HOTSPOT_TEMPLATES].sort(() => Math.random() - 0.5)
-  const count = 8 + Math.floor(Math.random() * 5)
+  const count = 8
   const generateFreshTime = (): string => {
     const minsAgo = Math.floor(Math.random() * 180)
     if (minsAgo < 30) return `${minsAgo}分钟前`
@@ -360,29 +336,19 @@ function generateStartupFundingFromNews(news: NewsItem[]): StartupFundingItem[] 
   }))
 }
 
-// 从财经新闻生成金融市场数据
+// 从财经新闻+基准指数生成金融市场数据
 function generateFinancialFromNews(news: NewsItem[]): FinancialMarket[] {
-  const marketNews = news.filter(n => {
-    const text = n.title + (n.summary || '')
-    return /指数|股市|开盘|收盘|涨|跌|美股|港股|纳斯达克|标普|道琼斯|上证|深证|恒生|加息|降息|通胀|央行|美联储|汇率|比特币|黄金|原油|创新高|收涨|收跌/.test(text) || n.category === 'finance'
-  }).slice(0, 10)
-  const hasPositive = marketNews.some(n => /涨|创新高|收涨|突破/.test(n.title))
-  const hasNegative = marketNews.some(n => /跌|收跌|暴跌|下挫/.test(n.title))
-  const direction = hasPositive ? 1 : hasNegative ? -1 : (Math.random() > 0.5 ? 1 : -1)
-  const magnitude = 0.2 + Math.random() * 0.8
-  const gen = (name: string, symbol: string, base: number, type: FinancialMarket['type']): FinancialMarket => {
-    const chg = parseFloat((base * magnitude * 0.01 * direction).toFixed(2))
-    return { name, symbol, value: parseFloat((base + chg).toFixed(2)), change: chg, changePercent: parseFloat((magnitude * direction).toFixed(2)), type }
-  }
+  // 使用 BASE_INDICES 中的真实基准值，不再使用 Math.random
+  const sox = BASE_INDICES.find(i => i.name.includes('费城半导体'))
+  const zhSemi = BASE_INDICES.find(i => i.name.includes('中证半导体'))
+  const autoIdx = BASE_INDICES.find(i => i.name.includes('智能汽车'))
+  const aiIdx = BASE_INDICES.find(i => i.name.includes('AI算力'))
+
   return [
-    gen('纳斯达克', 'IXIC', 18200 + Math.random() * 200, 'index'),
-    gen('标普500', 'SPX', 5200 + Math.random() * 50, 'index'),
-    gen('费城半导体', 'SOX', 4800 + Math.random() * 100, 'index'),
-    gen('中证半导体', 'CSI SEMI', 4200 + Math.random() * 100, 'index'),
-    gen('上证指数', 'SHCOMP', 3250 + Math.random() * 50, 'index'),
-    gen('恒生科技', 'HSTECH', 4200 + Math.random() * 100, 'index'),
-    gen('比特币', 'BTC', 68000 + Math.random() * 5000, 'crypto'),
-    gen('黄金', 'XAU', 2300 + Math.random() * 100, 'commodity'),
+    { name: '费城半导体', symbol: 'SOX', value: sox ? sox.value + sox.change : 4856.32, change: sox?.change || 89.45, changePercent: sox?.changePercent || 1.88, type: 'index' },
+    { name: '中证半导体', symbol: 'CSI SEMI', value: zhSemi ? zhSemi.value + zhSemi.change : 4256.78, change: zhSemi?.change || 95.32, changePercent: zhSemi?.changePercent || 2.29, type: 'index' },
+    { name: '智能汽车', symbol: 'AUTO IDX', value: autoIdx ? autoIdx.value + autoIdx.change : 2892.45, change: autoIdx?.change || 45.32, changePercent: autoIdx?.changePercent || 1.59, type: 'index' },
+    { name: 'AI算力', symbol: 'AI IDX', value: aiIdx ? aiIdx.value + aiIdx.change : 4521.89, change: aiIdx?.change || 156.78, changePercent: aiIdx?.changePercent || 3.59, type: 'index' },
   ]
 }
 
@@ -851,7 +817,7 @@ export function generateTechTrendsFromNews(news: NewsItem[]): TechTrendItem[] {
       name,
       icon: info.icon,
       heat: Math.min(99, normalizedHeat),
-      patents: Math.round(20 + Math.random() * 200),
+      patents: Math.round(20 + rawHeat * 15),
       status: normalizedHeat >= 75 ? 'hot' : normalizedHeat >= 55 ? 'warm' : 'cool'
     }
   })
@@ -1308,4 +1274,168 @@ export async function forceRefreshAll(): Promise<{
   const stocks: Record<string, StockData> = {}
   stocksArr.forEach(s => { stocks[s.symbol] = s })
   return { news, stocks, indices, hotspots }
+}
+
+// ==================== 企业动态生成（从新闻+基准数据派生）====================
+interface CompanyDynamic {
+  name: string
+  ticker: string
+  price: number
+  change: number
+  changePercent: number
+  marketCap: string
+  latestNews: string
+}
+
+// 机器人企业配置
+const ROBOTICS_COMPANIES = [
+  { name: '波士顿动力', tickers: ['Boston Dynamics'], stockKey: '' },
+  { name: '特斯拉Optimus', tickers: ['TSLA', '特斯拉'], stockKey: 'TSLA' },
+  { name: '宇树科技', tickers: ['宇树', 'Unitree'], stockKey: '' },
+  { name: '智元机器人', tickers: ['智元', 'AGIBOT'], stockKey: '' },
+  { name: '傅利叶智能', tickers: ['傅利叶', 'Fourier'], stockKey: '' },
+  { name: 'Agility Robotics', tickers: ['Agility'], stockKey: '' },
+]
+
+const AI_COMPANIES = [
+  { name: '英伟达', tickers: ['NVDA', '英伟达', 'NVIDIA'], stockKey: 'NVDA' },
+  { name: '微软', tickers: ['MSFT', '微软'], stockKey: 'MSFT' },
+  { name: '谷歌', tickers: ['GOOGL', '谷歌', 'Google'], stockKey: 'GOOGL' },
+  { name: 'OpenAI', tickers: ['OpenAI', 'GPT'], stockKey: '' },
+  { name: '百度', tickers: ['BIDU', '百度'], stockKey: '09888.HK' },
+  { name: '商汤科技', tickers: ['0020.HK', '商汤', 'SenseTime'], stockKey: '0020.HK' },
+]
+
+export function generateRoboticsCompaniesFromNews(news: NewsItem[]): CompanyDynamic[] {
+  return ROBOTICS_COMPANIES.map(comp => {
+    const stock = comp.stockKey ? BASE_STOCK_DATA[comp.stockKey] : null
+    const relatedNews = news.filter(n => {
+      const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+      return comp.tickers.some(t => text.toLowerCase().includes(t.toLowerCase()))
+    }).slice(0, 1)
+    return {
+      name: comp.name,
+      ticker: stock?.symbol || '-',
+      price: stock?.price || 0,
+      change: stock?.change || 0,
+      changePercent: stock?.changePercent || 0,
+      marketCap: stock?.marketCap || '-',
+      latestNews: relatedNews[0]?.title.slice(0, 40) || ''
+    }
+  })
+}
+
+export function generateAICompaniesFromNews(news: NewsItem[]): CompanyDynamic[] {
+  return AI_COMPANIES.map(comp => {
+    const stock = comp.stockKey ? BASE_STOCK_DATA[comp.stockKey] : null
+    const relatedNews = news.filter(n => {
+      const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+      return comp.tickers.some(t => text.toLowerCase().includes(t.toLowerCase()))
+    }).slice(0, 1)
+    return {
+      name: comp.name,
+      ticker: stock?.symbol || '-',
+      price: stock?.price || 0,
+      change: stock?.change || 0,
+      changePercent: stock?.changePercent || 0,
+      marketCap: stock?.marketCap || '-',
+      latestNews: relatedNews[0]?.title.slice(0, 40) || ''
+    }
+  })
+}
+
+// 机器人技术关键词
+const ROBOTICS_TECH_KEYWORDS: Record<string, { icon: string; baseHeat: number }> = {
+  '具身智能': { icon: '🧠', baseHeat: 95 },
+  '人形机器人': { icon: '🤖', baseHeat: 93 },
+  '灵巧手': { icon: '🖐️', baseHeat: 82 },
+  '谐波减速器': { icon: '⚙️', baseHeat: 78 },
+  '力控传感器': { icon: '📊', baseHeat: 65 },
+  '视觉伺服': { icon: '👁️', baseHeat: 58 },
+  '丝杠': { icon: '🔧', baseHeat: 60 },
+  '空心杯电机': { icon: '⚡', baseHeat: 55 },
+  '仿生': { icon: '🔬', baseHeat: 70 },
+  '机器人': { icon: '🤖', baseHeat: 50 },
+}
+
+// AI技术关键词
+const AI_TECH_KEYWORDS: Record<string, { icon: string; baseHeat: number }> = {
+  '大语言模型': { icon: '📚', baseHeat: 98 },
+  '大模型': { icon: '📚', baseHeat: 96 },
+  'LLM': { icon: '📚', baseHeat: 94 },
+  'GPT': { icon: '📚', baseHeat: 92 },
+  '多模态': { icon: '🎨', baseHeat: 92 },
+  'AI Agent': { icon: '🤖', baseHeat: 88 },
+  '端侧推理': { icon: '📱', baseHeat: 75 },
+  '端侧AI': { icon: '📱', baseHeat: 76 },
+  'RAG': { icon: '🔍', baseHeat: 68 },
+  'Sora': { icon: '🎬', baseHeat: 72 },
+  '强化学习': { icon: '🎯', baseHeat: 65 },
+  'Transformer': { icon: '⚡', baseHeat: 70 },
+}
+
+export function generateRoboticsTechFromNews(news: NewsItem[]): TechTrendItem[] {
+  const counts: Record<string, number> = {}
+  news.forEach(n => {
+    const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+    Object.keys(ROBOTICS_TECH_KEYWORDS).forEach(kw => {
+      if (text.includes(kw.toLowerCase())) {
+        counts[kw] = (counts[kw] || 0) + (n.priority === 'critical' ? 3 : n.priority === 'warning' ? 2 : 1)
+      }
+    })
+  })
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5)
+  if (sorted.length < 2) {
+    return [
+      { name: '具身智能', icon: '🧠', heat: 95, patents: 156, status: 'hot' },
+      { name: '灵巧手', icon: '🖐️', heat: 82, patents: 89, status: 'hot' },
+      { name: '谐波减速器', icon: '⚙️', heat: 78, patents: 124, status: 'hot' },
+      { name: '力控传感器', icon: '📊', heat: 65, patents: 67, status: 'warm' },
+      { name: '视觉伺服', icon: '👁️', heat: 58, patents: 45, status: 'warm' },
+    ]
+  }
+  const max = sorted[0][1]
+  return sorted.map(([name, count]) => {
+    const info = ROBOTICS_TECH_KEYWORDS[name] || { icon: '⚡', baseHeat: 60 }
+    return {
+      name,
+      icon: info.icon,
+      heat: Math.min(99, Math.round((count / max) * 30 + info.baseHeat * 0.7)),
+      patents: Math.round(20 + count * 18),
+      status: count >= max * 0.7 ? 'hot' : count >= max * 0.4 ? 'warm' : 'cool'
+    }
+  })
+}
+
+export function generateAITechFromNews(news: NewsItem[]): TechTrendItem[] {
+  const counts: Record<string, number> = {}
+  news.forEach(n => {
+    const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+    Object.keys(AI_TECH_KEYWORDS).forEach(kw => {
+      if (text.includes(kw.toLowerCase())) {
+        counts[kw] = (counts[kw] || 0) + (n.priority === 'critical' ? 3 : n.priority === 'warning' ? 2 : 1)
+      }
+    })
+  })
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5)
+  if (sorted.length < 2) {
+    return [
+      { name: '大语言模型', icon: '📚', heat: 98, patents: 523, status: 'hot' },
+      { name: '多模态AI', icon: '🎨', heat: 92, patents: 312, status: 'hot' },
+      { name: 'AI Agent', icon: '🤖', heat: 88, patents: 189, status: 'hot' },
+      { name: '端侧推理', icon: '📱', heat: 75, patents: 156, status: 'warm' },
+      { name: 'RAG技术', icon: '🔍', heat: 68, patents: 98, status: 'warm' },
+    ]
+  }
+  const max = sorted[0][1]
+  return sorted.map(([name, count]) => {
+    const info = AI_TECH_KEYWORDS[name] || { icon: '⚡', baseHeat: 60 }
+    return {
+      name,
+      icon: info.icon,
+      heat: Math.min(99, Math.round((count / max) * 30 + info.baseHeat * 0.7)),
+      patents: Math.round(20 + count * 18),
+      status: count >= max * 0.7 ? 'hot' : count >= max * 0.4 ? 'warm' : 'cool'
+    }
+  })
 }

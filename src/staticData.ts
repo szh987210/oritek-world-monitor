@@ -145,6 +145,15 @@ export const EXTENDED_NEWS_SOURCES: Array<{
   { name: 'SupplyChainBrain', url: 'https://www.supplychainbrain.com/rss/', category: 'supply', industry: 'all' },
   // 政策动态
   { name: '工信部公告', url: 'https://rsshub.feeddd.org/https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=925fa8f4afd44e53818794ed96d9876e,30f92eeafcfd4685984dfb793a2c5fff', category: 'policy', industry: 'all' },
+  // AI洞察（专项源）
+  { name: '机器之心-AI', url: 'https://www.jiqizhixin.com/rss', category: 'ai', industry: 'ai' },
+  { name: '虎嗅-AI', url: 'https://www.huxiu.com/rss/0.xml', category: 'ai', industry: 'ai' },
+  { name: 'NVIDIA Blog', url: 'https://blogs.nvidia.com/feed/', category: 'ai', industry: 'ai' },
+  { name: 'TechCrunch-AI', url: 'https://techcrunch.com/category/artificial-intelligence/feed/', category: 'ai', industry: 'ai' },
+  // VC融资（专项源）
+  { name: '36氪-创投', url: 'https://36kr.com/feed', category: 'finance', industry: 'all' },
+  { name: '投中网', url: 'https://www.chinaventure.com.cn/rss/', category: 'finance', industry: 'all' },
+  { name: '猎云网', url: 'https://lieyun.pro/feed/', category: 'finance', industry: 'all' },
 ]
 
 // ==================== 财经RSS源 ====================
