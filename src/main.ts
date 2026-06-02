@@ -31,7 +31,11 @@ import {
   generateRoboticsCompaniesFromNews,
   generateAICompaniesFromNews,
   generateRoboticsTechFromNews,
-  generateAITechFromNews
+  generateAITechFromNews,
+  getSourceHealthStats,
+  runHealthCheck,
+  getAllSourceScores,
+  type RssSourceHealth,
 } from './dataService'
 Chart.register(...registerables)
 
@@ -164,14 +168,25 @@ async function performFullRefresh() {
       competitors = marketPerformance
     }
     
-    // 9. 科技动态热度更新（基于真实新闻）
+    // 9. 科技动态热度更新（基于真实新闻来源权重，不再使用 Math.random）
+    // 来源权重表：知名来源热度更高
+    const sourceWeight: Record<string, number> = {
+      'Digitimes': 3, 'NVIDIA': 3, 'TSMC': 3, '台积电': 3, 'Tesla': 3, '特斯拉': 3,
+      'TechCrunch': 2, 'The Verge': 2, 'Ars Technica': 2, 'BBC': 2, 'CNN': 2,
+      'Semi Engineering': 2, 'EE Times': 2, 'Semiconductor Today': 2,
+      '36氪': 1, 'SemiWiki': 1, 'Evertiq': 1, 'The Robot Report': 1, 'Semi Digest': 1
+    }
     const now = new Date()
     const minuteSeed = now.getMinutes()
-    techNews = techNews.map((news, i) => ({
-      ...news,
-      heat: Math.max(50, Math.min(99, news.heat + Math.floor((Math.random() - 0.5) * 10))),
-      time: `${minuteSeed + i * 15}分钟前`
-    }))
+    techNews = techNews.map((news, i) => {
+      const weight = sourceWeight[news.source] || 1
+      const heatAdjustment = (weight * 3) + ((minuteSeed + i) % 7) - 3
+      return {
+        ...news,
+        heat: Math.max(50, Math.min(99, news.heat + heatAdjustment)),
+        time: `${minuteSeed + i * 15}分钟前`
+      }
+    })
 
     // 9. 公司新闻（联网抓取）
     try {
@@ -183,6 +198,38 @@ async function performFullRefresh() {
     } catch (e) {
       console.warn('[performFullRefresh] 公司新闻刷新失败:', e)
     }
+
+    // 10. 从新闻动态派生技术趋势、供应链、政策、申报数据 (P2-3)
+    if (newsData.length > 0) {
+      const freshTechTrends = generateTechTrendsFromNews(newsData)
+      if (freshTechTrends.length > 0) techTrends = freshTechTrends
+
+      const freshSupply = generateSupplyChainFromNews(newsData)
+      if (freshSupply.length > 0) supplyChain = freshSupply
+
+      const freshPolicies = generatePoliciesFromNews(newsData)
+      if (freshPolicies.length > 0) policies = freshPolicies
+
+      const freshApplications = generatePolicyApplicationsFromNews(newsData)
+      if (freshApplications.length > 0) policyApplications = freshApplications
+
+      const freshRobotics = generateRoboticsCompaniesFromNews(newsData)
+      if (freshRobotics.length > 0) roboticsCompanies = freshRobotics
+
+      const freshAI = generateAICompaniesFromNews(newsData)
+      if (freshAI.length > 0) aiCompanies = freshAI
+
+      const freshRoboticsTech = generateRoboticsTechFromNews(newsData)
+      if (freshRoboticsTech.length > 0) roboticsTech = freshRoboticsTech
+
+      const freshAITech = generateAITechFromNews(newsData)
+      if (freshAITech.length > 0) aiTech = freshAITech
+
+      console.log('[performFullRefresh] 派生数据: 技术趋势', freshTechTrends.length, '供应链', freshSupply.length, '政策', freshPolicies.length, '申报', freshApplications.length)
+    }
+
+    // 11. RSS源健康统计更新 (P2-2)
+    sourceHealthStats = getSourceHealthStats()
 
     // 重置地图渲染状态（不重置地图数据缓存）
     isMapRendering = false
@@ -361,6 +408,56 @@ style.textContent = `
   .continent-path:hover, .country-path:hover {
     fill: rgba(40, 60, 90, 0.95) !important;
   }
+
+  /* ========== 数据来源标注徽章 (P2-3) ========== */
+  .data-source-badge {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .data-source-badge.live {
+    background: rgba(0, 212, 255, 0.15);
+    color: #00d4ff;
+  }
+  .data-source-badge.base {
+    background: rgba(255, 149, 0, 0.15);
+    color: #ff9500;
+  }
+
+  /* ========== 数据源健康面板 ========== */
+  .health-panel {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .health-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 10px;
+  }
+  .health-indicator.good { background: rgba(0, 200, 100, 0.12); color: #00c864; }
+  .health-indicator.warn { background: rgba(255, 149, 0, 0.12); color: #ff9500; }
+  .health-indicator.bad  { background: rgba(255, 50, 50, 0.12); color: #ff3250; }
+
+  /* ========== 来源验证标记 (P2-5) ========== */
+  .verify-badge {
+    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-left: 2px;
+  }
+  .verify-badge.fail {
+    background: rgba(255, 50, 50, 0.12);
+    color: #ff3250;
+  }
 `
 document.head.appendChild(style)
 
@@ -414,13 +511,11 @@ interface TechTrend {
   status: 'hot' | 'warm' | 'cool'
 }
 
-let techTrends: TechTrend[] = [
-  { name: '端到端大模型', icon: '🧠', heat: 92, patents: 234, status: 'hot' },
-  { name: '纯视觉方案', icon: '👁️', heat: 78, patents: 156, status: 'hot' },
-  { name: '4D 毫米波雷达', icon: '📡', heat: 65, patents: 89, status: 'warm' },
-  { name: 'Chiplet 架构', icon: '🔲', heat: 58, patents: 67, status: 'warm' },
-  { name: '固态激光雷达', icon: '🔦', heat: 45, patents: 34, status: 'cool' }
-]
+// 全局数据源健康状态
+let sourceHealthStats: RssSourceHealth[] = []
+
+// 技术趋势数据（从新闻动态分析派生，初始为空）
+let techTrends: TechTrend[] = []
 
 // 供应链数据（从新闻分析供应链状况）
 interface SupplyItem {
@@ -430,13 +525,8 @@ interface SupplyItem {
   trend: number
 }
 
-let supplyChain: SupplyItem[] = [
-  { name: '先进制程晶圆', region: '台湾/韩国', status: 'critical', trend: 35 },
-  { name: 'HBM 高带宽存储', region: '韩国', status: 'warning', trend: 28 },
-  { name: '高端光刻胶', region: '日本', status: 'warning', trend: 25 },
-  { name: '车规级 MCU', region: '中国/欧洲', status: 'normal', trend: -5 },
-  { name: '功率半导体', region: '中国/欧洲', status: 'normal', trend: 8 }
-]
+// 供应链数据（从新闻动态分析派生，初始为空）
+let supplyChain: SupplyItem[] = []
 
 // 合规政策数据（从政策RSS新闻派生）
 interface PolicyItem {
@@ -446,11 +536,8 @@ interface PolicyItem {
   urgent: boolean
 }
 
-let policies: PolicyItem[] = [
-  { date: '2026-05-12', title: '国务院促进人工智能产业高质量发展若干措施', description: '明确AI芯片、大模型等关键领域扶持路径，首批试点城市9个', urgent: true },
-  { date: '2026-05-08', title: '工信部启动第四批专精特新"小巨人"评选', description: '半导体设备/材料/EDA领域企业优先入围，申报截止6月30日', urgent: false },
-  { date: '2026-05-01', title: '大基金三期半导体装备专项开始受理申请', description: '重点支持光刻机、刻蚀机、薄膜沉积设备国产替代项目', urgent: false }
-]
+// 合规政策数据（从RSS新闻动态派生，初始为空）
+let policies: PolicyItem[] = []
 
 // AI洞察数据
 let aiInsights: AIInsight[] = []
@@ -478,12 +565,9 @@ interface TechNews {
   heat: number
 }
 
-let techNews: TechNews[] = [
-  { id: '1', title: '台积电 2nm 工艺良率突破 60%', category: 'chip', time: '3小时前', source: 'Digitimes', heat: 95 },
-  { id: '2', title: '特斯拉 FSD V13 开始推送', category: 'auto', time: '5小时前', source: 'Tesla', heat: 88 },
-  { id: '3', title: 'Figure AI 发布新一代人形机器人', category: 'robotics', time: '昨天', source: 'Figure', heat: 82 },
-  { id: '5', title: 'AWS 推出 Trainium3 训练芯片', category: 'cloud', time: '昨天', source: 'AWS', heat: 75 }
-]
+// 科技动态数据（从真实新闻派生，初始为空，首次渲染后由数据服务填充）
+// 已清除硬编码默认值：不再使用假数据作为页面初始状态
+let techNews: TechNews[] = []
 
 // 公司新闻数据
 let companyNews: CompanyNews[] = []
@@ -492,15 +576,8 @@ let companyNews: CompanyNews[] = []
 let _currentTooltipSpotId: string | null = null
 let _tooltipTimeout: number | null = null
 
-// 金融市场数据（暂时保留硬编码，真实股票API需要付费）
-let financialMarkets: FinancialMarket[] = [
-  { name: '纳斯达克', symbol: 'IXIC', value: 18285.32, change: 125.45, changePercent: 0.69, type: 'index' },
-  { name: '费城半导体', symbol: 'SOX', value: 4856.78, change: 68.92, changePercent: 1.44, type: 'index' },
-  { name: '上证指数', symbol: '000001', value: 3285.65, change: -12.35, changePercent: -0.37, type: 'index' },
-  { name: '恒生科技', symbol: 'HSTECH', value: 4256.89, change: 85.23, changePercent: 2.04, type: 'index' },
-  { name: '比特币', symbol: 'BTC', value: 68542, change: 1250, changePercent: 1.86, type: 'crypto' },
-  { name: '黄金', symbol: 'XAU', value: 2185.30, change: 12.50, changePercent: 0.57, type: 'commodity' }
-]
+// 金融市场数据（从新闻+基准指数动态派生，初始为空）
+let financialMarkets: FinancialMarket[] = []
 
 // 企业动态数据（从新闻+基准股价派生）
 interface CompanyDynamic {
@@ -532,14 +609,8 @@ interface PolicyApplication {
   status: 'open' | 'closing' | 'closed'
 }
 
-let policyApplications: PolicyApplication[] = [
-  { id: '1', title: '2026年智能网联汽车创新专项申报（第二批）', department: '工信部', region: '全国', sector: 'auto', deadline: '2026-06-30', amount: '最高5000万', status: 'open' },
-  { id: '2', title: '集成电路产业高质量发展专项资金（2026年度）', department: '发改委', region: '全国', sector: 'chip', deadline: '2026-06-15', amount: '最高1亿', status: 'open' },
-  { id: '3', title: '人形机器人关键技术攻关项目（第二轮）', department: '科技部', region: '全国', sector: 'robotics', deadline: '2026-06-08', amount: '最高3000万', status: 'closing' },
-  { id: '4', title: '深圳市人工智能产业扶持计划（2026年第二批）', department: '深圳市工信局', region: '深圳', sector: 'ai', deadline: '2026-07-15', amount: '最高2000万', status: 'open' },
-  { id: '5', title: '广东省新能源汽车产业集群配套零部件项目', department: '广东省发改委', region: '广东', sector: 'auto', deadline: '2026-07-01', amount: '最高8000万', status: 'open' },
-  { id: '6', title: '上海市集成电路设计企业研发费用加计扣除专项', department: '上海市科委', region: '上海', sector: 'chip', deadline: '2026-06-20', amount: '最高5000万', status: 'open' }
-]
+// 政策申报数据（从RSS新闻动态派生，初始为空）
+let policyApplications: PolicyApplication[] = []
 
 // 全球热点数据
 let globalHotspots: GlobalHotspot[] = []
@@ -603,7 +674,7 @@ function renderSkeleton(): string {
       <div class="card-header">
         <div class="card-title">
           <div class="card-title-icon skeleton" style="width:20px;height:20px;border-radius:4px;"></div>
-          <div class="skeleton" style="width:${60 + Math.random() * 40}px;height:14px;border-radius:4px;"></div>
+          <div class="skeleton" style="width:80px;height:14px;border-radius:4px;"></div>
         </div>
       </div>
       <div class="card-body" style="display:flex;flex-direction:column;gap:8px;">
@@ -702,6 +773,23 @@ function renderSkeleton(): string {
 
 // ==================== 组件渲染函数 ====================
 
+// 渲染数据源健康状态指示器 (P2-2)
+function renderHealthIndicator(): string {
+  if (sourceHealthStats.length === 0) return '<span class="health-indicator warn">📡 健康检查中...</span>'
+  const total = sourceHealthStats.length
+  const active = sourceHealthStats.filter(s => s.active).length
+  const ratio = total > 0 ? active / total : 0
+  const cls = ratio >= 0.8 ? 'good' : ratio >= 0.5 ? 'warn' : 'bad'
+  
+  // P2-4: 计算平均可信度评分
+  const scores = getAllSourceScores()
+  const avgComposite = scores.length > 0 ? Math.round(scores.reduce((a, s) => a + s.composite, 0) / scores.length) : 0
+  const credCls = avgComposite >= 80 ? 'good' : avgComposite >= 60 ? 'warn' : 'bad'
+  
+  return `<span class="health-indicator ${cls}" title="RSS源: ${active}/${total} 活跃 | 平均可信度: ${avgComposite}/100">📡 ${active}/${total}</span>
+    <span class="health-indicator ${credCls}" title="RSS来源平均综合评分: ${avgComposite}/100">⭐ ${avgComposite}</span>`
+}
+
 function renderHeader(): string {
   return `
     <header class="header">
@@ -728,6 +816,9 @@ function renderHeader(): string {
           <span class="status-text">${isOnline ? 'LIVE' : '离线'}</span>
         </div>
         <div class="last-update">${lastNetworkError ? `<span class="update-error" title="${lastNetworkError}">⚠️ 更新失败</span>` : `更新于 ${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`}</div>
+        <div class="health-panel" id="healthPanel" title="RSS数据源健康状态">
+          ${renderHealthIndicator()}
+        </div>
         <button class="header-btn refresh-btn" id="refreshBtn" title="手动刷新">🔄</button>
       </div>
     </header>
@@ -1256,18 +1347,9 @@ function renderHotspotMarkers(svg: any, projection: any, WIDTH = 1600, HEIGHT = 
   console.log(`✅ Hotspot markers rendered: ${hotspotsToRender.filter(s => hotspotCoordinates[s.region]).length} points`)
 }
 
-// 热点数据默认模板（兜底用）
+// 热点数据默认模板（已清空：不再使用硬编码假数据）
 function getDefaultHotspots(): GlobalHotspot[] {
-  return [
-    { id: '1', title: '美国对华半导体出口管制再度升级', region: '美国',   category: 'policy',  impact: 'high',   time: '2小时前', summary: '新规将影响先进制程设备出口' },
-    { id: '2', title: '台积电先进制程产能持续紧张',     region: '中国台湾', category: 'tech',    impact: 'high',   time: '4小时前', summary: '3nm 订单已排至 2026 年底' },
-    { id: '3', title: '欧盟芯片法案补贴计划首批落地',   region: '欧洲',     category: 'policy',  impact: 'medium', time: '6小时前', summary: '430 亿欧元支持本土芯片制造' },
-    { id: '4', title: '中国新能源汽车出口高速增长',     region: '中国',     category: 'economy', impact: 'medium', time: '3小时前', summary: 'Q1 出口同比增长 45%' },
-    { id: '5', title: '日本扩大半导体设备对华出口限制', region: '日本',     category: 'policy',  impact: 'high',   time: '8小时前', summary: '涉及 23 种先进半导体制造设备' },
-    { id: '6', title: '韩国三星先进制程良率持续提升',   region: '韩国',     category: 'tech',    impact: 'medium', time: '10小时前', summary: '3nm GAA 工艺良率已超 60%' },
-    { id: '7', title: '中东主权基金大举投资芯片产业',   region: '中东',     category: 'economy', impact: 'medium', time: '12小时前', summary: '沙特阿美联合筹建中东首家先进晶圆厂' },
-    { id: '8', title: '印度半导体激励政策吸引多家厂商', region: '印度',     category: 'economy', impact: 'medium', time: '5小时前',  summary: '塔塔集团与 PSMC 合作建厂' },
-  ]
+  return []
 }
 
 // 渲染简化版地图（支持投影参数）
@@ -1399,6 +1481,7 @@ function renderNewsCompact(industry: NewsIndustry = 'all'): string {
                   ${isAllIndustry ? `<span class="news-tag industry-tag ${indInfo.cls}">${indInfo.icon} ${indInfo.label}</span>` : ''}
                   <span class="news-tag ${news.category}">${catLabel}</span>
                   <span class="news-source">${news.source}</span>
+                  ${news.verified === false ? '<span class="verify-badge fail" title="内容来源验证未通过">⚠️ 未验证</span>' : ''}
                 </div>
               </div>
             </div>`
@@ -1428,14 +1511,8 @@ function renderNewsCompact(industry: NewsIndustry = 'all'): string {
 }
 
 function renderAlertCompact(): string {
-  // 风险预警兜底内容（当RSS数据不足时使用）
-  const fallbackAlerts = [
-    { id: 'f1', title: '美国AI芯片出口管制新规持续收紧', description: 'H20/A800等产品对华管制范围持续扩大', level: 'critical' as const, icon: '🚨', time: '持续' },
-    { id: 'f2', title: 'ASML光刻机出口许可审查周期延长', description: 'DUV设备审批从3个月延至6个月', level: 'warning' as const, icon: '⚠️', time: '本月' },
-    { id: 'f3', title: 'HBM存储芯片供应持续紧张', description: 'SK海力士/三星HBM产能优先供英伟达', level: 'warning' as const, icon: '⚠️', time: '持续' },
-    { id: 'f4', title: '车规MCU认证周期延长至24个月', description: 'ISO26262功能安全要求趋严，新玩家进入门槛提升', level: 'info' as const, icon: '📋', time: '持续' }
-  ]
-  const displayAlerts = alertData.length >= 2 ? alertData.slice(0, 4) : fallbackAlerts
+  // 无数据时显示加载状态，不再使用假警报数据
+  const displayAlerts = alertData.length >= 2 ? alertData.slice(0, 4) : []
   return `
     <div class="card compact">
       <div class="card-header">
@@ -1446,7 +1523,7 @@ function renderAlertCompact(): string {
       </div>
       <div class="card-body">
         <div class="alert-list compact">
-          ${displayAlerts.map(alert => `
+          ${displayAlerts.length > 0 ? displayAlerts.map(alert => `
             <div class="alert-item ${alert.level}">
               <div class="alert-icon">${alert.icon}</div>
               <div class="alert-content">
@@ -1454,7 +1531,13 @@ function renderAlertCompact(): string {
                 <div class="alert-desc">${alert.description || ''}</div>
               </div>
             </div>
-          `).join('')}
+          `).join('') : `<div class="alert-item info">
+            <div class="alert-icon">⏳</div>
+            <div class="alert-content">
+              <div class="alert-title">数据加载中...</div>
+              <div class="alert-desc">正在从RSS源获取最新警报数据</div>
+            </div>
+          </div>`}
         </div>
       </div>
     </div>
@@ -1501,11 +1584,12 @@ function renderTechRadarCompact(): string {
         <div class="card-title">
           <div class="card-title-icon">🔬</div>
           <span>技术雷达</span>
+          <span class="data-source-badge ${techTrends.length > 0 ? 'live' : 'base'}">${techTrends.length > 0 ? '实时' : '加载中'}</span>
         </div>
       </div>
       <div class="card-body">
         <div class="tech-list">
-          ${techTrends.slice(0, 4).map(tech => `
+          ${techTrends.length > 0 ? techTrends.slice(0, 4).map(tech => `
             <div class="tech-mini">
               <div class="tech-icon">${tech.icon}</div>
               <div class="tech-info">
@@ -1514,7 +1598,9 @@ function renderTechRadarCompact(): string {
               </div>
               <div class="tech-count">${tech.patents}</div>
             </div>
-          `).join('')}
+          `).join('') : `<div class="tech-mini" style="justify-content:center;padding:12px;">
+            <span style="color:var(--text-muted);font-size:13px;">⏳ 正在从新闻动态分析技术趋势...</span>
+          </div>`}
         </div>
       </div>
     </div>
@@ -1528,11 +1614,12 @@ function renderSupplyChainCompact(): string {
         <div class="card-title">
           <div class="card-title-icon">🔗</div>
           <span>供应链</span>
+          <span class="data-source-badge ${supplyChain.length > 0 ? 'live' : 'base'}">${supplyChain.length > 0 ? '实时' : '加载中'}</span>
         </div>
       </div>
       <div class="card-body">
         <div class="supply-list compact">
-          ${supplyChain.slice(0, 4).map(item => `
+          ${supplyChain.length > 0 ? supplyChain.slice(0, 4).map(item => `
             <div class="supply-item">
               <div class="supply-status ${item.status}"></div>
               <div class="supply-info">
@@ -1543,7 +1630,7 @@ function renderSupplyChainCompact(): string {
                 ${item.trend > 0 ? '↑' : '↓'} ${Math.abs(item.trend)}%
               </div>
             </div>
-          `).join('')}
+          `).join('') : `<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:13px;">⏳ 正在从新闻动态分析供应链状态...</div>`}
         </div>
       </div>
     </div>
@@ -1551,13 +1638,6 @@ function renderSupplyChainCompact(): string {
 }
 
 function renderPolicyCompact(): string {
-  // 兜底政策数据（当RSS联动数据为空时使用，日期更新为2026-05）
-  const fallbackPolicies = [
-    { date: '2026-05-12', title: '国务院发布《促进人工智能产业高质量发展若干措施》', description: '明确AI芯片、大模型等关键领域扶持路径，首批试点城市9个', urgent: true },
-    { date: '2026-05-08', title: '工信部启动第四批专精特新"小巨人"评选', description: '半导体设备/材料/EDA等领域企业优先入围，申报截止6月30日', urgent: false },
-    { date: '2026-05-01', title: '大基金三期半导体装备专项开始受理申请', description: '重点支持光刻机、刻蚀机、薄膜沉积设备国产替代项目', urgent: false }
-  ]
-  const displayPolicies = policies.length >= 2 ? policies.slice(0, 3) : fallbackPolicies
   return `
     <div class="card compact">
       <div class="card-header">
@@ -1568,7 +1648,7 @@ function renderPolicyCompact(): string {
       </div>
       <div class="card-body">
         <div class="timeline compact">
-          ${displayPolicies.map(policy => `
+          ${policies.length >= 2 ? policies.slice(0, 3).map(policy => `
             <div class="timeline-item ${policy.urgent ? 'urgent' : ''}">
               <div class="timeline-dot"></div>
               <div class="timeline-content">
@@ -1577,7 +1657,14 @@ function renderPolicyCompact(): string {
                 <div class="timeline-date">${policy.date}</div>
               </div>
             </div>
-          `).join('')}
+          `).join('') : `<div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">⏳ 数据加载中...</div>
+              <div class="timeline-desc">正在从RSS源获取最新政策动态</div>
+              <div class="timeline-date">${new Date().toISOString().slice(0, 10)}</div>
+            </div>
+          </div>`}
         </div>
       </div>
     </div>
@@ -1624,18 +1711,7 @@ function renderCompanyNewsCompact(): string {
     finance: '融资',
     partner: '合作'
   }
-  // 2026年4-5月真实媒体报道（无兜底假数据）- 多来源覆盖
-  const fallbackCompanyNews = [
-    { id: 'fc1', title: '工布565完成2026北京车展全球首发，定位「区域智能中枢」', category: 'product' as const, time: '4月25日', source: '中关村在线' },
-    { id: 'fc2', title: '欧冶携手福瑞泰克、紫光展锐发布"福芯一号"普惠级5G舱行泊方案', category: 'partner' as const, time: '4月25日', source: '腾讯新闻' },
-    { id: 'fc3', title: '欧冶半导体携"中央+区域"全栈解决方案亮相2026北京车展', category: 'event' as const, time: '4月28日', source: '新浪科技' },
-    { id: 'fc4', title: '欧冶半导体发布工布565区域控制器芯片及LBS激光投影车灯方案', category: 'product' as const, time: '4月29日', source: '电子工程世界' },
-    { id: 'fc5', title: '欧冶半导体完成数亿元C轮融资，加速Everything+AI战略布局', category: 'finance' as const, time: '5月6日', source: '新浪财经' },
-    { id: 'fc6', title: '华为系芯片公司4年融资数十亿，欧冶半导体以统一芯片平台撬动市场', category: 'finance' as const, time: '5月7日', source: 'MSN中国' },
-    { id: 'fc7', title: '"福芯一号"让国产舱驾方案触手可及，主流家用车型迎全面升级', category: 'product' as const, time: '4月29日', source: '网易汽车' },
-    { id: 'fc8', title: '欧冶半导体C轮融资落地，车端AI芯片进入量产考场', category: 'finance' as const, time: '5月7日', source: '腾讯新闻' },
-  ]
-  const displayNews = companyNews.length >= 2 ? companyNews.slice(0, 6) : fallbackCompanyNews
+  const displayNews = companyNews.slice(0, 8)
 
   // 渲染单条新闻（用于静态展示和滚动轨道）
   const renderNewsItem = (news: any) => `
@@ -1651,7 +1727,7 @@ function renderCompanyNewsCompact(): string {
       </div>
     </div>`
 
-  // 全部垂直滚动（新闻数量少时用此模式）
+  // 全部垂直滚动
   return `
     <div class="card compact">
       <div class="card-header">
@@ -1663,7 +1739,15 @@ function renderCompanyNewsCompact(): string {
       <div class="card-body">
         <div class="company-news-marquee-wrap">
           <div class="company-news-track">
-            ${[...displayNews, ...displayNews].map(renderNewsItem).join('')}
+            ${displayNews.length > 0
+              ? [...displayNews, ...displayNews].map(renderNewsItem).join('')
+              : `<div class="company-news-item">
+                <div class="company-news-icon">⏳</div>
+                <div class="company-news-content">
+                  <div class="company-news-title">数据加载中，正在从Google News获取欧冶半导体最新动态...</div>
+                  <div class="company-news-meta"><span>系统</span><span>${new Date().toLocaleDateString()}</span></div>
+                </div>
+              </div>`}
           </div>
         </div>
       </div>
@@ -1742,14 +1826,22 @@ function renderTechNewsCompact(): string {
     cloud: '云计算',
     ai: 'AI'
   }
-  // 兜底：当前2026年5月重要科技动态
-  const fallbackTechNews = [
-    { id: 't1', title: 'TSMC 2nm量产良率突破65%，AI芯片订单爆满', category: 'chip' as const, time: '2天前', source: 'Digitimes', heat: 96 },
-    { id: 't2', title: '英伟达GB300发布，推理性能较上代提升4倍', category: 'ai' as const, time: '3天前', source: 'AnandTech', heat: 94 },
-    { id: 't3', title: '特斯拉FSD V13全球推送，端到端接管率再降50%', category: 'auto' as const, time: '1周前', source: '电动势', heat: 88 },
-    { id: 't4', title: '宇树科技人形机器人H1 Pro完成首条产线部署', category: 'robotics' as const, time: '4天前', source: '机器之心', heat: 82 }
-  ]
-  const displayTech = techNews.length >= 2 ? techNews.slice(0, 4) : fallbackTechNews
+  const displayTech = techNews.slice(0, 4)
+  const renderLoadingItem = () => `
+            <div class="tech-news-item">
+              <div class="tech-news-icon">⏳</div>
+              <div class="tech-news-content">
+                <div class="tech-news-title">数据加载中，正在从RSS源获取最新科技动态...</div>
+                <div class="tech-news-meta">
+                  <span>系统</span>
+                  <span>${new Date().toLocaleDateString()}</span>
+                </div>
+              </div>
+              <div class="tech-news-heat">
+                <div class="heat-bar" style="width: 0%"></div>
+                <span>--</span>
+              </div>
+            </div>`
   return `
     <div class="card compact">
       <div class="card-header">
@@ -1760,7 +1852,7 @@ function renderTechNewsCompact(): string {
       </div>
       <div class="card-body">
         <div class="tech-news-list">
-          ${displayTech.map(news => `
+          ${displayTech.length > 0 ? displayTech.map(news => `
             <div class="tech-news-item">
               <div class="tech-news-icon">${categoryIcons[news.category] || '📡'}</div>
               <div class="tech-news-content">
@@ -1776,7 +1868,7 @@ function renderTechNewsCompact(): string {
                 <span>${news.heat}</span>
               </div>
             </div>
-          `).join('')}
+          `).join('') : renderLoadingItem()}
         </div>
       </div>
     </div>
@@ -1790,11 +1882,12 @@ function renderFinancialMarketsCompact(): string {
         <div class="card-title">
           <div class="card-title-icon">💹</div>
           <span>金融</span>
+          <span class="data-source-badge ${financialMarkets.length > 0 ? 'live' : 'base'}">${financialMarkets.length > 0 ? '派生' : '加载中'}</span>
         </div>
       </div>
       <div class="card-body">
         <div class="financial-list">
-          ${financialMarkets.slice(0, 6).map(market => `
+          ${financialMarkets.length > 0 ? financialMarkets.slice(0, 6).map(market => `
             <div class="financial-item">
               <div class="financial-info">
                 <div class="financial-name">${market.name}</div>
@@ -1807,7 +1900,7 @@ function renderFinancialMarketsCompact(): string {
                 ${market.change >= 0 ? '+' : ''}${market.changePercent.toFixed(2)}%
               </div>
             </div>
-          `).join('')}
+          `).join('') : `<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:13px;">⏳ 正在从基准指数派生金融数据...</div>`}
         </div>
       </div>
     </div>
@@ -1832,11 +1925,12 @@ function renderPolicyApplicationsWide(): string {
         <div class="card-title">
           <div class="card-title-icon">📋</div>
           <span>政策申报</span>
+          <span class="data-source-badge ${policyApplications.length > 0 ? 'live' : 'base'}">${policyApplications.length > 0 ? '实时' : '加载中'}</span>
         </div>
       </div>
       <div class="card-body">
         <div class="policy-wide-list">
-          ${policyApplications.slice(0, 4).map(app => `
+          ${policyApplications.length > 0 ? policyApplications.slice(0, 4).map(app => `
             <div class="policy-wide-item ${app.status}">
               <div class="policy-wide-left">
                 <span class="policy-wide-icon">${sectorIcons[app.sector]}</span>
@@ -1851,7 +1945,7 @@ function renderPolicyApplicationsWide(): string {
                 <span class="policy-wide-status">${statusLabels[app.status]}</span>
               </div>
             </div>
-          `).join('')}
+          `).join('') : `<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:13px;">⏳ 正在从政策新闻动态提取申报信息...</div>`}
         </div>
       </div>
     </div>
@@ -2652,6 +2746,14 @@ async function init() {
       
       startAutoRefresh()
       console.log('Auto refresh started (5 minutes interval)')
+
+      // 异步执行RSS源健康检查（不阻塞页面加载）
+      runHealthCheck().then(stats => {
+        sourceHealthStats = stats
+        // 健康检查完成后刷新header中的指示器
+        const hp = document.getElementById('healthPanel')
+        if (hp) hp.innerHTML = renderHealthIndicator()
+      }).catch(e => console.warn('[init] 健康检查失败:', e))
 
       // 延迟渲染地图，等待骨架屏移除后 DOM 稳定
       requestAnimationFrame(() => {

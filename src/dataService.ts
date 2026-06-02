@@ -25,6 +25,8 @@ import {
   NEWS_TEMPLATES,
   HOTSPOT_TEMPLATES,
   HOTSPOT_COORDINATES,
+  // P2-4: 来源可信度评分
+  SOURCE_CREDIBILITY,
 } from './staticData'
 
 // 重新导出（兼容原有导出接口）
@@ -42,6 +44,264 @@ function escapeHtml(str: string): string {
     .replace(/'/g, '&#39;')
 }
 
+// ==================== RSS 抓取层级降级策略 ====================
+// P0-1 修复：rss2json.com 免费Key配额易耗尽，实现三层降级
+// Level 1: rss2json API (主Key) → Level 2: rss2json API (备用Key) → Level 3: DOMParser 直接解析
+const RSS2JSON_SECONDARY_KEY = 'yoh1gsmujrtucvkwumqh3dxvsajvcrtxtkjtwcwe' // 备用Key
+
+interface RssFetchResult {
+  items: Array<{ title: string; link: string; description: string; pubDate: string }>
+  source: string
+}
+
+async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promise<RssFetchResult> {
+  const srcName = sourceName || new URL(rssUrl).hostname
+  // Level 1: 主Key
+  try {
+    const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_API_KEY}&count=20`
+    const resp = await fetch(url, { mode: 'cors', headers: { 'Accept': 'application/json' } })
+    if (resp.ok) {
+      const data = await resp.json()
+      if (data.status === 'ok') {
+        recordSourceResult(srcName, rssUrl, true)
+        return { items: data.items || [], source: 'rss2json-primary' }
+      }
+    }
+  } catch (_) { /* 降级 */ }
+
+  // Level 2: 备用Key
+  try {
+    const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_SECONDARY_KEY}&count=20`
+    const resp = await fetch(url, { mode: 'cors', headers: { 'Accept': 'application/json' } })
+    if (resp.ok) {
+      const data = await resp.json()
+      if (data.status === 'ok') {
+        recordSourceResult(srcName, rssUrl, true)
+        return { items: data.items || [], source: 'rss2json-secondary' }
+      }
+    }
+  } catch (_) { /* 降级 */ }
+
+  // Level 3: DOMParser 直接解析 XML（可能因CORS失败，但值得尝试）
+  try {
+    const resp = await fetch(rssUrl, { mode: 'cors', headers: { 'Accept': 'application/xml, text/xml, application/rss+xml' } })
+    if (resp.ok) {
+      const text = await resp.text()
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(text, 'text/xml')
+      const items = Array.from(doc.querySelectorAll('item, entry')).slice(0, 20).map(el => ({
+        title: el.querySelector('title')?.textContent || '无标题',
+        link: el.querySelector('link')?.textContent || el.querySelector('link')?.getAttribute('href') || '',
+        description: el.querySelector('description, summary, content')?.textContent || '',
+        pubDate: el.querySelector('pubDate, published, updated')?.textContent || new Date().toISOString()
+      }))
+      if (items.length > 0) {
+        recordSourceResult(srcName, rssUrl, true)
+        return { items, source: 'direct-xml' }
+      }
+    }
+  } catch (_) { /* 全部失败 */ }
+
+  recordSourceResult(srcName, rssUrl, false, '所有层级均失败')
+  throw new Error('所有RSS抓取层级均失败')
+}
+
+// ==================== 来源可信度评分 (P2-4) ====================
+// 将静态可信度评分与动态健康分合并，得到综合评分
+export function getSourceCredibility(name: string): number {
+  return SOURCE_CREDIBILITY[name] || 50 // 未知来源默认50分
+}
+
+export function getCompositeScore(name: string): number {
+  const credibility = getSourceCredibility(name)
+  const health = sourceHealthMap.get(name)
+  const healthScore = health ? health.healthScore : 100
+  // 综合 = 70%静态可信度 + 30%动态健康分
+  return Math.round(credibility * 0.7 + healthScore * 0.3)
+}
+
+// 获取所有来源的综合评分（供UI展示）
+export function getAllSourceScores(): Array<{ name: string; credibility: number; health: number; composite: number }> {
+  const allNames = new Set<string>([
+    ...NEWS_RSS_SOURCES.map(s => s.name),
+    ...GLOBAL_HOTSPOT_SOURCES.map(s => s.name),
+    ...EXTENDED_NEWS_SOURCES.map(s => s.name),
+    ...FINANCIAL_RSS_SOURCES.map(s => s.name),
+  ])
+  return Array.from(allNames).map(name => ({
+    name,
+    credibility: getSourceCredibility(name),
+    health: sourceHealthMap.get(name)?.healthScore ?? 100,
+    composite: getCompositeScore(name)
+  })).sort((a, b) => a.composite - b.composite)
+}
+
+// ==================== 内容来源验证机制 (P2-5) ====================
+interface VerificationResult {
+  passed: boolean
+  reason: string
+  expectedDomain: string
+  actualDomain: string
+}
+
+// 根据 source.name 推断预期域名（用于验证响应的确来自声称的来源）
+function inferExpectedDomain(sourceName: string): string {
+  const mapping: Record<string, string> = {
+    'EE Times': 'eetimes.com',
+    'Semi Engineering': 'semiengineering.com',
+    'The Robot Report': 'therobotreport.com',
+    '36氪': '36kr.com',
+    'NVIDIA Blog': 'nvidia.com',
+    'TechCrunch': 'techcrunch.com',
+    'The Verge': 'theverge.com',
+    'Ars Technica': 'arstechnica.com',
+    'Semiconductor Today': 'semiconductor-today.com',
+    'Digitimes': 'digitimes.com',
+    'Supply Chain Dive': 'supplychaindive.com',
+    'BBC世界': 'bbc.co.uk',
+    'BBC科技': 'bbc.co.uk',
+    'CNN国际': 'cnn.com',
+    'Al Jazeera': 'aljazeera.com',
+    'France24': 'france24.com',
+    '德国之声': 'dw.com',
+    'NHK世界': 'nhk.or.jp',
+    '工信部公告': 'miit.gov.cn',
+  }
+  return mapping[sourceName] || ''
+}
+
+// 验证抓取到的新闻条目是否真的来自其声称的来源
+function verifyNewsItem(item: any, sourceName: string, sourceUrl: string): VerificationResult {
+  const link = (item.link || item.guid || '').toString()
+  const expectedDomain = inferExpectedDomain(sourceName)
+  let sourceHost = ''
+  let linkHost = ''
+  
+  // 提前解析域名
+  try { sourceHost = new URL(sourceUrl).hostname.replace(/^www\./, ''); } catch { /* ignore */ }
+  try { linkHost = link ? new URL(link).hostname.replace(/^www\./, '') : ''; } catch { /* ignore */ }
+  
+  // 无法推断预期域名时，做宽松检查：至少 URL 要与 sourceUrl 同域
+  if (!expectedDomain) {
+    if (linkHost && linkHost !== sourceHost) {
+      return { passed: false, reason: `域名不匹配: 预期${sourceHost}, 实际${linkHost}`, expectedDomain: sourceHost, actualDomain: linkHost }
+    }
+    return { passed: true, reason: '宽松验证通过（无法推断预期域名）', expectedDomain: sourceHost, actualDomain: linkHost }
+  }
+  
+  // 有明确预期域名时，严格检查 link 是否包含预期域名
+  if (link && linkHost && !linkHost.includes(expectedDomain.replace(/^www\./, ''))) {
+    return { passed: false, reason: `内容域名与来源不匹配: 预期含"${expectedDomain}", 实际"${linkHost}"`, expectedDomain, actualDomain: linkHost }
+  }
+  
+  return { passed: true, reason: '验证通过', expectedDomain, actualDomain: linkHost }
+}
+
+// 在 fetchRssWithFallback 中验证来源域名（Level 1/2 走 rss2json 代理，无法验证最终来源；Level 3 直接请求可验证）
+// 此函数在 fetchRealNews / fetchAllNews 的 item 映射阶段调用
+function attachVerificationFlags(items: any[], sourceName: string, sourceUrl: string): any[] {
+  return items.map(item => {
+    const v = verifyNewsItem(item, sourceName, sourceUrl)
+    return { ...item, __verified: v.passed, __verifyReason: v.reason }
+  })
+}
+
+// ==================== RSS源健康检查与成功率追踪 (P2-1, P2-2) ====================
+export interface RssSourceHealth {
+  name: string
+  url: string
+  successCount: number
+  failCount: number
+  totalAttempts: number
+  lastSuccess: number | null
+  lastFail: number | null
+  lastFailReason: string
+  active: boolean        // 基于健康检查结果
+  healthScore: number    // 0-100, 基于成功率
+}
+
+const sourceHealthMap = new Map<string, RssSourceHealth>()
+
+// 初始化健康记录
+function getOrCreateHealth(name: string, url: string): RssSourceHealth {
+  if (!sourceHealthMap.has(name)) {
+    sourceHealthMap.set(name, {
+      name, url,
+      successCount: 0, failCount: 0, totalAttempts: 0,
+      lastSuccess: null, lastFail: null, lastFailReason: '',
+      active: true, healthScore: 100
+    })
+  }
+  return sourceHealthMap.get(name)!
+}
+
+function recordSourceResult(name: string, url: string, success: boolean, reason = '') {
+  const h = getOrCreateHealth(name, url)
+  h.totalAttempts++
+  if (success) {
+    h.successCount++
+    h.lastSuccess = Date.now()
+  } else {
+    h.failCount++
+    h.lastFail = Date.now()
+    h.lastFailReason = reason
+  }
+  const total = h.totalAttempts || 1
+  h.healthScore = Math.round((h.successCount / total) * 100)
+  h.active = h.healthScore >= 50 // 成功率<50%标记为不活跃
+}
+
+// 在 fetchRssWithFallback 内部记录结果的内联版本
+function trackRssResult(sourceName: string, sourceUrl: string, level: string, success: boolean) {
+  const reason = success ? '' : `层级${level}失败`
+  recordSourceResult(sourceName, sourceUrl, success, reason)
+}
+
+export function getSourceHealthStats(): RssSourceHealth[] {
+  return Array.from(sourceHealthMap.values())
+    .sort((a, b) => a.healthScore - b.healthScore) // 最差的排前面
+}
+
+export async function runHealthCheck(): Promise<RssSourceHealth[]> {
+  console.log('[HealthCheck] 开始RSS源健康检查...')
+  const allSources = [
+    ...NEWS_RSS_SOURCES.map(s => ({ name: s.name, url: s.url })),
+    ...GLOBAL_HOTSPOT_SOURCES.map(s => ({ name: s.name, url: s.url })),
+    ...EXTENDED_NEWS_SOURCES.map(s => ({ name: s.name, url: s.url })),
+    ...FINANCIAL_RSS_SOURCES.map(s => ({ name: s.name, url: s.url })),
+  ]
+  
+  const probes = allSources.map(async (src) => {
+    try {
+      // 快速HEAD探测（2秒超时）
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort(), 2000)
+      const resp = await fetch(src.url, {
+        method: 'HEAD',
+        mode: 'no-cors',
+        signal: controller.signal
+      })
+      clearTimeout(timeout)
+      recordSourceResult(src.name, src.url, true)
+    } catch (e) {
+      recordSourceResult(src.name, src.url, false, (e as Error).message)
+    }
+  })
+  
+  await Promise.allSettled(probes)
+  const stats = getSourceHealthStats()
+  const activeCount = stats.filter(s => s.active).length
+  const totalCount = stats.length
+  console.log(`[HealthCheck] 完成: ${activeCount}/${totalCount} 源活跃 (${totalCount - activeCount} 个不健康)`)
+  
+  // 打印不健康的源
+  stats.filter(s => !s.active).forEach(s => {
+    console.warn(`[HealthCheck] ⚠️ 不健康: ${s.name} (健康分: ${s.healthScore}, 成功率: ${s.totalAttempts > 0 ? Math.round(s.successCount / s.totalAttempts * 100) : 0}%)`)
+  })
+  
+  return stats
+}
+
 // ==================== 数据缓存 ====================
 let cachedNews: NewsItem[] = []
 let cachedStocks: Record<string, StockData> = {}
@@ -56,30 +316,19 @@ let lastFetchTime: Record<string, number> = {
 
 // ==================== 数据生成函数 ====================
 
-function generateFluctuation(baseValue: number, volatility: number = 0.02): number {
-  const change = (Math.random() - 0.5) * 2 * volatility * baseValue
-  return parseFloat((baseValue + change).toFixed(2))
-}
+// generateFluctuation 已移除：死代码（无调用点），且使用 Math.random 违反真实性原则
+// 所有数据派生函数已改用 BASE_STOCK_DATA / BASE_INDICES 基准数据
 
 function generateDynamicNews(): NewsItem[] {
+  // 此函数仅在NEWS_TEMPLATES有数据时作为fallback使用
+  // NEWS_TEMPLATES已清空，不再生成假新闻数据
   const now = new Date()
-  const currentHour = now.getHours()
-  const currentMinute = now.getMinutes()
   const shuffled = [...NEWS_TEMPLATES]
   const newsCount = 10
-  const generateFreshTime = (): string => {
-    const idx = newsCount - 1 - shuffled.indexOf(shuffled.find((_, j) => true)!)
-    const minsAgo = idx * 12
-    if (minsAgo < 1) return '刚刚'
-    if (minsAgo < 60) return `${minsAgo}分钟前`
-    const hoursAgo = Math.floor(minsAgo / 60)
-    if (hoursAgo < 3) return `${hoursAgo}小时前`
-    return `今天 ${String(currentHour - hoursAgo).padStart(2, '0')}:${String(currentMinute).padStart(2, '0')}`
-  }
   return shuffled.slice(0, newsCount).map((template, i) => ({
     ...template,
     id: `news-dynamic-${now.getTime()}-${i}`,
-    time: generateFreshTime(),
+    time: '近期',
     priority: template.priority
   })).sort((a, b) => {
     const order = { critical: 0, warning: 1, info: 2 }
@@ -89,34 +338,23 @@ function generateDynamicNews(): NewsItem[] {
 
 async function fetchFinancialRSSData(): Promise<{ stocks: Record<string, StockData>, financialNews: string[] }> {
   const financialNews: string[] = []
-  const fetchedStocks: Record<string, StockData> = {}
   try {
     const results = await Promise.allSettled(
       FINANCIAL_RSS_SOURCES.map(async (src) => {
-        const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(src.url)}&api_key=${RSS2JSON_API_KEY}&count=15`
-        const resp = await fetch(url, { mode: 'cors' })
-        if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
-        const data = await resp.json()
-        if (data.status !== 'ok') throw new Error(data.message)
-        return { src, items: data.items || [] }
-      })
-    )
-    results.forEach(r => {
-      if (r.status === 'fulfilled' && r.value) {
-        const { items } = r.value
-        items.forEach((item: any) => {
+        const { items: rssItems } = await fetchRssWithFallback(src.url, src.name)
+        rssItems.forEach((item: any) => {
           const title = (item.title || '').replace(/<[^>]+>/g, '')
           if (title) financialNews.push(title)
         })
-      }
-    })
+      })
+    )
   } catch (e) {
     console.warn('[fetchFinancialRSSData] 财经RSS抓取失败:', e)
   }
   if (financialNews.length === 0) {
     return { stocks: {}, financialNews: [] }
   }
-  return { stocks: fetchedStocks, financialNews }
+  return { stocks: {}, financialNews }
 }
 
 function generateDynamicStocks(): Record<string, StockData> {
@@ -140,19 +378,15 @@ function generateDynamicIndices(): IndustryIndex[] {
 }
 
 function generateDynamicHotspots(): GlobalHotspot[] {
+  // 此函数仅在HOTSPOT_TEMPLATES有数据时作为fallback使用
+  // HOTSPOT_TEMPLATES已清空，不再生成假热点数据
   const now = new Date()
-  const shuffled = [...HOTSPOT_TEMPLATES].sort(() => Math.random() - 0.5)
+  const shuffled = [...HOTSPOT_TEMPLATES]
   const count = 8
-  const generateFreshTime = (): string => {
-    const minsAgo = Math.floor(Math.random() * 180)
-    if (minsAgo < 30) return `${minsAgo}分钟前`
-    if (minsAgo < 120) return `${Math.floor(minsAgo / 60)}小时前`
-    return '今天'
-  }
   return shuffled.slice(0, count).map((template, i) => ({
     ...template,
     id: `hotspot-${now.getTime()}-${i}`,
-    time: generateFreshTime()
+    time: '近期'
   }))
 }
 
@@ -175,12 +409,9 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
     const results = await Promise.allSettled(
       NEWS_RSS_SOURCES.map(async (source) => {
         try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=${RSS2JSON_API_KEY}`
-          const resp = await fetch(url, { mode: 'cors', headers: { 'Accept': 'application/json' } })
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
-          const data = await resp.json()
-          if (data.status !== 'ok') throw new Error(data.message || 'RSS解析失败')
-          const items: NewsItem[] = (data.items || []).slice(0, 8).map((item: any, idx: number) => {
+          const { items: rssItems } = await fetchRssWithFallback(source.url, source.name)
+          const verifiedItems = attachVerificationFlags(rssItems, source.name, source.url)
+          const items: NewsItem[] = verifiedItems.slice(0, 8).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
             const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '')
             const rawSummary = (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 100)
@@ -194,7 +425,8 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
               priority: inferPriority(rawTitle, source.category),
               summary: escapeHtml(rawSummary),
               url: item.link || '',
-              publishedAt: published
+              publishedAt: published,
+              verified: item.__verified !== false
             }
           })
           return items
@@ -228,13 +460,13 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
       lastFetchTime.news = now
       console.log(`[fetchRealNews] 去重后保留 ${cachedNews.length} 条新闻`)
     } else {
-      console.warn('[fetchRealNews] 所有RSS源均失败，使用模板数据兜底')
-      cachedNews = generateDynamicNews()
+      console.warn('[fetchRealNews] 所有RSS源均失败，返回空结果（不再使用假数据模板）')
+      cachedNews = []
       lastFetchTime.news = now
     }
   } catch (e) {
-    console.error('[fetchRealNews] 联网异常，使用模板数据兜底:', e)
-    cachedNews = generateDynamicNews()
+    console.error('[fetchRealNews] 联网异常，返回空结果:', e)
+    cachedNews = []
     lastFetchTime.news = now
   }
   if (category && category !== 'all') {
@@ -284,13 +516,9 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     }
   }
   if (alerts.length < 4) {
-    const hardcoded: AlertItem[] = [
-      { id: 'r1', title: '美国AI芯片出口管制新规持续收紧', description: 'H20/A800等产品对华管制范围持续扩大', level: 'critical', time: '持续', icon: '🚨' },
-      { id: 'r2', title: 'ASML光刻机出口许可审查周期延长', description: 'DUV设备审批从3个月延至6个月', level: 'warning', time: '本月', icon: '⚠️' },
-      { id: 'r3', title: 'HBM存储芯片供应持续紧张', description: 'SK海力士/三星HBM产能优先供英伟达', level: 'warning', time: '持续', icon: '⚠️' },
-      { id: 'r4', title: '车规MCU认证周期延长至24个月', description: 'ISO26262功能安全要求趋严', level: 'info', time: '持续', icon: '📋' }
-    ]
-    for (const h of hardcoded) {
+    // 不再使用硬编码假警报填充，不足4条就展示实际数量
+    const placeholder: AlertItem[] = []
+    for (const h of placeholder) {
       if (alerts.length >= 4) break
       alerts.push(h)
     }
@@ -472,12 +700,8 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
   try {
     const results = await Promise.allSettled(
       GOOGLE_NEWS_SOURCES.map(async (url) => {
-        const apiUrl = `${RSS2JSON_API}?rss_url=${encodeURIComponent(url)}&api_key=${RSS2JSON_API_KEY}&count=20`
-        const resp = await fetch(apiUrl, { mode: 'cors' })
-        if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
-        const data = await resp.json()
-        if (data.status !== 'ok') throw new Error(data.message || '解析失败')
-        return data.items || []
+        const { items: rssItems } = await fetchRssWithFallback(url, 'Google News')
+        return rssItems || []
       })
     )
     results.forEach(r => {
@@ -552,12 +776,8 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
     const results = await Promise.allSettled(
       GLOBAL_HOTSPOT_SOURCES.map(async (source) => {
         try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=${RSS2JSON_API_KEY}`
-          const resp = await fetch(url, { mode: 'cors' })
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
-          const data = await resp.json()
-          if (data.status !== 'ok') throw new Error(data.message || '解析失败')
-          return (data.items || []).slice(0, 3).map((item: any, idx: number) => {
+          const { items: rssItems } = await fetchRssWithFallback(source.url, source.name)
+          return rssItems.slice(0, 3).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
             const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '').slice(0, 60)
             const rawDesc = (item.description || '').replace(/<[^>]+>/g, '').slice(0, 80)
@@ -596,13 +816,13 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
       }).slice(0, 10)
       lastFetchTime.hotspots = now
     } else {
-      console.warn('[fetchGlobalHotspots] 所有RSS源失败，使用模板数据兜底')
-      cachedHotspots = generateDynamicHotspots()
+      console.warn('[fetchGlobalHotspots] 所有RSS源失败，返回空结果（不再使用假数据模板）')
+      cachedHotspots = []
       lastFetchTime.hotspots = now
     }
   } catch (e) {
-    console.error('[fetchGlobalHotspots] 联网异常，使用模板兜底:', e)
-    cachedHotspots = generateDynamicHotspots()
+    console.error('[fetchGlobalHotspots] 联网异常，返回空结果:', e)
+    cachedHotspots = []
     lastFetchTime.hotspots = now
   }
   return cachedHotspots
@@ -797,15 +1017,9 @@ export function generateTechTrendsFromNews(news: NewsItem[]): TechTrendItem[] {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
   
-  // 如果新闻中没有足够数据，使用兜底
+  // 如果新闻中没有足够数据，返回空结果
   if (sorted.length < 3) {
-    return [
-      { name: 'AI芯片', icon: '🧠', heat: 92, patents: 234, status: 'hot' },
-      { name: '端到端大模型', icon: '🔮', heat: 88, patents: 156, status: 'hot' },
-      { name: '纯视觉方案', icon: '👁️', heat: 78, patents: 89, status: 'hot' },
-      { name: 'Chiplet 架构', icon: '🔲', heat: 58, patents: 67, status: 'warm' },
-      { name: '4D 毫米波雷达', icon: '📡', heat: 65, patents: 45, status: 'warm' },
-    ]
+    return []
   }
   
   const maxHeat = sorted[0][1]
@@ -914,15 +1128,9 @@ export function generateSupplyChainFromNews(news: NewsItem[]): SupplyChainItem[]
       }
     })
   
-  // 如果没有足够的新闻数据，使用兜底数据
+  // 如果没有足够的新闻数据，返回空结果
   if (result.length < 3) {
-    return [
-      { name: '先进制程晶圆', region: '台湾/韩国', status: 'warning', trend: 35 },
-      { name: 'HBM 高带宽存储', region: '韩国', status: 'warning', trend: 28 },
-      { name: '高端光刻胶', region: '日本', status: 'warning', trend: 25 },
-      { name: '车规级 MCU', region: '中国/欧洲', status: 'normal', trend: -5 },
-      { name: '功率半导体', region: '中国/欧洲', status: 'normal', trend: 8 },
-    ]
+    return []
   }
   
   return result
@@ -979,15 +1187,6 @@ export function generatePoliciesFromNews(news: NewsItem[]): PolicyItem[] {
       urgent: isUrgent
     })
   })
-  
-  // 如果没有足够政策新闻，添加通用政策
-  if (result.length < 2) {
-    const fmt = (d: Date) => d.toISOString().slice(0, 10)
-    result.push(
-      { date: fmt(now), title: '国务院促进人工智能产业高质量发展若干措施', description: '明确AI芯片、大模型等关键领域扶持路径', urgent: true },
-      { date: fmt(new Date(now.getTime() - 4 * 86400000)), title: '工信部启动第四批专精特新"小巨人"评选', description: '半导体设备/材料/EDA领域企业优先入围', urgent: false },
-    )
-  }
   
   // 按日期排序（最新在前）并返回
   return result
@@ -1133,18 +1332,6 @@ export function generatePolicyApplicationsFromNews(news: NewsItem[]): PolicyAppl
     })
   })
   
-  // 如果没有足够的申报信息，添加兜底
-  if (result.length < 2) {
-    const future = new Date()
-    future.setMonth(future.getMonth() + 2)
-    const fmt = (d: Date) => d.toISOString().slice(0, 10)
-    result.push(
-      { id: 'pa1', title: '2026年智能网联汽车创新专项申报（第二批）', department: '工信部', region: '全国', sector: 'auto', deadline: '2026-06-30', amount: '最高5000万', status: 'open' },
-      { id: 'pa2', title: '集成电路产业高质量发展专项资金（2026年度）', department: '发改委', region: '全国', sector: 'chip', deadline: '2026-06-15', amount: '最高1亿', status: 'open' },
-      { id: 'pa3', title: '人形机器人关键技术攻关项目（第二轮）', department: '科技部', region: '全国', sector: 'robotics', deadline: '2026-06-08', amount: '最高3000万', status: 'closing' },
-    )
-  }
-  
   // 按截止日期排序，即将截止的排前面
   return result
     .sort((a, b) => new Date(a.deadline).getTime() - new Date(b.deadline).getTime())
@@ -1173,12 +1360,9 @@ export async function fetchAllNews(): Promise<{
     const results = await Promise.allSettled(
       EXTENDED_NEWS_SOURCES.map(async (source) => {
         try {
-          const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(source.url)}&api_key=${RSS2JSON_API_KEY}`
-          const resp = await fetch(url, { mode: 'cors', headers: { 'Accept': 'application/json' } })
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
-          const data = await resp.json()
-          if (data.status !== 'ok') throw new Error(data.message || 'RSS解析失败')
-          return (data.items || []).slice(0, 6).map((item: any, idx: number) => {
+          const { items: rssItems } = await fetchRssWithFallback(source.url, source.name)
+          const verifiedItems = attachVerificationFlags(rssItems, source.name, source.url)
+          return verifiedItems.slice(0, 6).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
             const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '')
             const rawSummary = (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 80)
@@ -1192,7 +1376,8 @@ export async function fetchAllNews(): Promise<{
               priority: inferPriority(rawTitle, source.category),
               summary: escapeHtml(rawSummary),
               url: item.link || '',
-              publishedAt: published
+              publishedAt: published,
+              verified: item.__verified !== false
             } as NewsItem
           })
         } catch (e) {
@@ -1223,19 +1408,8 @@ export async function fetchAllNews(): Promise<{
       categoryCount[n.category] = (categoryCount[n.category] || 0) + 1
     })
     console.log('[fetchAllNews] RSS 数据各分类统计:', categoryCount)
+    // 不再使用 NEWS_TEMPLATES 填充不足的分类（已清除模板数据）
     const mergedNews = [...sortedNews]
-    if ((categoryCount['competitor'] || 0) < 2) {
-      const competitorTemplates = NEWS_TEMPLATES.filter(n => n.category === 'competitor').slice(0, 3)
-      competitorTemplates.forEach((t, i) => {
-        mergedNews.push({ ...t, id: `tmpl-comp-${Date.now()}-${i}`, time: '最新' })
-      })
-    }
-    if ((categoryCount['market'] || 0) < 2) {
-      const marketTemplates = NEWS_TEMPLATES.filter(n => n.category === 'market').slice(0, 3)
-      marketTemplates.forEach((t, i) => {
-        mergedNews.push({ ...t, id: `tmpl-mkt-${Date.now()}-${i}`, time: '最新' })
-      })
-    }
     const alerts = generateAlertsFromNews(mergedNews)
     const aiInsights = generateAIInsightsFromNews(mergedNews)
     const startupFunding = generateStartupFundingFromNews(mergedNews)
@@ -1248,11 +1422,17 @@ export async function fetchAllNews(): Promise<{
       financialMarkets
     }
     newsCache.set(cacheKey, { data: result, fetchTime: now })
-    console.log(`[fetchAllNews] 获取成功: ${mergedNews.length}条新闻`)
+    console.log(`[fetchAllNews] 获取成功: ${mergedNews.length}条新闻 (其中 ${alerts.length} 条警报)`)
     return result
   } catch (e) {
-    console.error('[fetchAllNews] 获取失败:', e)
-    return generateFallbackAllNews()
+    console.error('[fetchAllNews] 获取失败，返回空结果:', e)
+    return {
+      news: [],
+      alerts: [],
+      aiInsights: [],
+      startupFunding: [],
+      financialMarkets: generateFinancialFromNews([])
+    }
   }
 }
 
@@ -1386,13 +1566,7 @@ export function generateRoboticsTechFromNews(news: NewsItem[]): TechTrendItem[] 
   })
   const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5)
   if (sorted.length < 2) {
-    return [
-      { name: '具身智能', icon: '🧠', heat: 95, patents: 156, status: 'hot' },
-      { name: '灵巧手', icon: '🖐️', heat: 82, patents: 89, status: 'hot' },
-      { name: '谐波减速器', icon: '⚙️', heat: 78, patents: 124, status: 'hot' },
-      { name: '力控传感器', icon: '📊', heat: 65, patents: 67, status: 'warm' },
-      { name: '视觉伺服', icon: '👁️', heat: 58, patents: 45, status: 'warm' },
-    ]
+    return []
   }
   const max = sorted[0][1]
   return sorted.map(([name, count]) => {
@@ -1419,13 +1593,7 @@ export function generateAITechFromNews(news: NewsItem[]): TechTrendItem[] {
   })
   const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5)
   if (sorted.length < 2) {
-    return [
-      { name: '大语言模型', icon: '📚', heat: 98, patents: 523, status: 'hot' },
-      { name: '多模态AI', icon: '🎨', heat: 92, patents: 312, status: 'hot' },
-      { name: 'AI Agent', icon: '🤖', heat: 88, patents: 189, status: 'hot' },
-      { name: '端侧推理', icon: '📱', heat: 75, patents: 156, status: 'warm' },
-      { name: 'RAG技术', icon: '🔍', heat: 68, patents: 98, status: 'warm' },
-    ]
+    return []
   }
   const max = sorted[0][1]
   return sorted.map(([name, count]) => {
