@@ -154,18 +154,19 @@ function inferExpectedDomain(sourceName: string): string {
     'NVIDIA Blog': 'nvidia.com',
     'TechCrunch': 'techcrunch.com',
     'The Verge': 'theverge.com',
-    'Ars Technica': 'arstechnica.com',
+    'Wired': 'wired.com',
     'Semiconductor Today': 'semiconductor-today.com',
     'Digitimes': 'digitimes.com',
     'Supply Chain Dive': 'supplychaindive.com',
     'BBC世界': 'bbc.co.uk',
     'BBC科技': 'bbc.co.uk',
-    'CNN国际': 'cnn.com',
+    '路透科技': 'reuters.com',
     'Al Jazeera': 'aljazeera.com',
     'France24': 'france24.com',
     '德国之声': 'dw.com',
     'NHK世界': 'nhk.or.jp',
     '工信部公告': 'miit.gov.cn',
+    'Electronics Weekly': 'electronicsweekly.com',
   }
   return mapping[sourceName] || ''
 }
@@ -684,22 +685,22 @@ function inferPriority(title: string, category: string): 'critical' | 'warning' 
   return 'info'
 }
 
-// 公司新闻抓取
+// 公司新闻抓取 - 多层降级：Google News(rss2json代理) → 36氪搜索 → 已有新闻库提取
 export async function fetchCompanyNews(): Promise<CompanyNews[]> {
   const COMPANY_KEYWORDS = [
-    'oritek', '欧冶', '龙泉(?![^<]*>)', '工布(?![^<]*>)', '纯钧', '福芯', 'ZCU',
+    'oritek', '欧冶', '龙泉', '工布', '纯钧', '福芯', 'ZCU',
     'LQ560', 'GB565', '龙泉560', '工布565', 'orytek'
   ]
-  const GOOGLE_NEWS_SOURCES = [
+  const companyNews: CompanyNews[] = []
+  
+  // Level 1: Google News 通过 rss2json API（服务端代理，可绕过国内墙）
+  const GOOGLE_NEWS_URLS = [
     'https://news.google.com/rss/search?q=oritek+semi+OR+%E6%AC%A7%E5%86%B6+OR+%E9%BE%99%E6%B3%89+OR+%E5%B7%A5%E5%B8%83+OR+ZCU&hl=zh-CN&gl=CN&ceid=CN:zh-Hans',
-    'https://news.google.com/rss/search?q=oritek+semi+OR+%E6%AC%A7%E5%86%B6+OR+%E9%BE%99%E6%B3%89+OR+%E5%B7%A5%E5%B8%83+OR+ZCU&hl=en-US&gl=US&ceid=US:en',
-    'https://news.google.com/rss/search?q=oritek+semi+OR+orytek&hl=zh-CN&gl=CN&ceid=CN:zh-Hans',
     'https://news.google.com/rss/search?q=oritek+semi+OR+orytek&hl=en-US&gl=US&ceid=US:en',
   ]
-  const companyNews: CompanyNews[] = []
   try {
     const results = await Promise.allSettled(
-      GOOGLE_NEWS_SOURCES.map(async (url) => {
+      GOOGLE_NEWS_URLS.map(async (url) => {
         const { items: rssItems } = await fetchRssWithFallback(url, 'Google News')
         return rssItems || []
       })
@@ -710,20 +711,77 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
           const title = (item.title || '').replace(/<[^>]+>/g, '')
           if (COMPANY_KEYWORDS.some(kw => new RegExp(kw, 'i').test(title))) {
             companyNews.push({
-              id: `company-${item.link}-${Date.now()}`,
+              id: `company-gn-${item.link || Date.now()}`,
               title: escapeHtml(title),
               source: escapeHtml((item.author || item.link || '').replace(/https?:\/\//, '').slice(0, 30)),
               time: formatTimeAgo(item.pubDate || ''),
-              url: item.link || ''
+              url: item.link || '',
+              category: inferCompanyNewsCategory(title)
             })
           }
         })
       }
     })
   } catch (e) {
-    console.warn('[fetchCompanyNews] 公司新闻抓取失败:', e)
+    console.warn('[fetchCompanyNews] Google News抓取失败:', e)
   }
-  return companyNews.slice(0, 5)
+
+  // Level 2: 已有新闻缓存中搜索公司相关（如果Google News无结果）
+  if (companyNews.length === 0) {
+    console.log('[fetchCompanyNews] Google News无结果，从已有新闻缓存搜索...')
+    // 从全局新闻缓存获取
+    const cached = newsCache.get('allNews')
+    if (cached && cached.data.news.length > 0) {
+      cached.data.news.forEach(n => {
+        const text = n.title + ' ' + (n.summary || '')
+        if (COMPANY_KEYWORDS.some(kw => new RegExp(kw, 'i').test(text))) {
+          companyNews.push({
+            id: `company-cache-${n.id}`,
+            title: n.title,
+            source: n.source,
+            time: n.time,
+            url: n.url || '',
+            category: inferCompanyNewsCategory(n.title)
+          })
+        }
+      })
+    }
+  }
+
+  // Level 3: 36氪搜索（作为最后的备用渠道）
+  if (companyNews.length === 0) {
+    console.log('[fetchCompanyNews] 缓存无结果，尝试36氪搜索...')
+    try {
+      const { items: krItems } = await fetchRssWithFallback('https://36kr.com/feed', '36氪-公司搜索')
+      if (krItems && krItems.length > 0) {
+        krItems.forEach((item: any) => {
+          const title = (item.title || '').replace(/<[^>]+>/g, '')
+          if (COMPANY_KEYWORDS.some(kw => new RegExp(kw, 'i').test(title))) {
+            companyNews.push({
+              id: `company-36kr-${item.link || Date.now()}`,
+              title: escapeHtml(title),
+              source: '36氪',
+              time: formatTimeAgo(item.pubDate || ''),
+              url: item.link || '',
+              category: inferCompanyNewsCategory(title)
+            })
+          }
+        })
+      }
+    } catch (e) {
+      console.warn('[fetchCompanyNews] 36氪搜索失败:', e)
+    }
+  }
+
+  console.log(`[fetchCompanyNews] 获取到 ${companyNews.length} 条公司新闻`)
+  // 去重后返回
+  const seen = new Set<string>()
+  return companyNews.filter(item => {
+    const key = item.title.slice(0, 30)
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  }).slice(0, 8)
 }
 
 export interface CompanyNews {
@@ -732,6 +790,16 @@ export interface CompanyNews {
   source: string
   time: string
   url: string
+  category: 'product' | 'event' | 'finance' | 'partner'
+}
+
+// 根据标题推断公司新闻分类
+function inferCompanyNewsCategory(title: string): CompanyNews['category'] {
+  const t = title.toLowerCase()
+  if (/融资|投资|估值|上市|IPO|营收|财报/.test(t)) return 'finance'
+  if (/合作|签约|战略|参股|投资/.test(t)) return 'partner'
+  if (/发布|亮相|上市|展出|车展|签约/.test(t)) return 'event'
+  return 'product'
 }
 
 export async function fetchStockData(symbols: string[]): Promise<StockData[]> {
@@ -1206,10 +1274,17 @@ interface PolicyApplicationItem {
   status: 'open' | 'closing' | 'closed'
 }
 
-// 申报关键词
+// 申报关键词（精简版 - 去除"项目""申请"等泛化词，降低误匹配）
 const APPLICATION_KEYWORDS = [
-  '申报', '征集', '申请', '受理', '截止', '指南', '通知',
-  '项目', '专项', '计划', '课题', '基金', '补贴'
+  '申报', '征集', '受理', '指南', '通知', '专项', '课题', '基金', '补贴'
+]
+// 辅助验证词 - 标题中出现这些词时，进一步确认是政策申报相关
+const APPLICATION_VERIFY_KEYWORDS = [
+  '申报', '征集', '指南', '通知', '补贴', '扶持', '专项', '受理'
+]
+// 排除词 - 标题含这些词的不是申报信息
+const APPLICATION_EXCLUDE_KEYWORDS = [
+  '涨', '跌', '股价', '融资', 'IPO', '上市', '基金净值', '大盘'
 ]
 
 // 部门关键词
@@ -1232,20 +1307,26 @@ const SECTOR_KEYWORDS: Record<string, string> = {
   'AI': 'ai', '人工智能': 'ai', '大模型': 'ai',
 }
 
-// 金额提取（政策申报专用）
+// 金额提取（政策申报专用）- 严格模式，必须明确包含金额标识词
 function extractAmountFromText(text: string): string {
+  // 必须有明确的金额标识词才尝试提取
+  const hasAmountHint = /最高|资助|补贴|经费|预算|安排|拨款|满足|配套|不超[过少]/.test(text)
+  if (!hasAmountHint) return '-'
+  
+  // 尝试匹配 "X万元" "X亿元" 等明确式样
   const patterns = [
-    /(\d+\.?\d*)\s*[亿万亩]?(?:元|美元|人民币)?/,
-    /最高?\s*(\d+\.?\d*)\s*[亿万亩]?/,
-    /(\d+\.?\d*)\s*万/,
-    /(\d+\.?\d*)\s*亿/,
+    /(\d+\.?\d*)\s*亿\s*元?/,
+    /(\d+\.?\d*)\s*万\s*元?/,
+    /最高?\s*(\d+\.?\d*)\s*[亿万]/,
+    /资助\s*(\d+\.?\d*)\s*[亿万]/,
+    /经费\s*(\d+\.?\d*)\s*[亿万]/,
   ]
   for (const p of patterns) {
     const m = text.match(p)
     if (m) {
       const num = parseFloat(m[1])
-      if (num >= 10000) return `最高${Math.round(num/10000)}亿`
-      if (num >= 100) return `最高${Math.round(num)}万`
+      if (m[0].includes('亿')) return `${num}亿元`
+      if (m[0].includes('万')) return `${num}万元`
       return `${m[0]}`
     }
   }
@@ -1268,16 +1349,22 @@ function extractDeadline(text: string): string {
       }
     }
   }
-  // 默认截止日期为2个月后
-  const future = new Date(now.getTime() + 60 * 86400000)
-  return future.toISOString().slice(0, 10)
+  // 无法从标题提取截止日期 → 返回"待确认"
+  return '待确认'
 }
 
 export function generatePolicyApplicationsFromNews(news: NewsItem[]): PolicyApplicationItem[] {
+  // 严格过滤：必须是政策类来源，或同时命中申报关键词+验证词
   const applicationNews = news.filter(n => {
-    const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
-    return APPLICATION_KEYWORDS.some(kw => text.includes(kw.toLowerCase()) || text.includes(kw)) ||
-           /申报|征集|申请|专项|项目/.test(n.title)
+    const text = n.title
+    // 排除明显不是申报的新闻
+    if (APPLICATION_EXCLUDE_KEYWORDS.some(kw => text.includes(kw))) return false
+    // 政策类来源直接纳入
+    if (n.category === 'policy') return true
+    // 其他来源：需同时匹配申报关键词和至少一个验证词
+    const hitKeyword = APPLICATION_KEYWORDS.some(kw => text.includes(kw))
+    const hitVerify = APPLICATION_VERIFY_KEYWORDS.some(kw => text.includes(kw))
+    return hitKeyword && hitVerify
   })
   
   const result: PolicyApplicationItem[] = []
@@ -1313,12 +1400,13 @@ export function generatePolicyApplicationsFromNews(news: NewsItem[]): PolicyAppl
     else if (/江苏|南京|苏州/.test(text)) region = '江苏'
     
     const deadline = extractDeadline(text)
-    const deadlineDate = new Date(deadline)
-    const daysUntil = (deadlineDate.getTime() - now) / 86400000
-    
     let status: 'open' | 'closing' | 'closed' = 'open'
-    if (daysUntil < 0) status = 'closed'
-    else if (daysUntil < 14) status = 'closing'
+    if (deadline !== '待确认') {
+      const deadlineDate = new Date(deadline)
+      const daysUntil = (deadlineDate.getTime() - now) / 86400000
+      if (daysUntil < 0) status = 'closed'
+      else if (daysUntil < 14) status = 'closing'
+    }
     
     result.push({
       id: `app-${n.id}`,

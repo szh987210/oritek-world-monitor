@@ -74,20 +74,20 @@ export const SOURCE_CREDIBILITY: Record<string, number> = {
   'NVIDIA Blog': 95,
   'TechCrunch': 82,
   'The Verge': 80,
-  'Ars Technica': 84,
+  'Wired': 80,
   'Semiconductor Today': 90,
   'Digitimes': 78,
   'Supply Chain Dive': 76,
   'BBC世界': 91,
   'BBC科技': 91,
-  'CNN国际': 79,
+  '路透科技': 90,
   'Al Jazeera': 85,
   'France24': 77,
   '德国之声': 88,
   'NHK世界': 90,
   '36氪': 68,
   'SemiWiki': 72,
-  'Evertiq': 70,
+  'Electronics Weekly': 70,
   'Semi Digest': 65,
   'SemiAnalysis': 75,
   '工信部公告': 98,
@@ -107,7 +107,7 @@ export const NEWS_RSS_SOURCES: Array<{
   { name: 'NVIDIA Blog', url: 'https://blogs.nvidia.com/feed/',      category: 'tech', industry: 'ai' },
   { name: 'TechCrunch', url: 'https://techcrunch.com/feed/',         category: 'tech', industry: 'all' },
   { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'tech', industry: 'all' },
-  { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', category: 'tech', industry: 'all' },
+  { name: 'Wired', url: 'https://www.wired.com/feed/rss', category: 'tech', industry: 'all' },
   { name: 'Semiconductor Today', url: 'https://www.semiconductor-today.com/rss/news.xml', category: 'tech', industry: 'semiconductor' },
   { name: 'Digitimes', url: 'https://www.digitimes.com/rss/daily.xml', category: 'competitor', industry: 'semiconductor' },
   // SupplyChainBrain /rss/ 返回HTML索引页而非RSS feed，替换为实测有效的 Supply Chain Dive
@@ -118,7 +118,8 @@ export const NEWS_RSS_SOURCES: Array<{
 export const GLOBAL_HOTSPOT_SOURCES = [
   { name: 'BBC世界', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', region: '国际' },
   { name: 'BBC科技', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', region: '国际' },
-  { name: 'CNN国际', url: 'https://rss.cnn.com/rss/edition_world.rss', region: '国际' },
+  // CNN RSS 在国内被墙（ERR_CONNECTION_CLOSED），替换为路透社科技
+  { name: '路透科技', url: 'https://www.reuters.com/technology/rss', region: '国际' },
   { name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', region: '中东' },
   { name: 'France24', url: 'https://www.france24.com/en/rss', region: '欧洲' },
   { name: '德国之声', url: 'https://rss.dw.com/rdf/rss-de-all', region: '欧洲' },
@@ -139,7 +140,7 @@ export const EXTENDED_NEWS_SOURCES: Array<{
   { name: 'Semi Engineering', url: 'https://semiengineering.com/feed/', category: 'tech', industry: 'semiconductor' },
   { name: 'Digitimes每日', url: 'https://www.digitimes.com/rss/daily.xml', category: 'competitor', industry: 'semiconductor' },
   { name: 'SemiWiki', url: 'https://semiwiki.com/feed/', category: 'competitor', industry: 'semiconductor' },
-  { name: 'Evertiq', url: 'https://feeds2.feedburner.com/EvertiqCom/All', category: 'competitor', industry: 'semiconductor' },
+  { name: 'Electronics Weekly', url: 'https://www.electronicsweekly.com/feed/', category: 'competitor', industry: 'semiconductor' },
   { name: 'Semi Digest', url: 'https://www.semiconductor-digest.com/feed/', category: 'market', industry: 'semiconductor' },
   { name: 'SemiAnalysis', url: 'https://semianalysis.com/feed/', category: 'market', industry: 'semiconductor' },
   // AI行业
@@ -149,7 +150,7 @@ export const EXTENDED_NEWS_SOURCES: Array<{
   { name: 'TechCrunch-AI', url: 'https://techcrunch.com/category/artificial-intelligence/feed/', category: 'ai', industry: 'ai' },
   // 通用科技
   { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'general', industry: 'all' },
-  { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', category: 'general', industry: 'all' },
+  { name: 'Wired', url: 'https://www.wired.com/feed/rss', category: 'general', industry: 'all' },
   // 供应链
   // SupplyChainBrain /rss/ 返回HTML索引页而非RSS feed，替换为实测有效的 Supply Chain Dive
   { name: 'Supply Chain Dive', url: 'https://www.supplychaindive.com/feeds/news/', category: 'supply', industry: 'all' },
