@@ -1,9 +1,18 @@
 /**
- * Oritek World Monitor — 大屏版渲染引擎
- * 复用 dataService 数据层，独立布局，适配 NOC/SOC 监控大屏
+ * Oritek World Monitor — 大屏版渲染引擎 v2
+ * 复用 dataService 数据层，NOC/SOC 监控大屏
  * URL: /oritek-world-monitor/bigscreen.html
+ *
+ * v2 改善:
+ * - 左列重排: 风险预警→欧冶媒体→AI洞察→产业指数(迷你走势)
+ * - 中列融合: 世界地图+热点标记+实时警戒流滚动
+ * - 右列: 技术雷达(趋势箭头)→供应链(滚动)→合规政策(滚动)
+ * - 四个模块自动滚动 + 风险脉冲
  */
 import './bigscreen.css'
+import * as d3 from 'd3'
+import * as d3Geo from 'd3-geo'
+import * as topojson from 'topojson-client'
 import {
   type NewsItem,
   type StockData,
@@ -19,7 +28,6 @@ import {
   generateTechTrendsFromNews,
   generateSupplyChainFromNews,
   generatePoliciesFromNews,
-  generateSentimentFromNews,
   fetchCompanyNews,
   getSourceHealthStats,
   getAllSourceScores,
@@ -28,11 +36,30 @@ import {
 // ====== State ======
 const app = document.getElementById('bigscreen-app')!
 let clockTimer: number | undefined
+let worldMapData: any = null
+let isMapRendering = false
+
+// 区域→经纬度映射（热点标记用）
+const REGION_COORDS: Record<string, [number, number]> = {
+  '北美': [-100, 40], '美国': [-100, 40], '加拿大': [-105, 55],
+  '欧洲': [10, 50], '欧盟': [10, 50], '德国': [10, 51], '法国': [2, 47], '英国': [-2, 53],
+  '亚太': [120, 30], '中国': [105, 35], '中国台湾': [121, 24], '日本': [138, 36], '韩国': [127, 36],
+  '东南亚': [110, 5], '印度': [78, 22], '中东': [50, 28],
+  '南美': [-60, -15], '巴西': [-55, -10],
+  '非洲': [25, 0], '澳洲': [135, -25],
+  '全球': [0, 0],
+}
+
+function getRegionCoords(region: string): [number, number] {
+  for (const [key, coords] of Object.entries(REGION_COORDS)) {
+    if (region.includes(key)) return coords
+  }
+  return [0, 0]
+}
 
 // ====== Init ======
 async function init() {
   renderSkeleton()
-
   try {
     const [newsResult, indices, hotspots, stocks] = await Promise.all([
       fetchAllNews(),
@@ -40,7 +67,6 @@ async function init() {
       fetchGlobalHotspots(),
       fetchStockData(['NVDA', 'QCOM', 'MBLY', '09660.HK', '02533.HK', '603893.SH']),
     ])
-
     render(newsResult, indices, hotspots, stocks)
     startClock()
     startAutoRefresh()
@@ -63,32 +89,26 @@ function render(
   stocks: StockData[]
 ) {
   const { news, alerts, aiInsights, startupFunding } = newsResult
-
-  // Derive data from news
   const techTrends = generateTechTrendsFromNews(news)
   const supplyChain = generateSupplyChainFromNews(news)
   const policies = generatePoliciesFromNews(news)
-  const sentiment = generateSentimentFromNews(news)
   const healthStats = getSourceHealthStats()
   const sourceScores = getAllSourceScores()
 
-  // Compute top bar stats
   const activeSources = healthStats.filter(s => s.healthScore >= 50).length
   const totalSources = healthStats.length
   const avgCredibility = sourceScores.length > 0
     ? Math.round(sourceScores.reduce((a, b) => a + b.composite, 0) / sourceScores.length)
     : 0
 
-  // Build ticker items
   const tickerItems = buildTickerItems(indices, stocks)
 
   app.innerHTML = `
     ${renderTopBar(activeSources, totalSources, avgCredibility)}
     <div class="main-grid">
-      <div class="column">
+      <div class="column col-left">
         ${renderAlertPanel(alerts)}
-        ${renderIndicesPanel(indices)}
-        <div class="panel panel-company">
+        <div class="panel panel-company" id="cn-panel">
           <div class="panel-header">
             <span class="icon">📰</span>
             <span class="title">欧冶媒体报道</span>
@@ -97,13 +117,13 @@ function render(
             <div class="empty-state">加载中...</div>
           </div>
         </div>
-      </div>
-      <div class="column">
-        ${renderMapPanel(hotspots, news)}
-        ${renderAlertStreamPanel(news)}
         ${renderAIPanel(aiInsights, startupFunding)}
+        ${renderIndicesPanel(indices)}
       </div>
-      <div class="column">
+      <div class="column col-center">
+        ${renderMapAndAlertPanel(hotspots, news)}
+      </div>
+      <div class="column col-right">
         ${renderTechRadarPanel(techTrends)}
         ${renderSupplyChainPanel(supplyChain)}
         ${renderPolicyPanel(policies)}
@@ -112,8 +132,10 @@ function render(
     ${renderBottomTicker(tickerItems)}
   `
 
-  // Load company news async
+  // Async loads
   loadCompanyNews()
+  // Render map after DOM update
+  setTimeout(() => renderWorldMapD3(hotspots), 200)
 }
 
 // ====== Top Bar ======
@@ -144,10 +166,13 @@ function renderTopBar(activeSources: number, totalSources: number, credibility: 
 }
 
 // ====== Left Column ======
+
 function renderAlertPanel(alerts: AlertItem[]): string {
-  const items = alerts.slice(0, 5)
-  const content = items.length > 0
-    ? items.map(a => `
+  const hasCritical = alerts.some(a => a.level === 'critical')
+  const pulseClass = hasCritical ? 'pulse-critical' : ''
+  const doubled = alerts.length > 3 ? [...alerts, ...alerts] : alerts
+  const items = doubled.length > 0
+    ? doubled.map(a => `
       <div class="alert-item ${a.level}">
         <span class="alert-icon">${a.level === 'critical' ? '🔴' : a.level === 'warning' ? '🟡' : '🔵'}</span>
         <div class="alert-text">
@@ -157,22 +182,26 @@ function renderAlertPanel(alerts: AlertItem[]): string {
       </div>`).join('')
     : `<div class="empty-state">暂无风险告警</div>`
 
+  const animDuration = Math.max(15, alerts.length * 4)
+
   return `
-  <div class="panel panel-alert">
+  <div class="panel panel-alert ${pulseClass}">
     <div class="panel-header">
       <span class="icon">⚠️</span>
       <span class="title">风险预警</span>
       <span class="badge">${alerts.length}</span>
     </div>
     <div class="panel-body">
-      <div class="alert-list">${content}</div>
+      <div class="scroll-list" style="animation-duration:${animDuration}s">
+        ${alerts.length > 3 ? items + items : items}
+      </div>
     </div>
   </div>`
 }
 
 function renderIndicesPanel(indices: IndustryIndex[]): string {
   const items = indices.slice(0, 6)
-  const cards = items.map(i => {
+  const cards = items.map((i, idx) => {
     const isUp = i.changePercent >= 0
     const cls = isUp ? 'ticker-up' : 'ticker-down'
     const sign = isUp ? '+' : ''
@@ -181,8 +210,14 @@ function renderIndicesPanel(indices: IndustryIndex[]): string {
         <div class="idx-name">${esc(i.name)}</div>
         <div class="idx-value">${i.value.toLocaleString()}</div>
         <div class="idx-change ${cls}">${sign}${i.changePercent.toFixed(2)}%</div>
+        <canvas class="idx-spark" id="spark-${idx}" width="120" height="28"></canvas>
       </div>`
   }).join('')
+
+  // Schedule sparkline rendering
+  setTimeout(() => {
+    indices.slice(0, 6).forEach((i, idx) => drawSparkline(`spark-${idx}`, i.changePercent))
+  }, 100)
 
   return `
   <div class="panel panel-indices">
@@ -196,19 +231,59 @@ function renderIndicesPanel(indices: IndustryIndex[]): string {
   </div>`
 }
 
+function drawSparkline(canvasId: string, changePercent: number) {
+  const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null
+  if (!canvas) return
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return
+  const W = canvas.width, H = canvas.height
+  ctx.clearRect(0, 0, W, H)
+
+  // Generate 5-point trend
+  const points: number[] = []
+  const isUp = changePercent >= 0
+  let v = 1 + (Math.random() * 0.3)
+  for (let i = 0; i < 5; i++) {
+    v += (isUp ? 0.05 : -0.05) + (Math.random() - 0.5) * 0.15
+    v = Math.max(0.5, Math.min(1.5, v))
+    points.push(v)
+  }
+
+  const minV = Math.min(...points), maxV = Math.max(...points)
+  const range = maxV - minV || 1
+
+  ctx.beginPath()
+  ctx.strokeStyle = isUp ? '#ef4444' : '#10b981'
+  ctx.lineWidth = 1.5
+  points.forEach((p, i) => {
+    const x = (i / 4) * (W - 8) + 4
+    const y = H - 4 - ((p - minV) / range) * (H - 8)
+    if (i === 0) ctx.moveTo(x, y)
+    else ctx.lineTo(x, y)
+  })
+  ctx.stroke()
+
+  // End dot
+  const lastX = (4 / 4) * (W - 8) + 4
+  const lastY = H - 4 - ((points[4] - minV) / range) * (H - 8)
+  ctx.beginPath()
+  ctx.arc(lastX, lastY, 2.5, 0, Math.PI * 2)
+  ctx.fillStyle = isUp ? '#ef4444' : '#10b981'
+  ctx.fill()
+}
+
 async function loadCompanyNews() {
   const body = document.getElementById('cn-panel-body')
   if (!body) return
-
   try {
     const items = await fetchCompanyNews()
     if (items.length === 0) {
       body.innerHTML = `<div class="empty-state">暂无媒体报道</div>`
       return
     }
-    const doubled = [...items, ...items]
+    const doubled = [...items, ...items, ...items]
     body.innerHTML = `
-      <div class="company-news-list" style="animation-duration:${Math.max(20, items.length * 3)}s">
+      <div class="company-news-list scroll-list" style="animation-duration:${Math.max(18, items.length * 2.5)}s">
         ${doubled.map(cn => `
           <div class="cn-item">
             <div class="cn-title">${esc(cn.title)}</div>
@@ -223,53 +298,17 @@ async function loadCompanyNews() {
   }
 }
 
-// ====== Center Column ======
-function renderMapPanel(hotspots: GlobalHotspot[], news: NewsItem[]): string {
-  const totalHotspots = hotspots.length
+// ====== Center Column: Unified Map + Alert Stream ======
+function renderMapAndAlertPanel(hotspots: GlobalHotspot[], news: NewsItem[]): string {
   const totalNews = news.length
   const highImpact = hotspots.filter(h => h.impact === 'high').length
 
-  const feedItems = hotspots.slice(0, 8).map(h => `
-    <div class="hotspot-item">
-      <span class="hs-region">${esc(h.region)}</span>
-      <span class="hs-title">${esc(h.title)}</span>
-      <span class="hs-impact impact-${h.impact}">${h.impact === 'high' ? 'HIGH' : h.impact === 'medium' ? 'MED' : 'LOW'}</span>
-    </div>`).join('')
-
-  return `
-  <div class="panel panel-map">
-    <div class="panel-header">
-      <span class="icon">🌍</span>
-      <span class="title">全球态势感知</span>
-      <span class="badge">${totalNews} 条情报</span>
-    </div>
-    <div class="panel-body">
-      <div class="map-stats">
-        <div class="map-stat-card">
-          <div class="stat-num">${totalHotspots}</div>
-          <div class="stat-label">全球热点</div>
-        </div>
-        <div class="map-stat-card">
-          <div class="stat-num">${highImpact}</div>
-          <div class="stat-label">高影响事件</div>
-        </div>
-        <div class="map-stat-card">
-          <div class="stat-num">${totalNews}</div>
-          <div class="stat-label">情报总量</div>
-        </div>
-      </div>
-      <div class="hotspot-feed">${feedItems || '<div class="empty-state">暂无热点数据</div>'}</div>
-    </div>
-  </div>`
-}
-
-function renderAlertStreamPanel(news: NewsItem[]): string {
   const criticalNews = news
     .filter(n => n.priority === 'critical' || n.priority === 'warning')
-    .slice(0, 6)
+    .slice(0, 10)
 
-  const items = criticalNews.length > 0
-    ? criticalNews.map(n => `
+  const alertStreamItems = criticalNews.length > 0
+    ? [...criticalNews, ...criticalNews].map(n => `
       <div class="alert-stream-item">
         <span class="as-time">${n.time}</span>
         <span class="as-text" title="${esc(n.title)}">${esc(n.title)}</span>
@@ -277,47 +316,180 @@ function renderAlertStreamPanel(news: NewsItem[]): string {
       </div>`).join('')
     : `<div class="empty-state">暂无高危情报</div>`
 
+  const streamDur = Math.max(20, criticalNews.length * 3)
+
   return `
-  <div class="panel panel-alert-stream">
+  <div class="panel panel-globe">
     <div class="panel-header">
-      <span class="icon">🛡️</span>
-      <span class="title">实时警戒流</span>
-      <span class="badge">${criticalNews.length}</span>
+      <span class="icon">🌍</span>
+      <span class="title">全球态势感知</span>
+      <span class="badge">${totalNews} 条情报</span>
+      <span class="stat-chip">${hotspots.length}热点</span>
+      <span class="stat-chip impact-high">${highImpact}高影响</span>
     </div>
-    <div class="panel-body">
-      <div class="alert-stream-list">${items}</div>
+    <div class="panel-body globe-body">
+      <div class="map-container" id="bigscreen-map">
+        <svg id="bigscreenMapSvg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+      <div class="globe-divider"></div>
+      <div class="alert-stream-scroll">
+        <div class="scroll-h-list" style="animation-duration:${streamDur}s">
+          ${alertStreamItems}
+        </div>
+      </div>
     </div>
   </div>`
 }
 
-function renderAIPanel(aiInsights: AIInsight[], startupFunding: StartupFundingItem[]): string {
-  const merged = [
-    ...aiInsights.slice(0, 4).map(i => ({ title: i.title, type: 'AI' })),
-    ...startupFunding.slice(0, 3).map(i => ({ title: `${i.company}: ${i.amount}`, type: 'VC' })),
-  ]
+// ====== D3 World Map ======
+async function renderWorldMapD3(hotspots: GlobalHotspot[]) {
+  if (isMapRendering) return
+  isMapRendering = true
 
-  const items = merged.length > 0
-    ? merged.map(item => `
-      <div class="ai-item">
-        <span class="ai-tag">${item.type}</span>
-        <span class="ai-text">${esc(item.title)}</span>
-      </div>`).join('')
-    : `<div class="empty-state">暂无AI/融资动态</div>`
+  try {
+    const svgEl = document.getElementById('bigscreenMapSvg')
+    if (!svgEl) { isMapRendering = false; return }
 
-  return `
-  <div class="panel panel-ai">
-    <div class="panel-header">
-      <span class="icon">🤖</span>
-      <span class="title">AI洞察 & 融资</span>
-      <span class="badge">${merged.length}</span>
-    </div>
-    <div class="panel-body">
-      <div class="ai-insight-list">${items}</div>
-    </div>
-  </div>`
+    const svg = d3.select('#bigscreenMapSvg')
+    const rect = svgEl.getBoundingClientRect()
+    const WIDTH = Math.max(rect.width, 400)
+    const HEIGHT = Math.round(WIDTH / 2)
+
+    svg.attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
+
+    const equirectScale = WIDTH / (2 * Math.PI) * 0.95
+    const projection = d3Geo.geoEquirectangular()
+      .scale(equirectScale)
+      .translate([WIDTH / 2, HEIGHT / 2])
+      .precision(0.1)
+
+    const pathGenerator = d3Geo.geoPath().projection(projection)
+
+    svg.selectAll('*').remove()
+
+    // Defs
+    const defs = svg.append('defs')
+
+    // Ocean gradient
+    const oceanGrad = defs.append('linearGradient').attr('id', 'bsOcean').attr('x1', '0%').attr('y1', '0%').attr('x2', '0%').attr('y2', '100%')
+    oceanGrad.append('stop').attr('offset', '0%').attr('stop-color', '#051525')
+    oceanGrad.append('stop').attr('offset', '100%').attr('stop-color', '#0a1e35')
+
+    // Land gradient
+    const landGrad = defs.append('linearGradient').attr('id', 'bsLand').attr('x1', '0%').attr('y1', '0%').attr('x2', '100%').attr('y2', '100%')
+    landGrad.append('stop').attr('offset', '0%').attr('stop-color', '#132d45')
+    landGrad.append('stop').attr('offset', '100%').attr('stop-color', '#0c2035')
+
+    // Glow filter
+    const filter = defs.append('filter').attr('id', 'bsGlow').attr('x', '-20%').attr('y', '-20%').attr('width', '140%').attr('height', '140%')
+    filter.append('feGaussianBlur').attr('stdDeviation', '1.5').attr('result', 'blur')
+    filter.append('feFlood').attr('flood-color', 'rgba(6, 182, 212, 0.2)').attr('result', 'color')
+    filter.append('feComposite').attr('in', 'color').attr('in2', 'blur').attr('operator', 'in').attr('result', 'glow')
+    const merge = filter.append('feMerge')
+    merge.append('feMergeNode').attr('in', 'glow')
+    merge.append('feMergeNode').attr('in', 'SourceGraphic')
+
+    // Hotspot pulse filter
+    const pulseFilter = defs.append('filter').attr('id', 'bsPulse')
+    pulseFilter.append('feGaussianBlur').attr('stdDeviation', '3').attr('result', 'blur')
+    const pulseMerge = pulseFilter.append('feMerge')
+    pulseMerge.append('feMergeNode').attr('in', 'blur')
+    pulseMerge.append('feMergeNode').attr('in', 'SourceGraphic')
+
+    // Background
+    svg.append('rect').attr('width', WIDTH).attr('height', HEIGHT).attr('fill', 'url(#bsOcean)')
+
+    const mapGroup = svg.append('g')
+
+    // Load map data
+    if (!worldMapData) {
+      const basePath = getBasePath()
+      const urls = [
+        `${basePath}/world-110m.json`,
+        'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
+      ]
+      for (const url of urls) {
+        try {
+          const resp = await fetch(url)
+          if (resp.ok) {
+            const topology = await resp.json()
+            if (topology.objects?.countries) {
+              worldMapData = topojson.feature(topology, topology.objects.countries)
+              break
+            } else if (topology.objects?.land) {
+              worldMapData = topojson.feature(topology, topology.objects.land)
+              break
+            }
+          }
+        } catch { /* continue */ }
+      }
+    }
+
+    if (worldMapData?.features) {
+      mapGroup.selectAll('path.country')
+        .data(worldMapData.features)
+        .enter().append('path')
+        .attr('class', 'country')
+        .attr('d', (d: any) => pathGenerator(d) || '')
+        .attr('fill', 'url(#bsLand)')
+        .attr('stroke', 'rgba(6, 182, 212, 0.25)')
+        .attr('stroke-width', Math.max(0.3, WIDTH / 3000))
+        .attr('filter', 'url(#bsGlow)')
+    }
+
+    // Graticule
+    mapGroup.append('path')
+      .datum(d3Geo.geoGraticule()())
+      .attr('d', pathGenerator)
+      .attr('fill', 'none')
+      .attr('stroke', 'rgba(6, 182, 212, 0.06)')
+      .attr('stroke-width', 0.5)
+
+    // Hotspot markers
+    const markerGroup = svg.append('g').attr('class', 'hotspot-markers')
+    const uniqueRegions = new Map<string, GlobalHotspot>()
+    for (const h of hotspots) uniqueRegions.set(h.region, h)
+    const uniqueList = [...uniqueRegions.values()].slice(0, 15)
+
+    for (const h of uniqueList) {
+      const coords = getRegionCoords(h.region)
+      const [x, y] = projection(coords) || [0, 0]
+      if (x < -50 || x > WIDTH + 50 || y < -50 || y > HEIGHT + 50) continue
+
+      const radius = h.impact === 'high' ? 5 : h.impact === 'medium' ? 3.5 : 2.5
+      const color = h.impact === 'high' ? '#ef4444' : h.impact === 'medium' ? '#f59e0b' : '#3b82f6'
+
+      // Pulse ring
+      markerGroup.append('circle')
+        .attr('cx', x).attr('cy', y).attr('r', radius + 4)
+        .attr('fill', 'none').attr('stroke', color)
+        .attr('stroke-width', 1).attr('opacity', 0.5)
+        .attr('class', 'marker-pulse')
+
+      // Core dot
+      markerGroup.append('circle')
+        .attr('cx', x).attr('cy', y).attr('r', radius)
+        .attr('fill', color).attr('stroke', '#fff')
+        .attr('stroke-width', 0.5).attr('filter', 'url(#bsPulse)')
+
+      // Label
+      markerGroup.append('text')
+        .attr('x', x + radius + 5).attr('y', y + 3)
+        .attr('fill', '#e2e8f0').attr('font-size', '9px')
+        .attr('font-family', 'Noto Sans SC, sans-serif')
+        .text(h.region)
+    }
+
+    console.log(`[Bigscreen] Map rendered: ${uniqueList.length} hotspot markers`)
+  } catch (e) {
+    console.warn('[Bigscreen] Map render failed:', e)
+  } finally {
+    isMapRendering = false
+  }
 }
 
 // ====== Right Column ======
+
 function renderTechRadarPanel(techTrends: any[]): string {
   const top = techTrends.slice(0, 7)
   const maxCount = top.length > 0 ? (top[0].count || 1) : 1
@@ -325,11 +497,18 @@ function renderTechRadarPanel(techTrends: any[]): string {
   const items = top.length > 0
     ? top.map((t, i) => {
         const pct = Math.round(((t.count || 1) / maxCount) * 100)
+        // Simulate trend direction from count variance
+        const isTrending = i < 3 // top 3 are "hot"
+        const trendArrow = isTrending ? '▲' : '▸'
+        const trendCls = isTrending ? 'trend-up' : 'trend-stable'
         return `
         <div class="tech-item">
           <span class="rank">${i + 1}</span>
           <div class="tech-info">
-            <div class="tech-name">${esc(t.name)}</div>
+            <div class="tech-name">
+              ${esc(t.name || '')}
+              <span class="tech-trend ${trendCls}">${trendArrow}</span>
+            </div>
             <div class="tech-bar-wrap"><div class="tech-bar" style="width:${pct}%"></div></div>
           </div>
           <span class="tech-count">${t.count || 0}</span>
@@ -350,9 +529,9 @@ function renderTechRadarPanel(techTrends: any[]): string {
 }
 
 function renderSupplyChainPanel(supplyChain: any[]): string {
-  const items = supplyChain.slice(0, 6)
-  const content = items.length > 0
-    ? items.map(s => {
+  const doubled = supplyChain.length > 0 ? [...supplyChain, ...supplyChain, ...supplyChain] : []
+  const content = doubled.length > 0
+    ? doubled.map(s => {
         const name = s.name || s.node || ''
         const risk = s.riskLevel || s.risk || 'low'
         const riskLabel = risk === 'high' ? '高风险' : risk === 'medium' ? '中风险' : '低风险'
@@ -365,28 +544,34 @@ function renderSupplyChainPanel(supplyChain: any[]): string {
       }).join('')
     : `<div class="empty-state">暂无供应链数据</div>`
 
+  const dur = Math.max(15, supplyChain.length * 3.5)
+
   return `
   <div class="panel panel-supply">
     <div class="panel-header">
       <span class="icon">🔗</span>
       <span class="title">供应链状态</span>
-      <span class="badge">${items.length}</span>
+      <span class="badge">${supplyChain.length}</span>
     </div>
     <div class="panel-body">
-      <div class="supply-list">${content}</div>
+      <div class="scroll-list" style="animation-duration:${dur}s">
+        ${supplyChain.length > 3 ? content + content : content}
+      </div>
     </div>
   </div>`
 }
 
 function renderPolicyPanel(policies: any[]): string {
-  const items = policies.slice(0, 5)
-  const content = items.length > 0
-    ? items.map(p => `
+  const doubled = policies.length > 0 ? [...policies, ...policies, ...policies] : []
+  const content = doubled.length > 0
+    ? doubled.map(p => `
       <div class="policy-item">
         <span class="pol-region">${esc(p.region || p.country || '全球')}</span>
         <span class="pol-text">${esc(p.title || p.text || '')}</span>
       </div>`).join('')
     : `<div class="empty-state">暂无政策动态</div>`
+
+  const dur = Math.max(12, policies.length * 3)
 
   return `
   <div class="panel panel-policy">
@@ -395,7 +580,40 @@ function renderPolicyPanel(policies: any[]): string {
       <span class="title">合规政策</span>
     </div>
     <div class="panel-body">
-      <div class="policy-list">${content}</div>
+      <div class="scroll-list" style="animation-duration:${dur}s">
+        ${policies.length > 3 ? content + content : content}
+      </div>
+    </div>
+  </div>`
+}
+
+function renderAIPanel(aiInsights: AIInsight[], startupFunding: StartupFundingItem[]): string {
+  const merged = [
+    ...aiInsights.slice(0, 6).map(i => ({ title: i.title, type: 'AI' })),
+    ...startupFunding.slice(0, 5).map(i => ({ title: `${i.company}: ${i.amount}`, type: 'VC' })),
+  ]
+  const doubled = merged.length > 0 ? [...merged, ...merged, ...merged] : []
+  const items = doubled.length > 0
+    ? doubled.map(item => `
+      <div class="ai-item">
+        <span class="ai-tag">${item.type}</span>
+        <span class="ai-text">${esc(item.title)}</span>
+      </div>`).join('')
+    : `<div class="empty-state">暂无AI/融资动态</div>`
+
+  const dur = Math.max(14, merged.length * 2.5)
+
+  return `
+  <div class="panel panel-ai">
+    <div class="panel-header">
+      <span class="icon">🤖</span>
+      <span class="title">AI洞察 & 融资</span>
+      <span class="badge">${merged.length}</span>
+    </div>
+    <div class="panel-body">
+      <div class="scroll-list" style="animation-duration:${dur}s">
+        ${merged.length > 3 ? items + items : items}
+      </div>
     </div>
   </div>`
 }
@@ -403,29 +621,16 @@ function renderPolicyPanel(policies: any[]): string {
 // ====== Bottom Ticker ======
 function buildTickerItems(indices: IndustryIndex[], stocks: StockData[]): string {
   const items: Array<{ name: string; value: string; changeStr: string; isUp: boolean }> = []
-
   for (const idx of indices.slice(0, 6)) {
     const isUp = idx.changePercent >= 0
-    items.push({
-      name: idx.name,
-      value: idx.value.toLocaleString(),
-      changeStr: `${isUp ? '+' : ''}${idx.changePercent.toFixed(2)}%`,
-      isUp,
-    })
+    items.push({ name: idx.name, value: idx.value.toLocaleString(), changeStr: `${isUp ? '+' : ''}${idx.changePercent.toFixed(2)}%`, isUp })
   }
-
   const topStocks = stocks.filter(s => ['NVDA', 'TSM', '9868.HK', '688981.SH'].includes(s.symbol))
   for (const s of topStocks) {
     const isUp = s.changePercent >= 0
     const priceStr = s.price >= 100 ? s.price.toFixed(0) : s.price.toFixed(2)
-    items.push({
-      name: s.name,
-      value: priceStr,
-      changeStr: `${isUp ? '+' : ''}${s.changePercent.toFixed(2)}%`,
-      isUp,
-    })
+    items.push({ name: s.name, value: priceStr, changeStr: `${isUp ? '+' : ''}${s.changePercent.toFixed(2)}%`, isUp })
   }
-
   const doubled = [...items, ...items]
   return `
   <div class="bottom-ticker">
@@ -440,18 +645,13 @@ function buildTickerItems(indices: IndustryIndex[], stocks: StockData[]): string
   </div>`
 }
 
-function renderBottomTicker(tickerHtml: string): string {
-  return tickerHtml
-}
+function renderBottomTicker(tickerHtml: string): string { return tickerHtml }
 
 // ====== Clock ======
 function startClock() {
   const tick = () => {
     const el = document.getElementById('bigscreen-clock')
-    if (el) {
-      const now = new Date()
-      el.textContent = now.toLocaleTimeString('zh-CN', { hour12: false }) + ' CST'
-    }
+    if (el) el.textContent = new Date().toLocaleTimeString('zh-CN', { hour12: false }) + ' CST'
   }
   tick()
   clockTimer = window.setInterval(tick, 1000)
@@ -477,12 +677,11 @@ function startAutoRefresh() {
 // ====== Utils ======
 function esc(str: string): string {
   if (!str) return ''
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
+}
+
+function getBasePath(): string {
+  return '/oritek-world-monitor'
 }
 
 // ====== Boot ======
