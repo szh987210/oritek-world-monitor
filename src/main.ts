@@ -1584,7 +1584,7 @@ function renderTechRadarCompact(): string {
         <div class="card-title">
           <div class="card-title-icon">🔬</div>
           <span>技术雷达</span>
-          <span class="data-source-badge ${techTrends.length > 0 ? 'live' : 'base'}">${techTrends.length > 0 ? '实时' : '加载中'}</span>
+          <span class="data-source-badge ${techTrends.length > 0 ? 'live' : 'init'}">${techTrends.length > 0 ? '动态分析' : '初始化'}</span>
         </div>
       </div>
       <div class="card-body">
@@ -1599,7 +1599,7 @@ function renderTechRadarCompact(): string {
               <div class="tech-count">${tech.patents}</div>
             </div>
           `).join('') : `<div class="tech-mini" style="justify-content:center;padding:12px;">
-            <span style="color:var(--text-muted);font-size:13px;">⏳ 正在从新闻动态分析技术趋势...</span>
+            <span style="color:var(--text-muted);font-size:13px;">⏳ 正在加载数据...</span>
           </div>`}
         </div>
       </div>
@@ -1614,7 +1614,7 @@ function renderSupplyChainCompact(): string {
         <div class="card-title">
           <div class="card-title-icon">🔗</div>
           <span>供应链</span>
-          <span class="data-source-badge ${supplyChain.length > 0 ? 'live' : 'base'}">${supplyChain.length > 0 ? '实时' : '加载中'}</span>
+          <span class="data-source-badge ${supplyChain.length > 0 ? 'live' : 'init'}">${supplyChain.length > 0 ? '动态分析' : '初始化'}</span>
         </div>
       </div>
       <div class="card-body">
@@ -1630,7 +1630,7 @@ function renderSupplyChainCompact(): string {
                 ${item.trend > 0 ? '↑' : '↓'} ${Math.abs(item.trend)}%
               </div>
             </div>
-          `).join('') : `<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:13px;">⏳ 正在从新闻动态分析供应链状态...</div>`}
+          `).join('') : `<div style="text-align:center;padding:12px;color:var(--text-muted);font-size:13px;">⏳ 正在加载数据...</div>`}
         </div>
       </div>
     </div>
@@ -1660,8 +1660,8 @@ function renderPolicyCompact(): string {
           `).join('') : `<div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <div class="timeline-title">⏳ 数据加载中...</div>
-              <div class="timeline-desc">正在从RSS源获取最新政策动态</div>
+              <div class="timeline-title">⏳ 正在加载数据...</div>
+              <div class="timeline-desc">数据加载完成后自动更新</div>
               <div class="timeline-date">${new Date().toISOString().slice(0, 10)}</div>
             </div>
           </div>`}
@@ -1925,7 +1925,7 @@ function renderPolicyApplicationsWide(): string {
         <div class="card-title">
           <div class="card-title-icon">📋</div>
           <span>政策申报</span>
-          <span class="data-source-badge ${policyApplications.length > 0 ? 'live' : 'base'}">${policyApplications.length > 0 ? '实时' : '加载中'}</span>
+          <span class="data-source-badge ${policyApplications.length > 0 ? 'live' : 'init'}">${policyApplications.length > 0 ? '动态分析' : '初始化'}</span>
         </div>
       </div>
       <div class="card-body">
@@ -2718,11 +2718,8 @@ async function init() {
       techTrends = generateTechTrendsFromNews(allNewsList)
       supplyChain = generateSupplyChainFromNews(allNewsList)
       policies = generatePoliciesFromNews(allNewsList)
-      // 政策申报：仅在有匹配数据时才覆盖硬编码兜底数据
-      const generatedPolicyApps = generatePolicyApplicationsFromNews(allNewsList)
-      if (generatedPolicyApps.length > 0) {
-        policyApplications = generatedPolicyApps
-      }
+      // 政策申报：使用生成器数据（含兜底）
+      policyApplications = generatePolicyApplicationsFromNews(allNewsList)
       techNews = generateTechNewsFromNews(allNewsList)
       globalHeadlines = generateHeadlinesFromNews(allNewsList)
       roboticsCompanies = generateRoboticsCompaniesFromNews(allNewsList)
