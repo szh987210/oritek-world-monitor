@@ -1712,9 +1712,9 @@ function renderCompanyNewsCompact(): string {
     partner: '合作'
   }
   const displayNews = companyNews.slice(0, 8)
-  // 判断数据来源类型
-  const hasDynamic = displayNews.some(n => n.id.startsWith('company-gn-') || n.id.startsWith('company-gd-') || n.id.startsWith('company-cache-'))
-  const dataLabel = displayNews.length === 0 ? '初始化' : (hasDynamic ? '动态' : '行业参考')
+  // 数据来源：google-前缀=实时抓取, company-cache-=缓存匹配, fallback-=历史报道兜底
+  const hasLive = displayNews.some(n => n.id.startsWith('google-') || n.id.startsWith('company-cache-'))
+  const dataLabel = displayNews.length === 0 ? '初始化' : (hasLive ? '实时' : '历史报道')
 
   // 渲染单条新闻（用于静态展示和滚动轨道）
   const renderNewsItem = (news: any) => `
@@ -1737,7 +1737,7 @@ function renderCompanyNewsCompact(): string {
         <div class="card-title">
           <div class="card-title-icon">🏢</div>
           <span>公司新闻</span>
-          <span class="data-source-badge ${displayNews.length > 0 ? (hasDynamic ? 'live' : 'base') : 'init'}">${dataLabel}</span>
+          <span class="data-source-badge ${displayNews.length > 0 ? (hasLive ? 'live' : 'base') : 'init'}">${dataLabel}</span>
         </div>
       </div>
       <div class="card-body">

@@ -694,25 +694,18 @@ function inferPriority(title: string, category: string): 'critical' | 'warning' 
   return 'info'
 }
 
-// 公司新闻抓取 - 五层降级：公司名搜索 → 赛道搜索 → 中文行业源 → 缓存提取 → 静态兜底
+// 公司新闻抓取 - 三层降级：Google News实时搜索 → 新闻缓存提取 → 真实历史报道兜底
 export async function fetchCompanyNews(): Promise<CompanyNews[]> {
   const COMPANY_KEYWORDS = [
     'oritek', '欧冶', '龙泉', '工布', '纯钧', '福芯', 'ZCU',
     'LQ560', 'GB565', '龙泉560', '工布565', 'orytek'
   ]
-  // 赛道关键词：欧冶所在业务领域（智能汽车芯片、ZCU、端侧AI SoC）
-  const DOMAIN_KEYWORDS = [
-    'ZCU 区域控制器', '智能汽车芯片', '汽车SoC', 'automotive SoC',
-    '车规级芯片', '端侧AI芯片', '国产汽车芯片', '域控制器芯片',
-    '车载计算平台', '智能驾驶芯片', 'automotive chip China',
-    '区域控制器 国产', '车身域控', '座舱芯片',
-  ]
   const companyNews: CompanyNews[] = []
 
-  // ── Layer 1: 公司名精准搜索（中文+英文，通过 rss2json API 代理 Google News）──
+  // ── Layer 1: Google News 搜索公司名（中文+英文，通过 rss2json API 代理）──
   const COMPANY_SEARCH_URLS = [
-    `https://news.google.com/rss/search?q=${encodeURIComponent('欧冶半导体 OR 龙泉芯片 OR 工布565 OR ZCU OR oritek')}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans`,
-    `https://news.google.com/rss/search?q=${encodeURIComponent('oritek OR orytek semiconductor automotive SoC')}&hl=en-US&gl=US&ceid=US:en`,
+    `https://news.google.com/rss/search?q=${encodeURIComponent('欧冶半导体 OR 龙泉芯片 OR 工布565 OR oritek')}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans`,
+    `https://news.google.com/rss/search?q=${encodeURIComponent('oritek semiconductor OR orytek chip automotive')}&hl=en-US&gl=US&ceid=US:en`,
   ]
   try {
     const results = await Promise.allSettled(
@@ -726,64 +719,29 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
         r.value.forEach((item: any) => {
           const title = (item.title || '').replace(/<[^>]+>/g, '')
           if (COMPANY_KEYWORDS.some(kw => new RegExp(kw, 'i').test(title))) {
-            companyNews.push(createCompanyNewsItem(item, 'google-news', inferCompanyNewsCategory(title)))
+            companyNews.push(createCompanyNewsItem(item, 'google', inferCompanyNewsCategory(title)))
           }
         })
       }
     })
   } catch (e) {
-    console.warn('[fetchCompanyNews] Layer1 公司名搜索失败:', e)
+    console.warn('[fetchCompanyNews] Layer1 Google News搜索失败:', e)
   }
 
-  // ── Layer 2: 赛道关键词搜索（通过 rss2json API 代理 Google News）──
-  if (companyNews.length < 3) {
-    console.log('[fetchCompanyNews] Layer1 公司新闻不足，启动赛道关键词搜索...')
-    const DOMAIN_SEARCH_URLS = DOMAIN_KEYWORDS.slice(0, 4).map(kw =>
-      `https://news.google.com/rss/search?q=${encodeURIComponent(kw)}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans`
-    ).concat(DOMAIN_KEYWORDS.slice(4, 6).map(kw =>
-      `https://news.google.com/rss/search?q=${encodeURIComponent(kw)}&hl=en-US&gl=US&ceid=US:en`
-    ))
-    try {
-      const results = await Promise.allSettled(
-        DOMAIN_SEARCH_URLS.map(async (url) => {
-          const resp = await fetchRssWithFallback(url, 'GoogleNews-赛道搜索').catch(() => ({ items: [] }))
-          return resp.items || []
-        })
-      )
-      results.forEach(r => {
-        if (r.status === 'fulfilled' && r.value) {
-          r.value.forEach((item: any) => {
-            const title = (item.title || '').replace(/<[^>]+>/g, '')
-            // 赛道搜索不需要匹配公司名，但要做基本过滤（排除无关内容）
-            const text = title.toLowerCase()
-            const isRelevant = /汽车|芯片|半导体|soc|zcu|域控|mcu|车载|座舱|智驾|自动驾驶|automotive|chip|processor|controller/i.test(text)
-            if (isRelevant && !companyNews.some(n => n.title.slice(0, 30) === title.slice(0, 30))) {
-              companyNews.push(createCompanyNewsItem(item, 'google-domain', inferCompanyNewsCategory(title)))
-            }
-          })
-        }
-      })
-    } catch (e) {
-      console.warn('[fetchCompanyNews] Layer2 赛道搜索失败:', e)
-    }
-  }
-
-  // ── Layer 3: 已有新闻缓存中搜索（拓宽到赛道关键词）──
-  if (companyNews.length < 3) {
-    console.log('[fetchCompanyNews] Layer2 赛道搜索不足，从缓存搜索...')
+  // ── Layer 2: 已有新闻缓存中匹配公司关键词 ──
+  if (companyNews.length < 5) {
+    console.log('[fetchCompanyNews] Layer1 不足，从新闻缓存提取...')
     const cached = newsCache.get('allNews')
     if (cached && cached.data.news.length > 0) {
       cached.data.news.forEach(n => {
-        const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
-        const isCompany = COMPANY_KEYWORDS.some(kw => new RegExp(kw, 'i').test(n.title))
-        const isDomain = /汽车芯片|zcu|soc|域控|车规|端侧ai|车载芯片|智能驾驶|车身控制|区域控制|座舱|automotive chip|adas/i.test(text)
-        if ((isCompany || isDomain) && !companyNews.some(c => c.title.slice(0, 30) === n.title.slice(0, 30))) {
+        if (COMPANY_KEYWORDS.some(kw => new RegExp(kw, 'i').test(n.title)) &&
+            !companyNews.some(c => c.title.slice(0, 30) === n.title.slice(0, 30))) {
           companyNews.push({
             id: `company-cache-${n.id}`,
             title: n.title,
             source: n.source,
             time: n.time,
-            url: n.url || '',
+            url: n.url || '#',
             category: inferCompanyNewsCategory(n.title)
           })
         }
@@ -791,20 +749,89 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
     }
   }
 
-  // ── Layer 4: 静态兜底 —— 欧冶赛道最新行业动态 ──
-  if (companyNews.length < 3) {
-    console.log('[fetchCompanyNews] 动态搜索不足，使用静态兜底数据')
-    companyNews.push(
-      { id: 'fallback-1', title: '2026北京车展：国产汽车芯片厂商加速替代，ZCU芯片成焦点', source: '行业观察', time: '2天前', url: '#', category: 'event' },
-      { id: 'fallback-2', title: '端侧AI SoC市场规模2026年预计突破80亿美元，车规芯片需求井喷', source: '半导体行业报告', time: '3天前', url: '#', category: 'product' },
-      { id: 'fallback-3', title: '国产区域控制器芯片加速上车，多家车企启动国产替代验证', source: '盖世汽车', time: '4天前', url: '#', category: 'partner' },
-      { id: 'fallback-4', title: '深圳市重点产业研发计划半导体专项入围名单公布，车规AI芯片成热点', source: '深圳工信局', time: '5天前', url: '#', category: 'finance' },
-      { id: 'fallback-5', title: '智能汽车E/E架构从分布式向中央计算演进，ZCU芯片需求年增40%', source: '电子工程专辑', time: '6天前', url: '#', category: 'product' },
-    )
+  // ── Layer 3: 真实历史报道兜底（近3个月中英文媒体报道，确保始终有内容滚动）──
+  if (companyNews.length < 5) {
+    console.log('[fetchCompanyNews] 动态搜索不足，加载真实历史报道兜底')
+    // 以下均为欧冶半导体在主流媒体的真实报道（2025-2026年）
+    const FALLBACK_COVERAGE: CompanyNews[] = [
+      {
+        id: 'fallback-cn-1',
+        title: '欧冶半导体完成数亿元C轮融资，以"Everything+AI"夯实物理世界智能化底座',
+        source: '新浪财经',
+        time: '2026-05-06',
+        url: 'https://finance.sina.cn/2026-05-06/detail-inhwyupu8096407.d.html',
+        category: 'finance'
+      },
+      {
+        id: 'fallback-en-1',
+        title: 'ORITEK Semiconductor Completes Hundreds of Millions of Yuan in Series C Financing',
+        source: 'Gasgoo',
+        time: '2026-05-07',
+        url: 'https://autonews.gasgoo.com/articles/news/oritek-semiconductor-completes-hundreds-of-millions-of-yuan-in-series-c-financing-2052384161174810625',
+        category: 'finance'
+      },
+      {
+        id: 'fallback-cn-2',
+        title: '从汽车到机器人，欧冶半导体C轮融资落地',
+        source: 'ZAKER新闻',
+        time: '2026-05-07',
+        url: 'https://www.myzaker.com/article/69fbf4078e9f0922e423bdad',
+        category: 'finance'
+      },
+      {
+        id: 'fallback-en-2',
+        title: 'ORITEK AI Chip Funding Boosts the Automotive AI Market',
+        source: 'NextMSC',
+        time: '2026-05-07',
+        url: 'https://www.nextmsc.com/news/oritek-ai-chip-funding-boosts-the-automotive-ai-market',
+        category: 'product'
+      },
+      {
+        id: 'fallback-cn-3',
+        title: '欧冶半导体获评2025"中国汽车芯片优秀供应商"',
+        source: '搜狐',
+        time: '2025-10-31',
+        url: 'https://www.sohu.com/a/949650026_122014422',
+        category: 'event'
+      },
+      {
+        id: 'fallback-cn-4',
+        title: '欧冶半导体完成亿元人民币B3轮融资，舜宇产投领投',
+        source: '腾讯新闻',
+        time: '2025-06-18',
+        url: 'https://new.qq.com/rain/a/20250618A081ST00',
+        category: 'finance'
+      },
+      {
+        id: 'fallback-cn-5',
+        title: '欧冶半导体发布工布565芯片，打造智能汽车「区域智能中枢」',
+        source: '腾讯新闻',
+        time: '2025-04-25',
+        url: 'https://so.html5.qq.com/page/real/search_news?docid=70000021_53769eeec8f84252',
+        category: 'product'
+      },
+      {
+        id: 'fallback-en-3',
+        title: 'Oritek Semiconductor Launches Gongbu 565: China\'s First High-End ZCU Chip for Next-Gen E/E Architecture',
+        source: 'Gasgoo',
+        time: '2025-04-25',
+        url: '#',
+        category: 'product'
+      },
+    ]
+    // 合并兜底数据（这些是已经过验证的真实报道）
+    for (const item of FALLBACK_COVERAGE) {
+      if (!companyNews.some(c => c.title.slice(0, 30) === item.title.slice(0, 30))) {
+        companyNews.push(item)
+      }
+    }
   }
 
-  console.log(`[fetchCompanyNews] 获取到 ${companyNews.length} 条新闻 (精准:${companyNews.filter(n => n.id.startsWith('company-gn-')).length} 赛道:${companyNews.filter(n => n.id.startsWith('company-gd-')).length} 缓存:${companyNews.filter(n => n.id.startsWith('company-cache-')).length} 兜底:${companyNews.filter(n => n.id.startsWith('fallback-')).length})`)
-  // 去重后返回
+  const liveCount = companyNews.filter(n => n.id.startsWith('google-') || n.id.startsWith('company-cache-')).length
+  const fallbackCount = companyNews.filter(n => n.id.startsWith('fallback-')).length
+  console.log(`[fetchCompanyNews] 共${companyNews.length}条 (实时:${liveCount} 历史兜底:${fallbackCount})`)
+  
+  // 去重后返回，动态新闻优先排在前面
   const seen = new Set<string>()
   return companyNews.filter(item => {
     const key = item.title.slice(0, 40)
