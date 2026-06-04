@@ -1712,6 +1712,9 @@ function renderCompanyNewsCompact(): string {
     partner: '合作'
   }
   const displayNews = companyNews.slice(0, 8)
+  // 判断数据来源类型
+  const hasDynamic = displayNews.some(n => n.id.startsWith('company-gn-') || n.id.startsWith('company-gd-') || n.id.startsWith('company-cache-'))
+  const dataLabel = displayNews.length === 0 ? '初始化' : (hasDynamic ? '动态' : '行业参考')
 
   // 渲染单条新闻（用于静态展示和滚动轨道）
   const renderNewsItem = (news: any) => `
@@ -1734,6 +1737,7 @@ function renderCompanyNewsCompact(): string {
         <div class="card-title">
           <div class="card-title-icon">🏢</div>
           <span>公司新闻</span>
+          <span class="data-source-badge ${displayNews.length > 0 ? (hasDynamic ? 'live' : 'base') : 'init'}">${dataLabel}</span>
         </div>
       </div>
       <div class="card-body">
@@ -1744,7 +1748,7 @@ function renderCompanyNewsCompact(): string {
               : `<div class="company-news-item">
                 <div class="company-news-icon">⏳</div>
                 <div class="company-news-content">
-                  <div class="company-news-title">数据加载中，正在从Google News获取欧冶半导体最新动态...</div>
+                  <div class="company-news-title">正在获取欧冶半导体及智能汽车芯片行业最新动态...</div>
                   <div class="company-news-meta"><span>系统</span><span>${new Date().toLocaleDateString()}</span></div>
                 </div>
               </div>`}
