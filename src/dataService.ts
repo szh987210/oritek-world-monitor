@@ -54,12 +54,21 @@ interface RssFetchResult {
   source: string
 }
 
+// 带超时的 fetch 包装（防止被墙源卡死页面）
+function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number = 8000): Promise<Response> {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), timeoutMs)
+  return fetch(url, { ...options, signal: controller.signal }).finally(() => clearTimeout(timer))
+}
+
 async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promise<RssFetchResult> {
   const srcName = sourceName || new URL(rssUrl).hostname
-  // Level 1: 主Key
+  const FETCH_TIMEOUT = 8000 // 单层超时8秒，三层最多24秒
+
+  // Level 1: 主Key（rss2json API 代理）
   try {
     const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_API_KEY}&count=20`
-    const resp = await fetch(url, { mode: 'cors', headers: { 'Accept': 'application/json' } })
+    const resp = await fetchWithTimeout(url, { mode: 'cors', headers: { 'Accept': 'application/json' } }, FETCH_TIMEOUT)
     if (resp.ok) {
       const data = await resp.json()
       if (data.status === 'ok') {
@@ -72,7 +81,7 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
   // Level 2: 备用Key
   try {
     const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_SECONDARY_KEY}&count=20`
-    const resp = await fetch(url, { mode: 'cors', headers: { 'Accept': 'application/json' } })
+    const resp = await fetchWithTimeout(url, { mode: 'cors', headers: { 'Accept': 'application/json' } }, FETCH_TIMEOUT)
     if (resp.ok) {
       const data = await resp.json()
       if (data.status === 'ok') {
@@ -82,9 +91,9 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
     }
   } catch (_) { /* 降级 */ }
 
-  // Level 3: DOMParser 直接解析 XML（可能因CORS失败，但值得尝试）
+  // Level 3: DOMParser 直接解析 XML（对可直连的源有效，被墙源会因超时而快速失败）
   try {
-    const resp = await fetch(rssUrl, { mode: 'cors', headers: { 'Accept': 'application/xml, text/xml, application/rss+xml' } })
+    const resp = await fetchWithTimeout(rssUrl, { mode: 'cors', headers: { 'Accept': 'application/xml, text/xml, application/rss+xml' } }, FETCH_TIMEOUT)
     if (resp.ok) {
       const text = await resp.text()
       const parser = new DOMParser()
