@@ -118,7 +118,6 @@ function render(
           </div>
         </div>
         ${renderAIPanel(aiInsights, startupFunding)}
-        ${renderIndicesPanel(indices)}
       </div>
       <div class="column col-center">
         ${renderMapAndAlertPanel(hotspots, news)}
@@ -182,7 +181,7 @@ function renderAlertPanel(alerts: AlertItem[]): string {
       </div>`).join('')
     : `<div class="empty-state">暂无风险告警</div>`
 
-  const animDuration = Math.max(15, alerts.length * 4)
+  const animDuration = Math.max(35, alerts.length * 10)
 
   return `
   <div class="panel panel-alert ${pulseClass}">
@@ -199,79 +198,6 @@ function renderAlertPanel(alerts: AlertItem[]): string {
   </div>`
 }
 
-function renderIndicesPanel(indices: IndustryIndex[]): string {
-  const items = indices.slice(0, 6)
-  const cards = items.map((i, idx) => {
-    const isUp = i.changePercent >= 0
-    const cls = isUp ? 'ticker-up' : 'ticker-down'
-    const sign = isUp ? '+' : ''
-    return `
-      <div class="index-card">
-        <div class="idx-name">${esc(i.name)}</div>
-        <div class="idx-value">${i.value.toLocaleString()}</div>
-        <div class="idx-change ${cls}">${sign}${i.changePercent.toFixed(2)}%</div>
-        <canvas class="idx-spark" id="spark-${idx}" width="120" height="28"></canvas>
-      </div>`
-  }).join('')
-
-  // Schedule sparkline rendering
-  setTimeout(() => {
-    indices.slice(0, 6).forEach((i, idx) => drawSparkline(`spark-${idx}`, i.changePercent))
-  }, 100)
-
-  return `
-  <div class="panel panel-indices">
-    <div class="panel-header">
-      <span class="icon">📊</span>
-      <span class="title">产业指数</span>
-    </div>
-    <div class="panel-body">
-      <div class="index-grid">${cards}</div>
-    </div>
-  </div>`
-}
-
-function drawSparkline(canvasId: string, changePercent: number) {
-  const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null
-  if (!canvas) return
-  const ctx = canvas.getContext('2d')
-  if (!ctx) return
-  const W = canvas.width, H = canvas.height
-  ctx.clearRect(0, 0, W, H)
-
-  // Generate 5-point trend
-  const points: number[] = []
-  const isUp = changePercent >= 0
-  let v = 1 + (Math.random() * 0.3)
-  for (let i = 0; i < 5; i++) {
-    v += (isUp ? 0.05 : -0.05) + (Math.random() - 0.5) * 0.15
-    v = Math.max(0.5, Math.min(1.5, v))
-    points.push(v)
-  }
-
-  const minV = Math.min(...points), maxV = Math.max(...points)
-  const range = maxV - minV || 1
-
-  ctx.beginPath()
-  ctx.strokeStyle = isUp ? '#ef4444' : '#10b981'
-  ctx.lineWidth = 1.5
-  points.forEach((p, i) => {
-    const x = (i / 4) * (W - 8) + 4
-    const y = H - 4 - ((p - minV) / range) * (H - 8)
-    if (i === 0) ctx.moveTo(x, y)
-    else ctx.lineTo(x, y)
-  })
-  ctx.stroke()
-
-  // End dot
-  const lastX = (4 / 4) * (W - 8) + 4
-  const lastY = H - 4 - ((points[4] - minV) / range) * (H - 8)
-  ctx.beginPath()
-  ctx.arc(lastX, lastY, 2.5, 0, Math.PI * 2)
-  ctx.fillStyle = isUp ? '#ef4444' : '#10b981'
-  ctx.fill()
-}
-
 async function loadCompanyNews() {
   const body = document.getElementById('cn-panel-body')
   if (!body) return
@@ -283,7 +209,7 @@ async function loadCompanyNews() {
     }
     const doubled = [...items, ...items, ...items]
     body.innerHTML = `
-      <div class="company-news-list scroll-list" style="animation-duration:${Math.max(18, items.length * 2.5)}s">
+      <div class="company-news-list scroll-list" style="animation-duration:${Math.max(40, items.length * 6)}s">
         ${doubled.map(cn => `
           <div class="cn-item">
             <div class="cn-title">${esc(cn.title)}</div>
@@ -298,25 +224,26 @@ async function loadCompanyNews() {
   }
 }
 
-// ====== Center Column: Unified Map + Alert Stream ======
+// ====== Center Column: Globe Map + Tech Hotspots ======
 function renderMapAndAlertPanel(hotspots: GlobalHotspot[], news: NewsItem[]): string {
   const totalNews = news.length
   const highImpact = hotspots.filter(h => h.impact === 'high').length
 
-  const criticalNews = news
-    .filter(n => n.priority === 'critical' || n.priority === 'warning')
-    .slice(0, 10)
-
-  const alertStreamItems = criticalNews.length > 0
-    ? [...criticalNews, ...criticalNews].map(n => `
-      <div class="alert-stream-item">
-        <span class="as-time">${n.time}</span>
-        <span class="as-text" title="${esc(n.title)}">${esc(n.title)}</span>
-        <span class="as-severity ${n.priority === 'critical' ? 'sev-critical' : 'sev-warning'}">${n.priority === 'critical' ? '严重' : '警告'}</span>
+  // Tech hotspots for vertical scroll below map
+  const techHotspots = hotspots
+    .filter(h => h.summary && h.summary.length > 0)
+    .slice(0, 20)
+  const doubled = techHotspots.length > 2 ? [...techHotspots, ...techHotspots, ...techHotspots] : techHotspots
+  const hotspotsHtml = doubled.length > 0
+    ? doubled.map(h => `
+      <div class="ghs-item">
+        <span class="ghs-impact ${h.impact}">${h.impact === 'high' ? '高' : h.impact === 'medium' ? '中' : '低'}</span>
+        <span class="ghs-region">${esc(h.region)}</span>
+        <span class="ghs-text">${esc(h.summary || h.title || '')}</span>
       </div>`).join('')
-    : `<div class="empty-state">暂无高危情报</div>`
+    : `<div class="empty-state">暂无科技热点</div>`
 
-  const streamDur = Math.max(20, criticalNews.length * 3)
+  const hotspotsDur = Math.max(35, techHotspots.length * 5)
 
   return `
   <div class="panel panel-globe">
@@ -332,9 +259,15 @@ function renderMapAndAlertPanel(hotspots: GlobalHotspot[], news: NewsItem[]): st
         <svg id="bigscreenMapSvg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet"></svg>
       </div>
       <div class="globe-divider"></div>
-      <div class="alert-stream-scroll">
-        <div class="scroll-h-list" style="animation-duration:${streamDur}s">
-          ${alertStreamItems}
+      <div class="globe-hotspots">
+        <div class="ghs-header">
+          <span>🔴 全球科技热点</span>
+          <span class="ghs-count">${techHotspots.length}条</span>
+        </div>
+        <div class="ghs-scroll">
+          <div class="scroll-list" style="animation-duration:${hotspotsDur}s">
+            ${techHotspots.length > 2 ? hotspotsHtml + hotspotsHtml : hotspotsHtml}
+          </div>
         </div>
       </div>
     </div>
@@ -544,7 +477,7 @@ function renderSupplyChainPanel(supplyChain: any[]): string {
       }).join('')
     : `<div class="empty-state">暂无供应链数据</div>`
 
-  const dur = Math.max(15, supplyChain.length * 3.5)
+  const dur = Math.max(35, supplyChain.length * 8)
 
   return `
   <div class="panel panel-supply">
@@ -571,7 +504,7 @@ function renderPolicyPanel(policies: any[]): string {
       </div>`).join('')
     : `<div class="empty-state">暂无政策动态</div>`
 
-  const dur = Math.max(12, policies.length * 3)
+  const dur = Math.max(30, policies.length * 7)
 
   return `
   <div class="panel panel-policy">
@@ -601,7 +534,7 @@ function renderAIPanel(aiInsights: AIInsight[], startupFunding: StartupFundingIt
       </div>`).join('')
     : `<div class="empty-state">暂无AI/融资动态</div>`
 
-  const dur = Math.max(14, merged.length * 2.5)
+  const dur = Math.max(35, merged.length * 6)
 
   return `
   <div class="panel panel-ai">

@@ -120,10 +120,9 @@ html, body {
 .panel-body { flex: 1; overflow: hidden; padding: 8px 14px 10px; }
 
 /* Panel flex ratios — left column */
-.panel-alert   { flex: 1.3; }
-.panel-company { flex: 1.0; }
-.panel-ai      { flex: 0.9; }
-.panel-indices { flex: 0.8; }
+.panel-alert   { flex: 1.5; }
+.panel-company { flex: 1.2; }
+.panel-ai      { flex: 1.0; }
 
 /* Center column — globe takes all space */
 .panel-globe   { flex: 1; }
@@ -136,7 +135,7 @@ html, body {
 /* ====== Scrolling List (vertical auto-scroll) ====== */
 .scroll-list {
   display: flex; flex-direction: column; gap: 5px;
-  animation: scrollUpLoop 30s linear infinite;
+  animation: scrollUpLoop 40s linear infinite;
 }
 /* Pause on hover */
 .panel-body:hover .scroll-list,
@@ -149,7 +148,7 @@ html, body {
 /* Company news uses separate class for legacy compat */
 .company-news-list {
   display: flex; flex-direction: column; gap: 5px;
-  animation: scrollUpLoop 30s linear infinite;
+  animation: scrollUpLoop 40s linear infinite;
 }
 
 /* ====== Alert List & Pulse ====== */
@@ -179,18 +178,6 @@ html, body {
   50% { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 0 12px rgba(239, 68, 68, 0.15); }
 }
 
-/* ====== Index Cards with Sparklines ====== */
-.index-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-.index-card {
-  padding: 6px 8px; border-radius: 4px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.04);
-}
-.index-card .idx-name { font-size: 11px; color: var(--text-muted); margin-bottom: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.index-card .idx-value { font-size: var(--fs-md); font-weight: 700; font-variant-numeric: tabular-nums; }
-.index-card .idx-change { font-size: 11px; margin-top: 1px; margin-bottom: 3px; }
-.idx-spark { width: 100%; height: 24px; display: block; opacity: 0.8; }
-
 /* ====== Company News Items ====== */
 .cn-item {
   padding: 4px 6px; border-radius: 3px; font-size: var(--fs-xs);
@@ -201,12 +188,16 @@ html, body {
 .cn-item .cn-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
 .cn-item .cn-lang { font-size: 9px; padding: 1px 4px; border-radius: 2px; background: rgba(168,85,247,0.15); color: var(--accent-purple); }
 
-/* ====== Globe Panel (Map + Alert Stream Unified) ====== */
+/* ====== Globe Panel (Map + Tech Hotspots) ====== */
 .globe-body {
   display: flex; flex-direction: column; overflow: hidden; padding: 0 !important;
 }
 .map-container {
-  flex: 1; min-height: 0; position: relative; overflow: hidden;
+  flex: 0 0 auto;
+  aspect-ratio: 2 / 1;
+  max-height: 52%;
+  min-height: 0;
+  position: relative; overflow: hidden;
 }
 .map-container svg {
   width: 100%; height: 100%; display: block;
@@ -226,31 +217,36 @@ html, body {
   flex-shrink: 0;
 }
 
-/* Horizontal scrolling alert stream */
-.alert-stream-scroll {
-  height: 48px; flex-shrink: 0;
-  display: flex; align-items: center; overflow: hidden;
-  background: rgba(0,0,0,0.2);
-  padding: 0 10px;
+/* Tech hotspots below map */
+.globe-hotspots {
+  flex: 1; min-height: 0; overflow: hidden;
+  display: flex; flex-direction: column;
 }
-.scroll-h-list {
-  display: flex; gap: 24px;
-  animation: scrollH 40s linear infinite;
-  white-space: nowrap;
+.ghs-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 5px 14px; font-size: var(--fs-xs); font-weight: 600;
+  color: var(--accent-orange); border-bottom: 1px solid rgba(245,158,11,0.08);
+  flex-shrink: 0;
 }
-@keyframes scrollH {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.ghs-header .ghs-count { font-size: 10px; color: var(--text-muted); font-weight: 400; }
+.ghs-scroll { flex: 1; overflow: hidden; padding: 6px 12px; }
+.ghs-item {
+  display: flex; gap: 6px; align-items: center;
+  padding: 3px 0; font-size: 11px; flex-shrink: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
 }
-.alert-stream-item {
-  display: flex; gap: 8px; align-items: center;
-  font-size: var(--fs-xs); flex-shrink: 0;
+.ghs-item .ghs-impact {
+  font-size: 9px; padding: 1px 4px; border-radius: 2px; flex-shrink: 0;
+  font-weight: 600; min-width: 16px; text-align: center;
 }
-.alert-stream-item .as-time { font-size: 10px; color: var(--text-muted); }
-.alert-stream-item .as-text { font-weight: 500; max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.alert-stream-item .as-severity { font-size: 9px; padding: 1px 5px; border-radius: 2px; }
-.sev-critical { background: rgba(239,68,68,0.15); color: var(--accent-red); }
-.sev-warning { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+.ghs-impact.high { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+.ghs-impact.medium { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+.ghs-impact.low { background: rgba(59,130,246,0.12); color: var(--accent-blue); }
+.ghs-item .ghs-region {
+  font-size: 10px; padding: 1px 4px; border-radius: 2px;
+  background: rgba(255,255,255,0.04); color: var(--text-secondary); flex-shrink: 0;
+}
+.ghs-item .ghs-text { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-primary); }
 
 /* ====== AI Insights ====== */
 .ai-insight-list { display: flex; flex-direction: column; gap: 5px; }
