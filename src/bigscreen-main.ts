@@ -1,13 +1,12 @@
 /**
- * Oritek World Monitor — 大屏版渲染引擎 v2
+ * Oritek World Monitor — 大屏版渲染引擎 v3
  * 复用 dataService 数据层，NOC/SOC 监控大屏
  * URL: /oritek-world-monitor/bigscreen.html
  *
- * v2 改善:
- * - 左列重排: 风险预警→欧冶媒体→AI洞察→产业指数(迷你走势)
- * - 中列融合: 世界地图+热点标记+实时警戒流滚动
- * - 右列: 技术雷达(趋势箭头)→供应链(滚动)→合规政策(滚动)
- * - 四个模块自动滚动 + 风险脉冲
+ * v3 改善 (2026-06-04):
+ * - ① 地图+热点联动: JS控制滚动替代CSS动画，可追踪当前条目高亮对应地图标记
+ * - ② 风险预警重填充: 加入news热点情报扩充内容，调大行高字号
+ * - ③ 技术雷达重设计: 改为「技术竞争态势」— 热度柱+欧冶定位+一句话洞察
  */
 import './bigscreen.css'
 import * as d3 from 'd3'
@@ -38,8 +37,10 @@ const app = document.getElementById('bigscreen-app')!
 let clockTimer: number | undefined
 let worldMapData: any = null
 let isMapRendering = false
+let hotspotScrollTimer: number | undefined
+let currentHotspotIndex = 0
 
-// 区域→经纬度映射（热点标记用）
+// 区域→经纬度映射
 const REGION_COORDS: Record<string, [number, number]> = {
   '北美': [-100, 40], '美国': [-100, 40], '加拿大': [-105, 55],
   '欧洲': [10, 50], '欧盟': [10, 50], '德国': [10, 51], '法国': [2, 47], '英国': [-2, 53],
@@ -55,6 +56,52 @@ function getRegionCoords(region: string): [number, number] {
     if (region.includes(key)) return coords
   }
   return [0, 0]
+}
+
+// ====== 技术雷达：欧冶战略定位数据 ======
+interface TechRadarItem {
+  name: string
+  icon: string
+  heat: number        // 行业热度 0-100
+  position: '领先' | '跟随' | '落后' | '布局'  // 欧冶定位
+  insight: string     // 一句话洞察
+  trend: 'rising' | 'stable' | 'declining'
+}
+
+const OUYTEK_TECH_POSITION: Record<string, { position: TechRadarItem['position']; insight: string }> = {
+  'AI芯片':   { position: '领先', insight: '工布565芯粒架构量产，ZCU领域国内领先' },
+  '大模型':   { position: '跟随', insight: '端侧模型适配积极，云端大模型依赖外部合作' },
+  '自动驾驶': { position: '领先', insight: '舱驾一体方案已定点多家车企，2026北京车展发布' },
+  '人形机器人': { position: '布局', insight: '具身智能感知芯片立项，与边界智控联合研发飞控' },
+  'Chiplet':  { position: '领先', insight: '工布565采用2.5D Chiplet封装，良率已达标' },
+  '4D雷达':   { position: '跟随', insight: '4D成像雷达感知算法成熟，等待芯片集成方案' },
+  '端侧AI':   { position: '领先', insight: 'ZCU芯片端侧推理延迟<10ms，行业第一梯队' },
+  'RISC-V':   { position: '布局', insight: '车规RISC-V内核预研中，规避ARM授权风险' },
+  'HBM':      { position: '落后', insight: '高带宽存储依赖进口，供应链风险需关注' },
+  '光刻':     { position: '落后', insight: '先进制程代工依赖台积电，地缘风险高' },
+  '多模态':   { position: '跟随', insight: '视觉+雷达融合算法成熟，大模型多模态正在适配' },
+  '智能座舱': { position: '领先', insight: '多屏联动座舱芯片已量产，客户覆盖主流自主品牌' },
+}
+
+function buildTechRadarData(trends: any[]): TechRadarItem[] {
+  return trends.slice(0, 8).map((t: any) => {
+    const meta = OUYTEK_TECH_POSITION[t.name] || {
+      position: '布局' as const,
+      insight: '技术方向跟踪中，战略意义待评估',
+    }
+    // heat: 用 count 归一化到 0-100
+    const maxCount = trends.length > 0 ? (trends[0].count || 1) : 1
+    const heat = Math.round(((t.count || 1) / maxCount) * 100)
+    const trend: TechRadarItem['trend'] = t.count > (maxCount * 0.7) ? 'rising' : (t.count < (maxCount * 0.3) ? 'declining' : 'stable')
+    return {
+      name: t.name,
+      icon: t.icon || '⚙️',
+      heat,
+      position: meta.position,
+      insight: meta.insight,
+      trend,
+    }
+  })
 }
 
 // ====== Init ======
@@ -90,6 +137,7 @@ function render(
 ) {
   const { news, alerts, aiInsights, startupFunding } = newsResult
   const techTrends = generateTechTrendsFromNews(news)
+  const techRadarData = buildTechRadarData(techTrends)
   const supplyChain = generateSupplyChainFromNews(news)
   const policies = generatePoliciesFromNews(news)
   const healthStats = getSourceHealthStats()
@@ -103,11 +151,29 @@ function render(
 
   const tickerItems = buildTickerItems(indices, stocks)
 
+  // 风险预警：如果alerts太少，补充最新news作为情报动态
+  // 将 NewsItem 转为 AlertItem 格式显示
+  const alertLikeFromNews: AlertItem[] = news
+    .filter(n => n.priority === 'critical' || n.priority === 'warning')
+    .slice(0, 6)
+    .map((n: NewsItem) => ({
+      id: n.id,
+      title: n.title,
+      description: n.summary || '',
+      level: n.priority as 'critical' | 'warning',
+      time: n.time,
+      source: n.source,
+      icon: n.priority === 'critical' ? '🔴' : '🟡',
+    }))
+  const enrichedAlerts = alerts.length < 4
+    ? [...alerts, ...alertLikeFromNews.slice(0, 6 - alerts.length)]
+    : alerts
+
   app.innerHTML = `
     ${renderTopBar(activeSources, totalSources, avgCredibility)}
     <div class="main-grid">
       <div class="column col-left">
-        ${renderAlertPanel(alerts)}
+        ${renderAlertPanel(enrichedAlerts)}
         <div class="panel panel-company" id="cn-panel">
           <div class="panel-header">
             <span class="icon">📰</span>
@@ -120,10 +186,10 @@ function render(
         ${renderAIPanel(aiInsights, startupFunding)}
       </div>
       <div class="column col-center">
-        ${renderMapAndAlertPanel(hotspots, news)}
+        ${renderMapAndHotspotsPanel(hotspots, news)}
       </div>
       <div class="column col-right">
-        ${renderTechRadarPanel(techTrends)}
+        ${renderTechRadarPanel(techRadarData)}
         ${renderSupplyChainPanel(supplyChain)}
         ${renderPolicyPanel(policies)}
       </div>
@@ -133,8 +199,10 @@ function render(
 
   // Async loads
   loadCompanyNews()
-  // Render map after DOM update
-  setTimeout(() => renderWorldMapD3(hotspots), 200)
+  setTimeout(() => {
+    renderWorldMapD3(hotspots)
+    initHotspotSync(hotspots)
+  }, 200)
 }
 
 // ====== Top Bar ======
@@ -169,30 +237,32 @@ function renderTopBar(activeSources: number, totalSources: number, credibility: 
 function renderAlertPanel(alerts: AlertItem[]): string {
   const hasCritical = alerts.some(a => a.level === 'critical')
   const pulseClass = hasCritical ? 'pulse-critical' : ''
-  const doubled = alerts.length > 3 ? [...alerts, ...alerts] : alerts
-  const items = doubled.length > 0
-    ? doubled.map(a => `
+
+  const items = alerts.length > 0
+    ? alerts.map(a => `
       <div class="alert-item ${a.level}">
         <span class="alert-icon">${a.level === 'critical' ? '🔴' : a.level === 'warning' ? '🟡' : '🔵'}</span>
         <div class="alert-text">
           <div class="alert-title">${esc(a.title)}</div>
           <div class="alert-source">${esc(a.description || '')}</div>
         </div>
+        <span class="alert-time">${a.time || ''}</span>
       </div>`).join('')
     : `<div class="empty-state">暂无风险告警</div>`
 
-  const animDuration = Math.max(35, alerts.length * 10)
+  const shouldScroll = alerts.length >= 5
+  const scrollClass = shouldScroll ? 'scroll-list' : ''
 
   return `
   <div class="panel panel-alert ${pulseClass}">
     <div class="panel-header">
       <span class="icon">⚠️</span>
-      <span class="title">风险预警</span>
+      <span class="title">风险预警 & 情报动态</span>
       <span class="badge">${alerts.length}</span>
     </div>
-    <div class="panel-body">
-      <div class="scroll-list" style="animation-duration:${animDuration}s">
-        ${alerts.length > 3 ? items + items : items}
+    <div class="panel-body alert-panel-body">
+      <div class="${scrollClass}" style="${shouldScroll ? 'animation-duration:45s' : ''}">
+        ${items}
       </div>
     </div>
   </div>`
@@ -224,26 +294,33 @@ async function loadCompanyNews() {
   }
 }
 
-// ====== Center Column: Globe Map + Tech Hotspots ======
-function renderMapAndAlertPanel(hotspots: GlobalHotspot[], news: NewsItem[]): string {
+// ====== Center Column: Map + Synced Hotspots ======
+function renderMapAndHotspotsPanel(hotspots: GlobalHotspot[], news: NewsItem[]): string {
   const totalNews = news.length
   const highImpact = hotspots.filter(h => h.impact === 'high').length
 
-  // Tech hotspots for vertical scroll below map
-  const techHotspots = hotspots
+  // 为地图标记准备数据（去重，取前12个）
+  const mapHotspots = hotspots.slice(0, 12)
+
+  // 为滚动列表准备数据（取有summary的前20条，3倍复制用于无缝滚动）
+  const listHotspots = hotspots
     .filter(h => h.summary && h.summary.length > 0)
     .slice(0, 20)
-  const doubled = techHotspots.length > 2 ? [...techHotspots, ...techHotspots, ...techHotspots] : techHotspots
-  const hotspotsHtml = doubled.length > 0
-    ? doubled.map(h => `
-      <div class="ghs-item">
+  const scrollHotspots = listHotspots.length >= 3
+    ? [...listHotspots, ...listHotspots, ...listHotspots]
+    : listHotspots
+
+  const scrollDur = Math.max(40, listHotspots.length * 6)
+
+  // 为每个hotspot生成带data-index的HTML
+  const hotspotsHtml = scrollHotspots.length > 0
+    ? scrollHotspots.map((h, i) => `
+      <div class="ghs-item" data-region="${esc(h.region)}" data-index="${i % listHotspots.length}">
         <span class="ghs-impact ${h.impact}">${h.impact === 'high' ? '高' : h.impact === 'medium' ? '中' : '低'}</span>
         <span class="ghs-region">${esc(h.region)}</span>
         <span class="ghs-text">${esc(h.summary || h.title || '')}</span>
       </div>`).join('')
     : `<div class="empty-state">暂无科技热点</div>`
-
-  const hotspotsDur = Math.max(35, techHotspots.length * 5)
 
   return `
   <div class="panel panel-globe">
@@ -261,17 +338,108 @@ function renderMapAndAlertPanel(hotspots: GlobalHotspot[], news: NewsItem[]): st
       <div class="globe-divider"></div>
       <div class="globe-hotspots">
         <div class="ghs-header">
-          <span>🔴 全球科技热点</span>
-          <span class="ghs-count">${techHotspots.length}条</span>
+          <span>🔴 全球科技热点 <span class="ghs-synced-label" id="ghs-synced-label"></span></span>
+          <span class="ghs-count">${listHotspots.length}条</span>
         </div>
-        <div class="ghs-scroll">
-          <div class="scroll-list" style="animation-duration:${hotspotsDur}s">
-            ${techHotspots.length > 2 ? hotspotsHtml + hotspotsHtml : hotspotsHtml}
+        <div class="ghs-scroll" id="ghs-scroll-container">
+          <div class="ghs-scroll-inner" id="ghs-scroll-inner" style="animation-duration:${scrollDur}s">
+            ${listHotspots.length > 2 ? hotspotsHtml : hotspotsHtml}
           </div>
         </div>
       </div>
     </div>
   </div>`
+}
+
+// ====== Hotspot-Map Sync Engine ======
+function initHotspotSync(hotspots: GlobalHotspot[]) {
+  const inner = document.getElementById('ghs-scroll-inner')
+  const container = document.getElementById('ghs-scroll-container')
+  if (!inner || !container) return
+
+  // 停止CSS动画，改用JS控制滚动
+  inner.style.animation = 'none'
+  inner.style.transform = 'translateY(0)'
+  inner.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+
+  const items = inner.querySelectorAll('.ghs-item')
+  if (items.length === 0) return
+
+  const itemHeight = (items[0] as HTMLElement).offsetHeight + 6 // gap
+  const visibleCount = Math.floor(container.clientHeight / itemHeight)
+  let currentIndex = 0
+  const totalUnique = hotspots.filter(h => h.summary && h.summary.length > 0).slice(0, 20).length
+  if (totalUnique <= 1) return
+
+  const intervalMs = Math.max(3000, Math.round(40000 / totalUnique)) // 总周期40s
+
+  // 高亮对应地图标记
+  function highlightMarker(region: string) {
+    // 清除所有高亮
+    document.querySelectorAll('.hotspot-markers circle[data-region]').forEach(el => {
+      ;(el as SVGCircleElement).setAttribute('r', '3')
+      ;(el as SVGCircleElement).style.opacity = '0.7'
+    })
+    // 高亮匹配的区域
+    const coords = getRegionCoords(region)
+    document.querySelectorAll(`.hotspot-markers circle[data-region="${esc(region)}"]`).forEach(el => {
+      ;(el as SVGCircleElement).setAttribute('r', '7')
+      ;(el as SVGCircleElement).style.opacity = '1'
+      // 脉冲动画
+      ;(el as SVGCircleElement).classList.add('marker-active-pulse')
+    })
+    // 更新标签
+    const label = document.getElementById('ghs-synced-label')
+    if (label) label.textContent = `▸ ${region}`
+  }
+
+  // 主循环：依次滚动并高亮
+  function step() {
+    const uniqueItems = inner.querySelectorAll('.ghs-item')
+    // 只取前 totalUnique 个（去重后的）
+    const targetIndex = currentIndex % totalUnique
+    const targetItem = uniqueItems[targetIndex] as HTMLElement | undefined
+    if (!targetItem) { currentIndex = 0; return }
+
+    // 滚动到对应位置
+    const scrollTo = targetIndex * itemHeight
+    inner.style.transform = `translateY(-${scrollTo}px)`
+
+    // 高亮地图标记
+    const region = targetItem.dataset.region || ''
+    if (region) highlightMarker(region)
+
+    currentIndex++
+    if (currentIndex >= totalUnique) {
+      // 一轮结束，重置位置（无缝）
+      setTimeout(() => {
+        inner.style.transition = 'none'
+        inner.style.transform = 'translateY(0)'
+        // 强制reflow
+        void inner.offsetHeight
+        inner.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+        currentIndex = 0
+      }, 900)
+    }
+  }
+
+  // 启动
+  step()
+  hotspotScrollTimer = window.setInterval(step, intervalMs)
+
+  // 鼠标悬停暂停并手动高亮
+  items.forEach((item, idx) => {
+    ;(item as HTMLElement).addEventListener('mouseenter', () => {
+      if (hotspotScrollTimer) clearInterval(hotspotScrollTimer)
+      const region = (item as HTMLElement).dataset.region || ''
+      if (region) highlightMarker(region)
+    })
+    ;(item as HTMLElement).addEventListener('mouseleave', () => {
+      // 重启自动滚动
+      if (hotspotScrollTimer) clearInterval(hotspotScrollTimer)
+      hotspotScrollTimer = window.setInterval(step, intervalMs)
+    })
+  })
 }
 
 // ====== D3 World Map ======
@@ -302,18 +470,14 @@ async function renderWorldMapD3(hotspots: GlobalHotspot[]) {
 
     // Defs
     const defs = svg.append('defs')
-
-    // Ocean gradient
     const oceanGrad = defs.append('linearGradient').attr('id', 'bsOcean').attr('x1', '0%').attr('y1', '0%').attr('x2', '0%').attr('y2', '100%')
     oceanGrad.append('stop').attr('offset', '0%').attr('stop-color', '#051525')
     oceanGrad.append('stop').attr('offset', '100%').attr('stop-color', '#0a1e35')
 
-    // Land gradient
     const landGrad = defs.append('linearGradient').attr('id', 'bsLand').attr('x1', '0%').attr('y1', '0%').attr('x2', '100%').attr('y2', '100%')
     landGrad.append('stop').attr('offset', '0%').attr('stop-color', '#132d45')
     landGrad.append('stop').attr('offset', '100%').attr('stop-color', '#0c2035')
 
-    // Glow filter
     const filter = defs.append('filter').attr('id', 'bsGlow').attr('x', '-20%').attr('y', '-20%').attr('width', '140%').attr('height', '140%')
     filter.append('feGaussianBlur').attr('stdDeviation', '1.5').attr('result', 'blur')
     filter.append('feFlood').attr('flood-color', 'rgba(6, 182, 212, 0.2)').attr('result', 'color')
@@ -322,17 +486,11 @@ async function renderWorldMapD3(hotspots: GlobalHotspot[]) {
     merge.append('feMergeNode').attr('in', 'glow')
     merge.append('feMergeNode').attr('in', 'SourceGraphic')
 
-    // Hotspot pulse filter
-    const pulseFilter = defs.append('filter').attr('id', 'bsPulse')
-    pulseFilter.append('feGaussianBlur').attr('stdDeviation', '3').attr('result', 'blur')
-    const pulseMerge = pulseFilter.append('feMerge')
-    pulseMerge.append('feMergeNode').attr('in', 'blur')
-    pulseMerge.append('feMergeNode').attr('in', 'SourceGraphic')
-
     // Background
     svg.append('rect').attr('width', WIDTH).attr('height', HEIGHT).attr('fill', 'url(#bsOcean)')
 
     const mapGroup = svg.append('g')
+    const markerGroup = svg.append('g').attr('class', 'hotspot-markers')
 
     // Load map data
     if (!worldMapData) {
@@ -378,8 +536,7 @@ async function renderWorldMapD3(hotspots: GlobalHotspot[]) {
       .attr('stroke', 'rgba(6, 182, 212, 0.06)')
       .attr('stroke-width', 0.5)
 
-    // Hotspot markers
-    const markerGroup = svg.append('g').attr('class', 'hotspot-markers')
+    // Hotspot markers (带 data-region 属性，供JS联动)
     const uniqueRegions = new Map<string, GlobalHotspot>()
     for (const h of hotspots) uniqueRegions.set(h.region, h)
     const uniqueList = [...uniqueRegions.values()].slice(0, 15)
@@ -392,18 +549,28 @@ async function renderWorldMapD3(hotspots: GlobalHotspot[]) {
       const radius = h.impact === 'high' ? 5 : h.impact === 'medium' ? 3.5 : 2.5
       const color = h.impact === 'high' ? '#ef4444' : h.impact === 'medium' ? '#f59e0b' : '#3b82f6'
 
-      // Pulse ring
+      // Outer pulse ring
       markerGroup.append('circle')
         .attr('cx', x).attr('cy', y).attr('r', radius + 4)
         .attr('fill', 'none').attr('stroke', color)
-        .attr('stroke-width', 1).attr('opacity', 0.5)
+        .attr('stroke-width', 1).attr('opacity', 0.4)
         .attr('class', 'marker-pulse')
 
-      // Core dot
+      // Core dot (带 data-region)
       markerGroup.append('circle')
         .attr('cx', x).attr('cy', y).attr('r', radius)
-        .attr('fill', color).attr('stroke', '#fff')
-        .attr('stroke-width', 0.5).attr('filter', 'url(#bsPulse)')
+        .attr('fill', color).attr('stroke', '#fff').attr('stroke-width', 0.5)
+        .attr('data-region', h.region)
+        .style('cursor', 'pointer')
+        .style('opacity', '0.7')
+        .on('mouseenter', function() {
+          // 高亮并滚动到对应列表项
+          document.querySelectorAll('.ghs-item').forEach(el => {
+            if ((el as HTMLElement).dataset.region === h.region) {
+              ;(el as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+            }
+          })
+        })
 
       // Label
       markerGroup.append('text')
@@ -423,58 +590,88 @@ async function renderWorldMapD3(hotspots: GlobalHotspot[]) {
 
 // ====== Right Column ======
 
-function renderTechRadarPanel(techTrends: any[]): string {
-  const top = techTrends.slice(0, 7)
-  const maxCount = top.length > 0 ? (top[0].count || 1) : 1
+// ====== 技术竞争态势（重设计）======
+function renderTechRadarPanel(data: TechRadarItem[]): string {
+  const positionClass: Record<string, string> = {
+    '领先': 'pos-lead',
+    '跟随': 'pos-follow',
+    '落后': 'pos-behind',
+    '布局': 'pos-explore',
+  }
+  const positionLabel: Record<string, string> = {
+    '领先': '领先',
+    '跟随': '跟随',
+    '落后': '落后⚠',
+    '布局': '布局中',
+  }
+  const trendArrow: Record<string, string> = {
+    'rising': '▲',
+    'stable': '▸',
+    'declining': '▼',
+  }
+  const trendClass: Record<string, string> = {
+    'rising': 'trend-up',
+    'stable': 'trend-stable',
+    'declining': 'trend-down',
+  }
 
-  const items = top.length > 0
-    ? top.map((t, i) => {
-        const pct = Math.round(((t.count || 1) / maxCount) * 100)
-        // Simulate trend direction from count variance
-        const isTrending = i < 3 // top 3 are "hot"
-        const trendArrow = isTrending ? '▲' : '▸'
-        const trendCls = isTrending ? 'trend-up' : 'trend-stable'
-        return `
-        <div class="tech-item">
-          <span class="rank">${i + 1}</span>
-          <div class="tech-info">
-            <div class="tech-name">
-              ${esc(t.name || '')}
-              <span class="tech-trend ${trendCls}">${trendArrow}</span>
+  const items = data.length > 0
+    ? data.map((t, i) => `
+      <div class="tr-item">
+        <div class="tr-left">
+          <span class="tr-rank">${i + 1}</span>
+          <span class="tr-icon">${t.icon}</span>
+          <div class="tr-name-group">
+            <div class="tr-name">
+              ${esc(t.name)}
+              <span class="tr-trend ${trendClass[t.trend]}">${trendArrow[t.trend]}</span>
             </div>
-            <div class="tech-bar-wrap"><div class="tech-bar" style="width:${pct}%"></div></div>
+            <div class="tr-insight">${esc(t.insight)}</div>
           </div>
-          <span class="tech-count">${t.count || 0}</span>
-        </div>`
-      }).join('')
-    : `<div class="empty-state">暂无技术趋势数据</div>`
+        </div>
+        <div class="tr-right">
+          <div class="tr-bar-wrap">
+            <div class="tr-bar ${t.heat >= 80 ? 'bar-hot' : t.heat >= 50 ? 'bar-warm' : 'bar-cool'}" style="width:${t.heat}%"></div>
+          </div>
+          <div class="tr-position ${positionClass[t.position]}">${positionLabel[t.position]}</div>
+        </div>
+      </div>`).join('')
+    : `<div class="empty-state">暂无技术态势数据</div>`
 
   return `
   <div class="panel panel-radar">
     <div class="panel-header">
       <span class="icon">📡</span>
-      <span class="title">技术雷达</span>
+      <span class="title">技术竞争态势</span>
+      <span class="tr-legend">
+        <span class="pos-lead">●领先</span>
+        <span class="pos-follow">●跟随</span>
+        <span class="pos-behind">●落后</span>
+        <span class="pos-explore">●布局</span>
+      </span>
     </div>
     <div class="panel-body">
-      <div class="tech-radar-list">${items}</div>
+      <div class="tr-list">${items}</div>
     </div>
   </div>`
 }
 
 function renderSupplyChainPanel(supplyChain: any[]): string {
-  const doubled = supplyChain.length > 0 ? [...supplyChain, ...supplyChain, ...supplyChain] : []
-  const content = doubled.length > 0
-    ? doubled.map(s => {
-        const name = s.name || s.node || ''
-        const risk = s.riskLevel || s.risk || 'low'
-        const riskLabel = risk === 'high' ? '高风险' : risk === 'medium' ? '中风险' : '低风险'
-        const riskCls = risk === 'high' ? 'risk-high' : risk === 'medium' ? 'risk-medium' : 'risk-low'
-        return `
-        <div class="supply-item">
-          <span class="sc-name">${esc(name)}</span>
-          <span class="sc-risk ${riskCls}">${riskLabel}</span>
-        </div>`
-      }).join('')
+  const content = supplyChain.length > 0
+    ? (() => {
+        const doubled = [...supplyChain, ...supplyChain, ...supplyChain]
+        return doubled.map(s => {
+          const name = s.name || s.node || ''
+          const risk = s.riskLevel || s.risk || 'low'
+          const riskLabel = risk === 'high' ? '高风险' : risk === 'medium' ? '中风险' : '低风险'
+          const riskCls = risk === 'high' ? 'risk-high' : risk === 'medium' ? 'risk-medium' : 'risk-low'
+          return `
+          <div class="supply-item">
+            <span class="sc-name">${esc(name)}</span>
+            <span class="sc-risk ${riskCls}">${riskLabel}</span>
+          </div>`
+        }).join('')
+      })()
     : `<div class="empty-state">暂无供应链数据</div>`
 
   const dur = Math.max(35, supplyChain.length * 8)
@@ -495,13 +692,15 @@ function renderSupplyChainPanel(supplyChain: any[]): string {
 }
 
 function renderPolicyPanel(policies: any[]): string {
-  const doubled = policies.length > 0 ? [...policies, ...policies, ...policies] : []
-  const content = doubled.length > 0
-    ? doubled.map(p => `
-      <div class="policy-item">
-        <span class="pol-region">${esc(p.region || p.country || '全球')}</span>
-        <span class="pol-text">${esc(p.title || p.text || '')}</span>
-      </div>`).join('')
+  const content = policies.length > 0
+    ? (() => {
+        const doubled = [...policies, ...policies, ...policies]
+        return doubled.map(p => `
+          <div class="policy-item">
+            <span class="pol-region">${esc(p.region || p.country || '全球')}</span>
+            <span class="pol-text">${esc(p.title || p.text || '')}</span>
+          </div>`).join('')
+      })()
     : `<div class="empty-state">暂无政策动态</div>`
 
   const dur = Math.max(30, policies.length * 7)
@@ -594,6 +793,7 @@ function startClock() {
 function startAutoRefresh() {
   setInterval(async () => {
     try {
+      if (hotspotScrollTimer) clearInterval(hotspotScrollTimer)
       const [newsResult, indices, hotspots, stocks] = await Promise.all([
         fetchAllNews(),
         fetchIndustryIndices(),
