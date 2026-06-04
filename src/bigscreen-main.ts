@@ -38,7 +38,7 @@ async function init() {
       fetchAllNews(),
       fetchIndustryIndices(),
       fetchGlobalHotspots(),
-      fetchStockData(),
+      fetchStockData(['NVDA', 'QCOM', 'MBLY', '09660.HK', '02533.HK', '603893.SH']),
     ])
 
     render(newsResult, indices, hotspots, stocks)
@@ -73,7 +73,7 @@ function render(
   const sourceScores = getAllSourceScores()
 
   // Compute top bar stats
-  const activeSources = healthStats.filter(s => s.health >= 50).length
+  const activeSources = healthStats.filter(s => s.healthScore >= 50).length
   const totalSources = healthStats.length
   const avgCredibility = sourceScores.length > 0
     ? Math.round(sourceScores.reduce((a, b) => a + b.composite, 0) / sourceScores.length)
@@ -465,7 +465,7 @@ function startAutoRefresh() {
         fetchAllNews(),
         fetchIndustryIndices(),
         fetchGlobalHotspots(),
-        fetchStockData(),
+        fetchStockData(['NVDA', 'QCOM', 'MBLY', '09660.HK', '02533.HK', '603893.SH']),
       ])
       render(newsResult, indices, hotspots, stocks)
     } catch (err) {
