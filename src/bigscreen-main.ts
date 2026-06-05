@@ -784,6 +784,17 @@ async function init() {
     render(newsResult, indices, stocks, oritekNews, rssHotspots)
     startClock()
     startAutoRefresh()
+    // 窗口缩放时重绘地图
+    let resizeDebounce: ReturnType<typeof setTimeout> | null = null
+    window.addEventListener('resize', () => {
+      if (resizeDebounce) clearTimeout(resizeDebounce)
+      resizeDebounce = setTimeout(() => {
+        if (document.getElementById('globeMapSvg')) {
+          isMapRendering = false
+          renderWorldMapV4()
+        }
+      }, 300)
+    })
   } catch (err) {
     console.error('[Bigscreen v4] Init failed:', err)
     app.innerHTML = `<div class="skeleton"><div class="skeleton-text-error">⚠ 数据加载失败，请刷新页面</div></div>`

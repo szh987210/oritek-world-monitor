@@ -23,8 +23,20 @@
   --accent-red: #ef4444;
   --accent-purple: #a855f7;
   --accent-pink: #ec4899;
-  --fs-2xs: 10px; --fs-xs: 12px; --fs-sm: 13px; --fs-md: 15px; --fs-lg: 18px; --fs-xl: 22px;
-  --gap-xs: 4px; --gap-sm: 8px; --gap-md: 12px; --gap-lg: 16px;
+  /* Fluid typography: scales with viewport width */
+  --fs-2xs: clamp(9px, 0.65vw, 10px);
+  --fs-xs:  clamp(10px, 0.75vw, 12px);
+  --fs-sm:  clamp(11px, 0.85vw, 13px);
+  --fs-md:  clamp(13px, 1.0vw, 16px);
+  --fs-lg:  clamp(16px, 1.2vw, 18px);
+  --fs-xl:  clamp(18px, 1.5vw, 22px);
+  --gap-xs: clamp(3px, 0.3vw, 6px);
+  --gap-sm: clamp(6px, 0.6vw, 10px);
+  --gap-md: clamp(8px, 0.85vw, 14px);
+  --gap-lg: clamp(12px, 1.0vw, 18px);
+  /* Fluid topbar & ticker heights */
+  --topbar-h: clamp(36px, 3.0vw, 46px);
+  --ticker-h: clamp(28px, 2.5vw, 38px);
   --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px;
 }
 
@@ -41,7 +53,7 @@ html, body {
 #bigscreen-app {
   width: 100vw; height: 100vh;
   display: grid;
-  grid-template-rows: 44px 1fr 36px;
+  grid-template-rows: var(--topbar-h) 1fr var(--ticker-h);
   grid-template-columns: 1fr;
   overflow: hidden;
   background:
@@ -827,18 +839,34 @@ html, body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.06); border-radius: 2px; }
 
-/* ====== Responsive override for non-1920 screens ====== */
+/* ====== Responsive ====== */
+/* 1600px: 缩小中列权重 */
 @media (max-width: 1600px) {
-  .main-grid-v4 {
-    grid-template-columns: 1fr 1.15fr 1fr;
-    gap: var(--gap-sm);
-  }
-  :root { --fs-xs: 11px; --fs-sm: 12px; --fs-md: 14px; }
+  .main-grid-v4 { grid-template-columns: 1fr 1.15fr 1fr; }
 }
-@media (max-width: 1280px) {
+/* 1366px: 小屏笔记本 — 等比例列 + 紧凑间距 */
+@media (max-width: 1366px) {
   .main-grid-v4 {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 6px;
+    gap: var(--gap-sm);
+    padding: var(--gap-xs) var(--gap-sm);
   }
-  :root { --fs-xs: 10px; --fs-sm: 11px; --fs-md: 13px; }
+  .col-left-v4, .col-right-v4 { gap: var(--gap-sm); }
+  .panel-header-v4 { padding: var(--gap-xs) var(--gap-sm); }
+  .risk-item, .oritek-item, .insight-item, .policy-item-v4 {
+    padding: var(--gap-xs) var(--gap-sm);
+  }
+  .topbar-v4-refresh-btn { font-size: var(--fs-2xs); padding: 3px 8px; }
+}
+/* 1024px: 平板 — 单列堆叠 + 隐藏地图 */
+@media (max-width: 1024px) {
+  .main-grid-v4 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: var(--gap-xs);
+  }
+  .col-center-v4 { display: none; }
+  .col-left-v4, .col-right-v4 { gap: var(--gap-xs); }
+  .panel-header-v4 { padding: var(--gap-xs); }
+  .brand-text { font-size: var(--fs-xs); letter-spacing: 1px; }
 }
