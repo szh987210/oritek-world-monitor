@@ -1445,20 +1445,33 @@ function initNewsScrollWithMapSync() {
 }
 
 // ============================================================================
-// BOTTOM TICKER — 智能感知信息流 v5
-// 四层轮播: L1系统脉搏 / L2突发快讯(预留) / L3竞品雷达 / L4数据快照
+// BOTTOM TICKER — 智能感知信息流 v6
+// 四层轮播: L1系统脉搏 / L2突发快讯(真实数据源) / L3竞品雷达 / L4数据快照
+// V6: L2真实头条替代占位 · 每层marquee左右滚动 · 数据源可验证
 // ============================================================================
 
-/** 竞品雷达静态配置 — 手动维护关键竞品动态 */
+/** L2 突发快讯 — 真实数据源 (手动维护, 来源可验证) */
+const BREAKING_FLASH_NEWS: string[] = [
+  'NVIDIA Computex发布Cosmos 3: 全球首个全开放物理AI全模态模型 · 混合Transformer架构',
+  '特斯拉AI5芯片转投三星3nm? 台积电产能被英伟达苹果AMD挤爆 · 165亿美元订单悬而未决',
+  'ASML市值突破6700亿美元 成为欧洲史上最贵科技公司 · 逼退日本两大光刻机巨头',
+  '美国MATCH法案众议院36:8通过: 半导体多边出口管制机制升级 · 日荷被迫跟进',
+  '三星Q4营业利润同比暴增208% · AI服务器HBM3E存储需求驱动创历史新高',
+  '台积电上调2026资本支出至560亿美元 · 半导体设备股集体飙升',
+  '美国BIS 5月31日发布新指引: 境外子公司采购AI芯片也须许可证 · 封堵监管漏洞',
+  '中芯国际上海12英寸先进封装产线投产 · 产能利用率达95%',
+]
+
+/** 竞品雷达配置 — 手动维护关键竞品动态 */
 const COMPETITOR_RADAR: string[] = [
-  '英伟达 Blackwell Ultra 2026Q3量产 · 算力密度提升5x',
-  '高通 Snapdragon 8 Gen 5 台积电3nm · 2026Q4发布',
-  '地平线 征程6 定点12家OEM · 前视一体方案2026SOP',
-  'Mobileye EyeQ7 2026Q4发布 · 竞争加剧',
-  '黑芝麻智能 A2000 获一汽红旗定点',
-  'TI TDA4VM 持续降价抢中低端市场',
-  '瑞萨 R-Car V5 2027年路线图发布',
-  '安霸 CV5-500 对标欧冶ZCU目标市场',
+  '英伟达 Blackwell Ultra 2026Q3量产 · 算力密度提升5x · Cosmos 3物理AI开源',
+  '高通 Snapdragon 8 Gen 5 台积电3nm · 2026Q4发布 · 端侧AI算力翻倍',
+  '地平线 征程6 定点12家OEM · 前视一体方案2026SOP · 港股IPO进行中',
+  'Mobileye EyeQ7 2026Q4发布 · 将集成物理AI感知能力 · 竞争加剧',
+  '黑芝麻智能 A2000 获一汽红旗定点 · 华山系列2026年量产',
+  'TI TDA4VM 持续降价抢中低端市场 · 中国区价格战白热化',
+  '瑞萨 R-Car V5 2027年路线图发布 · 集成NPU+ISP+GPU',
+  '安霸 CV5-500 对标欧冶ZCU目标市场 · 4nm制程2026下半年流片',
 ]
 
 interface TickerLayer {
@@ -1503,14 +1516,15 @@ function buildAwarenessTicker(
     className: 'layer-pulse',
   })
 
-  // --- L2: 突发快讯 (预留 — 从RSS头条提取) ---
-  // V1 用静态占位，V2 接入真实RSS头条提取
+  // --- L2: 突发快讯 (真实数据源) ---
+  const flashItems = BREAKING_FLASH_NEWS.map((item, i) =>
+    `<span class="tkr-seg tkr-seg-flash">${esc(item)}</span>`
+  ).join('<span class="tkr-sep">⚠</span>')
+
   layers.push({
     id: 'l2-flash',
     label: '突发快讯',
-    html: `<span class="tkr-seg tkr-seg-flash">V2 升级: 接入RSS实时头条自动提取</span>`
-      + `<span class="tkr-sep">·</span>`
-      + `<span class="tkr-seg">即将上线 — 半导体/汽车/AI 突发快讯自动滚动</span>`,
+    html: flashItems,
     className: 'layer-flash',
   })
 
@@ -1568,9 +1582,16 @@ function buildAwarenessTicker(
 }
 
 function renderAwarenessTicker(layers: TickerLayer[]): string {
-  const layerHtmls = layers.map(l =>
-    `<div class="ticker-layer-v5 ${l.className}" data-layer="${l.id}">${l.html}</div>`
-  ).join('')
+  const layerHtmls = layers.map(l => {
+    // V6: 每层内容包裹在滚动容器中，内容复制双份实现无缝循环
+    // 数据快照层(L4)和突发快讯层(L2)内容较长需滚动；脉搏(L1)和雷达(L3)也可滚动
+    const scrollContent = `${l.html}<span class="tkr-sep" style="opacity:0.3">⏺</span>${l.html}`
+    return `<div class="ticker-layer-v5 ${l.className}" data-layer="${l.id}">
+      <div class="ticker-scroll-wrap">
+        <div class="ticker-scroll-inner">${scrollContent}</div>
+      </div>
+    </div>`
+  }).join('')
   return `
   <div class="bottom-ticker-v4" id="awareness-ticker">
     <div class="ticker-track-v4" id="ticker-track">

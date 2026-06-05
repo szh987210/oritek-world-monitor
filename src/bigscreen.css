@@ -636,19 +636,52 @@ html, body {
   justify-content: center;
 }
 
-/* V5 层级式轮播 */
+/* V6 层级式轮播 — 带marquee左右滚动 */
 .ticker-layer-v5 {
   position: absolute; top: 0; left: 0;
   width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center; gap: 4px;
+  display: flex; align-items: center;
   font-size: var(--fs-xs);
   white-space: nowrap;
   opacity: 0; pointer-events: none;
   transition: opacity 0.4s;
+  overflow: hidden; /* 滚动遮罩 */
 }
 .ticker-layer-v5.active {
   opacity: 1; pointer-events: auto;
 }
+
+/* 滚动包裹器 — 允许内容溢出不截断 */
+.ticker-scroll-wrap {
+  width: 100%; height: 100%;
+  display: flex; align-items: center;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, black 3%, black 97%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 3%, black 97%, transparent 100%);
+}
+
+/* 滚动内容轨 — 包含双份内容实现无缝循环 */
+.ticker-scroll-inner {
+  display: inline-flex; align-items: center; gap: 4px;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* 仅激活层播放滚动动画 */
+.ticker-layer-v5.active .ticker-scroll-inner {
+  animation: tickerMarquee var(--scroll-duration, 30s) linear infinite;
+}
+
+@keyframes tickerMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* 各层滚动速度（通过 CSS 变量控制） */
+.ticker-layer-v5.layer-pulse .ticker-scroll-inner    { --scroll-duration: 15s; }
+.ticker-layer-v5.layer-flash .ticker-scroll-inner    { --scroll-duration: 60s; } /* 8条快讯，较长 */
+.ticker-layer-v5.layer-radar .ticker-scroll-inner    { --scroll-duration: 40s; } /* 8条竞品 */
+.ticker-layer-v5.layer-snapshot .ticker-scroll-inner { --scroll-duration: 25s; } /* 指数+股票 */
 
 /* 层级入场/退场动画 */
 @keyframes tickerLayerEnter {
