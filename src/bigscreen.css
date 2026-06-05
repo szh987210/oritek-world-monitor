@@ -717,9 +717,14 @@ html, body {
   border-left: 3px solid var(--accent-green);
 }
 
-/* Ticker 文本段 */
+/* Ticker 文本段 + 分隔符 — V7 加强视觉区隔 */
 .tkr-seg { display: inline-flex; align-items: center; gap: 4px; }
-.tkr-sep  { color: var(--border-glow); font-size: 9px; margin: 0 6px; opacity: 0.5; }
+.tkr-sep  {
+  display: inline-flex; align-items: center;
+  font-size: 11px; margin: 0 10px;
+  opacity: 0.75;
+  color: var(--text-muted);
+}
 
 /* 系统脉搏层文字 */
 .tkr-seg-pulse     { color: var(--accent-cyan); font-weight: 600; }

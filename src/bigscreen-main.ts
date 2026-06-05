@@ -1464,14 +1464,14 @@ const BREAKING_FLASH_NEWS: string[] = [
 
 /** 竞品雷达配置 — 手动维护关键竞品动态 */
 const COMPETITOR_RADAR: string[] = [
-  '英伟达 Blackwell Ultra 2026Q3量产 · 算力密度提升5x · Cosmos 3物理AI开源',
-  '高通 Snapdragon 8 Gen 5 台积电3nm · 2026Q4发布 · 端侧AI算力翻倍',
-  '地平线 征程6 定点12家OEM · 前视一体方案2026SOP · 港股IPO进行中',
-  'Mobileye EyeQ7 2026Q4发布 · 将集成物理AI感知能力 · 竞争加剧',
-  '黑芝麻智能 A2000 获一汽红旗定点 · 华山系列2026年量产',
-  'TI TDA4VM 持续降价抢中低端市场 · 中国区价格战白热化',
-  '瑞萨 R-Car V5 2027年路线图发布 · 集成NPU+ISP+GPU',
-  '安霸 CV5-500 对标欧冶ZCU目标市场 · 4nm制程2026下半年流片',
+  '英伟达 Blackwell Ultra 2026Q3量产 · 算力密度5x · Cosmos 3物理AI全开源',
+  '高通 Snapdragon 8 Gen 5 台积电3nm 2026Q4发布 · 端侧AI算力翻倍',
+  '地平线 征程7黎曼架构对标特斯拉AI5 · 2025营收37.6亿同比+57%',
+  'Mobileye EyeQ7 2026Q4发布 · 首度内嵌物理AI感知引擎',
+  '黑芝麻智能 拟收购低功耗AI芯片企业加码具身智能 · 港股涨6%',
+  'TI 恩智浦 瑞萨 2026开年齐发旗舰新品 · 中央计算架构终极决战',
+  '瑞萨 R-Car X5H 3nm车规SoC已出样 · 多域融合方案2026量产',
+  '安霸 CV5-500 4nm 2026H2流片 · 对标欧冶ZCU物理AI目标市场',
 ]
 
 interface TickerLayer {
@@ -1531,7 +1531,7 @@ function buildAwarenessTicker(
   // --- L3: 竞品雷达 ---
   const radarItems = COMPETITOR_RADAR.map((item, i) =>
     `<span class="tkr-seg tkr-seg-radar">${esc(item)}</span>`
-  ).join('<span class="tkr-sep">·</span>')
+  ).join('<span class="tkr-sep">│</span>')
 
   layers.push({
     id: 'l3-radar',
