@@ -612,23 +612,71 @@ html, body {
   display: flex; gap: 8px;
 }
 
-/* ====== Bottom Ticker v4 ====== */
+/* ====== Bottom Ticker v5 — 智能感知信息流 ====== */
 .bottom-ticker-v4 {
-  display: flex; align-items: center;
+  display: flex; align-items: center; justify-content: center;
   padding: 0 var(--gap-md);
   background: rgba(10, 18, 28, 0.9);
   border-top: 1px solid var(--border-panel);
-  overflow: hidden; white-space: nowrap;
+  overflow: hidden;
   backdrop-filter: blur(4px);
+  cursor: pointer; position: relative;
+}
+.bottom-ticker-v4::after {
+  content: '点击切换';
+  position: absolute; right: 10px;
+  font-size: 9px; color: var(--text-muted); opacity: 0.5;
+  pointer-events: none;
 }
 .ticker-track-v4 {
-  display: flex; gap: 40px;
-  animation: tickerScrollV4 80s linear infinite;
+  position: relative;
+  width: 100%; height: 100%;
+  display: flex; align-items: center;
+  justify-content: center;
 }
-@keyframes tickerScrollV4 {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+
+/* V5 层级式轮播 */
+.ticker-layer-v5 {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+  opacity: 0; pointer-events: none;
 }
+.ticker-layer-v5.active {
+  opacity: 1; pointer-events: auto;
+}
+
+/* 层级入场/退场动画 */
+@keyframes tickerLayerEnter {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes tickerLayerExit {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-30px); }
+}
+
+/* Ticker 文本段 */
+.tkr-seg { display: inline-flex; align-items: center; gap: 4px; }
+.tkr-sep  { color: var(--border-glow); font-size: 9px; margin: 0 6px; opacity: 0.5; }
+
+/* 系统脉搏层样式 */
+.tkr-seg-pulse     { color: var(--accent-cyan); }
+.tkr-seg-critical  { color: var(--accent-red); font-weight: 600; }
+.tkr-seg-time      { color: var(--text-muted); font-size: 10px; }
+
+/* 突发快讯层样式 */
+.tkr-seg-flash     { color: var(--accent-orange); font-weight: 600; }
+
+/* 竞品雷达层样式 */
+.tkr-seg-radar     { color: var(--text-primary); }
+
+/* 数据快照层样式 */
+.tkr-seg-data      { color: var(--text-secondary); }
+
+/* 保留原有样式（兼容数据快照中的股票部分） */
 .ticker-item-v4 {
   display: flex; align-items: center; gap: 8px; font-size: var(--fs-xs);
   white-space: nowrap;

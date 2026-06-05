@@ -618,6 +618,8 @@ let clockTimer: number | undefined
 let worldMapData: any = null
 let isMapRendering = false
 let newsScrollTimer: number | undefined
+let tickerRotationTimer: number | undefined
+let tickerPauseTimer: number | undefined
 let currentNewsIndex = 0
 let mapSvg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any> | null = null
 let mapProjection: d3Geo.GeoProjection | null = null
@@ -719,7 +721,7 @@ function render(
     }
   }
 
-  const tickerItems = buildTickerItems(indices, stocks)
+  const tickerHtml = buildAwarenessTicker(healthStats, sourceScores, mergedAlerts, mergedInsights, indices, stocks)
 
   // 构建整页DOM
   app.innerHTML = `
@@ -798,7 +800,7 @@ function render(
         </div>
       </div>
     </div>
-    ${renderBottomTicker(tickerItems)}
+    ${tickerHtml}
   `
 
   // 异步渲染地图 + 启动新闻滚动联动
@@ -806,6 +808,7 @@ function render(
     renderWorldMapV4()
     initNewsScrollWithMapSync()
     initPolicyTabs()
+    initTickerRotation()
     updateRefreshTime()
   }, 300)
 }
@@ -1424,46 +1427,208 @@ function initNewsScrollWithMapSync() {
 }
 
 // ============================================================================
-// BOTTOM TICKER
+// BOTTOM TICKER — 智能感知信息流 v5
+// 四层轮播: L1系统脉搏 / L2突发快讯(预留) / L3竞品雷达 / L4数据快照
 // ============================================================================
-function buildTickerItems(indices: IndustryIndex[], stocks: StockData[]): string {
-  const items: Array<{ name: string; value: string; changeStr: string; isUp: boolean }> = []
-  for (const idx of indices.slice(0, 6)) {
+
+/** 竞品雷达静态配置 — 手动维护关键竞品动态 */
+const COMPETITOR_RADAR: string[] = [
+  '英伟达 Blackwell Ultra 2026Q3量产 · 算力密度提升5x',
+  '高通 Snapdragon 8 Gen 5 台积电3nm · 2026Q4发布',
+  '地平线 征程6 定点12家OEM · 前视一体方案2026SOP',
+  'Mobileye EyeQ7 2026Q4发布 · 竞争加剧',
+  '黑芝麻智能 A2000 获一汽红旗定点',
+  'TI TDA4VM 持续降价抢中低端市场',
+  '瑞萨 R-Car V5 2027年路线图发布',
+  '安霸 CV5-500 对标欧冶ZCU目标市场',
+]
+
+interface TickerLayer {
+  id: string
+  label: string
+  html: string
+  className: string
+}
+
+function buildAwarenessTicker(
+  healthStats: ReturnType<typeof getSourceHealthStats>,
+  sourceScores: Array<{ name: string; composite: number }>,
+  alerts: RiskAlert[],
+  insights: any[],
+  indices: IndustryIndex[],
+  stocks: StockData[],
+): string {
+  const layers: TickerLayer[] = []
+
+  // --- L1: 系统脉搏 ---
+  const onlineCount = healthStats.filter(s => s.healthScore >= 50).length
+  const totalCount = healthStats.length
+  const avgCred = sourceScores.length > 0
+    ? Math.round(sourceScores.reduce((a, b) => a + b.composite, 0) / sourceScores.length)
+    : 0
+  const criticalCount = alerts.filter(a => a.severity === 'critical').length
+  const totalNewsCount = insights.length // 近似：实际应统计所有面板条目
+  const now = new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })
+
+  layers.push({
+    id: 'l1-pulse',
+    label: '系统脉搏',
+    html: `<span class="tkr-seg tkr-seg-pulse">RSS ${onlineCount}/${totalCount} 在线</span>`
+      + `<span class="tkr-sep">·</span>`
+      + `<span class="tkr-seg">今日监测 ${totalNewsCount}+ 条情报</span>`
+      + `<span class="tkr-sep">·</span>`
+      + `<span class="tkr-seg">来源可信度 ${avgCred}%</span>`
+      + `<span class="tkr-sep">·</span>`
+      + `<span class="tkr-seg tkr-seg-critical">高危预警 ${criticalCount} 条</span>`
+      + `<span class="tkr-sep">·</span>`
+      + `<span class="tkr-seg tkr-seg-time">上次刷新 ${now}</span>`,
+    className: 'layer-pulse',
+  })
+
+  // --- L2: 突发快讯 (预留 — 从RSS头条提取) ---
+  // V1 用静态占位，V2 接入真实RSS头条提取
+  layers.push({
+    id: 'l2-flash',
+    label: '突发快讯',
+    html: `<span class="tkr-seg tkr-seg-flash">V2 升级: 接入RSS实时头条自动提取</span>`
+      + `<span class="tkr-sep">·</span>`
+      + `<span class="tkr-seg">即将上线 — 半导体/汽车/AI 突发快讯自动滚动</span>`,
+    className: 'layer-flash',
+  })
+
+  // --- L3: 竞品雷达 ---
+  const radarItems = COMPETITOR_RADAR.map((item, i) =>
+    `<span class="tkr-seg tkr-seg-radar">${esc(item)}</span>`
+  ).join('<span class="tkr-sep">·</span>')
+
+  layers.push({
+    id: 'l3-radar',
+    label: '竞品雷达',
+    html: radarItems,
+    className: 'layer-radar',
+  })
+
+  // --- L4: 数据快照 ---
+  const snapshotItems: string[] = []
+  // 关键指数
+  for (const idx of indices.slice(0, 3)) {
     const isUp = idx.changePercent >= 0
-    items.push({
-      name: idx.name,
-      value: idx.value.toLocaleString(),
-      changeStr: `${isUp ? '+' : ''}${idx.changePercent.toFixed(2)}%`,
-      isUp,
-    })
+    const arrow = isUp ? '↑' : '↓'
+    snapshotItems.push(
+      `<span class="tkr-seg tkr-seg-data">${idx.name} ${idx.value.toLocaleString()}</span>`
+      + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(idx.changePercent).toFixed(1)}%</span>`
+    )
   }
-  const topStocks = stocks.filter(s => ['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH'].includes(s.symbol))
-  for (const s of topStocks) {
-    const isUp = s.changePercent >= 0
-    const priceStr = s.price >= 100 ? s.price.toFixed(0) : s.price.toFixed(2)
-    items.push({
-      name: s.name,
-      value: priceStr,
-      changeStr: `${isUp ? '+' : ''}${s.changePercent.toFixed(2)}%`,
-      isUp,
-    })
+  // 关键股票
+  const keySymbols = ['NVDA', 'TSM', 'QCOM', 'AVGO', 'TSLA', 'AAPL']
+  const stockMap = new Map(stocks.map(s => [s.symbol, s]))
+  const keyNames: Record<string, string> = {
+    'NVDA': '英伟达', 'TSM': '台积电', 'QCOM': '高通',
+    'AVGO': '博通', 'TSLA': '特斯拉', 'AAPL': '苹果',
   }
-  const doubled = [...items, ...items]
+  for (const sym of keySymbols) {
+    const s = stockMap.get(sym)
+    if (s) {
+      const isUp = s.changePercent >= 0
+      const arrow = isUp ? '↑' : '↓'
+      const priceStr = s.price >= 100 ? '$' + s.price.toFixed(0) : '$' + s.price.toFixed(2)
+      snapshotItems.push(
+        `<span class="tkr-seg tkr-seg-data">${keyNames[sym] || s.name} ${priceStr}</span>`
+        + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(s.changePercent).toFixed(1)}%</span>`
+      )
+    }
+  }
+
+  layers.push({
+    id: 'l4-snapshot',
+    label: '数据快照',
+    html: snapshotItems.join('<span class="tkr-sep">·</span>'),
+    className: 'layer-snapshot',
+  })
+
+  return renderAwarenessTicker(layers)
+}
+
+function renderAwarenessTicker(layers: TickerLayer[]): string {
+  const layerHtmls = layers.map(l =>
+    `<div class="ticker-layer-v5 ${l.className}" data-layer="${l.id}">${l.html}</div>`
+  ).join('')
   return `
-  <div class="bottom-ticker-v4">
-    <div class="ticker-track-v4">
-      ${doubled.map(it => `
-        <span class="ticker-item-v4">
-          <span class="tkr-name">${esc(it.name)}</span>
-          <span class="tkr-val">${it.value}</span>
-          <span class="tkr-chg ${it.isUp ? 'up' : 'down'}">${it.changeStr}</span>
-        </span>
-      `).join('')}
+  <div class="bottom-ticker-v4" id="awareness-ticker">
+    <div class="ticker-track-v4" id="ticker-track">
+      ${layerHtmls}
     </div>
   </div>`
 }
 
-function renderBottomTicker(html: string): string { return html }
+function initTickerRotation() {
+  const track = document.getElementById('ticker-track')
+  const container = document.getElementById('awareness-ticker')
+  if (!track || !container) return
+
+  const layers = track.querySelectorAll<HTMLElement>('.ticker-layer-v5')
+  if (layers.length === 0) return
+
+  let currentIdx = 0
+  const totalLayers = layers.length
+  const ROTATION_INTERVAL = 18000 // 18秒切换
+
+  function showLayer(idx: number) {
+    // 移除所有动画类
+    layers.forEach(l => {
+      l.classList.remove('active', 'exit')
+      l.style.animation = 'none'
+    })
+
+    const prevIdx = (idx - 1 + totalLayers) % totalLayers
+    // 前一层滑出
+    layers[prevIdx].classList.add('exit')
+    layers[prevIdx].style.animation = 'tickerLayerExit 0.5s ease-in forwards'
+
+    // 当前层滑入
+    layers[idx].classList.add('active')
+    layers[idx].style.animation = 'tickerLayerEnter 0.5s ease-out forwards'
+    currentIdx = idx
+  }
+
+  // 初始显示第一层
+  layers[0].classList.add('active')
+
+  // 自动轮播
+  function startRotation() {
+    if (tickerRotationTimer) clearInterval(tickerRotationTimer)
+    tickerRotationTimer = window.setInterval(() => {
+      const next = (currentIdx + 1) % totalLayers
+      showLayer(next)
+    }, ROTATION_INTERVAL)
+  }
+
+  startRotation()
+
+  // 悬停暂停
+  container.addEventListener('mouseenter', () => {
+    if (tickerRotationTimer) {
+      clearInterval(tickerRotationTimer)
+      tickerRotationTimer = undefined
+    }
+  })
+
+  container.addEventListener('mouseleave', () => {
+    if (!tickerRotationTimer) startRotation()
+  })
+
+  // 手动点击切换
+  container.addEventListener('click', () => {
+    const next = (currentIdx + 1) % totalLayers
+    showLayer(next)
+    // 手动切换后暂停15秒再恢复
+    if (tickerRotationTimer) clearInterval(tickerRotationTimer)
+    if (tickerPauseTimer) clearTimeout(tickerPauseTimer)
+    tickerPauseTimer = window.setTimeout(() => {
+      startRotation()
+    }, 15000)
+  })
+}
 
 // ============================================================================
 // CLOCK & REFRESH
