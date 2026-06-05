@@ -307,10 +307,10 @@ html, body {
 
 /* Map container */
 .globe-map-v4 {
-  flex: 0.85;
+  flex: 0.4;
   min-height: 0;
   position: relative; overflow: hidden;
-  padding: 6px 12px;
+  padding: 2px 8px;
   background: radial-gradient(ellipse 80% 70% at 50% 55%, rgba(6, 182, 212, 0.08) 0%, transparent 60%);
 }
 .globe-map-v4 svg {
@@ -348,7 +348,7 @@ html, body {
 
 /* News scroll below map */
 .globe-news-v4 {
-  flex: 1.15;
+  flex: 1.6;
   overflow-y: auto; overflow-x: hidden;
   padding: 4px 0;
   position: relative;
