@@ -679,16 +679,16 @@ function extractPolicyFromRSS(news: NewsItem[]): PolicyItem[] {
 
 /** 合并静态政策 + RSS政策，去重，每国最多保留RSS最新 */ 
 function mergePolicyItems(baseItems: PolicyItem[], rssItems: PolicyItem[]): PolicyItem[] {
-  const merged = [...baseItems]
-  const seen = new Set(baseItems.map(b => b.title.slice(0, 25)))
-  for (const r of rssItems) {
-    const key = r.title.slice(0, 25)
-    if (!seen.has(key)) {
-      seen.add(key)
-      merged.push(r)
+  // RSS优先：RSS条目在先，BASE用于补满每国配额
+  const merged = [...rssItems]
+  const seen = new Set(rssItems.map(r => r.title.slice(0, 25)))
+  for (const b of baseItems) {
+    if (!seen.has(b.title.slice(0, 25))) {
+      seen.add(b.title)
+      merged.push(b)
     }
   }
-  // 每国最多保留: base的2条 + rss最新1条 = 3条
+  // 每国最多3条，优先RSS在前
   const byCountry = new Map<string, PolicyItem[]>()
   for (const item of merged) {
     if (!byCountry.has(item.country)) byCountry.set(item.country, [])
@@ -696,7 +696,6 @@ function mergePolicyItems(baseItems: PolicyItem[], rssItems: PolicyItem[]): Poli
   }
   const final: PolicyItem[] = []
   for (const [, items] of byCountry) {
-    // base在前，rss在后；每国最多3条
     final.push(...items.slice(0, 3))
   }
   return final.sort((a, b) => {
@@ -825,37 +824,57 @@ function render(
     ? Math.round(sourceScores.reduce((a, b) => a + b.composite, 0) / sourceScores.length)
     : 0
 
-  // 风险预警：使用 BASE_RISK_ALERTS 真实数据，合并RSS告警
-  const mergedAlerts = [...BASE_RISK_ALERTS]
-  for (const a of alerts) {
-    if (!mergedAlerts.some(ma => ma.title.slice(0, 20) === a.title.slice(0, 20))) {
-      mergedAlerts.push({
-        id: `rss-${a.id}`,
-        title: a.title,
-        summary: a.description || '',
-        category: 'RSS告警',
-        severity: a.level === 'critical' ? 'critical' : a.level === 'warning' ? 'high' : 'medium',
-        city: '全球', lat: 0, lng: 0,
-        time: a.time || '',
-        source: 'RSS实时',
-      })
-    }
+  // 风险预警：RSS优先，BASE仅做兜底填充
+  const rssAlertItems: RiskAlert[] = alerts.slice(0, 8).map(a => ({
+    id: `rss-${a.id}`,
+    title: a.title,
+    summary: a.description || '',
+    category: 'RSS告警',
+    severity: a.level === 'critical' ? 'critical' : a.level === 'warning' ? 'high' : 'medium',
+    city: '全球', lat: 0, lng: 0,
+    time: a.time || '',
+    source: 'RSS实时',
+  }))
+  let mergedAlerts: RiskAlert[]
+  if (rssAlertItems.length >= 4) {
+    mergedAlerts = rssAlertItems
+  } else {
+    // RSS不足4条时，用BASE补充
+    const rssTitles = new Set(rssAlertItems.map(r => r.title.slice(0, 20)))
+    const fillers = BASE_RISK_ALERTS.filter(b => !rssTitles.has(b.title.slice(0, 20)))
+    mergedAlerts = [...rssAlertItems, ...fillers.slice(0, 8 - rssAlertItems.length)]
   }
 
-  // 产业洞察：使用 BASE 数据，补充AI+融资动态
-  const mergedInsights = [...BASE_INDUSTRY_INSIGHTS]
-  for (const sf of startupFunding.slice(0, 4)) {
-    if (!mergedInsights.some(mi => mi.title.includes(sf.company))) {
-      mergedInsights.push({
-        id: `rss-insight-${sf.company}`,
-        title: `${sf.company}: ${sf.amount}`,
-        summary: `${sf.company}完成${sf.amount}融资`,
-        category: '投融资',
-        amount: sf.amount,
-        time: new Date().toISOString().slice(0, 10),
+  // 产业洞察：RSS优先（融资+AI动态），BASE仅做兜底
+  const rssInsightItems: IndustryInsightItem[] = startupFunding.slice(0, 8).map(sf => ({
+    id: `rss-insight-${sf.company}`,
+    title: `${sf.company}: ${sf.amount}`,
+    summary: `${sf.company}完成${sf.amount}融资`,
+    category: '投融资',
+    amount: sf.amount,
+    time: sf.time || new Date().toISOString().slice(0, 10),
+    source: 'RSS',
+  }))
+  // 补充RSS中的AI/产业动态（非融资类）
+  for (const ai of aiInsights.slice(0, 4)) {
+    if (!rssInsightItems.some(r => r.title.slice(0, 20) === ai.title.slice(0, 20))) {
+      rssInsightItems.push({
+        id: `rss-ai-${ai.title.slice(0, 10)}`,
+        title: ai.title,
+        summary: ai.summary || '',
+        category: ai.category || 'AI',
+        time: ai.time || new Date().toISOString().slice(0, 10),
         source: 'RSS',
       })
     }
+  }
+  let mergedInsights: IndustryInsightItem[]
+  if (rssInsightItems.length >= 4) {
+    mergedInsights = rssInsightItems.slice(0, 10)
+  } else {
+    const rssTitles = new Set(rssInsightItems.map(r => r.title.slice(0, 20)))
+    const fillers = BASE_INDUSTRY_INSIGHTS.filter(b => !rssTitles.has(b.title.slice(0, 20)))
+    mergedInsights = [...rssInsightItems, ...fillers.slice(0, 10 - rssInsightItems.length)]
   }
 
   // 政策与监管：合并BASE+RSS动态提取
@@ -864,10 +883,16 @@ function render(
 
   const tickerHtml = buildAwarenessTicker(healthStats, sourceScores, mergedAlerts, mergedInsights, indices, stocks, newsResult.news)
 
-  // 全球态势感知：合并BASE+RSS热点
+  // 全球态势感知：RSS优先，BASE仅做兜底
   const rssGeoHotNews = transformRSSHotspots(rssHotspots)
-  const seenTitles = new Set(BASE_GLOBAL_HOT_NEWS.map(h => h.title.slice(0, 20)))
-  const mergedHotNews = [...BASE_GLOBAL_HOT_NEWS, ...rssGeoHotNews.filter(h => !seenTitles.has(h.title.slice(0, 20)))]
+  let mergedHotNews: GeoHotNews[]
+  if (rssGeoHotNews.length >= 5) {
+    mergedHotNews = rssGeoHotNews.slice(0, 12)
+  } else {
+    const seenTitles = new Set(rssGeoHotNews.map(h => h.title.slice(0, 20)))
+    const fillers = BASE_GLOBAL_HOT_NEWS.filter(h => !seenTitles.has(h.title.slice(0, 20)))
+    mergedHotNews = [...rssGeoHotNews, ...fillers.slice(0, 12 - rssGeoHotNews.length)]
+  }
   currentHotNews = mergedHotNews  // V8: 同步给地图渲染使用
 
   // 构建整页DOM

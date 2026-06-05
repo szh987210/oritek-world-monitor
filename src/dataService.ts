@@ -705,10 +705,18 @@ export async function fetchCompanyNews(): Promise<CompanyNews[]> {
   ]
   const companyNews: CompanyNews[] = []
 
-  // ── Layer 1: Google News 搜索公司名（中文+英文，通过 rss2json API 代理）──
+  // ── Layer 1: 多源搜索公司名（中文+英文，通过 rss2json API 代理）──
   const COMPANY_SEARCH_URLS = [
+    // Google News 中文
     `https://news.google.com/rss/search?q=${encodeURIComponent('欧冶半导体 OR 龙泉芯片 OR 工布565 OR oritek')}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans`,
+    // Google News 英文
     `https://news.google.com/rss/search?q=${encodeURIComponent('oritek semiconductor OR orytek chip automotive')}&hl=en-US&gl=US&ceid=US:en`,
+    // Bing News (国内可访问)
+    `https://www.bing.com/news/search?q=${encodeURIComponent('欧冶半导体 芯片 汽车')}&format=rss`,
+    // 36kr 科技频道 (国内可直连)
+    `https://36kr.com/feed`,
+    // IT之家 RSS (国内可直连)
+    `https://www.ithome.com/rss/`,
   ]
   try {
     const results = await Promise.allSettled(
