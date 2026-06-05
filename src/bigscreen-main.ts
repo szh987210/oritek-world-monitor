@@ -956,14 +956,7 @@ function renderTopBar(activeSources: number, totalSources: number, credibility: 
   return `
   <div class="topbar-v4">
     <div class="topbar-v4-brand">
-      <svg viewBox="0 0 32 32" fill="none" class="brand-logo">
-        <circle cx="16" cy="16" r="13" stroke="#06b6d4" stroke-width="2"/>
-        <circle cx="16" cy="16" r="5" fill="#06b6d4" opacity="0.9"/>
-        <line x1="16" y1="3" x2="16" y2="7" stroke="#06b6d4" stroke-width="1.5"/>
-        <line x1="16" y1="25" x2="16" y2="29" stroke="#06b6d4" stroke-width="1.5"/>
-        <line x1="3" y1="16" x2="7" y2="16" stroke="#06b6d4" stroke-width="1.5"/>
-        <line x1="25" y1="16" x2="29" y2="16" stroke="#06b6d4" stroke-width="1.5"/>
-      </svg>
+      <img src="/oritek-logo.png" alt="欧冶半导体" class="brand-logo">
       <span class="brand-text">ORITEK COMMAND CENTER</span>
       <span class="brand-ver">V4</span>
     </div>

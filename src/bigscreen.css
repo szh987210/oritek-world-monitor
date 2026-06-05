@@ -62,7 +62,7 @@ html, body {
 .topbar-v4-brand {
   display: flex; align-items: center; gap: 10px;
 }
-.brand-logo { width: 26px; height: 26px; flex-shrink: 0; }
+.brand-logo { height: 28px; width: auto; flex-shrink: 0; filter: brightness(1.1); }
 .brand-text {
   font-size: var(--fs-md); font-weight: 700; color: var(--accent-cyan);
   letter-spacing: 1.5px; white-space: nowrap;
