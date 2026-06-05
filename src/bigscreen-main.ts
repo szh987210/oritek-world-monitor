@@ -34,6 +34,87 @@ import {
 } from './dataService'
 
 // ============================================================================
+// 实时行情 — 东财 JSONP 接口（国内可访问，绕过 CORS）
+// ============================================================================
+
+interface LiveQuote {
+  symbol: string; name: string
+  price: number; prevClose: number
+  change: number; changePercent: number
+}
+
+const LIVE_STOCK_CONFIG = [
+  { symbol: 'NVDA', secid: '105.NVDA', name: '英伟达' },
+  { symbol: 'TSM',  secid: '106.TSM',  name: '台积电' },
+  { symbol: 'QCOM', secid: '105.QCOM', name: '高通' },
+  { symbol: 'AMD',  secid: '105.AMD',  name: 'AMD' },
+  { symbol: 'INTC', secid: '105.INTC', name: '英特尔' },
+]
+
+/** JSONP 封装：注入 script 标签，Promise 化 */
+function jsonpFetch(url: string, timeoutMs = 8000): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const cbName = '_emcb_' + Math.random().toString(36).slice(2, 8)
+    ;(window as any)[cbName] = (data: any) => {
+      delete (window as any)[cbName]
+      document.head.removeChild(script)
+      resolve(data)
+    }
+    const script = document.createElement('script')
+    script.src = `${url}&cb=${cbName}`
+    script.onerror = () => {
+      delete (window as any)[cbName]
+      document.head.removeChild(script)
+      reject(new Error(`JSONP ${url} 加载失败`))
+    }
+    setTimeout(() => {
+      if ((window as any)[cbName]) {
+        delete (window as any)[cbName]
+        document.head.removeChild(script)
+        reject(new Error(`JSONP ${url} 超时`))
+      }
+    }, timeoutMs)
+    document.head.appendChild(script)
+  })
+}
+
+/** 当前实时行情快照（module scope，供 Ticker 渲染读取） */
+let liveQuotes = new Map<string, LiveQuote>()
+
+/** 从东财获取美股实时行情（JSONP，无 API Key） */
+async function fetchLiveStockQuotes(): Promise<void> {
+  const fields = 'f43,f57,f58,f60,f169,f170'
+  const results = await Promise.allSettled(
+    LIVE_STOCK_CONFIG.map(async (cfg) => {
+      const url = `https://push2.eastmoney.com/api/qt/stock/get?secid=${cfg.secid}&fields=${fields}`
+      const data = await jsonpFetch(url)
+      if (data?.rc === 0 && data?.data) {
+        const d = data.data
+        return {
+          symbol: cfg.symbol,
+          name: d.f58 || cfg.name,
+          price: (d.f43 || 0) / 1000,
+          prevClose: (d.f60 || 0) / 1000,
+          change: (d.f169 || 0) / 1000,
+          changePercent: (d.f170 || 0) / 100,
+        } as LiveQuote
+      }
+      return null
+    })
+  )
+  const newMap = new Map<string, LiveQuote>()
+  for (const r of results) {
+    if (r.status === 'fulfilled' && r.value) {
+      newMap.set(r.value.symbol, r.value)
+    }
+  }
+  if (newMap.size > 0) {
+    liveQuotes = newMap
+    console.log('[实时行情]', [...newMap.values()].map(q => `${q.name} $${q.price.toFixed(2)} ${q.changePercent >= 0 ? '+' : ''}${q.changePercent.toFixed(2)}%`).join(' | '))
+  }
+}
+
+// ============================================================================
 // TYPES
 // ============================================================================
 
@@ -762,6 +843,8 @@ async function init() {
       fetchStockData(['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH']),
       fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
     ])
+    // 并行抓取实时行情（JSONP，不阻塞主流程）
+    fetchLiveStockQuotes().catch(() => {})
 
     // 尝试通过RSS获取欧冶新闻，失败则使用BASE数据
     let oritekNews: OritekMediaItem[] = []
@@ -1740,23 +1823,31 @@ function buildAwarenessTicker(
       + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(idx.changePercent).toFixed(1)}%</span>`
     )
   }
-  // 关键股票
-  const keySymbols = ['NVDA', 'TSM', 'QCOM', 'AVGO', 'TSLA', 'AAPL']
+  // 关键股票 — 优先使用东财实时行情，静态数据兜底
+  const liveKeys = ['NVDA', 'TSM', 'QCOM', 'AMD', 'INTC']
   const stockMap = new Map(stocks.map(s => [s.symbol, s]))
-  const keyNames: Record<string, string> = {
-    'NVDA': '英伟达', 'TSM': '台积电', 'QCOM': '高通',
-    'AVGO': '博通', 'TSLA': '特斯拉', 'AAPL': '苹果',
-  }
-  for (const sym of keySymbols) {
-    const s = stockMap.get(sym)
-    if (s) {
-      const isUp = s.changePercent >= 0
+  for (const sym of liveKeys) {
+    const live = liveQuotes.get(sym)
+    if (live) {
+      const isUp = live.changePercent >= 0
       const arrow = isUp ? '↑' : '↓'
-      const priceStr = s.price >= 100 ? '$' + s.price.toFixed(0) : '$' + s.price.toFixed(2)
+      const priceStr = live.price >= 100 ? '$' + live.price.toFixed(0) : '$' + live.price.toFixed(2)
       snapshotItems.push(
-        `<span class="tkr-seg tkr-seg-data">${keyNames[sym] || s.name} ${priceStr}</span>`
-        + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(s.changePercent).toFixed(1)}%</span>`
+        `<span class="tkr-seg tkr-seg-data">${live.name} ${priceStr}</span>`
+        + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(live.changePercent).toFixed(2)}%</span>`
       )
+    } else {
+      // JSONP 尚未返回或失败 → 用静态基准兜底
+      const s = stockMap.get(sym)
+      if (s) {
+        const isUp = s.changePercent >= 0
+        const arrow = isUp ? '↑' : '↓'
+        const priceStr = s.price >= 100 ? '$' + s.price.toFixed(0) : '$' + s.price.toFixed(2)
+        snapshotItems.push(
+          `<span class="tkr-seg tkr-seg-data">${s.name} ${priceStr}</span>`
+          + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(s.changePercent).toFixed(1)}%</span>`
+        )
+      }
     }
   }
 
@@ -1888,6 +1979,7 @@ function startAutoRefresh() {
         fetchStockData(['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH']),
         fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
       ])
+      fetchLiveStockQuotes().catch(() => {})
       let oritekNews: OritekMediaItem[] = []
       try {
         const cn = await fetchCompanyNews()
@@ -1935,6 +2027,7 @@ function setupManualRefresh() {
         fetchStockData(['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH']),
         fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
       ])
+      fetchLiveStockQuotes().catch(() => {})
 
       let oritekNews: OritekMediaItem[] = []
       try {
