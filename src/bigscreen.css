@@ -205,8 +205,8 @@ html, body {
 /* Panel flex ratios in side columns */
 .panel-risk { flex: 1.2; min-height: 0; }
 .panel-oritek { flex: 0.9; min-height: 0; }
-.panel-insight { flex: 0.85; min-height: 0; }
-.panel-policy-v4 { flex: 1.15; min-height: 0; }
+.panel-insight { flex: 1.05; min-height: 0; }
+.panel-policy-v4 { flex: 0.85; min-height: 0; }
 .panel-policy-v4 .panel-v4-body { overflow: visible; display: flex; flex-direction: column; }
 
 /* ====== V4 Scrolling List ====== */
@@ -615,6 +615,7 @@ html, body {
 /* ====== Bottom Ticker v5 — 智能感知信息流 ====== */
 .bottom-ticker-v4 {
   display: flex; align-items: center; justify-content: center;
+  height: 100%; min-height: 0;
   padding: 0 var(--gap-md);
   background: rgba(10, 18, 28, 0.9);
   border-top: 1px solid var(--border-panel);
@@ -643,6 +644,7 @@ html, body {
   font-size: var(--fs-xs);
   white-space: nowrap;
   opacity: 0; pointer-events: none;
+  transition: opacity 0.4s;
 }
 .ticker-layer-v5.active {
   opacity: 1; pointer-events: auto;
@@ -658,23 +660,47 @@ html, body {
   to   { opacity: 0; transform: translateX(-30px); }
 }
 
+/* ── L1 系统脉搏: 青蓝调 · 区别于上方暗色面板 ── */
+.layer-pulse {
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.06) 20%, rgba(6, 182, 212, 0.08) 50%, rgba(6, 182, 212, 0.06) 80%, transparent);
+  border-left: 3px solid var(--accent-cyan);
+}
+
+/* ── L2 突发快讯: 琥珀/橙金调 · 与L1青蓝形成冷暖对比 ── */
+.layer-flash {
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.06) 20%, rgba(245, 158, 11, 0.08) 50%, rgba(245, 158, 11, 0.06) 80%, transparent);
+  border-left: 3px solid var(--accent-orange);
+}
+
+/* ── L3 竞品雷达: 蓝紫调 · 区别于上方产业洞察(紫)和政策(蓝) ── */
+.layer-radar {
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.06) 20%, rgba(99, 102, 241, 0.08) 50%, rgba(99, 102, 241, 0.06) 80%, transparent);
+  border-left: 3px solid #6366f1;
+}
+
+/* ── L4 数据快照: 翠绿调 · 金融数据感 ── */
+.layer-snapshot {
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.06) 20%, rgba(16, 185, 129, 0.08) 50%, rgba(16, 185, 129, 0.06) 80%, transparent);
+  border-left: 3px solid var(--accent-green);
+}
+
 /* Ticker 文本段 */
 .tkr-seg { display: inline-flex; align-items: center; gap: 4px; }
 .tkr-sep  { color: var(--border-glow); font-size: 9px; margin: 0 6px; opacity: 0.5; }
 
-/* 系统脉搏层样式 */
-.tkr-seg-pulse     { color: var(--accent-cyan); }
+/* 系统脉搏层文字 */
+.tkr-seg-pulse     { color: var(--accent-cyan); font-weight: 600; }
 .tkr-seg-critical  { color: var(--accent-red); font-weight: 600; }
 .tkr-seg-time      { color: var(--text-muted); font-size: 10px; }
 
-/* 突发快讯层样式 */
-.tkr-seg-flash     { color: var(--accent-orange); font-weight: 600; }
+/* 突发快讯层文字 — 琥珀色预警感 */
+.tkr-seg-flash     { color: #fbbf24; font-weight: 600; letter-spacing: 0.3px; }
 
-/* 竞品雷达层样式 */
-.tkr-seg-radar     { color: var(--text-primary); }
+/* 竞品雷达层文字 — 靛蓝高端感 */
+.tkr-seg-radar     { color: #a5b4fc; }
 
-/* 数据快照层样式 */
-.tkr-seg-data      { color: var(--text-secondary); }
+/* 数据快照层文字 — 翠绿数据感 */
+.tkr-seg-data      { color: #6ee7b7; }
 
 /* 保留原有样式（兼容数据快照中的股票部分） */
 .ticker-item-v4 {

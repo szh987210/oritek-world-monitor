@@ -546,8 +546,9 @@ const BASE_INDUSTRY_INSIGHTS: IndustryInsightItem[] = [
   },
 ]
 
-/** 政策与监管 — 全球芯片产业政策 */
+/** 政策与监管 — 全球芯片产业政策（每国固定2条） */
 const BASE_POLICY_ITEMS: PolicyItem[] = [
+  // ── 美国 (2条) ──
   {
     id: 'pol-1', title: '美国BIS封堵AI芯片"监管漏洞"：境外子公司采购也须许可',
     summary: '5月31日BIS发布新指引，许可要求看企业最终母公司所在地而非收货地，中国通过境外子公司采购先进AI芯片途径被彻底封堵。',
@@ -560,6 +561,7 @@ const BASE_POLICY_ITEMS: PolicyItem[] = [
     country: '美国', impact: 'severe',
     time: '2026-06-01', source: '彭博社',
   },
+  // ── 中国 (2条) ──
   {
     id: 'pol-3', title: '中国商务部：美滥用出口管制冲击全球半导体产供链稳定',
     summary: '商务部6月4日发布会敦促美方纠正错误做法，停止对华歧视性措施，维护全球产业链供应链稳定。',
@@ -567,11 +569,12 @@ const BASE_POLICY_ITEMS: PolicyItem[] = [
     time: '2026-06-04', source: '央视新闻',
   },
   {
-    id: 'pol-4', title: '日本向Rapidus追加40亿美元补贴，冲刺2nm先进制程',
-    summary: '日本政府2026财年向Rapidus追加631.5亿日元(约40亿美元)研发补贴，采取里程碑式拨款机制，目标2027年量产2nm芯片。',
-    country: '日本', impact: 'moderate',
-    time: '2026-04-11', source: 'NHK',
+    id: 'pol-6', title: '中国"大基金三期"正式运作：重点投向AI芯片和先进封装',
+    summary: '国家集成电路产业投资基金三期规模3000亿元，重点投向AI芯片设计、先进封装(Chiplet/3D IC)、半导体设备和材料。',
+    country: '中国', impact: 'moderate',
+    time: '2026-03-20', source: '工信部',
   },
+  // ── 欧盟 (2条) ──
   {
     id: 'pol-5', title: '欧盟《芯片法案2.0》酝酿中：拟追加500亿欧元投资',
     summary: '欧盟在首期430亿欧元芯片法案基础上酝酿2.0版本，目标2030年全球半导体产能占比从8%提升至20%，重点扶持先进制程和AI芯片。',
@@ -579,11 +582,25 @@ const BASE_POLICY_ITEMS: PolicyItem[] = [
     time: '2026-05-15', source: '金融时报',
   },
   {
-    id: 'pol-6', title: '中国"大基金三期"正式运作：重点投向AI芯片和先进封装',
-    summary: '国家集成电路产业投资基金三期规模3000亿元，重点投向AI芯片设计、先进封装(Chiplet/3D IC)、半导体设备和材料。',
-    country: '中国', impact: 'moderate',
-    time: '2026-03-20', source: '工信部',
+    id: 'pol-10', title: '荷兰进一步收紧对华光刻机出口：ASML维护服务也需许可',
+    summary: '荷兰政府在美国压力下进一步收紧出口管制，ASML向中国客户提供已售光刻机的维护和升级服务也需要申请许可证。',
+    country: '欧盟', impact: 'severe',
+    time: '2026-05-10', source: '路透社',
   },
+  // ── 日本 (2条) ──
+  {
+    id: 'pol-4', title: '日本向Rapidus追加40亿美元补贴，冲刺2nm先进制程',
+    summary: '日本政府2026财年向Rapidus追加631.5亿日元(约40亿美元)研发补贴，采取里程碑式拨款机制，目标2027年量产2nm芯片。',
+    country: '日本', impact: 'moderate',
+    time: '2026-04-11', source: 'NHK',
+  },
+  {
+    id: 'pol-11', title: '日本经济产业省与台积电签署3nm技术合作备忘录',
+    summary: 'METI与台积电在熊本签署合作备忘录，计划将台积电日本第二座工厂升级为3nm制程。日方通过税收优惠和补贴承担40%以上建设成本。',
+    country: '日本', impact: 'moderate',
+    time: '2026-04-28', source: '日经新闻',
+  },
+  // ── 韩国 (2条) ──
   {
     id: 'pol-7', title: '韩国K-半导体战略升级：投资550万亿韩元建设"龙仁半导体集群"',
     summary: '韩国政府升级半导体战略，三星、SK海力士等承诺投资550万亿韩元建设全球最大半导体产业集群，目标2030年主导AI存储市场。',
@@ -591,11 +608,12 @@ const BASE_POLICY_ITEMS: PolicyItem[] = [
     time: '2026-02-28', source: '韩国产业通商部',
   },
   {
-    id: 'pol-8', title: '美国CHIPS法案补贴台积电、英特尔、三星累计超500亿美元',
-    summary: '截至2026年Q1，CHIPS法案已向台积电(亚利桑那)、英特尔(俄亥俄)、三星(德州)累计拨付超500亿美元，但项目进度普遍延迟1-2年。',
-    country: '美国', impact: 'moderate',
-    time: '2026-04-01', source: 'SIA',
+    id: 'pol-12', title: '韩美签署"半导体供应链弹性协议"：AI存储对华出口设限',
+    summary: '韩美两国签署半导体供应链合作协议，韩国承诺配合美国AI技术出口管制，HBM3E及以上规格对华出口将纳入联合审查机制。',
+    country: '韩国', impact: 'severe',
+    time: '2026-05-29', source: '韩联社',
   },
+  // ── 全球 (2条) ──
   {
     id: 'pol-9', title: 'WSTS预测2026年全球半导体市场增长26.3%，逼近万亿美元',
     summary: 'AI需求驱动下全球半导体市场预计达9750亿美元。但贸易摩擦、出口管制、产能集中等地缘政治风险持续升级。',
@@ -603,10 +621,10 @@ const BASE_POLICY_ITEMS: PolicyItem[] = [
     time: '2026-03-15', source: 'WSTS',
   },
   {
-    id: 'pol-10', title: '荷兰进一步收紧对华光刻机出口：ASML维护服务也需许可',
-    summary: '荷兰政府在美国压力下进一步收紧出口管制，ASML向中国客户提供已售光刻机的维护和升级服务也需要申请许可证。',
-    country: '欧盟', impact: 'severe',
-    time: '2026-05-10', source: '路透社',
+    id: 'pol-13', title: 'WTO半导体贸易争端升级：中国就芯片出口管制向WTO提起诉讼',
+    summary: '中国正式向WTO提交磋商请求，指控美国、日本、荷兰等国半导体出口管制措施违反自由贸易原则。案件预计2027年上半年进入专家组审理。',
+    country: '全球', impact: 'moderate',
+    time: '2026-05-18', source: '路透社',
   },
 ]
 
@@ -1571,7 +1589,7 @@ function initTickerRotation() {
 
   let currentIdx = 0
   const totalLayers = layers.length
-  const ROTATION_INTERVAL = 18000 // 18秒切换
+  const ROTATION_INTERVAL = 10000 // 10秒切换（缩短轮播周期）
 
   function showLayer(idx: number) {
     // 移除所有动画类
