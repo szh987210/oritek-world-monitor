@@ -739,7 +739,7 @@ function render(
     }
   }
 
-  const tickerHtml = buildAwarenessTicker(healthStats, sourceScores, mergedAlerts, mergedInsights, indices, stocks)
+  const tickerHtml = buildAwarenessTicker(healthStats, sourceScores, mergedAlerts, mergedInsights, indices, stocks, newsResult.news)
 
   // 构建整页DOM
   app.innerHTML = `
@@ -1445,33 +1445,43 @@ function initNewsScrollWithMapSync() {
 }
 
 // ============================================================================
-// BOTTOM TICKER — 智能感知信息流 v6
-// 四层轮播: L1系统脉搏 / L2突发快讯(真实数据源) / L3竞品雷达 / L4数据快照
-// V6: L2真实头条替代占位 · 每层marquee左右滚动 · 数据源可验证
+// BOTTOM TICKER — 智能感知信息流 v7 (RSS动态驱动)
+// 四层轮播: L1系统脉搏(动态) / L2突发快讯(RSS自动提取) / L3竞品雷达(RSS自动提取) / L4数据快照(动态)
+// V7: L2/L3从RSS管道自动提取 · 硬编码数组仅作后备 · 每层marquee左右滚动
 // ============================================================================
 
-/** L2 突发快讯 — 真实数据源 (手动维护, 来源可验证) */
-const BREAKING_FLASH_NEWS: string[] = [
-  'NVIDIA Computex发布Cosmos 3: 全球首个全开放物理AI全模态模型 · 混合Transformer架构',
-  '特斯拉AI5芯片转投三星3nm? 台积电产能被英伟达苹果AMD挤爆 · 165亿美元订单悬而未决',
-  'ASML市值突破6700亿美元 成为欧洲史上最贵科技公司 · 逼退日本两大光刻机巨头',
-  '美国MATCH法案众议院36:8通过: 半导体多边出口管制机制升级 · 日荷被迫跟进',
-  '三星Q4营业利润同比暴增208% · AI服务器HBM3E存储需求驱动创历史新高',
-  '台积电上调2026资本支出至560亿美元 · 半导体设备股集体飙升',
-  '美国BIS 5月31日发布新指引: 境外子公司采购AI芯片也须许可证 · 封堵监管漏洞',
+// ── RSS 自动分类关键词 ──
+
+/** 突发快讯关键词 — 匹配 high-priority 新闻 */
+const BREAKING_KEYWORDS = /突发|紧急|重磅|刚刚|独家|最新发布|宣布|签署|通过|批准|制裁|禁令|断供|突破|暴涨|暴跌|市值突破|史上最大/
+
+/** 竞品公司名称正则 — 匹配竞品相关新闻 */
+const COMPETITOR_NAME_RE = /英伟达|NVIDIA|高通|Qualcomm|地平线|Mobileye|黑芝麻|TI |德州仪器|瑞萨|Renesas|安霸|Ambarella|恩智浦|NXP|意法半导体|STMicro|联发科|MediaTek|AMD|博通|Broadcom|英特尔|Intel|三星|Samsung|SK.?海力士|台积电|TSMC|特斯拉|Tesla/
+
+// ── 后备静态数组 — 当RSS数据不足时使用 ──
+
+/** L2 后备 — 手动维护真实头条 */
+const FALLBACK_FLASH: string[] = [
+  'NVIDIA Computex发布Cosmos 3: 全球首个全开放物理AI全模态模型',
+  'ASML市值突破6700亿美元 成为欧洲史上最贵科技公司',
+  '美国MATCH法案众议院36:8通过: 半导体多边出口管制机制升级',
+  '特斯拉AI5芯片转投三星3nm? 台积电产能被英伟达苹果AMD挤爆',
+  '三星Q4营业利润同比暴增208% · AI服务器HBM3E需求驱动',
+  '台积电上调2026资本支出至560亿美元 · 设备股集体飙升',
+  '美国BIS新指引: 境外子公司采购AI芯片也须许可证',
   '中芯国际上海12英寸先进封装产线投产 · 产能利用率达95%',
 ]
 
-/** 竞品雷达配置 — 手动维护关键竞品动态 */
-const COMPETITOR_RADAR: string[] = [
-  '英伟达 Blackwell Ultra 2026Q3量产 · 算力密度5x · Cosmos 3物理AI全开源',
+/** L3 后备 — 手动维护竞品动态 */
+const FALLBACK_RADAR: string[] = [
+  '英伟达 Blackwell Ultra 2026Q3量产 · 算力密度5x · Cosmos 3全开源',
   '高通 Snapdragon 8 Gen 5 台积电3nm 2026Q4发布 · 端侧AI算力翻倍',
-  '地平线 征程7黎曼架构对标特斯拉AI5 · 2025营收37.6亿同比+57%',
+  '地平线 征程7黎曼架构对标特斯拉AI5 · 2025营收37.6亿+57%',
   'Mobileye EyeQ7 2026Q4发布 · 首度内嵌物理AI感知引擎',
   '黑芝麻智能 拟收购低功耗AI芯片企业加码具身智能 · 港股涨6%',
-  'TI 恩智浦 瑞萨 2026开年齐发旗舰新品 · 中央计算架构终极决战',
+  'TI 恩智浦 瑞萨 2026开年齐发旗舰新品 · 中央计算架构决战',
   '瑞萨 R-Car X5H 3nm车规SoC已出样 · 多域融合方案2026量产',
-  '安霸 CV5-500 4nm 2026H2流片 · 对标欧冶ZCU物理AI目标市场',
+  '安霸 CV5-500 4nm 2026H2流片 · 对标欧冶ZCU目标市场',
 ]
 
 interface TickerLayer {
@@ -1488,6 +1498,7 @@ function buildAwarenessTicker(
   insights: any[],
   indices: IndustryIndex[],
   stocks: StockData[],
+  allNews: NewsItem[],  // V7: RSS新闻全量管道
 ): string {
   const layers: TickerLayer[] = []
 
@@ -1498,26 +1509,46 @@ function buildAwarenessTicker(
     ? Math.round(sourceScores.reduce((a, b) => a + b.composite, 0) / sourceScores.length)
     : 0
   const criticalCount = alerts.filter(a => a.severity === 'critical').length
-  const totalNewsCount = insights.length // 近似：实际应统计所有面板条目
+  // V7: 用RSS实际新闻条数替代insights近似值
+  const totalNewsCount = allNews.length
   const now = new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })
+
+  // 数据新鲜度：最新一条RSS新闻的时间
+  const sortedByTime = [...allNews].sort((a, b) =>
+    (b.publishedAt || b.time || '').localeCompare(a.publishedAt || a.time || '')
+  )
+  const latestTime = sortedByTime.length > 0
+    ? (sortedByTime[0].publishedAt || sortedByTime[0].time || '')
+    : '--'
+  const freshTag = sortedByTime.length > 0
+    ? `<span class="tkr-sep">│</span><span class="tkr-seg tkr-seg-time">最新情报 ${latestTime}</span>`
+    : ''
 
   layers.push({
     id: 'l1-pulse',
     label: '系统脉搏',
     html: `<span class="tkr-seg tkr-seg-pulse">RSS ${onlineCount}/${totalCount} 在线</span>`
-      + `<span class="tkr-sep">·</span>`
-      + `<span class="tkr-seg">今日监测 ${totalNewsCount}+ 条情报</span>`
-      + `<span class="tkr-sep">·</span>`
+      + `<span class="tkr-sep">│</span>`
+      + `<span class="tkr-seg">今日监测 ${totalNewsCount} 条情报</span>`
+      + `<span class="tkr-sep">│</span>`
       + `<span class="tkr-seg">来源可信度 ${avgCred}%</span>`
-      + `<span class="tkr-sep">·</span>`
+      + `<span class="tkr-sep">│</span>`
       + `<span class="tkr-seg tkr-seg-critical">高危预警 ${criticalCount} 条</span>`
-      + `<span class="tkr-sep">·</span>`
-      + `<span class="tkr-seg tkr-seg-time">上次刷新 ${now}</span>`,
+      + freshTag
+      + `<span class="tkr-sep">│</span>`
+      + `<span class="tkr-seg tkr-seg-time">刷新 ${now}</span>`,
     className: 'layer-pulse',
   })
 
-  // --- L2: 突发快讯 (真实数据源) ---
-  const flashItems = BREAKING_FLASH_NEWS.map((item, i) =>
+  // --- L2: 突发快讯 (RSS动态提取 · 后备静态数组) ---
+  const dynamicFlash = sortedByTime
+    .filter(n => n.priority === 'critical' || BREAKING_KEYWORDS.test(n.title))
+    .slice(0, 10)
+    .map(n => `${n.source}: ${n.title}`)
+
+  // 去重取前8条，不足时用后备补充
+  const flashSource = dynamicFlash.length >= 3 ? dynamicFlash : FALLBACK_FLASH
+  const flashItems = flashSource.slice(0, 8).map((item, i) =>
     `<span class="tkr-seg tkr-seg-flash">${esc(item)}</span>`
   ).join('<span class="tkr-sep">⚠</span>')
 
@@ -1528,8 +1559,15 @@ function buildAwarenessTicker(
     className: 'layer-flash',
   })
 
-  // --- L3: 竞品雷达 ---
-  const radarItems = COMPETITOR_RADAR.map((item, i) =>
+  // --- L3: 竞品雷达 (RSS动态提取 · 后备静态数组) ---
+  const dynamicRadar = sortedByTime
+    .filter(n => n.category === 'competitor' || COMPETITOR_NAME_RE.test(n.title))
+    .slice(0, 10)
+    .map(n => `${n.source}: ${n.title}`)
+
+  // 去重取前8条，不足时用后备补充
+  const radarSource = dynamicRadar.length >= 3 ? dynamicRadar : FALLBACK_RADAR
+  const radarItems = radarSource.slice(0, 8).map((item, i) =>
     `<span class="tkr-seg tkr-seg-radar">${esc(item)}</span>`
   ).join('<span class="tkr-sep">│</span>')
 
@@ -1574,7 +1612,7 @@ function buildAwarenessTicker(
   layers.push({
     id: 'l4-snapshot',
     label: '数据快照',
-    html: snapshotItems.join('<span class="tkr-sep">·</span>'),
+    html: snapshotItems.join('<span class="tkr-sep">│</span>'),
     className: 'layer-snapshot',
   })
 
