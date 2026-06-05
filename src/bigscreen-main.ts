@@ -785,8 +785,23 @@ function mergePolicyItems(baseItems: PolicyItem[], rssItems: PolicyItem[]): Poli
   })
 }
 
+/** 科技/半导体关键词白名单（兜底过滤，配合 dataService 端过滤使用） */
+const TECH_FILTER_KW = [
+  '芯片','半导体','AI','人工智能','机器人','自动驾驶','大模型','算力','GPU','NPU',
+  '台积电','英伟达','高通','英特尔','AMD','三星','SK海力士','华为','比亚迪',
+  '融资','IPO','收购','投资','估值','量产','车规','自动驾驶','具身','端侧',
+  'chip','semiconductor','AI','artificial intelligence','robot','autonomous',
+  'NVIDIA','TSMC','Intel','AMD','Qualcomm','Samsung','EV','Tesla','BYD',
+  'funding','IPO','acquisition','venture',
+]
+
 /** 从RSS热点转换为大屏GeoHotNews格式 */
 function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
+  // 兜底过滤：仅保留标题/摘要命中科技关键词的条目
+  const filtered = hotspots.filter(h => {
+    const text = (h.title + ' ' + h.summary).toLowerCase()
+    return TECH_FILTER_KW.some(kw => text.includes(kw.toLowerCase()))
+  })
   const coordMap: Record<string, [number, number]> = {
     '北京': [39.90,116.40],'上海': [31.23,121.47],'深圳': [22.54,114.06],
     '硅谷': [37.39,-122.08],'旧金山': [37.77,-122.42],'华盛顿': [38.91,-77.04],
@@ -804,10 +819,12 @@ function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
     '韩国': '首尔','中国台湾': '新竹','印度': '班加罗尔','中东': '迪拜',
     '俄罗斯': '莫斯科','澳大利亚': '悉尼','东南亚': '新加坡',
   }
+  // 合法 GeoHotNews.category 值：'AI'|'芯片'|'自动驾驶'|'机器人'
   const catMap: Record<string, GeoHotNews['category']> = {
-    tech:'AI',policy:'芯片',economy:'芯片',diplomacy:'国际',conflict:'国际',
+    tech:'AI',policy:'芯片',economy:'芯片',
+    // diplomacy/conflict 不再映射到'国际'（非法值），改为过滤掉
   }
-  return hotspots.slice(0,8).map((h,i) => {
+  return filtered.slice(0,8).map((h,i) => {
     let city='全球',lat=0,lng=0
     // 1) 先从标题中匹配城市名
     for(const [k,[cl,cn]] of Object.entries(coordMap)){
@@ -822,13 +839,16 @@ function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
         lng = coordMap[fallbackCity][1]
       }
     }
+    // 非法 category 过滤：diplomacy/conflict 类不再显示于地图
+    const cat = catMap[h.category]
+    if (!cat) return null  // 跳过非法分类条目
     return{
       id:`rss-gh-${i}`,title:h.title.slice(0,60),summary:h.summary.slice(0,60),
-      city,lat,lng,category:catMap[h.category]||'AI',
+      city,lat,lng,category:cat,
       heat:h.impact==='high'?9:h.impact==='medium'?7:5,
       time:h.time,source:h.source,
     }
-  })
+  }).filter((item): item is NonNullable<typeof item> => item !== null)
 }
 
 // ============================================================================
@@ -947,15 +967,32 @@ function render(
   }
 
   // 产业洞察：RSS优先（融资+AI动态），BASE仅做兜底
-  const rssInsightItems: IndustryInsightItem[] = startupFunding.slice(0, 8).map(sf => ({
-    id: `rss-insight-${sf.company}`,
-    title: `${sf.company}: ${sf.amount}`,
-    summary: `${sf.company}完成${sf.amount}融资`,
-    category: '投融资',
-    amount: sf.amount,
-    time: sf.time || new Date().toISOString().slice(0, 10),
-    source: 'RSS',
-  }))
+  // P0-②修复：过滤损坏的融资数据，使用原始标题而非拼接
+  const rssInsightItems: IndustryInsightItem[] = startupFunding
+    .filter(sf => {
+      // 过滤掉公司名为空/未知/明显解析错误的条目
+      if (!sf.company || sf.company === '-' || sf.company === '未知公司') return false
+      if (sf.company.length < 2 || sf.company.length > 30) return false
+      // 过滤掉标题明显不是融资相关的内容
+      const t = (sf.title || '').toLowerCase()
+      if (!/融资|投资|万美元|亿美元|亿元|万人民币|a轮|b轮|c轮|ipo|上市|募资|获投/.test(t)) return false
+      return true
+    })
+    .slice(0, 8)
+    .map(sf => {
+      const companyOk = sf.company && sf.company !== '-' && sf.company !== '未知公司'
+      const amountOk = sf.amount && sf.amount !== '-'
+      return {
+        id: `rss-insight-${sf.company?.slice(0,10) || sf.title?.slice(0,10) || 'unknown'}`,
+        // 优先用原始标题，避免 "探店13家: -" 这种拼接结果
+        title: (sf.title && sf.title.length > 5) ? sf.title.slice(0, 50) : `${sf.company || '科技企业'}${amountOk ? '完成' + sf.amount + '融资' : '融资动态'}`,
+        summary: companyOk && amountOk ? `${sf.company}完成${sf.amount}融资` : (sf.title || '融资动态').slice(0, 60),
+        category: '投融资',
+        amount: amountOk ? sf.amount : undefined,
+        time: sf.time || new Date().toISOString().slice(0, 10),
+        source: 'RSS',
+      }
+    })
   // 补充RSS中的AI/产业动态（非融资类）
   for (const ai of aiInsights.slice(0, 4)) {
     if (!rssInsightItems.some(r => r.title.slice(0, 20) === ai.title.slice(0, 20))) {
@@ -1127,11 +1164,14 @@ function renderRiskAlertItems(alerts: RiskAlert[]): string {
   if (alerts.length === 0) return `<div class="empty-state-v4">暂无风险告警</div>`
   const doubled = [...alerts, ...alerts, ...alerts]
   return `<div class="scroll-list-v4" style="animation-duration:${Math.max(100, alerts.length * 18)}s">
-    ${doubled.map(a => `
+    ${doubled.map(a => {
+      const isLive = a.source === 'RSS实时'
+      return `
     <div class="risk-item ${a.severity}">
       <div class="risk-badge">
         <span class="risk-level ${a.severity}">${a.severity === 'critical' ? '紧急' : a.severity === 'high' ? '高危' : '关注'}</span>
         <span class="risk-cat">${esc(a.category)}</span>
+        ${!isLive ? '<span class="data-badge-static">[基准]</span>' : '<span class="data-badge-live">📡 实时</span>'}
       </div>
       <div class="risk-title">${esc(a.title)}</div>
       <div class="risk-summary">${esc(a.summary)}</div>
@@ -1140,7 +1180,7 @@ function renderRiskAlertItems(alerts: RiskAlert[]): string {
         <span class="risk-src">${esc(a.source)}</span>
         <span class="risk-time">${esc(a.time)}</span>
       </div>
-    </div>`).join('')}
+    </div>`}).join('')}
   </div>`
 }
 
@@ -1151,17 +1191,22 @@ function renderOritekNewsItems(items: OritekMediaItem[]): string {
   if (items.length === 0) return `<div class="empty-state-v4">暂无媒体报道</div>`
   const doubled = [...items, ...items, ...items]
   return `<div class="scroll-list-v4" style="animation-duration:${Math.max(90, items.length * 16)}s">
-    ${doubled.map(n => `
+    ${doubled.map(n => {
+      const hasUrl = n.url && n.url.startsWith('http')
+      const isLive = n.source === 'RSS实时'
+      return `
     <div class="oritek-item">
       <div class="oritek-dot"></div>
       <div class="oritek-content">
-        <div class="oritek-title">${esc(n.title)}</div>
+        <div class="oritek-title">${esc(n.title)}${hasUrl ? `<a href="${esc(n.url)}" target="_blank" rel="noopener" class="news-link" title="阅读原文">📎</a>` : ''}</div>
         <div class="oritek-meta">
           <span>${esc(n.source)}</span>
           <span class="oritek-date">${esc(n.date)}</span>
+          ${!isLive && !hasUrl ? '<span class="data-badge-static">[基准]</span>' : ''}
+          ${isLive ? '<span class="data-badge-live">📡 实时</span>' : ''}
         </div>
       </div>
-    </div>`).join('')}
+    </div>`}).join('')}
   </div>`
 }
 
@@ -1195,7 +1240,9 @@ function renderInsightItems(items: IndustryInsightItem[]): string {
   if (items.length === 0) return `<div class="empty-state-v4">暂无产业动态</div>`
   const doubled = [...items, ...items, ...items]
   return `<div class="scroll-list-v4" style="animation-duration:${Math.max(100, items.length * 16)}s">
-    ${doubled.map(item => `
+    ${doubled.map(item => {
+      const isLive = item.source === 'RSS'
+      return `
     <div class="insight-item">
       <span class="insight-cat ${item.category === '大模型' ? 'cat-ai' : item.category === '具身智能' ? 'cat-robo' : item.category === 'AI芯片' ? 'cat-chip' : 'cat-auto'}">${item.category}</span>
       <div class="insight-content">
@@ -1203,7 +1250,12 @@ function renderInsightItems(items: IndustryInsightItem[]): string {
         <div class="insight-summary">${esc(item.summary)}</div>
         ${item.amount ? `<div class="insight-amount">💰 ${esc(item.amount)}</div>` : ''}
       </div>
-    </div>`).join('')}
+      <div class="insight-meta" style="margin-top:4px;display:flex;gap:6px;align-items:center">
+        <span class="insight-src">${esc(item.source || '')}</span>
+        <span class="insight-time">${esc(item.time || '')}</span>
+        ${!isLive ? '<span class="data-badge-static">[基准]</span>' : '<span class="data-badge-live">📡 实时</span>'}
+      </div>
+    </div>`}).join('')}
   </div>`
 }
 
@@ -1269,7 +1321,9 @@ function renderPolicyMatrix(items: PolicyItem[]): string {
     const list = groups.get(country)!
     const isActive = country === defaultCountry
 
-    const tiles = list.map(item => `
+    const tiles = list.map(item => {
+      const isLive = item.source === 'RSS实时' || item.source === 'RSS'
+      return `
       <div class="policy-tile ${item.impact}">
         <span class="tile-impact-badge tib-${item.impact}">${IMPACT_LABELS[item.impact] ?? item.impact}</span>
         <div class="tile-title">${esc(item.title)}</div>
@@ -1277,8 +1331,9 @@ function renderPolicyMatrix(items: PolicyItem[]): string {
         <div class="tile-meta">
           <span>${esc(item.source)}</span>
           <span>${esc(item.time)}</span>
+          ${!isLive ? '<span class="data-badge-static">[基准]</span>' : '<span class="data-badge-live">📡 实时</span>'}
         </div>
-      </div>`).join('')
+      </div>`}).join('')
 
     return `<div class="policy-tab-content${isActive ? ' active' : ''}" data-policy-panel="${esc(country)}">${tiles}</div>`
   }).join('')
@@ -1830,14 +1885,14 @@ function buildAwarenessTicker(
     className: 'layer-radar',
   })
 
-  // --- L4: 数据快照 ---
+  // --- L4: 数据快照（P0-③ 诚实标签）---
   const snapshotItems: string[] = []
-  // 关键指数
+  // 关键指数（均为静态参考数据）
   for (const idx of indices.slice(0, 3)) {
     const isUp = idx.changePercent >= 0
     const arrow = isUp ? '↑' : '↓'
     snapshotItems.push(
-      `<span class="tkr-seg tkr-seg-data">${idx.name} ${idx.value.toLocaleString()}</span>`
+      `<span class="tkr-seg tkr-seg-data">${idx.name}[参考] ${idx.value.toLocaleString()}</span>`
       + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(idx.changePercent).toFixed(1)}%</span>`
     )
   }
@@ -1862,7 +1917,7 @@ function buildAwarenessTicker(
         const arrow = isUp ? '↑' : '↓'
         const priceStr = s.price >= 100 ? '$' + s.price.toFixed(0) : '$' + s.price.toFixed(2)
         snapshotItems.push(
-          `<span class="tkr-seg tkr-seg-data">${s.name} ${priceStr}</span>`
+          `<span class="tkr-seg tkr-seg-data">${s.name}[参考] ${priceStr}</span>`
           + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(s.changePercent).toFixed(1)}%</span>`
         )
       }

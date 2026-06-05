@@ -120,15 +120,16 @@ export const NEWS_RSS_SOURCES: Array<{
 
 // ==================== 全球热点RSS源（2026-06-05实测验证）====================
 export const GLOBAL_HOTSPOT_SOURCES = [
-  { name: 'BBC世界', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', region: '国际' },
-  { name: 'BBC科技', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', region: '国际' },
+  // isTechSource: true = 科技垂直源(全部保留); false = 综合新闻源(仅保留科技关键词命中)
+  { name: 'BBC世界', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', region: '国际', isTechSource: false },
+  { name: 'BBC科技', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', region: '国际', isTechSource: true },
   // 路透社科技 RSS 返回 401（需认证），已移除。BBC 科技已覆盖国际科技新闻
-  { name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', region: '中东' },
-  { name: 'France24', url: 'https://www.france24.com/en/rss', region: '欧洲' },
-  { name: '德国之声', url: 'https://rss.dw.com/rdf/rss-de-all', region: '欧洲' },
-  { name: 'NHK世界', url: 'https://www3.nhk.or.jp/rss/news/cat0.xml', region: '日本' },
-  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', region: '美国' },
-  { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', region: '美国' },
+  { name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', region: '中东', isTechSource: false },
+  { name: 'France24', url: 'https://www.france24.com/en/rss', region: '欧洲', isTechSource: false },
+  { name: '德国之声', url: 'https://rss.dw.com/rdf/rss-de-all', region: '欧洲', isTechSource: false },
+  { name: 'NHK世界', url: 'https://www3.nhk.or.jp/rss/news/cat0.xml', region: '日本', isTechSource: false },
+  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', region: '美国', isTechSource: true },
+  { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', region: '美国', isTechSource: true },
 ]
 
 // ==================== 扩展RSS新闻源（2026-06-05实测验证）====================

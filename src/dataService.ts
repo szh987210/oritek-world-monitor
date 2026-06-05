@@ -566,15 +566,27 @@ function generateStartupFundingFromNews(news: NewsItem[]): StartupFundingItem[] 
     const text = n.title + (n.summary || '')
     return /融资|投资|万美元|亿美元|A轮|B轮|C轮|D轮|上市|IPO|天使|完成|估值|募资/.test(text)
   })
-    .slice(0, 8).map((n, i) => ({
-    id: `funding-${i}`,
-    title: n.title.slice(0, 50),
-    company: extractCompanyName(n.title),
-    amount: extractAmount(n.title),
-    investors: n.source,
-    sector: n.industry === 'robotics' ? '人形机器人' : n.industry === 'ai' ? '大模型/AI' : n.industry === 'semiconductor' ? '半导体' : '科技',
-    time: n.time
-  }))
+    .slice(0, 8).map((n, i) => {
+      const company = extractCompanyName(n.title)
+      const amount = extractAmount(n.title)
+      return {
+        id: `funding-${i}`,
+        title: n.title.slice(0, 50),
+        company,
+        amount,
+        investors: n.source,
+        sector: n.industry === 'robotics' ? '人形机器人' : n.industry === 'ai' ? '大模型/AI' : n.industry === 'semiconductor' ? '半导体' : '科技',
+        time: n.time
+      }
+    })
+    // P0-②修复：过滤掉公司名明显错误的条目
+    .filter(item => {
+      if (!item.company || item.company === '-' || item.company === '未知公司') return false
+      if (item.company.length < 2 || item.company.length > 30) return false
+      // 过滤明显不是公司名的字符串（如"探店13家"）
+      if (/探店|开店|测评|评测|广告|推广/.test(item.company)) return false
+      return true
+    })
 }
 
 // 从财经新闻+基准指数生成金融市场数据
@@ -593,17 +605,33 @@ function generateFinancialFromNews(news: NewsItem[]): FinancialMarket[] {
   ]
 }
 
-// 辅助函数
+// 辅助函数 — P0-②修复：更健壮的公司名和金额提取
 function extractCompanyName(title: string): string {
+  if (!title || title.length < 2) return '未知公司'
+  // 1) 书名号《》包裹的公司名
   const match = title.match(/《(.+?)》/)
-  if (match) return match[1]
-  const words = title.split(/[，,、]/)
-  return words[0] || '未知公司'
+  if (match) return match[1].trim()
+  // 2) "公司名完成/获/宣布XX" 模式
+  const actionMatch = title.match(/(.+?)(完成|获|宣布|开启)(.*?)(融资|投资|收购|IPO|上市)/)
+  if (actionMatch) return actionMatch[1].trim()
+  // 3) 冒号前公司名
+  const colonMatch = title.match(/^([^：:]{2,20})[：:]/)
+  if (colonMatch) return colonMatch[1].trim()
+  // 4) 逗号/顿号前第一个片段
+  const words = title.split(/[，、,，。·•]/)
+  const first = (words[0] || '').trim()
+  if (first && first.length >= 2 && first.length <= 20) return first
+  return '未知公司'
 }
 
 function extractAmount(title: string): string {
-  const match = title.match(/(\d+\.?\d*)(亿美元|万美元|亿元|万人民币)/)
+  if (!title || title.length < 2) return '-'
+  // 匹配 "完成3亿美元A轮" / "获5000万美元" / "估值达200亿元" 等格式
+  const match = title.match(/(\d+\.?\d*)(亿美元|万美元|亿元|万人民币|百万美元|千万美元)/)
   if (match) return match[1] + match[2]
+  // 匹配中文数字
+  const cnMatch = title.match(/(数亿|数十亿|数千万|数百万)(美元|人民币|元)/)
+  if (cnMatch) return cnMatch[1] + cnMatch[2]
   return '-'
 }
 
@@ -911,6 +939,35 @@ export async function fetchIndustryIndices(): Promise<IndustryIndex[]> {
   return cachedIndices
 }
 
+/** 科技/半导体热点关键词白名单 — 用于过滤非科技来源的RSS条目 */
+const HOTSPOT_TECH_KW = [
+  // 英⽂关键词
+  'chip', 'semiconductor', 'AI', 'artificial intelligence', 'robot',
+  'autonomous', 'self-driving', 'EV', 'electric vehicle', 'quantum',
+  'NVIDIA', 'TSMC', 'Intel', 'AMD', 'Qualcomm', 'Samsung', 'SK Hynix',
+  'Apple', 'Google', 'Microsoft', 'Meta', 'Tesla', 'BYD', 'OpenAI',
+  'GPU', 'CPU', 'NPU', 'processor', 'foundry', 'fab', 'wafer',
+  'data center', 'cloud', '5G', '6G', 'IoT', 'satellite', 'drone',
+  'tech', 'technology', 'startup', 'funding', 'venture', 'innovation',
+  'software', 'hardware', 'battery', 'sensor', 'lidar', 'radar',
+  'machine learning', 'deep learning', 'LLM', 'neural', 'model',
+  // 中文关键词
+  '芯片', '半导体', '人工智能', '机器人', '自动驾驶', '新能源',
+  '大模型', '算力', 'GPU', 'CPU', 'NPU', '光刻', '晶圆', '制程',
+  '华为', '比亚迪', '台积电', '英伟达', '高通', '地平线', '黑芝麻',
+  '寒武纪', '百度', '阿里', '腾讯', '字节', '小米', '蔚来', '小鹏',
+  '理想', '传感器', '激光雷达', '域控', '座舱', '智驾', '车规',
+  '融资', '上市', 'IPO', '收购', '合并', '投资',
+  // 日韩关键词
+  '半導体', 'ロボット', '自動運転', 'EV', 'バッテリー',
+  '삼성', '하이닉스', '반도체', '로봇',
+]
+
+function isTechHotspot(title: string, summary: string): boolean {
+  const text = (title + ' ' + summary).toLowerCase()
+  return HOTSPOT_TECH_KW.some(kw => text.includes(kw.toLowerCase()))
+}
+
 export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
   console.log('[fetchGlobalHotspots] 开始联网抓取全球热点...')
   const now = Date.now()
@@ -926,7 +983,7 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
       GLOBAL_HOTSPOT_SOURCES.map(async (source) => {
         try {
           const { items: rssItems } = await fetchRssWithFallback(source.url, source.name)
-          return rssItems.slice(0, 3).map((item: any, idx: number) => {
+          return rssItems.slice(0, 5).map((item: any, idx: number) => {
             const published = item.pubDate || item.publishedDate || new Date().toISOString()
             const rawTitle = (item.title || '无标题').replace(/<[^>]+>/g, '').slice(0, 60)
             const rawDesc = (item.description || '').replace(/<[^>]+>/g, '').slice(0, 80)
@@ -938,8 +995,14 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
               impact: inferImpact(rawTitle) as 'high' | 'medium' | 'low',
               time: formatTimeAgo(published),
               summary: escapeHtml(rawDesc),
-              source: source.name
-            } as GlobalHotspot
+              source: source.name,
+              // 标记来源类型，供过滤使用
+              _isTechSource: (source as any).isTechSource === true,
+            } as GlobalHotspot & { _isTechSource: boolean }
+          }).filter(item => {
+            // 科技垂直源(BBC科技/TechCrunch/The Verge) → 全部保留
+            // 综合新闻源 → 仅保留科技关键词命中条目
+            return item._isTechSource || isTechHotspot(item.title, item.summary)
           })
         } catch (e) {
           console.warn(`[fetchGlobalHotspots] 抓取 ${source.name} 失败:`, e)
@@ -951,7 +1014,7 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
       if (r.status === 'fulfilled' && r.value) allItems.push(...r.value)
     })
     if (allItems.length > 0) {
-      console.log(`[fetchGlobalHotspots] 联网成功，获取 ${allItems.length} 条热点`)
+      console.log(`[fetchGlobalHotspots] 联网成功，获取 ${allItems.length} 条科技热点（已过滤非科技内容）`)
       const seen = new Set<string>()
       cachedHotspots = allItems.filter(h => {
         const key = h.title.slice(0, 25)
