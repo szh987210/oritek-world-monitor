@@ -10,6 +10,7 @@
  * - 真实数据驱动，城市级经纬度精准映射
  */
 import './bigscreen.css'
+import oritekLogoUrl from '/oritek-logo.png'
 import * as d3 from 'd3'
 import * as d3Geo from 'd3-geo'
 import * as topojson from 'topojson-client'
@@ -956,7 +957,7 @@ function renderTopBar(activeSources: number, totalSources: number, credibility: 
   return `
   <div class="topbar-v4">
     <div class="topbar-v4-brand">
-      <img src="/oritek-logo.png" alt="欧冶半导体" class="brand-logo">
+      <img src="${oritekLogoUrl}" alt="欧冶半导体" class="brand-logo">
       <span class="brand-text">ORITEK COMMAND CENTER</span>
       <span class="brand-ver">V4</span>
     </div>
