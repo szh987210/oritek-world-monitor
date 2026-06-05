@@ -792,8 +792,8 @@ function render(
             <span class="title">政策与监管</span>
             <span class="badge badge-severe">${BASE_POLICY_ITEMS.filter(p => p.impact === 'severe').length} 重大</span>
           </div>
-          <div class="panel-v4-body scroll-body" id="policy-body">
-            ${renderPolicyItems(BASE_POLICY_ITEMS)}
+          <div class="panel-v4-body" id="policy-body">
+            ${renderPolicyMatrix(BASE_POLICY_ITEMS)}
           </div>
         </div>
       </div>
@@ -936,8 +936,72 @@ function renderInsightItems(items: IndustryInsightItem[]): string {
 }
 
 // ============================================================================
-// RIGHT: 政策与监管
+// RIGHT: 政策与监管 — Plan B Impact Matrix
 // ============================================================================
+
+const COUNTRY_CONFIG: Record<string, { cls: string; label: string; order: number }> = {
+  '美国': { cls: 'pmh-us', label: '🇺🇸 美国', order: 1 },
+  '中国': { cls: 'pmh-cn', label: '🇨🇳 中国', order: 2 },
+  '欧盟': { cls: 'pmh-eu', label: '🇪🇺 欧盟', order: 3 },
+  '日本': { cls: 'pmh-jp', label: '🇯🇵 日本', order: 4 },
+  '韩国': { cls: 'pmh-kr', label: '🇰🇷 韩国', order: 5 },
+  '全球': { cls: 'pmh-global', label: '🌐 全球', order: 6 },
+}
+
+const IMPACT_LABELS: Record<string, string> = {
+  'severe': '⚡ 重大',
+  'moderate': '◆ 重要',
+  'neutral': '○ 常规',
+}
+
+function renderPolicyMatrix(items: PolicyItem[]): string {
+  if (items.length === 0) return `<div class="empty-state-v4">暂无政策动态</div>`
+
+  // 按国家分组，组内按严重程度排序
+  const groups = new Map<string, PolicyItem[]>()
+  for (const item of items) {
+    const key = item.country
+    if (!groups.has(key)) groups.set(key, [])
+    groups.get(key)!.push(item)
+  }
+
+  // 组内排序: severe > moderate > neutral
+  const severityOrder: Record<string, number> = { severe: 0, moderate: 1, neutral: 2 }
+  for (const [, list] of groups) {
+    list.sort((a, b) => severityOrder[a.impact] - severityOrder[b.impact])
+  }
+
+  // 按预定义国家顺序排列列
+  const sortedCountries = [...groups.keys()].sort(
+    (a, b) => (COUNTRY_CONFIG[a]?.order ?? 99) - (COUNTRY_CONFIG[b]?.order ?? 99)
+  )
+
+  const columns = sortedCountries.map(country => {
+    const cfg = COUNTRY_CONFIG[country]
+    const list = groups.get(country)!
+    const tiles = list.map(item => `
+      <div class="policy-tile ${item.impact}">
+        <span class="tile-impact-badge tib-${item.impact}">${IMPACT_LABELS[item.impact] ?? item.impact}</span>
+        <div class="tile-title">${esc(item.title)}</div>
+        <div class="tile-meta">
+          <span>${esc(item.source)}</span>
+          <span>${esc(item.time)}</span>
+        </div>
+        <div class="tile-tooltip">
+          <div class="tile-tooltip-summary">${esc(item.summary)}</div>
+        </div>
+      </div>`).join('')
+
+    return `
+      <div class="policy-col">
+        <div class="policy-col-header ${cfg?.cls ?? 'pmh-global'}">${cfg?.label ?? country}</div>
+        ${tiles}
+      </div>`
+  }).join('')
+
+  return `<div class="policy-matrix-v4">${columns}</div>`
+}
+
 function renderPolicyItems(items: PolicyItem[]): string {
   if (items.length === 0) return `<div class="empty-state-v4">暂无政策动态</div>`
   const doubled = [...items, ...items, ...items]
