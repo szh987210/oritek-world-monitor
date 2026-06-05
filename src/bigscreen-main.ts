@@ -1164,14 +1164,11 @@ function renderRiskAlertItems(alerts: RiskAlert[]): string {
   if (alerts.length === 0) return `<div class="empty-state-v4">暂无风险告警</div>`
   const doubled = [...alerts, ...alerts, ...alerts]
   return `<div class="scroll-list-v4" style="animation-duration:${Math.max(100, alerts.length * 18)}s">
-    ${doubled.map(a => {
-      const isLive = a.source === 'RSS实时'
-      return `
+    ${doubled.map(a => `
     <div class="risk-item ${a.severity}">
       <div class="risk-badge">
         <span class="risk-level ${a.severity}">${a.severity === 'critical' ? '紧急' : a.severity === 'high' ? '高危' : '关注'}</span>
         <span class="risk-cat">${esc(a.category)}</span>
-        ${!isLive ? '<span class="data-badge-static">[基准]</span>' : '<span class="data-badge-live">📡 实时</span>'}
       </div>
       <div class="risk-title">${esc(a.title)}</div>
       <div class="risk-summary">${esc(a.summary)}</div>
@@ -1180,7 +1177,7 @@ function renderRiskAlertItems(alerts: RiskAlert[]): string {
         <span class="risk-src">${esc(a.source)}</span>
         <span class="risk-time">${esc(a.time)}</span>
       </div>
-    </div>`}).join('')}
+    </div>`).join('')}
   </div>`
 }
 
@@ -1191,22 +1188,17 @@ function renderOritekNewsItems(items: OritekMediaItem[]): string {
   if (items.length === 0) return `<div class="empty-state-v4">暂无媒体报道</div>`
   const doubled = [...items, ...items, ...items]
   return `<div class="scroll-list-v4" style="animation-duration:${Math.max(90, items.length * 16)}s">
-    ${doubled.map(n => {
-      const hasUrl = n.url && n.url.startsWith('http')
-      const isLive = n.source === 'RSS实时'
-      return `
+    ${doubled.map(n => `
     <div class="oritek-item">
       <div class="oritek-dot"></div>
       <div class="oritek-content">
-        <div class="oritek-title">${esc(n.title)}${hasUrl ? `<a href="${esc(n.url)}" target="_blank" rel="noopener" class="news-link" title="阅读原文">📎</a>` : ''}</div>
+        <div class="oritek-title">${esc(n.title)}</div>
         <div class="oritek-meta">
           <span>${esc(n.source)}</span>
           <span class="oritek-date">${esc(n.date)}</span>
-          ${!isLive && !hasUrl ? '<span class="data-badge-static">[基准]</span>' : ''}
-          ${isLive ? '<span class="data-badge-live">📡 实时</span>' : ''}
         </div>
       </div>
-    </div>`}).join('')}
+    </div>`).join('')}
   </div>`
 }
 
@@ -1240,9 +1232,7 @@ function renderInsightItems(items: IndustryInsightItem[]): string {
   if (items.length === 0) return `<div class="empty-state-v4">暂无产业动态</div>`
   const doubled = [...items, ...items, ...items]
   return `<div class="scroll-list-v4" style="animation-duration:${Math.max(100, items.length * 16)}s">
-    ${doubled.map(item => {
-      const isLive = item.source === 'RSS'
-      return `
+    ${doubled.map(item => `
     <div class="insight-item">
       <span class="insight-cat ${item.category === '大模型' ? 'cat-ai' : item.category === '具身智能' ? 'cat-robo' : item.category === 'AI芯片' ? 'cat-chip' : 'cat-auto'}">${item.category}</span>
       <div class="insight-content">
@@ -1250,12 +1240,11 @@ function renderInsightItems(items: IndustryInsightItem[]): string {
         <div class="insight-summary">${esc(item.summary)}</div>
         ${item.amount ? `<div class="insight-amount">💰 ${esc(item.amount)}</div>` : ''}
       </div>
-      <div class="insight-meta" style="margin-top:4px;display:flex;gap:6px;align-items:center">
+      <div class="insight-meta">
         <span class="insight-src">${esc(item.source || '')}</span>
         <span class="insight-time">${esc(item.time || '')}</span>
-        ${!isLive ? '<span class="data-badge-static">[基准]</span>' : '<span class="data-badge-live">📡 实时</span>'}
       </div>
-    </div>`}).join('')}
+    </div>`).join('')}
   </div>`
 }
 
@@ -1321,9 +1310,7 @@ function renderPolicyMatrix(items: PolicyItem[]): string {
     const list = groups.get(country)!
     const isActive = country === defaultCountry
 
-    const tiles = list.map(item => {
-      const isLive = item.source === 'RSS实时' || item.source === 'RSS'
-      return `
+    const tiles = list.map(item => `
       <div class="policy-tile ${item.impact}">
         <span class="tile-impact-badge tib-${item.impact}">${IMPACT_LABELS[item.impact] ?? item.impact}</span>
         <div class="tile-title">${esc(item.title)}</div>
@@ -1331,9 +1318,8 @@ function renderPolicyMatrix(items: PolicyItem[]): string {
         <div class="tile-meta">
           <span>${esc(item.source)}</span>
           <span>${esc(item.time)}</span>
-          ${!isLive ? '<span class="data-badge-static">[基准]</span>' : '<span class="data-badge-live">📡 实时</span>'}
         </div>
-      </div>`}).join('')
+      </div>`).join('')
 
     return `<div class="policy-tab-content${isActive ? ' active' : ''}" data-policy-panel="${esc(country)}">${tiles}</div>`
   }).join('')
@@ -1885,14 +1871,14 @@ function buildAwarenessTicker(
     className: 'layer-radar',
   })
 
-  // --- L4: 数据快照（P0-③ 诚实标签）---
+  // --- L4: 数据快照 ---
   const snapshotItems: string[] = []
   // 关键指数（均为静态参考数据）
   for (const idx of indices.slice(0, 3)) {
     const isUp = idx.changePercent >= 0
     const arrow = isUp ? '↑' : '↓'
     snapshotItems.push(
-      `<span class="tkr-seg tkr-seg-data">${idx.name}[参考] ${idx.value.toLocaleString()}</span>`
+      `<span class="tkr-seg tkr-seg-data">${idx.name} ${idx.value.toLocaleString()}</span>`
       + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(idx.changePercent).toFixed(1)}%</span>`
     )
   }
@@ -1917,7 +1903,7 @@ function buildAwarenessTicker(
         const arrow = isUp ? '↑' : '↓'
         const priceStr = s.price >= 100 ? '$' + s.price.toFixed(0) : '$' + s.price.toFixed(2)
         snapshotItems.push(
-          `<span class="tkr-seg tkr-seg-data">${s.name}[参考] ${priceStr}</span>`
+          `<span class="tkr-seg tkr-seg-data">${s.name} ${priceStr}</span>`
           + `<span class="tkr-chg ${isUp ? 'up' : 'down'}">${arrow}${Math.abs(s.changePercent).toFixed(1)}%</span>`
         )
       }
