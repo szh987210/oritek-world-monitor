@@ -1019,25 +1019,67 @@ function initPolicyTabs() {
   const bar = document.querySelector('.policy-tab-bar')
   if (!bar) return
 
-  bar.addEventListener('click', (e) => {
-    const btn = (e.target as HTMLElement).closest('.policy-tab-btn') as HTMLElement
-    if (!btn) return
+  const allBtns = () => [...bar.querySelectorAll('.policy-tab-btn')] as HTMLElement[]
+  const body = document.querySelector('.policy-tab-body')
 
+  let autoTimer: number | undefined
+  let manualPauseTimer: number | undefined
+  const AUTO_INTERVAL = 10000 // 10秒自动切换
+
+  function activateTab(btn: HTMLElement) {
     const country = btn.dataset.policyTab
     if (!country) return
 
-    // 切换 tab active
-    bar.querySelectorAll('.policy-tab-btn').forEach(b => b.classList.remove('active'))
+    bar!.querySelectorAll('.policy-tab-btn').forEach(b => b.classList.remove('active'))
     btn.classList.add('active')
 
-    // 切换内容面板
-    const body = document.querySelector('.policy-tab-body')
     if (body) {
       body.querySelectorAll('.policy-tab-content').forEach(p => p.classList.remove('active'))
       const panel = body.querySelector(`[data-policy-panel="${CSS.escape(country)}"]`)
       if (panel) panel.classList.add('active')
     }
+  }
+
+  function startAutoRotate() {
+    stopAutoRotate()
+    autoTimer = window.setInterval(() => {
+      const btns = allBtns()
+      if (btns.length === 0) return
+      const activeIdx = btns.findIndex(b => b.classList.contains('active'))
+      const nextIdx = (activeIdx + 1) % btns.length
+      activateTab(btns[nextIdx])
+    }, AUTO_INTERVAL)
+  }
+
+  function stopAutoRotate() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = undefined }
+    if (manualPauseTimer) { clearTimeout(manualPauseTimer); manualPauseTimer = undefined }
+  }
+
+  // 手动点击：立即切换并暂停自动轮播15秒
+  bar.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.policy-tab-btn') as HTMLElement
+    if (!btn) return
+
+    stopAutoRotate()
+    activateTab(btn)
+
+    // 15秒后恢复自动轮播
+    manualPauseTimer = window.setTimeout(startAutoRotate, 15000)
   })
+
+  // 悬停暂停
+  const panelEl = document.getElementById('panel-policy-v4') || bar.closest('.panel-v4')
+  if (panelEl) {
+    panelEl.addEventListener('mouseenter', stopAutoRotate)
+    panelEl.addEventListener('mouseleave', () => {
+      stopAutoRotate()
+      startAutoRotate()
+    })
+  }
+
+  // 启动自动轮播
+  startAutoRotate()
 }
 
 function renderPolicyItems(items: PolicyItem[]): string {

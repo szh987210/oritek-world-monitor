@@ -15,8 +15,12 @@ export const API_CONFIG = {
 }
 
 // ==================== RSS2JSON API ====================
+// 免费套餐限制：约12个独立RSS URL后可触发 "using all available feeds" 配额错误
+// 解决方案：注册多个免费Key分流 → https://rss2json.com 免费注册获取新Key
 export const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json'
 export const RSS2JSON_API_KEY = '5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f'
+// 2026-06-05 验证状态：主Key已注册9个稳定源（EE Times/SemiEng/NVIDIA/BBC Tech/SemiToday/Digitimes/SemiAnalysis/TheVerge/TechCrunch）
+// 备用Key yoh1gs... 已过期，需重新注册或删除
 
 // ==================== 数据接口 ====================
 export interface NewsItem {
@@ -114,12 +118,11 @@ export const NEWS_RSS_SOURCES: Array<{
   { name: 'Supply Chain Dive', url: 'https://www.supplychaindive.com/feeds/news/', category: 'supply', industry: 'all' },
 ]
 
-// ==================== 全球热点RSS源（仅保留实测有效的URL）====================
+// ==================== 全球热点RSS源（2026-06-05实测验证）====================
 export const GLOBAL_HOTSPOT_SOURCES = [
   { name: 'BBC世界', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', region: '国际' },
   { name: 'BBC科技', url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', region: '国际' },
-  // CNN RSS 在国内被墙（ERR_CONNECTION_CLOSED），替换为路透社科技
-  { name: '路透科技', url: 'https://www.reuters.com/technology/rss', region: '国际' },
+  // 路透社科技 RSS 返回 401（需认证），已移除。BBC 科技已覆盖国际科技新闻
   { name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', region: '中东' },
   { name: 'France24', url: 'https://www.france24.com/en/rss', region: '欧洲' },
   { name: '德国之声', url: 'https://rss.dw.com/rdf/rss-de-all', region: '欧洲' },
@@ -128,21 +131,21 @@ export const GLOBAL_HOTSPOT_SOURCES = [
   { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', region: '美国' },
 ]
 
-// ==================== 扩展RSS新闻源（仅保留实测有效的URL）====================
+// ==================== 扩展RSS新闻源（2026-06-05实测验证）====================
 export const EXTENDED_NEWS_SOURCES: Array<{
   name: string
   url: string
   category: 'tech' | 'market' | 'policy' | 'supply' | 'competitor' | 'ai' | 'robotics' | 'auto' | 'finance' | 'general'
   industry: NewsIndustry
 }> = [
-  // 半导体行业
+  // 半导体行业（✅ = rss2json验证通过）
   { name: 'Semiconductor Today', url: 'https://www.semiconductor-today.com/rss/news.xml', category: 'tech', industry: 'semiconductor' },
   { name: 'Semi Engineering', url: 'https://semiengineering.com/feed/', category: 'tech', industry: 'semiconductor' },
   { name: 'Digitimes每日', url: 'https://www.digitimes.com/rss/daily.xml', category: 'competitor', industry: 'semiconductor' },
   { name: 'SemiWiki', url: 'https://semiwiki.com/feed/', category: 'competitor', industry: 'semiconductor' },
-  { name: 'Electronics Weekly', url: 'https://www.electronicsweekly.com/feed/', category: 'competitor', industry: 'semiconductor' },
   { name: 'Semi Digest', url: 'https://www.semiconductor-digest.com/feed/', category: 'market', industry: 'semiconductor' },
   { name: 'SemiAnalysis', url: 'https://semianalysis.com/feed/', category: 'market', industry: 'semiconductor' },
+  // Electronics Weekly 返回 403，已移除
   // AI行业
   { name: '36氪', url: 'https://36kr.com/feed', category: 'ai', industry: 'ai' },
   { name: 'NVIDIA Blog', url: 'https://blogs.nvidia.com/feed/', category: 'ai', industry: 'ai' },
@@ -152,11 +155,10 @@ export const EXTENDED_NEWS_SOURCES: Array<{
   { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'general', industry: 'all' },
   { name: 'Wired', url: 'https://www.wired.com/feed/rss', category: 'general', industry: 'all' },
   // 供应链
-  // SupplyChainBrain /rss/ 返回HTML索引页而非RSS feed，替换为实测有效的 Supply Chain Dive
   { name: 'Supply Chain Dive', url: 'https://www.supplychaindive.com/feeds/news/', category: 'supply', industry: 'all' },
-  // 政策动态 (注：依赖第三方RSSHub实例 rsshub.feeddd.org，稳定性取决于上游服务)
+  // 政策动态 (依赖第三方RSSHub实例，稳定性取决于上游)
   { name: '工信部公告', url: 'https://rsshub.feeddd.org/https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=925fa8f4afd44e53818794ed96d9876e,30f92eeafcfd4685984dfb793a2c5fff', category: 'policy', industry: 'all' },
-  // VC融资（专项源）
+  // VC融资
   { name: '36氪-创投', url: 'https://36kr.com/feed', category: 'finance', industry: 'all' },
 ]
 

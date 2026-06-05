@@ -46,8 +46,9 @@ function escapeHtml(str: string): string {
 
 // ==================== RSS 抓取层级降级策略 ====================
 // P0-1 修复：rss2json.com 免费Key配额易耗尽，实现三层降级
-// Level 1: rss2json API (主Key) → Level 2: rss2json API (备用Key) → Level 3: DOMParser 直接解析
-const RSS2JSON_SECONDARY_KEY = 'yoh1gsmujrtucvkwumqh3dxvsajvcrtxtkjtwcwe' // 备用Key
+// Level 1: rss2json API (主Key，已验证稳定，注册约9个源) → Level 2: DOMParser 直接解析 → Level 3: 兜底数据
+// 备用Key yoh1gsm... 已于2026-06过期失效，如需增加源覆盖率请到 https://rss2json.com 免费注册新Key
+const RSS2JSON_SECONDARY_KEY = '' // 备用Key已过期，留空则跳过Level 2
 
 interface RssFetchResult {
   items: Array<{ title: string; link: string; description: string; pubDate: string }>
@@ -78,18 +79,20 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
     }
   } catch (_) { /* 降级 */ }
 
-  // Level 2: 备用Key
-  try {
-    const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_SECONDARY_KEY}&count=20`
-    const resp = await fetchWithTimeout(url, { mode: 'cors', headers: { 'Accept': 'application/json' } }, FETCH_TIMEOUT)
-    if (resp.ok) {
-      const data = await resp.json()
-      if (data.status === 'ok') {
-        recordSourceResult(srcName, rssUrl, true)
-        return { items: data.items || [], source: 'rss2json-secondary' }
+  // Level 2: 备用Key（如果配置了）
+  if (RSS2JSON_SECONDARY_KEY) {
+    try {
+      const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_SECONDARY_KEY}&count=20`
+      const resp = await fetchWithTimeout(url, { mode: 'cors', headers: { 'Accept': 'application/json' } }, FETCH_TIMEOUT)
+      if (resp.ok) {
+        const data = await resp.json()
+        if (data.status === 'ok') {
+          recordSourceResult(srcName, rssUrl, true)
+          return { items: data.items || [], source: 'rss2json-secondary' }
+        }
       }
-    }
-  } catch (_) { /* 降级 */ }
+    } catch (_) { /* 降级 */ }
+  }
 
   // Level 3: DOMParser 直接解析 XML（对可直连的源有效，被墙源会因超时而快速失败）
   try {
