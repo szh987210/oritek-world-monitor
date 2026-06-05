@@ -805,6 +805,7 @@ function render(
   setTimeout(() => {
     renderWorldMapV4()
     initNewsScrollWithMapSync()
+    initPolicyTabs()
     updateRefreshTime()
   }, 300)
 }
@@ -940,12 +941,12 @@ function renderInsightItems(items: IndustryInsightItem[]): string {
 // ============================================================================
 
 const COUNTRY_CONFIG: Record<string, { cls: string; label: string; order: number }> = {
-  '美国': { cls: 'pch-us', label: '🇺🇸 美国', order: 1 },
-  '中国': { cls: 'pch-cn', label: '🇨🇳 中国', order: 2 },
-  '欧盟': { cls: 'pch-eu', label: '🇪🇺 欧盟', order: 3 },
-  '日本': { cls: 'pch-jp', label: '🇯🇵 日本', order: 4 },
-  '韩国': { cls: 'pch-kr', label: '🇰🇷 韩国', order: 5 },
-  '全球': { cls: 'pch-global', label: '🌐 全球', order: 6 },
+  '美国': { cls: 'pt-us', label: '🇺🇸 美国', order: 1 },
+  '中国': { cls: 'pt-cn', label: '🇨🇳 中国', order: 2 },
+  '欧盟': { cls: 'pt-eu', label: '🇪🇺 欧盟', order: 3 },
+  '日本': { cls: 'pt-jp', label: '🇯🇵 日本', order: 4 },
+  '韩国': { cls: 'pt-kr', label: '🇰🇷 韩国', order: 5 },
+  '全球': { cls: 'pt-global', label: '🌐 全球', order: 6 },
 }
 
 const IMPACT_LABELS: Record<string, string> = {
@@ -976,31 +977,67 @@ function renderPolicyMatrix(items: PolicyItem[]): string {
     (a, b) => (COUNTRY_CONFIG[a]?.order ?? 99) - (COUNTRY_CONFIG[b]?.order ?? 99)
   )
 
-  // 3×2 卡片网格：每个国家一张卡片，卡片内政策纵向排列
-  const cards = sortedCountries.map(country => {
+  // 默认选中有最多条目的国家
+  let defaultCountry = sortedCountries[0]
+  let maxCount = 0
+  for (const [c, list] of groups) {
+    if (list.length > maxCount) { maxCount = list.length; defaultCountry = c }
+  }
+
+  // Tab 按钮
+  const tabs = sortedCountries.map(country => {
+    const cfg = COUNTRY_CONFIG[country]
+    const cnt = groups.get(country)?.length ?? 0
+    const isActive = country === defaultCountry
+    return `<button class="policy-tab-btn ${cfg?.cls ?? 'pt-global'}${isActive ? ' active' : ''}" data-policy-tab="${esc(country)}">${cfg?.label ?? country}<span style="font-size:8px;opacity:0.6;margin-left:2px">${cnt}</span></button>`
+  }).join('')
+
+  // Tab 内容区
+  const panels = sortedCountries.map(country => {
     const cfg = COUNTRY_CONFIG[country]
     const list = groups.get(country)!
+    const isActive = country === defaultCountry
+
     const tiles = list.map(item => `
       <div class="policy-tile ${item.impact}">
         <span class="tile-impact-badge tib-${item.impact}">${IMPACT_LABELS[item.impact] ?? item.impact}</span>
         <div class="tile-title">${esc(item.title)}</div>
+        <div class="tile-summary">${esc(item.summary)}</div>
         <div class="tile-meta">
           <span>${esc(item.source)}</span>
           <span>${esc(item.time)}</span>
         </div>
-        <div class="tile-tooltip">
-          <div class="tile-tooltip-summary">${esc(item.summary)}</div>
-        </div>
       </div>`).join('')
 
-    return `
-      <div class="policy-card">
-        <div class="policy-card-header ${cfg?.cls ?? 'pch-global'}">${cfg?.label ?? country} · ${list.length}条</div>
-        <div class="policy-card-body">${tiles}</div>
-      </div>`
+    return `<div class="policy-tab-content${isActive ? ' active' : ''}" data-policy-panel="${esc(country)}">${tiles}</div>`
   }).join('')
 
-  return `<div class="policy-matrix-v4">${cards}</div>`
+  return `<div class="policy-tab-bar">${tabs}</div><div class="policy-tab-body">${panels}</div>`
+}
+
+function initPolicyTabs() {
+  const bar = document.querySelector('.policy-tab-bar')
+  if (!bar) return
+
+  bar.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.policy-tab-btn') as HTMLElement
+    if (!btn) return
+
+    const country = btn.dataset.policyTab
+    if (!country) return
+
+    // 切换 tab active
+    bar.querySelectorAll('.policy-tab-btn').forEach(b => b.classList.remove('active'))
+    btn.classList.add('active')
+
+    // 切换内容面板
+    const body = document.querySelector('.policy-tab-body')
+    if (body) {
+      body.querySelectorAll('.policy-tab-content').forEach(p => p.classList.remove('active'))
+      const panel = body.querySelector(`[data-policy-panel="${CSS.escape(country)}"]`)
+      if (panel) panel.classList.add('active')
+    }
+  })
 }
 
 function renderPolicyItems(items: PolicyItem[]): string {
