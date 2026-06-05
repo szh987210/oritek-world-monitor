@@ -1366,9 +1366,11 @@ function renderCityMarkers(activeCity?: string) {
   // 删除旧标记
   mapSvg.selectAll('.marker-group-v4').remove()
 
-  // 按城市聚合热度
+  // 按城市聚合热度 (跳过无具体坐标的"全球"条目)
   const cityMap = new Map<string, CityHeat>()
   for (const news of currentHotNews) {
+    // 跳过无具体发生地的全球性新闻 (lat=0,lng=0 为占位值)
+    if (news.city === '全球' || (news.lat === 0 && news.lng === 0)) continue
     const key = news.city
     if (!cityMap.has(key)) {
       cityMap.set(key, { city: news.city, lat: news.lat, lng: news.lng, count: 0, maxHeat: 0, categories: new Set() })
