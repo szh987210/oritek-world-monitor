@@ -25,8 +25,11 @@ import {
   fetchIndustryIndices,
   fetchStockData,
   fetchCompanyNews,
+  fetchGlobalHotspots,
   getSourceHealthStats,
   getAllSourceScores,
+  generatePoliciesFromNews,
+  forceRefreshAll,
 } from './dataService'
 
 // ============================================================================
@@ -629,6 +632,107 @@ const BASE_POLICY_ITEMS: PolicyItem[] = [
 ]
 
 // ============================================================================
+// V8 HELPERS — RSS → 面板数据桥接
+// ============================================================================
+
+/** 政策关键词 — 用于从RSS新闻中提取政策相关条目 */
+const POLICY_FILTER_KW = /政策|法规|标准|规定|办法|通知|意见|工信部|发改委|商务部|补贴|扶持|出口管制|制裁|限制|管控|审查|关税|贸易|谈判|WTO|CHIPS法案|芯片法案|半导体.*补贴|半导体.*投资|出口.*许可|进口.*限制|供应链.*安全|产业.*基金/
+
+/** 从RSS管道提取政策条目，转换为大屏PolicyItem格式 */
+function extractPolicyFromRSS(news: NewsItem[]): PolicyItem[] {
+  const result: PolicyItem[] = []
+  const seen = new Set<string>()
+  const sorted = [...news].sort((a, b) =>
+    (b.publishedAt || '').localeCompare(a.publishedAt || '')
+  )
+  for (const n of sorted) {
+    const text = n.title + ' ' + (n.summary || '')
+    if (!POLICY_FILTER_KW.test(text)) continue
+    const key = n.title.slice(0, 25)
+    if (seen.has(key)) continue
+    seen.add(key)
+    // 推断国家归属
+    let country = '全球'
+    if (/中国|商务部|工信部|发改委|国务院|北京|上海|深圳/.test(text)) country = '中国'
+    else if (/美国|BIS|白宫|华盛顿|CHIPS|拜登|特朗普/.test(text)) country = '美国'
+    else if (/欧盟|欧洲|EU|荷兰|ASML|德国|法国|布鲁塞尔/.test(text)) country = '欧盟'
+    else if (/日本|东京|Rapidus|经产省|METI/.test(text)) country = '日本'
+    else if (/韩国|首尔|三星|SK.?海力士|产业通商/.test(text)) country = '韩国'
+    // 推断影响级别
+    let impact: PolicyItem['impact'] = 'moderate'
+    if (/制裁|禁止|断供|封堵|限制|收紧|许可证/.test(text)) impact = 'severe'
+    else if (/预测|展望|统计|报告/.test(text)) impact = 'neutral'
+    result.push({
+      id: `rss-pol-${result.length}`,
+      title: n.title.slice(0, 60),
+      summary: (n.summary || n.source).slice(0, 80),
+      country,
+      impact,
+      time: (n.publishedAt || '').slice(0, 10) || new Date().toISOString().slice(0, 10),
+      source: n.source,
+    })
+    if (result.length >= 8) break // 最多8条RSS政策
+  }
+  return result
+}
+
+/** 合并静态政策 + RSS政策，去重，每国最多保留RSS最新 */ 
+function mergePolicyItems(baseItems: PolicyItem[], rssItems: PolicyItem[]): PolicyItem[] {
+  const merged = [...baseItems]
+  const seen = new Set(baseItems.map(b => b.title.slice(0, 25)))
+  for (const r of rssItems) {
+    const key = r.title.slice(0, 25)
+    if (!seen.has(key)) {
+      seen.add(key)
+      merged.push(r)
+    }
+  }
+  // 每国最多保留: base的2条 + rss最新1条 = 3条
+  const byCountry = new Map<string, PolicyItem[]>()
+  for (const item of merged) {
+    if (!byCountry.has(item.country)) byCountry.set(item.country, [])
+    byCountry.get(item.country)!.push(item)
+  }
+  const final: PolicyItem[] = []
+  for (const [, items] of byCountry) {
+    // base在前，rss在后；每国最多3条
+    final.push(...items.slice(0, 3))
+  }
+  return final.sort((a, b) => {
+    const order = ['美国','中国','欧盟','日本','韩国','全球']
+    return order.indexOf(a.country) - order.indexOf(b.country)
+  })
+}
+
+/** 从RSS热点转换为大屏GeoHotNews格式 */
+function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
+  const coordMap: Record<string, [number, number]> = {
+    '北京': [39.90,116.40],'上海': [31.23,121.47],'深圳': [22.54,114.06],
+    '硅谷': [37.39,-122.08],'旧金山': [37.77,-122.42],'华盛顿': [38.91,-77.04],
+    '纽约': [40.71,-74.01],'奥斯汀': [30.27,-97.74],
+    '东京': [35.69,139.69],'首尔': [37.57,126.98],'新竹': [24.80,120.97],
+    '台北': [25.03,121.57],'杭州': [30.28,120.15],'巴黎': [48.86,2.35],
+    '伦敦': [51.51,-0.13],'柏林': [52.52,13.40],'慕尼黑': [48.14,11.58],
+    '埃因霍温': [51.44,5.47],'班加罗尔': [12.97,77.59],
+  }
+  const catMap: Record<string, GeoHotNews['category']> = {
+    tech:'AI',policy:'芯片',economy:'芯片',diplomacy:'芯片',conflict:'芯片',
+  }
+  return hotspots.slice(0,8).map((h,i) => {
+    let city='全球',lat=0,lng=0
+    for(const [k,[cl,cn]] of Object.entries(coordMap)){
+      if(h.region.includes(k)||h.title.includes(k)){city=k;lat=cl;lng=cn;break}
+    }
+    return{
+      id:`rss-gh-${i}`,title:h.title.slice(0,60),summary:h.summary.slice(0,60),
+      city,lat,lng,category:catMap[h.category]||'AI',
+      heat:h.impact==='high'?9:h.impact==='medium'?7:5,
+      time:h.time,source:h.source,
+    }
+  })
+}
+
+// ============================================================================
 // STATE
 // ============================================================================
 const app = document.getElementById('bigscreen-app')!
@@ -644,6 +748,7 @@ let mapProjection: d3Geo.GeoProjection | null = null
 let mapPathGen: d3Geo.GeoPath | null = null
 let mapWidth = 800
 let mapHeight = 400
+let currentHotNews: GeoHotNews[] = BASE_GLOBAL_HOT_NEWS // V8: RSS可更新
 
 // ============================================================================
 // INIT
@@ -651,10 +756,11 @@ let mapHeight = 400
 async function init() {
   renderSkeleton()
   try {
-    const [newsResult, indices, stocks] = await Promise.all([
+    const [newsResult, indices, stocks, rssHotspots] = await Promise.all([
       fetchAllNews(),
       fetchIndustryIndices(),
       fetchStockData(['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH']),
+      fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
     ])
 
     // 尝试通过RSS获取欧冶新闻，失败则使用BASE数据
@@ -674,7 +780,7 @@ async function init() {
     } catch { /* fall through */ }
     if (oritekNews.length === 0) oritekNews = BASE_ORITEK_NEWS
 
-    render(newsResult, indices, stocks, oritekNews)
+    render(newsResult, indices, stocks, oritekNews, rssHotspots)
     startClock()
     startAutoRefresh()
   } catch (err) {
@@ -695,6 +801,7 @@ function render(
   indices: IndustryIndex[],
   stocks: StockData[],
   oritekNews: OritekMediaItem[],
+  rssHotspots: GlobalHotspot[] = [],
 ) {
   const { alerts, aiInsights, startupFunding } = newsResult
   const healthStats = getSourceHealthStats()
@@ -739,7 +846,17 @@ function render(
     }
   }
 
+  // 政策与监管：合并BASE+RSS动态提取
+  const rssPolicyItems = extractPolicyFromRSS(newsResult.news)
+  const mergedPolicy = mergePolicyItems(BASE_POLICY_ITEMS, rssPolicyItems)
+
   const tickerHtml = buildAwarenessTicker(healthStats, sourceScores, mergedAlerts, mergedInsights, indices, stocks, newsResult.news)
+
+  // 全球态势感知：合并BASE+RSS热点
+  const rssGeoHotNews = transformRSSHotspots(rssHotspots)
+  const seenTitles = new Set(BASE_GLOBAL_HOT_NEWS.map(h => h.title.slice(0, 20)))
+  const mergedHotNews = [...BASE_GLOBAL_HOT_NEWS, ...rssGeoHotNews.filter(h => !seenTitles.has(h.title.slice(0, 20)))]
+  currentHotNews = mergedHotNews  // V8: 同步给地图渲染使用
 
   // 构建整页DOM
   app.innerHTML = `
@@ -775,7 +892,7 @@ function render(
           <div class="panel-v4-header">
             <span class="icon">🌍</span>
             <span class="title">全球科技态势感知</span>
-            <span class="badge">${BASE_GLOBAL_HOT_NEWS.length} 情报</span>
+            <span class="badge">${mergedHotNews.length} 情报</span>
           </div>
           <div class="panel-v4-body globe-body-v4">
             <div class="globe-map-v4" id="globe-map-v4">
@@ -787,7 +904,7 @@ function render(
             </div>
             <div class="globe-news-v4" id="globe-news-v4">
               <div class="globe-news-track" id="globe-news-track">
-                ${renderGeoHotNewsItems(BASE_GLOBAL_HOT_NEWS)}
+                ${renderGeoHotNewsItems(mergedHotNews)}
               </div>
             </div>
           </div>
@@ -810,10 +927,10 @@ function render(
           <div class="panel-v4-header panel-v4-header-policy">
             <span class="icon">🏛</span>
             <span class="title">政策与监管</span>
-            <span class="badge badge-severe">${BASE_POLICY_ITEMS.filter(p => p.impact === 'severe').length} 重大</span>
+            <span class="badge badge-severe">${mergedPolicy.filter((p: PolicyItem) => p.impact === 'severe').length} 重大</span>
           </div>
           <div class="panel-v4-body" id="policy-body">
-            ${renderPolicyMatrix(BASE_POLICY_ITEMS)}
+            ${renderPolicyMatrix(mergedPolicy)}
           </div>
         </div>
       </div>
@@ -827,6 +944,7 @@ function render(
     initNewsScrollWithMapSync()
     initPolicyTabs()
     initTickerRotation()
+    setupManualRefresh()
     updateRefreshTime()
   }, 300)
 }
@@ -865,6 +983,7 @@ function renderTopBar(activeSources: number, totalSources: number, credibility: 
       <span class="live-pulse"></span>LIVE
     </div>
     <span class="topbar-v4-refresh" id="bigscreen-refreshed">⏱ 刷新中...</span>
+    <button class="topbar-v4-refresh-btn" id="btn-refresh" title="手动刷新全部数据">🔄 手动刷新</button>
     <div class="topbar-v4-divider"></div>
     <div class="topbar-v4-clock" id="bigscreen-clock">--:--:--</div>
   </div>`
@@ -1231,7 +1350,7 @@ async function renderWorldMapV4() {
     // Render city markers
     renderCityMarkers()
 
-    console.log(`[Bigscreen v4] Map rendered with ${BASE_GLOBAL_HOT_NEWS.length} hotspots`)
+    console.log(`[Bigscreen v4] Map rendered with ${currentHotNews.length} hotspots`)
   } catch (e) {
     console.warn('[Bigscreen v4] Map render failed:', e)
   } finally {
@@ -1256,7 +1375,7 @@ function renderCityMarkers(activeCity?: string) {
 
   // 按城市聚合热度
   const cityMap = new Map<string, CityHeat>()
-  for (const news of BASE_GLOBAL_HOT_NEWS) {
+  for (const news of currentHotNews) {
     const key = news.city
     if (!cityMap.has(key)) {
       cityMap.set(key, { city: news.city, lat: news.lat, lng: news.lng, count: 0, maxHeat: 0, categories: new Set() })
@@ -1373,7 +1492,7 @@ function initNewsScrollWithMapSync() {
   const allItems = track.querySelectorAll('.geo-news-item')
   if (allItems.length === 0) return
 
-  const uniqueCount = BASE_GLOBAL_HOT_NEWS.length
+  const uniqueCount = currentHotNews.length
   if (uniqueCount <= 1) return
 
   const itemHeight = (allItems[0] as HTMLElement).offsetHeight + 4 // gap
@@ -1731,10 +1850,11 @@ function startAutoRefresh() {
   setInterval(async () => {
     try {
       if (newsScrollTimer) clearInterval(newsScrollTimer)
-      const [newsResult, indices, stocks] = await Promise.all([
+      const [newsResult, indices, stocks, rssHotspots] = await Promise.all([
         fetchAllNews(),
         fetchIndustryIndices(),
         fetchStockData(['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH']),
+        fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
       ])
       let oritekNews: OritekMediaItem[] = []
       try {
@@ -1751,13 +1871,80 @@ function startAutoRefresh() {
         }
       } catch { /* fall through */ }
       if (oritekNews.length === 0) oritekNews = BASE_ORITEK_NEWS
-      render(newsResult, indices, stocks, oritekNews)
+      render(newsResult, indices, stocks, oritekNews, rssHotspots)
       // 刷新后更新时间标记
       setTimeout(() => updateRefreshTime(), 500)
     } catch (err) {
       console.warn('[Bigscreen v4] Auto-refresh failed:', err)
     }
   }, 5 * 60 * 1000)
+}
+
+// ============================================================================
+// V8: MANUAL REFRESH (手动刷新按钮)
+// ============================================================================
+let refreshCooldown = false
+
+function setupManualRefresh() {
+  const btn = document.getElementById('btn-refresh')
+  if (!btn) return
+
+  btn.addEventListener('click', async () => {
+    if (refreshCooldown) return
+    refreshCooldown = true
+    btn.textContent = '⏳ 刷新中...'
+    btn.classList.add('refreshing')
+
+    try {
+      // 强制清除缓存，重新拉取全部数据
+      const [newsResult, indices, stocks, rssHotspots] = await Promise.all([
+        fetchAllNews(),
+        fetchIndustryIndices(),
+        fetchStockData(['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH']),
+        fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
+      ])
+
+      let oritekNews: OritekMediaItem[] = []
+      try {
+        const cn = await fetchCompanyNews()
+        if (cn.length > 0) {
+          oritekNews = cn.map((c: CompanyNews, i: number) => ({
+            id: `rss-on-${Date.now()}-${i}`,
+            title: c.title, summary: c.title,
+            source: c.source, date: c.time, url: c.url || '',
+          }))
+        }
+      } catch { /* fall through */ }
+      if (oritekNews.length === 0) oritekNews = BASE_ORITEK_NEWS
+
+      if (newsScrollTimer) clearInterval(newsScrollTimer)
+      render(newsResult, indices, stocks, oritekNews, rssHotspots)
+      updateRefreshTime()
+
+      btn.textContent = '✅ 已刷新'
+      btn.classList.remove('refreshing')
+    } catch (err) {
+      console.warn('[Manual Refresh] Failed:', err)
+      btn.textContent = '❌ 失败'
+      btn.classList.remove('refreshing')
+    }
+
+    // 30秒冷却
+    setTimeout(() => {
+      btn.classList.add('cooldown')
+      let remaining = 30
+      const cdInterval = setInterval(() => {
+        remaining--
+        btn.textContent = `⏳ ${remaining}s`
+        if (remaining <= 0) {
+          clearInterval(cdInterval)
+          btn.textContent = '🔄 手动刷新'
+          btn.classList.remove('cooldown')
+          refreshCooldown = false
+        }
+      }, 1000)
+    }, 1000)
+  })
 }
 
 // ============================================================================
