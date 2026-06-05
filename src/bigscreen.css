@@ -106,21 +106,21 @@ html, body {
 /* ====== V4 Main Grid — 三栏布局 ====== */
 .main-grid-v4 {
   display: grid;
-  grid-template-columns: 300px 1fr 300px;
-  gap: var(--gap-sm);
-  padding: var(--gap-sm);
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: var(--gap-md);
+  padding: var(--gap-sm) var(--gap-md);
   overflow: hidden;
   min-height: 0;
 }
 
 /* Columns */
 .col-left-v4, .col-right-v4 {
-  display: flex; flex-direction: column; gap: var(--gap-sm);
-  overflow: hidden; min-height: 0;
+  display: flex; flex-direction: column; gap: var(--gap-md);
+  overflow: hidden; min-height: 0; min-width: 0;
 }
 .col-center-v4 {
   display: flex; flex-direction: column;
-  overflow: hidden; min-height: 0;
+  overflow: hidden; min-height: 0; min-width: 0;
 }
 
 /* ====== Panel v4 ====== */
@@ -567,13 +567,15 @@ html, body {
 /* ====== Responsive override for non-1920 screens ====== */
 @media (max-width: 1600px) {
   .main-grid-v4 {
-    grid-template-columns: 260px 1fr 260px;
+    grid-template-columns: 1fr 1.05fr 1fr;
+    gap: var(--gap-sm);
   }
   :root { --fs-xs: 11px; --fs-sm: 12px; --fs-md: 14px; }
 }
 @media (max-width: 1280px) {
   .main-grid-v4 {
-    grid-template-columns: 220px 1fr 220px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
   }
   :root { --fs-xs: 10px; --fs-sm: 11px; --fs-md: 13px; }
 }
