@@ -795,14 +795,32 @@ function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
     '台北': [25.03,121.57],'杭州': [30.28,120.15],'巴黎': [48.86,2.35],
     '伦敦': [51.51,-0.13],'柏林': [52.52,13.40],'慕尼黑': [48.14,11.58],
     '埃因霍温': [51.44,5.47],'班加罗尔': [12.97,77.59],
+    '莫斯科': [55.75,37.62],'孟买': [19.08,72.88],'新加坡': [1.35,103.82],
+    '悉尼': [-33.87,151.21],'迪拜': [25.20,55.27],
+  }
+  // 地区名→默认城市回退映射（inferRegion返回国家/地区名，而非城市名）
+  const regionToCity: Record<string, string> = {
+    '中国': '北京','美国': '硅谷','欧洲': '巴黎','日本': '东京',
+    '韩国': '首尔','中国台湾': '新竹','印度': '班加罗尔','中东': '迪拜',
+    '俄罗斯': '莫斯科','澳大利亚': '悉尼','东南亚': '新加坡',
   }
   const catMap: Record<string, GeoHotNews['category']> = {
-    tech:'AI',policy:'芯片',economy:'芯片',diplomacy:'芯片',conflict:'芯片',
+    tech:'AI',policy:'芯片',economy:'芯片',diplomacy:'国际',conflict:'国际',
   }
   return hotspots.slice(0,8).map((h,i) => {
     let city='全球',lat=0,lng=0
+    // 1) 先从标题中匹配城市名
     for(const [k,[cl,cn]] of Object.entries(coordMap)){
-      if(h.region.includes(k)||h.title.includes(k)){city=k;lat=cl;lng=cn;break}
+      if(h.title.includes(k)){city=k;lat=cl;lng=cn;break}
+    }
+    // 2) 若标题未匹配，用地区名回退到默认城市
+    if (city === '全球' && regionToCity[h.region]) {
+      const fallbackCity = regionToCity[h.region]
+      if (coordMap[fallbackCity]) {
+        city = fallbackCity
+        lat = coordMap[fallbackCity][0]
+        lng = coordMap[fallbackCity][1]
+      }
     }
     return{
       id:`rss-gh-${i}`,title:h.title.slice(0,60),summary:h.summary.slice(0,60),
