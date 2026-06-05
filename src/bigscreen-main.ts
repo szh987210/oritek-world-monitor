@@ -940,12 +940,12 @@ function renderInsightItems(items: IndustryInsightItem[]): string {
 // ============================================================================
 
 const COUNTRY_CONFIG: Record<string, { cls: string; label: string; order: number }> = {
-  '美国': { cls: 'pmh-us', label: '🇺🇸 美国', order: 1 },
-  '中国': { cls: 'pmh-cn', label: '🇨🇳 中国', order: 2 },
-  '欧盟': { cls: 'pmh-eu', label: '🇪🇺 欧盟', order: 3 },
-  '日本': { cls: 'pmh-jp', label: '🇯🇵 日本', order: 4 },
-  '韩国': { cls: 'pmh-kr', label: '🇰🇷 韩国', order: 5 },
-  '全球': { cls: 'pmh-global', label: '🌐 全球', order: 6 },
+  '美国': { cls: 'pch-us', label: '🇺🇸 美国', order: 1 },
+  '中国': { cls: 'pch-cn', label: '🇨🇳 中国', order: 2 },
+  '欧盟': { cls: 'pch-eu', label: '🇪🇺 欧盟', order: 3 },
+  '日本': { cls: 'pch-jp', label: '🇯🇵 日本', order: 4 },
+  '韩国': { cls: 'pch-kr', label: '🇰🇷 韩国', order: 5 },
+  '全球': { cls: 'pch-global', label: '🌐 全球', order: 6 },
 }
 
 const IMPACT_LABELS: Record<string, string> = {
@@ -971,12 +971,13 @@ function renderPolicyMatrix(items: PolicyItem[]): string {
     list.sort((a, b) => severityOrder[a.impact] - severityOrder[b.impact])
   }
 
-  // 按预定义国家顺序排列列
+  // 按预定义国家顺序排列
   const sortedCountries = [...groups.keys()].sort(
     (a, b) => (COUNTRY_CONFIG[a]?.order ?? 99) - (COUNTRY_CONFIG[b]?.order ?? 99)
   )
 
-  const columns = sortedCountries.map(country => {
+  // 3×2 卡片网格：每个国家一张卡片，卡片内政策纵向排列
+  const cards = sortedCountries.map(country => {
     const cfg = COUNTRY_CONFIG[country]
     const list = groups.get(country)!
     const tiles = list.map(item => `
@@ -993,13 +994,13 @@ function renderPolicyMatrix(items: PolicyItem[]): string {
       </div>`).join('')
 
     return `
-      <div class="policy-col">
-        <div class="policy-col-header ${cfg?.cls ?? 'pmh-global'}">${cfg?.label ?? country}</div>
-        ${tiles}
+      <div class="policy-card">
+        <div class="policy-card-header ${cfg?.cls ?? 'pch-global'}">${cfg?.label ?? country} · ${list.length}条</div>
+        <div class="policy-card-body">${tiles}</div>
       </div>`
   }).join('')
 
-  return `<div class="policy-matrix-v4">${columns}</div>`
+  return `<div class="policy-matrix-v4">${cards}</div>`
 }
 
 function renderPolicyItems(items: PolicyItem[]): string {
