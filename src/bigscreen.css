@@ -731,7 +731,7 @@ html, body {
 }
 
 /* 各层滚动速度（通过 CSS 变量控制） */
-.ticker-layer-v5.layer-pulse .ticker-scroll-inner    { --scroll-duration: 15s; }
+.ticker-layer-v5.layer-pulse .ticker-scroll-inner    { --scroll-duration: 30s; }
 .ticker-layer-v5.layer-flash .ticker-scroll-inner    { --scroll-duration: 60s; } /* 8条快讯，较长 */
 .ticker-layer-v5.layer-radar .ticker-scroll-inner    { --scroll-duration: 40s; } /* 8条竞品 */
 .ticker-layer-v5.layer-snapshot .ticker-scroll-inner { --scroll-duration: 25s; } /* 指数+股票 */
