@@ -731,7 +731,6 @@ function render(
           <div class="panel-v4-header panel-v4-header-risk">
             <span class="icon">⚠️</span>
             <span class="title">风险预警</span>
-            <span class="subtitle">产业链负面情报</span>
             <span class="badge badge-critical">${mergedAlerts.filter(a => a.severity === 'critical').length} 紧急</span>
           </div>
           <div class="panel-v4-body scroll-body" id="risk-body">
@@ -742,7 +741,6 @@ function render(
           <div class="panel-v4-header">
             <span class="icon">📰</span>
             <span class="title">欧冶新闻</span>
-            <span class="subtitle">外部媒体报道</span>
             <span class="badge">${oritekNews.length}</span>
           </div>
           <div class="panel-v4-body scroll-body" id="oritek-body">
@@ -757,12 +755,11 @@ function render(
           <div class="panel-v4-header">
             <span class="icon">🌍</span>
             <span class="title">全球科技态势感知</span>
-            <span class="subtitle">动态热点地图</span>
             <span class="badge">${BASE_GLOBAL_HOT_NEWS.length} 情报</span>
           </div>
           <div class="panel-v4-body globe-body-v4">
             <div class="globe-map-v4" id="globe-map-v4">
-              <svg id="globeMapSvg" viewBox="0 0 800 420" preserveAspectRatio="xMidYMid meet"></svg>
+              <svg id="globeMapSvg" preserveAspectRatio="xMidYMid meet"></svg>
             </div>
             <div class="globe-divider-v4">
               <span class="divider-label">🔴 实时科技热点流向</span>
@@ -783,7 +780,6 @@ function render(
           <div class="panel-v4-header panel-v4-header-insight">
             <span class="icon">💡</span>
             <span class="title">产业洞察</span>
-            <span class="subtitle">技术趋势 & 投融资</span>
             <span class="badge">${mergedInsights.length}</span>
           </div>
           <div class="panel-v4-body scroll-body" id="insight-body">
@@ -794,7 +790,6 @@ function render(
           <div class="panel-v4-header panel-v4-header-policy">
             <span class="icon">🏛</span>
             <span class="title">政策与监管</span>
-            <span class="subtitle">全球芯片产业政策</span>
             <span class="badge badge-severe">${BASE_POLICY_ITEMS.filter(p => p.impact === 'severe').length} 重大</span>
           </div>
           <div class="panel-v4-body scroll-body" id="policy-body">
