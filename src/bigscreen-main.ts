@@ -224,70 +224,70 @@ const BASE_RISK_ALERTS: RiskAlert[] = [
     id: 'risk-1', title: '车规存储芯片价格暴涨180%，车企供应链承压',
     summary: '碳酸锂价格从7.5万元/吨攀升至20万元/吨，车规级芯片三个月内暴涨180%，存储芯片供应满足率不足50%。理想、蔚来等车企CEO预警成本压力。',
     category: '存储供应链', severity: 'critical',
-    city: '北京', lat: 116.40, lng: 39.90,
+    city: '北京', lat: 39.90, lng: 116.40,
     time: '2026-06-03', source: '央广网',
   },
   {
     id: 'risk-2', title: '美国堵截AI芯片境外子公司采购：许可延伸至全球',
     summary: 'BIS 5月31日发布新指引，中国企业通过境外子公司采购英伟达Rubin、Blackwell等先进AI芯片也需申请许可证，封堵"监管漏洞"。',
     category: 'AI管制', severity: 'critical',
-    city: '华盛顿', lat: -77.04, lng: 38.91,
+    city: '华盛顿', lat: 38.91, lng: -77.04,
     time: '2026-06-01', source: '新浪科技',
   },
   {
     id: 'risk-3', title: '美国拟将AI芯片出口管制扩展至全球范围',
     summary: '特朗普政府酝酿全球AI芯片出口管制新规，英伟达、AMD出口至任何地区均需获批准，美股芯片股应声下跌。',
     category: 'AI管制', severity: 'critical',
-    city: '华盛顿', lat: -77.04, lng: 38.91,
+    city: '华盛顿', lat: 38.91, lng: -77.04,
     time: '2026-06-01', source: '彭博社',
   },
   {
     id: 'risk-4', title: '台积电MCU芯片延迟交货26周，汽车客户被迫另寻替代',
     summary: '台积电通知德国汽车电子客户，MCU芯片因产能调整将延迟至少26周发货，建议"另寻合格替代供应商"，汽车供应链面临断裂风险。',
     category: '汽车芯片', severity: 'high',
-    city: '新竹', lat: 120.97, lng: 24.80,
+    city: '新竹', lat: 24.80, lng: 120.97,
     time: '2026-05-24', source: '行业报道',
   },
   {
     id: 'risk-5', title: '台积电氦气供给告急：卡塔尔停产威胁3nm以下先进制程',
     summary: '全球氦气供应高度依赖卡塔尔，一旦停产超一个季度，台积电3nm及以下先进制程产能利用率将断崖式下跌，影响全球AI芯片供应。',
     category: '供应链风险', severity: 'high',
-    city: '新竹', lat: 120.97, lng: 24.80,
+    city: '新竹', lat: 24.80, lng: 120.97,
     time: '2026-04-27', source: '行业分析',
   },
   {
     id: 'risk-6', title: 'DRAM合约价Q1暴涨60%，存储芯片涨价潮蔓延至汽车行业',
     summary: '2026Q1 DRAM合约价环比涨55-60%，NAND涨33-38%，花旗预计全年DRAM涨88%。AI数据中心需求"虹吸"产能，汽车行业采购成本飙升。',
     category: '存储供应链', severity: 'high',
-    city: '首尔', lat: 126.98, lng: 37.57,
+    city: '首尔', lat: 37.57, lng: 126.98,
     time: '2026-03-30', source: '科创板日报',
   },
   {
     id: 'risk-7', title: '人形机器人供应链"纸面富贵"：产能过剩与订单取消风险并现',
     summary: '2026年国内人形机器人出货量预计仅6.25万台，但上游企业超前扩产，客户集中度高。若终端需求不及预期或技术路线突变，产能将面临闲置和减值。',
     category: '机器人', severity: 'medium',
-    city: '上海', lat: 121.47, lng: 31.23,
+    city: '上海', lat: 31.23, lng: 121.47,
     time: '2026-05-23', source: '高工机器人',
   },
   {
     id: 'risk-8', title: '商务部回应美滥用出口管制：严重冲击全球半导体产供链稳定',
     summary: '商务部6月4日发布会表示，美方不断以国家安全为由滥用出口管制，严重损害中国企业权益，敦促美方停止对华歧视性措施。',
     category: 'AI管制', severity: 'medium',
-    city: '北京', lat: 116.40, lng: 39.90,
+    city: '北京', lat: 39.90, lng: 116.40,
     time: '2026-06-04', source: '央视新闻',
   },
   {
     id: 'risk-9', title: '芯片短缺从AI蔓延至汽车领域，国产替代刻不容缓',
     summary: '车规芯片可靠性认证周期不会因缺货而缩短，但每一次供应链危机都在为国产替代积蓄势能。从AI蔓延至汽车的涨价潮，或是国产芯片突围的历史转折。',
     category: '汽车芯片', severity: 'medium',
-    city: '上海', lat: 121.47, lng: 31.23,
+    city: '上海', lat: 31.23, lng: 121.47,
     time: '2026-05-30', source: '新浪汽车',
   },
   {
     id: 'risk-10', title: 'HBM产能被AI数据中心"虹吸"，车规存储面临长期短缺',
     summary: '一台AI服务器HBM用量是汽车MCU的数百倍，利润高出数十倍。三星、SK海力士优先保障AI客户，车规存储供应满足率预计2027年前难以缓解。',
     category: '存储供应链', severity: 'high',
-    city: '首尔', lat: 126.98, lng: 37.57,
+    city: '首尔', lat: 37.57, lng: 126.98,
     time: '2026-03-09', source: '行业报道',
   },
 ]
@@ -357,126 +357,126 @@ const BASE_GLOBAL_HOT_NEWS: GeoHotNews[] = [
   {
     id: 'gh-1', title: '英伟达GTC台北发布Vera Rubin平台，宣布进军PC芯片市场',
     summary: '黄仁勋在COMPUTEX 2026主题演讲中宣布Vera Rubin AI计算平台量产，并联合微软、Arm预告神秘PC芯片。',
-    city: '台北', lat: 121.57, lng: 25.03,
+    city: '台北', lat: 25.03, lng: 121.57,
     category: 'AI', heat: 10,
     time: '2026-06-01', source: 'NVIDIA/COMPUTEX',
   },
   {
     id: 'gh-2', title: '软银宣布在法国投资750亿欧元建设欧洲最大AI算力网络',
     summary: '项目总算力5GW，首期450亿欧元，计划2031年在法国上法兰西大区建成3.1GW算力，联手施耐德电气打造AI基础设施与机器人制造中心。',
-    city: '巴黎', lat: 2.35, lng: 48.86,
+    city: '巴黎', lat: 48.86, lng: 2.35,
     category: 'AI', heat: 9,
     time: '2026-06-01', source: '每日经济新闻',
   },
   {
     id: 'gh-3', title: '特斯拉FSD在中国获"部分批准"，九城同步测试',
     summary: '特斯拉FSD Supervised中国地图已更新，上海临港数据中心全面投用。北京、上海等九城开展测试，2026年有望全面落地。',
-    city: '上海', lat: 121.47, lng: 31.23,
+    city: '上海', lat: 31.23, lng: 121.47,
     category: '自动驾驶', heat: 9,
     time: '2026-06-02', source: '中国新闻周刊',
   },
   {
     id: 'gh-4', title: '2026北京车展：自动驾驶方案进入"物理世界理解"新阶段',
     summary: '各车企竞争焦点从硬件配置转向AI对物理世界的理解能力。华为赋能多家车企普及高阶智驾，BBA加速本土化芯片合作。',
-    city: '北京', lat: 116.40, lng: 39.90,
+    city: '北京', lat: 39.90, lng: 116.40,
     category: '自动驾驶', heat: 8,
     time: '2026-05-03', source: '腾讯新闻',
   },
   {
     id: 'gh-5', title: '美国具身智能五强竞赛：Tesla Optimus vs Figure AI vs Boston Dynamics',
     summary: 'Figure AI获新一轮融资估值超400亿美元，特斯拉Optimus在工厂部署超1000台，波士顿动力Atlas完成全自主仓库作业演示。',
-    city: '硅谷', lat: -122.08, lng: 37.39,
+    city: '硅谷', lat: 37.39, lng: -122.08,
     category: '机器人', heat: 9,
     time: '2026-04-28', source: '新浪财经',
   },
   {
     id: 'gh-6', title: 'SEMICON China 2026上海举办：近40家科创板企业发布半导体新品',
     summary: '汇聚1500余家上下游企业，18万专业观众。中微公司、拓荆科技、华虹公司等集中发布新品，国产半导体设备加速突围。',
-    city: '上海', lat: 121.47, lng: 31.23,
+    city: '上海', lat: 31.23, lng: 121.47,
     category: '芯片', heat: 8,
     time: '2026-03-25', source: '科创板日报',
   },
   {
     id: 'gh-7', title: 'DeepSeek估值达450亿美元，中国大模型进入"诸神之战"',
     summary: 'Kimi融资39亿美元估值200亿美元，DeepSeek估值达450亿美元。一季度AI领域融资超1100亿元，同比激增185.4%。',
-    city: '杭州', lat: 120.15, lng: 30.28,
+    city: '杭州', lat: 30.28, lng: 120.15,
     category: 'AI', heat: 8,
     time: '2026-05-08', source: '搜狐科技',
   },
   {
     id: 'gh-8', title: '日本向Rapidus追加6315亿日元补贴，冲刺2nm制程',
     summary: '日本政府2026财年向Rapidus追加40亿美元研发补贴，目标2027年量产2nm AI芯片，为亚洲企业AI芯片提供第二供应源。',
-    city: '东京', lat: 139.69, lng: 35.69,
+    city: '东京', lat: 35.69, lng: 139.69,
     category: '芯片', heat: 8,
     time: '2026-04-11', source: 'NHK',
   },
   {
     id: 'gh-9', title: '韩国总统李在明到访上海，与智元机器人握手',
     summary: '韩国总统李在明出席"中韩创新创业论坛"，在会场与智元远征A2人形机器人互动，具身智能"中国方案"受国际关注。',
-    city: '上海', lat: 121.47, lng: 31.23,
+    city: '上海', lat: 31.23, lng: 121.47,
     category: '机器人', heat: 7,
     time: '2026-01-07', source: '中国经营报',
   },
   {
     id: 'gh-10', title: 'OpenAI GPT-5.5 vs Claude Opus 4.7 vs DeepSeek V4：2026春季大模型横评',
     summary: '三大模型在推理、代码、多模态等维度全面比较。DeepSeek V4在中文理解上超越GPT-5.5，代码能力接近Claude Opus 4.7。',
-    city: '旧金山', lat: -122.42, lng: 37.77,
+    city: '旧金山', lat: 37.77, lng: -122.42,
     category: 'AI', heat: 7,
     time: '2026-04-29', source: 'BestBlogs',
   },
   {
     id: 'gh-11', title: '三星、SK海力士AI存储产能全开，HBM4研发竞赛白热化',
     summary: '三星宣布2026年HBM产能同比增加3倍，SK海力士HBM4样品送测英伟达。两家韩国巨头在AI存储领域展开全方位竞争。',
-    city: '首尔', lat: 126.98, lng: 37.57,
+    city: '首尔', lat: 37.57, lng: 126.98,
     category: '芯片', heat: 7,
     time: '2026-05-15', source: '韩国经济新闻',
   },
   {
     id: 'gh-12', title: '荷兰ASML新一代High-NA EUV光刻机交付台积电，单价超4亿美元',
     summary: 'ASML向台积电交付首台新一代High-NA EUV光刻机，用于2nm及以下制程研发。单台价格超4亿美元，2026年计划交付20台。',
-    city: '埃因霍温', lat: 5.47, lng: 51.44,
+    city: '埃因霍温', lat: 51.44, lng: 5.47,
     category: '芯片', heat: 8,
     time: '2026-05-20', source: '路透社',
   },
   {
     id: 'gh-13', title: '英伟达联合微软、Arm发布神秘PC芯片，Windows on Arm生态加速',
     summary: 'COMPUTEX前夜三方联合发布隐晦帖文，暗示英伟达即将推出Windows PC芯片，向英特尔和AMD在PC领域发起挑战。',
-    city: '台北', lat: 121.57, lng: 25.03,
+    city: '台北', lat: 25.03, lng: 121.57,
     category: '芯片', heat: 7,
     time: '2026-06-01', source: '新浪财经',
   },
   {
     id: 'gh-14', title: '特斯拉Optimus工厂部署突破1000台，计划2027年对外销售',
     summary: '马斯克宣布Optimus人形机器人已在特斯拉工厂内部部署超1000台，执行物料搬运和装配任务，计划2027年对外销售。',
-    city: '奥斯汀', lat: -97.74, lng: 30.27,
+    city: '奥斯汀', lat: 30.27, lng: -97.74,
     category: '机器人', heat: 8,
     time: '2026-05-16', source: 'Tesla',
   },
   {
     id: 'gh-15', title: '大众汽车宣布投资50亿欧元自研自动驾驶芯片',
     summary: '大众汽车集团宣布将在慕尼黑成立芯片设计中心，投资50亿欧元自研自动驾驶SoC，计划2029年量产。标志着车企"去Tier1化"趋势加速。',
-    city: '慕尼黑', lat: 11.58, lng: 48.14,
+    city: '慕尼黑', lat: 48.14, lng: 11.58,
     category: '自动驾驶', heat: 7,
     time: '2026-04-15', source: '金融时报',
   },
   {
     id: 'gh-16', title: '2026年AI推理成本下降90%，大模型"白菜化"加速落地',
     summary: '工信部数据显示Token调用量从1000亿/日飙升至140万亿/日，增长超千倍。推理成本下降推动AI应用大规模落地。',
-    city: '北京', lat: 116.40, lng: 39.90,
+    city: '北京', lat: 39.90, lng: 116.40,
     category: 'AI', heat: 7,
     time: '2026-05-24', source: '央广网',
   },
   {
     id: 'gh-17', title: '中国一季度AI融资超1100亿元，产业资本成主力军',
     summary: '月之暗面、阶跃星辰等单月融资超300亿元，具身智能一周内多家企业获数亿融资。产业资本取代财务投资成为AI投融资主力。',
-    city: '北京', lat: 116.40, lng: 39.90,
+    city: '北京', lat: 39.90, lng: 116.40,
     category: 'AI', heat: 7,
     time: '2026-05-24', source: '央视新闻',
   },
   {
     id: 'gh-18', title: '全球半导体市场2026年逼近万亿美元，WSTS预测增长26.3%',
     summary: 'WSTS预测2026年全球半导体市场达9750亿美元。AI驱动超越周期增长，卫星通信组网提速，量子计算进入产业化关键期。',
-    city: '硅谷', lat: -122.08, lng: 37.39,
+    city: '硅谷', lat: 37.39, lng: -122.08,
     category: '芯片', heat: 6,
     time: '2026-03-15', source: 'WSTS',
   },
@@ -810,6 +810,7 @@ function render(
   setTimeout(() => {
     renderWorldMapV4()
     initNewsScrollWithMapSync()
+    updateRefreshTime()
   }, 300)
 }
 
@@ -846,6 +847,8 @@ function renderTopBar(activeSources: number, totalSources: number, credibility: 
     <div class="topbar-v4-live">
       <span class="live-pulse"></span>LIVE
     </div>
+    <span class="topbar-v4-refresh" id="bigscreen-refreshed">⏱ 刷新中...</span>
+    <div class="topbar-v4-divider"></div>
     <div class="topbar-v4-clock" id="bigscreen-clock">--:--:--</div>
   </div>`
 }
@@ -856,7 +859,7 @@ function renderTopBar(activeSources: number, totalSources: number, credibility: 
 function renderRiskAlertItems(alerts: RiskAlert[]): string {
   if (alerts.length === 0) return `<div class="empty-state-v4">暂无风险告警</div>`
   const doubled = [...alerts, ...alerts, ...alerts]
-  return `<div class="scroll-list-v4" style="animation-duration:${Math.max(40, alerts.length * 8)}s">
+  return `<div class="scroll-list-v4" style="animation-duration:${Math.max(100, alerts.length * 18)}s">
     ${doubled.map(a => `
     <div class="risk-item ${a.severity}">
       <div class="risk-badge">
@@ -880,7 +883,7 @@ function renderRiskAlertItems(alerts: RiskAlert[]): string {
 function renderOritekNewsItems(items: OritekMediaItem[]): string {
   if (items.length === 0) return `<div class="empty-state-v4">暂无媒体报道</div>`
   const doubled = [...items, ...items, ...items]
-  return `<div class="scroll-list-v4" style="animation-duration:${Math.max(35, items.length * 7)}s">
+  return `<div class="scroll-list-v4" style="animation-duration:${Math.max(90, items.length * 16)}s">
     ${doubled.map(n => `
     <div class="oritek-item">
       <div class="oritek-dot"></div>
@@ -924,7 +927,7 @@ function renderGeoHotNewsItems(items: GeoHotNews[]): string {
 function renderInsightItems(items: IndustryInsightItem[]): string {
   if (items.length === 0) return `<div class="empty-state-v4">暂无产业动态</div>`
   const doubled = [...items, ...items, ...items]
-  return `<div class="scroll-list-v4" style="animation-duration:${Math.max(40, items.length * 7)}s">
+  return `<div class="scroll-list-v4" style="animation-duration:${Math.max(100, items.length * 16)}s">
     ${doubled.map(item => `
     <div class="insight-item">
       <span class="insight-cat ${item.category === '大模型' ? 'cat-ai' : item.category === '具身智能' ? 'cat-robo' : item.category === 'AI芯片' ? 'cat-chip' : 'cat-auto'}">${item.category}</span>
@@ -943,7 +946,7 @@ function renderInsightItems(items: IndustryInsightItem[]): string {
 function renderPolicyItems(items: PolicyItem[]): string {
   if (items.length === 0) return `<div class="empty-state-v4">暂无政策动态</div>`
   const doubled = [...items, ...items, ...items]
-  return `<div class="scroll-list-v4" style="animation-duration:${Math.max(40, items.length * 7)}s">
+  return `<div class="scroll-list-v4" style="animation-duration:${Math.max(100, items.length * 16)}s">
     ${doubled.map(item => `
     <div class="policy-item-v4">
       <div class="policy-header-row">
@@ -1214,7 +1217,7 @@ function initNewsScrollWithMapSync() {
   if (uniqueCount <= 1) return
 
   const itemHeight = (allItems[0] as HTMLElement).offsetHeight + 4 // gap
-  const intervalMs = Math.max(2500, Math.round(45000 / uniqueCount))
+  const intervalMs = Math.max(5000, Math.round(90000 / uniqueCount))
 
   function step() {
     const targetIdx = currentNewsIndex % uniqueCount
@@ -1335,6 +1338,14 @@ function startClock() {
   clockTimer = window.setInterval(tick, 1000)
 }
 
+function updateRefreshTime() {
+  const el = document.getElementById('bigscreen-refreshed')
+  if (el) {
+    const t = new Date().toLocaleTimeString('zh-CN', { hour12: false })
+    el.textContent = `⏱ 刷新 ${t}`
+  }
+}
+
 function startAutoRefresh() {
   setInterval(async () => {
     try {
@@ -1360,6 +1371,8 @@ function startAutoRefresh() {
       } catch { /* fall through */ }
       if (oritekNews.length === 0) oritekNews = BASE_ORITEK_NEWS
       render(newsResult, indices, stocks, oritekNews)
+      // 刷新后更新时间标记
+      setTimeout(() => updateRefreshTime(), 500)
     } catch (err) {
       console.warn('[Bigscreen v4] Auto-refresh failed:', err)
     }

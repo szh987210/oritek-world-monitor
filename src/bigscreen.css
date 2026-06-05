@@ -84,6 +84,11 @@ html, body {
   font-size: var(--fs-xs); font-weight: 600; color: var(--accent-green);
   letter-spacing: 1px;
 }
+.topbar-v4-refresh {
+  font-size: var(--fs-2xs); color: var(--text-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
 .live-pulse {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--accent-green);
