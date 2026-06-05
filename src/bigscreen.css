@@ -299,9 +299,10 @@ html, body {
 .oritek-date { color: var(--accent-purple); }
 
 /* ====== CENTER COLUMN — Globe v4 ====== */
-.panel-globe-v4 { flex: 1; }
+.panel-globe-v4 { flex: 1; display: flex; flex-direction: column; }
 
 .globe-body-v4 {
+  flex: 1;
   display: flex; flex-direction: column; overflow: hidden; padding: 0 !important;
 }
 
