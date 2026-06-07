@@ -993,9 +993,22 @@ function render(
         source: 'RSS',
       }
     })
-  // 补充RSS中的AI/产业动态（非融资类）
-  for (const ai of aiInsights.slice(0, 4)) {
+  // 补充RSS中的AI/产业动态（非融资类）— 需命中科技关键词才纳入
+  const INSIGHT_TECH_KW = [
+    'AI', '人工智能', '大模型', 'LLM', 'GPT', '机器人', '自动驾驶', '算力',
+    '芯片', '半导体', '融资', '投资', '量产', '智驾', '具身', '智能',
+    'chip', 'semiconductor', 'artificial intelligence', 'robot', 'autonomous',
+    'NVIDIA', 'TSMC', 'Intel', 'AMD', 'Qualcomm', 'Samsung', 'OpenAI',
+    'GPU', 'NPU', 'machine learning', 'deep learning', 'neural', 'model',
+    'funding', 'raised', 'billion', 'million', 'series', 'startup',
+    'EV', 'electric vehicle', 'battery technology', 'data center',
+  ]
+  for (const ai of aiInsights.slice(0, 8)) {
     if (!rssInsightItems.some(r => r.title.slice(0, 20) === ai.title.slice(0, 20))) {
+      // 严格过滤：标题必须命中至少一个科技关键词
+      const titleLower = (ai.title + ' ' + (ai.summary || '')).toLowerCase()
+      const isTechRelated = INSIGHT_TECH_KW.some(kw => titleLower.includes(kw.toLowerCase()))
+      if (!isTechRelated) continue
       rssInsightItems.push({
         id: `rss-ai-${ai.title.slice(0, 10)}`,
         title: ai.title,

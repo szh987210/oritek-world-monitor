@@ -939,33 +939,55 @@ export async function fetchIndustryIndices(): Promise<IndustryIndex[]> {
   return cachedIndices
 }
 
-/** 科技/半导体热点关键词白名单 — 用于过滤非科技来源的RSS条目 */
-const HOTSPOT_TECH_KW = [
-  // 英⽂关键词
-  'chip', 'semiconductor', 'AI', 'artificial intelligence', 'robot',
-  'autonomous', 'self-driving', 'EV', 'electric vehicle', 'quantum',
+/**
+ * 科技/半导体热点关键词白名单 — 用于过滤非科技来源的RSS条目
+ *
+ * 设计原则：
+ *  - 使用词边界匹配（\b）避免 "AI" 命中 "Iran/aims/detail" 等无关词
+ *  - 多字词（含空格）直接 includes 匹配
+ *  - 去除 'tech'/'model'/'hardware'/'software' 等极宽泛词（误报率高）
+ */
+const HOTSPOT_TECH_KW_WORD = [
+  // 必须整词匹配（防止 "AI" 命中 "aims/Iran/detail" 等）
+  'AI', 'GPU', 'CPU', 'NPU', 'EV', '5G', '6G', 'IoT', 'LLM', 'IPO',
   'NVIDIA', 'TSMC', 'Intel', 'AMD', 'Qualcomm', 'Samsung', 'SK Hynix',
   'Apple', 'Google', 'Microsoft', 'Meta', 'Tesla', 'BYD', 'OpenAI',
-  'GPU', 'CPU', 'NPU', 'processor', 'foundry', 'fab', 'wafer',
-  'data center', 'cloud', '5G', '6G', 'IoT', 'satellite', 'drone',
-  'tech', 'technology', 'startup', 'funding', 'venture', 'innovation',
-  'software', 'hardware', 'battery', 'sensor', 'lidar', 'radar',
-  'machine learning', 'deep learning', 'LLM', 'neural', 'model',
-  // 中文关键词
+  'DeepSeek', 'Arm', 'ASML', 'SMIC',
+  'chip', 'chips', 'semiconductor', 'robot', 'robots', 'robotics',
+  'autonomous', 'quantum', 'foundry', 'fab', 'wafer',
+  'lidar', 'radar', 'drone',
+]
+const HOTSPOT_TECH_KW_PHRASE = [
+  // 短语匹配（含空格，不需要词边界）
+  'artificial intelligence', 'self-driving', 'electric vehicle',
+  'data center', 'machine learning', 'deep learning', 'neural network',
+  'large language model', 'generative AI', 'language model',
+  'venture capital', 'series A', 'series B', 'series C',
+  // 中文关键词（无词边界问题，直接 includes）
   '芯片', '半导体', '人工智能', '机器人', '自动驾驶', '新能源',
-  '大模型', '算力', 'GPU', 'CPU', 'NPU', '光刻', '晶圆', '制程',
+  '大模型', '算力', '光刻', '晶圆', '制程', '智能驾驶',
   '华为', '比亚迪', '台积电', '英伟达', '高通', '地平线', '黑芝麻',
   '寒武纪', '百度', '阿里', '腾讯', '字节', '小米', '蔚来', '小鹏',
   '理想', '传感器', '激光雷达', '域控', '座舱', '智驾', '车规',
-  '融资', '上市', 'IPO', '收购', '合并', '投资',
+  '融资', '上市', 'IPO', '收购', '合并',
   // 日韩关键词
-  '半導体', 'ロボット', '自動運転', 'EV', 'バッテリー',
+  '半導体', 'ロボット', '自動運転', 'バッテリー',
   '삼성', '하이닉스', '반도체', '로봇',
 ]
 
 function isTechHotspot(title: string, summary: string): boolean {
-  const text = (title + ' ' + summary).toLowerCase()
-  return HOTSPOT_TECH_KW.some(kw => text.includes(kw.toLowerCase()))
+  const text = title + ' ' + summary
+  const textLower = text.toLowerCase()
+  // 词边界匹配（英文整词）
+  for (const kw of HOTSPOT_TECH_KW_WORD) {
+    const re = new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+    if (re.test(text)) return true
+  }
+  // 短语/中文直接包含匹配
+  for (const ph of HOTSPOT_TECH_KW_PHRASE) {
+    if (textLower.includes(ph.toLowerCase())) return true
+  }
+  return false
 }
 
 export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
