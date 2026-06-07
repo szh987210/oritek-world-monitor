@@ -174,6 +174,10 @@ export const FINANCIAL_RSS_SOURCES: Array<{ name: string; url: string; symbol: s
 // ==================== AI洞察RSS源（仅保留实测有效的URL）====================
 export const AI_INSIGHTS_RSS_SOURCES = [
   { name: '36氪-AI', url: 'https://36kr.com/feed', keywords: ['AI', '人工智能', '大模型', 'LLM', '机器人', '智能驾驶', '算力', 'AIGC', 'GPT', '融资'] },
+  { name: '机器之心', url: 'https://www.jiqizhixin.com/rss', keywords: ['AI', '人工智能', '大模型', 'LLM', '机器学习', '深度学习', '神经网络', '机器人', '自动驾驶'] },
+  { name: '量子位', url: 'https://www.qbitai.com/rss', keywords: ['AI', '人工智能', '大模型', 'LLM', '量子位', '机器学习', '深度学习', '机器人', '自动驾驶', '算力'] },
+  { name: '雷峰网', url: 'https://www.leiphone.com/feed', keywords: ['AI', '人工智能', '大模型', '机器人', '自动驾驶', '芯片', '算力', '智能驾驶'] },
+  { name: '新智元', url: 'https://mp.weixin.qq.com/s/...', keywords: ['AI', '人工智能', '大模型', 'LLM'] }, // 注：新智元主要是微信公众号，RSS可能不稳定
   { name: 'NVIDIA博客', url: 'https://blogs.nvidia.com/feed/', keywords: ['AI', 'GPU', 'deep learning', 'LLM', 'neural', 'model'] },
   { name: 'TechCrunch-AI', url: 'https://techcrunch.com/feed/', keywords: ['AI', 'artificial intelligence', 'machine learning', 'LLM', 'robotics'] },
 ]

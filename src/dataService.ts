@@ -442,7 +442,25 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
               verified: item.__verified !== false
             }
           })
-          return items
+          // P0-① 修复：过滤非科技相关内容（产品评测、 irrelevant内容）
+          const filteredItems = items.filter(item => {
+            const titleLower = (item.title || '').toLowerCase()
+            // 过滤产品评测/Review类内容（The Verge/Wired等综合科技媒体的评测文章）
+            if (/\breview\b|\bunbox\b|评测|测评|hands.on|first.look/.test(titleLower)) {
+              console.log(`[fetchRealNews] 过滤评测内容: ${item.title.slice(0, 40)}...`)
+              return false
+            }
+            // 使用isTechHotspot过滤非科技内容（对industry=all的源尤为重要）
+            if (source.industry === 'all') {
+              const passed = isTechHotspot(item.title, item.summary || '')
+              if (!passed) {
+                console.log(`[fetchRealNews] 过滤非科技内容(${source.name}): ${item.title.slice(0, 40)}...`)
+              }
+              return passed
+            }
+            return true
+          })
+          return filteredItems
         } catch (e) {
           console.warn(`[fetchRealNews] 抓取 ${source.name} 失败:`, e)
           return []
