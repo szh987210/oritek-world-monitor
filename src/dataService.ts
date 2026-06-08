@@ -55,6 +55,11 @@ interface RssFetchResult {
   source: string
 }
 
+// P0 修复：全局 RSS 抓取去重缓存
+// 多个数据源数组（NEWS_RSS/EXTENDED/HOTSPOT/AI_INSIGHTS）共享同一URL时，
+// 在10分钟时间桶内只调用一次 API，避免重复浪费 rss2json 免费配额。
+const rssFetchCache = new Map<string, Promise<RssFetchResult>>()
+
 // 带超时的 fetch 包装（防止被墙源卡死页面）
 function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number = 8000): Promise<Response> {
   const controller = new AbortController()
@@ -104,6 +109,16 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
   // Level 1: 主Key（rss2json API 代理）
   // 注意：rss2json 免费套餐服务端有 ~60min 缓存，加 _t 时间戳（精确到10分钟）绕过 CDN 缓存
   const cacheBuster = Math.floor(Date.now() / (10 * 60 * 1000)) // 每10分钟变化一次
+
+  // P0 修复：全局去重缓存 — 同一URL在同一10分钟时间桶内只调用一次API
+  const dedupKey = `${rssUrl}@${cacheBuster}`
+  const cachedPromise = rssFetchCache.get(dedupKey)
+  if (cachedPromise) {
+    console.log(`[fetchRssWithFallback] 复用缓存结果: ${srcName}`)
+    return cachedPromise
+  }
+
+  const fetchPromise = (async (): Promise<RssFetchResult> => {
   try {
     const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_API_KEY}&count=20&_t=${cacheBuster}`
     const resp = await fetchWithTimeout(url, { mode: 'cors', headers: { 'Accept': 'application/json' } }, FETCH_TIMEOUT)
@@ -153,6 +168,10 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
 
   recordSourceResult(srcName, rssUrl, false, '所有层级均失败')
   throw new Error('所有RSS抓取层级均失败')
+  })()
+
+  rssFetchCache.set(dedupKey, fetchPromise)
+  return fetchPromise
 }
 
 // ==================== 来源可信度评分 (P2-4) ====================
@@ -549,8 +568,9 @@ const newsCache = new Map<string, { data: any, fetchTime: number }>()
 /** 强制使 newsCache + lastFetchTime 全部失效，下次 fetchAllNews/fetchRealNews 会重新抓取 */
 export function invalidateNewsCache() {
   newsCache.clear()
+  rssFetchCache.clear()  // P0修复：同时清除RSS抓取去重缓存
   lastFetchTime = { news: 0, stock: 0, indices: 0, hotspots: 0 }
-  console.log('[invalidateNewsCache] 缓存已全部清除，下次调用将重新抓取')
+  console.log('[invalidateNewsCache] 缓存已全部清除（newsCache + rssFetchCache），下次调用将重新抓取')
 }
 
 // 从新闻生成警报
