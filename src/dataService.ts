@@ -511,7 +511,6 @@ const newsCache = new Map<string, { data: any, fetchTime: number }>()
 
 // 从新闻生成警报
 function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
-  const alerts: AlertItem[] = []
   const excludeSources = ['工信部', '发改委', '科创', '科技部', '经信委', '政府网', 'gov.cn']
   const riskKeywords = [
     // 中文风险关键词
@@ -521,6 +520,8 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     '审查', '许可', '收紧', '加税', '关税', '罢工',
     '事故', '火灾', '洪水', '停电', '断电',
     '专利', '侵权', '诉讼', '罚款', '处罚',
+    '风险', '警告', '危机', '崩溃', '违约', '债务',
+    '冻结', '查封', '扣押', '没收',
     // 英文风险关键词（匹配英文RSS新闻）
     'sanction', 'ban', 'embargo', 'restrict', 'regulation', 'control',
     'crash', 'plunge', 'surge', 'spike', 'shortage', 'crisis',
@@ -528,21 +529,27 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     'lawsuit', 'sue', 'patent', 'infringement', 'fine', 'penalty',
     'accident', 'fire', 'flood', 'outage', 'blackout', 'warning',
     'hazard', 'recall', 'investigation', 'probe', 'charge',
+    'default', 'debt', 'freeze', 'seizure', 'confiscate',
   ]
   const riskNews = news.filter(n => {
     if (excludeSources.some(ex => n.source.includes(ex))) return false
     const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
     return riskKeywords.some(kw => text.includes(kw))
   })
-  const usedSources = new Set<string>()
+
+  const alerts: AlertItem[] = []
+  const seenTitles = new Set<string>()  // 按标题去重
+  
   const sorted = [...riskNews].sort((a, b) => {
     const order: Record<string, number> = { critical: 0, warning: 1, info: 2 }
     return (order[a.priority] ?? 2) - (order[b.priority] ?? 2)
   })
+  
   for (const n of sorted) {
-    if (alerts.length >= 4) break
-    if (!usedSources.has(n.source)) {
-      usedSources.add(n.source)
+    if (alerts.length >= 8) break  // 增加到8条
+    const titleKey = n.title.slice(0, 20).toLowerCase()  // 用标题前20字符去重
+    if (!seenTitles.has(titleKey)) {
+      seenTitles.add(titleKey)
       const icon = n.priority === 'critical' ? '🚨' : (n.priority === 'warning' ? '⚠️' : '📰')
       alerts.push({
         id: `alert-${n.id}`,
@@ -554,15 +561,8 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
       })
     }
   }
-  if (alerts.length < 4) {
-    // 不再使用硬编码假警报填充，不足4条就展示实际数量
-    const placeholder: AlertItem[] = []
-    for (const h of placeholder) {
-      if (alerts.length >= 4) break
-      alerts.push(h)
-    }
-  }
-  return alerts.slice(0, 4)
+
+  return alerts  // 返回所有匹配的风险预警，最多8条
 }
 
 // 从新闻生成AI洞察
