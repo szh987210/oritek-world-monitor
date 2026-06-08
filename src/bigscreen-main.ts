@@ -961,16 +961,20 @@ function render(
   const mergedAlerts: RiskAlert[] = rssAlertItems.length > 0 ? rssAlertItems : BASE_RISK_ALERTS.slice(0, 8)
   console.log(`[render] alerts=${alerts.length}, rssAlertItems=${rssAlertItems.length}, mergedAlerts=${mergedAlerts.length}`, mergedAlerts.map(a => a.title.slice(0,20)))
 
+  // 跨版块去重：风险预警（最高优先级）的标题加入全局已用集合
+  const usedTitlesGlobal = new Set<string>()
+  mergedAlerts.forEach(a => usedTitlesGlobal.add(a.title.slice(0, 25).toLowerCase()))
+
   // 产业洞察：RSS优先（融资+AI动态），BASE仅做兜底
   // P0-②修复：过滤损坏的融资数据，使用原始标题而非拼接
   const rssInsightItems: IndustryInsightItem[] = startupFunding
     .filter(sf => {
-      // 过滤掉公司名为空/未知/明显解析错误的条目
       if (!sf.company || sf.company === '-' || sf.company === '未知公司') return false
       if (sf.company.length < 2 || sf.company.length > 30) return false
-      // 过滤掉标题明显不是融资相关的内容
       const t = (sf.title || '').toLowerCase()
       if (!/融资|投资|万美元|亿美元|亿元|万人民币|a轮|b轮|c轮|ipo|上市|募资|获投/.test(t)) return false
+      // 跨版块去重：排除已出现在风险预警中的条目
+      if (usedTitlesGlobal.has(sf.title.slice(0, 25).toLowerCase())) return false
       return true
     })
     .slice(0, 8)
@@ -1000,7 +1004,8 @@ function render(
   ]
   for (const ai of aiInsights.slice(0, 8)) {
     if (!rssInsightItems.some(r => r.title.slice(0, 20) === ai.title.slice(0, 20))) {
-      // 严格过滤：标题必须命中至少一个科技关键词
+      // 跨版块去重：排除已出现的标题
+      if (usedTitlesGlobal.has(ai.title.slice(0, 25).toLowerCase())) continue
       const titleLower = (ai.title + ' ' + (ai.summary || '')).toLowerCase()
       const isTechRelated = INSIGHT_TECH_KW.some(kw => titleLower.includes(kw.toLowerCase()))
       if (!isTechRelated) continue
@@ -1014,6 +1019,8 @@ function render(
       })
     }
   }
+  // 产业洞察标题加入全局已用集合（防止Ticker重复）
+  rssInsightItems.forEach(item => usedTitlesGlobal.add(item.title.slice(0, 25).toLowerCase()))
   let mergedInsights: IndustryInsightItem[]
   if (rssInsightItems.length >= 4) {
     mergedInsights = rssInsightItems.slice(0, 10)
@@ -1027,7 +1034,7 @@ function render(
   const rssPolicyItems = extractPolicyFromRSS(newsResult.news)
   const mergedPolicy = mergePolicyItems(BASE_POLICY_ITEMS, rssPolicyItems)
 
-  const tickerHtml = buildAwarenessTicker(healthStats, sourceScores, mergedAlerts, mergedInsights, indices, stocks, newsResult.news)
+  const tickerHtml = buildAwarenessTicker(healthStats, sourceScores, mergedAlerts, mergedInsights, indices, stocks, newsResult.news, usedTitlesGlobal)
 
   // 全球态势感知：RSS优先，BASE仅做兜底
   const rssGeoHotNews = transformRSSHotspots(rssHotspots)
@@ -1807,7 +1814,8 @@ function buildAwarenessTicker(
   insights: any[],
   indices: IndustryIndex[],
   stocks: StockData[],
-  allNews: NewsItem[],  // V7: RSS新闻全量管道
+  allNews: NewsItem[],
+  usedTitles: Set<string> = new Set(),  // 跨版块去重集合（风险预警+产业洞察已用的标题）
 ): string {
   const layers: TickerLayer[] = []
 
@@ -1849,14 +1857,14 @@ function buildAwarenessTicker(
     className: 'layer-pulse',
   })
 
-  // --- L2: 突发快讯 (RSS动态提取 · 后备静态数组) ---
+  // --- L2: 突发快讯 (RSS动态提取 · 跨版块去重) ---
   const dynamicFlash = sortedByTime
-    .filter(n => n.priority === 'critical' || BREAKING_KEYWORDS.test(n.title))
+    .filter(n => (n.priority === 'critical' || BREAKING_KEYWORDS.test(n.title))
+                 && !usedTitles.has(n.title.slice(0, 25).toLowerCase()))  // 跨版块去重
     .slice(0, 10)
     .map(n => `${n.source}: ${n.title}`)
 
   // 修复：只有 RSS 完全无数据时才使用 FALLBACK（避免旧硬编码数据混入）
-  // RSS数据不足3条但存在时，直接显示RSS数据（哪怕只有1条）；RSS为0才兜底
   const flashSource = dynamicFlash.length > 0 ? dynamicFlash : (allNews.length > 0 ? [] : FALLBACK_FLASH)
   const flashItems = flashSource.length > 0
     ? flashSource.slice(0, 8).map(item => `<span class="tkr-seg tkr-seg-flash">${esc(item)}</span>`).join('<span class="tkr-sep">⚠</span>')
@@ -1869,9 +1877,10 @@ function buildAwarenessTicker(
     className: 'layer-flash',
   })
 
-  // --- L3: 竞品雷达 (RSS动态提取 · 后备静态数组) ---
+  // --- L3: 竞品雷达 (RSS动态提取 · 跨版块去重) ---
   const dynamicRadar = sortedByTime
-    .filter(n => n.category === 'competitor' || COMPETITOR_NAME_RE.test(n.title))
+    .filter(n => (n.category === 'competitor' || COMPETITOR_NAME_RE.test(n.title))
+                 && !usedTitles.has(n.title.slice(0, 25).toLowerCase()))  // 跨版块去重
     .slice(0, 10)
     .map(n => `${n.source}: ${n.title}`)
 

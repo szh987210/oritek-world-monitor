@@ -62,6 +62,39 @@ function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number =
   return fetch(url, { ...options, signal: controller.signal }).finally(() => clearTimeout(timer))
 }
 
+// 过滤聚合/文摘类RSS条目（日报、周报、精选、Digest等）
+function filterDigestItems(items: any[]): any[] {
+  const digestPatterns = [
+    // 中文聚合标记
+    '汇总', '简报', '周报', '一周', '本周', '周末', '日报', '晚报', '早报',
+    '每日速递', '今日要闻', '昨日要闻', '上周回顾', '每月', '月报',
+    '精选', '合集', '盘点', '年终', '年度',
+    // 英文聚合标记
+    'weekly', 'digest', 'roundup', 'newsletter', 'recap',
+    'top stories', 'this week', 'weekend', 'daily briefing',
+    'monthly', 'year in review',
+  ]
+  return items.filter((item: any) => {
+    const title = (item.title || '').toLowerCase()
+    // 1) 过滤聚合标记
+    if (digestPatterns.some(p => title.includes(p.toLowerCase()))) {
+      console.log(`[filterDigestItems] 过滤聚合条目: ${(item.title || '').slice(0, 50)}...`)
+      return false
+    }
+    // 2) 过滤标题异常长（>150字符）的条目，通常是汇总型
+    if ((item.title || '').length > 150) {
+      console.log(`[filterDigestItems] 过滤超长标题: ${(item.title || '').slice(0, 40)}...`)
+      return false
+    }
+    // 3) 过滤中文方括号包裹的栏目名（如【AI周报】【每日精选】）
+    if (/^【[^】]{2,12}】/.test(item.title || '')) {
+      console.log(`[filterDigestItems] 过滤栏目汇总: ${(item.title || '').slice(0, 40)}...`)
+      return false
+    }
+    return true
+  })
+}
+
 async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promise<RssFetchResult> {
   const srcName = sourceName || new URL(rssUrl).hostname
   const FETCH_TIMEOUT = 8000 // 单层超时8秒，三层最多24秒
@@ -76,7 +109,7 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
       const data = await resp.json()
       if (data.status === 'ok') {
         recordSourceResult(srcName, rssUrl, true)
-        return { items: data.items || [], source: 'rss2json-primary' }
+        return { items: filterDigestItems(data.items || []), source: 'rss2json-primary' }
       }
     }
   } catch (_) { /* 降级 */ }
@@ -90,7 +123,7 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
         const data = await resp.json()
         if (data.status === 'ok') {
           recordSourceResult(srcName, rssUrl, true)
-          return { items: data.items || [], source: 'rss2json-secondary' }
+          return { items: filterDigestItems(data.items || []), source: 'rss2json-secondary' }
         }
       }
     } catch (_) { /* 降级 */ }
@@ -111,7 +144,7 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
       }))
       if (items.length > 0) {
         recordSourceResult(srcName, rssUrl, true)
-        return { items, source: 'direct-xml' }
+        return { items: filterDigestItems(items), source: 'direct-xml' }
       }
     }
   } catch (_) { /* 全部失败 */ }
@@ -631,8 +664,17 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
 function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
   const aiKeywords = ['AI', '人工智能', '大模型', 'LLM', 'GPT', '神经网络', '深度学习',
     'AIGC', '多模态', '算力', '机器人', '自动驾驶', '智能', 'NVIDIA', 'OpenAI', 'Gemini']
+  // 产业洞察应排除风险类内容（制裁/裁员/事故等），这些归风险预警版块
+  const riskExcludeKeywords = [
+    '制裁', '禁运', '断供', '停产', '召回', '裁员', 'layoff', 'layoffs',
+    '亏损', '破产', 'bankrupt', '事故', '火灾', '洪水', '停电', 'outage',
+    'fire', 'flood', 'crash', 'plunge', 'shortage', '短缺', '罢工', 'strike',
+    '罚款', '处罚', 'fine', 'penalty', '调查', 'investigation',
+  ]
   return news.filter(n => {
     const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+    // 排除风险类内容
+    if (riskExcludeKeywords.some(kw => text.includes(kw.toLowerCase()))) return false
     return aiKeywords.some(kw => text.includes(kw.toLowerCase())) ||
            n.industry === 'ai' || n.industry === 'robotics'
   })
