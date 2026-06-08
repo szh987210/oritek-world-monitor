@@ -862,6 +862,7 @@ let isMapRendering = false
 let newsScrollTimer: number | undefined
 let tickerRotationTimer: number | undefined
 let tickerPauseTimer: number | undefined
+let lastContentHash = ''  // P1修复：内容变化检测，只有数据真正变化时才重绘
 let currentNewsIndex = 0
 let mapSvg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any> | null = null
 let mapProjection: d3Geo.GeoProjection | null = null
@@ -992,7 +993,8 @@ function render(
         source: 'RSS',
       }
     })
-  // 补充RSS中的AI/产业动态（非融资类）— 需命中科技关键词才纳入
+  // 补充RSS中的AI/产业动态（非融资类）
+  // P1修复：从硬过滤改为宽松纳入 — 评分制，确保至少3条补充
   const INSIGHT_TECH_KW = [
     'AI', '人工智能', '大模型', 'LLM', 'GPT', '机器人', '自动驾驶', '算力',
     '芯片', '半导体', '融资', '投资', '量产', '智驾', '具身', '智能',
@@ -1002,27 +1004,38 @@ function render(
     'funding', 'raised', 'billion', 'million', 'series', 'startup',
     'EV', 'electric vehicle', 'battery technology', 'data center',
   ]
-  for (const ai of aiInsights.slice(0, 8)) {
+  // P1修复：评分制 — 产业动态按关键词命中数排序，高分的优先纳入
+  type ScoredAI = { insight: AIInsight; score: number }
+  const scoredAI: ScoredAI[] = []
+  for (const ai of aiInsights.slice(0, 10)) {
     if (!rssInsightItems.some(r => r.title.slice(0, 20) === ai.title.slice(0, 20))) {
-      // 跨版块去重：排除已出现的标题
       if (usedTitlesGlobal.has(ai.title.slice(0, 25).toLowerCase())) continue
       const titleLower = (ai.title + ' ' + (ai.summary || '')).toLowerCase()
-      const isTechRelated = INSIGHT_TECH_KW.some(kw => titleLower.includes(kw.toLowerCase()))
-      if (!isTechRelated) continue
-      rssInsightItems.push({
-        id: `rss-ai-${ai.title.slice(0, 10)}`,
-        title: ai.title,
-        summary: ai.summary || '',
-        category: ai.category || 'AI',
-        time: ai.time || new Date().toISOString().slice(0, 10),
-        source: 'RSS',
-      })
+      let score = 0
+      for (const kw of INSIGHT_TECH_KW) {
+        if (titleLower.includes(kw.toLowerCase())) score++
+      }
+      scoredAI.push({ insight: ai, score })
     }
+  }
+  // 按命中数排序，高分优先纳入
+  scoredAI.sort((a, b) => b.score - a.score)
+  const maxFill = Math.max(5 - rssInsightItems.length, 3)  // P1修复：确保至少补到5条
+  for (let i = 0; i < Math.min(scoredAI.length, maxFill); i++) {
+    const { insight: ai } = scoredAI[i]
+    rssInsightItems.push({
+      id: `rss-ai-${ai.title.slice(0, 10)}`,
+      title: ai.title,
+      summary: ai.summary || '',
+      category: ai.category || 'AI',
+      time: ai.time || new Date().toISOString().slice(0, 10),
+      source: 'RSS',
+    })
   }
   // 产业洞察标题加入全局已用集合（防止Ticker重复）
   rssInsightItems.forEach(item => usedTitlesGlobal.add(item.title.slice(0, 25).toLowerCase()))
   let mergedInsights: IndustryInsightItem[]
-  if (rssInsightItems.length >= 4) {
+  if (rssInsightItems.length >= 3) {  // P1修复：降低门槛，3条RSS即可主导面板
     mergedInsights = rssInsightItems.slice(0, 10)
   } else {
     const rssTitles = new Set(rssInsightItems.map(r => r.title.slice(0, 20)))
@@ -2055,6 +2068,8 @@ function updateRefreshTime() {
 }
 
 function startAutoRefresh() {
+  // P1修复：从5分钟改为15分钟（匹配RSS实际更新频率），增加内容变化检测
+  // 避免大部分刷新看到完全相同数据时做无效重绘
   setInterval(async () => {
     try {
       if (newsScrollTimer) clearInterval(newsScrollTimer)
@@ -2067,6 +2082,23 @@ function startAutoRefresh() {
         fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
       ])
       fetchLiveStockQuotes().catch(() => {})
+
+      // P1修复：内容变化检测 — 只有数据真正变化时才重绘
+      const contentFingerprint = JSON.stringify({
+        alerts: newsResult.news.slice(0, 20).map(n => n.title),
+        ins: indices.slice(0, 4).map(i => i.value),
+        st: stocks.slice(0, 5).map(s => s.price),
+        hs: rssHotspots.slice(0, 10).map(h => h.title),
+      })
+      if (contentFingerprint === lastContentHash) {
+        console.log('[AutoRefresh] 内容无变化，跳过重绘')
+        // 更新时间标记即可
+        setTimeout(() => updateRefreshTime(), 100)
+        return
+      }
+      lastContentHash = contentFingerprint
+      console.log('[AutoRefresh] 检测到内容变化，执行重绘')
+
       let oritekNews: OritekMediaItem[] = []
       try {
         const cn = await fetchCompanyNews()
@@ -2088,7 +2120,7 @@ function startAutoRefresh() {
     } catch (err) {
       console.warn('[Bigscreen v4] Auto-refresh failed:', err)
     }
-  }, 5 * 60 * 1000)
+  }, 15 * 60 * 1000)  // P1修复：15分钟间隔
 }
 
 // ============================================================================

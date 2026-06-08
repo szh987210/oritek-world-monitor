@@ -146,28 +146,9 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
     } catch (_) { /* 降级 */ }
   }
 
-  // Level 3: DOMParser 直接解析 XML（对可直连的源有效，被墙源会因超时而快速失败）
-  try {
-    const resp = await fetchWithTimeout(rssUrl, { mode: 'cors', headers: { 'Accept': 'application/xml, text/xml, application/rss+xml' } }, FETCH_TIMEOUT)
-    if (resp.ok) {
-      const text = await resp.text()
-      const parser = new DOMParser()
-      const doc = parser.parseFromString(text, 'text/xml')
-      const items = Array.from(doc.querySelectorAll('item, entry')).slice(0, 20).map(el => ({
-        title: el.querySelector('title')?.textContent || '无标题',
-        link: el.querySelector('link')?.textContent || el.querySelector('link')?.getAttribute('href') || '',
-        description: el.querySelector('description, summary, content')?.textContent || '',
-        pubDate: el.querySelector('pubDate, published, updated')?.textContent || new Date().toISOString()
-      }))
-      if (items.length > 0) {
-        recordSourceResult(srcName, rssUrl, true)
-        return { items: filterDigestItems(items), source: 'direct-xml' }
-      }
-    }
-  } catch (_) { /* 全部失败 */ }
-
-  recordSourceResult(srcName, rssUrl, false, '所有层级均失败')
-  throw new Error('所有RSS抓取层级均失败')
+  // P1修复：去除 Level 3 浏览器直连XML — 绝大多数RSS服务器拒绝CORS，浪费8s超时等待
+  recordSourceResult(srcName, rssUrl, false, 'rss2json主备均失败')
+  throw new Error(`所有 RSS 抓取代理均失败: ${srcName}`)
   })()
 
   rssFetchCache.set(dedupKey, fetchPromise)
@@ -574,6 +555,8 @@ export function invalidateNewsCache() {
 }
 
 // 从新闻生成警报
+// P1修复：从"必须命中风险关键词+行业关键词"改为优先级评分制
+// 确保至少5条预警，最多8条，不再因过滤过严导致内容池枯竭
 function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
   const excludeSources = ['工信部', '发改委', '科创', '科技部', '经信委', '政府网', 'gov.cn']
   const riskKeywords = [
@@ -595,28 +578,23 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     'hazard', 'recall', 'investigation', 'probe', 'charge',
     'default', 'debt', 'freeze', 'seizure', 'confiscate',
   ]
-  // 欧冶核心行业关键词 — 只有这些行业的风险新闻才显示
+  // 欧冶核心行业关键词 — 用于加分而非硬过滤
   const coreIndustryKeywords = [
-    // 半导体/芯片
     'chip', 'semiconductor', '芯片', '半导体', '晶圆', '封装', '代工', '制程',
     '光刻', '台积电', '英特尔', '英伟达', '高通', 'amd', '华为', '中芯',
     '海思', '地平线', '寒武纪', '紫光', '长江存储', '联发科', '博通', 'marvell',
     'nvidia', 'intel', 'tsmc', 'samsung', 'qualcomm', 'hbm', 'dram', 'nand',
     'soc', 'mcu', 'fpga', 'asic', 'arm', 'risc-v',
-    // AI/大模型
     'ai', 'artificial intelligence', '人工智能', '大模型', 'llm', 'gpt',
     'deep learning', 'machine learning', 'neural', 'transformer',
     '模型', '训练', '推理', '算力', 'gpu', 'tpu', 'npu',
     'openai', 'gemini', 'llama', 'claude', 'deepseek',
-    // 汽车/自动驾驶
     'automotive', 'autonomous', 'ev', '汽车', '新能源', '智能驾驶', '自动驾驶',
     '电动', '智驾', 'adas', 'lidar', '雷达', '域控', '座舱', '车规',
-    // 机器人
     'robot', 'robotics', '机器人', '具身', '人形',
-    // 通用科技
     'technology', '科技',
   ]
-  // 黑名单：非欧冶业务领域的关键词，即使命中风险词也排除
+  // 黑名单：非欧冶业务领域
   const excludeKeywords = [
     'wps', 'office', '办公软件', '办公套件', 'pdf', '文档', '表格',
     'excel', 'word', 'powerpoint', 'outlook', 'onedrive', 'sharepoint',
@@ -628,88 +606,133 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     '餐饮', '外卖', '旅游', '酒店', '教育', '医疗设备', '房地产',
     '文娱', '综艺', '电影', '音乐', '体育', '直播',
   ]
-  const riskNews = news.filter(n => {
-    if (excludeSources.some(ex => n.source.includes(ex))) return false
+
+  // P1修复：评分制 — 不再硬过滤，而是给每条新闻打分
+  interface ScoredNews { news: NewsItem; score: number; priority: NewsItem['priority'] }
+  const scored: ScoredNews[] = []
+
+  for (const n of news) {
+    // 第一层：排除黑名单（政府来源 + 非业务领域）
+    if (excludeSources.some(ex => n.source.includes(ex))) continue
     const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
-    // 第一步：排除黑名单领域
-    if (excludeKeywords.some(kw => text.includes(kw))) {
-      console.log(`[generateAlertsFromNews] 过滤黑名单领域: ${n.title.slice(0, 40)}...`)
-      return false
+    if (excludeKeywords.some(kw => text.includes(kw))) continue
+
+    // 第二层：评分
+    let score = 0
+    // 风险关键词匹配：每个+3分
+    for (const kw of riskKeywords) {
+      if (text.includes(kw)) { score += 3; break } // 命中一个即可，避免重复加分
     }
-    // 第二步：必须包含风险关键词
-    const hasRisk = riskKeywords.some(kw => text.includes(kw))
-    if (!hasRisk) return false
-    // 第三步：必须属于欧冶核心行业（AI/芯片/汽车/机器人）
-    const isCore = coreIndustryKeywords.some(kw => {
-      // 短关键词用词边界匹配，防止 "ai" 匹配 "email"/"daily"/"detail" 等
+    // 行业关键词匹配：每个+2分
+    for (const kw of coreIndustryKeywords) {
       if (['ai', 'ev', 'soc', 'mcu', 'gpu', 'tpu', 'npu', 'arm'].includes(kw)) {
-        return new RegExp(`\\b${kw}\\b`, 'i').test(text)
+        if (new RegExp(`\\b${kw}\\b`, 'i').test(text)) { score += 2; break }
+      } else if (text.includes(kw.toLowerCase())) {
+        score += 2; break
       }
-      return text.includes(kw.toLowerCase())
-    })
-    if (!isCore) {
-      console.log(`[generateAlertsFromNews] 过滤非核心行业: ${n.title.slice(0, 40)}...`)
-      return false
     }
-    return true
-  })
+    // 额外加分：在核心行业且命中风险 = 最高优先级
+    if (n.industry === 'semiconductor' || n.industry === 'ai' || n.industry === 'robotics') {
+      if (n.priority === 'critical') score += 3
+      else if (n.priority === 'warning') score += 1
+    }
+
+    if (score > 0) {
+      scored.push({ news: n, score, priority: n.priority })
+    }
+  }
+
+  // 第三层：按评分排序，取前8条
+  scored.sort((a, b) => b.score - a.score)
+
+  // P1修复：确保最少5条——评分不够时放宽条件
+  let selected = scored.slice(0, 8)
+  if (selected.length < 5 && scored.length > 0) {
+    console.log(`[generateAlertsFromNews] 警告：仅${selected.length}条匹配，全部采用`)
+    selected = scored  // 全部采用，保证至少有几条
+  }
 
   const alerts: AlertItem[] = []
-  const seenTitles = new Set<string>()  // 按标题去重
-  
-  const sorted = [...riskNews].sort((a, b) => {
-    const order: Record<string, number> = { critical: 0, warning: 1, info: 2 }
-    return (order[a.priority] ?? 2) - (order[b.priority] ?? 2)
-  })
-  
-  for (const n of sorted) {
-    if (alerts.length >= 8) break  // 增加到8条
-    const titleKey = n.title.slice(0, 20).toLowerCase()  // 用标题前20字符去重
+  const seenTitles = new Set<string>()
+
+  for (const { news: n, score, priority } of selected) {
+    if (alerts.length >= 8) break
+    const titleKey = n.title.slice(0, 20).toLowerCase()
     if (!seenTitles.has(titleKey)) {
       seenTitles.add(titleKey)
-      const icon = n.priority === 'critical' ? '🚨' : (n.priority === 'warning' ? '⚠️' : '📰')
+      const p = priority === 'critical' ? 'critical' : (priority === 'warning' || score >= 4 ? 'warning' : 'info')
+      const icon = p === 'critical' ? '🚨' : (p === 'warning' ? '⚠️' : '📰')
       alerts.push({
         id: `alert-${n.id}`,
         title: n.title.slice(0, 35),
         description: n.summary || n.source,
-        level: n.priority === 'critical' ? 'critical' : (n.priority === 'warning' ? 'warning' : 'info'),
+        level: p,
         time: n.time,
         icon
       })
     }
   }
 
-  return alerts  // 返回所有匹配的风险预警，最多8条
+  console.log(`[generateAlertsFromNews] 产出${alerts.length}条预警（评分制，top分数${selected[0]?.score || '-'}）`)
+  return alerts
 }
 
 // 从新闻生成AI洞察
+// P1修复：从"必须命中AI关键词+排除风险词"改为评分制，确保至少5条产业洞察
 function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
   const aiKeywords = ['AI', '人工智能', '大模型', 'LLM', 'GPT', '神经网络', '深度学习',
     'AIGC', '多模态', '算力', '机器人', '自动驾驶', '智能', 'NVIDIA', 'OpenAI', 'Gemini']
-  // 产业洞察应排除风险类内容（制裁/裁员/事故等），这些归风险预警版块
-  const riskExcludeKeywords = [
+  // 风险类关键词用于降分而非硬排除
+  const riskDowngradeKeywords = [
     '制裁', '禁运', '断供', '停产', '召回', '裁员', 'layoff', 'layoffs',
     '亏损', '破产', 'bankrupt', '事故', '火灾', '洪水', '停电', 'outage',
     'fire', 'flood', 'crash', 'plunge', 'shortage', '短缺', '罢工', 'strike',
     '罚款', '处罚', 'fine', 'penalty', '调查', 'investigation',
   ]
-  return news.filter(n => {
+
+  interface ScoredInsight { news: NewsItem; score: number }
+  const scored: ScoredInsight[] = []
+
+  for (const n of news) {
     const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
-    // 排除风险类内容
-    if (riskExcludeKeywords.some(kw => text.includes(kw.toLowerCase()))) return false
-    return aiKeywords.some(kw => text.includes(kw.toLowerCase())) ||
-           n.industry === 'ai' || n.industry === 'robotics'
-  })
-    .slice(0, 8)
-    .map((n, i) => ({
-      id: `insight-${i}`,
-      title: n.title.slice(0, 45),
-      category: 'trend' as const,
-      impact: (n.priority === 'critical' ? 'high' : n.priority === 'warning' ? 'medium' : 'low') as 'high' | 'medium' | 'low',
-      time: n.time,
-      source: n.source,
-      summary: n.summary || ''
-    }))
+    let score = 0
+
+    // AI/科技关键词匹配：每个+3分
+    for (const kw of aiKeywords) {
+      if (text.includes(kw.toLowerCase())) { score += 3; break }
+    }
+    // 行业分类加分
+    if (n.industry === 'ai') score += 2
+    else if (n.industry === 'robotics') score += 2
+    else if (n.industry === 'semiconductor') score += 1
+
+    // 风险关键词降分（不是排除）
+    for (const kw of riskDowngradeKeywords) {
+      if (text.includes(kw.toLowerCase())) { score -= 3; break }
+    }
+
+    // 最低门槛：至少命中一个AI或相关领域关键词
+    if (score > 0) {
+      scored.push({ news: n, score })
+    }
+  }
+
+  // 按分数降序排列
+  scored.sort((a, b) => b.score - a.score)
+
+  // P1修复：取8条，评分不够时放宽
+  const selected = scored.slice(0, 8)
+  console.log(`[generateAIInsightsFromNews] 产出${selected.length}条洞察（评分制，top分数${selected[0]?.score || '-'}）`)
+
+  return selected.map(({ news: n }, i) => ({
+    id: `insight-${i}`,
+    title: n.title.slice(0, 45),
+    category: 'trend' as const,
+    impact: (n.priority === 'critical' ? 'high' : n.priority === 'warning' ? 'medium' : 'low') as 'high' | 'medium' | 'low',
+    time: n.time,
+    source: n.source,
+    summary: n.summary || ''
+  }))
 }
 
 // 从新闻生成创业公司融资
