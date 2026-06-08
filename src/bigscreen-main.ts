@@ -956,8 +956,8 @@ function render(
     time: a.time || '',
     source: 'RSS实时',
   }))
-  // 风险预警：只使用RSS实时数据，不再回退到BASE硬编码旧数据
-  const mergedAlerts: RiskAlert[] = rssAlertItems
+  // 风险预警：RSS优先，BASE仅做兜底（RSS完全为空时才回退）
+  const mergedAlerts: RiskAlert[] = rssAlertItems.length > 0 ? rssAlertItems : BASE_RISK_ALERTS.slice(0, 8)
 
   // 产业洞察：RSS优先（融资+AI动态），BASE仅做兜底
   // P0-②修复：过滤损坏的融资数据，使用原始标题而非拼接
@@ -1029,8 +1029,10 @@ function render(
 
   // 全球态势感知：RSS优先，BASE仅做兜底
   const rssGeoHotNews = transformRSSHotspots(rssHotspots)
-  // 热点：只使用RSS实时数据，不再回退到BASE硬编码旧数据
-  let mergedHotNews: GeoHotNews[] = rssGeoHotNews.slice(0, 12)
+  // 热点：RSS优先，BASE仅做兜底（RSS完全为空时才回退）
+  const mergedHotNews: GeoHotNews[] = rssGeoHotNews.length > 0
+    ? rssGeoHotNews.slice(0, 12)
+    : BASE_GLOBAL_HOT_NEWS.slice(0, 12)
   currentHotNews = mergedHotNews  // V8: 同步给地图渲染使用
 
   // 构建整页DOM

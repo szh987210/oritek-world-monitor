@@ -130,6 +130,16 @@ export const GLOBAL_HOTSPOT_SOURCES = [
   { name: 'NHK世界', url: 'https://www3.nhk.or.jp/rss/news/cat0.xml', region: '日本', isTechSource: false },
   { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', region: '美国', isTechSource: true },
   { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', region: '美国', isTechSource: true },
+  // 2026-06-08 新增：中文科技媒体（已验证RSS有效）
+  { name: '量子位', url: 'https://www.qbitai.com/rss', region: '中国', isTechSource: true },
+  { name: '雷峰网', url: 'https://www.leiphone.com/feed', region: '中国', isTechSource: true },
+  { name: '36氪', url: 'https://36kr.com/feed', region: '中国', isTechSource: true },
+  { name: '钛媒体', url: 'https://www.tmtpost.com/rss.xml', region: '中国', isTechSource: true },
+  // 2026-06-08 新增：英文科技媒体（已验证RSS有效）
+  { name: 'MIT Tech Review', url: 'https://www.technologyreview.com/feed/', region: '美国', isTechSource: true },
+  { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', region: '美国', isTechSource: true },
+  { name: 'Nikkei Asia', url: 'https://www.nippon.com/en/feed/', region: '日本', isTechSource: false },
+  { name: 'Electrek', url: 'https://electrek.co/feed/', region: '美国', isTechSource: true },
 ]
 
 // ==================== 扩展RSS新闻源（2026-06-05实测验证）====================
@@ -161,6 +171,14 @@ export const EXTENDED_NEWS_SOURCES: Array<{
   { name: '工信部公告', url: 'https://rsshub.feeddd.org/https://www.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=925fa8f4afd44e53818794ed96d9876e,30f92eeafcfd4685984dfb793a2c5fff', category: 'policy', industry: 'all' },
   // VC融资
   { name: '36氪-创投', url: 'https://36kr.com/feed', category: 'finance', industry: 'all' },
+  // 2026-06-08 新增：中文科技媒体（已验证RSS有效）
+  { name: '雷峰网', url: 'https://www.leiphone.com/feed', category: 'ai', industry: 'ai' },
+  { name: '钛媒体', url: 'https://www.tmtpost.com/rss.xml', category: 'tech', industry: 'all' },
+  // 2026-06-08 新增：英文科技媒体（已验证RSS有效）
+  { name: 'MIT Tech Review', url: 'https://www.technologyreview.com/feed/', category: 'tech', industry: 'all' },
+  { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', category: 'tech', industry: 'all' },
+  { name: 'Nikkei Asia', url: 'https://www.nippon.com/en/feed/', category: 'tech', industry: 'all' },
+  { name: 'Electrek', url: 'https://electrek.co/feed/', category: 'auto', industry: 'automotive' },
 ]
 
 // ==================== 财经RSS源（仅保留实测有效的URL）====================
@@ -172,14 +190,17 @@ export const FINANCIAL_RSS_SOURCES: Array<{ name: string; url: string; symbol: s
 ]
 
 // ==================== AI洞察RSS源（仅保留实测有效的URL）====================
+// 2026-06-08 清理：移除机器之心（URL返回HTML）、新智元（微信公众号无RSS）
+// 新增：钛媒体、MIT Tech Review、Ars Technica（均已验证RSS有效）
 export const AI_INSIGHTS_RSS_SOURCES = [
   { name: '36氪-AI', url: 'https://36kr.com/feed', keywords: ['AI', '人工智能', '大模型', 'LLM', '机器人', '智能驾驶', '算力', 'AIGC', 'GPT', '融资'] },
-  { name: '机器之心', url: 'https://www.jiqizhixin.com/rss', keywords: ['AI', '人工智能', '大模型', 'LLM', '机器学习', '深度学习', '神经网络', '机器人', '自动驾驶'] },
   { name: '量子位', url: 'https://www.qbitai.com/rss', keywords: ['AI', '人工智能', '大模型', 'LLM', '量子位', '机器学习', '深度学习', '机器人', '自动驾驶', '算力'] },
   { name: '雷峰网', url: 'https://www.leiphone.com/feed', keywords: ['AI', '人工智能', '大模型', '机器人', '自动驾驶', '芯片', '算力', '智能驾驶'] },
-  { name: '新智元', url: 'https://mp.weixin.qq.com/s/...', keywords: ['AI', '人工智能', '大模型', 'LLM'] }, // 注：新智元主要是微信公众号，RSS可能不稳定
+  { name: '钛媒体', url: 'https://www.tmtpost.com/rss.xml', keywords: ['AI', '人工智能', '大模型', 'LLM', '科技', '机器人', '自动驾驶', '芯片', '算力'] },
   { name: 'NVIDIA博客', url: 'https://blogs.nvidia.com/feed/', keywords: ['AI', 'GPU', 'deep learning', 'LLM', 'neural', 'model'] },
   { name: 'TechCrunch-AI', url: 'https://techcrunch.com/feed/', keywords: ['AI', 'artificial intelligence', 'machine learning', 'LLM', 'robotics'] },
+  { name: 'MIT Tech Review', url: 'https://www.technologyreview.com/feed/', keywords: ['AI', 'artificial intelligence', 'machine learning', 'LLM', 'robotics', 'deep learning', 'neural network'] },
+  { name: 'Ars Technica', url: 'https://feeds.arstechnica.com/arstechnica/index', keywords: ['AI', 'artificial intelligence', 'tech', 'science', 'policy', 'LLM'] },
 ]
 
 // ==================== VC融资RSS源（仅保留实测有效的URL）====================
