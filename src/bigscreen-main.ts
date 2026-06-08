@@ -787,22 +787,12 @@ function mergePolicyItems(baseItems: PolicyItem[], rssItems: PolicyItem[]): Poli
 }
 
 /** 科技/半导体关键词白名单（兜底过滤，配合 dataService 端过滤使用） */
-const TECH_FILTER_KW = [
-  '芯片','半导体','AI','人工智能','机器人','自动驾驶','大模型','算力','GPU','NPU',
-  '台积电','英伟达','高通','英特尔','AMD','三星','SK海力士','华为','比亚迪',
-  '融资','IPO','收购','投资','估值','量产','车规','自动驾驶','具身','端侧',
-  'chip','semiconductor','AI','artificial intelligence','robot','autonomous',
-  'NVIDIA','TSMC','Intel','AMD','Qualcomm','Samsung','EV','Tesla','BYD',
-  'funding','IPO','acquisition','venture',
-]
-
-/** 从RSS热点转换为大屏GeoHotNews格式 */
+/** P1修复：从RSS热点转换为大屏GeoHotNews格式
+ *  - 移除冗余TECH_FILTER_KW过滤（fetchGlobalHotspots已通过isTechHotspot过滤）
+ *  - catMap补充diplomacy/conflict映射，不再丢弃地缘政治类科技新闻
+ *  - 添加标题去重 + .slice()后置 */
 function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
-  // 兜底过滤：仅保留标题/摘要命中科技关键词的条目
-  const filtered = hotspots.filter(h => {
-    const text = (h.title + ' ' + h.summary).toLowerCase()
-    return TECH_FILTER_KW.some(kw => text.includes(kw.toLowerCase()))
-  })
+  // 不再重复过滤科技关键词 — fetchGlobalHotspots 已执行 isTechHotspot() 过滤
   const coordMap: Record<string, [number, number]> = {
     '北京': [39.90,116.40],'上海': [31.23,121.47],'深圳': [22.54,114.06],
     '硅谷': [37.39,-122.08],'旧金山': [37.77,-122.42],'华盛顿': [38.91,-77.04],
@@ -814,24 +804,30 @@ function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
     '莫斯科': [55.75,37.62],'孟买': [19.08,72.88],'新加坡': [1.35,103.82],
     '悉尼': [-33.87,151.21],'迪拜': [25.20,55.27],
   }
-  // 地区名→默认城市回退映射（inferRegion返回国家/地区名，而非城市名）
   const regionToCity: Record<string, string> = {
     '中国': '北京','美国': '硅谷','欧洲': '巴黎','日本': '东京',
     '韩国': '首尔','中国台湾': '新竹','印度': '班加罗尔','中东': '迪拜',
     '俄罗斯': '莫斯科','澳大利亚': '悉尼','东南亚': '新加坡',
   }
-  // 合法 GeoHotNews.category 值：'AI'|'芯片'|'自动驾驶'|'机器人'
+  // P1修复：补充diplomacy/conflict → 映射为'AI'（科技地缘也是科技热点）
   const catMap: Record<string, GeoHotNews['category']> = {
-    tech:'AI',policy:'芯片',economy:'芯片',
-    // diplomacy/conflict 不再映射到'国际'（非法值），改为过滤掉
+    tech: 'AI', policy: '芯片', economy: '芯片',
+    diplomacy: 'AI', conflict: 'AI',  // 科技地缘政治也是热点
   }
-  return filtered.slice(0,8).map((h,i) => {
-    let city='全球',lat=0,lng=0
-    // 1) 先从标题中匹配城市名
-    for(const [k,[cl,cn]] of Object.entries(coordMap)){
-      if(h.title.includes(k)){city=k;lat=cl;lng=cn;break}
+
+  const seenTitles = new Set<string>()
+  const result: GeoHotNews[] = []
+
+  for (const h of hotspots.slice(0, 20)) {  // P1修复：从8→20再过滤，确保产出充足
+    // 标题去重
+    const titleKey = h.title.slice(0, 30).toLowerCase()
+    if (seenTitles.has(titleKey)) continue
+    seenTitles.add(titleKey)
+
+    let city = '全球', lat = 0, lng = 0
+    for (const [k, [cl, cn]] of Object.entries(coordMap)) {
+      if (h.title.includes(k)) { city = k; lat = cl; lng = cn; break }
     }
-    // 2) 若标题未匹配，用地区名回退到默认城市
     if (city === '全球' && regionToCity[h.region]) {
       const fallbackCity = regionToCity[h.region]
       if (coordMap[fallbackCity]) {
@@ -840,16 +836,21 @@ function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
         lng = coordMap[fallbackCity][1]
       }
     }
-    // 非法 category 过滤：diplomacy/conflict 类不再显示于地图
-    const cat = catMap[h.category]
-    if (!cat) return null  // 跳过非法分类条目
-    return{
-      id:`rss-gh-${i}`,title:h.title.slice(0,60),summary:h.summary.slice(0,60),
-      city,lat,lng,category:cat,
-      heat:h.impact==='high'?9:h.impact==='medium'?7:5,
-      time:h.time,source:h.source,
-    }
-  }).filter((item): item is NonNullable<typeof item> => item !== null)
+    // P1修复：category映射兜底 — 无匹配时仍纳入（标记为'AI'）
+    const cat = catMap[h.category] || 'AI'
+
+    result.push({
+      id: `rss-gh-${result.length}`,
+      title: h.title.slice(0, 60),
+      summary: h.summary.slice(0, 60),
+      city, lat, lng, category: cat,
+      heat: h.impact === 'high' ? 9 : h.impact === 'medium' ? 7 : 5,
+      time: h.time, source: h.source,
+    })
+  }
+
+  console.log(`[transformRSSHotspots] 输入${hotspots.length}条 → 去重+映射后${result.length}条`)
+  return result
 }
 
 // ============================================================================
