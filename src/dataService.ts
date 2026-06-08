@@ -531,10 +531,39 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     'hazard', 'recall', 'investigation', 'probe', 'charge',
     'default', 'debt', 'freeze', 'seizure', 'confiscate',
   ]
+  // 欧冶核心行业关键词 — 只有这些行业的风险新闻才显示
+  const coreIndustryKeywords = [
+    // 半导体/芯片
+    'chip', 'semiconductor', '芯片', '半导体', '晶圆', '封装', '代工', '制程',
+    '光刻', '台积电', '英特尔', '英伟达', '高通', 'amd', '华为', '中芯',
+    '海思', '地平线', '寒武纪', '紫光', '长江存储', '联发科', '博通', 'marvell',
+    'nvidia', 'intel', 'tsmc', 'samsung', 'qualcomm', 'hbm', 'dram', 'nand',
+    'soc', 'mcu', 'fpga', 'asic', 'arm', 'risc-v',
+    // AI/大模型
+    'ai', 'artificial intelligence', '人工智能', '大模型', 'llm', 'gpt',
+    'deep learning', 'machine learning', 'neural', 'transformer',
+    '模型', '训练', '推理', '算力', 'gpu', 'tpu', 'npu',
+    'openai', 'gemini', 'llama', 'claude', 'deepseek',
+    // 汽车/自动驾驶
+    'automotive', 'autonomous', 'ev', '汽车', '新能源', '智能驾驶', '自动驾驶',
+    '电动', '智驾', 'adas', 'lidar', '雷达', '域控', '座舱', '车规',
+    // 机器人
+    'robot', 'robotics', '机器人', '具身', '人形',
+    // 通用科技
+    'technology', '科技',
+  ]
   const riskNews = news.filter(n => {
     if (excludeSources.some(ex => n.source.includes(ex))) return false
     const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
-    return riskKeywords.some(kw => text.includes(kw))
+    // 必须同时满足：1) 包含风险关键词  2) 属于欧冶核心行业
+    const hasRisk = riskKeywords.some(kw => text.includes(kw))
+    const isCore = coreIndustryKeywords.some(kw => text.includes(kw.toLowerCase()))
+    if (!hasRisk) return false
+    if (!isCore) {
+      console.log(`[generateAlertsFromNews] 过滤非核心行业: ${n.title.slice(0, 40)}...`)
+      return false
+    }
+    return true
   })
 
   const alerts: AlertItem[] = []
