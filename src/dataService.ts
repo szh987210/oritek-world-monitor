@@ -552,13 +552,37 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     // 通用科技
     'technology', '科技',
   ]
+  // 黑名单：非欧冶业务领域的关键词，即使命中风险词也排除
+  const excludeKeywords = [
+    'wps', 'office', '办公软件', '办公套件', 'pdf', '文档', '表格',
+    'excel', 'word', 'powerpoint', 'outlook', 'onedrive', 'sharepoint',
+    'adobe', 'photoshop', 'illustrator', 'premiere', '云文档',
+    '笔记', 'notion', '飞书', '钉钉', '企业微信', 'lark', 'slack', 'teams',
+    '游戏', 'game', '网游', '手游', '电竞', 'esport', 'steam',
+    '社交', 'social', '微信', 'wechat', 'tiktok', '抖音', 'instagram',
+    '电商', 'ecommerce', '淘宝', '天猫', '京东', '拼多多', 'amazon retail',
+    '餐饮', '外卖', '旅游', '酒店', '教育', '医疗设备', '房地产',
+    '文娱', '综艺', '电影', '音乐', '体育', '直播',
+  ]
   const riskNews = news.filter(n => {
     if (excludeSources.some(ex => n.source.includes(ex))) return false
     const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
-    // 必须同时满足：1) 包含风险关键词  2) 属于欧冶核心行业
+    // 第一步：排除黑名单领域
+    if (excludeKeywords.some(kw => text.includes(kw))) {
+      console.log(`[generateAlertsFromNews] 过滤黑名单领域: ${n.title.slice(0, 40)}...`)
+      return false
+    }
+    // 第二步：必须包含风险关键词
     const hasRisk = riskKeywords.some(kw => text.includes(kw))
-    const isCore = coreIndustryKeywords.some(kw => text.includes(kw.toLowerCase()))
     if (!hasRisk) return false
+    // 第三步：必须属于欧冶核心行业（AI/芯片/汽车/机器人）
+    const isCore = coreIndustryKeywords.some(kw => {
+      // 短关键词用词边界匹配，防止 "ai" 匹配 "email"/"daily"/"detail" 等
+      if (['ai', 'ev', 'soc', 'mcu', 'gpu', 'tpu', 'npu', 'arm'].includes(kw)) {
+        return new RegExp(`\\b${kw}\\b`, 'i').test(text)
+      }
+      return text.includes(kw.toLowerCase())
+    })
     if (!isCore) {
       console.log(`[generateAlertsFromNews] 过滤非核心行业: ${n.title.slice(0, 40)}...`)
       return false
