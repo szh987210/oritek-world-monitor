@@ -1,7 +1,10 @@
 {
-  "lastUpdate": "2026-06-08T06:28:51.374Z",
-  "totalItems": 300,
+  "lastUpdate": "2026-06-08T06:44:30.157Z",
+  "totalItems": 351,
+  "freshItems": 300,
+  "mergedItems": 51,
   "sourcesAttempted": 30,
-  "sourcesFailed": 0,
-  "failedSources": []
+  "sourcesHealthy": 29,
+  "sourcesDegraded": 0,
+  "sourcesDead": 0
 }

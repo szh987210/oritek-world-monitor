@@ -38,6 +38,7 @@ jobs:
           cp -r public/* dist/ 2>/dev/null || true
           mkdir -p dist/data
           cp data/feeds.json dist/data/feeds.json 2>/dev/null || echo "feeds.json not yet available, will be fetched by fetch-rss workflow"
+          cp data/health.json dist/data/health.json 2>/dev/null || true
           cp data/status.json dist/data/status.json 2>/dev/null || true
 
       - name: Deploy to GitHub Pages

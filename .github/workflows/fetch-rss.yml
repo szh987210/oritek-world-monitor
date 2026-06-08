@@ -46,12 +46,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/feeds.json || true
+          git add data/feeds.json data/health.json data/status.json || true
           if git diff --staged --quiet; then
-            echo "No changes to feeds.json"
+            echo "No changes to data files"
           else
-            echo "Updating feeds.json..."
-            git commit -m "chore: auto-update RSS feeds"
+            # 从health.json提取状态用于commit message
+            STATUS=$(node -e "try{const h=require('./data/health.json');console.log(h.status)}catch(e){}" 2>/dev/null || echo "unknown")
+            echo "Updating data files (status: $STATUS)..."
+            git commit -m "chore: auto-update RSS feeds [$STATUS]"
             git push origin main
           fi
         env:
