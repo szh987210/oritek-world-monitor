@@ -1426,14 +1426,26 @@ async function renderWorldMapV4() {
   if (isMapRendering) return
   isMapRendering = true
 
-  try {
-    const svgEl = document.getElementById('globeMapSvg')
-    if (!svgEl) { isMapRendering = false; return }
+    try {
+      const svgEl = document.getElementById('globeMapSvg')
+      if (!svgEl) { 
+        console.error('[Map Debug] globeMapSvg element not found!')
+        isMapRendering = false; return 
+      }
 
-    mapSvg = d3.select('#globeMapSvg')
-    const rect = svgEl.getBoundingClientRect()
-    mapWidth = Math.max(rect.width, 400)
-    mapHeight = Math.round(mapWidth * 0.525)
+      const rect = svgEl.getBoundingClientRect()
+      console.log(`[Map Debug] svgEl rect: width=${rect.width}, height=${rect.height}`)
+      
+      if (rect.width === 0 || rect.height === 0) {
+        console.warn('[Map Debug] Map container has zero size, retrying in 500ms...')
+        setTimeout(() => renderWorldMapV4(), 500)
+        isMapRendering = false
+        return
+      }
+
+      mapSvg = d3.select('#globeMapSvg')
+      mapWidth = Math.max(rect.width, 400)
+      mapHeight = Math.round(mapWidth * 0.525)
 
     mapSvg.attr('viewBox', `0 0 ${mapWidth} ${mapHeight}`)
 
