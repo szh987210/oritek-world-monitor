@@ -31,6 +31,7 @@ import {
   getAllSourceScores,
   generatePoliciesFromNews,
   forceRefreshAll,
+  invalidateNewsCache,
 } from './dataService'
 
 // ============================================================================
@@ -1854,11 +1855,12 @@ function buildAwarenessTicker(
     .slice(0, 10)
     .map(n => `${n.source}: ${n.title}`)
 
-  // 去重取前8条，不足时用后备补充
-  const flashSource = dynamicFlash.length >= 3 ? dynamicFlash : FALLBACK_FLASH
-  const flashItems = flashSource.slice(0, 8).map((item, i) =>
-    `<span class="tkr-seg tkr-seg-flash">${esc(item)}</span>`
-  ).join('<span class="tkr-sep">⚠</span>')
+  // 修复：只有 RSS 完全无数据时才使用 FALLBACK（避免旧硬编码数据混入）
+  // RSS数据不足3条但存在时，直接显示RSS数据（哪怕只有1条）；RSS为0才兜底
+  const flashSource = dynamicFlash.length > 0 ? dynamicFlash : (allNews.length > 0 ? [] : FALLBACK_FLASH)
+  const flashItems = flashSource.length > 0
+    ? flashSource.slice(0, 8).map(item => `<span class="tkr-seg tkr-seg-flash">${esc(item)}</span>`).join('<span class="tkr-sep">⚠</span>')
+    : `<span class="tkr-seg tkr-seg-flash">正在获取最新快讯...</span>`
 
   layers.push({
     id: 'l2-flash',
@@ -1873,9 +1875,9 @@ function buildAwarenessTicker(
     .slice(0, 10)
     .map(n => `${n.source}: ${n.title}`)
 
-  // 去重取前8条，不足时用后备补充
-  const radarSource = dynamicRadar.length >= 3 ? dynamicRadar : FALLBACK_RADAR
-  const radarItems = radarSource.slice(0, 8).map((item, i) =>
+  // 修复：只有 RSS 完全无数据时才使用 FALLBACK
+  const radarSource = dynamicRadar.length > 0 ? dynamicRadar : (allNews.length > 0 ? sortedByTime.slice(0, 8).map(n => `${n.source}: ${n.title}`) : FALLBACK_RADAR)
+  const radarItems = radarSource.slice(0, 8).map(item =>
     `<span class="tkr-seg tkr-seg-radar">${esc(item)}</span>`
   ).join('<span class="tkr-sep">│</span>')
 
@@ -2047,6 +2049,8 @@ function startAutoRefresh() {
   setInterval(async () => {
     try {
       if (newsScrollTimer) clearInterval(newsScrollTimer)
+      console.log('[AutoRefresh] 定时刷新触发，清除缓存...')
+      invalidateNewsCache()  // 强制清除缓存，确保每次都重新抓取最新RSS
       const [newsResult, indices, stocks, rssHotspots] = await Promise.all([
         fetchAllNews(),
         fetchIndustryIndices(),
@@ -2094,7 +2098,8 @@ function setupManualRefresh() {
     btn.classList.add('refreshing')
 
     try {
-      // 强制清除缓存，重新拉取全部数据
+      // 强制清除本地缓存，确保拉取最新RSS数据
+      invalidateNewsCache()
       const [newsResult, indices, stocks, rssHotspots] = await Promise.all([
         fetchAllNews(),
         fetchIndustryIndices(),

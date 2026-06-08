@@ -67,8 +67,10 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
   const FETCH_TIMEOUT = 8000 // 单层超时8秒，三层最多24秒
 
   // Level 1: 主Key（rss2json API 代理）
+  // 注意：rss2json 免费套餐服务端有 ~60min 缓存，加 _t 时间戳（精确到10分钟）绕过 CDN 缓存
+  const cacheBuster = Math.floor(Date.now() / (10 * 60 * 1000)) // 每10分钟变化一次
   try {
-    const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_API_KEY}&count=20`
+    const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_API_KEY}&count=20&_t=${cacheBuster}`
     const resp = await fetchWithTimeout(url, { mode: 'cors', headers: { 'Accept': 'application/json' } }, FETCH_TIMEOUT)
     if (resp.ok) {
       const data = await resp.json()
@@ -82,7 +84,7 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
   // Level 2: 备用Key（如果配置了）
   if (RSS2JSON_SECONDARY_KEY) {
     try {
-      const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_SECONDARY_KEY}&count=20`
+      const url = `${RSS2JSON_API}?rss_url=${encodeURIComponent(rssUrl)}&api_key=${RSS2JSON_SECONDARY_KEY}&count=20&_t=${cacheBuster}`
       const resp = await fetchWithTimeout(url, { mode: 'cors', headers: { 'Accept': 'application/json' } }, FETCH_TIMEOUT)
       if (resp.ok) {
         const data = await resp.json()
@@ -508,6 +510,13 @@ export async function fetchRealNews(category?: string): Promise<NewsItem[]> {
 
 // 简单缓存
 const newsCache = new Map<string, { data: any, fetchTime: number }>()
+
+/** 强制使 newsCache + lastFetchTime 全部失效，下次 fetchAllNews/fetchRealNews 会重新抓取 */
+export function invalidateNewsCache() {
+  newsCache.clear()
+  lastFetchTime = { news: 0, stock: 0, indices: 0, hotspots: 0 }
+  console.log('[invalidateNewsCache] 缓存已全部清除，下次调用将重新抓取')
+}
 
 // 从新闻生成警报
 function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
