@@ -1643,6 +1643,45 @@ export function generatePolicyApplicationsFromNews(news: NewsItem[]): PolicyAppl
     .slice(0, 5)
 }
 
+// 抓取 AI_INSIGHTS_RSS_SOURCES（NVIDIA Blog, TechCrunch 等英文源）
+async function fetchAIInsightsRSS(): Promise<AIInsight[]> {
+  const results = await Promise.allSettled(
+    AI_INSIGHTS_RSS_SOURCES.map(async (src: any) => {
+      try {
+        const { items } = await fetchRssWithFallback(src.url, src.name)
+        const kw = src.keywords || []
+        return items
+          .filter((item: any) => {
+            if (kw.length === 0) return true
+            const text = ((item.title || '') + ' ' + (item.description || '')).toLowerCase()
+            return kw.some((k: string) => text.includes(k.toLowerCase()))
+          })
+          .slice(0, 6)
+          .map((item: any, idx: number) => {
+            const title = (item.title || '').replace(/<[^>]+>/g, '').slice(0, 80)
+            const summary = (item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 120)
+            return {
+              id: `ai-rss-${src.name}-${idx}-${Date.now()}`,
+              title,
+              category: 'trend' as const,
+              impact: 'medium' as const,
+              time: formatTimeAgo(item.pubDate || item.publishedDate || new Date().toISOString()),
+              source: src.name,
+              summary,
+            } as AIInsight
+          })
+      } catch (e) {
+        console.warn(`[fetchAIInsightsRSS] ${src.name} 抓取失败:`, e)
+        return []
+      }
+    })
+  )
+  const all: AIInsight[] = []
+  results.forEach(r => { if (r.status === 'fulfilled' && r.value) all.push(...r.value) })
+  console.log(`[fetchAIInsightsRSS] 获取 ${all.length} 条洞察（来自 ${AI_INSIGHTS_RSS_SOURCES.length} 个源）`)
+  return all
+}
+
 // fetchAllNews - 覆盖所有版块
 export async function fetchAllNews(): Promise<{
   news: NewsItem[]
@@ -1717,6 +1756,15 @@ export async function fetchAllNews(): Promise<{
     const mergedNews = [...sortedNews]
     const alerts = generateAlertsFromNews(mergedNews)
     const aiInsights = generateAIInsightsFromNews(mergedNews)
+    // 补充 AI_INSIGHTS_RSS_SOURCES（NVIDIA Blog, TechCrunch 等英文源）
+    const rssAiInsights = await fetchAIInsightsRSS()
+    const seenTitles = new Set(aiInsights.map(a => a.title.slice(0, 20)))
+    for (const ai of rssAiInsights) {
+      if (!seenTitles.has(ai.title.slice(0, 20))) {
+        aiInsights.push(ai)
+        seenTitles.add(ai.title.slice(0, 20))
+      }
+    }
     const startupFunding = generateStartupFundingFromNews(mergedNews)
     const financialMarkets = generateFinancialFromNews(mergedNews)
     const result = {
