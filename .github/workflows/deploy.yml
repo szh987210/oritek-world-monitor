@@ -34,7 +34,11 @@ jobs:
         run: npm run build:cachebust
 
       - name: Copy public assets to dist
-        run: cp -r public/* dist/ 2>/dev/null || true
+        run: |
+          cp -r public/* dist/ 2>/dev/null || true
+          mkdir -p dist/data
+          cp data/feeds.json dist/data/feeds.json 2>/dev/null || echo "feeds.json not yet available, will be fetched by fetch-rss workflow"
+          cp data/status.json dist/data/status.json 2>/dev/null || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

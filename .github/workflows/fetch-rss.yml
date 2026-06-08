@@ -1,0 +1,58 @@
+name: Fetch RSS Feeds
+
+on:
+  schedule:
+    # 每15分钟触发一次（GitHub Actions实际触发可能有0-15分钟延迟）
+    - cron: '*/15 * * * *'
+  workflow_dispatch:  # 支持手动触发
+  push:
+    paths:
+      - 'scripts/fetch-rss.cjs'
+      - '.github/workflows/fetch-rss.yml'
+
+# 授予GITHUB_TOKEN写入权限
+permissions:
+  contents: write
+
+jobs:
+  fetch-rss:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0  # 获取完整历史，便于后续push
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          npm install --production  # 仅安装生产依赖
+      
+      - name: Fetch RSS feeds
+        env:
+          TZ: 'Asia/Shanghai'
+        run: |
+          node scripts/fetch-rss.cjs
+      
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/feeds.json || true
+          if git diff --staged --quiet; then
+            echo "No changes to feeds.json"
+          else
+            echo "Updating feeds.json..."
+            git commit -m "chore: auto-update RSS feeds"
+            git push origin main
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

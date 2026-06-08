@@ -1173,7 +1173,15 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
     console.log('[fetchGlobalHotspots] 使用缓存热点数据')
     return cachedHotspots
   }
-  console.log('[fetchGlobalHotspots] 联网抓取中...')
+  // 方案D：优先使用本地预抓取的 feeds.json
+  const localHotspots = await fetchLocalFeedsAsHotspots()
+  if (localHotspots.length > 5) {
+    console.log(`[fetchGlobalHotspots] ✅ 使用本地 feeds.json (${localHotspots.length} 条)`)
+    cachedHotspots = localHotspots
+    lastFetchTime.hotspots = now
+    return localHotspots
+  }
+  console.log('[fetchGlobalHotspots] 本地 feeds.json 不可用，回退到 RSS API')
   try {
     const allItems: GlobalHotspot[] = []
     const results = await Promise.allSettled(
@@ -1856,6 +1864,38 @@ export async function fetchAllNews(): Promise<{
     console.log('[fetchAllNews] 使用缓存数据')
     return cached.data
   }
+  // 方案D：优先使用本地预抓取的 feeds.json（零API配额消耗）
+  const localFeeds = await fetchLocalFeedsAsNews()
+  if (localFeeds.length > 50) {
+    console.log(`[fetchAllNews] ✅ 使用本地 feeds.json (${localFeeds.length} 条)`)
+    const seenL = new Set<string>()
+    const dedupedLocal = localFeeds.filter(item => {
+      const key = item.title.slice(0, 30).toLowerCase()
+      if (seenL.has(key)) return false
+      seenL.add(key)
+      return true
+    })
+    const sortedLocal = dedupedLocal.sort((a, b) => {
+      const ta = a.publishedAt ? new Date(a.publishedAt).getTime() : 0
+      const tb = b.publishedAt ? new Date(b.publishedAt).getTime() : 0
+      return tb - ta
+    }).slice(0, 50)
+    const alerts = generateAlertsFromNews(sortedLocal)
+    const aiInsights = generateAIInsightsFromNews(sortedLocal)
+    const startupFunding = generateStartupFundingFromNews(sortedLocal)
+    const financialMarkets = generateFinancialFromNews(sortedLocal)
+    const result = {
+      news: sortedLocal,
+      alerts,
+      aiInsights,
+      startupFunding,
+      financialMarkets
+    }
+    newsCache.set(cacheKey, { data: result, fetchTime: now })
+    console.log(`[fetchAllNews] feeds.json 完成: ${sortedLocal.length}条新闻, ${alerts.length}条预警`)
+    return result
+  }
+  console.log('[fetchAllNews] 本地 feeds.json 不可用，回退到 RSS API')
   try {
     const allItems: NewsItem[] = []
     const results = await Promise.allSettled(
@@ -2116,4 +2156,103 @@ export function generateAITechFromNews(news: NewsItem[]): TechTrendItem[] {
       status: count >= max * 0.7 ? 'hot' : count >= max * 0.4 ? 'warm' : 'cool'
     }
   })
+}
+
+// ==================== 本地 feeds.json 读取（方案D：自建RSS聚合服务）====================
+
+interface LocalFeedItem {
+  title: string
+  link: string
+  description: string
+  pubDate: string
+  source: string
+}
+
+async function fetchLocalFeedsAsNews(): Promise<NewsItem[]> {
+  try {
+    const resp = await fetch('./data/feeds.json?_t=' + Date.now())
+    if (!resp.ok) {
+      console.warn('[fetchLocalFeeds] feeds.json not available (HTTP ' + resp.status + '), falling back to RSS API')
+      return []
+    }
+    const items: LocalFeedItem[] = await resp.json()
+    console.log('[fetchLocalFeeds] Loaded ' + items.length + ' pre-fetched items from feeds.json')
+    return items.map((item, idx) => {
+      const rawTitle = (item.title || 'No title').replace(/<[^>]+>/g, '')
+      const rawSummary = (item.description || '').replace(/<[^>]+>/g, '').slice(0, 100)
+      const published = item.pubDate || new Date().toISOString()
+      const titleLower = (rawTitle + ' ' + rawSummary).toLowerCase()
+      let industry: NewsItem['industry'] = 'all'
+      if (/半导体|芯片|晶圆|制程|光刻|封装|soc|mcu|fpga|台积电|英伟达|高通|intel|nvidia|tsmc/i.test(titleLower)) {
+        industry = 'semiconductor'
+      } else if (/ai|人工智能|大模型|llm|gpt|机器人|具身|自动驾驶|智能驾驶|算力/i.test(titleLower)) {
+        industry = 'ai'
+      } else if (/机器人|robotics|具身|人形/i.test(titleLower)) {
+        industry = 'robotics'
+      } else if (/汽车|新能源|ev|智驾|adas|lidar|车规/i.test(titleLower)) {
+        industry = 'automotive'
+      }
+      let priority: NewsItem['priority'] = 'info'
+      if (/断供|制裁|禁运|停产|召回|裁员|破产|事故|火灾|爆炸/i.test(titleLower)) {
+        priority = 'critical'
+      } else if (/短缺|涨价|调查|诉讼|罚款|警告|风险/i.test(titleLower)) {
+        priority = 'warning'
+      }
+      return {
+        id: 'local-feed-' + idx + '-' + Date.now(),
+        title: escapeHtml(rawTitle.slice(0, 80)),
+        source: item.source || 'Unknown',
+        time: formatTimeAgo(published),
+        category: 'tech' as const,
+        industry,
+        priority,
+        summary: escapeHtml(rawSummary),
+        url: item.link || '',
+        publishedAt: published,
+        verified: true,
+      } as NewsItem
+    })
+  } catch (err) {
+    console.warn('[fetchLocalFeeds] Failed to load local feeds, falling back to RSS API:', err)
+    return []
+  }
+}
+
+async function fetchLocalFeedsAsHotspots(): Promise<GlobalHotspot[]> {
+  try {
+    const resp = await fetch('./data/feeds.json?_t=' + Date.now())
+    if (!resp.ok) return []
+    const items: LocalFeedItem[] = await resp.json()
+    const techItems = items.filter(function(item) {
+      const text = (item.title + ' ' + item.description).toLowerCase()
+      return /芯片|半导体|ai|人工智能|机器人|自动驾驶|科技|sanction|export.control|semiconductor/i.test(text)
+    })
+    return techItems.slice(0, 20).map(function(item, i) {
+      const titleLower = item.title.toLowerCase()
+      let region = '国际'
+      if (/中国|北京|上海|深圳|华为|中芯/.test(titleLower)) region = '中国'
+      else if (/美国|硅谷|华盛顿|纽约|nvidia|intel|qualcomm|tesla/.test(titleLower)) region = '美国'
+      else if (/欧洲|德国|法国|英国|柏林|巴黎/.test(titleLower)) region = '欧洲'
+      else if (/日本|东京|索尼|软银/.test(titleLower)) region = '日本'
+      else if (/韩国|首尔|三星|sk海力士/.test(titleLower)) region = '韩国'
+      let category: GlobalHotspot['category'] = 'tech'
+      if (/制裁|断供|出口管制/.test(titleLower)) category = 'policy'
+      else if (/收购|融资|投资|ipo/.test(titleLower)) category = 'economy'
+      let impact: GlobalHotspot['impact'] = 'low'
+      if (/制裁|断供|禁令|停产/.test(titleLower)) impact = 'high'
+      else if (/融资|收购|量产|发布/.test(titleLower)) impact = 'medium'
+      return {
+        id: 'local-hotspot-' + i,
+        title: item.title.slice(0, 60),
+        summary: (item.description || '').replace(/<[^>]+>/g, '').slice(0, 80),
+        region: region,
+        category: category,
+        impact: impact,
+        time: formatTimeAgo(item.pubDate || new Date().toISOString()),
+        source: item.source || 'RSS',
+      } as GlobalHotspot
+    })
+  } catch (e) {
+    return []
+  }
 }
