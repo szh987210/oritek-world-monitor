@@ -69,6 +69,8 @@ function filterDigestItems(items: any[]): any[] {
     '汇总', '简报', '周报', '一周', '本周', '周末', '日报', '晚报', '早报',
     '每日速递', '今日要闻', '昨日要闻', '上周回顾', '每月', '月报',
     '精选', '合集', '盘点', '年终', '年度',
+    // 36氪等特定媒体聚合品牌
+    '1氪',   // 36氪每日聚合栏目：8点1氪、9点1氪等
     // 英文聚合标记
     'weekly', 'digest', 'roundup', 'newsletter', 'recap',
     'top stories', 'this week', 'weekend', 'daily briefing',
