@@ -559,17 +559,21 @@ export function invalidateNewsCache() {
 // 确保至少5条预警，最多8条，不再因过滤过严导致内容池枯竭
 function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
   const excludeSources = ['工信部', '发改委', '科创', '科技部', '经信委', '政府网', 'gov.cn']
-  const riskKeywords = [
-    // 中文风险关键词
-    '断供', '制裁', '出口管制', '禁运', '禁令', '限制', '管控',
-    '暴跌', '大涨', '短缺', '涨价', '停产', '召回',
-    '亏损', '裁员', '破产', '退市', '调查', '起诉',
-    '审查', '许可', '收紧', '加税', '关税', '罢工',
-    '事故', '火灾', '洪水', '停电', '断电',
-    '专利', '侵权', '诉讼', '罚款', '处罚',
-    '风险', '警告', '危机', '崩溃', '违约', '债务',
-    '冻结', '查封', '扣押', '没收',
-    // 英文风险关键词（匹配英文RSS新闻）
+  // 强风险词 — 独立命中即可判定为风险信号
+  const strongRiskKeywords = [
+    '断供', '制裁', '出口管制', '禁运', '禁令', '实体清单',
+    '暴跌', '短缺', '停产', '召回', '裁员', '破产', '退市',
+    '加税', '关税', '罢工', '事故', '火灾', '洪水', '停电', '断电',
+    '专利', '侵权', '诉讼', '罚款', '处罚', '违约', '债务',
+    '冻结', '查封', '扣押', '没收', '崩溃',
+  ]
+  // 弱风险词 — 需搭配行业关键词才计为风险信号（避免"限制""调查"误伤国内商业新闻）
+  const weakRiskKeywords = [
+    '限制', '管控', '调查', '起诉', '审查', '许可', '收紧',
+    '警告', '危机', '风险', '涨价', '大涨', '收紧',
+  ]
+  // 英文风险关键词（匹配英文RSS新闻）
+  const enRiskKeywords = [
     'sanction', 'ban', 'embargo', 'restrict', 'regulation', 'control',
     'crash', 'plunge', 'surge', 'spike', 'shortage', 'crisis',
     'shut down', 'bankrupt', 'layoff', 'layoffs', 'strike', 'recall',
@@ -594,7 +598,7 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     'robot', 'robotics', '机器人', '具身', '人形',
     'technology', '科技',
   ]
-  // 黑名单：非欧冶业务领域
+  // 黑名单：非欧冶业务领域 + 国内纯人事/商业变动（非风险）
   const excludeKeywords = [
     'wps', 'office', '办公软件', '办公套件', 'pdf', '文档', '表格',
     'excel', 'word', 'powerpoint', 'outlook', 'onedrive', 'sharepoint',
@@ -605,40 +609,70 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     '电商', 'ecommerce', '淘宝', '天猫', '京东', '拼多多', 'amazon retail',
     '餐饮', '外卖', '旅游', '酒店', '教育', '医疗设备', '房地产',
     '文娱', '综艺', '电影', '音乐', '体育', '直播',
+    // 国内纯人事/商业变动 — 非风险信号
+    '闲鱼', '咸鱼', '变更负责人', '组织架构调整', '部门重组',
+    '任命', '出任', '履新', '接任', '换帅', '上任', '调任', '升任', '升职',
+    '高管变动', '人事调整', '管理层变动',
   ]
 
   // P1修复：评分制 — 不再硬过滤，而是给每条新闻打分
+  // 要求：必须命中≥1个强风险词，或 弱风险词+行业词，或 英文风险词
   interface ScoredNews { news: NewsItem; score: number; priority: NewsItem['priority'] }
   const scored: ScoredNews[] = []
 
   for (const n of news) {
-    // 第一层：排除黑名单（政府来源 + 非业务领域）
+    // 第一层：排除黑名单（政府来源 + 非业务领域 + 纯人事变动）
     if (excludeSources.some(ex => n.source.includes(ex))) continue
     const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
     if (excludeKeywords.some(kw => text.includes(kw))) continue
 
     // 第二层：评分
-    let score = 0
-    // 风险关键词匹配：每个+3分
-    for (const kw of riskKeywords) {
-      if (text.includes(kw)) { score += 3; break } // 命中一个即可，避免重复加分
+    let riskScore = 0
+    let industryScore = 0
+
+    // 强风险词：独立命中即可 → +3
+    for (const kw of strongRiskKeywords) {
+      if (text.includes(kw)) { riskScore = 3; break }
     }
-    // 行业关键词匹配：每个+2分
-    for (const kw of coreIndustryKeywords) {
-      if (['ai', 'ev', 'soc', 'mcu', 'gpu', 'tpu', 'npu', 'arm'].includes(kw)) {
-        if (new RegExp(`\\b${kw}\\b`, 'i').test(text)) { score += 2; break }
-      } else if (text.includes(kw.toLowerCase())) {
-        score += 2; break
+    // 弱风险词：需配合行业词
+    let weakRiskHit = false
+    if (riskScore === 0) {
+      for (const kw of weakRiskKeywords) {
+        if (text.includes(kw)) { weakRiskHit = true; break }
       }
     }
-    // 额外加分：在核心行业且命中风险 = 最高优先级
-    if (n.industry === 'semiconductor' || n.industry === 'ai' || n.industry === 'robotics') {
-      if (n.priority === 'critical') score += 3
-      else if (n.priority === 'warning') score += 1
+    // 英文风险词
+    if (riskScore === 0) {
+      for (const kw of enRiskKeywords) {
+        if (text.includes(kw)) { riskScore = 3; break }
+      }
     }
 
-    if (score > 0) {
-      scored.push({ news: n, score, priority: n.priority })
+    // 行业关键词匹配
+    for (const kw of coreIndustryKeywords) {
+      if (['ai', 'ev', 'soc', 'mcu', 'gpu', 'tpu', 'npu', 'arm'].includes(kw)) {
+        if (new RegExp(`\\b${kw}\\b`, 'i').test(text)) { industryScore = 2; break }
+      } else if (text.includes(kw.toLowerCase())) {
+        industryScore = 2; break
+      }
+    }
+
+    // 额外加分：在核心行业且有行业标记
+    if (n.industry === 'semiconductor' || n.industry === 'ai' || n.industry === 'robotics') {
+      if (n.priority === 'critical') industryScore += 3
+      else if (n.priority === 'warning') industryScore += 1
+    }
+
+    // 弱风险词 + 行业词 = 计为有效风险
+    if (weakRiskHit && industryScore > 0) {
+      riskScore = 2  // 弱风险+行业=2分，略低于强风险3分
+    }
+
+    const totalScore = riskScore + industryScore
+
+    // 必须命中风险信号（riskScore > 0）才进入预警池
+    if (riskScore > 0 && totalScore > 0) {
+      scored.push({ news: n, score: totalScore, priority: n.priority })
     }
   }
 
