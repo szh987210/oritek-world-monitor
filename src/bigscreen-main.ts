@@ -956,15 +956,8 @@ function render(
     time: a.time || '',
     source: 'RSS实时',
   }))
-  let mergedAlerts: RiskAlert[]
-  if (rssAlertItems.length >= 4) {
-    mergedAlerts = rssAlertItems
-  } else {
-    // RSS不足4条时，用BASE补充
-    const rssTitles = new Set(rssAlertItems.map(r => r.title.slice(0, 20)))
-    const fillers = BASE_RISK_ALERTS.filter(b => !rssTitles.has(b.title.slice(0, 20)))
-    mergedAlerts = [...rssAlertItems, ...fillers.slice(0, 8 - rssAlertItems.length)]
-  }
+  // 风险预警：只使用RSS实时数据，不再回退到BASE硬编码旧数据
+  const mergedAlerts: RiskAlert[] = rssAlertItems
 
   // 产业洞察：RSS优先（融资+AI动态），BASE仅做兜底
   // P0-②修复：过滤损坏的融资数据，使用原始标题而非拼接
@@ -1036,14 +1029,8 @@ function render(
 
   // 全球态势感知：RSS优先，BASE仅做兜底
   const rssGeoHotNews = transformRSSHotspots(rssHotspots)
-  let mergedHotNews: GeoHotNews[]
-  if (rssGeoHotNews.length >= 5) {
-    mergedHotNews = rssGeoHotNews.slice(0, 12)
-  } else {
-    const seenTitles = new Set(rssGeoHotNews.map(h => h.title.slice(0, 20)))
-    const fillers = BASE_GLOBAL_HOT_NEWS.filter(h => !seenTitles.has(h.title.slice(0, 20)))
-    mergedHotNews = [...rssGeoHotNews, ...fillers.slice(0, 12 - rssGeoHotNews.length)]
-  }
+  // 热点：只使用RSS实时数据，不再回退到BASE硬编码旧数据
+  let mergedHotNews: GeoHotNews[] = rssGeoHotNews.slice(0, 12)
   currentHotNews = mergedHotNews  // V8: 同步给地图渲染使用
 
   // 构建整页DOM
