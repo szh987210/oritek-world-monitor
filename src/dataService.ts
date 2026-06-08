@@ -514,12 +514,20 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
   const alerts: AlertItem[] = []
   const excludeSources = ['工信部', '发改委', '科创', '科技部', '经信委', '政府网', 'gov.cn']
   const riskKeywords = [
+    // 中文风险关键词
     '断供', '制裁', '出口管制', '禁运', '禁令', '限制', '管控',
     '暴跌', '大涨', '短缺', '涨价', '停产', '召回',
     '亏损', '裁员', '破产', '退市', '调查', '起诉',
     '审查', '许可', '收紧', '加税', '关税', '罢工',
     '事故', '火灾', '洪水', '停电', '断电',
-    '专利', '侵权', '诉讼', '罚款', '处罚'
+    '专利', '侵权', '诉讼', '罚款', '处罚',
+    // 英文风险关键词（匹配英文RSS新闻）
+    'sanction', 'ban', 'embargo', 'restrict', 'regulation', 'control',
+    'crash', 'plunge', 'surge', 'spike', 'shortage', 'crisis',
+    'shut down', 'bankrupt', 'layoff', 'layoffs', 'strike', 'recall',
+    'lawsuit', 'sue', 'patent', 'infringement', 'fine', 'penalty',
+    'accident', 'fire', 'flood', 'outage', 'blackout', 'warning',
+    'hazard', 'recall', 'investigation', 'probe', 'charge',
   ]
   const riskNews = news.filter(n => {
     if (excludeSources.some(ex => n.source.includes(ex))) return false

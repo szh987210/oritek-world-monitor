@@ -958,6 +958,7 @@ function render(
   }))
   // 风险预警：RSS优先，BASE仅做兜底（RSS完全为空时才回退）
   const mergedAlerts: RiskAlert[] = rssAlertItems.length > 0 ? rssAlertItems : BASE_RISK_ALERTS.slice(0, 8)
+  console.log(`[render] alerts=${alerts.length}, rssAlertItems=${rssAlertItems.length}, mergedAlerts=${mergedAlerts.length}`, mergedAlerts.map(a => a.title.slice(0,20)))
 
   // 产业洞察：RSS优先（融资+AI动态），BASE仅做兜底
   // P0-②修复：过滤损坏的融资数据，使用原始标题而非拼接
