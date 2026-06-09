@@ -24,7 +24,8 @@ const SOURCE_CATEGORY = {
   'qbitai.com': 'ai-tech',
   'leiphone.com': 'ai-tech',
   'tmtpost.com': 'ai-tech',
-  'geekpark.net': 'ai-tech',
+  // geekpark.net/rss 已失效，改用 RSSHub 极客公园 Breaking News 路由
+  'rsshub.app': 'ai-tech',
   'ifanr.com': 'ai-tech',
   'techcrunch.com': 'ai-tech',
   'theverge.com': 'ai-tech',
@@ -66,7 +67,8 @@ const FEED_URLS = [
   'https://www.qbitai.com/rss',
   'https://www.leiphone.com/feed',
   'https://www.tmtpost.com/rss.xml',
-  'https://www.geekpark.net/rss',
+  // geekpark.net/rss 已失效，改用 RSSHub 极客公园 Breaking News 路由
+  'https://rsshub.app/geekpark/breakingnews',
   'https://www.ifanr.com/feed',
   'https://techcrunch.com/feed/',
   'https://www.theverge.com/rss/index.xml',
@@ -169,40 +171,50 @@ function loadPreviousFeeds() {
   return Array.isArray(prev) ? prev : [];
 }
 
-// ─── 抓取单个源（返回 { items, latencyMs, error }）───
+// ─── 抓取单个源（返回 { items, latencyMs, error }）─── // #18: 添加15s整体超时，防止 rss-parser 卡死慢源
 async function fetchFeed(url) {
-  const startTime = Date.now();
-  try {
-    const feed = await parser.parseURL(url);
-    const latency = Date.now() - startTime;
-    const items = feed.items.map(item => ({
-      title: item.title || '',
-      link: item.link || item.guid || '',
-      description: (item.description || item.summary || item.contentSnippet || '').replace(/<[^>]+>/g, '').slice(0, 300),
-      pubDate: item.pubDate || item.isoDate || item.published || new Date().toISOString(),
-      source: feed.title || new URL(url).hostname.replace('www.', ''),
-    }));
-    return { items, latencyMs: latency, error: null };
-  } catch (err) {
-    // 降级：直接 fetch XML 再 parse
+  const FEED_TIMEOUT = 15000;
+
+  const fetchWithDeadline = async () => {
+    const startTime = Date.now();
     try {
-      const t0 = Date.now();
-      const xmlText = await fetchWithTimeout(url).then(r => r.text());
-      const feed = await parser.parseString(xmlText);
-      const latency = Date.now() - t0;
+      const feed = await parser.parseURL(url);
+      const latency = Date.now() - startTime;
       const items = feed.items.map(item => ({
         title: item.title || '',
         link: item.link || item.guid || '',
-        description: (item.description || item.summary || '').replace(/<[^>]+>/g, '').slice(0, 300),
-        pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
+        description: (item.description || item.summary || item.contentSnippet || '').replace(/<[^>]+>/g, '').slice(0, 300),
+        pubDate: item.pubDate || item.isoDate || item.published || new Date().toISOString(),
         source: feed.title || new URL(url).hostname.replace('www.', ''),
       }));
       return { items, latencyMs: latency, error: null };
-    } catch (err2) {
-      const latency = Date.now() - startTime;
-      return { items: [], latencyMs: latency, error: err2.message };
+    } catch (err) {
+      // 降级：直接 fetch XML 再 parse
+      try {
+        const t0 = Date.now();
+        const xmlText = await fetchWithTimeout(url, 8000).then(r => r.text());
+        const feed = await parser.parseString(xmlText);
+        const latency = Date.now() - t0;
+        const items = feed.items.map(item => ({
+          title: item.title || '',
+          link: item.link || item.guid || '',
+          description: (item.description || item.summary || '').replace(/<[^>]+>/g, '').slice(0, 300),
+          pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
+          source: feed.title || new URL(url).hostname.replace('www.', ''),
+        }));
+        return { items, latencyMs: latency, error: null };
+      } catch (err2) {
+        const latency = Date.now() - startTime;
+        return { items: [], latencyMs: latency, error: err2.message || String(err2) };
+      }
     }
-  }
+  };
+
+  const timeoutPromise = new Promise(resolve =>
+    setTimeout(() => resolve({ items: [], latencyMs: FEED_TIMEOUT, error: `timeout after ${FEED_TIMEOUT}ms` }), FEED_TIMEOUT)
+  );
+
+  return Promise.race([fetchWithDeadline(), timeoutPromise]);
 }
 
 // ─── 主函数 ───

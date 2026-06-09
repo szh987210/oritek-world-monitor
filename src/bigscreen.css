@@ -597,7 +597,7 @@ html, body {
 .tib-neutral  { background: rgba(255, 255, 255, 0.06); color: var(--text-muted); }
 
 .tile-title {
-  font-size: 12px; font-weight: 600; color: var(--text-primary);
+  font-size: var(--fs-2xs, 12px); font-weight: 600; color: var(--text-primary);
   line-height: 1.4; margin-bottom: 3px;
 }
 .tile-summary {
@@ -840,6 +840,19 @@ html, body {
 ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.06); border-radius: 2px; }
 
 /* ====== Responsive ====== */
+/* #12: 4K 大屏 (2560px+) — 充分利用屏幕空间 */
+@media (min-width: 2560px) {
+  :root {
+    --fs-2xs: 13px; --fs-xs: 15px; --fs-sm: 17px;
+    --gap-xs: 14px; --gap-sm: 20px; --gap-md: 28px;
+  }
+  .main-grid-v4 { grid-template-columns: 1fr 1.8fr 1fr; }
+  .panel-header-v4 { padding: 16px var(--gap-sm); }
+  .risk-item, .oritek-item, .insight-item, .policy-item-v4 {
+    padding: 12px var(--gap-sm);
+  }
+  .globe-map-v4 { min-height: 420px; }
+}
 /* 1600px: 缩小中列权重 */
 @media (max-width: 1600px) {
   .main-grid-v4 { grid-template-columns: 1fr 1.15fr 1fr; }
@@ -869,4 +882,24 @@ html, body {
   .col-left-v4, .col-right-v4 { gap: var(--gap-xs); }
   .panel-header-v4 { padding: var(--gap-xs); }
   .brand-text { font-size: var(--fs-xs); letter-spacing: 1px; }
+}
+/* #12: 小平板/大手机 (768px) — 极限紧凑 */
+@media (max-width: 768px) {
+  :root {
+    --fs-2xs: 10px; --fs-xs: 11px; --fs-sm: 12px;
+    --gap-xs: 6px; --gap-sm: 8px;
+  }
+  .main-grid-v4 {
+    grid-template-columns: 1fr;
+    gap: var(--gap-xs);
+    padding: var(--gap-xs);
+  }
+  .col-center-v4 { display: none; }
+  .topbar-v4 { flex-direction: column; gap: 4px; }
+  .brand-text { font-size: var(--fs-xs); }
+  .panel-v4-header { padding: var(--gap-xs); }
+  .risk-item, .oritek-item, .insight-item {
+    padding: var(--gap-xs);
+    font-size: var(--fs-2xs);
+  }
 }

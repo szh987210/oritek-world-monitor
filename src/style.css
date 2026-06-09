@@ -2756,6 +2756,20 @@ path.country:hover {
 }
 
 /* ==================== 响应式设计 - 大屏 (1600px+) ==================== */
+/* #12: 4K 大屏优化 */
+@media (min-width: 2560px) {
+  .dashboard-grid-compact {
+    grid-template-columns: 2fr 1fr;
+    max-width: 2400px;
+  }
+  .main-container {
+    grid-template-columns: 1fr 420px;
+  }
+  .hotspot-list {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
 @media (min-width: 1600px) {
   .dashboard-grid-compact {
     grid-template-columns: 2fr 1fr;

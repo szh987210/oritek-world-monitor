@@ -12,7 +12,6 @@
 import './bigscreen.css'
 import oritekLogoUrl from '/oritek-logo.png'
 import * as d3 from 'd3'
-import * as d3Geo from 'd3-geo'
 import * as topojson from 'topojson-client'
 import {
   type NewsItem,
@@ -866,8 +865,8 @@ let tickerPauseTimer: number | undefined
 let lastContentHash = ''  // P1修复：内容变化检测，只有数据真正变化时才重绘
 let currentNewsIndex = 0
 let mapSvg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any> | null = null
-let mapProjection: d3Geo.GeoProjection | null = null
-let mapPathGen: d3Geo.GeoPath | null = null
+let mapProjection: d3.GeoProjection | null = null
+let mapPathGen: d3.GeoPath | null = null
 let mapWidth = 800
 let mapHeight = 400
 let currentHotNews: GeoHotNews[] = BASE_GLOBAL_HOT_NEWS // V8: RSS可更新
@@ -929,7 +928,86 @@ function renderSkeleton() {
 }
 
 // ============================================================================
-// MAIN RENDER
+// #5 增量刷新：仅更新数据面板，不重建整个DOM（保留地图SVG、滚动状态、事件绑定）
+// ============================================================================
+function refreshDataPanels(
+  newsResult: { news: NewsItem[]; alerts: AlertItem[]; aiInsights: AIInsight[]; startupFunding: StartupFundingItem[] },
+  rssHotspots: GlobalHotspot[] = [],
+  oritekNews: OritekMediaItem[] = [],
+) {
+  const { alerts, aiInsights } = newsResult
+
+  // 转换数据（与render中逻辑一致）
+  const rssAlertItems: RiskAlert[] = alerts.slice(0, 8).map((a, idx) => ({
+    id: `rss-${a.id || idx}`,
+    title: a.title,
+    summary: a.description,
+    severity: (a.level === 'critical' ? 'critical' : a.level === 'warning' ? 'high' : 'medium') as 'critical' | 'high' | 'medium',
+    category: 'risk',
+    city: '',
+    lat: 0, lng: 0,
+    time: a.time,
+    source: '',
+  }))
+  const mergedAlerts: RiskAlert[] = rssAlertItems.length > 0 ? rssAlertItems : BASE_RISK_ALERTS.slice(0, 8)
+
+  const rssInsights: IndustryInsightItem[] = aiInsights.slice(0, 8).map((ins, i) => ({
+    id: `rss-ins-${Date.now()}-${i}`,
+    title: ins.title,
+    summary: ins.summary,
+    category: ins.category,
+    source: ins.source,
+    time: ins.time,
+  }))
+  const mergedInsights = rssInsights.length > 0 ? rssInsights : BASE_INDUSTRY_INSIGHTS.slice(0, 8)
+
+  const rssGeoHotNews = transformRSSHotspots(rssHotspots)
+  const mergedHotNews = rssGeoHotNews.length > 0 ? rssGeoHotNews.slice(0, 12) : currentHotNews || BASE_GLOBAL_HOT_NEWS.slice(0, 12)
+  currentHotNews = mergedHotNews
+
+  // 增量更新 — 安全更新存在的容器
+  const riskBody = document.getElementById('risk-body')
+  if (riskBody) riskBody.innerHTML = renderRiskAlertItems(mergedAlerts)
+
+  const oritekBody = document.getElementById('oritek-body')
+  if (oritekBody) oritekBody.innerHTML = renderOritekNewsItems(oritekNews)
+
+  const globeTrack = document.getElementById('globe-news-track')
+  if (globeTrack) globeTrack.innerHTML = renderGeoHotNewsItems(mergedHotNews)
+
+  const insightBody = document.getElementById('insight-body')
+  if (insightBody) insightBody.innerHTML = renderInsightItems(mergedInsights)
+
+  // 更新顶部badge数字
+  const badgeRisk = document.querySelector('#panel-risk .badge-critical') as HTMLElement
+  if (badgeRisk) badgeRisk.textContent = `${mergedAlerts.filter(a => a.severity === 'critical').length} 紧急`
+
+  const badgeHot = document.querySelector('.badge:last-child') as HTMLElement
+  if (badgeHot) badgeHot.textContent = `${mergedHotNews.length} 情报`
+
+  // 同步标签更新
+  const syncLabel = document.getElementById('divider-sync-label')
+  if (syncLabel) {
+    const localFeedsTime = (window as any).__localFeedsUpdatedAt as string
+    if (localFeedsTime) {
+      const elapsed = Math.floor((Date.now() - new Date(localFeedsTime).getTime()) / 60000)
+      syncLabel.textContent = `本地聚合 ${elapsed <= 0 ? '刚刚' : `${elapsed}分钟前`}`
+    } else {
+      syncLabel.textContent = '实时同步'
+    }
+  }
+
+  // 更新 hot news 用于地图
+  currentHotNews = mergedHotNews
+
+  // 重新启动滚动
+  setTimeout(() => initNewsScrollWithMapSync(), 100)
+
+  console.log('[refreshDataPanels] 增量刷新完成')
+}
+
+// ============================================================================
+// MAIN RENDER (首次完整渲染，保留为兜底)
 // ============================================================================
 function render(
   newsResult: { news: NewsItem[]; alerts: AlertItem[]; aiInsights: AIInsight[]; startupFunding: StartupFundingItem[] },
@@ -1472,12 +1550,12 @@ async function renderWorldMapV4() {
     mapSvg.attr('viewBox', `0 0 ${mapWidth} ${mapHeight}`)
 
     const scale = (mapWidth / (2 * Math.PI)) * 0.95
-    mapProjection = d3Geo.geoEquirectangular()
+    mapProjection = d3.geoEquirectangular()
       .scale(scale)
       .translate([mapWidth / 2, mapHeight / 2])
       .precision(0.1)
 
-    mapPathGen = d3Geo.geoPath().projection(mapProjection)
+    mapPathGen = d3.geoPath().projection(mapProjection)
 
     mapSvg.selectAll('*').remove()
 
@@ -1550,7 +1628,7 @@ async function renderWorldMapV4() {
 
     // Graticule
     mapGroup.append('path')
-      .datum(d3Geo.geoGraticule()())
+      .datum(d3.geoGraticule()())
       .attr('d', mapPathGen!)
       .attr('fill', 'none')
       .attr('stroke', 'rgba(6, 182, 212, 0.05)')
@@ -2069,59 +2147,63 @@ function updateRefreshTime() {
 }
 
 function startAutoRefresh() {
-  // P1修复：从5分钟改为15分钟（匹配RSS实际更新频率），增加内容变化检测
-  // 避免大部分刷新看到完全相同数据时做无效重绘
-  setInterval(async () => {
-    try {
-      if (newsScrollTimer) clearInterval(newsScrollTimer)
-      console.log('[AutoRefresh] 定时刷新触发，清除缓存...')
-      invalidateNewsCache()  // 强制清除缓存，确保每次都重新抓取最新RSS
-      const [newsResult, indices, stocks, rssHotspots] = await Promise.all([
-        fetchAllNews(),
-        fetchIndustryIndices(),
-        fetchStockData(['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH']),
-        fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
-      ])
-      fetchLiveStockQuotes().catch(() => {})
+  // #6修复：setTimeout链式调用替代setInterval，防止异步刷新重叠执行
+  // 上一次刷新未完成时不会触发下一次，避免竞态条件
+  let refreshTimer: number | undefined
 
-      // P1修复：内容变化检测 — 只有数据真正变化时才重绘
-      const contentFingerprint = JSON.stringify({
-        alerts: newsResult.news.slice(0, 20).map(n => n.title),
-        ins: indices.slice(0, 4).map(i => i.value),
-        st: stocks.slice(0, 5).map(s => s.price),
-        hs: rssHotspots.slice(0, 10).map(h => h.title),
-      })
-      if (contentFingerprint === lastContentHash) {
-        console.log('[AutoRefresh] 内容无变化，跳过重绘')
-        // 更新时间标记即可
-        setTimeout(() => updateRefreshTime(), 100)
-        return
-      }
-      lastContentHash = contentFingerprint
-      console.log('[AutoRefresh] 检测到内容变化，执行重绘')
-
-      let oritekNews: OritekMediaItem[] = []
+  function scheduleNext() {
+    refreshTimer = window.setTimeout(async () => {
       try {
-        const cn = await fetchCompanyNews()
-        if (cn.length > 0) {
-          oritekNews = cn.map((c: CompanyNews, i: number) => ({
-            id: `rss-on-${Date.now()}-${i}`,
-            title: c.title,
-            summary: c.title,
-            source: c.source,
-            date: c.time,
-            url: c.url || '',
-          }))
+        if (newsScrollTimer) clearInterval(newsScrollTimer)
+        console.log('[AutoRefresh] 定时刷新触发，清除缓存...')
+        invalidateNewsCache()
+        const [newsResult, indices, stocks, rssHotspots] = await Promise.all([
+          fetchAllNews(),
+          fetchIndustryIndices(),
+          fetchStockData(['NVDA', 'TSM', 'QCOM', '9868.HK', '688981.SH']),
+          fetchGlobalHotspots().catch(() => [] as GlobalHotspot[]),
+        ])
+        fetchLiveStockQuotes().catch(() => {})
+
+        const contentFingerprint = JSON.stringify({
+          alerts: newsResult.news.slice(0, 20).map(n => n.title),
+          ins: indices.slice(0, 4).map(i => i.value),
+          st: stocks.slice(0, 5).map(s => s.price),
+          hs: rssHotspots.slice(0, 10).map(h => h.title),
+        })
+        if (contentFingerprint === lastContentHash) {
+          console.log('[AutoRefresh] 内容无变化，跳过重绘')
+          setTimeout(() => updateRefreshTime(), 100)
+          scheduleNext()
+          return
         }
-      } catch { /* fall through */ }
-      if (oritekNews.length === 0) oritekNews = BASE_ORITEK_NEWS
-      render(newsResult, indices, stocks, oritekNews, rssHotspots)
-      // 刷新后更新时间标记
-      setTimeout(() => updateRefreshTime(), 500)
-    } catch (err) {
-      console.warn('[Bigscreen v4] Auto-refresh failed:', err)
-    }
-  }, 15 * 60 * 1000)  // P1修复：15分钟间隔
+        lastContentHash = contentFingerprint
+        console.log('[AutoRefresh] 检测到内容变化，执行增量刷新')
+
+        let oritekNews: OritekMediaItem[] = []
+        try {
+          const cn = await fetchCompanyNews()
+          if (cn.length > 0) {
+            oritekNews = cn.map((c: CompanyNews, i: number) => ({
+              id: `rss-on-${Date.now()}-${i}`,
+              title: c.title, summary: c.title, source: c.source,
+              date: c.time, url: c.url || '',
+            }))
+          }
+        } catch { /* fall through */ }
+        if (oritekNews.length === 0) oritekNews = BASE_ORITEK_NEWS
+
+        refreshDataPanels(newsResult, rssHotspots, oritekNews)
+        setTimeout(() => updateRefreshTime(), 500)
+      } catch (err) {
+        console.warn('[Bigscreen v4] Auto-refresh failed:', err)
+      } finally {
+        scheduleNext()  // #6修复：无论成功或失败，都在完成后安排下一次
+      }
+    }, 15 * 60 * 1000)
+  }
+
+  scheduleNext()  // 启动链式循环
 }
 
 // ============================================================================

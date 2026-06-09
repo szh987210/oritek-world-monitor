@@ -5,22 +5,23 @@
 export type NewsIndustry = 'semiconductor' | 'automotive' | 'robotics' | 'ai' | 'all'
 
 // ==================== 更新频率配置 ====================
+// 实际刷新由 GitHub Actions fetch-rss (15min) + 大屏 setTimeout 链 (15min) 驱动
+// 以下配置为前端兜底间隔，与后端抓取周期保持一致
 export const API_CONFIG = {
   refreshInterval: {
-    news: 3 * 60 * 1000,       // 新闻：3分钟
-    stock: 60 * 1000,           // 股票：1分钟
+    news: 15 * 60 * 1000,      // 新闻：15分钟（与 GitHub Actions 抓取周期一致）
+    stock: 60 * 1000,           // 股票：1分钟（东财实时行情接口）
     indices: 60 * 1000,         // 指数：1分钟
-    hotspots: 5 * 60 * 1000     // 热点：5分钟
+    hotspots: 15 * 60 * 1000    // 热点：15分钟
   }
 }
 
 // ==================== RSS2JSON API ====================
-// 免费套餐限制：约12个独立RSS URL后可触发 "using all available feeds" 配额错误
-// 解决方案：注册多个免费Key分流 → https://rss2json.com 免费注册获取新Key
+// Key 从构建环境变量注入，不再硬编码在源码中
+// GitHub Actions 部署时自动注入：deploy.yml → env.VITE_RSS2JSON_API_KEY → GitHub Secrets
+// 本地开发时需创建 .env.local 文件添加 VITE_RSS2JSON_API_KEY=your_key
 export const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json'
-export const RSS2JSON_API_KEY = '5pqyispe2bx5hz4cxnqfv36tyk3s4x6l6up4cr6f'
-// 2026-06-05 验证状态：主Key已注册9个稳定源（EE Times/SemiEng/NVIDIA/BBC Tech/SemiToday/Digitimes/SemiAnalysis/TheVerge/TechCrunch）
-// 备用Key yoh1gs... 已过期，需重新注册或删除
+export const RSS2JSON_API_KEY = import.meta.env.VITE_RSS2JSON_API_KEY || ''
 
 // ==================== 数据接口 ====================
 export interface NewsItem {

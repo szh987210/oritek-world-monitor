@@ -1,6 +1,9 @@
 // 数据服务模块 - 实现真实数据抓取和更新
 // 静态数据已移至 staticData.ts，此文件只保留业务逻辑
 
+// #10: 生产环境关闭详细日志（Vite define 注入 __DEBUG__）
+const debugLog = (...args: unknown[]) => { if (typeof __DEBUG__ !== 'undefined' && __DEBUG__) console.log(...args) }
+
 import {
   // 配置
   API_CONFIG,
@@ -58,7 +61,19 @@ interface RssFetchResult {
 // P0 修复：全局 RSS 抓取去重缓存
 // 多个数据源数组（NEWS_RSS/EXTENDED/HOTSPOT/AI_INSIGHTS）共享同一URL时，
 // 在10分钟时间桶内只调用一次 API，避免重复浪费 rss2json 免费配额。
-const rssFetchCache = new Map<string, Promise<RssFetchResult>>()
+// #3 修复：添加过期清理 — 超过3个时间桶(30min)的条目自动清除，防止内存泄漏。
+interface CacheEntry { promise: Promise<RssFetchResult>; bucket: number }
+const rssFetchCache = new Map<string, CacheEntry>()
+// 每隔15分钟清理过期缓存条目
+function cleanStaleCache() {
+  const currentBucket = Math.floor(Date.now() / (10 * 60 * 1000))
+  for (const [key, entry] of rssFetchCache.entries()) {
+    if (currentBucket - entry.bucket > 3) {
+      rssFetchCache.delete(key)
+    }
+  }
+}
+setInterval(cleanStaleCache, 15 * 60 * 1000)
 
 // 带超时的 fetch 包装（防止被墙源卡死页面）
 function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number = 8000): Promise<Response> {
@@ -112,10 +127,10 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
 
   // P0 修复：全局去重缓存 — 同一URL在同一10分钟时间桶内只调用一次API
   const dedupKey = `${rssUrl}@${cacheBuster}`
-  const cachedPromise = rssFetchCache.get(dedupKey)
-  if (cachedPromise) {
+  const cachedEntry = rssFetchCache.get(dedupKey)
+  if (cachedEntry) {
     console.log(`[fetchRssWithFallback] 复用缓存结果: ${srcName}`)
-    return cachedPromise
+    return cachedEntry.promise
   }
 
   const fetchPromise = (async (): Promise<RssFetchResult> => {
@@ -129,7 +144,9 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
         return { items: filterDigestItems(data.items || []), source: 'rss2json-primary' }
       }
     }
-  } catch (_) { /* 降级 */ }
+  } catch (e) {
+    console.debug(`[fetchRssWithFallback] Level1 主Key失败: ${srcName}`, String(e).slice(0, 80))
+  }
 
   // Level 2: 备用Key（如果配置了）
   if (RSS2JSON_SECONDARY_KEY) {
@@ -143,7 +160,9 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
           return { items: filterDigestItems(data.items || []), source: 'rss2json-secondary' }
         }
       }
-    } catch (_) { /* 降级 */ }
+    } catch (e) {
+      console.debug(`[fetchRssWithFallback] Level2 备用Key失败: ${srcName}`, String(e).slice(0, 80))
+    }
   }
 
   // P1修复：去除 Level 3 浏览器直连XML — 绝大多数RSS服务器拒绝CORS，浪费8s超时等待
@@ -151,7 +170,7 @@ async function fetchRssWithFallback(rssUrl: string, sourceName?: string): Promis
   throw new Error(`所有 RSS 抓取代理均失败: ${srcName}`)
   })()
 
-  rssFetchCache.set(dedupKey, fetchPromise)
+  rssFetchCache.set(dedupKey, { promise: fetchPromise, bucket: cacheBuster })
   return fetchPromise
 }
 
@@ -369,23 +388,6 @@ let lastFetchTime: Record<string, number> = {
 // generateFluctuation 已移除：死代码（无调用点），且使用 Math.random 违反真实性原则
 // 所有数据派生函数已改用 BASE_STOCK_DATA / BASE_INDICES 基准数据
 
-function generateDynamicNews(): NewsItem[] {
-  // 此函数仅在NEWS_TEMPLATES有数据时作为fallback使用
-  // NEWS_TEMPLATES已清空，不再生成假新闻数据
-  const now = new Date()
-  const shuffled = [...NEWS_TEMPLATES]
-  const newsCount = 10
-  return shuffled.slice(0, newsCount).map((template, i) => ({
-    ...template,
-    id: `news-dynamic-${now.getTime()}-${i}`,
-    time: '近期',
-    priority: template.priority
-  })).sort((a, b) => {
-    const order = { critical: 0, warning: 1, info: 2 }
-    return order[a.priority] - order[b.priority]
-  })
-}
-
 async function fetchFinancialRSSData(): Promise<{ stocks: Record<string, StockData>, financialNews: string[] }> {
   const financialNews: string[] = []
   try {
@@ -424,19 +426,6 @@ function generateDynamicIndices(): IndustryIndex[] {
   return BASE_INDICES.map(index => ({
     ...index,
     timestamp: now
-  }))
-}
-
-function generateDynamicHotspots(): GlobalHotspot[] {
-  // 此函数仅在HOTSPOT_TEMPLATES有数据时作为fallback使用
-  // HOTSPOT_TEMPLATES已清空，不再生成假热点数据
-  const now = new Date()
-  const shuffled = [...HOTSPOT_TEMPLATES]
-  const count = 8
-  return shuffled.slice(0, count).map((template, i) => ({
-    ...template,
-    id: `hotspot-${now.getTime()}-${i}`,
-    time: '近期'
   }))
 }
 
@@ -1264,12 +1253,16 @@ const HOTSPOT_TECH_KW_PHRASE = [
   '삼성', '하이닉스', '반도체', '로봇',
 ]
 
+// #17优化：预编译整词匹配正则，避免每次调用 isTechHotspot 重复创建
+const HOTSPOT_TECH_KW_REGEX: RegExp[] = HOTSPOT_TECH_KW_WORD.map(kw =>
+  new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+)
+
 function isTechHotspot(title: string, summary: string): boolean {
   const text = title + ' ' + summary
   const textLower = text.toLowerCase()
-  // 词边界匹配（英文整词）
-  for (const kw of HOTSPOT_TECH_KW_WORD) {
-    const re = new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+  // 词边界匹配（英文整词，预编译正则）
+  for (const re of HOTSPOT_TECH_KW_REGEX) {
     if (re.test(text)) return true
   }
   // 短语/中文直接包含匹配
