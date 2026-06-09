@@ -952,8 +952,12 @@ function refreshDataPanels(
   const mergedAlerts: RiskAlert[] = rssAlertItems.length > 0 ? rssAlertItems : BASE_RISK_ALERTS.slice(0, 8)
 
   const rssGeoHotNews = transformRSSHotspots(rssHotspots)
-  const mergedHotNews = rssGeoHotNews.length > 0 ? rssGeoHotNews.slice(0, 12) : currentHotNews || BASE_GLOBAL_HOT_NEWS.slice(0, 12)
+  // 修复：[] || fallback 在 JS 中返回 []（空数组truthy），必须用 .length > 0 判断
+  const mergedHotNews = rssGeoHotNews.length > 0
+    ? rssGeoHotNews.slice(0, 12)
+    : (currentHotNews && currentHotNews.length > 0 ? currentHotNews : BASE_GLOBAL_HOT_NEWS.slice(0, 12))
   currentHotNews = mergedHotNews
+  console.log(`[refreshDataPanels] mergedHotNews=${mergedHotNews.length}, rssGeo=${rssGeoHotNews.length}, currentHot=${currentHotNews.length}`)
 
   // 跨版块去重：热点已展示的标题 → 排除在产业洞察外
   const hotspotTitlePrefixes = new Set(mergedHotNews.map(h => h.title.slice(0, 25).toLowerCase()))
@@ -1004,6 +1008,9 @@ function refreshDataPanels(
 
   // 更新 hot news 用于地图
   currentHotNews = mergedHotNews
+
+  // 重绘地图城市标记（fix: 增量刷新时地图标记不同步）
+  renderCityMarkers()
 
   // 重新启动滚动
   setTimeout(() => initNewsScrollWithMapSync(), 100)
