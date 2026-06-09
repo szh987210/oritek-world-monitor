@@ -863,15 +863,72 @@ function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
   const regionToCity: Record<string, string> = {
     '中国': '北京','美国': '硅谷','欧洲': '巴黎','日本': '东京',
     '韩国': '首尔','中国台湾': '新竹','印度': '班加罗尔','中东': '迪拜',
-    '俄罗斯': '莫斯科','澳大利亚': '悉尼','东南亚': '新加坡',
+    '俄罗斯': '莫斯科','澳大利亚': '悉尼','东南亚': '新加坡','国际': '北京',
     'China': '北京','USA': '硅谷','America': '硅谷','U.S.': '硅谷',
     'Europe': '巴黎','Japan': '东京','Korea': '首尔','India': '班加罗尔',
     'Taiwan': '新竹','Australia': '悉尼','Singapore': '新加坡',
+    'International': '北京','World': '北京',
   }
   // P1修复：补充diplomacy/conflict → 映射为'AI'（科技地缘也是科技热点）
   const catMap: Record<string, GeoHotNews['category']> = {
     tech: 'AI', policy: '芯片', economy: '芯片',
     diplomacy: 'AI', conflict: 'AI',  // 科技地缘政治也是热点
+  }
+  // 公司名 → 城市直映（补充城市名匹配不到的情况）
+  // 值是对应的 coordMap key，坐标从 coordMap 中查
+  const companyHQMap: Record<string, string> = {
+    // 美国科技公司
+    'openai': '旧金山', 'anthropic': '旧金山', 'chatgpt': '旧金山',
+    'google': '硅谷', 'alphabet': '硅谷', 'deepmind': '伦敦',
+    'meta': '硅谷', 'facebook': '硅谷', 'instagram': '硅谷',
+    'apple': '硅谷', 'iphone': '硅谷', 'ipad': '硅谷',
+    'nvidia': '硅谷', 'amd': '硅谷', 'intel': '硅谷', 'qualcomm': '硅谷', 'broadcom': '硅谷',
+    'microsoft': '西雅图', 'azure': '西雅图', 'github': '旧金山',
+    'amazon': '西雅图', 'aws': '西雅图',
+    'tesla': '奥斯汀', 'spacex': '洛杉矶', 'starlink': '洛杉矶', 'xai': '孟菲斯',
+    'oracle': '奥斯汀', 'salesforce': '旧金山', 'adobe': '硅谷',
+    'netflix': '洛杉矶', 'uber': '旧金山', 'airbnb': '旧金山', 'lyft': '旧金山',
+    'palantir': '硅谷', 'databricks': '硅谷', 'snowflake': '硅谷',
+    'ibm': '纽约', 'cisco': '硅谷', 'hp': '硅谷', 'dell': '奥斯汀', 'vmware': '硅谷',
+    // 中国科技公司
+    '华为': '深圳', 'huawei': '深圳',
+    '字节': '北京', 'bytedance': '北京', 'tiktok': '北京', '抖音': '北京',
+    '阿里': '杭州', 'alibaba': '杭州', '淘宝': '杭州', '钉钉': '杭州',
+    '腾讯': '深圳', 'tencent': '深圳', '微信': '深圳', 'wechat': '深圳',
+    '百度': '北京', 'baidu': '北京',
+    '小米': '北京', 'xiaomi': '北京',
+    '比亚迪': '深圳', 'byd': '深圳',
+    '中芯': '上海', 'smic': '上海',
+    '京东': '北京', 'jd': '北京',
+    '美团': '北京', 'meituan': '北京',
+    '网易': '杭州', 'netease': '杭州',
+    // 韩国
+    '三星': '首尔', 'samsung': '首尔',
+    'sk海力士': '首尔', 'sk hynix': '首尔',
+    'lg': '首尔', 'lg电子': '首尔',
+    '现代': '首尔', 'hyundai': '首尔',
+    // 日本
+    '索尼': '东京', 'sony': '东京',
+    '丰田': '东京', 'toyota': '东京',
+    '本田': '东京', 'honda': '东京',
+    '软银': '东京', 'softbank': '东京',
+    '任天堂': '东京', 'nintendo': '东京',
+    '松下': '东京', 'panasonic': '东京',
+    // 中国台湾
+    '台积电': '新竹', 'tsmc': '新竹',
+    '联发科': '新竹', 'mediatek': '新竹',
+    '富士康': '台北', 'foxconn': '台北',
+    // 欧洲
+    'asml': '埃因霍温', '阿斯麦': '埃因霍温',
+    'sap': '慕尼黑',
+    'spotify': '伦敦',
+    '空客': '巴黎', 'airbus': '巴黎',
+    '宝马': '慕尼黑', 'bmw': '慕尼黑',
+    '奔驰': '慕尼黑', 'mercedes': '慕尼黑',
+    // 印度
+    '塔塔': '班加罗尔', 'tata': '班加罗尔',
+    '信实': '孟买', 'reliance': '孟买',
+    'infosys': '班加罗尔', 'tcs': '班加罗尔', 'wipro': '班加罗尔',
   }
 
   const seenTitles = new Set<string>()
@@ -888,6 +945,27 @@ function transformRSSHotspots(hotspots: GlobalHotspot[]): GeoHotNews[] {
     // 优先：标题+摘要同时匹配城市名（IgnoreCase 通过多语言 key 实现）
     for (const [k, [lngVal, latVal]] of Object.entries(coordMap)) {
       if (searchText.includes(k.toLowerCase())) { city = k; lat = latVal; lng = lngVal; break }
+    }
+    // 次优先：匹配公司名 → 映射到总部城市
+    if (city === '全球') {
+      for (const [companyKey, cityKey] of Object.entries(companyHQMap)) {
+        if (searchText.includes(companyKey)) {
+          if (coordMap[cityKey]) {
+            city = cityKey
+            lng = coordMap[cityKey][0]
+            lat = coordMap[cityKey][1]
+          } else {
+            // coordMap 里没有这个 cityKey，用 regionToCity 兜底
+            const rc = regionToCity[h.region]
+            if (rc && coordMap[rc]) {
+              city = rc
+              lng = coordMap[rc][0]
+              lat = coordMap[rc][1]
+            }
+          }
+          break
+        }
+      }
     }
     if (city === '全球' && regionToCity[h.region]) {
       const fallbackCity = regionToCity[h.region]

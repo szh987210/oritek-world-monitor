@@ -1397,29 +1397,51 @@ export async function fetchGlobalHotspots(): Promise<GlobalHotspot[]> {
 
 function inferRegion(text: string, fallback: string): string {
   const t = text.toLowerCase()
+  // 中国（含公司名）
   if (t.includes('china') || t.includes('chinese') || t.includes('beijing') || t.includes('shanghai') ||
-      t.includes('中国') || t.includes('北京') || t.includes('上海') || t.includes('深圳') || t.includes('华为') ||
-      t.includes('字节') || t.includes('阿里') || t.includes('腾讯')) return '中国'
+      t.includes('中国') || t.includes('北京') || t.includes('上海') || t.includes('深圳') ||
+      t.includes('华为') || t.includes('字节') || t.includes('阿里') || t.includes('腾讯') ||
+      t.includes('bytedance') || t.includes('tiktok') || t.includes('alibaba') || t.includes('tencent') ||
+      t.includes('baidu') || t.includes('xiaomi') || t.includes('byd') || t.includes('smic') ||
+      t.includes('中芯') || t.includes('比亚迪')) return '中国'
+  // 美国（含科技公司名 — RSS标题最常出现）
   if (t.includes('usa') || t.includes('america') || t.includes('american') || t.includes('washington') ||
-      t.includes('silicon valley') || t.includes('trump') || t.includes('biden') || t.includes('美国')) return '美国'
+      t.includes('silicon valley') || t.includes('trump') || t.includes('biden') || t.includes('美国') ||
+      t.includes('openai') || t.includes('chatgpt') || t.includes('anthropic') || t.includes('google') ||
+      t.includes('microsoft') || t.includes('nvidia') || t.includes('meta') || t.includes('amazon') ||
+      t.includes('tesla') || t.includes('spacex') || t.includes('apple') || t.includes('iphone') ||
+      t.includes('intel') || t.includes('amd') || t.includes('qualcomm') || t.includes('broadcom') ||
+      t.includes('oracle') || t.includes('ibm') || t.includes('palantir')) return '美国'
+  // 欧洲
   if (t.includes('europe') || t.includes('eu ') || t.includes('e.u.') || t.includes('germany') ||
       t.includes('france') || t.includes('brussels') || t.includes('european') || t.includes('英国') ||
-      t.includes('德国') || t.includes('法国') || t.includes('欧盟') || t.includes('荷兰') || t.includes('波兰')) return '欧洲'
+      t.includes('德国') || t.includes('法国') || t.includes('欧盟') || t.includes('荷兰') || t.includes('波兰') ||
+      t.includes('asml') || t.includes('sap') || t.includes('spotify') || t.includes('airbus')) return '欧洲'
+  // 日本
   if (t.includes('japan') || t.includes('japanese') || t.includes('tokyo') || t.includes('日本') ||
-      t.includes('东京') || t.includes('sony') || t.includes('松下') || t.includes('丰田')) return '日本'
+      t.includes('东京') || t.includes('sony') || t.includes('松下') || t.includes('丰田') ||
+      t.includes('softbank') || t.includes('nintendo') || t.includes('rakuten')) return '日本'
+  // 韩国
   if (t.includes('korea') || t.includes('korean') || t.includes('samsung') || t.includes('sk hynix') ||
-      t.includes('韩国') || t.includes('首尔') || t.includes('lg')) return '韩国'
+      t.includes('韩国') || t.includes('首尔') || t.includes('lg') || t.includes('hyundai')) return '韩国'
+  // 中国台湾
   if (t.includes('taiwan') || t.includes('taiwanese') || t.includes('tsmc') || t.includes('台积电') ||
-      t.includes('台湾') || t.includes('台北')) return '中国台湾'
+      t.includes('台湾') || t.includes('台北') || t.includes('mediatek') || t.includes('foxconn')) return '中国台湾'
+  // 印度
   if (t.includes('india') || t.includes('indian') || t.includes('mumbai') ||
-      t.includes('印度') || t.includes('孟买') || t.includes('新德里')) return '印度'
+      t.includes('印度') || t.includes('孟买') || t.includes('新德里') || t.includes('bangalore')) return '印度'
+  // 中东
   if (t.includes('middle east') || t.includes('saudi') || t.includes('uae') || t.includes('dubai') ||
       t.includes('israel') || t.includes('iran') || t.includes('中东') || t.includes('沙特') ||
       t.includes('以色列') || t.includes('伊朗') || t.includes('阿联酋')) return '中东'
+  // 俄罗斯
   if (t.includes('russia') || t.includes('russian') || t.includes('moscow') || t.includes('putin') ||
       t.includes('俄罗斯') || t.includes('莫斯科') || t.includes('普京')) return '俄罗斯'
+  // 澳大利亚
   if (t.includes('australia') || t.includes('australian') || t.includes('sydney') || t.includes('澳大利亚')) return '澳大利亚'
+  // 巴西
   if (t.includes('brazil') || t.includes('brazilian')) return '巴西'
+  // 东南亚
   if (t.includes('southeast asia') || t.includes('vietnam') || t.includes('thailand') || t.includes('indonesia') ||
       t.includes('malaysia') || t.includes('singapore') || t.includes('东南亚') || t.includes('越南') ||
       t.includes('泰国') || t.includes('印尼') || t.includes('新加坡')) return '东南亚'
