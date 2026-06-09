@@ -722,38 +722,51 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
 // 排除：风险类新闻（降分）、人事变动、投融资、基础商业新闻
 // ============================================================================
 function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
-  // 技术创新关键词 — 命中即得分（涵盖芯片/存储/AI/机器人/汽车）
-  const techInnovationKeywords = [
-    // 芯片/半导体
-    'chip', 'semiconductor', '芯片', '半导体', '晶圆', 'wafer', '制程',
-    '光刻', '封装', 'hbm', 'dram', 'nand', '存储', 'memory', '处理器',
-    'foundry', 'fab', 'soc', 'mcu', 'fpga', 'asic', 'risc-v',
-    '台积电', 'tsmc', 'intel', '英特尔', 'nvidia', '英伟达', 'amd',
-    'qualcomm', '高通', 'samsung', '三星', 'asml',
-    // AI/大模型
-    'ai', 'artificial intelligence', '人工智能', '大模型', 'llm', 'gpt',
-    '深度学习', '机器学习', '神经网络', 'transformer', 'aigc', '多模态',
-    '模型', '训练', '推理', '算力', '算法', '参数', 'token',
-    'gpu', 'tpu', 'npu', 'openai', 'gemini', 'llama', 'claude', 'deepseek',
-    // 机器人/具身智能
-    'robot', 'robotics', '机器人', '具身', '人形', 'humanoid',
-    // 自动驾驶
-    'autonomous', 'self-driving', '自动驾驶', '智能驾驶', '智驾',
-    'lidar', '雷达', 'adas', '域控', '座舱', '车规',
-    'ev', '电动', '新能源', '汽车',
-    // 前沿技术
-    'quantum', '量子', '脑机', '卫星', '火箭', 'space', '航天',
+  // === Tier1 精准技术关键词 (+4) ===
+  // 高精度、低噪音：只匹配具体的半导体/AI硬件/机器人/自动驾驶实体术语
+  const tier1TechKeywords = [
+    // 半导体 — 具体硬件/工艺
+    'semiconductor', '晶圆', 'wafer', '制程', '光刻', '封装',
+    'hbm', 'dram', 'nand', '存储', 'foundry', 'fab',
+    'soc', 'mcu', 'fpga', 'asic', 'risc-v',
+    'npu', 'gpu', 'tpu', '算力',
+    // 半导体 — 核心企业
+    'nvidia', '英伟达', 'tsmc', '台积电', 'intel', '英特尔', 'amd',
+    'asml', 'arm', 'qualcomm', '高通', 'samsung', '三星', 'sk hynix',
+    'broadcom', 'micron', '美光', '中芯国际', 'smic',
+    // AI — 具体模型/架构/事件
+    'deepseek', 'openai', 'gemini', 'llama', 'claude', 'gpt-',
+    'transformer', 'llm', '大模型', 'aigc', '多模态',
+    '深度学习', '神经网络', 'diffusion', 'reinforcement learning',
+    // 机器人 — 具体形态
+    'humanoid', '人形', '具身', 'robot', 'robotics',
+    // 自动驾驶 — 具体部件
+    'lidar', '激光雷达', 'adas', '域控', '车规',
+    // 前沿
+    'quantum', '量子', '脑机',
   ]
-  // 突破/趋势信号 — 额外加分
+  // === Tier2 泛科技关键词 (+2) ===
+  // 覆盖面广但噪音较高，需要搭配 tier1 才能入选
+  const tier2TechKeywords = [
+    'ai', 'artificial intelligence', '人工智能',
+    '机器学习', '模型', '训练', '推理', '算法', '参数',
+    '芯片', '处理器', 'memory', 'chip',
+    '机器人', '自动驾驶', 'autonomous', 'self-driving',
+    '智驾', '智能驾驶', '座舱', '雷达', '传感器',
+    '电动', '新能源', 'ev',
+    '航天', '卫星', '火箭', 'space',
+    '5g', '6g', 'iot', '物联网', 'edge computing',
+  ]
+  // === 突破/趋势信号 (+1) ===
+  // 只保留有实质"进展"含义的词，去掉日常高频词（如"发布""推出"）
   const breakthroughSignals = [
-    '突破', '首发', '首次', '率先', '发布', '推出', '公布', '问世',
-    '量产', '商用', '落地', '上线', '开源', '开放',
-    '下一代', '最新', '革新', '革命性', '领先', '最快', '最大',
-    'launch', 'announce', 'release', 'unveil', 'introduce',
-    'breakthrough', 'first', 'milestone', 'next-gen', 'latest',
-    'production', 'commercial', 'deploy', 'open source',
+    '突破', '首发', '首次', '率先', '问世', '量产', '商用',
+    '落地', '开源', '开放', '革新', '革命性', '领先', '里程碑',
+    '下一代', '最新',
+    'breakthrough', 'milestone', 'next-gen', 'production',
+    'commercial', 'open source', 'unveil', 'first',
   ]
-  // 风险降分 — 命中后从产业洞察中排除（这些是风险预警的事）
+  // === 风险降分 (-5) ===
   const riskDowngradeKeywords = [
     '制裁', '禁运', '断供', '停产', '召回', '裁员', 'layoff', 'layoffs',
     '亏损', '破产', 'bankrupt', '事故', '火灾', '洪水', '地震', '停电',
@@ -762,57 +775,87 @@ function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
     '罚款', '处罚', 'fine', 'penalty', '调查', 'investigation',
     '失控', '漏洞', '攻击', '泄漏', 'breach',
   ]
-  // 非科技排除
+  // === 排除词：人事/金融/消费等非技术内容 ===
   const excludeKeywords = [
-    '人事', '任命', '出任', '履新', '接任', '换帅', '辞职', '离职',
-    '股价', '股票', '涨停', '跌停', '收盘', '开盘', 'ipo', '上市',
-    '融资', '投资', 'a轮', 'b轮', 'c轮', '估值', '募资',
-    '电商', '外卖', '旅游', '酒店', '餐饮', '房地产',
+    '人事', '任命', '出任', '履新', '接任', '换帅', '辞职', '离职', '卸任',
+    '股价', '股票', '涨停', '跌停', '收盘', '开盘',
+    '电商', '外卖', '旅游', '酒店', '餐饮', '房地产', '房价',
+    '并购', '收购', 'ipo', '上市', '融资', '募资', '估值',
+    'a轮', 'b轮', 'c轮', 'd轮', 'pre-ipo',
+    '加密货币', 'bitcoin', 'ethereum', 'nft', 'defi',
+    '游戏', 'gaming', '电竞', 'esport',
+    '综艺', '娱乐', '明星', '电影', '电视剧', '综艺',
   ]
+  // 短词列表 — 需要整词边界匹配，防止 'ai' 命中 'iran'
+  const shortWords = new Set([
+    'ai','ev','gpu','tpu','npu','soc','mcu','cpu','llm',
+    'hbm','dram','nand','asic','fpga','gpt','iot','5g','6g',
+  ])
 
   interface ScoredInsight { news: NewsItem; score: number }
   const scored: ScoredInsight[] = []
 
   for (const n of news) {
-    const text = (n.title + ' ' + (n.summary || '')).toLowerCase()
+    const titleLower = n.title.toLowerCase()
+    const text = titleLower + ' ' + (n.summary || '').toLowerCase()
 
-    // 排除非科技内容
-    if (excludeKeywords.some(kw => text.includes(kw))) continue
+    // 排除非技术内容
+    if (excludeKeywords.some(kw => text.includes(kw.toLowerCase()))) continue
 
     let score = 0
-    let techHit = false
+    let hasTier1 = false
 
-    // 技术创新关键词：+3
-    for (const kw of techInnovationKeywords) {
+    // --- Tier1 精准技术词: +4 ---
+    for (const kw of tier1TechKeywords) {
       const lc = kw.toLowerCase()
-      // 短词（≤3字符）整词匹配，避免 'ai' 命中 'iran' 'aims' 等
-      if (['ai','ev','gpu','tpu','npu','soc','mcu','cpu','llm','hbm','dram','nand','asic','fpga','arm','risc-v'].includes(kw.toLowerCase())) {
-        if (new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(text)) { score += 3; techHit = true; break }
-      } else if (text.includes(lc)) {
-        score += 3; techHit = true; break
+      let matched = false
+      if (shortWords.has(lc)) {
+        matched = new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(text)
+      } else {
+        matched = text.includes(lc)
+      }
+      if (matched) { score += 4; hasTier1 = true; break }
+    }
+
+    // --- Tier2 泛科技词: +2 ---
+    if (!hasTier1) {
+      for (const kw of tier2TechKeywords) {
+        const lc = kw.toLowerCase()
+        let matched = false
+        if (shortWords.has(lc)) {
+          matched = new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(text)
+        } else {
+          matched = text.includes(lc)
+        }
+        if (matched) { score += 2; break }
       }
     }
 
-    // 突破信号：+2（英文短词整词匹配）
+    // --- 突破信号: +1 ---
     for (const kw of breakthroughSignals) {
       const lc = kw.toLowerCase()
-      if (['ai','ev','launch','first','latest','release'].includes(lc)) {
-        if (new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(text)) { score += 2; break }
-      } else if (text.includes(lc)) {
-        score += 2; break
+      let matched = false
+      if (['first','latest'].includes(lc)) {
+        matched = new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(text)
+      } else {
+        matched = text.includes(lc)
       }
+      if (matched) { score += 1; break }
     }
 
-    // 行业分类加分
-    if (n.industry === 'ai' || n.industry === 'robotics') score += 2
-    else if (n.industry === 'semiconductor') score += 2
+    // --- 行业来源加分: +1 ---
+    if (n.industry === 'ai' || n.industry === 'robotics' || n.industry === 'semiconductor') {
+      score += 1
+    }
 
-    // 风险降分：-4（强降分，让风险新闻回到预警版块）
+    // --- 风险降分: -5 ---
     for (const kw of riskDowngradeKeywords) {
-      if (text.includes(kw)) { score -= 4; break }
+      if (text.includes(kw.toLowerCase())) { score -= 5; break }
     }
 
-    if (techHit && score > 0) {
+    // 门槛：必须有 tier1 精准技术词 OR (tier2 + 突破信号 + 行业来源 ≥ 4)
+    // 实际最低通过线 score >= 5
+    if (score >= 5) {
       scored.push({ news: n, score })
     }
   }
@@ -820,7 +863,7 @@ function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
   scored.sort((a, b) => b.score - a.score)
 
   const selected = scored.slice(0, 8)
-  console.log(`[generateAIInsightsFromNews] 产出${selected.length}条洞察（top=${selected[0]?.score || '-'}）`)
+  console.log(`[generateAIInsightsFromNews] 产出${selected.length}条洞察 | 阈值≥5（top=${selected[0]?.score || '-'}）`)
 
   return selected.map(({ news: n }, i) => ({
     id: `insight-${i}`,

@@ -951,19 +951,24 @@ function refreshDataPanels(
   }))
   const mergedAlerts: RiskAlert[] = rssAlertItems.length > 0 ? rssAlertItems : BASE_RISK_ALERTS.slice(0, 8)
 
-  const rssInsights: IndustryInsightItem[] = aiInsights.slice(0, 8).map((ins, i) => ({
-    id: `rss-ins-${Date.now()}-${i}`,
-    title: ins.title,
-    summary: ins.summary,
-    category: ins.category,
-    source: ins.source,
-    time: ins.time,
-  }))
-  const mergedInsights = rssInsights.length > 0 ? rssInsights : BASE_INDUSTRY_INSIGHTS.slice(0, 8)
-
   const rssGeoHotNews = transformRSSHotspots(rssHotspots)
   const mergedHotNews = rssGeoHotNews.length > 0 ? rssGeoHotNews.slice(0, 12) : currentHotNews || BASE_GLOBAL_HOT_NEWS.slice(0, 12)
   currentHotNews = mergedHotNews
+
+  // 跨版块去重：热点已展示的标题 → 排除在产业洞察外
+  const hotspotTitlePrefixes = new Set(mergedHotNews.map(h => h.title.slice(0, 25).toLowerCase()))
+  const rssInsights: IndustryInsightItem[] = aiInsights
+    .filter(ins => !hotspotTitlePrefixes.has(ins.title.slice(0, 25).toLowerCase()))
+    .slice(0, 8)
+    .map((ins, i) => ({
+      id: `rss-ins-${Date.now()}-${i}`,
+      title: ins.title,
+      summary: ins.summary,
+      category: ins.category,
+      source: ins.source,
+      time: ins.time,
+    }))
+  const mergedInsights = rssInsights.length > 0 ? rssInsights : BASE_INDUSTRY_INSIGHTS.slice(0, 8)
 
   // 增量更新 — 安全更新存在的容器
   const riskBody = document.getElementById('risk-body')
@@ -1044,6 +1049,15 @@ function render(
   // 跨版块去重：风险预警（最高优先级）的标题加入全局已用集合
   const usedTitlesGlobal = new Set<string>()
   mergedAlerts.forEach(a => usedTitlesGlobal.add(a.title.slice(0, 25).toLowerCase()))
+
+  // 全球态势感知：提前构建热点用于跨版块去重（产业洞察排除已在热点展示的内容）
+  const rssGeoHotNews = transformRSSHotspots(rssHotspots)
+  const mergedHotNews: GeoHotNews[] = rssGeoHotNews.length > 0
+    ? rssGeoHotNews.slice(0, 12)
+    : BASE_GLOBAL_HOT_NEWS.slice(0, 12)
+  currentHotNews = mergedHotNews
+  // 热点标题加入去重集合，防止产业洞察重复展示
+  mergedHotNews.forEach(h => usedTitlesGlobal.add(h.title.slice(0, 25).toLowerCase()))
 
   // 产业洞察：RSS优先（融资+AI动态），BASE仅做兜底
   // P0-②修复：过滤损坏的融资数据，使用原始标题而非拼接
@@ -1127,14 +1141,6 @@ function render(
   const mergedPolicy = mergePolicyItems(BASE_POLICY_ITEMS, rssPolicyItems)
 
   const tickerHtml = buildAwarenessTicker(healthStats, sourceScores, mergedAlerts, mergedInsights, indices, stocks, newsResult.news, usedTitlesGlobal)
-
-  // 全球态势感知：RSS优先，BASE仅做兜底
-  const rssGeoHotNews = transformRSSHotspots(rssHotspots)
-  // 热点：RSS优先，BASE仅做兜底（RSS完全为空时才回退）
-  const mergedHotNews: GeoHotNews[] = rssGeoHotNews.length > 0
-    ? rssGeoHotNews.slice(0, 12)
-    : BASE_GLOBAL_HOT_NEWS.slice(0, 12)
-  currentHotNews = mergedHotNews  // V8: 同步给地图渲染使用
 
   // 构建整页DOM
   app.innerHTML = `
