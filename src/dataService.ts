@@ -906,8 +906,44 @@ function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
 
 // 从新闻生成创业公司融资
 function generateStartupFundingFromNews(news: NewsItem[]): StartupFundingItem[] {
+  // 排除词：医疗/医药/金融/消费/教育/聚合摘要/人事变动 — 非欧冶目标赛道
+  const fundingExcludeKw = [
+    // 医疗/医药/生物技术
+    '医疗', '医药', '制药', '药企', '临床', '医院', '患者', '生物医药', '生物制药',
+    'healthcare', 'pharma', 'drug', 'biotech', 'clinical', 'hospital', 'patient',
+    'medical', 'medicine', 'diagnostic', 'therapy', 'surgical',
+    '医疗器械', '医学影像', '基因检测', '体外诊断',
+    // 金融/证券/保险
+    '金融', '证券', '保险', '信贷', '风投', '基金',
+    'fintech', 'insurtech', 'wealth',
+    // 消费/电商/餐饮
+    '消费', '电商', '零售', '餐饮', '外卖', '奶茶', '咖啡',
+    'consumer', 'retail', 'ecommerce',
+    // 教育
+    '教育', '培训', '在线教育', 'edtech', 'education',
+    // 文娱/游戏
+    '游戏', '网游', '电竞', '电影', '综艺', '音乐', '直播',
+    'gaming', 'esport', 'entertainment',
+    // 房地产/物业
+    '房地产', '物业', '房产', 'real estate', 'property',
+    // 聚合摘要
+    '1氪', '晨报', '早报', '日报', '周报', '晚报', '钛晨报', '钛早报', '氪星',
+    '8点', '9点', '汇总', '简报', '精选', '盘点',
+    'weekly', 'digest', 'roundup', 'briefing', 'newsletter',
+    // 公司名排除模式（医疗类公司）
+    '巴泰', '精锋', '微创', '迈瑞', '联影', '华大', '药明', '百济', '信达',
+    // 人事变动/招聘
+    '招聘', '求职', '裁员', 'layoff', '人事', '任命', '履新', '换帅',
+    // 政策/政府
+    '证监会', '银保监', '发改委', '工信部', '科技部', '财政部',
+  ]
+
   return news.filter(n => {
     const text = n.title + (n.summary || '')
+    const textLower = text.toLowerCase()
+    // 排除非目标赛道
+    if (fundingExcludeKw.some(kw => textLower.includes(kw.toLowerCase()))) return false
+    // 正向过滤：必须包含融资关键词
     return /融资|投资|万美元|亿美元|A轮|B轮|C轮|D轮|上市|IPO|天使|完成|估值|募资/.test(text)
   })
     .slice(0, 8).map((n, i) => {
