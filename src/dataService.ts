@@ -86,14 +86,18 @@ function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number =
 function filterDigestItems(items: any[]): any[] {
   const digestPatterns = [
     // 中文聚合标记
-    '汇总', '简报', '周报', '一周', '本周', '周末', '日报', '晚报', '早报',
+    '汇总', '简报', '周报', '一周', '本周', '周末', '日报', '晚报', '早报', '晨报', '午报',
     '每日速递', '今日要闻', '昨日要闻', '上周回顾', '每月', '月报',
     '精选', '合集', '盘点', '年终', '年度',
     // 36氪等特定媒体聚合品牌
     '1氪',   // 36氪每日聚合栏目：8点1氪、9点1氪等
+    '氪星',   // 36氪另一聚合品牌
+    // 钛媒体聚合品牌
+    '钛晨报', '钛晚报', '钛早报', '钛媒体周报',
     // 英文聚合标记
     'weekly', 'digest', 'roundup', 'newsletter', 'recap',
     'top stories', 'this week', 'weekend', 'daily briefing',
+    'morning briefing', 'evening briefing',
     'monthly', 'year in review',
   ]
   return items.filter((item: any) => {
@@ -622,6 +626,8 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     '餐饮', '外卖', '旅游', '酒店', '教育', '医疗设备', '房地产',
     '医疗', '医药', '制药', '临床', '医院', 'healthcare', 'pharma', 'biotech',
     '文娱', '综艺', '电影', '音乐', '体育', '直播',
+    // 聚合/文摘（纵深防御）
+    '1氪', '晨报', '早报', '日报', '周报', '钛晨报', '钛早报', '8点', '9点',
     // 非风险商业动态
     '闲鱼', '咸鱼', '变更负责人', '组织架构调整', '部门重组',
     '任命', '出任', '履新', '接任', '换帅', '上任', '调任', '升任', '升职',
@@ -805,6 +811,8 @@ function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
     '医疗AI', '智慧医疗', 'AI诊断', '医学影像', '数字医疗',
     '金融AI', '智能投顾', '风控AI', '信贷AI',
     '法律AI', '智慧法院', 'AI律师',
+    // 聚合/文摘类（纵深防御 — 主防线在filterDigestItems）
+    '1氪', '晨报', '早报', '日报', '周报', '钛晨报', '钛早报', '8点', '9点',
   ]
   // 短词列表 — 需要整词边界匹配，防止 'ai' 命中 'iran'
   const shortWords = new Set([
