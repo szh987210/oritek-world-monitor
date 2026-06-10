@@ -620,6 +620,7 @@ function generateAlertsFromNews(news: NewsItem[]): AlertItem[] {
     '社交', 'social', '微信', 'wechat', 'tiktok', '抖音', 'instagram',
     '电商', 'ecommerce', '淘宝', '天猫', '京东', '拼多多', 'amazon retail',
     '餐饮', '外卖', '旅游', '酒店', '教育', '医疗设备', '房地产',
+    '医疗', '医药', '制药', '临床', '医院', 'healthcare', 'pharma', 'biotech',
     '文娱', '综艺', '电影', '音乐', '体育', '直播',
     // 非风险商业动态
     '闲鱼', '咸鱼', '变更负责人', '组织架构调整', '部门重组',
@@ -797,8 +798,11 @@ function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
     '消费AI', '社交AI', '短视频AI', '直播AI', '电商AI',
     '短视频推荐', '直播带货', '内容推荐算法',
     'consumer ai', 'social ai', 'short video ai', 'livestream ai',
-    // 医疗/金融/法律AI — 非欧冶目标市场（车规/具身），排除
-    '医疗AI', '智慧医疗', 'AI诊断', '医学影像',
+    // 医疗/医药/健康 — 非欧冶目标市场（车规/具身），排除
+    // 既有独立词也有复合词，防止"巴泰医疗完成融资"类内容漏网
+    '医疗', '医药', '制药', '药企', '临床', '医院', '患者',
+    'healthcare', 'pharma', 'drug', 'biotech', 'clinical', 'hospital', 'patient',
+    '医疗AI', '智慧医疗', 'AI诊断', '医学影像', '数字医疗',
     '金融AI', '智能投顾', '风控AI', '信贷AI',
     '法律AI', '智慧法院', 'AI律师',
   ]
@@ -2003,12 +2007,26 @@ async function fetchAIInsightsRSS(): Promise<AIInsight[]> {
       try {
         const { items } = await fetchRssWithFallback(src.url, src.name)
         const kw = src.keywords || []
-        // P1修复：排除教育/消费/娱乐AI内容（与欧冶半导体/车规/具身智能业务无关）
+        // P1修复：排除教育/消费/娱乐/医疗/金融/聚合/招聘AI内容（与欧冶半导体/车规/具身智能业务无关）
         const insightExcludeKw = [
+          // 教育AI
           '教育大模型', '智能教育', '在线教育', '教育AI', '学习Agent',
           'edtech', 'e-learning', 'k-12', 'education ai', 'ai education',
+          // 消费/社交/内容AI
           '消费AI', '社交AI', '短视频AI', '直播AI', '电商AI',
           'consumer ai', 'social ai', 'short video ai', 'livestream ai',
+          // 医疗/制药/健康 — 非欧冶目标市场
+          '医疗', '医药', '制药', '药企', '临床', '医院', ' Patient',
+          'healthcare', 'pharma', 'drug', 'biotech', 'clinical', 'medical ai',
+          '智慧医疗', '数字医疗', '医疗AI', 'AI诊断', '医学影像',
+          // 金融/法律AI
+          '金融AI', '智能投顾', '风控AI', '信贷AI',
+          '法律AI', '智慧法院', 'AI律师',
+          // 聚合/文摘类
+          '晨报', '早报', '晚报', '日报', '周报', '周末', '汇总', '简报',
+          '1氪', '8点', '9点', 'weekly', 'digest', 'roundup', 'wrap-up',
+          // 招聘/人事
+          '招聘', '求职', '人才', '岗位', '裁员', 'layoff', '人事变动',
         ]
         return items
           .filter((item: any) => {

@@ -194,7 +194,7 @@ export const FINANCIAL_RSS_SOURCES: Array<{ name: string; url: string; symbol: s
 // 2026-06-08 清理：移除机器之心（URL返回HTML）、新智元（微信公众号无RSS）
 // 新增：钛媒体、MIT Tech Review、Ars Technica（均已验证RSS有效）
 export const AI_INSIGHTS_RSS_SOURCES = [
-  { name: '36氪-AI', url: 'https://36kr.com/feed', keywords: ['AI', '人工智能', '大模型', 'LLM', '机器人', '智能驾驶', '算力', 'AIGC', 'GPT', '融资'] },
+  { name: '36氪-AI', url: 'https://36kr.com/feed', keywords: ['AI', '人工智能', '具身智能', '机器人', '车规', '自动驾驶', '半导体', '大模型', 'LLM', '算力', '芯片', 'AIGC', 'GPT'] },
   { name: '量子位', url: 'https://www.qbitai.com/rss', keywords: ['AI', '人工智能', '大模型', 'LLM', '量子位', '机器学习', '深度学习', '机器人', '自动驾驶', '算力'] },
   { name: '雷峰网', url: 'https://www.leiphone.com/feed', keywords: ['AI', '人工智能', '大模型', '机器人', '自动驾驶', '芯片', '算力', '智能驾驶'] },
   { name: '钛媒体', url: 'https://www.tmtpost.com/rss.xml', keywords: ['AI', '人工智能', '大模型', 'LLM', '科技', '机器人', '自动驾驶', '芯片', '算力'] },
