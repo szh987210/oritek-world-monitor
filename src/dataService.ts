@@ -775,7 +775,9 @@ function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
     '罚款', '处罚', 'fine', 'penalty', '调查', 'investigation',
     '失控', '漏洞', '攻击', '泄漏', 'breach',
   ]
-  // === 排除词：人事/金融/消费等非技术内容 ===
+  // === 排除词：人事/金融/消费/教育/医疗/金融AI等非技术内容 ===
+  // 欧冶业务聚焦：半导体芯片 / 车规AI / 具身智能（机器人）/ 端侧算力
+  // 以下领域与业务无关，直接排除
   const excludeKeywords = [
     '人事', '任命', '出任', '履新', '接任', '换帅', '辞职', '离职', '卸任',
     '股价', '股票', '涨停', '跌停', '收盘', '开盘',
@@ -784,7 +786,21 @@ function generateAIInsightsFromNews(news: NewsItem[]): AIInsight[] {
     'a轮', 'b轮', 'c轮', 'd轮', 'pre-ipo',
     '加密货币', 'bitcoin', 'ethereum', 'nft', 'defi',
     '游戏', 'gaming', '电竞', 'esport',
-    '综艺', '娱乐', '明星', '电影', '电视剧', '综艺',
+    '综艺', '娱乐', '明星', '电影', '电视剧',
+    // 教育AI — 与欧冶半导体/车规/具身智能业务无关
+    '教育大模型', '智能教育', '在线教育', '教育AI', '学习Agent',
+    '教育科技', '智慧教育', 'AI助教', 'AI老师', '自适应学习',
+    'k12', 'k-12', '职业教育', '职业培训', '课程推荐',
+    'edtech', 'e-learning', 'education ai', 'ai tutor', 'ai teacher',
+    'adaptive learning', 'smart classroom', 'digital classroom',
+    // 消费/社交/内容AI — 与B2B芯片业务无关
+    '消费AI', '社交AI', '短视频AI', '直播AI', '电商AI',
+    '短视频推荐', '直播带货', '内容推荐算法',
+    'consumer ai', 'social ai', 'short video ai', 'livestream ai',
+    // 医疗/金融/法律AI — 非欧冶目标市场（车规/具身），排除
+    '医疗AI', '智慧医疗', 'AI诊断', '医学影像',
+    '金融AI', '智能投顾', '风控AI', '信贷AI',
+    '法律AI', '智慧法院', 'AI律师',
   ]
   // 短词列表 — 需要整词边界匹配，防止 'ai' 命中 'iran'
   const shortWords = new Set([
@@ -1987,11 +2003,22 @@ async function fetchAIInsightsRSS(): Promise<AIInsight[]> {
       try {
         const { items } = await fetchRssWithFallback(src.url, src.name)
         const kw = src.keywords || []
+        // P1修复：排除教育/消费/娱乐AI内容（与欧冶半导体/车规/具身智能业务无关）
+        const insightExcludeKw = [
+          '教育大模型', '智能教育', '在线教育', '教育AI', '学习Agent',
+          'edtech', 'e-learning', 'k-12', 'education ai', 'ai education',
+          '消费AI', '社交AI', '短视频AI', '直播AI', '电商AI',
+          'consumer ai', 'social ai', 'short video ai', 'livestream ai',
+        ]
         return items
           .filter((item: any) => {
             if (kw.length === 0) return true
             const text = ((item.title || '') + ' ' + (item.description || '')).toLowerCase()
             return kw.some((k: string) => text.includes(k.toLowerCase()))
+          })
+          .filter((item: any) => {
+            const text = ((item.title || '') + ' ' + (item.description || '')).toLowerCase()
+            return !insightExcludeKw.some((k: string) => text.includes(k.toLowerCase()))
           })
           .slice(0, 6)
           .map((item: any, idx: number) => {
