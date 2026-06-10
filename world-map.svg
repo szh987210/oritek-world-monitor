@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
+  <defs>
+    <radialGradient id="ocean" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="rgba(0,60,150,0.2)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="500" fill="url(#ocean)"/>
+  
+  <!-- World Map Paths - Simplified from Natural Earth Data -->
+  <g fill="rgba(30,45,65,0.9)" stroke="rgba(0,212,255,0.4)" stroke-width="0.8">
+    <!-- North America -->
+    <path d="M150,80 L200,60 L280,55 L350,70 L400,100 L420,150 L400,200 L350,240 L280,250 L200,240 L130,200 L100,150 L90,100 Z M60,40 L120,25 L180,35 L200,70 L180,100 L120,110 L60,95 L40,60 Z"/>
+    
+    <!-- South America -->
+    <path d="M280,280 L340,270 L380,300 L400,360 L390,420 L360,470 L320,490 L280,480 L250,430 L240,360 L250,300 Z"/>
+    
+    <!-- Europe -->
+    <path d="M480,100 L540,85 L600,90 L640,120 L650,160 L630,190 L580,200 L520,195 L480,170 L470,130 Z"/>
+    
+    <!-- Africa -->
+    <path d="M500,220 L570,210 L620,230 L650,280 L660,350 L640,410 L600,450 L550,460 L510,430 L490,370 L485,300 Z"/>
+    
+    <!-- Asia -->
+    <path d="M650,80 L750,60 L850,70 L920,100 L960,150 L980,210 L970,270 L940,320 L880,350 L800,360 L720,350 L660,310 L630,250 L620,180 L630,120 Z"/>
+    
+    <!-- Australia -->
+    <path d="M820,380 L900,370 L960,390 L980,430 L970,470 L920,490 L860,495 L810,480 L800,440 Z"/>
+    
+    <!-- Greenland -->
+    <path d="M360,50 L420,40 L460,55 L470,85 L450,110 L400,115 L360,100 L350,70 Z"/>
+  </g>
+</svg>
