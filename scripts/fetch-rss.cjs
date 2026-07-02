@@ -184,21 +184,24 @@ function loadPreviousFeeds() {
 }
 
 // ─── 抓取单个源（返回 { items, latencyMs, error }）─── // #18: 添加15s整体超时，防止 rss-parser 卡死慢源
-async function fetchFeed(url) {
+async function fetchFeed(url, category) {
   const FEED_TIMEOUT = 15000;
+
+  const buildItem = (item, feed) => ({
+    title: item.title || '',
+    link: item.link || item.guid || '',
+    description: (item.description || item.summary || item.contentSnippet || '').replace(/<[^>]+>/g, '').slice(0, 300),
+    pubDate: item.pubDate || item.isoDate || item.published || new Date().toISOString(),
+    source: feed.title || new URL(url).hostname.replace('www.', ''),
+    category,  // 注入源分类，供前端按类别筛选
+  });
 
   const fetchWithDeadline = async () => {
     const startTime = Date.now();
     try {
       const feed = await parser.parseURL(url);
       const latency = Date.now() - startTime;
-      const items = feed.items.map(item => ({
-        title: item.title || '',
-        link: item.link || item.guid || '',
-        description: (item.description || item.summary || item.contentSnippet || '').replace(/<[^>]+>/g, '').slice(0, 300),
-        pubDate: item.pubDate || item.isoDate || item.published || new Date().toISOString(),
-        source: feed.title || new URL(url).hostname.replace('www.', ''),
-      }));
+      const items = feed.items.map(item => buildItem(item, feed));
       return { items, latencyMs: latency, error: null };
     } catch (err) {
       // 降级：直接 fetch XML 再 parse
@@ -207,13 +210,7 @@ async function fetchFeed(url) {
         const xmlText = await fetchWithTimeout(url, 8000).then(r => r.text());
         const feed = await parser.parseString(xmlText);
         const latency = Date.now() - t0;
-        const items = feed.items.map(item => ({
-          title: item.title || '',
-          link: item.link || item.guid || '',
-          description: (item.description || item.summary || '').replace(/<[^>]+>/g, '').slice(0, 300),
-          pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
-          source: feed.title || new URL(url).hostname.replace('www.', ''),
-        }));
+        const items = feed.items.map(item => buildItem(item, feed));
         return { items, latencyMs: latency, error: null };
       } catch (err2) {
         const latency = Date.now() - startTime;
@@ -247,7 +244,7 @@ async function main() {
   const CONCURRENCY = 6;
   for (let i = 0; i < FEED_URLS.length; i += CONCURRENCY) {
     const batch = FEED_URLS.slice(i, i + CONCURRENCY);
-    const results = await Promise.allSettled(batch.map(url => fetchFeed(url)));
+    const results = await Promise.allSettled(batch.map(url => fetchFeed(url, getCategory(url))));
 
     for (let j = 0; j < results.length; j++) {
       const url = batch[j];

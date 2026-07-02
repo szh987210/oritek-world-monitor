@@ -2437,6 +2437,20 @@ interface LocalFeedItem {
   description: string
   pubDate: string
   source: string
+  category?: string  // 由 fetch-rss.cjs 的 SOURCE_CATEGORY 映射注入
+}
+
+// feeds.json 源分类 → 前端 NewsItem category 映射
+function mapSourceCategoryToNewsCategory(srcCat: string): NewsItem['category'] {
+  const mapping: Record<string, NewsItem['category']> = {
+    'ai-tech': 'ai',
+    'semiconductor': 'tech',
+    'supply-chain': 'supply',
+    'international': 'general',
+    'policy': 'policy',
+    'other': 'general',
+  }
+  return mapping[srcCat] || 'general'
 }
 
 async function fetchLocalFeedsAsNews(): Promise<NewsItem[]> {
@@ -2474,7 +2488,7 @@ async function fetchLocalFeedsAsNews(): Promise<NewsItem[]> {
         title: escapeHtml(rawTitle.slice(0, 80)),
         source: item.source || 'Unknown',
         time: formatTimeAgo(published),
-        category: 'tech' as const,
+        category: mapSourceCategoryToNewsCategory(item.category || 'other'),
         industry,
         priority,
         summary: escapeHtml(rawSummary),
