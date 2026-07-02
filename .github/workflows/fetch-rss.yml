@@ -42,11 +42,17 @@ jobs:
         run: |
           node scripts/fetch-rss.cjs
       
+      - name: Fetch real-time finance data
+        env:
+          TZ: 'Asia/Shanghai'
+        run: |
+          node scripts/fetch-finance.cjs
+      
       - name: Commit and push if data changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/feeds.json data/health.json data/status.json || true
+          git add data/feeds.json data/health.json data/status.json data/finance.json || true
           if git diff --staged --quiet; then
             echo "No changes to data files"
           else

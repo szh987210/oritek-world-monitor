@@ -387,6 +387,10 @@ let lastFetchTime: Record<string, number> = {
   hotspots: 0
 }
 
+// 财经数据远程缓存（finance.json 刷新间隔）
+let financeJsonCache: { data: any; fetchTime: number } | null = null
+const FINANCE_JSON_TTL = 60_000 // 60秒内不重复请求
+
 // ==================== 数据生成函数 ====================
 
 // generateFluctuation 已移除：死代码（无调用点），且使用 Math.random 违反真实性原则
@@ -414,6 +418,7 @@ async function fetchFinancialRSSData(): Promise<{ stocks: Record<string, StockDa
 }
 
 function generateDynamicStocks(): Record<string, StockData> {
+  // 兜底：仅当 finance.json 不可用时使用。返回静态基准数据。
   const dynamicStocks: Record<string, StockData> = {}
   const now = new Date().toISOString()
   for (const [symbol, baseData] of Object.entries(BASE_STOCK_DATA)) {
@@ -431,6 +436,87 @@ function generateDynamicIndices(): IndustryIndex[] {
     ...index,
     timestamp: now
   }))
+}
+
+// ==================== 实时财经数据（新浪财经 → finance.json）====================
+
+/**
+ * 从 GitHub Pages 读取 finance.json（每15分钟由 fetch-rss workflow 更新）
+ * 缓存 60 秒，避免每次刷新重复请求
+ */
+async function fetchFinanceJson(): Promise<any | null> {
+  const now = Date.now()
+  if (financeJsonCache && (now - financeJsonCache.fetchTime) < FINANCE_JSON_TTL) {
+    return financeJsonCache.data
+  }
+  try {
+    const resp = await fetch('./data/finance.json?_t=' + now)
+    if (!resp.ok) {
+      console.warn('[fetchFinanceJson] finance.json not available (HTTP ' + resp.status + ')')
+      return null
+    }
+    const data = await resp.json()
+    financeJsonCache = { data, fetchTime: now }
+    const age = now - new Date(data.lastUpdate).getTime()
+    console.log(`[fetchFinanceJson] 加载成功，${data.fetchedCount || Object.keys(data.stocks||{}).length} 只股票, ${(data.indices||[]).length} 个指数, 数据年龄: ${Math.round(age/1000)}s`)
+    return data
+  } catch (e) {
+    console.warn('[fetchFinanceJson] 读取失败:', e)
+    return null
+  }
+}
+
+export async function fetchStockData(symbols: string[]): Promise<StockData[]> {
+  console.log('[fetchStockData] 查询实时股价:', symbols.length + '只')
+  const now = Date.now()
+  const cacheExpiry = API_CONFIG.refreshInterval.stock
+
+  // 优先使用缓存
+  if (now - lastFetchTime.stock < cacheExpiry && Object.keys(cachedStocks).length > 0) {
+    console.log('[fetchStockData] 使用缓存')
+    return symbols.map(s => cachedStocks[s]).filter(Boolean)
+  }
+
+  // 尝试从 finance.json 读取实时数据
+  const financeData = await fetchFinanceJson()
+  if (financeData && financeData.stocks && Object.keys(financeData.stocks).length > 0) {
+    console.log('[fetchStockData] 使用 finance.json 实时数据')
+    cachedStocks = financeData.stocks
+    lastFetchTime.stock = now
+    return symbols.map(s => cachedStocks[s] || BASE_STOCK_DATA[s]).filter(Boolean)
+  }
+
+  // 回退到静态基准数据
+  console.warn('[fetchStockData] finance.json 不可用，回退到静态基准数据（可能过时）')
+  cachedStocks = generateDynamicStocks()
+  lastFetchTime.stock = now
+  return symbols.map(s => cachedStocks[s]).filter(Boolean)
+}
+
+export async function fetchIndustryIndices(): Promise<IndustryIndex[]> {
+  console.log('[fetchIndustryIndices] 查询行业指数...')
+  const now = Date.now()
+  const cacheExpiry = API_CONFIG.refreshInterval.indices
+
+  if (now - lastFetchTime.indices < cacheExpiry && cachedIndices.length > 0) {
+    console.log('[fetchIndustryIndices] 使用缓存')
+    return cachedIndices
+  }
+
+  // 尝试从 finance.json 读取实时数据
+  const financeData = await fetchFinanceJson()
+  if (financeData && financeData.indices && financeData.indices.length > 0) {
+    console.log('[fetchIndustryIndices] 使用 finance.json 实时指数')
+    cachedIndices = financeData.indices
+    lastFetchTime.indices = now
+    return cachedIndices
+  }
+
+  // 回退到静态基准数据
+  console.warn('[fetchIndustryIndices] finance.json 不可用，回退到静态基准指数（可能过时）')
+  cachedIndices = generateDynamicIndices()
+  lastFetchTime.indices = now
+  return cachedIndices
 }
 
 // ==================== 数据获取函数 ====================
@@ -1289,34 +1375,6 @@ function inferCompanyNewsCategory(title: string): CompanyNews['category'] {
   if (/合作|签约|战略|参股|投资/.test(t)) return 'partner'
   if (/发布|亮相|上市|展出|车展|签约/.test(t)) return 'event'
   return 'product'
-}
-
-export async function fetchStockData(symbols: string[]): Promise<StockData[]> {
-  console.log('Fetching real stock data for:', symbols)
-  const now = Date.now()
-  const cacheExpiry = API_CONFIG.refreshInterval.stock
-  if (now - lastFetchTime.stock < cacheExpiry && Object.keys(cachedStocks).length > 0) {
-    console.log('Using cached stock data')
-    return symbols.map(symbol => cachedStocks[symbol] || BASE_STOCK_DATA[symbol]).filter(Boolean)
-  }
-  console.log('Generating fresh stock data...')
-  cachedStocks = generateDynamicStocks()
-  lastFetchTime.stock = now
-  return symbols.map(symbol => cachedStocks[symbol]).filter(Boolean)
-}
-
-export async function fetchIndustryIndices(): Promise<IndustryIndex[]> {
-  console.log('Fetching industry indices...')
-  const now = Date.now()
-  const cacheExpiry = API_CONFIG.refreshInterval.indices
-  if (now - lastFetchTime.indices < cacheExpiry && cachedIndices.length > 0) {
-    console.log('Using cached indices data')
-    return cachedIndices
-  }
-  console.log('Generating fresh indices data...')
-  cachedIndices = generateDynamicIndices()
-  lastFetchTime.indices = now
-  return cachedIndices
 }
 
 /**
