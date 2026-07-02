@@ -49,9 +49,6 @@ const SOURCE_CATEGORY = {
   'dw.com': 'international',
   'nhk.or.jp': 'international',
   'nippon.com': 'international',
-  // 政策监管类源（RSSHub 路由，用于抓取中国政府政策公告）
-  'rsshub.app': 'policy',
-  'rsshub.feeddd.org': 'policy',
 };
 
 function getCategory(url) {
@@ -95,17 +92,6 @@ const FEED_URLS = [
   'https://rss.dw.com/rdf/rss-de-all',
   'https://www3.nhk.or.jp/rss/news/cat0.xml',
   'https://www.nippon.com/en/feed/',
-  // === 政策监管 RSS 源（RSSHub 路由，双实例冗余） ===
-  // 国务院政策文件库
-  'https://rsshub.feeddd.org/gov/statecouncil/policy',
-  // 工信部政策文件
-  'https://rsshub.feeddd.org/gov/miit/zcjd',
-  // 工信部文件发布
-  'https://rsshub.feeddd.org/gov/miit/wjfb',
-  // 科技部
-  'https://rsshub.feeddd.org/gov/most/kjbg',
-  // 发改委
-  'https://rsshub.feeddd.org/gov/ndrc/xwdt',
 ];
 
 // ─── 健康状态判定阈值 ───
@@ -175,6 +161,29 @@ function loadPreviousHealth() {
     };
   }
   return map;
+}
+
+// ─── 基于内容的二次分类：从非政策源中识别政策相关内容 ───
+// RSSHub 公共实例在 GitHub Actions 中频繁超时，改用关键词匹配从现有可靠源中提取
+const POLICY_RECLASSIFY_KEYWORDS = [
+  // 中国政策部门
+  '工信部', '科技部', '发改委', '商务部', '财政部', '国务院', '国资委',
+  '市场监管总局', '网信办', '证监会', '银保监会', '央行', '人民银行',
+  // 政策动作
+  '政策', '法规', '监管', '新规', '办法', '条例', '通知',
+  '申报指南', '专项', '补贴', '扶持', '立项', '批复',
+  '出口管制', '制裁清单', '实体清单', '技术出口', '安全审查',
+  '数据安全', '网络安全', '个人信息保护',
+  '减税', '免税', '退税', '优惠', '专项资金', '产业基金',
+  // 芯片/半导体政策
+  '芯片法案', '半导体扶持', '集成电路政策', '大基金',
+  // 车规/智驾政策
+  '智能网联汽车', '自动驾驶法规', '车路协同', '准入管理',
+];
+
+function reclassifyAsPolicy(item) {
+  const text = ((item.title || '') + ' ' + (item.description || '')).toLowerCase();
+  return POLICY_RECLASSIFY_KEYWORDS.some(kw => text.includes(kw.toLowerCase()));
 }
 
 // ─── L2 增量合并：加载旧 feeds 防止空覆盖 ───
@@ -260,6 +269,15 @@ async function main() {
         const success = error === null && items.length > 0;
 
         if (success) {
+          // 基于内容的二次分类：从非政策源中识别政策新闻
+          let reclassified = 0;
+          for (const item of items) {
+            if (item.category !== 'policy' && reclassifyAsPolicy(item)) {
+              item.category = 'policy';
+              reclassified++;
+            }
+          }
+          if (reclassified > 0) console.log(`    🔄 二次分类: ${reclassified}条 → policy`);
           allItems.push(...items);
           const newTotal = prev.total_successes + 1;
           healthRecords[sourceName] = {
