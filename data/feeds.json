@@ -1,5 +1,181 @@
 [
   {
+    "title": "微软投入25亿美元组建6000人AI部署团队",
+    "link": "https://36kr.com/newsflashes/3879108479479809?f=rss",
+    "description": "微软正投入25亿美元成立一个新的业务部门，专门负责帮助企业客户部署人工智能技术。该部门名为Microsoft Frontier Company，将整合约6000名工程师、技术顾问和销售团队，直接派驻客户企业内部提供服务。（新浪财经）",
+    "pubDate": "2026-07-03 07:13:12  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "美联储7月维持利率不变的概率为82.4%",
+    "link": "https://36kr.com/newsflashes/3879107943313416?f=rss",
+    "description": "据CME“美联储观察”，美联储7月维持利率不变的概率为82.4%，累计加息25个基点的概率为17.6%。 美联储到9月维持利率不变的概率为46.8%，累计加息25个基点的概率为45.6%，累计加息50个基点的概率为7.6%。（界面）",
+    "pubDate": "2026-07-03 07:12:39  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "可口可乐印度子公司拟2027年上市，估值目标百亿美元",
+    "link": "https://36kr.com/newsflashes/3879107731828995?f=rss",
+    "description": "可口可乐公司正积极推进其印度主要装瓶业务的上市计划，目标估值约100亿美元，并已启动投资银行选聘程序，为2027年的首次公开募股铺路。（新浪财经）",
+    "pubDate": "2026-07-03 07:12:26  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "特斯拉将员工每周AI支出上限设为200美元",
+    "link": "https://36kr.com/newsflashes/3879107006050560?f=rss",
+    "description": "The Information援引内部备忘录及知情人士报道，特斯拉上月通知员工，将从7月6日起对员工的人工智能支出设定每周200美元的上限。备忘录称，员工如需超过限额，需要获得批准。两位知情人士向The Information表示，上述限额不包括xAI产品的测试版。（新浪财经）",
+    "pubDate": "2026-07-03 07:11:42  +0800",
+    "source": "36氪",
+    "category": "policy"
+  },
+  {
+    "title": "特斯拉：第二季度汽车交付量为480126辆",
+    "link": "https://36kr.com/newsflashes/3879106481844228?f=rss",
+    "description": "36氪获悉，特斯拉公告，第二季度汽车交付量为480,126辆，汽车生产量为451,758辆，并部署了13.5GWh的储能产品。其中，Model 3/Y交付量467,762辆，同比增长25%；生产量为442,936辆，同比增长12%。",
+    "pubDate": "2026-07-03 07:11:10  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Meta首席执行官扎克伯格称AI智能体开发未达预期",
+    "link": "https://36kr.com/newsflashes/3879105842819334?f=rss",
+    "description": "据报道，Meta首席执行官马克·扎克伯格表示，过去四个月AI的智能体开发“并未以我们预期的方式加速”。扎克伯格补充称，包含大规模裁员在内的重组工作本可以更“干净利落”，公司对新架构的押注“目前还没有取得成效”。（新浪财经）",
+    "pubDate": "2026-07-03 07:10:31  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Anthropic或正与三星洽谈定制人工智能芯片",
+    "link": "https://36kr.com/newsflashes/3879102391283968?f=rss",
+    "description": "7月2日，据报道，有三位知情人士表示，Anthropic已启动自研AI芯片的早期工作，并与三星电子就潜在制造合作进行了洽谈。（界面）",
+    "pubDate": "2026-07-03 07:07:00  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "微软计划8月推出Copilot全端整合产品，精简冗余功能对标ChatGPT",
+    "link": "https://36kr.com/newsflashes/3879101997068552?f=rss",
+    "description": "当地时间周四上午，微软一名高管向员工透露，公司将整合面向个人消费者与企业端的两款Copilot应用，并砍掉冗余功能，力求在用户心中“赢得生存的资格”。根据一份1200字的内部备忘录，微软执行副总裁雅各布・安德烈乌在文中表示，这款全新统一版应用还将搭载AI编程工具与多款全新智能代理功能，这类功能需要用户额外付费使用。（新浪财经）",
+    "pubDate": "2026-07-03 07:06:36  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "美国5月工厂订单环比下降1.3%",
+    "link": "https://36kr.com/newsflashes/3879101412258053?f=rss",
+    "description": "美国5月工厂订单环比下降1.3%，预期为-1.8%，前值由4.80%修正为5.3%。（界面）",
+    "pubDate": "2026-07-03 07:06:00  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "特朗普称人工智能需要护栏，但应尽量减少限制",
+    "link": "https://36kr.com/newsflashes/3879099501981952?f=rss",
+    "description": "美国总统唐纳德·特朗普表示，他认为人工智能技术需要一定标准，但希望避免施加可能妨碍美国企业的繁重限制。特朗普周四在白宫接受采访时表示：“你需要一些护栏，但你希望尽可能少做一些。”“当我们认为存在一个不良参与者，并且存在一定风险时，我们就会迅速且有效地制止它。我们最近就处理过这样一起案例，”他还表示，但并未说明具体所指对象。（新浪财经）",
+    "pubDate": "2026-07-03 07:04:04  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "“VAST”完成超10亿元A3轮融资",
+    "link": "https://36kr.com/newsflashes/3879098692071429?f=rss",
+    "description": "“VAST（三启万物）”本月再次完成超10亿人民币A3战略轮融资。本轮融资由���利资本等头部产业方，四三九九、贪玩游戏、巨人网络等游戏厂商，某知名互联网战投，亦庄国投、基石资本、毅达资本、成都科创投、复星创富、华控基金、锡创投、慕华科创、策源资本等一线投资机构及地方产业基金联合参投。老股东渶策资本、元生资本持续追投，彰显对公司战略选择与发展前景的坚定信心。",
+    "pubDate": "2026-07-03 07:03:14  +0800",
+    "source": "36氪",
+    "category": "policy"
+  },
+  {
+    "title": "AI is 'not smart' so what's next in artificial intelligence?",
+    "link": "https://www.bbc.co.uk/news/articles/cj6gr0xkyr3o?at_medium=RSS&at_campaign=rss",
+    "description": "Leading AI researcher Yan LeCun has a start-up which is developing a more flexible AI system.",
+    "pubDate": "Thu, 02 Jul 2026 23:02:09 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Private space pilots are flying orbital missions for the US Space Force",
+    "link": "https://techcrunch.com/2026/07/02/private-space-pilots-are-flying-orbital-missions-for-the-us-space-force/",
+    "description": "True Anomaly and Rocket Lab are performing Top Gun-style satellite fly-bys for the US military.",
+    "pubDate": "Thu, 02 Jul 2026 23:01:06 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "美股三大指数收盘涨跌不一，特斯拉跌超7%",
+    "link": "https://36kr.com/newsflashes/3879096022331396?f=rss",
+    "description": "36氪获悉，7月2日收盘，美股三大指数涨跌不一，道指涨1.14%，纳指跌0.8%，标普500指数平收。大型科技股涨跌不一，特斯拉跌超7%，Arm跌超6%，Meta跌超4%，英伟达跌超1%，谷歌小幅下跌；奈飞、苹果涨超4%，SpaceX涨超2%，微软涨超1%，亚马逊小幅上涨。热门中概股多数下跌，爱奇艺跌超4%，小鹏集团、蔚来、百度跌超3%，阿里巴巴、网易、B站、微博、理想汽车跌超1%；京东涨超1%。",
+    "pubDate": "2026-07-03 07:00:31  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Portugal fans gather ahead of Ronaldo-Modric clash",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/2/portugal-fans-gather-ahead-of-ronaldo-modric-clash?traffic_source=rss",
+    "description": "Portugal fans gather ahead of Ronaldo-Modric clash.",
+    "pubDate": "Thu, 02 Jul 2026 22:49:24 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Iberdrola kicks off its first large-scale battery project in the US",
+    "link": "https://electrek.co/2026/07/02/iberdrola-kicks-off-its-first-large-scale-battery-project-in-the-us/",
+    "description": "Spanish renewable energy and electricity giant Iberdrola is constructing its first battery energy storage project in the US as utilities race to add more storage to strengthen the grid.",
+    "pubDate": "Thu, 02 Jul 2026 22:33:31 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Senegal’s World Cup agony: Nation left rueing last-gasp collapse",
+    "link": "https://www.aljazeera.com/sports/2026/7/2/senegals-world-cup-agony-nation-left-rueing-last-gasp-collapse?traffic_source=rss",
+    "description": "Former players and fans blame substitutions, lack of focus, and travel restrictions for Senegal's World Cup exit.",
+    "pubDate": "Thu, 02 Jul 2026 22:24:23 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Tesla driver faces manslaughter charges over Texas crash that killed a woman inside her home",
+    "link": "https://www.theverge.com/transportation/961161/tesla-fsd-katy-tx-manslaughter-charges",
+    "description": "The man whose Tesla struck and killed a woman inside her Texas home last month is now facing manslaughter charges, as reported earlier by The Wall Street Journal and local news outlet KHOU 11. 44-year-old Michael Butler was arrested on Wednesday and claimed to have been driving his Model 3 using Tes",
+    "pubDate": "2026-07-02T22:09:33.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Thiel Capital’s Jack Selby nabs stakes in hot startups like Etched through Arizona connections",
+    "link": "https://techcrunch.com/2026/07/02/thiel-capitals-jack-selby-nabs-stakes-in-hot-startups-like-etched-through-arizona-connections/",
+    "description": "Selby's VC firm, Copper Sky Capital, is currently raising a $300 million second fund, according to a regulatory filing.",
+    "pubDate": "Thu, 02 Jul 2026 21:57:10 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "テスラ 欧州や中国で需要回復か ガソリン価格高騰も追い風に",
+    "link": "http://www3.nhk.or.jp/news/html/20260703/k10015167681000.html",
+    "description": "アメリカのEV＝電気自動車メーカー「テスラ」は、先月までの3か月間の世界での新車販売台数を発表し、前の年の同じ時期より24.9％増えました。中東情勢によるガソリン価格の高騰などがEVの需要の拡大につながったとみられます。",
+    "pubDate": "Fri, 03 Jul 2026 06:55:34 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "DR Congo Ebola outbreak tops 400 deaths as virus reaches major city",
+    "link": "https://www.france24.com/en/africa/20260702-dr-congo-ebola-outbreak-tops-400-deaths-as-virus-reaches-major-city",
+    "description": "An Ebola outbreak in the Democratic Republic of Congo has killed more than 400 people and continues to spread, with health authorities confirming a first case in the major city of Kisangani, hundreds of kilometres from the epidemic's epicentre in the northeast.",
+    "pubDate": "Thu, 02 Jul 2026 21:51:57 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Oyarzabal scores two goals as Spain dominates Austria in World Cup knockout",
+    "link": "https://www.aljazeera.com/sports/2026/7/2/oyarzabal-scores-two-goals-as-spain-dominates-austria-in-world-cup-knockout?traffic_source=rss",
+    "description": "Mikel Oyarzabal's brace allows the European champions to dominate Austria and move on to the round of 16.",
+    "pubDate": "Thu, 02 Jul 2026 21:45:42 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "The Hyundai IONIQ 3 is the affordable electric hatch we want but can’t have",
     "link": "https://electrek.co/2026/07/02/hyundai-ioniq-3-electric-hatch-we-want-but-cant-have/",
     "description": "The IONIQ 3 is a high-tech, fully electric hatch that the US will miss out on. It can drive over 300 miles on a single charge and is Hyundai’s first vehicle in Europe to use its new Pleos Connect infotainment system.",
@@ -8,12 +184,44 @@
     "category": "ai-tech"
   },
   {
+    "title": "German reforms, Google's final defeat, and a $20M Swift wedding?",
+    "link": "https://www.france24.com/en/tv-shows/business/20260702-german-reforms-google-s-final-defeat-and-a-20m-swift-wedding",
+    "description": "A daily update on the latest business and economic news.",
+    "pubDate": "Thu, 02 Jul 2026 21:38:17 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
     "title": "Ebola treatments trial begins in the Democratic Republic of Congo",
     "link": "https://www.bbc.co.uk/news/articles/c75ykve4zzxo?at_medium=RSS&at_campaign=rss",
     "description": "According to WHO data, there have been 1,406 confirmed cases of the disease in DRC, with 301 suspected cases and 438 deaths.",
     "pubDate": "Thu, 02 Jul 2026 21:21:36 GMT",
     "source": "BBC News",
     "category": "international"
+  },
+  {
+    "title": "プロ野球 西武 長谷川信哉 左手骨折で登録抹消 交流戦MVP",
+    "link": "http://www3.nhk.or.jp/news/html/20260703/k10015167571000.html",
+    "description": "プロ野球の西武で交流戦のMVP＝最優秀選手を獲得するなどチームを支えてきた長谷川信哉選手が、1日の試合の打撃で左手を痛めて骨折と診断され、出場選手登録を外れました。",
+    "pubDate": "Fri, 03 Jul 2026 06:16:14 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "ダウ平均株価 最高値を更新 FRBの利上げ観測後退で",
+    "link": "http://www3.nhk.or.jp/news/html/20260703/k10015167731000.html",
+    "description": "2日のニューヨーク株式市場ではアメリカのFRB＝連邦準備制度理事会が早期の利上げに踏み切るとの観測が後退したことで買い注文が広がり、ダウ平均株価は前日から600ドル近く値上がりして最高値を更新しました。",
+    "pubDate": "Fri, 03 Jul 2026 06:09:57 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Meta has a new app called Pocket that is absolutely nothing like the old Pocket",
+    "link": "https://www.theverge.com/tech/961086/meta-pocket-app-gizmo-ai",
+    "description": "Mozilla shut down the well-loved read-it-later Pocket app last year, and now Meta is launching an app called Pocket with an entirely different, AI-focused pitch: this new app lets you make and share little interactive \"gizmos\" built from an AI prompt, as reported by Business Insider. Meta CEO Mark Z",
+    "pubDate": "2026-07-02T21:09:06.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
   },
   {
     "title": "World Cup 2026: Spain cruise into last 16 with win over Austria",
@@ -178,7 +386,7 @@
   {
     "title": "Jersey Mike’s IPO illustrates how bad the AI hype has become",
     "link": "https://techcrunch.com/2026/07/02/jersey-mikes-ipo-illustrates-how-bad-the-ai-hype-has-become/",
-    "description": "Just for kicks, I took a look at Jersey Mike's IPO documents. Surely a sandwich shop would have no need to mention AI. But low and behold.",
+    "description": "Just for kicks, I took a look at Jersey Mike's IPO documents. Surely a sandwich shop would have no need to mention AI. But lo and behold.",
     "pubDate": "Thu, 02 Jul 2026 20:11:59 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -1864,19 +2072,19 @@
     "category": "international"
   },
   {
-    "title": "BitTorrent&#8217;s disastrous, legendary, and controversial story",
-    "link": "https://www.theverge.com/tech/959848/bittorrent-story-25-years-piracy",
-    "description": "Twenty-five years ago today, a young, little-known programmer by the name of Bram Cohen fired off a short message to a mailing list for peer-to-peer enthusiasts. \"My new app, BitTorrent, is now in working order, check it out here,\" Cohen wrote, followed by a link to his personal website. \"What's Bit",
-    "pubDate": "2026-07-02T11:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
     "title": "How Trump Helped China Make America’s Cheapest EV",
     "link": "https://www.wired.com/story/how-trump-helped-china-make-slate-americas-cheapest-ev/",
     "description": "Slate is the latest automaker to transition to lower-cost batteries perfected in China, driven in part by the repeal of EV tax credits that required materials to be sourced domestically.",
     "pubDate": "Thu, 02 Jul 2026 11:00:00 +0000",
     "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "BitTorrent&#8217;s disastrous, legendary, and controversial story",
+    "link": "https://www.theverge.com/tech/959848/bittorrent-story-25-years-piracy",
+    "description": "Twenty-five years ago today, a young, little-known programmer by the name of Bram Cohen fired off a short message to a mailing list for peer-to-peer enthusiasts. \"My new app, BitTorrent, is now in working order, check it out here,\" Cohen wrote, followed by a link to his personal website. \"What's Bit",
+    "pubDate": "2026-07-02T11:00:00.000Z",
+    "source": "The Verge",
     "category": "ai-tech"
   },
   {
@@ -3192,7 +3400,7 @@
   {
     "title": "秋声 | 净利从8.4亿跌到1987万，深圳光伏老兵靠储能再冲港股",
     "link": "https://36kr.com/p/3878131056701447?f=rss",
-    "description": "本文约3300字，建议阅读7分钟\n作者 | 彭孝秋\n编者按：AI大爆发之际，越来越多公司走向资本市场。每一份招股书翻动的声音里，都藏着一家公司想说与未曾明说的全部。\n鉴于此，硬氪特推出「秋声」专栏。秋声取自欧阳修《秋声赋》，借“听秋声”之意，产业冷暖，辨公司成色，记录企业冲刺IPO途中那些被写下与被隐藏的真实。这是我们第六期，古瑞瓦特。\n上个月，古瑞瓦特第三次向港交所递交招股书。古瑞瓦特的IPO之路命运多舛，曾于2022年6月第一次递交，聆讯通过后未启动招股；2023年3月第二次递交，再次推迟上市。直到最近第三次递交，保荐人也从瑞信、中金换为华泰。\n事实上，早在2017年，古瑞瓦特前身公司就曾",
+    "description": "本文约3300字，建议阅读7分钟\n作者 | 彭孝秋\n编者按：AI大爆发之际，越来越多公司走向资本市场。每一份招股书翻动的声音里，都藏着一家公司想说与未曾明说的全部。\n鉴于此，硬氪特推出「秋声」专栏。秋声取自欧阳修《秋声赋》，借“听秋声”之意，产业冷暖，辨公司成色，记录企业冲刺IPO途中那些被写下与被隐藏���真实。这是我们第六期，古瑞瓦特。\n上个月，古瑞瓦特第三次向港交所递交招股书。古瑞瓦特的IPO之路命运多舛，曾于2022年6月第一次递交，聆讯通过后未启动招股；2023年3月第二次递交，再次推迟上市。直到最近第三次递交，保荐人也从瑞信、中金换为华泰。\n事实上，早在2017年，古瑞瓦特前身公司",
     "pubDate": "2026-07-02 14:40:19  +0800",
     "source": "36氪",
     "category": "ai-tech"
@@ -3515,6 +3723,22 @@
     "category": "ai-tech"
   },
   {
+    "title": "30% Off Canon Promo Codes | July 2026",
+    "link": "https://www.wired.com/story/canon-promo-code/",
+    "description": "Save an extra 10% or 30% with Canon coupon codes, plus up to $1,600 on cameras, printers, and more this July.",
+    "pubDate": "Thu, 02 Jul 2026 05:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Walmart Promo Codes: Up to 65% Off for July 2026",
+    "link": "https://www.wired.com/story/top-walmart-promo-codes/",
+    "description": "Score $10 off with our Walmart promo codes and coupon, and shop flash deals up to 65% off today.",
+    "pubDate": "Thu, 02 Jul 2026 05:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
     "title": "Dell Coupon Codes: 20% Off for July 2026",
     "link": "https://www.wired.com/story/dell-coupon-code/",
     "description": "Get 20% off with verified Dell promo code, plus today’s coupons for up to $600 off laptops, Alienware monitors, and all things tech.",
@@ -3534,22 +3758,6 @@
     "title": "B&H Photo Promo Codes and Deals This July 2026",
     "link": "https://www.wired.com/story/bh-photo-coupon/",
     "description": "Enjoy top deals on cameras, computers, and tech essentials at B&H Photo.",
-    "pubDate": "Thu, 02 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "30% Off Canon Promo Codes | July 2026",
-    "link": "https://www.wired.com/story/canon-promo-code/",
-    "description": "Save an extra 10% or 30% with Canon coupon codes, plus up to $1,600 on cameras, printers, and more this July.",
-    "pubDate": "Thu, 02 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Walmart Promo Codes: Up to 65% Off for July 2026",
-    "link": "https://www.wired.com/story/top-walmart-promo-codes/",
-    "description": "Score $10 off with our Walmart promo codes and coupon, and shop flash deals up to 65% off today.",
     "pubDate": "Thu, 02 Jul 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -3773,205 +3981,5 @@
     "description": "都内で金の取り引きの現場を狙った「トクリュウ」、匿名・流動型犯罪グループとみられる強盗などの事件が相次ぐ中、警視庁は金塊を取り扱う都内の10数社に対し、古物営業法に基づく一斉の立ち入りを行っています。取り引きの実態の把握や防犯指導を通じて対策を強化するねらいがあるということです。",
     "pubDate": "Thu, 02 Jul 2026 12:56:23 +0900",
     "source": "NHKニュース"
-  },
-  {
-    "title": "参院決算委 来週6日に開催で合意 与野党が対立する中",
-    "link": "http://www3.nhk.or.jp/news/html/20260702/k10015167071000.html",
-    "description": "国会で与野党が対立する中、参議院決算委員会は理事懇談会を開き、与党側は来週6日に高市総理大臣らの出席を求めて質疑を行いたいと提案しました。野党側は、参議院は決算を重視する立場であり法案審議でもないとして応じ、委員会の開催で合意しました。",
-    "pubDate": "Thu, 02 Jul 2026 12:53:40 +0900",
-    "source": "NHKニュース"
-  },
-  {
-    "title": "2026世界杯流量暗战：谁在悄悄分食“赛场之外”？",
-    "link": "https://www.tmtpost.com/8048524.html",
-    "description": "体育顶级赛事正在从“版权竞赛”跨越至“体验竞逐”。",
-    "pubDate": "Thu, 02 Jul 2026 11:52:37 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "半日主力资金抛售非银金融、电子股",
-    "link": "https://36kr.com/newsflashes/3877967342841862?f=rss",
-    "description": "主力资金早间净流入机械设备、基础化工、有色金属、电力设备、汽车等板块，净流出非银金融、电子、通信、医药生物、建筑装饰等板块。具体到个股来看，永太科技、先导基电、宁德时代获净流入13.34亿元、13.09亿元、12.32亿元。净流出方面，深科技、长电科技、雅克科技遭抛售24.74亿元、21.35亿元、19.33亿元。（第一财经）",
-    "pubDate": "2026-07-02 11:52:22  +0800",
-    "source": "36氪"
-  },
-  {
-    "title": "LG Electronics moves into ASIC design services as TSMC ties draw attention",
-    "link": "https://www.digitimes.com/news/a20260702VL205/lg-electronics-asic-design-tsmc.html",
-    "description": "LG Electronics has begun offering application-specific integrated circuit (ASIC) design services to outside chip companies, drawing on system-on-chip (SoC) development work the company has done for its own products since the early 2000s, according to industry sources cited by ZDNet Korea. LG decline",
-    "pubDate": "Thu, 2 Jul 2026 03:52:05 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "「赤ちゃんポスト」1年間で20人預けられる 東京 墨田区の病院",
-    "link": "http://www3.nhk.or.jp/news/html/20260702/k10015167031000.html",
-    "description": "育てられなくなった赤ちゃんを匿名で受け入れる「赤ちゃんポスト」を設けた東京 墨田区の病院は取り組みを始めてから1年間にあわせて20人の赤ちゃんが預けられたことを明らかにしました。",
-    "pubDate": "Thu, 02 Jul 2026 12:51:12 +0900",
-    "source": "NHKニュース"
-  },
-  {
-    "title": "人才黑洞！UC伯克利系主任都加入A社了",
-    "link": "https://www.qbitai.com/2026/07/441447.html",
-    "description": "加盟预训练团队",
-    "pubDate": "Thu, 02 Jul 2026 03:49:58 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Middle East live: Iran warns US, Israel against attacks ahead of Khamenei’s funeral",
-    "link": "https://www.france24.com/en/middle-east/20260702-middle-east-live-iran-says-to-use-frozen-funds-in-qatar-to-buy-required-goods",
-    "description": "Iran on Thursday warned ​the US and Israel against ​any attack against the country as it prepares for the state funeral of Ayatollah Ali Khamenei, who was ​killed ‌in an Israeli strikes on the first day ⁠of the war. Funeral commemorations begin ‌on July 4 in Tehran and conclude on July 9 in Khamenei",
-    "pubDate": "Thu, 02 Jul 2026 03:47:49 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "现货白银日内涨幅达2%",
-    "link": "https://36kr.com/newsflashes/3877959956328449?f=rss",
-    "description": "36氪获悉，现货白银日内涨幅达2.00%，现报60.27美元/盎司。",
-    "pubDate": "2026-07-02 11:44:51  +0800",
-    "source": "36氪"
-  },
-  {
-    "title": "灵光一号位转岗，蚂蚁阿福收兵",
-    "link": "https://www.tmtpost.com/8049526.html",
-    "description": "阿里不再需要“蚂蚁奇兵”",
-    "pubDate": "Thu, 02 Jul 2026 11:40:03 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "China power chip makers raise prices, exposing AI server squeeze on mature-node supply",
-    "link": "https://www.digitimes.com/news/a20260701VL205/ai-server-demand-price-capacity-market.html",
-    "description": "China's power semiconductor makers are entering a broader price-hike cycle, as AI server demand, raw material inflation, and tight mature-node capacity force suppliers to defend margins after years of low-end price wars.",
-    "pubDate": "Thu, 2 Jul 2026 03:37:45 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "英伟达为GPU采购提供融资支持，并从云计算收入中抽取一定比例分成",
-    "link": "https://36kr.com/newsflashes/3877951264239877?f=rss",
-    "description": "据报道，英伟达为GPU采购提供融资支持，并从云计算收入中抽取一定比例分成。（财联社）",
-    "pubDate": "2026-07-02 11:36:01  +0800",
-    "source": "36氪"
-  },
-  {
-    "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
-    "link": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/",
-    "description": "As AI moves from model development to production inference, compute demand is accelerating and shifting toward continuously operating AI factories that generate tokens at scale. This shift requires access to large‑scale, multi‑tenant accelerated computing that can come online quickly, stay highly ut",
-    "pubDate": "Thu, 02 Jul 2026 03:34:48 +0000",
-    "source": "NVIDIA Blog",
-    "category": "ai-tech"
-  },
-  {
-    "title": "从生成到交付，音视频 Agent 要有生产级开发套件",
-    "link": "https://www.leiphone.com/category/industrynews/bm5j7ZigtfWU5sL5.html",
-    "description": "过去足球赛场上的高光瞬间回顾，往往需要剪辑师回看素材，找到进球、庆祝、慢动作回放和观众反应，再切片、包装、加字幕，最后分发到不同平台。链路长，人工重，能不能接到热点爆发的流量，考验的是人的经验和手速。\n现在这条链路被拆开重组，开始由模型和工具链来接管赛事高光视频的完整生产流程。在新的链路中，AI 已经可以实时理解直播流，识别镜头切换、音频变化、球员庆祝、裁判哨音等信号，在关键事件发生后快速返回高光片段，生成可分发的独立切片。热点刚爆，视频就已经完成了跟进。\n背后的变化不只是某个工具效率变高了，而是音视频内容生产方式正在从人驱动的工作流，进化为 Agent 驱动的工作流。这不仅是在调用模型去生成",
-    "pubDate": "Thu, 02 Jul 2026 11:32:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "A股三大指数午间休盘集体下跌，汽车股领涨",
-    "link": "https://36kr.com/newsflashes/3877947098230793?f=rss",
-    "description": "36氪获悉，A股三大指数午间休盘集体下跌，沪指跌0.9%，深成指跌2.09%，创业板指跌3.47%；通信设备、半导体、券商板块领跌，中科飞测跌超12%，新易盛跌超8%，长江证券跌超4%；贵金属、林木、汽车板块涨幅居前，招金黄金涨停，比亚迪涨超4%，康欣新材涨超3%。",
-    "pubDate": "2026-07-02 11:31:47  +0800",
-    "source": "36氪"
-  },
-  {
-    "title": "German prosecutors charge Ukrainian suspect over Nord Stream explosions",
-    "link": "https://www.aljazeera.com/news/2026/7/2/german-prosecutors-charge-ukrainian-suspect-over-nord-stream-explosions?traffic_source=rss",
-    "description": "Prosecutors allege a yacht was used in the sabotage of pipelines, with the suspect leading the operation.",
-    "pubDate": "Thu, 02 Jul 2026 03:31:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Infineon closes ams OSRAM sensor acquisition, adds EUR230 million in annual revenue",
-    "link": "https://www.digitimes.com/news/a20260702VL209/infineon-ams-osram-acquisition-automotive-sensor-revenue.html",
-    "description": "Infineon Technologies completed its acquisition of the non-optical analog and mixed-signal sensor portfolio from ams OSRAM on Tuesday, expanding its position in automotive and industrial sensing and adding roughly 230 employees across three new locations.",
-    "pubDate": "Thu, 2 Jul 2026 03:30:48 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Taiwan automotive LED maker EOI readies Mexico ramp for humanoid robots and silicon photonics",
-    "link": "https://www.digitimes.com/news/a20260701PD216/eoi-mexico-silicon-photonics-automotive-led.html",
-    "description": "Excellence Optoelectronics Inc. (EOI) expects double-digit growth in 2026 from a strong 2025 base, supported by robust automotive lighting module shipments to North American automakers, new Mexico capacity, and a planned expansion into AI humanoid robot supply chains.",
-    "pubDate": "Thu, 2 Jul 2026 03:27:05 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Memory price relief for PC brands is expected to be temporary",
-    "link": "https://www.digitimes.com/news/a20260702PD210/pc-price-hbm-demand-ddr.html",
-    "description": "Memory suppliers are renegotiating high-bandwidth memory contracts, and PC brands say price increases may slow later this year. For global buyers, that relief could be short-lived, as supply-chain sources warn that shortages tied to artificial intelligence demand are likely to keep memory markets ti",
-    "pubDate": "Thu, 2 Jul 2026 03:24:23 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "ChatGPT 这些翻车回答，居然是 Meta 找外包干的",
-    "link": "https://www.ifanr.com/1670735?utm_source=rss&utm_medium=rss&utm_campaign=",
-    "description": "美其名曰是安全测试\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-    "pubDate": "Thu, 02 Jul 2026 03:24:11 +0000",
-    "source": "爱范儿",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Socionext to develop TSMC A14 chiplet for AI data center SoCs",
-    "link": "https://www.digitimes.com/news/a20260702VL207/socionext-ai-data-center-soc-tsmc.html",
-    "description": "Socionext announced that it would develop a high-performance compute chiplet using TSMC's A14 process technology, positioning the project as a platform for next-generation custom silicon aimed at AI data center infrastructure.",
-    "pubDate": "Thu, 2 Jul 2026 03:24:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "AI营销“引擎”已就位，但企业的“燃油泵”准备好了么？",
-    "link": "https://www.tmtpost.com/8049807.html",
-    "description": "把AI当成同事，远比把AI当成工具复杂得多。",
-    "pubDate": "Thu, 02 Jul 2026 11:22:24 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "苹果拟于今明两年推出至少五款新iPhone，折叠屏出货量超预期",
-    "link": "https://36kr.com/newsflashes/3877934900441353?f=rss",
-    "description": "7月2日消息，据报道，苹果公司正计划在今年下半年至2027年上半年期间，发起一项雄心勃勃的iPhone新品发布计划，预计将推出至少五款新机型。尽管目前整个科技行业正面临供应链零部件短缺的困境，但苹果仍决定加大折叠屏手机的出货量，超出市场此前预期。（界面）",
-    "pubDate": "2026-07-02 11:19:22  +0800",
-    "source": "36氪"
-  },
-  {
-    "title": "Lawyer takes Trump to task over unchecked presidential powers",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/2/lawyer-takes-trump-to-task-over-unchecked-presidential-powers?traffic_source=rss",
-    "description": "Constitutional lawyer Bruce Fein says the US was founded on the principle that governments exist to protect rights.",
-    "pubDate": "Thu, 02 Jul 2026 03:16:38 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "BOE, Chinese panel makers' chip push tightens the squeeze on South Korea",
-    "link": "https://www.digitimes.com/news/a20260702PD218/boe-semiconductors-display-chip-supply-glass-substrate.html",
-    "description": "China's display makers, led by BOE Technology (BOE), are pushing deeper into semiconductors, with BOE advancing glass substrates, and a 12-inch wafer fab reportedly slated to begin mass production in the second half of 2026. Industry analysts say China is extending display technologies built up with",
-    "pubDate": "Thu, 2 Jul 2026 03:14:46 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "EU border rules causing travel chaos ahead of summer peak, industry warns",
-    "link": "https://www.aljazeera.com/economy/2026/7/2/eu-border-rules-causing-travel-chaos-ahead-of-summer-peak-industry-warns?traffic_source=rss",
-    "description": "European airlines and airports call for flexibility to suspend digital border system amid severe delays.",
-    "pubDate": "Thu, 02 Jul 2026 03:14:42 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "恒生指数公司联同数码港推出主题指数探索计划，促进以人工智能驱动指数创新",
-    "link": "https://36kr.com/newsflashes/3877929435082752?f=rss",
-    "description": "36氪获悉，恒生指数公司与数码港于2026年6月30日宣布推出主题指数探索计划，与创科公司共同开发人工智能解决方案，加快主题指数的设计流程。本次计划为指数创新实验室第二阶段项目。实验室由恒生指数公司与数码港于2024年成立，旨在探索利用人工智能等前沿技术支援恒生指数公司的指数营运，并提供更切合市场需求的指数方案。",
-    "pubDate": "2026-07-02 11:13:48  +0800",
-    "source": "36氪"
   }
 ]
