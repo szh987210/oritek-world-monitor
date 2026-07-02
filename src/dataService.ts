@@ -1541,9 +1541,9 @@ export function generateSentimentFromNews(news: NewsItem[]): { positive: number;
   })
   const total = news.length || 1
   return {
-    positive: Math.max(40, Math.round((positive / total) * 100)),
-    neutral: Math.max(10, 100 - Math.round((positive / total) * 100) - Math.round((negative / total) * 100)),
+    positive: Math.round((positive / total) * 100),
     negative: Math.round((negative / total) * 100),
+    neutral: 100 - Math.round((positive / total) * 100) - Math.round((negative / total) * 100),
     positiveNews: posNews.length ? posNews : ['行业整体向好'],
     negativeNews: negNews.length ? negNews : ['暂无重大负面']
   }

@@ -50,9 +50,9 @@
   --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
   /* 字体 */
-  --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
   --font-mono: 'SF Mono', Monaco, 'Cascadia Code', Consolas, 'Liberation Mono', monospace;
-  --font-num: 'Inter', var(--font-mono); /* 数字用等宽字体提升可读性 */
+  --font-num: 'SF Mono', Monaco, 'Cascadia Code', Consolas, monospace;
 
   /* 布局常量 */
   --header-height: 56px;

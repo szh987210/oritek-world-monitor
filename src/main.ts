@@ -43,6 +43,10 @@ Chart.register(...registerables)
 let isOnline = true
 let lastNetworkError = ''
 
+// 数据新鲜度追踪（后端 pipeline 最后更新时间）
+let dataStalenessMinutes = 0
+let dataLastPipelineUpdate = ''
+
 // 新闻搜索状态
 let newsSearchQuery = ''
 
@@ -458,6 +462,27 @@ style.textContent = `
     background: rgba(255, 50, 50, 0.12);
     color: #ff3250;
   }
+
+  /* ========== 数据过期横幅 ========== */
+  .staleness-banner {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, rgba(255, 149, 0, 0.15), rgba(255, 80, 0, 0.1));
+    border-bottom: 1px solid rgba(255, 149, 0, 0.3);
+    color: #ffb74d;
+    font-size: 13px;
+    padding: 8px 16px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    animation: staleness-slide-in 0.4s ease;
+  }
+  @keyframes staleness-slide-in {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
 `
 document.head.appendChild(style)
 
@@ -788,6 +813,42 @@ function renderHealthIndicator(): string {
   
   return `<span class="health-indicator ${cls}" title="RSS源: ${active}/${total} 活跃 | 平均可信度: ${avgComposite}/100">📡 ${active}/${total}</span>
     <span class="health-indicator ${credCls}" title="RSS来源平均综合评分: ${avgComposite}/100">⭐ ${avgComposite}</span>`
+}
+
+// 数据新鲜度检查：读取 data/status.json 中的 lastUpdate 时间戳
+async function checkDataFreshness() {
+  try {
+    const basePath = getBasePath()
+    const resp = await fetch(`${basePath}/data/status.json`, { cache: 'no-store' })
+    if (resp.ok) {
+      const status = await resp.json()
+      if (status.lastUpdate) {
+        const lastUpdate = new Date(status.lastUpdate).getTime()
+        const now = Date.now()
+        dataStalenessMinutes = Math.round((now - lastUpdate) / 60000)
+        dataLastPipelineUpdate = status.lastUpdate
+        console.log(`[DataFreshness] Pipeline last update: ${dataLastPipelineUpdate} (${dataStalenessMinutes} minutes ago)`)
+      }
+    }
+  } catch (e) {
+    console.warn('[DataFreshness] 无法获取 status.json:', e)
+    dataStalenessMinutes = -1 // 标记为未知
+  }
+}
+
+// 渲染数据过期横幅
+function renderStalenessBanner(): string {
+  if (dataStalenessMinutes <= 0) return ''
+  const hours = Math.floor(dataStalenessMinutes / 60)
+  const mins = dataStalenessMinutes % 60
+  const ageStr = hours > 0 ? `${hours}小时${mins}分钟` : `${mins}分钟`
+  const dateStr = dataLastPipelineUpdate
+    ? new Date(dataLastPipelineUpdate).toLocaleString('zh-CN', { hour12: false })
+    : '未知'
+  return `
+    <div class="staleness-banner">
+      <span>⚠️ 后端数据管道已 ${ageStr} 未更新（最后数据时间：${dateStr}），当前显示内容可能已过期</span>
+    </div>`
 }
 
 function renderHeader(): string {
@@ -2356,6 +2417,7 @@ function renderApp(): string {
   return `
     <div class="app-container">
       ${renderHeader()}
+      ${renderStalenessBanner()}
       <main class="main-content">
         ${pageContent}
       </main>
@@ -2747,6 +2809,23 @@ async function init() {
       
       startAutoRefresh()
       console.log('Auto refresh started (5 minutes interval)')
+
+      // 异步检查后端数据管道新鲜度（不阻塞页面加载）
+      checkDataFreshness().then(() => {
+        if (dataStalenessMinutes > 30) {
+          // 如果数据过期超过30分钟，刷新页面以显示横幅
+          const banner = document.querySelector('.staleness-banner')
+          if (!banner) {
+            app.innerHTML = renderApp()
+            bindEvents()
+            initCharts()
+            requestAnimationFrame(() => {
+              renderWorldMapD3()
+              setTimeout(() => startIntelAutoScroll(), 800)
+            })
+          }
+        }
+      })
 
       // 异步执行RSS源健康检查（不阻塞页面加载）
       runHealthCheck().then(stats => {

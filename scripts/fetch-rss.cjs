@@ -24,8 +24,7 @@ const SOURCE_CATEGORY = {
   'qbitai.com': 'ai-tech',
   'leiphone.com': 'ai-tech',
   'tmtpost.com': 'ai-tech',
-  // geekpark.net/rss 已失效，改用 RSSHub 极客公园 Breaking News 路由
-  'rsshub.app': 'ai-tech',
+  'geekpark.net': 'ai-tech',
   'ifanr.com': 'ai-tech',
   'techcrunch.com': 'ai-tech',
   'theverge.com': 'ai-tech',
@@ -67,8 +66,7 @@ const FEED_URLS = [
   'https://www.qbitai.com/rss',
   'https://www.leiphone.com/feed',
   'https://www.tmtpost.com/rss.xml',
-  // geekpark.net/rss 已失效，改用 RSSHub 极客公园 Breaking News 路由
-  'https://rsshub.app/geekpark/breakingnews',
+  'https://www.geekpark.net/rss',
   'https://www.ifanr.com/feed',
   'https://techcrunch.com/feed/',
   'https://www.theverge.com/rss/index.xml',

@@ -44,7 +44,7 @@ html, body {
   width: 100vw; height: 100vh; overflow: hidden;
   background: var(--bg-deep);
   color: var(--text-primary);
-  font-family: 'Inter', 'Noto Sans SC', -apple-system, 'Microsoft YaHei', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
   font-size: var(--fs-sm); line-height: 1.45;
   -webkit-font-smoothing: antialiased;
 }
