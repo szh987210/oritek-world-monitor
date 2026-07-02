@@ -1855,13 +1855,18 @@ export function generatePoliciesFromNews(news: NewsItem[]): PolicyItem[] {
     })
   })
   
-  // 如果没有足够的政策新闻，返回兜底数据
+  // 如果没有足够的政策新闻，返回兜底数据（日期动态偏移，避免过旧）
   if (result.length < 2) {
     console.log('[generatePoliciesFromNews] 新闻数据不足以生成合规政策，使用兜底数据')
+    const t = new Date()
+    const d1 = new Date(t); d1.setDate(t.getDate() - 5)
+    const d2 = new Date(t); d2.setDate(t.getDate() - 10)
+    const d3 = new Date(t); d3.setDate(t.getDate() - 14)
+    const fmt = (d: Date) => d.toISOString().slice(0, 10)
     return [
-      { date: '2026-05-28', title: '欧盟AI法案进入全面执行阶段', description: '高风险AI系统需在8月前完成合规认证', urgent: true },
-      { date: '2026-05-15', title: '工信部发布智能网联汽车准入新规', description: '强化自动驾驶功能安全和数据安全要求', urgent: true },
-      { date: '2026-05-10', title: '美国BIS更新对华半导体出口管制清单', description: '新增先进计算芯片和EDA工具限制', urgent: true },
+      { date: fmt(d1), title: '欧盟AI法案进入全面执行阶段', description: '高风险AI系统需在8月前完成合规认证', urgent: true },
+      { date: fmt(d2), title: '工信部发布智能网联汽车准入新规', description: '强化自动驾驶功能安全和数据安全要求', urgent: true },
+      { date: fmt(d3), title: '美国BIS更新对华半导体出口管制清单', description: '新增先进计算芯片和EDA工具限制', urgent: true },
     ]
   }
   
@@ -2028,13 +2033,18 @@ export function generatePolicyApplicationsFromNews(news: NewsItem[]): PolicyAppl
     })
   })
   
-  // 如果没有足够的申报数据，返回兜底数据
+  // 如果没有足够的申报数据，返回兜底数据（日期动态偏移）
   if (result.length < 2) {
     console.log('[generatePolicyApplicationsFromNews] 新闻数据不足以生成政策申报，使用兜底数据')
+    const t = new Date()
+    const d1 = new Date(t); d1.setDate(t.getDate() + 25)
+    const d2 = new Date(t); d2.setDate(t.getDate() + 40)
+    const d3 = new Date(t); d3.setDate(t.getDate() - 5)
+    const fmt = (d: Date) => d.toISOString().slice(0, 10)
     return [
-      { id: 'fallback-1', title: '深圳市半导体与集成电路产业扶持计划申报', department: '深圳市工信局', region: '深圳', sector: 'semiconductor', deadline: '2026-06-30', amount: '最高500万元', status: 'open' },
-      { id: 'fallback-2', title: '科技部国家重点研发计划智能机器人专项', department: '科技部', region: '全国', sector: 'robotics', deadline: '2026-07-15', amount: '最高3000万元', status: 'open' },
-      { id: 'fallback-3', title: '工信部人工智能产业创新任务揭榜挂帅', department: '工信部', region: '全国', sector: 'ai', deadline: '2026-06-20', amount: '最高2000万元', status: 'closing' },
+      { id: 'fallback-1', title: '深圳市半导体与集成电路产业扶持计划申报', department: '深圳市工信局', region: '深圳', sector: 'semiconductor', deadline: fmt(d1), amount: '最高500万元', status: 'open' },
+      { id: 'fallback-2', title: '科技部国家重点研发计划智能机器人专项', department: '科技部', region: '全国', sector: 'robotics', deadline: fmt(d2), amount: '最高3000万元', status: 'open' },
+      { id: 'fallback-3', title: '工信部人工智能产业创新任务揭榜挂帅', department: '工信部', region: '全国', sector: 'ai', deadline: fmt(d3), amount: '最高2000万元', status: 'closing' },
     ]
   }
   

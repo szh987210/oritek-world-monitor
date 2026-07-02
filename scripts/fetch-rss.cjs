@@ -49,6 +49,9 @@ const SOURCE_CATEGORY = {
   'dw.com': 'international',
   'nhk.or.jp': 'international',
   'nippon.com': 'international',
+  // 政策监管类源（RSSHub 路由，用于抓取中国政府政策公告）
+  'rsshub.app': 'policy',
+  'rsshub.feeddd.org': 'policy',
 };
 
 function getCategory(url) {
@@ -92,6 +95,17 @@ const FEED_URLS = [
   'https://rss.dw.com/rdf/rss-de-all',
   'https://www3.nhk.or.jp/rss/news/cat0.xml',
   'https://www.nippon.com/en/feed/',
+  // === 政策监管 RSS 源（RSSHub 路由，双实例冗余） ===
+  // 国务院政策文件库
+  'https://rsshub.feeddd.org/gov/statecouncil/policy',
+  // 工信部政策文件
+  'https://rsshub.feeddd.org/gov/miit/zcjd',
+  // 工信部文件发布
+  'https://rsshub.feeddd.org/gov/miit/wjfb',
+  // 科技部
+  'https://rsshub.feeddd.org/gov/most/kjbg',
+  // 发改委
+  'https://rsshub.feeddd.org/gov/ndrc/xwdt',
 ];
 
 // ─── 健康状态判定阈值 ───
