@@ -1,8 +1,264 @@
 [
   {
+    "title": "Ryanair warns of 'queue chaos' from new EU border system",
+    "link": "https://www.bbc.co.uk/news/articles/c8x2y74wp9eo?at_medium=RSS&at_campaign=rss",
+    "description": "The airline calls on European governments to postpone the EES system until after the summer holiday period.",
+    "pubDate": "Thu, 02 Jul 2026 17:17:36 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Hydrogen for heavy trucks is dead, says world’s 2nd-largest oil company",
+    "link": "https://electrek.co/2026/07/02/hydrogen-for-heavy-trucks-is-dead-says-worlds-2nd-largest-oil-company/",
+    "description": "Hydrogen heavy trucks are being displaced by electric ones, as advancements in batteries and charging infrastructure eat away at the advantages of hydrogen, according to Sinopec’s internal magazine.",
+    "pubDate": "Thu, 02 Jul 2026 17:09:53 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Webinar: Caspia Shows You How to Fix Security Flaws Before It’s Too Late",
+    "link": "https://semiwiki.com/events/370203-webinar-caspia-shows-you-how-to-fix-security-flaws-before-its-too-late/",
+    "description": "Chip-level vulnerability is becoming an existential threat for virtually all systems. The time to ensure your chip designs are resistant to these attacks is now. Caspia presented a webinar recently that provides important information on how to build attack-resistant chips. If you missed it, don’t wo",
+    "pubDate": "Thu, 02 Jul 2026 17:00:01 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "USPS chief wants agency to improve end-to-end shipping visibility",
+    "link": "https://www.supplychaindive.com/news/usps-chief-wants-agency-to-improve-end-to-end-shipping-visibility/824353/",
+    "description": "The agency's efforts to boost transparency include using Bluetooth devices to identify bottlenecks for high-value shippers, a spokesperson said.",
+    "pubDate": "Thu, 02 Jul 2026 12:58:00 -0400",
+    "source": "Supply Chain Dive - Latest News",
+    "category": "supply-chain"
+  },
+  {
+    "title": "ARD-Deutschlandtrend: Mehrheit zweifelt an Rentenreform",
+    "link": "https://www.dw.com/de/ard-deutschlandtrend-mehrheit-zweifelt-an-rentenreform/a-77807777?maca=de-rss-de-all-1119-rdf",
+    "description": "Mit einem ganzen Strauß von Reformen will die Bundesregierung Deutschland wieder auf Kurs bringen. Doch den Bürgern fehlt das Vertrauen, zeigt der ARD-Deutschlandtrend.",
+    "pubDate": "2026-07-02T16:58:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Ars Live recap: When are the big rockets NASA desperately needs going to be ready?",
+    "link": "https://arstechnica.com/space/2026/07/ars-live-recap-when-are-the-big-rockets-nasa-desperately-needs-going-to-be-ready/",
+    "description": "I have not seen anyone put out a date for a new rocket, and actually hit it.",
+    "pubDate": "Thu, 02 Jul 2026 16:46:47 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "German prosecutors allege Ukraine ordered Nord Stream pipeline attack",
+    "link": "https://www.aljazeera.com/news/2026/7/2/german-prosecutors-allege-ukraine-ordered-nord-stream-pipeline-attack?traffic_source=rss",
+    "description": "Former Ukrainian soldier accused of 'war crime' and leading a team of divers to blow up Nord Stream pipelines.",
+    "pubDate": "Thu, 02 Jul 2026 16:46:37 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Plex debuts 5-year membership pass for $250",
+    "link": "https://arstechnica.com/gadgets/2026/07/250-used-to-get-you-a-lifetime-plex-pass-now-you-get-a-five-year-subscription/",
+    "description": "Plex is pushing customers to newer features and more frequent payments.",
+    "pubDate": "Thu, 02 Jul 2026 16:35:59 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Automate 2026 show recap",
+    "link": "https://www.therobotreport.com/automate-2026-show-recap/",
+    "description": "Editors Steve Crowe, Mike Oitzman, and Sarah Wynn review Automate 2026, analyzing key trends in physical AI, humanoids, and software orchestration.\nThe post Automate 2026 show recap appeared first on The Robot Report.",
+    "pubDate": "Thu, 02 Jul 2026 16:35:58 +0000",
+    "source": "The Robot Report",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Spain immigration scheme sees 1.2 million apply for legal status",
+    "link": "https://www.aljazeera.com/news/2026/7/2/spain-immigration-scheme-sees-1-2-million-apply-for-legal-status?traffic_source=rss",
+    "description": "Spain immigration scheme sees more than a million applications, with Latin Americans leading the numbers at 67 percent.",
+    "pubDate": "Thu, 02 Jul 2026 16:34:12 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The video game disc is dead",
+    "link": "https://www.theverge.com/podcast/960810/video-game-disc-dead-vergecast",
+    "description": "For decades, to be a gamer was to accumulate a lot of stuff. Consoles, controllers, accessories, weird VR gloves that never worked properly, but mostly the games themselves. Over the years, games have come in every shape and size you can imagine. And now that era appears to be ending. On this episod",
+    "pubDate": "2026-07-02T16:31:09.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Africa CDC confirms Marburg case in Uganda as Ebola outbreak rages",
+    "link": "https://arstechnica.com/health/2026/07/africa-cdc-confirms-marburg-case-in-uganda-as-ebola-outbreak-rages/",
+    "description": "Early reports indicate there may be another case, but spread is thought to be localized.",
+    "pubDate": "Thu, 02 Jul 2026 16:30:37 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "‘Collateral damage’: 73 Palestinian children Israel shot in the head",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/2/collateral-damage-73-palestinian-children-israel-shot-in-the-head?traffic_source=rss",
+    "description": "Israel has rejected a UN Commission report that says its army deliberately targets Palestinian children.",
+    "pubDate": "Thu, 02 Jul 2026 16:26:16 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The DEA Plans to Ban Opioid-Like Kratom Compound 7-OH",
+    "link": "https://www.wired.com/story/the-dea-plans-to-ban-kratom-compound-7-oh-sold-as-a-gas-station-opioid/",
+    "description": "The federal agency says it will temporarily schedule the drug, which has been called \"gas station heroin,\" as a controlled substance—a boon for MAHA and the mainstream kratom industry.",
+    "pubDate": "Thu, 02 Jul 2026 16:21:40 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Artificial cell manages a few rounds of cell division",
+    "link": "https://arstechnica.com/science/2026/07/artificial-cell-manages-a-few-rounds-of-cell-division/",
+    "description": "It only works for a few divisions thanks to a lot of added materials.",
+    "pubDate": "Thu, 02 Jul 2026 16:21:23 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Unprecedented images show how Russia is using drones from the war in Ukraine in Africa",
+    "link": "https://www.france24.com/en/africa/20260702-unprecedented-images-russia-using-drones-war-ukraine-africa",
+    "description": "Russian mercenaries from the Africa Corps, which has replaced the well-known Wagner Group in providing support to the Malian army, are deploying new combat drones in Mali. Frequently found on the frontlines in Ukraine, these drones are now entering the Sahel region – an environment for which they we",
+    "pubDate": "Thu, 02 Jul 2026 16:17:50 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Google loses long-running appeal of record EU fine, will have to cough up $4.7 billion",
+    "link": "https://arstechnica.com/gadgets/2026/07/google-loses-long-running-appeal-of-record-eu-fine-will-have-to-cough-up-4-7-billion/",
+    "description": "The EU went after Google for the practice of bundling its search engine and browser with Android.",
+    "pubDate": "Thu, 02 Jul 2026 16:15:41 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "'Most massive' Russian attack on Kyiv kills at least 21",
+    "link": "https://www.bbc.co.uk/news/articles/c4gyv05gk4do?at_medium=RSS&at_campaign=rss",
+    "description": "The latest barrage deployed the largest number of weapons on the capital and hit locations over a wide area.",
+    "pubDate": "Thu, 02 Jul 2026 16:15:31 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Why is Prada facing pro-Israeli backlash?",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/2/why-is-prada-facing-pro-israeli-backlash?traffic_source=rss",
+    "description": "Prada is facing boycott calls after appointing Palestinian singer Saint Levant as a brand ambassador.",
+    "pubDate": "Thu, 02 Jul 2026 16:14:24 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Venezuela quake survivor pulled out alive after eight days",
+    "link": "https://www.bbc.co.uk/news/articles/ce375v12z0qo?at_medium=RSS&at_campaign=rss",
+    "description": "Hernán Gil was trapped under a collapsed multi-storey car park, and encouraged them as they inched closer to him.",
+    "pubDate": "Thu, 02 Jul 2026 16:11:24 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Paris des Arts: Special edition in Fez, Morocco",
+    "link": "https://www.france24.com/en/tv-shows/paris-des-arts/20260702-paris-des-arts-special-edition-in-fez-morocco",
+    "description": "This week, Paris des Arts turns its cameras to Fez, the Moroccan imperial city, for the 29th edition of the Festival of World Sacred Music, which celebrates the dialogue between cultures and spiritualities.",
+    "pubDate": "Thu, 02 Jul 2026 16:04:22 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "The Jeep Recon EV will launch in Europe, plus a new China-made SUV and more",
+    "link": "https://electrek.co/2026/07/02/jeep-recon-ev-launch-europe-plus-china-made-suv/",
+    "description": "Jeep is bringing its electric off-roader to Europe. The Recon EV will go on sale in early 2027 as Jeep goes on the offensive with three additional SUVs arriving.",
+    "pubDate": "Thu, 02 Jul 2026 15:54:54 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "What is the Society of St Pius X? Why Pope Leo excommunicated its members",
+    "link": "https://www.aljazeera.com/news/2026/7/2/what-is-the-society-of-st-pius-x-why-pope-leo-excommunicated-its-bishops?traffic_source=rss",
+    "description": "The Vatican declares 'schism' in Catholic Church after bishops were ordained without Pope Leo XIV's approval.",
+    "pubDate": "Thu, 02 Jul 2026 15:54:48 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Influencer screenings aren’t going away",
+    "link": "https://www.theverge.com/entertainment/960260/the-odyssey-christopher-nolan-influencers-screenings",
+    "description": "For a few days, it seemed like Universal decided that there would be no advanced screenings of Christopher Nolan's The Odyssey for influencers. But on Monday, influencers sat alongside traditional critics and journalists at special showings of The Odyssey specifically for the associated press junket",
+    "pubDate": "2026-07-02T15:50:26.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Warum viele Zugewanderte Deutschland wieder verlassen",
+    "link": "https://www.dw.com/de/warum-viele-zugewanderte-deutschland-wieder-verlassen/a-77801997?maca=de-rss-de-all-1119-rdf",
+    "description": "Deutschland wird zwar immer besser, Fachkräfte auf den deutschen Arbeitsmarkt zu locken. Das Problem: Viele bleiben nicht. Was läuft da schief?",
+    "pubDate": "2026-07-02T15:48:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Algeria votes for new parliament with turnout and cost-of-living in focus",
+    "link": "https://www.france24.com/en/algeria-votes-for-new-parliament-with-turnout-and-cost-of-living-in-focus",
+    "description": "Algerians headed to the polls on July 2 to elect a new parliament in an election shadowed by expectations of low turnout among the 25-million-person electorate. The vote is taking place amid controversy of the government disqualifying roughly a third of potential candidates, with some saying they we",
+    "pubDate": "Thu, 02 Jul 2026 15:45:08 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Vatican excommunicates hundreds of thousands of splinter sect followers",
+    "link": "https://www.bbc.co.uk/news/articles/c5yz95188jjo?at_medium=RSS&at_campaign=rss",
+    "description": "Around 600,000 followers of the Society of Saint Pius X, a Catholic sect, are affected.",
+    "pubDate": "Thu, 02 Jul 2026 15:44:45 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Schismatic Catholic society sees six bishops excommunicated by Pope",
+    "link": "https://www.france24.com/en/schismatic-catholic-society-sees-six-bishops-excommunicated-by-pope",
+    "description": "The Vatican has excommunicated six bishops from the ultraconservative Society of St Pius X, while warning that any lay believers who \"formally adhere\" to the breakaway Catholic group would suffer the same fate. It comes a day after the traditionalist group consecrated four new bishops, openly defyin",
+    "pubDate": "Thu, 02 Jul 2026 15:42:38 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Spain vs Austria LIVE: FIFA World Cup 2026",
+    "link": "https://www.aljazeera.com/sports/liveblog/2026/7/2/spain-vs-austria-live-fifa-world-cup-2026?traffic_source=rss",
+    "description": "Live coverage and text updates as Spain play Austria in Los Angeles in the Round of 32 knockout stage.",
+    "pubDate": "Thu, 02 Jul 2026 15:41:05 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "法拉利大师操刀设计，预售 14.38 万起！小鹏 MONA L03 大脚步冲进市场",
+    "link": "https://www.ifanr.com/1670830?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "一辆看着像超跑的 SUV。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Thu, 02 Jul 2026 15:38:28 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Achieving operational excellence with AI",
+    "link": "https://www.technologyreview.com/2026/07/02/1140045/achieving-operational-excellence-with-ai/",
+    "description": "Frameworks like Lean Six Sigma and business process management (BPM) first gained traction because they promised clarity in the chaos—a structured way to bring order to messy, sprawling operations. Lean Six Sigma emphasized statistical rigor and quality control; BPM created end-to-end maps of how wo",
+    "pubDate": "Thu, 02 Jul 2026 15:37:08 +0000",
+    "source": "MIT Technology Review",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Into the Darkness",
+    "link": "https://www.aljazeera.com/video/fault-lines/2026/7/2/into-the-darkness?traffic_source=rss",
+    "description": "Fault Lines investigates allegations of systematic torture of Palestinian prisoners and detainees in Israeli custody.",
+    "pubDate": "Thu, 02 Jul 2026 15:30:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Melinda Gates’ venture firm backs Magnify Ventures’ $46.6M Fund II",
     "link": "https://techcrunch.com/2026/07/02/melinda-gates-venture-firm-backs-magnify-ventures-46-6m-fund-ii/",
-    "description": "Early-stage firm Magnify Ventures has raised a $46.6 million Fund II from LPs including Melinda French Gates’ Pivotal Ventures",
+    "description": "Early-stage firm Magnify Ventures has raised a $46.6 million Fund II from LPs, including Melinda French Gates’ Pivotal Ventures.",
     "pubDate": "Thu, 02 Jul 2026 15:26:43 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -24,6 +280,14 @@
     "category": "ai-tech"
   },
   {
+    "title": "US job growth slows in June; hospitality sheds roles despite World Cup",
+    "link": "https://www.aljazeera.com/economy/2026/7/2/us-job-growth-slows-in-june-hospitality-sheds-roles-despite-world-cup?traffic_source=rss",
+    "description": "Labour force participation dropped to its lowest level since March 2021, reaching 61.5 percent in June.",
+    "pubDate": "Thu, 02 Jul 2026 15:23:50 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "OpenAI proposed donating 5% of its equity to a US sovereign wealth fund",
     "link": "https://techcrunch.com/2026/07/02/openai-proposed-donating-5-of-its-equity-to-a-us-sovereign-wealth-fund/",
     "description": "OpenAI CEO Sam Altman has reportedly proposed giving 5% of the company’s equity to a U.S. sovereign wealth fund, reviving discussions about letting the public share in the financial gains from the AI boom.",
@@ -32,17 +296,17 @@
     "category": "ai-tech"
   },
   {
-    "title": "'Most massive' Russian attack on Kyiv kills at least 20",
-    "link": "https://www.bbc.co.uk/news/articles/c4gyv05gk4do?at_medium=RSS&at_campaign=rss",
-    "description": "Kyiv's mayor declares a day of mourning after the major drone and missile attack on the Ukrainian capital.",
-    "pubDate": "Thu, 02 Jul 2026 15:16:40 GMT",
-    "source": "BBC News",
+    "title": "Andy Burnham outlines his vision for UK economy with promise to raise living standards",
+    "link": "https://www.france24.com/en/tv-shows/people-profit/20260702-andy-burnham-outlines-his-vision-for-uk-economy-with-promise-to-raise-living-standards",
+    "description": "Andy Burnham, the former mayor of Greater Manchester, is likely to be the next British prime minister following Keir Starmer's resignation. Central to Burnham's platform is improving living standards that have stagnated or even fallen since the 2008 global financial crisis. But with weak public fina",
+    "pubDate": "Thu, 02 Jul 2026 15:17:59 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
     "title": "Popular TV-tracking app TV Time is shutting down as company focuses on AI",
     "link": "https://techcrunch.com/2026/07/02/popular-tv-tracking-app-tv-time-is-shutting-down-as-company-focuses-on-ai/",
-    "description": "TV Time, the popular TV tracking app, is shutting down on July 15 as parent company Whip Media pivots toward enterprise AI products.",
+    "description": "TV Time, the popular TV-tracking app, is shutting down on July 15 as parent company Whip Media pivots toward enterprise AI products.",
     "pubDate": "Thu, 02 Jul 2026 15:14:03 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -54,6 +318,14 @@
     "pubDate": "Thu, 02 Jul 2026 15:13:29 GMT",
     "source": "BBC News",
     "category": "international"
+  },
+  {
+    "title": "Trump gets OpenAI to offer US 5% stake, far lower than Sanders’ target",
+    "link": "https://arstechnica.com/tech-policy/2026/07/openai-floats-giving-us-5-stake-to-win-over-ai-haters/",
+    "description": "Insiders say Sam Altman is in active talks with the Trump administration.",
+    "pubDate": "Thu, 02 Jul 2026 15:12:25 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
   },
   {
     "title": "New York City buzzes with expectation of Taylor Swift's rumoured July 3 wedding",
@@ -176,6 +448,14 @@
     "category": "international"
   },
   {
+    "title": "Musk’s X poses “serious risk to Americans’ privacy,” advocates warn FTC",
+    "link": "https://arstechnica.com/tech-policy/2026/07/musks-x-poses-serious-risk-to-americans-privacy-advocates-warn-ftc/",
+    "description": "FTC urged to reject Elon Musk’s bid to end X monitoring amid AI concerns.",
+    "pubDate": "Thu, 02 Jul 2026 14:39:17 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
     "title": "Lucid overhauls its entire C-suite under new CEO after 18% layoffs",
     "link": "https://electrek.co/2026/07/02/lucid-c-suite-overhaul-napoli/",
     "description": "Lucid is replacing almost its entire executive team under new CEO Silvio Napoli, bringing in a new CFO, CTO, and three other C-level leaders in a single announcement.\nThe overhaul lands just over a week after the struggling EV maker cut 18% of its workforce and pulled its 2026 production guidance.",
@@ -224,12 +504,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Venezuela quake survivor pulled out alive after eight days",
-    "link": "https://www.bbc.co.uk/news/articles/ce375v12z0qo?at_medium=RSS&at_campaign=rss",
-    "description": "Hernán Gil was trapped under a collapsed multi-storey car park, and encouraged them as they inched closer to him.",
-    "pubDate": "Thu, 02 Jul 2026 14:11:50 GMT",
-    "source": "BBC News",
-    "category": "international"
+    "title": "Tesla sales increase by 25% in Q2 2026",
+    "link": "https://arstechnica.com/cars/2026/07/tesla-sales-increase-by-25-in-q2-2026/",
+    "description": "Deliveries outstripped production, suggesting Tesla has cleared some inventory.",
+    "pubDate": "Thu, 02 Jul 2026 14:11:07 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
   },
   {
     "title": "Yadea shows off full-suspension commuter e-bike at Eurobike 2026",
@@ -256,7 +536,7 @@
     "category": "international"
   },
   {
-    "title": "Woman's puzzling decline turns out to be cobalt poisoning from hip replacement",
+    "title": "Woman's hip replacement disintegrates, causing severe metal poisoning",
     "link": "https://arstechnica.com/health/2026/07/womans-puzzling-decline-turns-out-to-be-cobalt-poisoning-from-hip-replacement/",
     "description": "Doctors find grey fluid and dead, metallic flesh inside poisoned woman's hip.",
     "pubDate": "Thu, 02 Jul 2026 14:04:28 +0000",
@@ -370,7 +650,7 @@
   {
     "title": "Bomb blast in central Damascus cafe kills several",
     "link": "https://www.france24.com/en/middle-east/20260702-bomb-blast-in-central-damascus-cafe-kills-several",
-    "description": "An explosion in a cafe in central Damascus killed five people on Thursday and injured 10, Syrian authorities said. Syrian state television said the blast was caused by an explosive device.",
+    "description": "An explosion in a cafe in central Damascus killed six people on Thursday and injured 22, Syrian authorities said. Syrian state television said the blast was caused by an explosive device.",
     "pubDate": "Thu, 02 Jul 2026 13:31:17 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
@@ -429,6 +709,14 @@
     "description": "Trade ambassador says US will not approve trilateral agreement with Canada and Mexico 'in its current form'.",
     "pubDate": "Thu, 02 Jul 2026 13:09:59 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Almost 1.2 million of Spain's undocumented migrants apply for regularisation",
+    "link": "https://www.france24.com/en/europe/20260702-almost-1-2-million-of-spain-s-undocumented-migrants-apply-for-regularisation",
+    "description": "Almost 1.2 million undocumented migrants have applied for legal status in Spain, with more than 600,000 requests already being processed, figures released on Thursday show. Initial forecasts predict that around half a million applications will be successful.",
+    "pubDate": "Thu, 02 Jul 2026 13:07:13 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -640,7 +928,7 @@
     "category": "ai-tech"
   },
   {
-    "title": "At least five killed in explosion inside central Damascus cafe",
+    "title": "At least six killed in explosion inside central Damascus cafe",
     "link": "https://www.aljazeera.com/news/2026/7/2/explosion-heard-in-syrias-capital-damascus-state-media?traffic_source=rss",
     "description": "Blast at a cafe reportedly kills five people and injures many more.",
     "pubDate": "Thu, 02 Jul 2026 12:32:01 +0000",
@@ -1278,14 +1566,6 @@
     "pubDate": "2026-07-02 18:19:38  +0800",
     "source": "36氪",
     "category": "policy"
-  },
-  {
-    "title": "EU border delays 'not bearable' over summer, warns airport boss",
-    "link": "https://www.bbc.co.uk/news/articles/c8x2y74wp9eo?at_medium=RSS&at_campaign=rss",
-    "description": "Holidaymakers face long waits under the EU's new Entry-Exit System, the head of Berlin's airport says.",
-    "pubDate": "Thu, 02 Jul 2026 10:15:47 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Meta出租算力类似以旧养新，而不是停止追逐高端算力",
@@ -2659,17 +2939,17 @@
     "category": "international"
   },
   {
-    "title": "Dell Coupon Codes: 20% Off for July 2026",
-    "link": "https://www.wired.com/story/dell-coupon-code/",
-    "description": "Get 20% off with verified Dell promo code, plus today’s coupons for up to $600 off laptops, Alienware monitors, and all things tech.",
+    "title": "Paramount+ Coupon Codes and Deals for July 2026",
+    "link": "https://www.wired.com/story/paramount-plus-coupon-code/",
+    "description": "Save on streaming with the latest Paramount+ promo codes and deals, including 50% off subscriptions, free trials, and more.",
     "pubDate": "Thu, 02 Jul 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
   },
   {
-    "title": "Paramount+ Coupon Codes and Deals for July 2026",
-    "link": "https://www.wired.com/story/paramount-plus-coupon-code/",
-    "description": "Save on streaming with the latest Paramount+ promo codes and deals, including 50% off subscriptions, free trials, and more.",
+    "title": "Dell Coupon Codes: 20% Off for July 2026",
+    "link": "https://www.wired.com/story/dell-coupon-code/",
+    "description": "Get 20% off with verified Dell promo code, plus today’s coupons for up to $600 off laptops, Alienware monitors, and all things tech.",
     "pubDate": "Thu, 02 Jul 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -3675,282 +3955,5 @@
     "pubDate": "Wed, 1 Jul 2026 23:52:15 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
-  },
-  {
-    "title": "AI server demand drives MiTAC to expand in Taiwan, Vietnam, and California",
-    "link": "https://www.digitimes.com/news/a20260701PD228/mitac-ai-server-server-rack-demand-expansion-taiwan-2026.html",
-    "description": "MiTAC Holdings' subsidiary, MiTAC Computing Technology, has won strong demand from US cloud customers, driving a sharp rise in orders and a global expansion plan from Asia to North America starting in 2025. With new capacity set to come online in 2026 and additional North American output in the seco",
-    "pubDate": "Wed, 1 Jul 2026 23:51:53 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "General-purpose server shipments surge, boosting Taiwanese connector makers",
-    "link": "https://www.digitimes.com/news/a20260701PD227/server-shipments-connector-cpu-demand.html",
-    "description": "Agentic AI demand is driving major US cloud providers such as Google and Amazon to expand data centers, lifting global server shipments and triggering a new wave of orders for Taiwan connector makers. DIGITIMES Research expects worldwide server shipments to grow more than 19% in 2026, approaching 20",
-    "pubDate": "Wed, 1 Jul 2026 23:51:38 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Cloud AI squeezes 2nm capacity, pressuring mobile SoCs",
-    "link": "https://www.digitimes.com/news/a20260701PD220/capacity-2nm-soc-mobile-flagship.html",
-    "description": "Mobile system-on-chip (SoC) vendors are collectively upgrading flagship platforms to 2nm in 2026. Beyond the need for better specifications, the bigger goal is to avoid the most heavily booked 3nm process and secure more supply.",
-    "pubDate": "Wed, 1 Jul 2026 23:51:23 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Taiwan eyes 2028 carbon trading market launch, but experts warn of risks and timing",
-    "link": "https://www.digitimes.com/news/a20260701PD215/taiwan-launch-2028-market-carbon-pricing.html",
-    "description": "Taiwan plans to launch an emissions trading system (ETS) in 2028 as the next phase of its carbon pricing framework — a cap-and-trade market where companies buy and sell permits to emit greenhouse gases. However, environmental researchers and academics caution that the experiences of Japan, South Kor",
-    "pubDate": "Wed, 1 Jul 2026 23:50:57 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "IBM's 0.7nm chip claim revives debate over semiconductor node naming",
-    "link": "https://www.digitimes.com/news/a20260701PD206/ibm-transistor-manufacturing-2nm-technology.html",
-    "description": "As semiconductor manufacturing enters the 2nm era, conventional transistor scaling is approaching its physical limits. On June 25, 2026, IBM unveiled what it described as the world's first sub-1-nanometer chip technology, featuring a 0.7nm (7-angstrom) process node. The research chip integrates near",
-    "pubDate": "Wed, 1 Jul 2026 23:50:11 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Don't expect connected car apps to save your stolen car, experts say",
-    "link": "https://www.bbc.co.uk/news/articles/cp8r1798kp7o?at_medium=RSS&at_campaign=rss",
-    "description": "Kia told the BBC UK law prevented its location tracking function being used to live track vehicles.",
-    "pubDate": "Wed, 01 Jul 2026 23:31:43 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "The Best July 4 Grill and Griddle Deals: Weber, Traeger, Recteq",
-    "link": "https://www.wired.com/story/best-grill-griddle-deals-july-4-2026/",
-    "description": "Fourth of July weekend is the last great grill and griddle sale of the summer, including $250 off my favorite pellet smoker.",
-    "pubDate": "Wed, 01 Jul 2026 23:16:11 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "From friendship bracelets to wedding rings: A Taylor and Travis timeline",
-    "link": "https://www.bbc.co.uk/news/articles/cqj19p112qjo?at_medium=RSS&at_campaign=rss",
-    "description": "Taylor Swift and Travis Kelce are expected to celebrate their wedding with a party at New York's Madison Square Garden this weekend.",
-    "pubDate": "Wed, 01 Jul 2026 23:08:20 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Couple arrested after daring Empire State marriage proposal stunt",
-    "link": "https://www.aljazeera.com/news/2026/7/1/couple-arrested-after-daring-empire-state-marriage-proposal-stunt?traffic_source=rss",
-    "description": "Russian daredevils Vanya Beerkus and Angela Nikolau are seen as ambassadors for 'rooftopping', a climbing sport.",
-    "pubDate": "Wed, 01 Jul 2026 23:03:58 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "World Cup 2026: Belgium stun Senegal with dramatic comeback and penalty heartbreak",
-    "link": "https://www.france24.com/en/sport/20260701-world-cup-2026-belgium-stun-senegal-with-dramatic-comeback-and-penalty-heartbreak",
-    "description": "",
-    "pubDate": "Wed, 01 Jul 2026 22:56:56 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "US judge sides with NAACP over proposed mail-in ballot restrictions",
-    "link": "https://www.aljazeera.com/news/2026/7/1/us-judge-sides-with-naacp-over-proposed-mail-in-ballot-restrictions?traffic_source=rss",
-    "description": "President Trump has sought to limit mail-in voting and has ordered his administration to impose limits on the practice.",
-    "pubDate": "Wed, 01 Jul 2026 22:53:50 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Bending Spoons defies SaaS slump, surges 40% on first day of trading",
-    "link": "https://techcrunch.com/2026/07/01/bending-spoons-defies-saas-slump-surges-40-on-first-day-of-trading/",
-    "description": "The company has grown rapidly by acquiring and revamping last-generation tech brands like AOL, Eventbrite, Evernote, Meetup, and Vimeo.",
-    "pubDate": "Wed, 01 Jul 2026 22:47:04 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Iran football team welcomed home after World Cup exit",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/1/iran-football-team-welcomed-home-after-world-cup-exit?traffic_source=rss",
-    "description": "Iran’s football team has landed back in Tehran after their World Cup",
-    "pubDate": "Wed, 01 Jul 2026 22:41:59 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Apple’s entry-level MacBook Pro could be up for a redesign",
-    "link": "https://www.theverge.com/news/960541/apple-macbook-pro-entry-level-redesign-ipad-pro-update",
-    "description": "Apple is working on a \"revamped\" version of its entry-level MacBook Pro that it could launch as soon as the first half of 2027, Bloomberg reports. The company is also testing four new iPad Pros that are set to launch in the spring with a focus on \"internal improvements.\" The updated MacBook Pro, whi",
-    "pubDate": "2026-07-01T22:39:43.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Two arrested after climbing Empire State Building antenna for marriage proposal",
-    "link": "https://www.france24.com/en/americas/20260701-two-arrested-after-scaling-empire-state-building-antenna-for-marriage-proposal",
-    "description": "Two people climbed the antenna of New York's Empire State Building on Wednesday, unfurled a banner promoting “the power of love” and appeared to stage a marriage proposal before being arrested. News footage showed the masked pair kissing atop the skyscraper before one knelt and the other appeared to",
-    "pubDate": "Wed, 01 Jul 2026 22:39:07 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "From Truman's pension to Trump's billions - a White House windfall unmatched by any president",
-    "link": "https://www.bbc.co.uk/news/articles/c70yk07vq0po?at_medium=RSS&at_campaign=rss",
-    "description": "Historians say Trump's $2.2bn income last year is unprecedented and blurs the line on conflicts of interest.",
-    "pubDate": "Wed, 01 Jul 2026 22:36:43 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "ベネズエラ地震発生1週間 救助活動続くも食料など支援が課題に",
-    "link": "http://www3.nhk.or.jp/news/html/20260702/k10015166531000.html",
-    "description": "南米ベネズエラでマグニチュード7を超える地震が起きて1週間となり、死亡が確認された人は2295人となりました。被災地では、救助活動が続く一方、食料や水の不足を訴える被災者も多く、支援が課題になっています。",
-    "pubDate": "Thu, 02 Jul 2026 07:34:28 +0900",
-    "source": "NHKニュース"
-  },
-  {
-    "title": "After $18B IPO, Bending Spoons founder says success comes from minimizing luck",
-    "link": "https://techcrunch.com/2026/07/01/after-18b-ipo-bending-spoons-founder-says-success-comes-from-minimizing-luck/",
-    "description": "The co-founders of Bending Spoons, the Italian company quietly buying beloved, ailing Internet brands, learned big lessons from their own startup's failure.",
-    "pubDate": "Wed, 01 Jul 2026 22:28:35 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Turkish police beat us with iron rods before we lost limbs to frostbite, Afghans say",
-    "link": "https://www.bbc.co.uk/news/articles/ce8k4pz91n5o?at_medium=RSS&at_campaign=rss",
-    "description": "The young migrants heading to Europe say they were stripped and had their hands tied in freezing temperatures.",
-    "pubDate": "Wed, 01 Jul 2026 22:13:03 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Banned by Beijing, this comedian is taking his act to Chinese speakers abroad",
-    "link": "https://www.bbc.co.uk/news/articles/cx2x01q21wlo?at_medium=RSS&at_campaign=rss",
-    "description": "Chizi, one of China’s biggest stand-up comedians, has found a new stage after falling afoul of China's censors.",
-    "pubDate": "Wed, 01 Jul 2026 22:04:01 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "The funeral for PlayStation discs has begun",
-    "link": "https://www.theverge.com/games/960476/playstation-physical-games-discs-stop-production-preservation-retail-stores",
-    "description": "Cody Spencer, the co-owner of the small games retail chain Pink Gorilla Games, put it well when I asked about the impact of Sony's recent announcement that it will stop making discs for new games starting January 2028. \"It's sad to see. This decision is only a negative for gamers. We're losing the a",
-    "pubDate": "2026-07-01T22:03:37.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "WhatsApp usernames are already raising impersonation red flags",
-    "link": "https://techcrunch.com/2026/07/01/whatsapp-usernames-are-already-raising-impersonation-red-flags/",
-    "description": "Meta says usernames improve privacy, but critics question whether its safeguards can prevent impersonation.",
-    "pubDate": "Wed, 01 Jul 2026 22:02:24 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "E Jean Carroll demands Donald Trump pay $5.8m in damages from 2019 case",
-    "link": "https://www.aljazeera.com/news/2026/7/1/e-jean-carroll-demands-donald-trump-pay-5-8m-in-damages-from-2019-case?traffic_source=rss",
-    "description": "Carroll's lawyers have asked for an expedited resolution to the payment question after US Supreme Court declines appeal.",
-    "pubDate": "Wed, 01 Jul 2026 21:45:58 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Russia conducts deadly missile, drone strikes on Kyiv after Zelensky warns of ‘massive attack’",
-    "link": "https://www.france24.com/en/europe/20260701-fire-breaks-out-in-central-kyiv-after-explosion-during-air-raid-alert",
-    "description": "Russian missile and drone strikes hit Kyiv early Thursday, sparking fires, killing 13 people and injuring dozens, Ukrainian officials said, after President Volodymyr Zelensky warned that Moscow was preparing a \"massive attack\".",
-    "pubDate": "Wed, 01 Jul 2026 21:41:54 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Subaru’s new EVs are already outselling the Solterra",
-    "link": "https://electrek.co/2026/07/01/subarus-new-evs-outselling-solterra/",
-    "description": "Just months after arriving at dealerships, Subaru’s new electric SUVs are outselling the Solterra.",
-    "pubDate": "Wed, 01 Jul 2026 21:37:44 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Mexico’s Victory Over Ecuador Made the Ground Shake. Was It an Artificial Earthquake?",
-    "link": "https://www.wired.com/story/mexicos-victory-over-ecuador-artificial-earthquake/",
-    "description": "Fans’ euphoric reactions to the Mexican national team’s recent victory in the 2026 World Cup caused a series of unusual vibrations that were detected by seismic warning systems.",
-    "pubDate": "Wed, 01 Jul 2026 21:34:03 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "US-Iran Qatar talks show progress, Trump says, as both sides set up hotline",
-    "link": "https://www.france24.com/en/middle-east/20260701-us-iran-doha-talks-end-without-breakthrough-strait-of-hormuz",
-    "description": "US President Donald Trump said on Wednesday indirect talks with Iran in Qatar were making progress, signalling diplomacy remained on track despite recent hostilities. Iran later said the talks had ended with agreement to establish a communication channel by Thursday to report and document violations",
-    "pubDate": "Wed, 01 Jul 2026 21:33:40 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "T-Mobile moving tens of thousands of virtual machines off VMware amid lawsuit",
-    "link": "https://arstechnica.com/information-technology/2026/07/t-mobile-moving-tens-of-thousands-of-virtual-machines-off-vmware-amid-lawsuit/",
-    "description": "T-Mobile wants Broadcom to keep supporting its VMware perpetual licenses.",
-    "pubDate": "Wed, 01 Jul 2026 21:21:21 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "US signs $1 lease with Israel to build permanent embassy in West Jerusalem",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/1/us-signs-1-lease-with-israel-to-build-permanent-embassy-in-west-jerusalem?traffic_source=rss",
-    "description": "The US and Israel have signed a deal allocating land for a permanent US embassy in West Jerusalem.",
-    "pubDate": "Wed, 01 Jul 2026 21:09:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Allegro DVT Plays a Pivotal Role in Groundbreaking CHASSIS Automotive Base Die Development",
-    "link": "https://www.semiconductor-digest.com/allegro-dvt-plays-a-pivotal-role-in-groundbreaking-chassis-automotive-base-die-development/?utm_source=rss&utm_medium=rss&utm_campaign=allegro-dvt-plays-a-pivotal-role-in-groundbreaking-chassis-automotive-base-die-development",
-    "description": "Allegro DVT announced its contribution to the European CHASSIS program's implementation of the Automotive Base Die chiplet.\nThe post Allegro DVT Plays a Pivotal Role in Groundbreaking CHASSIS Automotive Base Die Development appeared first on Semiconductor Digest.",
-    "pubDate": "Wed, 01 Jul 2026 21:06:53 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor"
-  },
-  {
-    "title": "US Supreme Court hands wealthy donors more sway with latest decision",
-    "link": "https://www.aljazeera.com/news/2026/7/1/us-supreme-court-hands-wealthy-donors-more-sway-with-latest-decision?traffic_source=rss",
-    "description": "Critics say the ruling invites corruption, benefitting wealthy donors and amplifying special interest sway in politics.",
-    "pubDate": "Wed, 01 Jul 2026 21:04:19 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera"
-  },
-  {
-    "title": "Kempower + PowerUp kick off a 12-site EV fast charging rollout",
-    "link": "https://electrek.co/2026/07/01/kempower-powerup-kick-off-a-12-site-ev-fast-charging-rollout/",
-    "description": "Kempower and charge point operator PowerUp America have opened a new public DC fast charging station in Manchester, Kentucky – the first of 12 charging projects the companies are building together in the Southeast.",
-    "pubDate": "Wed, 01 Jul 2026 21:03:52 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "USA beat Bosnia and Herzegovina 2-0: FIFA World Cup 2026 – updates",
-    "link": "https://www.aljazeera.com/sports/liveblog/2026/7/1/live-usa-vs-bosnia-and-herzegovina-fifa-world-cup-2026?traffic_source=rss",
-    "description": "All our updates as USA beat Bosnia and Herzegovina in the round of 32 knockout stage in San Francisco.",
-    "pubDate": "Wed, 01 Jul 2026 21:03:01 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera"
-  },
-  {
-    "title": "Chips&Media Strengthens Codec Leadership With Next-Gen AV2 Licensing Deal",
-    "link": "https://semiwiki.com/ip/chipsmedia/370651-chipsmedia-strengthens-codec-leadership-with-next-gen-av2-licensing-deal/",
-    "description": "Chips&Media has signed a next-generation AV2 video IP licensing agreement with a major North American Big Tech company, marking an important step in the commercialization of the next wave of video compression technology. The deal includes Chips&Media’s AV2 decoder IP along with multi-standard codec ",
-    "pubDate": "Wed, 01 Jul 2026 21:00:54 +0000",
-    "source": "SemiWiki",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Xbox’s ‘reset’: all the news about Microsoft&#8217;s looming layoffs and studio closures",
-    "link": "https://www.theverge.com/games/959900/xbox-reset-layoffs-studio-closures",
-    "description": "Xbox is making some big changes — again. On June 10th, a few months after Asha Sharma took over as CEO, she and newly promoted chief content officer Matt Booty sent a memo to staff warning of an &#8220;Xbox reset.&#8221; The business, they said, is facing significant challenges, including a 3 percen",
-    "pubDate": "2026-07-01T21:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
   }
 ]
