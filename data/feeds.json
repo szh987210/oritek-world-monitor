@@ -1,5 +1,245 @@
 [
   {
+    "title": "The Hyundai IONIQ 5 is flying off dealer lots, and it’s getting harder to find",
+    "link": "https://electrek.co/2026/07/20/hyundai-ioniq-5-selling-fast-dealers-running-out/",
+    "description": "The IONIQ 5 is a hot seller right now, and Hyundai dealers are reportedly running out of inventory.",
+    "pubDate": "Mon, 20 Jul 2026 21:39:42 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Trump imposes 50% tariff on Canadian imports",
+    "link": "https://www.bbc.co.uk/news/articles/cg4dzq3x3e1o?at_medium=RSS&at_campaign=rss",
+    "description": "The duties take effect within 30 days and mark a major escalation in trade tensions between the North American neighbours.",
+    "pubDate": "Mon, 20 Jul 2026 21:35:33 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Yemen's Houthis announce 'maritime embargo' on Saudi Arabia",
+    "link": "https://www.bbc.co.uk/news/articles/cm2gmddx1ldo?at_medium=RSS&at_campaign=rss",
+    "description": "The Houthis say the embargo begins immediately and is a response to a Saudi blockade of ports and airports in Yemen.",
+    "pubDate": "Mon, 20 Jul 2026 21:30:19 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "米大統領 イランへの攻撃強化の構え 双方による応酬収まらず",
+    "link": "http://www3.nhk.or.jp/news/html/20260721/k10015181461000.html",
+    "description": "中東でアメリカ軍の兵士が死亡したことについて、アメリカのトランプ大統領は「イランがアメリカ軍の兵士を殺害するたびに、彼らはその何倍もの代償を支払うことになる」としてイランへの攻撃を強化する構えを示しました。一方、イランの革命防衛隊はバーレーンにあるアメリカ軍の無人機の格納庫を破壊したなどとしていて、双方による攻撃の応酬が収まる見通しは立っていません。",
+    "pubDate": "Tue, 21 Jul 2026 06:24:03 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Google is working on a new AI chip designed to make Gemini more efficient",
+    "link": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/",
+    "description": "Alphabet, Google's parent company, is reportedly working on a new chip designed to make its Gemini models run much more efficiently.",
+    "pubDate": "Mon, 20 Jul 2026 21:21:15 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "危険運転致死傷罪を適用する数値基準盛り込んだ改正法が施行",
+    "link": "http://www3.nhk.or.jp/news/html/20260721/k10015181341000.html",
+    "description": "飲酒運転や高速度での走行に危険運転致死傷罪を適用する数値基準を盛り込んだ改正自動車運転処罰法が21日、施行されました。飲酒運転は呼気1リットルにつき0.5ミリグラム以上で適用されます。",
+    "pubDate": "Tue, 21 Jul 2026 06:19:19 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "与党 「副首都」法案成立目指す 野党 衆院超える審議時間を",
+    "link": "http://www3.nhk.or.jp/news/html/20260721/k10015181391000.html",
+    "description": "「副首都」構想の関連法案をめぐり、与党側は22日、参議院で審議入りさせ、今週24日の成立を目指す方針です。これに対し野党側は「『大阪ありき』の法案だ」などと批判し衆議院を超える審議時間を確保するよう求める構えで、与野党の調整が行われる見通しです。",
+    "pubDate": "Tue, 21 Jul 2026 06:14:59 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "FIFA investigating on-pitch brawl after Spain vs Argentina World Cup final",
+    "link": "https://www.aljazeera.com/sports/2026/7/20/fifa-investigating-on-pitch-brawl-after-spain-vs-argentina-world-cup-final?traffic_source=rss",
+    "description": "Argentina's Paredes was seen shoving Spanish players, which led to an on-field melee, while Spain's Yamal prayed calmly.",
+    "pubDate": "Mon, 20 Jul 2026 21:12:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "US launches fresh strikes on Iran, as Trump warns of retaliation for death of soldiers",
+    "link": "https://www.bbc.co.uk/news/articles/cx25wg2x26do?at_medium=RSS&at_campaign=rss",
+    "description": "The US says the attacks were aimed at degrading Iran's capabilities to attack ships in the Strait of Hormuz.",
+    "pubDate": "Mon, 20 Jul 2026 21:09:31 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Trump rejects Mamdani threat to arrest Israel’s Netanyahu for war crimes",
+    "link": "https://www.aljazeera.com/news/2026/7/20/trump-rejects-mamdani-threat-to-arrest-israels-netanyahu-for-war-crimes?traffic_source=rss",
+    "description": "US president insists Netanyahu will not be arrested, despite ICC warrant.",
+    "pubDate": "Mon, 20 Jul 2026 21:06:42 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "広い範囲で気温上昇 埼玉県では酷暑日予想 熱中症に厳重警戒",
+    "link": "http://www3.nhk.or.jp/news/html/20260721/k10015181481000.html",
+    "description": "21日も東日本から西日本にかけての広い範囲で気温が上がり、埼玉県では40度と命に関わる危険な暑さが予想されています。熱中症に厳重に警戒し、より一層、対策を心がけてください。",
+    "pubDate": "Tue, 21 Jul 2026 06:04:38 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Notorious drug cartel leader Ismael Zambada sentenced to life in US prison",
+    "link": "https://www.bbc.co.uk/news/articles/ce3q1d1ed5do?at_medium=RSS&at_campaign=rss",
+    "description": "Known as \"El Mayo\", the co-founder the Sinaloa Cartel was also ordered to pay $15bn after he admitted to sending vast amounts of drugs to the US.",
+    "pubDate": "Mon, 20 Jul 2026 21:03:24 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "King of Spain celebrates World Cup winners in Madrid",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/20/king-of-spain-celebrates-world-cup-winners-in-madrid?traffic_source=rss",
+    "description": "Spain’s World Cup-winning team received a royal reception from King Felipe VI in Madrid ahead of a victory parade.",
+    "pubDate": "Mon, 20 Jul 2026 21:01:01 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "See Defacto Technologies at DAC 2026",
+    "link": "https://semiwiki.com/eda/defacto-technologies/371338-see-defacto-technologies-at-dac-2026/",
+    "description": "I have had the pleasure of working with Defacto Technologies for the past 10 years on SemiWiki and I am always impressed with their professionalism and ability to quickly address the challenges of complex SoC design.\nFrom my perspective, Defacto’s technology is designed to improve productivity and d",
+    "pubDate": "Mon, 20 Jul 2026 21:00:32 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Living in Tanizaki’s Shadows",
+    "link": "https://www.nippon.com/en/japan-topics/b07237/",
+    "description": "July 2026 marks the 140th anniversary of Tanizaki Jun’ichirō’s birth. An editor and translator of the author’s In Praise of Shadows reflects on the work and its echoes in his own life in an old home on the Pacific coast of Japan.",
+    "pubDate": "Tue, 21 Jul 2026 06:00:18 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "A Third of Serious Workplace Injuries in Japan Involve Workers Over 60",
+    "link": "https://www.nippon.com/en/japan-data/h02817/",
+    "description": "The number of serious work-related injuries in Japan has climbed over the past decade. Workers over 60 now account for a greater percentage of this total.",
+    "pubDate": "Tue, 21 Jul 2026 06:00:18 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "SpaceX in your index fund, explained",
+    "link": "https://www.theverge.com/business/968257/spacex-in-your-index-fund-explained",
+    "description": "Index funds are touted as one of the safest ways to invest. Rather than picking and choosing individual stocks, index funds let you bet on the market as a whole. So what happens when a company like SpaceX - a giant gamble, and, in my opinion, terribly overpriced - is fast-tracked into the Nasdaq-100",
+    "pubDate": "2026-07-20T21:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The Galaxy Card Is Samsung’s Answer to the Apple Card",
+    "link": "https://www.wired.com/story/galaxy-card-is-samsung-answer-to-the-apple-card/",
+    "description": "Directly added to your Samsung Wallet account, it’s yet another cash-back credit card, this time tailored for Samsung stans.",
+    "pubDate": "Mon, 20 Jul 2026 21:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "W杯優勝 スペイン代表が凱旋",
+    "link": "http://www3.nhk.or.jp/news/html/20260721/k10015181471000.html",
+    "description": "サッカーワールドカップ北中米大会で優勝したスペイン代表チームが20日、帰国して優勝パレードを行い、大勢の人たちから熱狂的に迎えられました。",
+    "pubDate": "Tue, 21 Jul 2026 05:59:11 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "The FDA Says It Didn't Apologize to Supplier Linked to Diarrhea Outbreak, Actually",
+    "link": "https://www.wired.com/story/taylor-farms-fda-explosive-diarrhea-tweets/",
+    "description": "The agency stressed that the July 17 voluntary recall from Taylor Farms still stands. The supplier has been linked to the ongoing cyclospora outbreak.",
+    "pubDate": "Mon, 20 Jul 2026 20:57:39 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Gaza residents weigh in on election of new Hamas leader",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/20/gaza-residents-weigh-in-on-election-of-new-hamas-leader?traffic_source=rss",
+    "description": "Gaza residents weigh in on election of new Hamas leader",
+    "pubDate": "Mon, 20 Jul 2026 20:53:29 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "AI’s most important protocol is getting a little bit easier to use",
+    "link": "https://techcrunch.com/2026/07/20/ais-most-important-protocol-is-getting-a-little-bit-easier-to-use/",
+    "description": "The Model Context Protocol (MCP) is one of the basic building blocks of AI interoperability, giving AI models a secure way to access external data sources and services. It’s the plumbing that lets a chatbot reach into your calendar, your database, or your internal tools, instead of engineers buildin",
+    "pubDate": "Mon, 20 Jul 2026 20:50:40 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "How will Zelenskyy handle the growing political crisis at home?",
+    "link": "https://www.aljazeera.com/video/inside-story/2026/7/20/how-will-zelenskyy-handle-the-growing-political-crisis-at-home?traffic_source=rss",
+    "description": "Ukraine strikes Russian oil sites after major missile attack, as President Zelenskyy faces crisis over sacked minister.",
+    "pubDate": "Mon, 20 Jul 2026 20:50:31 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Ortega insists no more elections for Nicaragua",
+    "link": "https://www.aljazeera.com/news/2026/7/20/ortega-insists-no-more-elections-for-nicaragua?traffic_source=rss",
+    "description": "The Central American state's longtime leader intends to block the opposition from challenging his rule.",
+    "pubDate": "Mon, 20 Jul 2026 20:49:08 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Man arrested after fire outside New York immigration court",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/20/man-arrested-after-fire-outside-new-york-immigration-court?traffic_source=rss",
+    "description": "A man has been arrested after setting off an incendiary device outside an immigration court building in New York City.",
+    "pubDate": "Mon, 20 Jul 2026 20:45:11 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "中国海警局とフィリピン海軍が海上で接触か 非難の応酬",
+    "link": "http://www3.nhk.or.jp/news/html/20260721/k10015181431000.html",
+    "description": "フィリピン軍は中国と領有権を争う南シナ海で20日、海軍の兵士1人が中国海警局の乗組員に木製の棒で殴られけがをしたと発表しました。これに対して中国側は「事実をわい曲している」と反論しています。",
+    "pubDate": "Tue, 21 Jul 2026 05:40:59 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "The US’s first UL 3700 balcony solar microinverter is here",
+    "link": "https://electrek.co/2026/07/20/us-first-ul-3700-balcony-solar-microinverter-hoymiles/",
+    "description": "Hoymiles has launched the HiFlow Pro, the first US microinverter certified to meet UL 3700, North America’s new safety standard for plug-in balcony solar.",
+    "pubDate": "Mon, 20 Jul 2026 20:38:08 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The Space Force is now seeking to buy up to $30 billion in rocket launches",
+    "link": "https://arstechnica.com/science/2026/07/the-space-force-is-now-seeking-to-buy-up-to-30-billion-in-rocket-launches/",
+    "description": "The Trump administration is asking the Space Force to do a lot. This will require more launches.",
+    "pubDate": "Mon, 20 Jul 2026 20:30:25 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Monsoon-driven flash flooding kills at least 20 in Afghanistan",
+    "link": "https://www.aljazeera.com/news/2026/7/20/monsoon-driven-flash-flooding-kills-at-least-20-in-afghanistan?traffic_source=rss",
+    "description": "Rescue teams are racing to reach Nuristan province as devastation continues across the region.",
+    "pubDate": "Mon, 20 Jul 2026 20:29:27 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Indian police attack Cockroach Janta Party’s parliament march",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/20/indian-police-attack-cockroach-janta-partys-parliament-march?traffic_source=rss",
+    "description": "Police used batons to disperse protesters as thousands of people joined the Cockroach Janta Party's march in New Delhi.",
+    "pubDate": "Mon, 20 Jul 2026 20:21:30 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Trump warns Iran will pay 'many times over' for deaths of US soldiers",
     "link": "https://www.bbc.co.uk/news/articles/cly52xzjd3qo?at_medium=RSS&at_campaign=rss",
     "description": "The US president spoke just hours after the two warring sides exchanged strikes for the ninth consecutive day.",
@@ -150,6 +390,14 @@
     "pubDate": "Tue, 21 Jul 2026 04:23:28 +0900",
     "source": "NHKニュース",
     "category": "international"
+  },
+  {
+    "title": "AT&T loses key ruling in bid to stop offering basic phone service in California",
+    "link": "https://arstechnica.com/tech-policy/2026/07/att-loses-key-ruling-in-bid-to-stop-offering-basic-phone-service-in-california/",
+    "description": "AT&T suffers setback but will keep asking court and FCC to preempt state rules.",
+    "pubDate": "Mon, 20 Jul 2026 19:20:49 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
   },
   {
     "title": "US judge orders pause on Paramount–Warner Bros merger",
@@ -304,6 +552,14 @@
     "category": "international"
   },
   {
+    "title": "RIP bargain bin: The price impact of Sony's disc-free PlayStation plan",
+    "link": "https://arstechnica.com/gaming/2026/07/our-playstation-price-analysis-shows-why-physical-games-still-matter/",
+    "description": "Used discs are often cheaper than even deep digital discounts.",
+    "pubDate": "Mon, 20 Jul 2026 18:06:05 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
     "title": "Novel Layered Crystal for High-Efficiency Thermoelectric Energy Conversion",
     "link": "https://www.semiconductor-digest.com/novel-layered-crystal-for-high-efficiency-thermoelectric-energy-conversion/?utm_source=rss&utm_medium=rss&utm_campaign=novel-layered-crystal-for-high-efficiency-thermoelectric-energy-conversion",
     "description": "Embedding atomically thin materials within bulk crystals enables both a high thermoelectric power factor and exceptionally low thermal conductivity.\nThe post Novel Layered Crystal for High-Efficiency Thermoelectric Energy Conversion appeared first on Semiconductor Digest.",
@@ -408,14 +664,6 @@
     "category": "semiconductor"
   },
   {
-    "title": "Yemen's Houthis announce 'maritime embargo' on Saudi Arabia",
-    "link": "https://www.bbc.co.uk/news/articles/cm2gmddx1ldo?at_medium=RSS&at_campaign=rss",
-    "description": "The Houthis say the embargo begins immediately and is a response to a Saudi blockade of ports and airports in Yemen.",
-    "pubDate": "Mon, 20 Jul 2026 17:33:02 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "FIFA World Cup: Five key takeaways from 2026 edition won by Spain",
     "link": "https://www.aljazeera.com/sports/2026/7/20/fifa-world-cup-five-key-takeaways-from-2026-edition-won-by-spain?traffic_source=rss",
     "description": "Spain beat Argentina, but talking points remain. Should there be 48 or 64 teams? Hydration breaks? The 'dark arts'?",
@@ -429,14 +677,6 @@
     "description": "François Picard is pleased to welcome Mary Honeyball, former Labour Member of the European Parliament from 2000 to 2019 representing London. She offers a cautiously optimistic assessment of the arrival of Andy Burnham to 10 Downing Street. She frames the moment less as a potential political reset af",
     "pubDate": "Mon, 20 Jul 2026 17:26:28 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Notorious drug cartel leader Ismael Zambada sentenced to life in US prison",
-    "link": "https://www.bbc.co.uk/news/articles/ce3q1d1ed5do?at_medium=RSS&at_campaign=rss",
-    "description": "Known as \"El Mayo\", the co-founder the Sinaloa Cartel was also ordered to pay $15bn after he admitted to sending vast amounts of drugs to the US.",
-    "pubDate": "Mon, 20 Jul 2026 17:21:27 GMT",
-    "source": "BBC News",
     "category": "international"
   },
   {
@@ -1314,7 +1554,7 @@
   {
     "title": "东山精密：拟2-3亿元回购股份用于员工持股或股权激励",
     "link": "https://36kr.com/newsflashes/3903909366302594?f=rss",
-    "description": "36氪获悉，东山精密公告，公司拟使用自筹资金或其他合法资金，以集中竞价交易方式回购公司股份，回购资金总额为2-3亿元，回购价格不超过367.04元/股。回购股份将用于员工持股计划或者股权激励，实施期限为自董事会审议通过之日起12个月内。",
+    "description": "36氪获悉，东山精密公告，公司拟使用自筹资金或其他合法资金，以集中竞价交易方式回购公司股份，回购资金总额为2-3亿元，回购价格不超过367.04元/股。回购股份将用于员工持股计划或者股权激励，实施期限为自董事会审议通过之日���12个月内。",
     "pubDate": "2026-07-20 19:41:58  +0800",
     "source": "36氪",
     "category": "ai-tech"
@@ -1560,17 +1800,17 @@
     "category": "international"
   },
   {
-    "title": "Elite Young Runners Are Becoming Freakishly Fast. Welcome to ‘Trackflation’",
-    "link": "https://www.wired.com/story/teenagers-running-trackflation/",
-    "description": "Four-minute miles are almost routine. Middle schoolers are beating college runners. Inside the youth track boom that’s turning kids and teens into speed machines.",
+    "title": "The ACLU Is Arming Lawyers to Expose State Surveillance Secrets",
+    "link": "https://www.wired.com/story/the-aclu-is-arming-lawyers-to-expose-state-surveillance-secrets/",
+    "description": "A new toolkit for attorneys in Massachusetts targets the technologies police use—and conceal—to build criminal cases, from facial recognition to AI-written police reports.",
     "pubDate": "Mon, 20 Jul 2026 10:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
   },
   {
-    "title": "The ACLU Is Arming Lawyers to Expose State Surveillance Secrets",
-    "link": "https://www.wired.com/story/the-aclu-is-arming-lawyers-to-expose-state-surveillance-secrets/",
-    "description": "A new toolkit for attorneys in Massachusetts targets the technologies police use—and conceal—to build criminal cases, from facial recognition to AI-written police reports.",
+    "title": "Elite Young Runners Are Becoming Freakishly Fast. Welcome to ‘Trackflation’",
+    "link": "https://www.wired.com/story/teenagers-running-trackflation/",
+    "description": "Four-minute miles are almost routine. Middle schoolers are beating college runners. Inside the youth track boom that’s turning kids and teens into speed machines.",
     "pubDate": "Mon, 20 Jul 2026 10:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -3477,7 +3717,8 @@
     "description": "Netflix revealed that it paid $587 million in cash for InterPositive, a startup co-founded by Ben Affleck.",
     "pubDate": "Sun, 19 Jul 2026 21:45:00 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Watch: Torrential rain hits New York and New Jersey triggering flash floods",
@@ -3485,7 +3726,8 @@
     "description": "Water cascaded into subway stations and flooded streets, with people seen wading through water.",
     "pubDate": "Sun, 19 Jul 2026 21:43:54 GMT",
     "source": "BBC News",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Survey Sunday: is Slate Auto’s affordable electric truck going to make it?",
@@ -3493,7 +3735,8 @@
     "description": "For the last few weeks, we’ve been running a sidebar survey asking Electrek readers if they thought the new, affordable Slate electric truck was going to succeed in the ultra-competitive US market. After receiving nearly 3,000 responses, here’s what you told us.",
     "pubDate": "Sun, 19 Jul 2026 21:20:04 +0000",
     "source": "Electrek",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "What to watch for after Jensen Huang’s Japan visit",
@@ -3501,7 +3744,8 @@
     "description": "Jensen Huang left Tokyo with deals spanning Japan's entire tech ecosystem.",
     "pubDate": "Sun, 19 Jul 2026 21:16:07 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "This unpronounceable series of glyphs is an incredible side project from Kieran Hebden (aka Four Tet)",
@@ -3509,7 +3753,8 @@
     "description": "Just why? &#645;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;(&#824;&#802;&#795;&#828;&#798;&#813;&#843;&#837;)&#824;&#858;&#816;&#859;&#788;&#830;&#768;&#831;&#850;&#834;:&#820;&#851;&#798;&#785;&#780;&#770;&#774;&#778;&#843;&#768;:&#824;&#846;&#799;&#815;&#770;&#787;&#780;&#12",
     "pubDate": "2026-07-19T21:02:45.000Z",
     "source": "The Verge",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "The Seiko Museum Ginza Highlights the Craftsmanship Behind Precision Timepieces",
@@ -3517,7 +3762,8 @@
     "description": "The Seiko Museum Ginza tells the history of the company from its beginnings in the nineteenth century, displaying the clocks and especially watches that made Seiko a worldwide name.",
     "pubDate": "Mon, 20 Jul 2026 06:01:00 +0900 ",
     "source": "nippon.com / en ",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Mizuna: A Satisfyingly Crunchy Leaf That Pairs with Any Cuisine",
@@ -3525,7 +3771,8 @@
     "description": "The slender, leafy vegetable called mizuna is a humble, affordable addition to the Japanese menu, but one that provides plenty of flavor and texture to everything from salads and pickles to stews and meat dishes.",
     "pubDate": "Mon, 20 Jul 2026 06:00:02 +0900 ",
     "source": "nippon.com / en ",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Israeli ministers join march to Gaza to demand return of settlements",
@@ -3533,7 +3780,8 @@
     "description": "Hundreds gather near the border as far-right figures push to rebuild settlements removed in 2005",
     "pubDate": "Sun, 19 Jul 2026 20:55:11 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "India bans march on parliament by ‘Cockroach’ activists, risking a standoff",
@@ -3541,7 +3789,8 @@
     "description": "Police in New Delhi on Sunday banned a planned march on the Indian parliament by supporters of the viral, opposition Cockroach Janata Party. The demonstration set for Monday, the start of parliament's monsoonsession, follows growing calls for the education minister's resignation over exam paper leak",
     "pubDate": "Sun, 19 Jul 2026 20:40:10 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Pilot hits new EV milestone with 300th DC fast charging location",
@@ -3549,7 +3798,8 @@
     "description": "Pilot travel centers are welcoming America’s summer road trippers with a number of new locations, an expanded, “coast-to-coast” EV charging network that offers 24/7 convenience and healthier c-store snacks and menu items.",
     "pubDate": "Sun, 19 Jul 2026 20:27:32 +0000",
     "source": "Electrek",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "US announces death of another service member, Jordan summons Iranian envoy over attacks",
@@ -3783,276 +4033,6 @@
     "pubDate": "Sun, 19 Jul 2026 18:04:27 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "What happened to the Jewish left?",
-    "link": "https://www.aljazeera.com/video/upfront/2026/7/19/what-happened-to-the-jewish-left?traffic_source=rss",
-    "description": "Marc Lamont Hill speaks to Molly Crabapple about the Jewish Labour Bund, anti-Zionism and the Jewish left today.",
-    "pubDate": "Sun, 19 Jul 2026 17:56:56 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Spain-Argentina: La Roja claim second World Cup title in extra time",
-    "link": "https://www.france24.com/en/sport/20260719-spain-argentina-live-defending-champions-face-european-powerhouse-for-the-crown",
-    "description": "Spain defeated Argentina 1-0 in extra time at MetLife Stadium in New Jersey to win the World Cup, completing a historic Euro-World Cup double. Ferran Torres' late strike sealed victory for a dominant Spanish side against a 10-man Argentina, ending Lionel Messi's World Cup career on a bittersweet not",
-    "pubDate": "Sun, 19 Jul 2026 17:47:38 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Argentina vs Spain: Tactics, stars and off-pitch backlash",
-    "link": "https://www.france24.com/en/tv-shows/spotlight/20260719-argentina-vs-spain-tactics-stars-and-off-pitch-backlash",
-    "description": "The 2026 FIFA World Cup reaches its climax as Spain take on Argentina in a highly anticipated final. The match pits the defending champions against one of football's rising powers, with Lionel Messi's enduring legacy meeting the emergence of Spain's teenage star Lamine Yamal",
-    "pubDate": "Sun, 19 Jul 2026 17:44:34 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "20. Juli 1944: Stauffenberg-Attentat auf Adolf Hitler",
-    "link": "https://www.dw.com/de/20-juli-1944-stauffenberg-attentat-auf-adolf-hitler/a-49533515?maca=de-rss-de-all-1119-rdf",
-    "description": "Vor 82 Jahren scheiterte mit der \"Operation Walküre\" der bedeutendste Umsturzversuch des militärischen Widerstandes in der Zeit des Nationalsozialismus. Hitler überlebte den Anschlag, die Attentäter wurden hingerichtet.",
-    "pubDate": "2026-07-19T17:40:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "I hate that I don’t hate this song made with Suno",
-    "link": "https://www.theverge.com/entertainment/967678/1010benja-semiramis-dream-suno-ai-music",
-    "description": "I would never go so far as to say there's no place for AI in music (I'm a fan of Holly Herndon, after all). But I generally find music made with generative AI to be offensively boring, especially the outputs of Suno. So I'm having a bit of a tough time processing the fact that [&#8230;]",
-    "pubDate": "2026-07-19T17:35:54.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Iraqi-born singer Emmanuel Kelly among World Cup half-time show headliners",
-    "link": "https://www.aljazeera.com/sports/2026/7/19/iraqi-born-singer-emmanuel-kelly-among-world-cup-half-time-show-headliners?traffic_source=rss",
-    "description": "Abandoned as a baby and brought up by nuns in Baghdad, Kelly will be preforming alongside global megastars.",
-    "pubDate": "Sun, 19 Jul 2026 17:24:27 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "A股现金流百强榜：谁能真正把钱收回来？",
-    "link": "https://www.tmtpost.com/8071343.html",
-    "description": "利润表反映的是企业的经营成果，资产负债表反映的是企业的财务结构，而现金流量表则直接反映企业经营活动背后的资金流动状况。对于投资者而言，现金流是观察上市公司经营质量、财务韧性和长期竞争力的重要窗口。",
-    "pubDate": "Mon, 20 Jul 2026 00:49:10 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "广东上市公司价值重估：金融与硬科技抬升上限，先进制造分层加速",
-    "link": "https://www.tmtpost.com/8071341.html",
-    "description": "作为中国制造业、外贸经济、科技创新和民营经济最活跃的区域之一，广东上市公司的产业结构具有鲜明的“金融资本+电子制造+先进制造+消费品牌+新能源链条”特征。",
-    "pubDate": "Mon, 20 Jul 2026 00:48:55 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "价值判断：跌停板的投资机会和风险提示（7月17日）｜上市公司观察",
-    "link": "https://www.tmtpost.com/8071333.html",
-    "description": "整体来看，当前市场资金彻底摒弃纯题材炒作，聚焦低估值、有基本面支撑的低位标的。操作上需坚决规避高位高溢价、无业绩支撑的题材股，规避估值泡沫出清风险，短期以防御为主，重点关注电力、优质低位实体产业等安全边际充足的赛道。",
-    "pubDate": "Mon, 20 Jul 2026 00:48:37 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "价值判断：涨停板的投资机会和风险提示（7月17日）｜上市公司观察",
-    "link": "https://www.tmtpost.com/8071328.html",
-    "description": "行业板块呈现普跌态势，仅电力、核力发电、公用事业、银行板块逆市上涨，半导体、元件、医疗服务、电子化学品、消费电子、机器人、化学制药、通信设备板块跌幅居前。",
-    "pubDate": "Mon, 20 Jul 2026 00:48:27 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "上市公司价值管理的5R协同机制：让价值被看见、被理解、被定价",
-    "link": "https://www.tmtpost.com/8071320.html",
-    "description": "围绕投资者、机构投资者、分析师、媒体和监管机构五类关键关系，形成协同运转的“5R机制”，正是上市公司提升资本市场认知质量、增强市场信任、推动价值合理定价的重要基础。",
-    "pubDate": "Mon, 20 Jul 2026 00:48:17 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "policy",
-    "_stale": true
-  },
-  {
-    "title": "Syria’s Al-Sharaa reshuffles security and intelligence leadership",
-    "link": "https://www.aljazeera.com/news/2026/7/19/syrias-al-sharaa-reshuffles-security-and-intelligence-leadership?traffic_source=rss",
-    "description": "Government says the shake-up will strengthen security and clear the way for reconstruction.",
-    "pubDate": "Sun, 19 Jul 2026 16:43:55 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The FBI reportedly won’t investigate ICE anymore",
-    "link": "https://www.theverge.com/policy/967674/fbi-wont-investigate-ice-assaults",
-    "description": "According to the New York Times, federal agents have been told that the FBI will no longer be investigating confrontations involving ICE agents. The DHS and DOJ denied the change in policy to The Times. The reported change in guidance follows renewed scrutiny of violence by ICE agents who have kille",
-    "pubDate": "2026-07-19T16:42:10.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Israeli settlers torch homes and mosque in Masafer Yatta",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/19/israeli-settlers-torch-homes-and-mosque-in-masafer-yatta?traffic_source=rss",
-    "description": "Videos show Israeli settlers attacking the Palestinian village of al Tuwani in Masafer Yatta, south of Hebron.",
-    "pubDate": "Sun, 19 Jul 2026 16:06:55 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "TechCrunch Mobility: The battle over robotaxi rules",
-    "link": "https://techcrunch.com/2026/07/19/techcrunch-mobility-the-battle-over-robotaxi-rules/",
-    "description": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part.",
-    "pubDate": "Sun, 19 Jul 2026 16:05:00 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Olympic champ Evenepoel wins Tour de France 15th stage",
-    "link": "https://www.france24.com/en/sport/20260719-olympic-champ-evenepoel-wins-tour-de-france-15th-stage",
-    "description": "Belgian Remco Evenepoel beat race leader Tadej ​Pogacar to the finish line to win stage 15 of the Tour de France on Sunday after Jonas ​Vingegaard, ‌who was second in the overall ⁠rankings, was forced to abandon following a crash.",
-    "pubDate": "Sun, 19 Jul 2026 16:03:10 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "5.6 magnitude earthquake hits Peru",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/19/5-6-magnitude-earthquake-hits-peru?traffic_source=rss",
-    "description": "Footage shows firefighters looking for a missing person amongst the rubble of a collapsed building in Pumpunya, Peru.",
-    "pubDate": "Sun, 19 Jul 2026 15:54:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Israel uses law to destroy Palestinian education in East Jerusalem",
-    "link": "https://www.aljazeera.com/opinions/2026/7/19/israel-uses-law-to-destroy-palestinian-education-in-east-jerusalem?traffic_source=rss",
-    "description": "Legislation recently passed by the Knesset is meant to dismantle the Palestinian education system in East Jerusalem.",
-    "pubDate": "Sun, 19 Jul 2026 15:46:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "World Cup Final: La Roja, La Albiceleste battle for glory",
-    "link": "https://www.france24.com/en/video/20260719-world-cup-final-la-roja-la-albiceleste-battle-for-glory",
-    "description": "La Roja's patient possession game meets the Albiceleste's trademark resilience in the World Cup final in New York on Sunday. As Spain coach Luis de la Fuente and his former coaching student Lionel Scaloni, now Argentina's manager, prepare to face off on football's biggest stage, the showdown promise",
-    "pubDate": "Sun, 19 Jul 2026 15:39:26 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Kimi Antonelli wins Belgian Grand Prix to extend F1 championship lead",
-    "link": "https://www.aljazeera.com/sports/2026/7/19/kimi-antonelli-wins-belgian-grand-prix-to-extend-f1-championship-lead?traffic_source=rss",
-    "description": "Mercedes driver won his sixth GP of 2026 as championship rival and teammate George Russell crashes out on first lap.",
-    "pubDate": "Sun, 19 Jul 2026 15:26:45 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Designing cities for a hotter future",
-    "link": "https://www.aljazeera.com/video/talk-to-al-jazeera/2026/7/19/designing-cities-for-a-hotter-future?traffic_source=rss",
-    "description": "Climate advocate Mina Hasman’s vision of designing cities that behave like forests and buildings that act like trees.",
-    "pubDate": "Sun, 19 Jul 2026 15:25:01 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Tate brothers arrested in the US",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/19/tate-brothers-arrested-in-the-us?traffic_source=rss",
-    "description": "Video shows the moment controversial influencer brothers Andrew Tate and Tristan Tate were arrested in Miami, US.",
-    "pubDate": "Sun, 19 Jul 2026 15:23:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Orchid is a delightfully retro and approachable hipster synth",
-    "link": "https://www.theverge.com/entertainment/967485/telepathic-instruments-orchid-tame-impala-synth-review",
-    "description": "In 2017, I bought an old Magnus chord organ off Craigslist for $10. It's one of my favorite music gear purchases. Electric chord organs let you play full chords with just a press of a button, making them perfect for aspiring singer-songwriters or fooling around at home. But chord organs largely fell",
-    "pubDate": "2026-07-19T15:15:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "🔴 Denmark's Jonas Vingegaard, in second place in Tour de France, withdraws after fall",
-    "link": "https://www.france24.com/en/sport/20260719-denmark-s-jonas-vingegaard-withdraws-from-tour-de-france-after-fall",
-    "description": "",
-    "pubDate": "Sun, 19 Jul 2026 15:05:36 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Mexikos mächtigste Drogenbosse in US-Haft",
-    "link": "https://www.dw.com/de/mexikos-mächtigste-drogenbosse-in-us-haft/a-78013120?maca=de-rss-de-all-1119-rdf",
-    "description": "Mit dem Schuldeingeständnis von Ismael \"El Mayo\" Zambada steht einer der mächtigsten Drogenbosse Mexikos vor lebenslanger Haft. Doch er ist längst nicht der einzige prominente Mexikaner in US-Gefängnissen.",
-    "pubDate": "2026-07-19T15:05:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Denmark's Jonas Vingegaard, in second place in Tour de France, withdraws after fall",
-    "link": "https://www.france24.com/en/sport/20260719-denmark-s-jonas-vingegaard-withdraws-from-tour-de-france-after-fall",
-    "description": "Denmark's Jonas Vingegaard withdrew from the 2026 Tour de France on Sunday after crashing around 20km from the end of the 15th stage. More to follow.",
-    "pubDate": "Sun, 19 Jul 2026 15:04:08 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Birdfy&#8217;s solar-powered smart feeder is down to one of its best prices",
-    "link": "https://www.theverge.com/gadgets/967336/birdfy-feeder-ai-powered-smart-bird-feeder-with-camera-deal-sale",
-    "description": "Birdfy has kicked off a midyear sale, taking up to 40 percent off a range of its smart bird feeders. One of the best deals is on Netvue’s Birdfy Feeder AI-Powered Smart Bird Feeder with Camera, which has dropped to $149.99 at Birdfy and is its second-best price to date. The bundle, which includes a ",
-    "pubDate": "2026-07-19T15:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Spain vs Argentina LIVE: FIFA World Cup 2026 final",
-    "link": "https://www.aljazeera.com/sports/liveblog/2026/7/19/spain-vs-argentina-live-2026-fifa-world-cup-final?traffic_source=rss",
-    "description": "Live coverage and text updates as Spain play Argentina in the final of the 2026 World Cup.",
-    "pubDate": "Sun, 19 Jul 2026 15:00:00 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Argentina and Spain brace for World Cup final: The atmosphere from Madrid",
-    "link": "https://www.france24.com/en/argentina-and-spain-brace-for-world-cup-final-the-atmosphere-from-madrid",
-    "description": "The final hours before the World Cup final, where Argentina and Spain are set to face off. Despite scorching temperatures topping 40 degrees Celsius across much of Spain, fans are undeterred. Bars, public squares and fan zones are already full, with excitement building ahead of kick-off. For more on",
-    "pubDate": "Sun, 19 Jul 2026 14:57:43 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "‘Odyssey’ director Christopher Nolan calls AI an obvious ‘Trojan horse’",
-    "link": "https://techcrunch.com/2026/07/19/odyssey-director-christopher-nolan-calls-ai-an-obvious-trojan-horse/",
-    "description": "\"Everybody knows the Greeks are inside.\"",
-    "pubDate": "Sun, 19 Jul 2026 14:52:08 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
     "_stale": true
   }
 ]
