@@ -1,11 +1,179 @@
 [
   {
+    "title": "Neill Blomkamp’s new zombie AI ‘film’ is just slop warmed over",
+    "link": "https://www.theverge.com/entertainment/968703/neill-blomkamps-nightborne-barley-studios-seedance",
+    "description": "On Monday, District 9 and Gran Turismo director Neill Blomkamp unveiled his latest project: a 13-minute sci-fi short titled Nightborne that's loosely based on Peter Watts' 2014 novel Echopraxia. The short comes from Blomkamp's new AI startup / production company, Barley Studios, and features charact",
+    "pubDate": "2026-07-21T22:06:43.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "GM just added ChargePoint to its EV apps",
+    "link": "https://electrek.co/2026/07/21/gm-just-added-chargepoint-to-its-ev-apps/",
+    "description": "GM EV drivers can now find, start, and pay for charging at ChargePoint stations without leaving their EV brand’s app.",
+    "pubDate": "Tue, 21 Jul 2026 21:50:26 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "OpenAI says it accidentally hacked Hugging Face with a new AI system",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/968988/openai-hugging-face-hack-ai",
+    "description": "OpenAI says its AI models mistakenly breached open-source AI platform Hugging Face during internal testing. In a blog post on Tuesday, OpenAI writes that GPT-5.6 Sol and \"an even more capable pre-release model\" discovered vulnerabilities within their sandboxed testing environment, allowing them to g",
+    "pubDate": "2026-07-21T21:48:54.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "ウクライナ 国防相に続き軍総司令官も交代 異例の事態",
+    "link": "http://www3.nhk.or.jp/news/html/20260722/k10015182271000.html",
+    "description": "ウクライナのゼレンスキー大統領は21日、軍のシルスキー総司令官を解任し、後任にドラパティ統合軍司令官を起用すると発表しました。ウクライナでは、ロシアによる軍事侵攻が続く中、国防相と軍のトップが相次いで交代する異例の事態となり、今後の戦況にどのような影響を与えるのかが焦点です。",
+    "pubDate": "Wed, 22 Jul 2026 06:46:52 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Drone shows scorched landscape after Spain wildfire",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/21/drone-shows-scorched-landscape-after-spain-wildfire?traffic_source=rss",
+    "description": "A drone has revealed what remains of this forest after a wildfire burned through over 30,000 hectares of it.",
+    "pubDate": "Tue, 21 Jul 2026 21:21:12 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "US defence chief Hegseth puts Iran war cost at $37.5bn so far",
+    "link": "https://www.aljazeera.com/news/2026/7/21/hegseth-says-iran-war-has-cost-37-5bn-in-latest-official-us-account?traffic_source=rss",
+    "description": "Latest cost comes as Hegseth and Joint Chiefs Chairman Caine seek a $1.5 trillion budget, including $70bn for Iran war.",
+    "pubDate": "Tue, 21 Jul 2026 21:17:06 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "関東と東海「酷暑日」予想 熱中症に厳重警戒 東北では激しい雨",
+    "link": "http://www3.nhk.or.jp/news/html/20260722/k10015182151000.html",
+    "description": "21日は、岐阜県と愛知県で最高気温が40度以上となり、気象庁が運用を始めてから初めての「酷暑日」となりましたが、22日も関東と東海で「酷暑日」が予想されています。熱中症に厳重に警戒してください。一方、東北では雷を伴って激しい雨が降るおそれがあり、土砂災害などに十分注意が必要です。",
+    "pubDate": "Wed, 22 Jul 2026 06:14:38 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Iran holds funerals for children killed in Minab school strike",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/21/iran-holds-funerals-for-children-killed-in-minab-school-strike?traffic_source=rss",
+    "description": "Iran has held funerals for 32 children killed in a US strike on a school in Minab, Iran on February 28.",
+    "pubDate": "Tue, 21 Jul 2026 21:13:02 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "How will Khalil al-Hayya’s leadership shape Hamas?",
+    "link": "https://www.aljazeera.com/video/inside-story/2026/7/21/how-will-khalil-al-hayyas-leadership-shape-hamas?traffic_source=rss",
+    "description": "Newly named Hamas leader al-Hayya faces pressure to cede power amid Gaza's fragile ceasefire.",
+    "pubDate": "Tue, 21 Jul 2026 21:03:58 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "「津波注意報で広域避難指示」は信頼性損なうおそれ 国通知",
+    "link": "http://www3.nhk.or.jp/news/html/20260722/k10015182141000.html",
+    "description": "6月、フィリピン付近で発生した大地震では各地に津波注意報が発表されましたが、自治体の中には、避難指示を最大クラスの津波で浸水が想定される範囲に出したところもありました。内閣府などは、広い範囲に避難指示を出すと、高齢者などの負担になるほか、避難情報への信頼を損ねるおそれもあるとして、あらかじめ地域を絞り込むことなどを全国の都道府県に通知しました。",
+    "pubDate": "Wed, 22 Jul 2026 06:00:56 +0900",
+    "source": "NHKニュース",
+    "category": "policy"
+  },
+  {
+    "title": "Silicon Creations at DAC 2026: Solutions for clocking, SerDes, and sensing in 2nm (and beyond)",
+    "link": "https://semiwiki.com/ip/silicon-creations/371418-silicon-creations-at-dac-2026-solutions-for-clocking-serdes-and-sensing-in-2nm-and-beyond/",
+    "description": "Silicon Creations provides world-class IP for precision and general-purpose timing (PLLs and oscillators), high-performance multi-protocol, latency optimized and protocol-specific SerDes, high-speed I/Os, and accurate VT sensors. Applications include high-performance computing for AI, smart phones, ",
+    "pubDate": "Tue, 21 Jul 2026 21:00:49 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Japan’s Seniors Increasingly Prefer Going Solo ",
+    "link": "https://www.nippon.com/en/japan-data/h02833/",
+    "description": "A survey of Japanese people aged 60 to 74 found a growing preference for spending time alone.",
+    "pubDate": "Wed, 22 Jul 2026 06:00:12 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "Japan Takes the Lead in Updated Indo-Pacific Initiative: Can FOIP 3.0 Lay the Foundations for New Regional Order?",
+    "link": "https://www.nippon.com/en/in-depth/d01245/",
+    "description": "In May this year, the administration of Prime Minister Takaichi Sanae rolled out its vision for an updated Free and Open Indo-Pacific, stressing regional autonomy and resilience in the face of intensifying US-China tensions and instability in the Middle East. A noted authority on international secur",
+    "pubDate": "Wed, 22 Jul 2026 06:00:12 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "Mugicha: Japan’s Refreshing, Caffeine-Free Barley Tea",
+    "link": "https://www.nippon.com/en/guide-to-japan/cs00089/",
+    "description": "A popular drink, especially in summer, mugicha is a healthy option that anyone can enjoy.",
+    "pubDate": "Wed, 22 Jul 2026 06:00:12 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "Taylor Farms lettuce didn’t contain parasite behind diarrhea outbreak, FDA says",
+    "link": "https://www.supplychaindive.com/news/taylor-farms-lettuce-didnt-contain-parasite-behind-diarrhea-outbreak-fda/825804/",
+    "description": "The agency said a previous finding was “a false positive,” but the supplier to companies such as Walmart and Taco Bell remains at the heart of an ongoing investigation.",
+    "pubDate": "Tue, 21 Jul 2026 16:58:00 -0400",
+    "source": "Supply Chain Dive - Latest News",
+    "category": "supply-chain"
+  },
+  {
+    "title": "These are the countries moving to ban social media for children",
+    "link": "https://techcrunch.com/2026/07/21/social-media-ban-children-countries-list/",
+    "description": "Australia was the first country to issue a ban in late 2025, aiming to reduce the pressures and risks that young users may face on social media, including cyberbullying, social media addiction, and exposure to predators.",
+    "pubDate": "Tue, 21 Jul 2026 20:57:35 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "OpenAI says Hugging Face was breached by its own pre-release models",
+    "link": "https://techcrunch.com/2026/07/21/openai-says-hugging-face-was-breached-by-its-own-pre-release-models/",
+    "description": "OpenAI has come forward to claim responsibility for the Hugging Face breach, saying it was the result of internal testing gone awry.",
+    "pubDate": "Tue, 21 Jul 2026 20:56:55 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Guyana reports ferry disaster death toll rises to 41",
+    "link": "https://www.aljazeera.com/news/2026/7/21/guyana-reports-ferry-disaster-death-toll-rises-to-41?traffic_source=rss",
+    "description": "Search continues for dozens more people unaccounted for after the MV Barima capsized on Saturday night.",
+    "pubDate": "Tue, 21 Jul 2026 20:54:41 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Daytime Russian strike kills three in Zaporizhzhia",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/21/daytime-russian-strike-kills-three-in-zaporizhzhia?traffic_source=rss",
+    "description": "A Russian guided aerial bomb attack on Zaporizhzhia, Ukraine, killed at least three people and injured 13 others.",
+    "pubDate": "Tue, 21 Jul 2026 20:48:18 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Kia PV5 High Roof spotted in public for the first time [Video]",
     "link": "https://electrek.co/2026/07/21/kia-pv5-high-roof-spotted-first-time-video/",
     "description": "Kia is gearing up to launch several new PV5 electric van variants, including a High Roof model. Spotted driving in public, the PV5 High Roof looks considerably bigger than the standard model.",
     "pubDate": "Tue, 21 Jul 2026 20:46:43 +0000",
     "source": "Electrek",
     "category": "ai-tech"
+  },
+  {
+    "title": "French parliament passes social media ban for under-15s",
+    "link": "https://www.aljazeera.com/news/2026/7/21/french-parliament-passes-social-media-ban-for-under-15s?traffic_source=rss",
+    "description": "President Emmanuel Macron, who has championed the initiative, wants the ban in effect before the upcoming school year.",
+    "pubDate": "Tue, 21 Jul 2026 20:44:48 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "US funding cuts deal blow to global HIV treatment: Report",
+    "link": "https://www.aljazeera.com/news/2026/7/21/us-funding-cuts-deal-blow-to-global-hiv-treatment-report?traffic_source=rss",
+    "description": "UNAIDS chief calls for 'radical change' as aid cuts gut HIV clinics and treatment worldwide.",
+    "pubDate": "Tue, 21 Jul 2026 20:44:06 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
   },
   {
     "title": "Shop Best Buy’s Black Friday in July Sale 2026 Before Fall Chaos",
@@ -154,7 +322,7 @@
   {
     "title": "Zelensky sacks Ukraine army chief Syrsky after protests over rival minister's dismissal",
     "link": "https://www.france24.com/en/europe/20260721-zelensky-fires-ukraine-army-chief-oleksandr-syrsky",
-    "description": "President Volodymyr Zelensky on Tuesday dismissed Ukraine's military leader Oleksandr Syrsky following days of public pressure and named Major ​General ‌Mykhailo ⁠Drapaty, an ally of ousted defence minister Mykhailo Fedorov, as new commander-in-chief.",
+    "description": "President Volodymyr Zelensky on Tuesday dismissed Ukraine's military head Oleksandr Syrsky following days of public pressure and named Major ​General ‌Mykhailo ⁠Drapaty, an ally of ousted defence minister Mykhailo Fedorov, as the new commander-in-chief.",
     "pubDate": "Tue, 21 Jul 2026 19:59:36 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
@@ -162,7 +330,7 @@
   {
     "title": "Zelensky sacks Ukraine's top army commander after days of protests",
     "link": "https://www.bbc.co.uk/news/articles/cyvl35z3917o?at_medium=RSS&at_campaign=rss",
-    "description": "Oleksandr Syrskyi is dismissed after days of unrest over the removal of popular Defence Minister Mykhailo Fedorov.",
+    "description": "Oleksandr Syrskyi is dismissed after backlash over the removal of popular Defence Minister Mykhailo Fedorov.",
     "pubDate": "Tue, 21 Jul 2026 19:57:38 GMT",
     "source": "BBC News",
     "category": "international"
@@ -480,9 +648,9 @@
     "category": "ai-tech"
   },
   {
-    "title": "The reality TV guy at the DOT has a new plan to kill cyclists and worsen traffic",
+    "title": "Cyclist deaths are at a 40 year high. The feds want to kill more AND worsen traffic.",
     "link": "https://electrek.co/2026/07/21/the-reality-tv-guy-at-the-dot-has-a-new-plan-to-kill-cyclists-and-make-traffic-worse/",
-    "description": "The Department of Transportation has removed five proven safety mechanisms from its guidance to transportation agencies, which seem focused on making roads less safe for bicycles, when cyclist deaths are already near all time highs. The changes would also increase vehicle traffic.",
+    "description": "The Department of Transportation has removed bike lanes from its list of proven safety measure, among other changes which will worsen traffic congestion. The changes seem focused on making roads less safe for bicycles, when cyclist deaths are already near all time highs.",
     "pubDate": "Tue, 21 Jul 2026 17:50:33 +0000",
     "source": "Electrek",
     "category": "ai-tech"
@@ -610,7 +778,7 @@
   {
     "title": "JM Smucker snags Hershey exec as SVP of operations, supply chain",
     "link": "https://www.supplychaindive.com/news/jm-smucker-snags-hershey-exec-as-svp-of-operations-supply-chain/825649/",
-    "description": "Douglas Guilherme will step into the role on July 29 with more than 30 years of experience, including stints at the chocolate maker and Procter & Gamble.",
+    "description": "Douglas Guilherme will step into the role on July 29 with over 30 years of experience, including stints at the chocolate maker and Procter & Gamble.",
     "pubDate": "Tue, 21 Jul 2026 13:07:00 -0400",
     "source": "Supply Chain Dive - Latest News",
     "category": "supply-chain"
@@ -968,14 +1136,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "The Light Flip is a minimalist flip phone with a point to prove",
-    "link": "https://www.theverge.com/gadgets/968563/light-flip-phone-price-specs",
-    "description": "A few years ago, the team at Light shipped the most smartphone-like device they'd ever created. The Light Phone III still kept to its minimalist, no-distractions ethos, but it was a phone-size rectangle with a phone-size touchscreen, a camera, and a number of other features. Some people loved having",
-    "pubDate": "2026-07-21T15:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
     "title": "The Light Flip Is the Stylish Dumb Flip Phone of Your Dreams",
     "link": "https://www.wired.com/story/light-flip-is-the-modern-stylish-dumb-flip-phone-of-your-luddite-dreams/",
     "description": "A flip phone with 5G, USB-C, a headphone jack, and a removable battery? Say it ain’t so.",
@@ -989,6 +1149,14 @@
     "description": "Nvidia’s Vera Rubin platform combines CPUs and GPUs into a single system, reflecting the company’s growing ambition to power every layer of AI infrastructure.",
     "pubDate": "Tue, 21 Jul 2026 15:00:00 +0000",
     "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The Light Flip is a minimalist flip phone with a point to prove",
+    "link": "https://www.theverge.com/gadgets/968563/light-flip-phone-price-specs",
+    "description": "A few years ago, the team at Light shipped the most smartphone-like device they'd ever created. The Light Phone III still kept to its minimalist, no-distractions ethos, but it was a phone-size rectangle with a phone-size touchscreen, a camera, and a number of other features. Some people loved having",
+    "pubDate": "2026-07-21T15:00:00.000Z",
+    "source": "The Verge",
     "category": "ai-tech"
   },
   {
@@ -1936,6 +2104,14 @@
     "category": "ai-tech"
   },
   {
+    "title": "Best Buy names chief fulfillment and operations officer",
+    "link": "https://www.supplychaindive.com/news/best-buy-names-chief-fulfillment-and-operations-officer/825576/",
+    "description": "Duane Scarboro is responsible for sourcing, supply chain, fulfillment, delivery and service in the new role, which went into effect last week.",
+    "pubDate": "Tue, 21 Jul 2026 07:04:00 -0400",
+    "source": "Supply Chain Dive - Latest News",
+    "category": "supply-chain"
+  },
+  {
     "title": "Best Buy names fulfillment, operations chief",
     "link": "https://www.supplychaindive.com/news/best-buy-names-fulfillment-operations-chief/825576/",
     "description": "Duane Scarboro is responsible for sourcing, supply chain, fulfillment, delivery and service in the new role, which went into effect last week.",
@@ -2256,14 +2432,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Gritt exits stealth with $32 million for robots to build solar plants — then, everything else",
-    "link": "https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else/",
-    "description": "Gritt is coming out of stealth with $34 million and plans to automate the hardest tasks on construction sites.",
-    "pubDate": "Tue, 21 Jul 2026 10:00:00 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
     "title": "Stop Saying Kids Can’t Read",
     "link": "https://www.wired.com/story/mississippi-state-testing-reading-comprehension-literacy/",
     "description": "Everyone is talking about the reading crisis. But inside the “Mississippi Miracle,” it’s all about comprehension.",
@@ -2277,6 +2445,14 @@
     "description": "Dealerships installed alarms in millions of vehicles—and left them in even if the buyer didn’t want them. Now researchers warn they can be hacked to unlock, track, and disable cars.",
     "pubDate": "Tue, 21 Jul 2026 10:00:00 +0000",
     "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Gritt exits stealth with $32 million for robots to build solar plants — then, everything else",
+    "link": "https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else/",
+    "description": "Gritt is coming out of stealth with $34 million and plans to automate the hardest tasks on construction sites.",
+    "pubDate": "Tue, 21 Jul 2026 10:00:00 +0000",
+    "source": "TechCrunch",
     "category": "ai-tech"
   },
   {
@@ -2968,7 +3144,7 @@
     "category": "semiconductor"
   },
   {
-    "title": "小产品逆袭，大产品落位，为什么大家都在小红书做游戏宣发 | 游戏风向标",
+    "title": "小产品逆袭，大产品���位，为什么大家都在小红书做游戏宣发 | 游戏风向标",
     "link": "https://36kr.com/p/3905036594628224?f=rss",
     "description": "文丨树果贝\n编辑丨果脯\n假设你是一名游戏发行方，手头经费有限，必须从小黑盒、B站、小红书三大社交平台选其一来着重宣传自家新游，你会选谁？\n单凭直觉看，不少人应该会先吐槽「选项设置压根不合理」，这就像在问巴西、德国和国足在世界杯上谁最可能夺冠。与其他两家相比，小红书乍一看压根就没有可比性，凭什么能成为选项之一？\n此话倒也不假。\n小黑盒早期依靠PUBG的爆火起家，后续凭借数据查询、社交氛围、游戏销售等服务，积累了大量垂直游戏用户，断层式领先其他同类竞品。此外，他们也有着最为成熟的一体化宣发路径，单在APP上，产品就能完成「曝光—搜索—转化」这整套流程。\n而B站更是国内用户耳熟能详的存在。它从早期依",
     "pubDate": "2026-07-21 15:04:06  +0800",
@@ -3822,181 +3998,5 @@
     "pubDate": "Tue, 21 Jul 2026 01:30:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
-  },
-  {
-    "title": "6000万用户的情感陪伴APP，营收数亿后做了款家庭机器人｜产品观察",
-    "link": "https://36kr.com/p/3904049563731849?f=rss",
-    "description": "作者 | 黄楠\n编辑 | 袁斯来\n在旗下App每年创造数亿元营收、日均百万用户打开量的时候，心言集团创始人兼CEO任永亮做了一个令所有人都觉得“不理性”的决定：把AI情感陪伴能力塞进一个硬件的模具里——造机器人。\n心言集团最有名的产品叫测测，来自上一个互联网时代，2013年上线，主要为用户提供泛心理科普及测评、在线情感陪伴，拿过腾讯的B轮融资。到2025年，测测已经有6000多万用户。\n但仅仅靠一款12年的线上情感陪伴产品，显然无法在这个AI时代更进一步。任永亮察觉到线上交互模式存在不可弥补的能力边界。\n屏幕对话是单向、割裂的沟通形式，难以捕捉物理三维信息，无法满足亲子陪伴、老人情绪安抚、居家",
-    "pubDate": "2026-07-21 09:30:00  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Why protests are growing in Ukraine over defence leadership and dismissals",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/21/aje-onl-nf_protests-in-kyiv-over-defence-minister-dismissal-200726?traffic_source=rss",
-    "description": "Protests continue as anger grows over President Zelenskyy’s decision to fire the country’s defence minister.",
-    "pubDate": "Tue, 21 Jul 2026 01:27:56 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "US slaps 50% tariffs on many Canada imports",
-    "link": "https://www.supplychaindive.com/news/us-slaps-50-tariffs-on-many-canada-imports/825726/",
-    "description": "The Section 338 duties apply to a wide variety of products — even if they qualify for duty-free treatment under the United States-Mexico-Canada Agreement.",
-    "pubDate": "Mon, 20 Jul 2026 21:26:00 -0400",
-    "source": "Supply Chain Dive - Latest News",
-    "category": "supply-chain"
-  },
-  {
-    "title": "World Cup 2026: for New York souvenir shops, the impact is mixed",
-    "link": "https://www.france24.com/en/world-cup-2026-for-new-york-souvenir-shops-the-impact-is-mixed",
-    "description": "The 2026 World Cup is over. And for New York’s souvenir shops, the impact is mixed.",
-    "pubDate": "Tue, 21 Jul 2026 01:24:27 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "加拿大总理回应美加征关税：单边贸易行动的最新举措",
-    "link": "https://36kr.com/newsflashes/3904696511497864?f=rss",
-    "description": "】财联社7月21日电，加拿大总理马克·卡尼当地时间7月20日就美政府宣布对多种加拿大商品加征50%关税一事发表声明。卡尼表示，这是美国一系列单边贸易行动中的最新举措，违反了“美国—墨西哥—加拿大协定”（美墨加协定）。加拿大团结一致应对这些“对加拿大主权的威胁”，并正在采取行动保护其经济和公民。卡尼说，过去18个月来，美国一直在改变其各类贸易关系，包括美墨加协定涵盖的贸易关系，因此，加拿大提出了一系列详细而全面的建议，以解决当前争端并使美墨加协定现代化。他表示，“我们随时准备在未来几周内加强相关磋商。” （央视新闻）",
-    "pubDate": "2026-07-21 09:10:41  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "体系战胜巨星",
-    "link": "https://www.tmtpost.com/8072842.html",
-    "description": "世界杯决赛教我的系统之道，和它教不会的人心。",
-    "pubDate": "Tue, 21 Jul 2026 09:08:11 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "央企领衔，一日百余家公司公告回购增持新动作",
-    "link": "https://36kr.com/newsflashes/3904682383869577?f=rss",
-    "description": "近日，A股市场迎来由央企领衔的新一轮上市公司回购、增持热潮。7月19日晚间，中国国新、中国诚通两大国有资本运营公司同步宣布增持A股，合计投入规模已超过600亿元。两家央企同时明确表态，后续将继续增持中央企业股票、科技企业股票等，全力维护资本市场平稳运行。两大国资平台释放积极信号后，A股公司迅速跟进响应。7月20日，全天逾百家上市公司密集披露股份回购、股东增持计划及最新实施进展。此外，中国平安、中国人保、中国太保、新华保险也相继公告称，将加大投资力度，坚定支持资本市场发展。（上证报）",
-    "pubDate": "2026-07-21 09:07:17  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "速腾聚创第二代全固态感知平台发布，要做物理AI数据入口｜最前线",
-    "link": "https://36kr.com/p/3903885834028931?f=rss",
-    "description": "作者｜黄楠\n编辑｜袁斯来\n当下具身智能赛道正完成一轮关键转型。此前行业大量研发、展示集中在人形、四足机器人舞台演示，如今产业评判标准落地到工厂、园区、家庭等真实场景的长期稳定作业能力。\n但一个现实的问题是：多数��础模型仅依托二维图像、仿真虚拟数据训练，缺少真实三维空间里物体距离、材质、受力、动态交互的原生高精度信息，以至于机器人只能看懂画面，却难以真正理解物理世界的运行规律。\n单纯视觉传感器易受强光、遮挡、雨雪干扰，测距与空间结构测算存在天然误差；仿真环境构建的物理规则和现实工况差距巨大，直接导致机器人走出展厅后，复杂抓取、长时序巡检等任务成功率走低，始终难以规模化落地。这当中，激光雷达仅被",
-    "pubDate": "2026-07-21 09:05:00  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "紧抓权益市场投资机遇，理财资金打新常态化",
-    "link": "https://36kr.com/newsflashes/3904680383874944?f=rss",
-    "description": "近日，长鑫科技公布网下初步配售结果及网上中签结果，多家理财公司以A类投资者身份现身网下投资者初步配售明细表。同时，一些理财公司也通过网上打新方式，中签长鑫科技。随着理财行业“固收+”策略纵深推进，打新已经成为理财资金常态化的操作。近两年新股发行市场表现良好，让理财公司打新成为一种兼具安全性和收益性的选择。除了打新，在低利率环境下，银行理财资金还通过定增、创设指数型理财产品等方式积极布局权益市场，探索固收之外的收益新引擎。（中证报）",
-    "pubDate": "2026-07-21 09:04:13  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "银河证券：今年茅台多次提价，高端白酒消费见底信号",
-    "link": "https://36kr.com/newsflashes/3904677872813699?f=rss",
-    "description": "36氪获悉，银河证券研报认为，今年茅台多次提价，高端白酒消费见底信号。近年来，高端白酒批价持续下跌，茅台酒价是消费市场风向标之一。2026年以来，茅台连续上调i茅台平台零售价格，具有风向标意义。i茅台平台零售价格低于公共电商平台，已成为公司快速放量、抢占C端需求的抓手。2026年i茅台平台销售放量以来，公共平台仍能保持相对溢价，表明渠道已无过多茅台库存。连续的提价表明，茅台当前销售压力已不大。",
-    "pubDate": "2026-07-21 09:01:41  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "台积电回应中央硝子被曝停产高纯度六氟化钨：供应多元，不受影响",
-    "link": "https://36kr.com/newsflashes/3904676686628488?f=rss",
-    "description": "据报道，市场近期传出，供应台积电等半导体大厂气体的特种气体供应商中央硝子（Central Glass）将停产高纯度六氟化钨。对此，台积电表示，目前不预期对公司营运产生影响。台积电公关处于7月20日完整回应提到，“公司全球采购布局策略，是持续开发多源供应方案、建立多元的全球供应商。我们目前不预期对公司营运产生影响。”台积电供应链与供应商皆提到，目前看气体钨粉原料无断供，仍有多项替代方案，预期对产业影响有限。（界面）",
-    "pubDate": "2026-07-21 08:58:31  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Tate brothers vow to fight extradition as they appear at court in Miami",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/21/tate-brothers-vow-to-fight-extradition-as-they-appear-at-court-in-miami?traffic_source=rss",
-    "description": "Controversial ‘manosphere’ influencers Andrew and Tristan Tate appeared at a federal court hearing in Miami.",
-    "pubDate": "Tue, 21 Jul 2026 00:58:10 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "美上诉法院撤销波音股东集体诉讼认证",
-    "link": "https://36kr.com/newsflashes/3904676299278214?f=rss",
-    "description": "美国联邦第四巡回上诉法院周一作出裁决，撤销了针对波音公司的一起股东集体诉讼的认证。这起诉讼与2024年1月阿拉斯加航空737 MAX 9客机舱门塞空中脱落事件有关。（新浪财经）",
-    "pubDate": "2026-07-21 08:55:08  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "早报｜二季度华为手机份额升至23%/广汽本田与本田续签合资协议至2038年/《复仇者联盟5》首曝预告",
-    "link": "https://www.ifanr.com/1672637?utm_source=rss&utm_medium=rss&utm_campaign=",
-    "description": "· 靳玉志：华为乾崑继续做汽车行业的「电子螺丝钉」\r\n· 工信部：我国智能算力规模达到 2185 EFLOPS\r\n· 字节跳动发布 Seed Audio 1.0 音频创作模型\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-    "pubDate": "Tue, 21 Jul 2026 00:54:22 +0000",
-    "source": "爱范儿",
-    "category": "policy"
-  },
-  {
-    "title": "月内多家银行上调美元定存利率，最高可达4%",
-    "link": "https://36kr.com/newsflashes/3904675385460357?f=rss",
-    "description": "7月份以来，多家银行上调美元定期存款利率，加大营销力度。本轮利率上调由中资银行率先启动，外资银行随后跟进，当前部分银行美元定期存款年化利率已达到4%。 受访专家表示，投资者不要因较高的利息水平盲目换汇套利，人民币升值带来的汇兑损失可能抵消利息收入乃至亏损本金，配置美元存款需基于真实用汇需求。（证券日报）",
-    "pubDate": "2026-07-21 08:53:12  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "阶跃星辰，还是有点急了",
-    "link": "https://www.tmtpost.com/8072650.html",
-    "description": "是好棋，还是豪赌？",
-    "pubDate": "Tue, 21 Jul 2026 08:52:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "冲刺“人形机器人第一城”，深圳何以跑成“机圈顶流”",
-    "link": "https://36kr.com/newsflashes/3904672876332932?f=rss",
-    "description": "短短一个月，多家深圳机器人企业集中完成大额融资。放眼全国，深圳的机器人产业格外耀眼：2025年总产值达2426亿元，同比增长20.56%，创历史新高，产业产值、企业总数、上市公司数量和投融资事件均居全国首位。仅南山区机器人谷，就集聚了超过200家产业链企业、32家专精特新“小巨人”企业。从南山“机器人谷”到龙岗“机器人街区”，从万台量产下线到全域场景开放，深圳正全速冲刺“人形机器人第一城”。（经济参考报）",
-    "pubDate": "2026-07-21 08:50:35  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "两市融资余额减少596.85亿元",
-    "link": "https://36kr.com/newsflashes/3904682662922118?f=rss",
-    "description": "36氪获悉，截至7月20日，上交所融资余额报13627.47亿元，较前一交易日减少300.86亿元；深交所融资余额报13267.13亿元，较前一交易日减少295.99亿元；两市合计26894.6亿元，较前一交易日减少596.85亿元。",
-    "pubDate": "2026-07-21 08:48:36  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "天风证券：创新药产业链景气度提升，关注大单品放量及相应机会",
-    "link": "https://36kr.com/newsflashes/3904669342107266?f=rss",
-    "description": "36氪获悉，天风证券研报认为，在国内BD交易热潮的持续下，创新药研发热潮有望持续。天风证券认为在创新药研发需求持续火热的情况下，国内需求有望持续高增长，有望带动创新药产业链整体板块业绩高增速。关注大单品放量及相应机会。",
-    "pubDate": "2026-07-21 08:46:02  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "前2号联创“发难”举报，百亿机器人巨头“回A”生变？",
-    "link": "https://www.tmtpost.com/8072632.html",
-    "description": "此次身陷舆论漩涡的越疆科技，虽头顶“协作机器人第一股”光环，但其归母净利润却连年亏损，面临着持续“失血”的困境。",
-    "pubDate": "Tue, 21 Jul 2026 08:46:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "高盛称对冲基金以创纪录速度抛售美国科技股",
-    "link": "https://36kr.com/newsflashes/3904668899608198?f=rss",
-    "description": "据报道，高盛集团的主经纪商业务部门指出，过去两个月对冲基金撤出美国科技股的速度达到创纪录水平。以Vincent Lin为首的该团队分析称，这类基金过去八周的六个星期都是该板块的净卖方。市值累计遭减持的幅度约达10%，创出十多年前开始统计该数据以来之最。该部门表示：“在半导体/存储/人工智能基础设施板块持续震荡和被大幅抛售的情况下，6月初以来卖盘的持续性和规模表明科技投资者大幅减少了仓位，而且一些投降迹象也开始出现。”（界面）",
-    "pubDate": "2026-07-21 08:44:35  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "AI巨头正在争夺人类的错题本",
-    "link": "https://www.tmtpost.com/8072454.html",
-    "description": "有反馈的错题，才能带来复利。",
-    "pubDate": "Tue, 21 Jul 2026 08:43:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
   }
 ]
