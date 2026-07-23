@@ -3,152 +3,152 @@
     "NVDA": {
       "symbol": "NVDA",
       "name": "英伟达",
-      "price": 207.74,
-      "change": -4.32,
-      "changePercent": -2.04,
-      "volume": 77153223,
+      "price": 208.76,
+      "change": -3.3,
+      "changePercent": -1.56,
+      "volume": 109941881,
       "marketCap": "3.2T",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "INTC": {
       "symbol": "INTC",
       "name": "英特尔",
-      "price": 100.6,
-      "change": -2.02,
-      "changePercent": -1.97,
-      "volume": 73040268,
+      "price": 100.23,
+      "change": -2.39,
+      "changePercent": -2.33,
+      "volume": 120358836,
       "marketCap": "110B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "QCOM": {
       "symbol": "QCOM",
       "name": "高通",
-      "price": 169.9,
-      "change": -5.73,
-      "changePercent": -3.26,
-      "volume": 4983304,
+      "price": 171.11,
+      "change": -4.52,
+      "changePercent": -2.57,
+      "volume": 10770965,
       "marketCap": "210B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "AMD": {
       "symbol": "AMD",
       "name": "AMD",
-      "price": 541.2148,
-      "change": -11.1152,
-      "changePercent": -2.01,
-      "volume": 20492631,
+      "price": 539.69,
+      "change": -12.64,
+      "changePercent": -2.29,
+      "volume": 26646122,
       "marketCap": "220B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "MSFT": {
       "symbol": "MSFT",
       "name": "微软",
-      "price": 381.01,
-      "change": -9.33,
-      "changePercent": -2.39,
-      "volume": 20990216,
+      "price": 381.58,
+      "change": -8.76,
+      "changePercent": -2.24,
+      "volume": 30217730,
       "marketCap": "3.0T",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "GOOGL": {
       "symbol": "GOOGL",
       "name": "谷歌",
-      "price": 318.525,
-      "change": -23.385,
-      "changePercent": -6.84,
-      "volume": 36966546,
+      "price": 318.34,
+      "change": -23.57,
+      "changePercent": -6.89,
+      "volume": 44863115,
       "marketCap": "2.2T",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "TSLA": {
       "symbol": "TSLA",
       "name": "特斯拉",
-      "price": 319.97,
-      "change": -54.04,
-      "changePercent": -14.45,
-      "volume": 91239297,
+      "price": 319.69,
+      "change": -54.32,
+      "changePercent": -14.52,
+      "volume": 114682413,
       "marketCap": "790B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "TSM": {
       "symbol": "TSM",
       "name": "台积电",
-      "price": 415.56,
-      "change": -5.65,
+      "price": 415.58,
+      "change": -5.63,
       "changePercent": -1.34,
-      "volume": 7117633,
+      "volume": 10988508,
       "marketCap": "900B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "MU": {
       "symbol": "MU",
       "name": "美光科技",
-      "price": 993.535,
-      "change": 34.055,
-      "changePercent": 3.55,
-      "volume": 33627806,
+      "price": 990.21,
+      "change": 30.73,
+      "changePercent": 3.2,
+      "volume": 39737954,
       "marketCap": "110B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "AVGO": {
       "symbol": "AVGO",
       "name": "博通",
-      "price": 391.29,
-      "change": -5.52,
-      "changePercent": -1.39,
-      "volume": 8500325,
+      "price": 392.47,
+      "change": -4.34,
+      "changePercent": -1.09,
+      "volume": 16277684,
       "marketCap": "850B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "ASML": {
       "symbol": "ASML",
       "name": "阿斯麦",
-      "price": 1801.75,
-      "change": -0.11,
-      "changePercent": -0.01,
-      "volume": 832625,
+      "price": 1803,
+      "change": 1.14,
+      "changePercent": 0.06,
+      "volume": 1098621,
       "marketCap": "380B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "AMAT": {
       "symbol": "AMAT",
       "name": "应用材料",
-      "price": 560.68,
-      "change": 6.76,
-      "changePercent": 1.22,
-      "volume": 3705902,
+      "price": 562.8,
+      "change": 8.88,
+      "changePercent": 1.6,
+      "volume": 5656073,
       "marketCap": "170B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "LRCX": {
       "symbol": "LRCX",
       "name": "泛林集团",
-      "price": 320.57,
-      "change": 1.28,
-      "changePercent": 0.4,
-      "volume": 3883202,
+      "price": 319.78,
+      "change": 0.49,
+      "changePercent": 0.15,
+      "volume": 8041302,
       "marketCap": "110B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "KLAC": {
       "symbol": "KLAC",
       "name": "科磊",
-      "price": 217.03,
-      "change": 2.34,
-      "changePercent": 1.09,
-      "volume": 4082177,
+      "price": 218.73,
+      "change": 4.04,
+      "changePercent": 1.88,
+      "volume": 8642892,
       "marketCap": "100B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "MRVL": {
       "symbol": "MRVL",
       "name": "迈威尔",
-      "price": 208.15,
-      "change": -2.84,
-      "changePercent": -1.35,
-      "volume": 12189223,
+      "price": 209.32,
+      "change": -1.67,
+      "changePercent": -0.79,
+      "volume": 16183006,
       "marketCap": "79B",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "09868.HK": {
       "symbol": "09868.HK",
@@ -158,7 +158,7 @@
       "changePercent": 2.388,
       "volume": 0,
       "marketCap": "1174亿港元",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "09888.HK": {
       "symbol": "09888.HK",
@@ -168,7 +168,7 @@
       "changePercent": 2.299,
       "volume": 0,
       "marketCap": "3697亿港元",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "00020.HK": {
       "symbol": "00020.HK",
@@ -178,7 +178,7 @@
       "changePercent": -0.714,
       "volume": 0,
       "marketCap": "785亿港元",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "09866.HK": {
       "symbol": "09866.HK",
@@ -188,7 +188,7 @@
       "changePercent": 0.964,
       "volume": 0,
       "marketCap": "820亿港元",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "02015.HK": {
       "symbol": "02015.HK",
@@ -198,7 +198,7 @@
       "changePercent": 2.645,
       "volume": 0,
       "marketCap": "1550亿港元",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "09660.HK": {
       "symbol": "09660.HK",
@@ -208,7 +208,7 @@
       "changePercent": -4,
       "volume": 0,
       "marketCap": "915亿港元",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "688981.SH": {
       "symbol": "688981.SH",
@@ -218,7 +218,7 @@
       "changePercent": -6.75,
       "volume": 74815163,
       "marketCap": "9537亿",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "603501.SH": {
       "symbol": "603501.SH",
@@ -228,7 +228,7 @@
       "changePercent": -5.22,
       "volume": 29203193,
       "marketCap": "1280亿",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "002049.SZ": {
       "symbol": "002049.SZ",
@@ -238,7 +238,7 @@
       "changePercent": -1.57,
       "volume": 24157749,
       "marketCap": "550亿",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "300782.SZ": {
       "symbol": "300782.SZ",
@@ -248,7 +248,7 @@
       "changePercent": -1.67,
       "volume": 12115500,
       "marketCap": "420亿",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "688012.SH": {
       "symbol": "688012.SH",
@@ -258,7 +258,7 @@
       "changePercent": -4.53,
       "volume": 26321332,
       "marketCap": "1150亿",
-      "timestamp": "2026-07-23T19:30:40.824Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "688396.SH": {
       "symbol": "688396.SH",
@@ -268,7 +268,7 @@
       "changePercent": -3.14,
       "volume": 20010573,
       "marketCap": "640亿",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "603893.SH": {
       "symbol": "603893.SH",
@@ -278,7 +278,7 @@
       "changePercent": -6.49,
       "volume": 39937665,
       "marketCap": "520亿",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "688608.SH": {
       "symbol": "688608.SH",
@@ -288,7 +288,7 @@
       "changePercent": -4.88,
       "volume": 7644341,
       "marketCap": "200亿",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "300223.SZ": {
       "symbol": "300223.SZ",
@@ -298,7 +298,7 @@
       "changePercent": -3.84,
       "volume": 35749671,
       "marketCap": "350亿",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     "688595.SH": {
       "symbol": "688595.SH",
@@ -308,17 +308,17 @@
       "changePercent": -3.63,
       "volume": 4195592,
       "marketCap": "50亿",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     }
   },
   "indices": [
     {
       "name": "费城半导体",
-      "value": 4847.69,
-      "change": -2.93,
-      "changePercent": -0.59,
+      "value": 4850.15,
+      "change": -2.09,
+      "changePercent": -0.42,
       "icon": "🔷",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     {
       "name": "中证半导体",
@@ -326,42 +326,42 @@
       "change": -5.57,
       "changePercent": -4.17,
       "icon": "💎",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     {
       "name": "智能汽车",
-      "value": 2870.84,
-      "change": -2.31,
-      "changePercent": -2.49,
+      "value": 2870.72,
+      "change": -2.32,
+      "changePercent": -2.5,
       "icon": "🚗",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     {
       "name": "机器人指数",
-      "value": 2125.49,
-      "change": -17.47,
-      "changePercent": -4.85,
+      "value": 2126.06,
+      "change": -17.16,
+      "changePercent": -4.77,
       "icon": "🤖",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     {
       "name": "AI算力指数",
-      "value": 4497.42,
-      "change": -7.55,
-      "changePercent": -1.8,
+      "value": 4497.23,
+      "change": -7.6,
+      "changePercent": -1.82,
       "icon": "🧠",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     },
     {
       "name": "新能源指数",
-      "value": 1844.55,
-      "change": -2.43,
-      "changePercent": -2.11,
+      "value": 1844.45,
+      "change": -2.44,
+      "changePercent": -2.13,
       "icon": "⚡",
-      "timestamp": "2026-07-23T19:30:40.825Z"
+      "timestamp": "2026-07-23T20:41:42.351Z"
     }
   ],
-  "lastUpdate": "2026-07-23T19:30:40.825Z",
+  "lastUpdate": "2026-07-23T20:41:42.351Z",
   "fetchedCount": 31,
   "totalCount": 31
 }
