@@ -1,5 +1,285 @@
 [
   {
+    "title": "TSMC CoPoS Versus Intel EMIB Semiconductor Packaging",
+    "link": "https://semiwiki.com/semiconductor-manufacturers/tsmc/371548-tsmc-copos-versus-intel-emib-semiconductor-packaging/",
+    "description": "TSMC’s CoPoS, generally described as Chip-on-Panel-on-Substrate, and Intel’s EMIB, or Embedded Multi-die Interconnect Bridge, address the same strategic problem: integrating increasingly large, heterogeneous chiplet systems. However, they attack different physical constraints. CoPoS is an emerging p",
+    "pubDate": "Fri, 24 Jul 2026 17:00:22 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Build in public, fail in public: what it’s like to be a founder under 20 right now ",
+    "link": "https://techcrunch.com/2026/07/24/build-in-public-fail-in-public-what-its-like-to-be-a-founder-under-20-right-now/",
+    "description": "AI tools have democratized the opportunity to build, shortening the timelines of success and enabling more young people to start successful companies without stepping foot inside a Big Tech company.",
+    "pubDate": "Fri, 24 Jul 2026 17:00:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Anthropic launches Opus 5",
+    "link": "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+    "description": "Opus 5 will be both cheaper and less restrictive than Fable, likely making it preferable in most use cases",
+    "pubDate": "Fri, 24 Jul 2026 17:00:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Anthropic releases Opus 5 with ‘close’ to Fable 5’s capabilities",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/970105/claude-opus-5-announced-anthropic-ai-model-release",
+    "description": "Weeks after Anthropic's latest toe-to-toe with the US government, and days after an OpenAI security incident that dominated tech industry discussions, Anthropic on Thursday released its newest model, Claude Opus 5. The company said in a release that Opus 5 \"comes close to the capabilities of Claude ",
+    "pubDate": "2026-07-24T17:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Meta is making its AI chatbot more like an assistant",
+    "link": "https://www.theverge.com/tech/970570/meta-ai-chatbot-productivity-update",
+    "description": "Meta is upgrading its AI chatbot with new productivity features in a bid to compete with rivals like Gemini, ChatGPT, and Claude. The update will allow Meta AI to tap into your calendar to help you plan events and generate daily briefings, as well as perform in-depth research that you can steer as i",
+    "pubDate": "2026-07-24T17:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "DAC 2026: What Does It Actually Take to Create AI Chips?",
+    "link": "https://www.eetimes.com/dac-2026-what-does-it-actually-take-to-create-ai-chips/",
+    "description": "AI chips don’t need hype—they need power, memory, IP, thermal, and verification fights. See what DAC 2026 engineers will expose.\nThe post DAC 2026: What Does It Actually Take to Create AI Chips? appeared first on EE Times.",
+    "pubDate": "Fri, 24 Jul 2026 17:00:00 +0000",
+    "source": "EE Times",
+    "category": "semiconductor"
+  },
+  {
+    "title": "PlayStation Network down, leaving thousands of gamers unable to play",
+    "link": "https://www.bbc.co.uk/news/articles/cx2j0wy1gl5o?at_medium=RSS&at_campaign=rss",
+    "description": "Sony's status page read that it was \"working to resolve the issue as soon as possible\".",
+    "pubDate": "Fri, 24 Jul 2026 16:59:25 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "India’s move against Jack Dorsey’s Bitchat sparks legal debate",
+    "link": "https://techcrunch.com/2026/07/24/indias-move-against-jack-dorseys-bitchat-sparks-legal-debate/",
+    "description": "The offline messaging app surged in popularity in India amid protests in New Delhi.",
+    "pubDate": "Fri, 24 Jul 2026 16:54:58 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Romanian jet fighter shoots down suspected Russian drone",
+    "link": "https://www.aljazeera.com/news/2026/7/24/romanian-jet-fighter-shoots-down-suspected-russian-drone?traffic_source=rss",
+    "description": "The incident adds to concern that Moscow’s war on Ukraine risks spilling over to entangle neighbouring NATO states.",
+    "pubDate": "Fri, 24 Jul 2026 16:53:55 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "US records 2,318 measles cases, already surpassing 2025 total",
+    "link": "https://www.aljazeera.com/news/2026/7/24/us-records-2318-measles-cases-thus-far-in-2026-passing-2025-total?traffic_source=rss",
+    "description": "Scientists warn that falling vaccination rates leave vulnerable groups such as young children more exposed to disease.",
+    "pubDate": "Fri, 24 Jul 2026 16:52:21 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "OpenAI’s own model went rogue before Kimi had Wall Street sweating",
+    "link": "https://techcrunch.com/video/openais-own-model-went-rogue-before-kimi-had-wall-street-sweating/",
+    "description": "Chinese AI lab Moonshot’s open model Kimi went viral this week for reasons that had less to do with the model itself and more to do with how the U.S. AI industry reacted to it. Meanwhile, an unreleased OpenAI model wandered outside its test environment and ended up connected to a real security breac",
+    "pubDate": "Fri, 24 Jul 2026 16:50:08 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "After canceling EVs, Honda laughably tells EV owners to buy a gas guzzler instead",
+    "link": "https://electrek.co/2026/07/24/after-canceling-evs-honda-laughably-tells-ev-owners-to-buy-a-gas-guzzler-instead/",
+    "description": "Honda recently canceled the only EV it sells in the US, and this month started telling Prologue owners to “consider a hybrid.” But here’s the hitch: virtually zero EV owners are interested in switching back to gas after experiencing how much better EVs are.",
+    "pubDate": "Fri, 24 Jul 2026 16:48:55 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Four Palestinians and two Israelis killed in West Bank shooting",
+    "link": "https://www.bbc.co.uk/news/articles/cx2rxmye4k3o?at_medium=RSS&at_campaign=rss",
+    "description": "Palestinians say villagers came under attack by settlers, while the Israeli military says a Palestinian stole a weapon and opened fire on hikers.",
+    "pubDate": "Fri, 24 Jul 2026 16:37:17 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Sudan: Wenn die Drohne ins Klassenzimmer einschlägt",
+    "link": "https://www.dw.com/de/sudan-wenn-die-drohne-ins-klassenzimmer-einschlägt/a-78076700?maca=de-rss-de-all-1119-rdf",
+    "description": "Die Lage in der belagerten Stadt Al-Obeid in Sudan spitzt sich täglich zu - besonders betroffen sind die Kinder.",
+    "pubDate": "2026-07-24T16:34:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Life without refrigerators: Gaza residents fight heat and food spoilage",
+    "link": "https://www.aljazeera.com/economy/2026/7/24/life-without-refrigerators-gaza-residents-fight-heat-and-food-spoilage?traffic_source=rss",
+    "description": "Gaza families endure scorching summers without refrigerators, struggling to preserve food, medicine and basics.",
+    "pubDate": "Fri, 24 Jul 2026 16:32:35 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "‘Extremely disappointing’: US trade partners respond to Trump’s new tariffs",
+    "link": "https://www.aljazeera.com/news/2026/7/24/extremely-disappointing-us-trade-partners-respond-to-trumps-new-tariffs?traffic_source=rss",
+    "description": "Countries question Trump administration's latest round of tariffs, which relate to forced labour claims.",
+    "pubDate": "Fri, 24 Jul 2026 16:30:20 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "How time series databases unlock real-time data for robotics",
+    "link": "https://www.therobotreport.com/how-time-series-databases-unlock-real-time-data-for-robotics/",
+    "description": "Discover how time series databases help robotics teams manage high-volume sensor data, power AI insights, and keep systems running at scale.\nThe post How time series databases unlock real-time data for robotics appeared first on The Robot Report.",
+    "pubDate": "Fri, 24 Jul 2026 16:28:39 +0000",
+    "source": "The Robot Report",
+    "category": "ai-tech"
+  },
+  {
+    "title": "BYD’s sleek new flagship EV has a range of 1,008 km: Here’s our first look at it [Video]",
+    "link": "https://electrek.co/2026/07/24/byd-confirms-new-flagship-ev-range-1008-km-video/",
+    "description": "BYD confirmed its new flagship electric sedan will offer a range of 1,008 km on a single charge. Ahead of its official debut next month, the new EV was spotted in public for the first time.",
+    "pubDate": "Fri, 24 Jul 2026 16:27:05 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "India cockroach protests: Videos show officers firing 'pellet guns'",
+    "link": "https://www.bbc.co.uk/news/videos/cgje5l292g2o?at_medium=RSS&at_campaign=rss",
+    "description": "Thousands of people have taken to the streets in Delhi as part of the cockroach protests, calling for educational reforms.",
+    "pubDate": "Fri, 24 Jul 2026 16:12:34 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Sam Altman’s biometric startup World raises $52.5M via crypto sale",
+    "link": "https://techcrunch.com/2026/07/24/sam-altmans-biometric-startup-world-raises-52-5-million-via-crypto-sale/",
+    "description": "Sam Altman's side project — which seeks to scan the world's eyeballs and turn them into unique digital identifiers — has raised some fresh cash through a crypto sale.",
+    "pubDate": "Fri, 24 Jul 2026 16:11:56 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Yemen’s valleys and farms are full of dangerous plastic waste",
+    "link": "https://www.aljazeera.com/features/2026/7/24/yemens-valleys-and-farms-are-full-of-dangerous-plastic-waste?traffic_source=rss",
+    "description": "Yemen's eastern Wadi Dawan valley is picturesque, but on closer inspection the scourge of plastic waste is clear to see.",
+    "pubDate": "Fri, 24 Jul 2026 16:10:27 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "World chess chief faces endgame after EU announces Russia war sanctions",
+    "link": "https://www.bbc.co.uk/news/articles/cewrk58k2k4o?at_medium=RSS&at_campaign=rss",
+    "description": "Arkady Dvorkovich, a former Russian deputy prime minister, now faces an EU travel ban and asset freeze.",
+    "pubDate": "Fri, 24 Jul 2026 16:08:51 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "「副首都」構想関連法が成立 自民・維新・みらいなど賛成",
+    "link": "http://www3.nhk.or.jp/news/html/20260724/k10015185521000.html",
+    "description": "大規模災害の際に首都の代替機能を担う「副首都」構想の関連法は、参議院本会議で採決が行われ、自民・維新両党とチームみらいなどの賛成多数で可決・成立しました。",
+    "pubDate": "Sat, 25 Jul 2026 01:07:36 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "LeBron James is heading to the Philadelphia 76ers from Los Angeles Lakers",
+    "link": "https://www.aljazeera.com/sports/2026/7/24/lebron-james-is-heading-to-the-philadelphia-76ers-saying-it-will-be-his-last-decision?traffic_source=rss",
+    "description": "James's move comes after saying he was 'done' after his 23rd NBA season and it was his last with Los Angeles Lakers.",
+    "pubDate": "Fri, 24 Jul 2026 16:07:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Congress Party holds ‘funeral’ for India PM Modi and cabinet ministers",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/24/congress-party-holds-funeral-for-india-pm-modi-and-cabinet-ministers?traffic_source=rss",
+    "description": "Congress Party holds ‘funeral’ for India PM Modi and cabinet ministers.",
+    "pubDate": "Fri, 24 Jul 2026 16:04:38 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "LIVE: Israeli settlers attack West Bank’s Nablus, shooting leaves six dead",
+    "link": "https://www.aljazeera.com/news/liveblog/2026/7/24/live-israeli-settlers-attack-west-banks-nablus-shooting-leaves-six-dead?traffic_source=rss",
+    "description": "Four Palestinians and two Israelis killed after about 20 settlers raid the village of Tal in occupied West Bank.",
+    "pubDate": "Fri, 24 Jul 2026 16:04:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Pogacar takes Tour de France stage 19 with solo attack on Alpe d'Huez",
+    "link": "https://www.france24.com/en/sport/20260724-pogacar-takes-tour-de-france-stage-19-with-solo-attack-alpe-d-huez",
+    "description": "Slovenia's four-time champion Tadej Pogacar on Friday further consolidated his overall lead by taking stage 19 of the Tour de France. He made the punishing climb up the Alpe d'Huez in 35 minutes and 27 seconds.",
+    "pubDate": "Fri, 24 Jul 2026 16:03:26 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Netanyahu to meet Trump at White House next week amid Iran war escalation",
+    "link": "https://www.aljazeera.com/news/2026/7/24/netanyahu-to-meet-trump-at-white-house-next-week-amid-iran-war-escalation?traffic_source=rss",
+    "description": "Visit will be Netanyahu's seventh to White House, underscoring US commitment during war with Iran, genocide in Gaza.",
+    "pubDate": "Fri, 24 Jul 2026 16:01:18 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Deadly clashes in the occupied West Bank",
+    "link": "https://www.france24.com/en/deadly-clashes-in-the-occupied-west-bank",
+    "description": "Israeli Prime Minister Benjamin Netanyahu has vowed to respond with \"full force\" following a deadly clash in the occupied West Bank. Two Israeli soldiers were killed on Friday in fighting near the settlement of Havat Gilad and the neighbouring village of Tal. The incident comes amid a sharp rise in ",
+    "pubDate": "Fri, 24 Jul 2026 15:57:10 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "As US weighs response to Chinese AI, industry urges against broad open-weight restrictions",
+    "link": "https://techcrunch.com/2026/07/24/as-us-weighs-response-to-chinese-ai-industry-urges-against-broad-open-weight-restrictions/",
+    "description": "AI companies, including Nvidia and Mistral, urge policymakers to avoid broad restrictions on open-weight AI models as Washington debates responses to Chinese AI and alleged model distillation.",
+    "pubDate": "Fri, 24 Jul 2026 15:51:49 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "【プロ野球結果】巨人 阪神に競り勝ち同率で首位にならぶ",
+    "link": "http://www3.nhk.or.jp/news/html/20260724/k10015185591000.html",
+    "description": "プロ野球は、5試合が行われ、巨人は延長10回にルーキーの小濱佑斗選手がプロ初ホームランとなるツーランを打って阪神に競り勝ち同率で首位にならびました。",
+    "pubDate": "Sat, 25 Jul 2026 00:43:01 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Solar generated more electricity than coal and wind in May – EIA data",
+    "link": "https://electrek.co/2026/07/24/solar-generated-more-electricity-than-coal-and-wind-may-eia-data/",
+    "description": "In May alone, solar-generated electricity exceeded that of both coal and wind, according to new data just released by the US Energy Information Administration (EIA), and reviewed by the SUN DAY Campaign.",
+    "pubDate": "Fri, 24 Jul 2026 15:41:25 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Tesla quietly closes its secret ~$2 billion AI hardware deal",
+    "link": "https://electrek.co/2026/07/24/tesla-secret-2-billion-ai-hardware-acquisition-closes/",
+    "description": "Tesla has closed the mysterious ~$2 billion acquisition of an AI hardware company that it first hinted at in April — and it did so, again, without naming the target or issuing a press release.\nThe deal was confirmed in a single passage buried in Tesla’s Q2 2026 10-Q filing, which for the first time ",
+    "pubDate": "Fri, 24 Jul 2026 15:39:12 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "第221特別国会が事実上閉会 政府提出の64法案すべて成立",
+    "link": "http://www3.nhk.or.jp/news/html/20260725/k10015185801000.html",
+    "description": "第221特別国会が事実上閉会しました。この国会では、皇族数の確保に向けた改正皇室典範など政府が提出した64の法案が、すべて成立しました。また議員立法では、与党が連立合意に基づいて提出した「副首都」構想の関連法などが成立した一方、衆議院議員の定数削減法案は、野党の反発を受けて審議が見送られました。",
+    "pubDate": "Sat, 25 Jul 2026 00:39:02 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Israel builds Gaza barrier as politicians push for settlements",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/24/israel-builds-gaza-barrier-as-politicians-push-for-settlements?traffic_source=rss",
+    "description": "Recent satellite images reveal the construction of a huge earthen barrier dividing Gaza as Israelis discuss settlements.",
+    "pubDate": "Fri, 24 Jul 2026 15:27:35 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Iran: Neue Atomanlage unter dem Pickaxe Mountain?",
     "link": "https://www.dw.com/de/iran-neue-atomanlage-unter-dem-pickaxe-mountain/a-78104018?maca=de-rss-de-all-1119-rdf",
     "description": "Trump droht mit der Zerstörung eines unterirdischen Komplexes in der Nähe der Atomanlage Natans. Es wird spekuliert, dass der Iran sein Nuklearprogramm hierhin verlagert, weil die Anlage nur schwer zu treffen ist.",
@@ -16,6 +296,22 @@
     "category": "international"
   },
   {
+    "title": "This is the world's most advanced robotic servicing satellite—that we know about",
+    "link": "https://arstechnica.com/space/2026/07/this-is-the-worlds-most-advanced-robotic-servicing-satellite-that-we-know-about/",
+    "description": "\"These are things that tend to be really hard.\"",
+    "pubDate": "Fri, 24 Jul 2026 15:23:06 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Nigeria's president approves largest military expansion in recent times",
+    "link": "https://www.bbc.co.uk/news/articles/cwymjx3nrxvo?at_medium=RSS&at_campaign=rss",
+    "description": "The government is under intense pressure to tackle a slew of armed groups, many of whom attack civilians.",
+    "pubDate": "Fri, 24 Jul 2026 15:22:56 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
     "title": "US and Iran trade more strikes in Gulf as fears of escalation mount",
     "link": "https://www.bbc.co.uk/news/articles/c05ql5llj4do?at_medium=RSS&at_campaign=rss",
     "description": "It comes as Iran condemned the US plan to use frozen Iranian assets to pay for war damages.",
@@ -24,17 +320,17 @@
     "category": "international"
   },
   {
-    "title": "「副首都」構想関連法が成立 自民・維新・みらいなど賛成",
-    "link": "http://www3.nhk.or.jp/news/html/20260724/k10015185521000.html",
-    "description": "大規模災害の際に首都の代替機能を担う「副首都」構想の関連法は、参議院本会議で採決が行われ、自民・維新両党とチームみらいなどの賛成多数で可決・成立しました。",
-    "pubDate": "Sat, 25 Jul 2026 00:20:26 +0900",
-    "source": "NHKニュース",
+    "title": "‘I lost my home twice’: Sudanese mothers caught between two wars",
+    "link": "https://www.aljazeera.com/features/longform/2026/7/24/i-lost-my-home-twice-sudanese-mothers-caught-between-two-wars?traffic_source=rss",
+    "description": "Sudanese mothers who fled one war now face another, struggling to rebuild their lives after displacement in Lebanon.",
+    "pubDate": "Fri, 24 Jul 2026 15:16:33 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
     "title": "Rivian sues the US government for ‘full refund’ of Trump tariffs",
     "link": "https://techcrunch.com/2026/07/24/rivian-sues-the-us-government-for-full-refund-of-trump-tariffs/",
-    "description": "The carmaker has said it's owed a refund in the \"tens of millions of dollars.\"",
+    "description": "The automaker joins a long line of companies seeking such refunds. In April, Rivian CFO Claire McDonough said she expected the company stood to reap a refund in the \"tens of millions of dollars.\"",
     "pubDate": "Fri, 24 Jul 2026 15:16:31 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -120,6 +416,14 @@
     "category": "international"
   },
   {
+    "title": "对话星炽动力CTO李达——PULSE架构：如何让具身智能更像人？",
+    "link": "https://www.leiphone.com/category/industrynews/VoghxG89WgJ2E9ZI.html",
+    "description": "端云协同 + 原生隐私设计，家庭机器人兼顾智能与安全\n\n\n\n\n    编辑丨李希\n                                                                                                       \n\n\n今年关于具身智能的讨论里，有一个问题始终绕不开：机器人进了家门，到底靠什么让人愿意留着它？\n工厂的逻辑很简单：干得准、跑得稳，得能运行，还能创收。但家庭场景不一样：一个动作失误、一次对意图的理解偏差，用户的心理容错率几乎为零——错一次，机器人就可能就被退货，或者放在角落吃灰。\n这个现实，让行业分出了两条路",
+    "pubDate": "Fri, 24 Jul 2026 23:03:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
     "title": "Boox is taking on Xteink with its own tiny e-reader",
     "link": "https://www.theverge.com/tech/970618/onyx-boox-picco-ereader-xteink",
     "description": "Boox's new Tile lineup will take on Xteink's popular e-readers that are small enough to stick on the back of an iPhone with MagSafe. As spotted by Good E-Reader, the first one is the Picco, which will feature a 3.97-inch front-lit, black-and-white e-paper display and expandable storage with an SD ca",
@@ -176,12 +480,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Four Palestinians and two Israelis killed in West Bank shooting",
-    "link": "https://www.bbc.co.uk/news/articles/cx2rxmye4k3o?at_medium=RSS&at_campaign=rss",
-    "description": "Palestinians say villagers came under attack by settlers, while the Israeli military says a Palestinian stole a weapon and opened fire on hikers.",
-    "pubDate": "Fri, 24 Jul 2026 14:41:32 GMT",
-    "source": "BBC News",
-    "category": "international"
+    "title": "合肥又押中AI独角兽：多模态赛道，3个月融了21亿",
+    "link": "https://www.qbitai.com/2026/07/460154.html",
+    "description": "跑出原生全模态新路径",
+    "pubDate": "Fri, 24 Jul 2026 14:42:32 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
   },
   {
     "title": "衆院予算委 24日の集中審議取りやめ 27日に開催で与野党合意",
@@ -198,6 +502,14 @@
     "pubDate": "Fri, 24 Jul 2026 23:34:55 +0900",
     "source": "NHKニュース",
     "category": "international"
+  },
+  {
+    "title": "Rocket Report: Lightning strikes in China; Starship launch on deck",
+    "link": "https://arstechnica.com/space/2026/07/rocket-report-lightning-strikes-in-china-starship-launch-on-deck/",
+    "description": "Relativity Space announced plans to build a second rocket factory near Cape Canaveral, Florida.",
+    "pubDate": "Fri, 24 Jul 2026 14:34:25 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
   },
   {
     "title": "How Jimothy the raccoon became the internet's latest animal obsession",
@@ -248,6 +560,14 @@
     "category": "international"
   },
   {
+    "title": "天立启鸣发布教育AGI白皮书：从答题响应到心智仿真，破解教育“不可能三角”",
+    "link": "https://www.leiphone.com/category/ai/9BvD2TFs3u6gMHPr.html",
+    "description": "如今线上题库、网课、自适应习题工具早已普及，但教育行业质量、成本、规模难以兼顾的“不可能三角”依然尚未打破。\n同一班级里，有的学生一点就通、有的卡在基础概念、有的陷入思维误区，统一授课很难适配所有人；一对一的个性化教育高度依赖优质师资，成本高、难推广。教育AI工具尽管简单易用，但多停留在内容分发、答题响应与习题推荐的表层逻辑，无法看透学生内在心智变化和潜在需求。教育行业亟待从简单的“答题响应”，走向能模拟、读懂学生内心思考过程的“心智仿真”新阶段。\n在2026第9届世界人工智能大会（WAIC）期间，由天立国际、启鸣达人、天立启鸣AI研究院、AIII人工智能国际研究院，以及北京航空航天大学国际创",
+    "pubDate": "Fri, 24 Jul 2026 22:07:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
     "title": "What I track in a day",
     "link": "https://www.theverge.com/column/970056/optimizer-health-tracking-fitness-wearables-what-i-track-in-a-day",
     "description": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Optimizer will be taking a two-week break and will be moving to Wednesdays starting August 12th. Opt in for Opt",
@@ -277,6 +597,14 @@
     "description": "One of the easiest ways to get my attention is to slap the word “premium” on an affordable e-bike. Sometimes it’s justified. Other times it’s… aspirational.",
     "pubDate": "Fri, 24 Jul 2026 13:53:00 +0000",
     "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "AI firms want more data centers; Trump's EPA may give neighbors less say",
+    "link": "https://arstechnica.com/tech-policy/2026/07/ai-firms-want-more-data-centers-trumps-epa-may-give-neighbors-less-say/",
+    "description": "Rule would allow states to decide how much—if any—public input there can be.",
+    "pubDate": "Fri, 24 Jul 2026 13:49:38 +0000",
+    "source": "Ars Technica - All content",
     "category": "ai-tech"
   },
   {
@@ -326,14 +654,6 @@
     "pubDate": "Fri, 24 Jul 2026 13:16:56 +0000",
     "source": "Electrek",
     "category": "ai-tech"
-  },
-  {
-    "title": "【プロ野球結果】パ首位攻防戦 ソフトバンクが西武に打ち勝つ",
-    "link": "http://www3.nhk.or.jp/news/html/20260724/k10015185591000.html",
-    "description": "プロ野球は24日、オールスターゲーム前最後のカードとなり、5試合が行われました。パ・リーグの首位攻防戦は、ソフトバンクが栗原陵矢選手の30号スリーランホームランなどで西武に打ち勝ちました。",
-    "pubDate": "Fri, 24 Jul 2026 22:05:08 +0900",
-    "source": "NHKニュース",
-    "category": "international"
   },
   {
     "title": "EU-Kommission: TikTok verletzt Jugendschutz-Regeln",
@@ -586,7 +906,7 @@
   {
     "title": "At least 21 killed as Ukraine and Russia continue to trade attacks",
     "link": "https://www.aljazeera.com/news/2026/7/24/at-least-11-killed-in-ukraine-as-moscow-and-kyiv-continue-to-trade-attacks?traffic_source=rss",
-    "description": "Strikes target Ukrainian defence industry event, Russia’s Kirov, and more Wildberries warehouses.",
+    "description": "Strikes target Ukrainian defence industry event, Russia’s Kirov and more Wildberries warehouses.",
     "pubDate": "Fri, 24 Jul 2026 11:45:04 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
@@ -1048,17 +1368,17 @@
     "category": "international"
   },
   {
-    "title": "Bundesverfassungsgericht stärkt Afghanen bei Visa-Klagen",
-    "link": "https://www.dw.com/de/bundesverfassungsgericht-stärkt-afghanen-bei-visa-klagen/a-78097982?maca=de-rss-de-all-1119-rdf",
-    "description": "Als die Taliban in Afghanistan die Macht übernahmen gab Deutschland hunderten Menschen eine Visa-Zusage. Dann kassierte die neue Bundesregierung die Einreiseerlaubnis ein. Dagegen klagte eine Familie.",
+    "title": "Trump: Iran soll Reparatur der Schäden an Frachtern bezahlen",
+    "link": "https://www.dw.com/de/trump-iran-soll-reparatur-der-schäden-an-frachtern-bezahlen/a-78097349?maca=de-rss-de-all-1119-rdf",
+    "description": "Neben anhaltenden Bombardements versucht US-Präsident Trump nun, Iran mit finanziellen Forderungen unter Druck zu setzen. Teheran reagiert empört.",
     "pubDate": "2026-07-24T10:18:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
   },
   {
-    "title": "Trump: Iran soll Reparatur der Schäden an Frachtern bezahlen",
-    "link": "https://www.dw.com/de/trump-iran-soll-reparatur-der-schäden-an-frachtern-bezahlen/a-78097349?maca=de-rss-de-all-1119-rdf",
-    "description": "Neben anhaltenden Bombardements versucht US-Präsident Trump nun, Iran mit finanziellen Forderungen unter Druck zu setzen. Teheran reagiert empört.",
+    "title": "Bundesverfassungsgericht stärkt Afghanen bei Visa-Klagen",
+    "link": "https://www.dw.com/de/bundesverfassungsgericht-stärkt-afghanen-bei-visa-klagen/a-78097982?maca=de-rss-de-all-1119-rdf",
+    "description": "Als die Taliban in Afghanistan die Macht übernahmen gab Deutschland hunderten Menschen eine Visa-Zusage. Dann kassierte die neue Bundesregierung die Einreiseerlaubnis ein. Dagegen klagte eine Familie.",
     "pubDate": "2026-07-24T10:18:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
@@ -2744,6 +3064,14 @@
     "category": "ai-tech"
   },
   {
+    "title": "PCs & Smartphones Supply Constrained",
+    "link": "https://semiwiki.com/semiconductor-services/semiconductor-intelligence/371662-pcs-smartphones-supply-constrained/",
+    "description": "Global unit shipments of PCs and smartphones were both down versus a year ago in the 2nd quarter of 2026, according to IDC. PCs were down 4.9% and smartphones were down 6.7%. Both PCs and smartphones showed growth in 2024 and 2025. IDC is predicting an 11.3% decline in PCs and a 13.9% decline in sma",
+    "pubDate": "Thu, 23 Jul 2026 23:00:08 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
     "title": "U.S. Starts Genesis Mission with $5B for First Projects",
     "link": "https://www.eetimes.com/u-s-starts-genesis-mission-with-5b-for-first-projects/",
     "description": "America drops $5B on AI’s Genesis Mission while China lines up $295B; see why the opening bet may already be too small.\nThe post U.S. Starts Genesis Mission with $5B for First Projects appeared first on EE Times.",
@@ -3054,14 +3382,6 @@
     "pubDate": "Thu, 23 Jul 2026 22:03:09 GMT",
     "source": "BBC News",
     "category": "international"
-  },
-  {
-    "title": "PCs & Smartphones Supply Constrained",
-    "link": "https://semiwiki.com/semiconductor-services/semiconductor-intelligence/371662-pcs-smartphones-supply-constrained/",
-    "description": "Global unit shipments of PCs and smartphones were both down versus a year ago in the 2nd quarter of 2026, according to IDC. PCs were down 4.9% and smartphones were down 6.7%. Both PCs and smartphones showed growth in 2024 and 2025. IDC is predicting an 11.3% decline in PCs and a 13.9% decline in sma",
-    "pubDate": "Thu, 23 Jul 2026 22:00:08 +0000",
-    "source": "SemiWiki",
-    "category": "semiconductor"
   },
   {
     "title": "NEVI gets real in Illinois as first federally funded EV chargers go online",
@@ -3677,326 +3997,6 @@
     "description": "The world’s best-selling car of all time is going electric. Toyota warned it “cannot survive” by sticking to its traditional methods as it pins its future on the next-generation Corolla EV.",
     "pubDate": "Thu, 23 Jul 2026 17:31:22 +0000",
     "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "What are the security implications of the US-Saudi nuclear deal?",
-    "link": "https://www.aljazeera.com/news/2026/7/23/what-are-the-security-implications-of-the-us-saudi-nuclear-deal?traffic_source=rss",
-    "description": "Concerns are growing over a nuclear arms race in the Middle East.",
-    "pubDate": "Thu, 23 Jul 2026 17:27:57 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "US government says Iran-linked hackers are disrupting American water and energy providers",
-    "link": "https://techcrunch.com/2026/07/23/us-government-says-iran-linked-hackers-are-disrupting-american-water-and-energy-providers/",
-    "description": "An updated government advisory warns that Iranian hackers are exploiting systems used by water and energy providers.",
-    "pubDate": "Thu, 23 Jul 2026 17:27:08 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Far-right Israeli incursion heightens tensions at Al-Aqsa ahead of election",
-    "link": "https://www.aljazeera.com/news/2026/7/23/far-right-israeli-incursion-heightens-tensions-at-al-aqsa-ahead-of-election?traffic_source=rss",
-    "description": "Israeli far-right Minister Ben-Gvir joins provocative incursion at Al-Aqsa, escalating tensions ahead of elections.",
-    "pubDate": "Thu, 23 Jul 2026 17:25:05 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Corsair’s PC case with a panoramic glass design is $70 off",
-    "link": "https://www.theverge.com/gadgets/960331/corsair-frame-4500x-deal-pc-case-sale",
-    "description": "On the hunt for a PC case that’s loaded with features and has a unique look? Amazon, Best Buy, and Corsair are selling the Corsair Frame 4500X RS for $119.99, a $70 discount from the usual price. The versatile case supports motherboards up to EATX, GPUs up to 460mm in length, and has a seamless [&#8",
-    "pubDate": "2026-07-23T17:20:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Tesla’s robotaxi promises are clashing with reality",
-    "link": "https://www.theverge.com/transportation/970003/tesla-robotaxi-mileage-waymo-cities-earnings-musk",
-    "description": "In an earnings call yesterday, Tesla CEO Elon Musk did his best to paint a positive portrait of the company's robotaxi program. New cities are being added, more miles are being driven, and more people are experiencing Tesla's unsupervised vehicles. But Musk's typical bullishness seemed to be absent ",
-    "pubDate": "2026-07-23T17:09:31.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Volvo’s new midsize electric SUV delivers more range than expected, with up to 330 miles",
-    "link": "https://electrek.co/2026/07/23/volvos-midsize-ev-suv-delivers-more-range-330-miles/",
-    "description": "Volvo is already calling it a game-changing electric SUV. The new 2027 EX60 now has an EPA-estimated driving range of up to 330 miles, making it the longest-range EV Volvo offers.",
-    "pubDate": "Thu, 23 Jul 2026 17:08:39 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Runway launches AI model router as generative media gets crowded",
-    "link": "https://techcrunch.com/2026/07/23/runway-bets-on-ai-model-routing-as-generative-media-gets-crowded/",
-    "description": "The Media Router is a tool that automatically selects the best image, video, or audio generation model for a request based on whether a developer prioritizes quality, speed or cost.",
-    "pubDate": "Thu, 23 Jul 2026 17:07:35 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Oil surges past $100 in a first since May as Middle East conflicts rage",
-    "link": "https://www.aljazeera.com/news/2026/7/23/oil-surges-past-100-in-a-first-since-may-as-middle-east-conflicts-rage?traffic_source=rss",
-    "description": "Oil prices rise for a fifth day after Yemen's Houthis say they struck Saudi Arabian oil tankers in the Red Sea.",
-    "pubDate": "Thu, 23 Jul 2026 17:05:18 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "A Game of Double Standards",
-    "link": "https://www.aljazeera.com/video/featured-documentaries/2026/7/23/a-game-of-double-standards?traffic_source=rss",
-    "description": "Qatar 2022: a World Cup that exposed football’s politics, power struggles, and double standards.",
-    "pubDate": "Thu, 23 Jul 2026 17:02:21 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Must-See DAC Panel – Build vs Buy: Who Owns the Intelligence Behind Tomorrow’s Chips?",
-    "link": "https://semiwiki.com/events/371283-must-see-dac-panel-build-vs-buy-who-owns-the-intelligence-behind-tomorrows-chips/",
-    "description": "This year, DAC will be buzzing about AI from every direction. The debate of build vs. buy will also be a popular topic. And the debate of who owns the intellectual property embodied in chip designs and how to control it will also get a significant amount of airtime. These are all interesting and com",
-    "pubDate": "Thu, 23 Jul 2026 17:00:01 +0000",
-    "source": "SemiWiki",
-    "category": "semiconductor"
-  },
-  {
-    "title": "OpenAI makes ChatGPT Health available to all US users",
-    "link": "https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/",
-    "description": "Users can also integrate their personal data from services like Apple Health, Function, and MyFitnessPal.",
-    "pubDate": "Thu, 23 Jul 2026 17:00:00 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Geekbench 7 will push your computer or phone even harder for better benchmarking",
-    "link": "https://www.theverge.com/gadgets/970012/primate-labs-geekbench-7-benchmark-test-software-update",
-    "description": "Primate Labs is releasing Geekbench 7, the latest generation of its popular benchmarking tool. Geekbench 7 features new video and audio encoding / decoding tests, a redesigned multi-core test, and larger, more demanding datasets for CPUs and GPUs to crunch through. It otherwise looks and acts just l",
-    "pubDate": "2026-07-23T17:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "OpenAI is making big claims as it rolls out ChatGPT Health to everyone",
-    "link": "https://www.theverge.com/ai-artificial-intelligence/970115/openai-chatgpt-health-launch-claims",
-    "description": "OpenAI is rolling out ChatGPT Health to everyone in the US on Thursday, allowing more people to connect their medical records and health-tracking information to the chatbot. During a briefing, Ashley Alexander, OpenAI's vice president of health product, says the company's models \"are now capable of ",
-    "pubDate": "2026-07-23T17:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Trump: US-Saudi nuclear deal hinges on Saudi joining Abraham Accords",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/23/trump-us-saudi-nuclear-deal-hinges-on-saudi-joining-abraham-accords?traffic_source=rss",
-    "description": "The US and Saudi Arabia have reached a civilian nuclear cooperation deal.",
-    "pubDate": "Thu, 23 Jul 2026 16:58:58 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "米ルビオ国務長官“日本を標的にしているよう”日中関係に懸念",
-    "link": "http://www3.nhk.or.jp/news/html/20260724/k10015184661000.html",
-    "description": "アメリカのルビオ国務長官はNHKの単独インタビューに対し、現在の日中関係をめぐり「中国の発言が非常に攻撃的で、特に日本を標的にしているように見える」と述べて懸念を示し、中国への抑止力を確保するためには日米関係の強化が重要だと強調しました。",
-    "pubDate": "Fri, 24 Jul 2026 01:58:54 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "Supercooled kidneys have been transplanted into pigs in a “landmark achievement”",
-    "link": "https://www.technologyreview.com/2026/07/23/1140765/supercooled-kidneys-have-been-transplanted-into-pigs-in-a-landmark-achievement/",
-    "description": "When it comes to organ donation, time is everything. As soon as an organ has been carefully removed from a donor’s body, it starts to deteriorate. Surgeons have a matter of hours to get it into a recipient. Leave it too long and the organ will become unusable. In most cases, organs will be kept…",
-    "pubDate": "Thu, 23 Jul 2026 16:58:28 +0000",
-    "source": "MIT Technology Review",
-    "category": "ai-tech"
-  },
-  {
-    "title": "A woman got a UTI. Two years later, the bacteria had evolved, invaded her brain.",
-    "link": "https://arstechnica.com/health/2026/07/woman-loses-vision-in-one-eye-after-uti-bacteria-evolves-to-invade-her-brain/",
-    "description": "The case provides a novel report of the emergence of heterovirulence.",
-    "pubDate": "Thu, 23 Jul 2026 16:58:26 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Lebanon Latest: President Aoun visits White House to discuss Hezbollah",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/23/lebanon-latest-president-aoun-visits-white-house-to-discuss-hezbollah?traffic_source=rss",
-    "description": "Al Jazeera’s Zeina Khodr brings you the latest from Beirut.",
-    "pubDate": "Thu, 23 Jul 2026 16:53:21 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Why Iran is targeting Kuwait's desalination plants as part of its war strategy",
-    "link": "https://www.france24.com/en/middle-east/20260723-why-iran-targeting-kuwaits-desalination-plants",
-    "description": "Iranian strikes targeted Kuwait’s desalination and power plants for the fourth consecutive day on Monday. The attacks are putting unprecedented pressure on a Gulf country heavily dependant on desalination for its water supply. Iran is attempting to wage a “psychological war” on a country with few op",
-    "pubDate": "Thu, 23 Jul 2026 16:53:18 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "The EU Fines Google $1 Billion for Prioritizing Its Own Services in Search",
-    "link": "https://www.wired.com/story/eu-fines-google-billion-prioritizing-own-services-in-search/",
-    "description": "The European Commission claims that Google boosted its own apps and products to the top of search rankings to the detriment of its competitors.",
-    "pubDate": "Thu, 23 Jul 2026 16:51:52 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Yemen's Houthis attack Saudi tanker as US launches more Iran strikes",
-    "link": "https://www.bbc.co.uk/news/articles/cpw9xzx9r4ko?at_medium=RSS&at_campaign=rss",
-    "description": "The Iran-backed group, which previously announced a \"maritime embargo\" against Saudi Arabia, also claims to have hit another vessel.",
-    "pubDate": "Thu, 23 Jul 2026 16:50:59 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Palomino ships first-generation micro-LED light engine prototypes to first hyperscaler customer",
-    "link": "https://www.semiconductor-today.com/news_items/2026/jul/palomino-230726.shtml",
-    "description": "Artificial intelligence (AI) interconnect technology company Palomino Laboratories Inc of Goleta, CA, USA has shipped its first micro-LED light engine prototypes to its first hyperscaler customer. Furthermore, the customer completed its evaluation and provided Palomino with test measurement results ",
-    "pubDate": "Thu, 23 Jul 2026 17:50:31 +0100",
-    "source": "lSemiconductor Today News",
-    "category": "semiconductor"
-  },
-  {
-    "title": "EUがグーグルに制裁金 検索サイトで公正な競争妨害として",
-    "link": "http://www3.nhk.or.jp/news/html/20260724/k10015184651000.html",
-    "description": "EU＝ヨーロッパ連合は、アメリカのIT大手グーグルが検索サイトで自社のサービスを優先して表示させて、デジタル市場での公正な競争を妨げたなどとして、日本円で1600億円余りの制裁金を科したと発表しました。",
-    "pubDate": "Fri, 24 Jul 2026 01:47:39 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "Google hit with $1 billion in fines as EU braces for Trump battle",
-    "link": "https://arstechnica.com/tech-policy/2026/07/google-hit-with-1-billion-in-fines-as-eu-braces-for-trump-battle/",
-    "description": "Google becomes third tech giant to face huge fines under the Digital Markets Act.",
-    "pubDate": "Thu, 23 Jul 2026 16:41:36 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Amazon puts Luna cloud-streamed games like Fallout 4 inside Prime Video",
-    "link": "https://www.theverge.com/streaming/970099/amazon-prime-video-luna-gaming",
-    "description": "The new strategy that Amazon gaming exec Jeff Gattis talked to The Verge about last month is getting clearer now that Prime Video has added a new Games tab on Fire TV devices. With Prime Gaming, Amazon Game Studios, and Luna now combined into one organization, it's aiming at the more casual audience",
-    "pubDate": "2026-07-23T16:39:32.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Trump says Saudi nuclear deal contingent on Riyadh normalising relations with Israel",
-    "link": "https://www.france24.com/en/middle-east/20260723-trump-stuns-saudis-by-pinning-nuclear-deal-to-israel-ties",
-    "description": "President Donald Trump on Thursday set a new condition to a US-Saudi nuclear deal signed the previous day by insisting the agreement was \"totally subject to\" the Gulf kingdom joining the Abraham Accords. Riyadh has resisted normalising relations with Israel, especially after the Gaza war, and the ne",
-    "pubDate": "Thu, 23 Jul 2026 16:31:14 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Tesla’s robotaxis are moving in reverse",
-    "link": "https://techcrunch.com/2026/07/23/teslas-robotaxis-are-moving-in-reverse/",
-    "description": "The number of paid robotaxi miles traveled fell 36% in the second quarter, despite expanding to new cities, according to Tesla's own figures.",
-    "pubDate": "Thu, 23 Jul 2026 16:29:59 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Meta launched a new AI optimism ad set to a song about human extinction",
-    "link": "https://techcrunch.com/2026/07/23/meta-launched-a-new-ai-optimism-ad-set-to-a-song-about-human-extinction/",
-    "description": "David Bowie's song \"Five Years,\" which Meta used in a supposedly inspiring advertisement, is about humans learning that they have five years left to live before the apocalypse.",
-    "pubDate": "Thu, 23 Jul 2026 16:28:50 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Teen jailed for exam cheating in Guinea dies after sickle cell complications, father says",
-    "link": "https://www.bbc.co.uk/news/articles/cn0nykz6lweo?at_medium=RSS&at_campaign=rss",
-    "description": "Mamadou Djouma Bah, 17, was arrested and sentenced to prison for exam fraud earlier this month.",
-    "pubDate": "Thu, 23 Jul 2026 16:26:49 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Sony's decision to ditch discs was practically inevitable, data shows",
-    "link": "https://arstechnica.com/gaming/2026/07/the-playstation-game-disc-was-dying-long-before-sony-pulled-the-plug/",
-    "description": "Circana numbers show US gamers overwhelmingly voting with their wallets.",
-    "pubDate": "Thu, 23 Jul 2026 16:25:46 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Electrek Formula Sun Grand Prix 2026: Day 2 results and images",
-    "link": "https://electrek.co/2026/07/23/electrek-formula-sun-grand-prix-2026-day-2-results-and-images/",
-    "description": "The second day of racing at this year’s Electrek Formula Sun Grand Prix concluded late last night, with the finalization of lap results. The third and final day of racing is now underway, with 30 teams cleared for the track and 12 qualified to compete in the cross-country Electrek American Solar Cha",
-    "pubDate": "Thu, 23 Jul 2026 16:19:38 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Yemen faces a new challenge amid prospects of confrontation",
-    "link": "https://www.aljazeera.com/news/2026/7/23/yemen-faces-a-new-challenge-amid-prospects-of-confrontation?traffic_source=rss",
-    "description": "What is the military balance of power in Yemen and the likelihood of confrontation between the government and Houthis?",
-    "pubDate": "Thu, 23 Jul 2026 16:17:44 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "I love e-bikes, but do they always need pedals?",
-    "link": "https://electrek.co/2026/07/23/i-love-e-bikes-but-do-they-always-need-pedals/",
-    "description": "There are few recent advances in the transportation industry that have had as large of an impact on the shifting ways we travel around our cities than micromobility. I’m talking bikes, scooters, mopeds, self-balancing doo-hickeys, etc. \nAnd there are a lot of hills I’m willing to die on in the micro",
-    "pubDate": "Thu, 23 Jul 2026 16:15:17 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "US House votes to limit Iran war for first time since ceasefire breakdown",
-    "link": "https://www.aljazeera.com/news/2026/7/23/us-house-votes-to-limit-iran-war-for-first-time-since-ceasefire-breakdown?traffic_source=rss",
-    "description": "Senate fails to pass latest War Powers resolution, in largely symbolic move attempting to reign in Trump.",
-    "pubDate": "Thu, 23 Jul 2026 16:12:43 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "The missing half of mediation",
-    "link": "https://www.aljazeera.com/opinions/2026/7/23/the-missing-half-of-mediation?traffic_source=rss",
-    "description": "The future of diplomacy between the US and Iran depends on giving mediators the backing needed to make agreements stick.",
-    "pubDate": "Thu, 23 Jul 2026 16:08:54 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Ex-governor convicted of murdering a pregnant student in Kenya",
-    "link": "https://www.bbc.co.uk/news/articles/cvg9l039ljyo?at_medium=RSS&at_campaign=rss",
-    "description": "Okoth Obado was found guilty of killing Sharon Otieno with whom he had had an affair.",
-    "pubDate": "Thu, 23 Jul 2026 16:07:24 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Google just had its first negative cash flow quarter due to massive AI spending",
-    "link": "https://arstechnica.com/google/2026/07/google-just-had-its-first-negative-cash-flow-quarter-ever-due-to-massive-ai-spending/",
-    "description": "Google continues to report big quarterly revenue, but its AI spending has skyrocketed.",
-    "pubDate": "Thu, 23 Jul 2026 16:04:19 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Google will now let you sign in to your account with a selfie video",
-    "link": "https://techcrunch.com/2026/07/23/google-will-now-let-you-sign-in-to-your-account-with-a-selfie-video/",
-    "description": "The tech giant says selfie videos give users more options to sign in if they're ever locked out or don't have access to their usual phone or computer.",
-    "pubDate": "Thu, 23 Jul 2026 16:01:03 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Außenminister Wadephul wirbt um Afrikas Energie und Märkte",
-    "link": "https://www.dw.com/de/außenminister-wadephul-wirbt-um-afrikas-energie-und-märkte/a-78079299?maca=de-rss-de-all-1119-rdf",
-    "description": "Deutschland baut seine Partnerschaften in Afrika aus. Außenminister Johann Wadephul wirbt für mehr Kooperation bei Energie, Infrastruktur und Wirtschaft. In Pretoria kritisiert er zudem den Umgang der USA mit Südafrika.",
-    "pubDate": "2026-07-23T16:00:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Microsoft is testing free, ad-supported cloud gaming for Xbox Insiders",
-    "link": "https://www.theverge.com/games/969969/xbox-testing-ad-supported-streaming",
-    "description": "Xbox Insiders can stream games from their libraries for free in ad-supported streaming sessions starting today. The free streaming sessions are limited to games you already own, and sessions are capped at one hour. However, ads will only play \"before sessions begin.\" It's also optional - you won't n",
-    "pubDate": "2026-07-23T16:00:00.000Z",
-    "source": "The Verge",
     "category": "ai-tech"
   }
 ]
