@@ -1,11 +1,299 @@
 [
   {
+    "title": "Faktencheck: Falsche Behauptungen rund um den CSD in Berlin",
+    "link": "https://www.dw.com/de/faktencheck-falsche-behauptungen-rund-um-den-csd-in-berlin/a-78130619?maca=de-rss-de-all-1119-rdf",
+    "description": "Nach dem islamistischen Terroranschlag auf den CSD in Berlin kursieren in den sozialen Medien Gerüchte, Falschbehauptungen und aus dem Zusammenhang gerissene Videos. Ein DW-Faktencheck zu viel geteilten Behauptungen.",
+    "pubDate": "2026-07-27T17:10:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Rethinking Formal Verification in the AI Era",
+    "link": "https://semiwiki.com/eda/chipagents-ai/371335-rethinking-formal-verification-in-the-ai-era/",
+    "description": "By Kanav Arora, ML Researcher at ChipAgents\nMost hardware teams already understand why formal verification matters. It can expose corner cases that simulation may never reach and establish critical behaviors across the modeled state space.\nThe unresolved question is not whether formal works. It is w",
+    "pubDate": "Mon, 27 Jul 2026 17:00:11 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Warning Shots Fired as AMD Announces New Data Center GPUs",
+    "link": "https://www.eetimes.com/warning-shots-fired-as-amd-announces-new-data-center-gpus-at-advancing-ai-event/",
+    "description": "Red team’s new Helios racks offer 30% more tokens per dollar than Nvidia.\nThe post Warning Shots Fired as AMD Announces New Data Center GPUs appeared first on EE Times.",
+    "pubDate": "Mon, 27 Jul 2026 16:58:23 +0000",
+    "source": "EE Times",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Shots fired at US consulate in Toronto for a second time this year",
+    "link": "https://www.bbc.co.uk/news/articles/ckgvnw44rz9o?at_medium=RSS&at_campaign=rss",
+    "description": "Police said they engaged in a high-speed car chase but failed to arrest the suspect, who remains at large. Three people were arrested in June after a similar attack.",
+    "pubDate": "Mon, 27 Jul 2026 16:56:57 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Why China is giving away its best AI models",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/971444/how-chinese-open-weight-ai-models-impact-us-companies",
+    "description": "Silicon Valley has spent much of the past week on red alert, digesting the arrival of Moonshot AI's Kimi K3, a Chinese AI model that can allegedly beat some of the best systems built by US companies at a fraction of the cost. Its performance alone would have been enough to intensify the rivalry betw",
+    "pubDate": "2026-07-27T16:51:50.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Threads users can now chat with Meta AI in their DMs",
+    "link": "https://techcrunch.com/2026/07/27/threads-users-can-now-chat-with-meta-ai-in-their-dms/",
+    "description": "Meta on Monday said it is rolling out its Meta AI chatbot within Threads' DMs, giving users a way to chat with the AI assistant.",
+    "pubDate": "Mon, 27 Jul 2026 16:45:24 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "New Quantum Material and Chip Architecture Tackle a Key Barrier to Scaling Quantum Computers Towards 1M Qubits",
+    "link": "https://www.semiconductor-digest.com/new-quantum-material-and-chip-architecture-tackle-a-key-barrier-to-scaling-quantum-computers-towards-1m-qubits/?utm_source=rss&utm_medium=rss&utm_campaign=new-quantum-material-and-chip-architecture-tackle-a-key-barrier-to-scaling-quantum-computers-towards-1m-qubits",
+    "description": "A new concept from Warwick researchers could help solve one of the biggest challenges to building large-scale quantum computers: enabling communication between quantum bits (qubits) over long distances across a single chip.\nThe post New Quantum Material and Chip Architecture Tackle a Key Barrier to ",
+    "pubDate": "Mon, 27 Jul 2026 16:43:53 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Ukraine dismisses Iranian threats as Caspian Sea strike directly links wars",
+    "link": "https://www.bbc.co.uk/news/articles/cwyj7yl0xndo?at_medium=RSS&at_campaign=rss",
+    "description": "Iran has reacted with fury to the assault on the vessel, with Tehran's foreign minister saying it \"cannot go unanswered\".",
+    "pubDate": "Mon, 27 Jul 2026 16:33:05 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Synopsys and Intel Foundry Fast-Track Customer Readiness from Silicon to Systems on Intel 14A",
+    "link": "https://www.semiconductor-digest.com/synopsys-and-intel-foundry-fast-track-customer-readiness-from-silicon-to-systems-on-intel-14a/?utm_source=rss&utm_medium=rss&utm_campaign=synopsys-and-intel-foundry-fast-track-customer-readiness-from-silicon-to-systems-on-intel-14a",
+    "description": "As AI and high-performance computing designs move beyond monolithic scaling, success requires connecting process technology with AI-powered EDA flows, multi-die design, integrated multiphysics analysis, and broad IP portfolio to accelerate system-level realization.\nThe post Synopsys and Intel Foundr",
+    "pubDate": "Mon, 27 Jul 2026 16:30:52 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "THL Completes Sale of AMI to Lattice Semiconductor",
+    "link": "https://www.semiconductor-digest.com/thl-completes-sale-of-ami-to-lattice-semiconductor/?utm_source=rss&utm_medium=rss&utm_campaign=thl-completes-sale-of-ami-to-lattice-semiconductor",
+    "description": "Transaction concludes successful partnership focused on advancing mission-critical firmware for the AI computing era.\nThe post THL Completes Sale of AMI to Lattice Semiconductor appeared first on Semiconductor Digest.",
+    "pubDate": "Mon, 27 Jul 2026 16:26:59 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "A Nigerian soldier is arrested for tipping off criminals - but does it go deeper?",
+    "link": "https://www.bbc.co.uk/news/articles/cr7k8y5272eo?at_medium=RSS&at_campaign=rss",
+    "description": "A private's detention reignites concerns that troops are contributing to the country's security challenges.",
+    "pubDate": "Mon, 27 Jul 2026 16:19:50 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "YouTube Premium will include Peacock starting next year",
+    "link": "https://www.theverge.com/streaming/971452/youtube-premium-peacock-streaming-deal",
+    "description": "YouTube's ad-free Premium subscription is getting another perk: access to Peacock. In an announcement on Monday, NBCUniversal says the multi-year agreement will allow Premium subscribers to stream Peacock's ad-supported shows, movies, and live sports directly through the YouTube app in 2027. YouTube",
+    "pubDate": "2026-07-27T16:18:52.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Siemens Advances Self-Verifying Agentic AI Workflows for Semiconductor and PCB Design",
+    "link": "https://www.semiconductor-digest.com/siemens-advances-self-verifying-agentic-ai-workflows-for-semiconductor-and-pcb-design/?utm_source=rss&utm_medium=rss&utm_campaign=siemens-advances-self-verifying-agentic-ai-workflows-for-semiconductor-and-pcb-design",
+    "description": "Siemens today announced an expansion of its strategic partnership with NVIDIA to deliver self-verifying agentic AI workflows to EDA, helping semiconductor and printed circuit board (PCB) engineering teams move from autonomous task orchestration toward more trusted, continuously validated engineering",
+    "pubDate": "Mon, 27 Jul 2026 16:16:31 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Perus neuer Balanceakt zwischen China und den USA",
+    "link": "https://www.dw.com/de/perus-neuer-balanceakt-zwischen-china-und-den-usa/a-78105779?maca=de-rss-de-all-1119-rdf",
+    "description": "Perus neue Präsidentin Keiko Fujimori verspricht mehr Sicherheit und Investitionen. Zugleich muss sie das Land im geopolitischen Wettbewerb zwischen China und den USA positionieren.",
+    "pubDate": "2026-07-27T16:10:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Wildfires: The ominous 'fire clouds' or 'pyrocumulonimbus' seen in France for the first time",
+    "link": "https://www.france24.com/en/france/20260727-what-are-fire-clouds-pyrocumulonimbus-observed-france-for-the-first-time",
+    "description": "French firefighters are grappling for the first time with immense fire clouds, known as pyrocumulonimbus clouds, created by extreme wildfires, as they struggle to bring a forest inferno in southwest France under control. French wildfire researcher Jean-Baptiste Filippi says the phenomenon is yet ano",
+    "pubDate": "Mon, 27 Jul 2026 16:08:43 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Iran: Currently no negotiations with the US",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/27/iran-currently-no-negotiations-with-the-us?traffic_source=rss",
+    "description": "Iranian Foreign Ministry Spokesperson, Esmaeil Baghaei, said on Monday that Iran is not seeking negotiations with US.",
+    "pubDate": "Mon, 27 Jul 2026 16:08:27 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The CEA and Playground Global Sign Strategic Memorandum of Understanding to Advance  Next Generation of Deep Technology Companies",
+    "link": "https://www.semiconductor-digest.com/the-cea-and-playground-global-sign-strategic-memorandum-of-understanding-to-advance-next-generation-of-deep-technology-companies/?utm_source=rss&utm_medium=rss&utm_campaign=the-cea-and-playground-global-sign-strategic-memorandum-of-understanding-to-advance-next-generation-of-deep-technology-companies",
+    "description": "The agreement will strengthen the commercialization of deep technology innovations by combining CEA's research leadership with Playground's venture-building expertise.\nThe post The CEA and Playground Global Sign Strategic Memorandum of Understanding to Advance  Next Generation of Deep Technology Com",
+    "pubDate": "Mon, 27 Jul 2026 16:08:06 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "AI-driven Demand Sustains Robust Growth of Hong Kong’s June Exports",
+    "link": "https://www.semiconductor-digest.com/ai-driven-demand-sustains-robust-growth-of-hong-kongs-june-exports/?utm_source=rss&utm_medium=rss&utm_campaign=ai-driven-demand-sustains-robust-growth-of-hong-kongs-june-exports",
+    "description": "Hong Kong’s merchandise exports rose by 53.4% year on year to HK$641.1 billion in June 2026, according to data released today by the Census and Statistics Department.\nThe post AI-driven Demand Sustains Robust Growth of Hong Kong’s June Exports appeared first on Semiconductor Digest.",
+    "pubDate": "Mon, 27 Jul 2026 16:05:17 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Keysight Certifies Electromagnetic Design Software for Intel Foundry’s Latest Processes",
+    "link": "https://www.semiconductor-digest.com/keysight-certifies-electromagnetic-design-software-for-intel-foundrys-latest-processes/?utm_source=rss&utm_medium=rss&utm_campaign=keysight-certifies-electromagnetic-design-software-for-intel-foundrys-latest-processes",
+    "description": "Design teams get a proven path to first-pass silicon success on Intel 14A and Intel 18A-P.\nThe post Keysight Certifies Electromagnetic Design Software for Intel Foundry’s Latest Processes appeared first on Semiconductor Digest.",
+    "pubDate": "Mon, 27 Jul 2026 16:01:26 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Europas Feuerwehr durch Waldbrände im Stresstest",
+    "link": "https://www.dw.com/de/europas-feuerwehr-durch-waldbrände-im-stresstest/a-78130976?maca=de-rss-de-all-1119-rdf",
+    "description": "Frankreichs Präsident Macron hat wegen der verheerenden Waldbrände in seinem Land den EU-Katastrophenschutz um Hilfe gerufen. Das System ist immer leistungsfähiger geworden, doch im Sommer 2026 stößt es an seine Grenzen.",
+    "pubDate": "2026-07-27T16:00:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Automotive Ethernet and Time Sensitive Networking (TSN) for Next Generation Vehicles",
+    "link": "https://www.eetimes.com/automotive-ethernet-and-time-sensitive-networking-tsn-for-next-generation-vehicles/",
+    "description": "In this session, our expert will provide a practical overview of Automotive Ethernet, TSN, and much more.\nThe post Automotive Ethernet and Time Sensitive Networking (TSN) for Next Generation Vehicles appeared first on EE Times.",
+    "pubDate": "Mon, 27 Jul 2026 15:59:39 +0000",
+    "source": "EE Times",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Devastating European wildfires in maps - and how they're being tackled",
+    "link": "https://www.bbc.co.uk/news/articles/cj638jx0l53o?at_medium=RSS&at_campaign=rss",
+    "description": "A blaze near Bordeaux has torn through more than 162 sq miles (420 sq km) in less than four days, while the Madrid region is seeing its worst fires ever.",
+    "pubDate": "Mon, 27 Jul 2026 15:59:27 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Activist charged with felony after giving border agent \"duress code\" that wiped his phone",
+    "link": "https://arstechnica.com/gadgets/2026/07/activist-charged-with-felony-after-giving-border-agent-duress-code-that-wiped-his-phone/",
+    "description": "The government says destroying his own data during an airport interrogation was illegal.",
+    "pubDate": "Mon, 27 Jul 2026 15:58:34 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Zelensky visit sends clear message of support for Ukraine, Burnham says",
+    "link": "https://www.bbc.co.uk/news/articles/cy8me5vyjg2o?at_medium=RSS&at_campaign=rss",
+    "description": "The Ukrainian president became the new prime minister's first international visitor since taking office.",
+    "pubDate": "Mon, 27 Jul 2026 15:58:27 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Google’s AI search is rapidly becoming the default, new data shows",
+    "link": "https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/",
+    "description": "Google’s AI Overviews now appear in 43% of searches, underscoring how quickly AI-generated answers are becoming the default way people discover information online.",
+    "pubDate": "Mon, 27 Jul 2026 15:57:12 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The Chevy Equinox EV is due for an update: Here’s what could change",
+    "link": "https://electrek.co/2026/07/27/chevy-equinox-ev-due-for-update/",
+    "description": "America’s most affordable 315+ mile range electric vehicle is in line for an update. The next-gen Chevy Equinox EV will reportedly be the first to use GM’s all-new platform.",
+    "pubDate": "Mon, 27 Jul 2026 15:50:55 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Israel-Lebanon Conflict: Amid displacement, Lebanese cling to 'hope of returning home to rebuild'",
+    "link": "https://www.france24.com/en/video/20260727-israel-lebanon-conflict-amid-displacement-lebanese-cling-to-hope-of-returning-home-to-rebuild",
+    "description": "Jean-Emile Jammine is pleased to welcome Christopher Rassi, IFRC Chief of Staff and Under Secretary General for People and Strategy. He offers a rare on-the-ground perspective from southern Lebanon, to reveal the harrowing realities of the humanitarian crisis. He presents a compelling paradox: while",
+    "pubDate": "Mon, 27 Jul 2026 15:50:30 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Chile captures fugitive convicted of singer Victor Jara's murder under Pinochet",
+    "link": "https://www.bbc.co.uk/news/articles/c3w0xwj8vzyo?at_medium=RSS&at_campaign=rss",
+    "description": "Nelson Haase was one of those convicted over the kidnap and murder of folk singer Victor Jara after Chile's military coup in 1973.",
+    "pubDate": "Mon, 27 Jul 2026 15:49:45 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Amazon&#8217;s trying to launch a global satellite cellphone network in 2028",
+    "link": "https://www.theverge.com/tech/971437/amazon-leo-direct-to-device-satellite-network",
+    "description": "Amazon filed an FCC application on Saturday to launch a new Leo satellite constellation that will provide direct-to-device satellite service for \"voice, messaging, data, and emergency services.\" If approved, Amazon will begin deploying the new constellation of 5,105 satellites in 2028. It says it pl",
+    "pubDate": "2026-07-27T15:40:38.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Israeli raid sparks fire at UN Palestinian refugee centre",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/27/israeli-raid-sparks-fire-at-un-palestinian-refugee-centre?traffic_source=rss",
+    "description": "Israeli forces raided a United Nations Relief and Works Agency for Palestine Refugees training centre.",
+    "pubDate": "Mon, 27 Jul 2026 15:39:58 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Three dead and several injured in shooting at food festival near Seattle's Space Needle",
+    "link": "https://www.bbc.co.uk/news/articles/c78gjyx4q2yo?at_medium=RSS&at_campaign=rss",
+    "description": "Police say two suspects were shooting at each other and one of them is in custody and one at large.",
+    "pubDate": "Mon, 27 Jul 2026 15:39:54 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Inside the Wild Rescue Mission That Took 4 Beluga Whales to Chicago",
+    "link": "https://www.wired.com/story/inside-the-wild-rescue-mission-that-took-4-beluga-whales-to-chicago/",
+    "description": "Beluga whales were in danger of getting euthanized after a Canadian theme park went bust. WIRED spoke with some of the scientists behind the groundbreaking rescue mission.",
+    "pubDate": "Mon, 27 Jul 2026 15:33:56 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Power up your AI infrastructure! A first look at the Smart Systems Stage agenda at TechCrunch Disrupt 2026 ",
+    "link": "https://techcrunch.com/2026/07/27/power-up-your-ai-infrastructure-a-first-look-at-the-smart-systems-stage-agenda-at-techcrunch-disrupt-2026/",
+    "description": "At TechCrunch Disrupt 2026, the Smart Systems Stage will be where energy, infrastructure, and technology collide, covering everything from fusion breakthroughs to the grid strain AI is putting on the entire economy.",
+    "pubDate": "Mon, 27 Jul 2026 15:30:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Mapping Israeli settler violence in the West Bank",
+    "link": "https://www.aljazeera.com/news/2026/7/27/mapping-israeli-settler-violence-in-the-west-bank?traffic_source=rss",
+    "description": "Israeli settlers have set fire to a mosque in the West Bank village of Qusra, and continued violent attacks.",
+    "pubDate": "Mon, 27 Jul 2026 15:27:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "How Israel uses settler-soldier terror to colonise the West Bank",
+    "link": "https://www.aljazeera.com/opinions/2026/7/27/how-israel-uses-settler-soldier-terror-to-colonise-the-west-bank?traffic_source=rss",
+    "description": "Settler attacks are not isolated incidents. They are all part of a strategy to grab land and colonise.",
+    "pubDate": "Mon, 27 Jul 2026 15:27:09 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "This $9 key physically locks your most addictive apps",
     "link": "https://techcrunch.com/2026/07/27/this-9-key-physically-locks-your-most-addictive-apps/",
     "description": "This $9 NFC key requires you to physically scan it to unlock distracting apps on your phone.",
     "pubDate": "Mon, 27 Jul 2026 15:25:37 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
+  },
+  {
+    "title": "Why Venezuela is leaving the ICC",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/27/why-venezuela-is-leaving-the-icc?traffic_source=rss",
+    "description": "Venezuela is withdrawing from the International Criminal Court, accusing it of bias against the Global South.",
+    "pubDate": "Mon, 27 Jul 2026 15:22:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
   },
   {
     "title": "Canadian National won’t fight UP-NS merger under new deal",
@@ -16,18 +304,26 @@
     "category": "supply-chain"
   },
   {
+    "title": "Why a new war in Yemen could be different for the Houthis",
+    "link": "https://www.aljazeera.com/news/2026/7/27/why-a-new-war-in-yemen-could-be-different-for-the-houthis?traffic_source=rss",
+    "description": "Recent developments strengthen anti-Houthi forces in Yemen as signs indicate that a re-eruption of the war is imminent.",
+    "pubDate": "Mon, 27 Jul 2026 15:20:32 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Blaze battle rages in France as wildfire stable but not contained",
+    "link": "https://www.france24.com/en/video/20260727-blaze-battle-rages-in-france-as-wildfire-stable-but-not-contained",
+    "description": "French firefighters continued to battle wildfires in the country's southwest on Monday (July 27) as many hoped  favourable weather conditions could ease the blazes that have scorched through more than 40,000 hectares of land. About 220,000 people, including tourists and local residents, have been ev",
+    "pubDate": "Mon, 27 Jul 2026 15:13:13 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
     "title": "Oil price dives as US and Iran pause attacks",
     "link": "https://www.bbc.co.uk/news/articles/clyj834jn5lo?at_medium=RSS&at_campaign=rss",
     "description": "The US says attacks on Iran have been halted to give \"talks some space\", raising hopes of a resolution to the conflict.",
     "pubDate": "Mon, 27 Jul 2026 15:08:37 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Three dead and several injured in shooting at food festival near Seattle's Space Needle",
-    "link": "https://www.bbc.co.uk/news/articles/c78gjyx4q2yo?at_medium=RSS&at_campaign=rss",
-    "description": "Police say two suspects were shooting at each other and one of them is in custody and one at large.",
-    "pubDate": "Mon, 27 Jul 2026 15:08:00 GMT",
     "source": "BBC News",
     "category": "international"
   },
@@ -38,6 +334,22 @@
     "pubDate": "Mon, 27 Jul 2026 11:07:25 -0400",
     "source": "Supply Chain Dive - Latest News",
     "category": "supply-chain"
+  },
+  {
+    "title": "Russische Drohnen in Rumänien: Bukarest schießt zurück",
+    "link": "https://www.dw.com/de/russische-drohnen-in-rumänien-bukarest-schießt-zurück/a-78132348?maca=de-rss-de-all-1119-rdf",
+    "description": "Dutzende Luftraumverletzungen durch Russland, schwere Explosionen, Verletzte - und doch hielt sich Rumänien lange zurück. Nun schießt es gleich drei Drohnen ab - und signalisiert Moskau damit neue Entschlossenheit.",
+    "pubDate": "2026-07-27T15:05:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Framework Laptop 13 Pro review: Much better battery, much worse price",
+    "link": "https://arstechnica.com/gadgets/2026/07/framework-laptop-13-pro-review-much-better-battery-much-worse-price/",
+    "description": "Framework's latest modular laptop trades one set of problems for another.",
+    "pubDate": "Mon, 27 Jul 2026 15:02:45 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
   },
   {
     "title": "Ilya Sutskever’s Safe Superintelligence partners with Nvidia to scale its AI research",
@@ -74,7 +386,7 @@
   {
     "title": "Nach langem Hickhack: Steffen Bilger neuer Verkehrsminister",
     "link": "https://www.dw.com/de/nach-langem-hickhack-steffen-bilger-neuer-verkehrsminister/a-78132108?maca=de-rss-de-all-1119-rdf",
-    "description": "Der CDU-Politiker Steffen Bilger wird neuer Minister für Verkehr. Nach tagelanger Verwirrung. Konservative Politiker fürchten, dass das der CDU bei den anstehenden Landtagswahlen schaden könnte.",
+    "description": "Der CDU-Politiker Steffen Bilger wird neuer Minister für Verkehr. Nach tagelanger Verwirrung. Konservative Politiker fürchten, das könne der CDU bei den anstehenden Landtagswahlen schaden.",
     "pubDate": "2026-07-27T15:00:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
@@ -176,6 +488,14 @@
     "category": "ai-tech"
   },
   {
+    "title": "South Africa investigates death of Nigerian who collapsed during arrest",
+    "link": "https://www.bbc.co.uk/news/articles/cn7nx3rz16jo?at_medium=RSS&at_campaign=rss",
+    "description": "Initial reports from a post-mortem said he had \"abrasions on his back and chest\", investigators say.",
+    "pubDate": "Mon, 27 Jul 2026 14:26:50 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
     "title": "Honduras’s Hernandez returns home after Trump pardon: How it happened",
     "link": "https://www.aljazeera.com/news/2026/7/27/hondurass-hernandez-returns-home-after-trump-pardon-how-it-happened?traffic_source=rss",
     "description": "Sentenced to 45 years in the US, Hernandez returns home to his family, party and supporters after Trump pardons him.",
@@ -190,14 +510,6 @@
     "pubDate": "Mon, 27 Jul 2026 14:24:42 +0000",
     "source": "MIT Technology Review",
     "category": "ai-tech"
-  },
-  {
-    "title": "Devastating European wildfires in maps - and how they're being tackled",
-    "link": "https://www.bbc.co.uk/news/articles/cj638jx0l53o?at_medium=RSS&at_campaign=rss",
-    "description": "A blaze near Bordeaux has torn through more than 162 sq miles (420 sq km) in less than four days, while the Madrid region is seeing its worst fires ever.",
-    "pubDate": "Mon, 27 Jul 2026 14:21:32 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "BMW iX5 LWB debuts with a range of over 620 miles and a huge Theater Screen [Images]",
@@ -400,7 +712,7 @@
     "category": "ai-tech"
   },
   {
-    "title": "Enigma raises $70M to make controlling a robot as easy as adjusting the volume",
+    "title": "Enigma raises $71M to make controlling a robot as easy as adjusting the volume",
     "link": "https://techcrunch.com/2026/07/27/enigma-raises-70m-to-make-controlling-a-robot-as-easy-as-adjusting-the-volume/",
     "description": "The massive seed round was led by  Index Ventures and Ribbit Capital, with participation from Sarah Guo's Conviction Partners.",
     "pubDate": "Mon, 27 Jul 2026 13:00:00 +0000",
@@ -536,15 +848,7 @@
     "category": "ai-tech"
   },
   {
-    "title": "Zelensky arrives in UK ahead of meeting Burnham",
-    "link": "https://www.bbc.co.uk/news/articles/cy8me5vyjg2o?at_medium=RSS&at_campaign=rss",
-    "description": "The Ukrainian president will be the new prime minister's first international visitor since taking office.",
-    "pubDate": "Mon, 27 Jul 2026 12:33:40 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Anger, shock and grief - questions remain in the wake of the Berlin Pride attack",
+    "title": "Anger as Berlin Pride attacker revealed to have been freed weeks earlier",
     "link": "https://www.bbc.co.uk/news/articles/cy9wv74qje9o?at_medium=RSS&at_campaign=rss",
     "description": "As details emerge about the suspected Berlin Pride attacker's past, many are asking why he was not in prison.",
     "pubDate": "Mon, 27 Jul 2026 12:33:31 GMT",
@@ -848,6 +1152,14 @@
     "category": "international"
   },
   {
+    "title": "欧州山火事 仏ボルドー市街地から約15キロの所まで火が迫る",
+    "link": "http://www3.nhk.or.jp/news/html/20260727/k10015187361000.html",
+    "description": "フランスで発生した山火事は、6日目に入ってもおさまらず、ワインの名産地として知られるボルドーでは市街地からおよそ15キロの所まで火が迫り消火活動が続いています。",
+    "pubDate": "Mon, 27 Jul 2026 20:04:01 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
     "title": "Pirlo out of Italy football top job after backlash over Russian betting firm links",
     "link": "https://www.bbc.co.uk/news/articles/c4g49r2338xo?at_medium=RSS&at_campaign=rss",
     "description": "The uproar throws the Italian Football Federation into further disarray following Italy's third consecutive failure to qualify for the World Cup.",
@@ -1050,7 +1362,7 @@
   {
     "title": "Europe got its own TBPN-style live show, and everyone’s angling for a guest spot",
     "link": "https://techcrunch.com/2026/07/27/europe-got-its-own-tbpn-style-live-show-and-its-already-a-hot-spot-on-a-press-tour/",
-    "description": "On Monday, the network announced a $1.6 million seed round from top players in the media ecosystem, including Powerhouse Capital, Axel Springer SE (which owns Business Insider and Politico), the popular media publication LadBible, and angel investors from OpenAI and DeepMind. With this fresh capital",
+    "description": "On Monday, the network announced a $1.6 million seed round from top players in the media ecosystem, including Powerhouse Capital, Axel Springer SE (which owns Business Insider and Politico), the popular media publication LADbible, and angel investors from OpenAI and DeepMind. With this fresh capital",
     "pubDate": "Mon, 27 Jul 2026 10:00:00 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -2594,7 +2906,7 @@
   {
     "title": "优衣库一边关店，一边赚钱",
     "link": "https://36kr.com/p/3913266058826880?f=rss",
-    "description": "作者 | 谢芸子\n编辑 | 张帆\n优衣库在悄悄赚钱。\n近日，优衣库母公司迅销集团上调了对2026财年的盈利指引，预计全年销售额增长17%至3.97万亿日元，约合214亿欧元。对比来看，H&M集团2026财年预期营收在199亿至208亿欧元。\n这意味着，迅销将取代H&M，成为全球第二的“自有服装品牌零售商”，仅次于Zara的母公司Inditex。支撑迅销这一高目标的，是刚刚发布的超预期财报。\n截至5月31日的2026财年前三季度，迅销集团三项核心指标均创新高——累计营收3.07万亿日元，同比增长17.1%��业务利润5927亿日元，同比增长33.6%；归母净利润达到4260亿日元，同比增长25.",
+    "description": "作者 | 谢芸子\n编辑 | 张帆\n优衣库在悄悄赚钱。\n近日，优衣库母公司迅销集团上调了对2026财年的盈利指引，预计全年销售额增长17%至3.97万亿日元，约合214亿欧元。对比来看，H&M集团2026财年预期营收在199亿至208亿欧元。\n这意味着，迅销将取代H&M，成为全球第二的“自有服装品牌零售商”，仅次于Zara的母公司Inditex。支撑迅销这一高目标的，是��刚发布的超预期财报。\n截至5月31日的2026财年前三季度，迅销集团三项核心指标均创新高——累计营收3.07万亿日元，同比增长17.1%；业务利润5927亿日元，同比增长33.6%；归母净利润达到4260亿日元，同比增长25.",
     "pubDate": "2026-07-27 10:43:30  +0800",
     "source": "36氪",
     "category": "ai-tech"
@@ -2874,7 +3186,7 @@
   {
     "title": "最前线｜加速构建太空大脑，「数字空间一号」试验星工程正式在京启动",
     "link": "https://36kr.com/p/3912546487637378?f=rss",
-    "description": "文｜阿至\n过去十年，中国商业航天完成了“造得出、送得上”的第一阶段目标，卫星产能快速爬坡，可回收火箭验证走向密集验证节点。但当轨道资源从宽松走向拥挤，各国之间的竞争焦点也从发射能力转向运行能力的比拼，“管得住、用得好”至关重要。\n根据国防科技大学的测算，在卫星之间保持50千米最小安全间距的前提下，300-2000公里的全低轨空间最多只能安全容纳约17.5万颗卫星。当卫星数量从几千颗变成上万颗时，地面站排队上下行指令的传统方式就会难以为继，现有的卫星管控模式也正在失效。\n“未来十年，航天发展的主旋律，应该是空��的数字化和智能化。”中国科学院院士魏奉思在上个月的科技创新院士报告厅演讲中曾提及这一",
+    "description": "文｜阿至\n过去十年，中国商业航天完成了“造得出、送得上”的第一阶段目标，卫星产能快速爬坡，可回收火箭验证走向密集验证节点。但当轨道资源从宽松走向拥挤，各国之间的竞争焦点也从发射能力转向运行能力的比拼，“管得住、用得好”至关重要。\n根据国防科技大学的测算，在卫星之间保持50千米最小安全间距的前提下，300-2000公里的全低轨空间最多只能安全容纳约17.5万颗卫星。当卫星数量从几千颗变成上万颗时，地面站排队上下行指令的传统方式就会难以为继，现有的卫星管控模式也正在失效。\n“未来十年，航天发展的主旋律，应该是空间的数字化和智能化。”中国科学院院士魏奉思在上个月的科技创新院士报告厅演讲中曾提及这一核",
     "pubDate": "2026-07-27 09:00:00  +0800",
     "source": "36氪",
     "category": "ai-tech"
@@ -3066,7 +3378,7 @@
   {
     "title": "Are brain waves the next unlock for physical AI?",
     "link": "https://techcrunch.com/2026/07/26/are-brain-waves-the-next-unlock-for-physical-ai/",
-    "description": "Forget YouTube videos—frontier physical AI models need multiple camera angles, dense annotation, and soon, brain wave readings.",
+    "description": "Forget YouTube videos — frontier physical AI models need multiple camera angles, dense annotation, and, soon, brain wave readings.",
     "pubDate": "Mon, 27 Jul 2026 00:19:14 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -3686,317 +3998,5 @@
     "pubDate": "Sun, 26 Jul 2026 20:02:13 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
-  },
-  {
-    "title": "食料品の消費税減税 高市首相が判断するとの見方強まる",
-    "link": "http://www3.nhk.or.jp/news/html/20260727/k10015186841000.html",
-    "description": "食料品の消費税減税をめぐり超党派の「国民会議」の実務者会議は、今週、中間とりまとめに向けて詰めの議論を行うことにしています。政府・与党内では各党の隔たりが埋まらず実務者会議が方向性を打ち出さない場合、高市総理大臣が判断するという見方が強まっています。",
-    "pubDate": "Mon, 27 Jul 2026 05:01:30 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "ホワイトソックス 村上宗隆 21号本塁打 けがから復帰後初",
-    "link": "http://www3.nhk.or.jp/news/html/20260727/k10015186951000.html",
-    "description": "大リーグ、ホワイトソックスの村上宗隆選手が26日、アストロズ戦に2番・ファーストで先発出場し、1点を追う1回の第1打席にレフトスタンドへ21号逆転ツーランホームランを打ちました。ホームランは5月27日以来およそ2か月ぶりで、右太もも裏のけがから復帰後最初の1本です。",
-    "pubDate": "Mon, 27 Jul 2026 05:00:28 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "First teaser for Apple TV's Neuromancer debuts at SDCC",
-    "link": "https://arstechnica.com/culture/2026/07/first-teaser-for-apple-tvs-neuromancer-debuts-at-sdcc/",
-    "description": "Plus Mike Flanagan's Carrie teaser, trailers for Dark Matter S2 and Matchbox the Movie, and Marvel news.",
-    "pubDate": "Sun, 26 Jul 2026 19:48:43 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Making sense of the panic over Chinese AI",
-    "link": "https://techcrunch.com/2026/07/26/making-sense-of-the-panic-over-chinese-ai/",
-    "description": "On the latest episode of Equity, we discussed why Moonshot AI's Kimi seemed to panic Silicon Valley and Wall Street.",
-    "pubDate": "Sun, 26 Jul 2026 19:40:57 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Apple is banking on privacy to set its smart glasses apart",
-    "link": "https://www.theverge.com/tech/971101/apple-smart-glasses-privacy",
-    "description": "According to Mark Gurman, Apple is planning to reveal its first smart glasses at WWDC next June, with an expectation that they'll launch by the end of 2027. Part of the hold-up may be around the company's efforts to get its privacy features and messaging in order. Smart glasses in general, and Meta'",
-    "pubDate": "2026-07-26T19:36:38.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "🔴 Wildfires have scorched 115,000 hectares across France this year, interior minister says",
-    "link": "https://www.france24.com/en/europe/20260725-france-evacuates-55-000-more-as-bordeaux-fires-worsen",
-    "description": "",
-    "pubDate": "Sun, 26 Jul 2026 19:34:03 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "What lies ahead for Iran’s economy as scope of US war grows beyond Hormuz?",
-    "link": "https://www.aljazeera.com/news/2026/7/26/what-lies-ahead-for-iran-as-scope-of-us-war-grows-beyond-hormuz?traffic_source=rss",
-    "description": "Mediation efforts continue but uncertainty remains as risks of further disruptions in international waterways grow.",
-    "pubDate": "Sun, 26 Jul 2026 19:31:58 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Al-Sharaa outlines Syria’s approach to security with Israel and Lebanon",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/al-sharaa-outlines-syrias-approach-to-security-with-israel-and-lebanon?traffic_source=rss",
-    "description": "Syrian President Ahmed al-Sharaa said Damascus is working towards a security agreement with Israel.",
-    "pubDate": "Sun, 26 Jul 2026 19:27:57 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "46 people rescued from sunken ship in South China Sea",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/46-people-rescued-from-sunken-ship-in-south-china-sea?traffic_source=rss",
-    "description": "Footage shows rescuers pulling survivors from a Vietnamese vessel that sank in the South China Sea.",
-    "pubDate": "Sun, 26 Jul 2026 19:22:45 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Berlin Pride attack suspect shot and killed during police operation",
-    "link": "https://www.bbc.co.uk/news/articles/c62eg899l99o?at_medium=RSS&at_campaign=rss",
-    "description": "Police say Abdul Ballout was shot and killed after he rushed at officers with a knife in a western borough of Berlin.",
-    "pubDate": "Sun, 26 Jul 2026 19:21:26 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Cuban president accuses US of genocide, seeking takeover",
-    "link": "https://www.aljazeera.com/news/2026/7/26/cuban-president-accuses-us-of-genocide-seeking-takeover?traffic_source=rss",
-    "description": "Island has weathered a US oil embargo since January and is enduring one of its worst economic crises.",
-    "pubDate": "Sun, 26 Jul 2026 19:16:29 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Netanyahu vows to go to New York City despite ICC arrest warrant, Mamdani",
-    "link": "https://www.aljazeera.com/news/2026/7/26/netanyahu-vows-to-go-to-new-york-city-despite-icc-arrest-warrant-mamdani?traffic_source=rss",
-    "description": "Israeli prime minister slams New York Mayor Zohran Mamdani, accusing him of 'fomenting hate' with criticism of Israel.",
-    "pubDate": "Sun, 26 Jul 2026 19:13:02 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "新潟と富山で再び局地的に雨が強まる 土砂災害など厳重警戒",
-    "link": "http://www3.nhk.or.jp/news/html/20260726/k10015186311000.html",
-    "description": "前線の影響で、26日新潟県や東北、北陸では大雨となり、関東でも局地的な雷雨となりました。新潟県と富山県では再び局地的に雨が強まり、新潟県糸魚川市と富山県入善町の付近では27日未明にかけて猛烈な雨が降ったとみられます。気象庁は、土砂災害などに厳重な警戒を呼びかけています。",
-    "pubDate": "Mon, 27 Jul 2026 04:10:49 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "Israeli settlers burn two mosques in occupied West Bank",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/israeli-settlers-burn-two-mosques-in-occupied-west-bank?traffic_source=rss",
-    "description": "Israeli settlers set fire to two mosques in separate attacks across the occupied West Bank, causing significant damage.",
-    "pubDate": "Sun, 26 Jul 2026 18:51:34 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "The US is charging an American citizen for wiping his phone at the border",
-    "link": "https://www.theverge.com/policy/971097/us-charging-american-citizen-wiping-phone-duress-password",
-    "description": "The government is prosecuting US citizen Sam Tunick for allegedly providing authorities with a \"duress password\" that wiped his phone when they tried to seize it at Atlanta's Hartsfield-Jackson airport on January 24th, 2025. Federal agents detained Tunick at the airport, allegedly questioning him ab",
-    "pubDate": "2026-07-26T18:45:50.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Firefighters battle wildfire as tens of thousands evacuated near Bordeaux",
-    "link": "https://www.bbc.co.uk/news/articles/clyj8k4nn5jo?at_medium=RSS&at_campaign=rss",
-    "description": "More than 330,000 people have now been evacuated from wildfires across France and Spain.",
-    "pubDate": "Sun, 26 Jul 2026 18:40:08 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Romania summons Russian envoy as it shoots down third intruding drone",
-    "link": "https://www.aljazeera.com/news/2026/7/26/romania-summons-russian-envoy-as-it-shoots-down-third-intruding-drone?traffic_source=rss",
-    "description": "The ongoing violations of Romanian airspace raise concerns over impact on NATO states of Russia-Ukraine war.",
-    "pubDate": "Sun, 26 Jul 2026 18:17:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Al-Sharaa praises Trump’s decision to remove Syria from terrorism list",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/al-sharaa-praises-trumps-decision-to-remove-syria-from-terrorism-list?traffic_source=rss",
-    "description": "Al-Sharaa praises Trump's decision to remove Syria from terrorism list.",
-    "pubDate": "Sun, 26 Jul 2026 18:08:48 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "🔴 Pogacar wins fifth Tour de France as teen Seixas seals stunning fourth place",
-    "link": "https://www.france24.com/en/sport/20260726-pogacar-wins-fifth-tour-de-france-as-teen-seixas-seals-stunning-fourth-place",
-    "description": "",
-    "pubDate": "Sun, 26 Jul 2026 18:00:08 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Pogacar wins fifth Tour de France as teen Seixas seals stunning fourth place",
-    "link": "https://www.france24.com/en/sport/20260726-pogacar-wins-fifth-tour-de-france-as-teen-seixas-seals-stunning-fourth-place",
-    "description": "Tadej Pogacar claimed his record-equalling fifth Tour de France title as Mathieu van der Poel won a sensational 21st and final stage around Paris on Sunday. Two-time world champion Pogacar joined Jacques Anquetil, Eddy Merckx, Bernard Hinault and Miguel Indurain as the most successful riders in Tour",
-    "pubDate": "Sun, 26 Jul 2026 17:59:10 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "富山 入善町付近で「記録的短時間大雨」",
-    "link": "http://www3.nhk.or.jp/news/html/20260727/k10015186941000.html",
-    "description": "気象庁によりますと、富山県の入善町付近では、レーダーによる解析で午前2時半までの1時間におよそ100ミリの猛烈な雨が降ったとみられます。災害が発生する危険が迫っていることから、気象庁は「記録的短時間大雨」の気象防災速報を発表して安全を確保するよう、呼びかけています。",
-    "pubDate": "Mon, 27 Jul 2026 02:58:09 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "Police shoot dead Berlin Pride car-ramming attack suspect",
-    "link": "https://www.aljazeera.com/news/2026/7/26/berlin-police-shoot-dead-suspect-in-car-ramming-attack-on-pride-event?traffic_source=rss",
-    "description": "Abdul Ballout sought for 'Islamist terror attack' after a van was driven into crowds at LGBTQ event in German capital.",
-    "pubDate": "Sun, 26 Jul 2026 17:51:37 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "🔴 Main suspect in Berlin Pride attack shot dead by police",
-    "link": "https://www.france24.com/en/europe/20260726-deadly-berlin-pride-ramming-was-islamist-terror-attack-says-german-interior-minister",
-    "description": "",
-    "pubDate": "Sun, 26 Jul 2026 17:46:54 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Israel launches military incursion into Syria amid UN condemnation",
-    "link": "https://www.aljazeera.com/news/2026/7/26/israel-launches-military-incursion-into-syria-amid-un-condemnation?traffic_source=rss",
-    "description": "The UN's Guterres condemned violations of Syria's sovereignty as he visited and called for sanctions to be lifted.",
-    "pubDate": "Sun, 26 Jul 2026 17:40:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Bayreuther Festspiele: Festakt und Gedenkfeier",
-    "link": "https://www.dw.com/de/bayreuther-festspiele-festakt-und-gedenkfeier/a-78120750?maca=de-rss-de-all-1119-rdf",
-    "description": "Zum runden Jubiläum machen sich die Bayreuther Festspiele selbst das größte Geschenk: eine radikale Veränderung der Erinnerungskultur.",
-    "pubDate": "2026-07-26T17:37:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "【地震速報】鹿児島 阿久根で震度3 津波の心配なし",
-    "link": "http://www3.nhk.or.jp/news/html/20260727/k10015184621000.html",
-    "description": "27日午前2時ごろ鹿児島県薩摩地方で震度3の揺れを観測する地震がありました。この地震による津波の心配はありません。",
-    "pubDate": "Mon, 27 Jul 2026 02:21:43 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "‘Freeze the conflict’: Drones slow Kazakh oil flow amid Russia-Ukraine war",
-    "link": "https://www.aljazeera.com/news/2026/7/26/freeze-the-conflict-drones-slow-kazakh-oil-flow-amid-russia-ukraine-war?traffic_source=rss",
-    "description": "Kazakh oil exports halted after drone attacks disrupt supplies, posing risks to the economy and energy markets.",
-    "pubDate": "Sun, 26 Jul 2026 17:13:55 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Inside one London founder house rewriting the founder-house rules ",
-    "link": "https://techcrunch.com/2026/07/26/inside-one-london-founder-house-rewriting-the-founder-house-rules/",
-    "description": "How one founder house is betting work-life balance can beat burnout .",
-    "pubDate": "Sun, 26 Jul 2026 17:03:19 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Israel obstructing takeover of pilot zones in Lebanon’s south: Military",
-    "link": "https://www.aljazeera.com/news/2026/7/26/israel-obstructing-takeover-of-pilot-zones-in-lebanons-south-military?traffic_source=rss",
-    "description": "Israel is violating agreements by shelling 'pilot villages', Lebanon's army asserts.",
-    "pubDate": "Sun, 26 Jul 2026 16:49:59 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "CSD-Anschlag in Berlin: Was wir wissen und wie es weitergeht",
-    "link": "https://www.dw.com/de/csd-anschlag-in-berlin-was-wir-wissen-und-wie-es-weitergeht/a-78120201?maca=de-rss-de-all-1119-rdf",
-    "description": "Nach dem Anschlag beim CSD in Berlin hat die Polizei den mutmaßlichen Täter erschossen – doch einige Fragen bleiben offen und viele fordern ein härteres Vorgehen gegen Gefährder und Islamisten.",
-    "pubDate": "2026-07-26T16:49:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Mutmaßlicher CSD-Attentäter bei Polizeieinsatz erschossen",
-    "link": "https://www.dw.com/de/mutmaßlicher-csd-attentäter-bei-polizeieinsatz-erschossen/a-78120201?maca=de-rss-de-all-1119-rdf",
-    "description": "Nach Behördenangaben gab es zuvor einen SEK-Einsatz in einer Gartenlaube im Berliner Bezirk Spandau, bei dem es zu einem Schusswechsel kam.",
-    "pubDate": "2026-07-26T16:49:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Heatwave drives major wildfires across North Africa",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/heatwave-drives-major-wildfires-across-north-africa?traffic_source=rss",
-    "description": "Extreme heat is fuelling wildfires across North Africa, with major fires burning in Tunisia, Algeria and Morocco.",
-    "pubDate": "Sun, 26 Jul 2026 16:39:06 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Hugging Face CEO calls for ‘radical transparency’ after ‘unprecedented’ OpenAI hack",
-    "link": "https://techcrunch.com/2026/07/26/hugging-face-ceo-calls-for-radical-transparency-after-unprecedented-openai-hack/",
-    "description": "\"The first autonomous agent cyberattack is an unprecedented event. It deserves an unprecedented response!\"",
-    "pubDate": "Sun, 26 Jul 2026 16:33:13 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Darfur: Weaponising Identity",
-    "link": "https://www.aljazeera.com/video/aljazeerauntangles/2026/7/26/darfur-weaponising-identity?traffic_source=rss",
-    "description": "How land conflict, state neglect and racist ideology have driven Darfur towards alleged genocide.",
-    "pubDate": "Sun, 26 Jul 2026 16:20:27 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Typhoon Noul batters Southeast China",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/26/typhoon-noul-batters-southeast-china?traffic_source=rss",
-    "description": "Footage shows the aftermath of Typhoon Noul after it battered southern China's coastal regions.",
-    "pubDate": "Sun, 26 Jul 2026 16:19:07 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Who is India’s new education minister Pralhad Joshi?",
-    "link": "https://www.aljazeera.com/news/2026/7/26/who-is-indias-new-education-minister-pralhad-joshi?traffic_source=rss",
-    "description": "Joshi has been a member of the cabinet since 2019 and is seen as close to powerful PM Modi.",
-    "pubDate": "Sun, 26 Jul 2026 16:18:03 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "TechCrunch Mobility: Uber bets on its former CEO",
-    "link": "https://techcrunch.com/2026/07/26/techcrunch-mobility-uber-bets-on-its-former-ceo/",
-    "description": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, the role AI is playing in it.",
-    "pubDate": "Sun, 26 Jul 2026 16:03:00 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "新潟 糸魚川市付近で「記録的短時間大雨」",
-    "link": "http://www3.nhk.or.jp/news/html/20260727/k10015186881000.html",
-    "description": "気象庁によりますと、新潟県の糸魚川市付近では、レーダーによる解析で午前0時までの1時間におよそ100ミリの猛烈な雨が降ったとみられます。災害が発生する危険が迫っていることから、気象庁は「記録的短時間大雨」の気象防災速報を発表し、安全を確保するよう、呼びかけています。",
-    "pubDate": "Mon, 27 Jul 2026 00:39:02 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "Carrie is just trying to make a friend in the new trailer",
-    "link": "https://www.theverge.com/entertainment/971069/carrie-amazon-mike-flanagan-trailer-comic-con",
-    "description": "Mike Flanagan's latest Stephen King adaptation, Carrie (this will be his fourth), is slated to make its debut on Amazon Prime on October 7th. The new trailer dropped at Comic-Con 2026 and doesn't contain many surprises. If you're familiar with Carrie at all, it hits all the expected notes. Though it",
-    "pubDate": "2026-07-26T15:33:27.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
   }
 ]
