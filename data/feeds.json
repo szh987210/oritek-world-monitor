@@ -1,5 +1,741 @@
 [
   {
+    "title": "OceanBase启动首次外部融资",
+    "link": "https://36kr.com/newsflashes/3916228086673026?f=rss",
+    "description": "从知情人士处获悉，蚂蚁集团旗下独立运营的OceanBase正在与投资者洽谈A轮融资，目标融资规模约20亿至30亿元人民币。本轮融资将支持OceanBase增强独立运营能力，并加大对AI数据平台领域和海外市场的投入。据了解，公司近年来保持快速增长，2026年年化收入已超过14亿元，同比增长约70%。（界面）",
+    "pubDate": "2026-07-29 12:33:13  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Iran and US trade strikes, shattering brief lull in fighting",
+    "link": "https://www.bbc.co.uk/news/articles/c70g6y24d76o?at_medium=RSS&at_campaign=rss",
+    "description": "US Central Command says it intercepted \"multiple\" ballistic missiles fired by Iran.",
+    "pubDate": "Wed, 29 Jul 2026 04:30:08 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "黄仁勋组了个联盟，AI圈几乎全员到齐，只有这一家唱反调",
+    "link": "https://www.tmtpost.com/8083127.html",
+    "description": "黄仁勋组建“开放安全AI联盟”，英伟达携37家成员推动透明化AI安全体系，旨在抵御闭源模型风险并巩固自身算力生态。此举表面上倡导开放与安全，实则为应对芯片自研潮与政策挤压的商业博弈。OpenAI、谷歌补签加入，唯有Anthropic因商业模式冲突而孤立反对，路线之争背后皆是商业利益。",
+    "pubDate": "Wed, 29 Jul 2026 12:24:27 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "policy"
+  },
+  {
+    "title": "高市首相 「熊本地震との関連調査中を含め死者13人」明らかに",
+    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189461000.html",
+    "description": "高市総理大臣は、熊本県で震度7の揺れを観測した今回の地震で、災害との関連を調査している人も含めて、死亡した人が13人にのぼっていると明らかにしました。また、午後に2回目となる「非常災害対策本部」の会議を開催し、救命・救助や被災者支援の取り組みを加速する考えを示しました。",
+    "pubDate": "Wed, 29 Jul 2026 13:24:06 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "SK海力士跌逾17%，创纪录最大跌幅",
+    "link": "https://36kr.com/newsflashes/3916218118680196?f=rss",
+    "description": "36氪获悉，韩国KOSPI指数跌幅扩大至11%。SK海力士跌逾17%，创纪录最大跌幅。",
+    "pubDate": "2026-07-29 12:23:04  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "中核集团在雄安成立能源销售公司，注册资本2.01亿",
+    "link": "https://36kr.com/newsflashes/3916191470218624?f=rss",
+    "description": "36氪获悉，天眼查App显示，近日，中核（雄安）能源销售有限公司成立，法定代表人为吴斌，注册资本2.01亿人民币，经营范围包括供电业务、合同能源管理、节能管理服务、软件开发等，由中国核工业集团资本控股有限公司全资持股。",
+    "pubDate": "2026-07-29 12:21:52  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "韩国KOSPI指数跌幅扩大至10%，SK海力士跌逾15%",
+    "link": "https://36kr.com/newsflashes/3916215401672065?f=rss",
+    "description": "36氪获悉，韩国KOSPI指数跌幅扩大至10%，SK海力士跌逾15%，三星电子跌超10%市值跌破9000亿美元。",
+    "pubDate": "2026-07-29 12:20:18  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "【熊本県まとめ】3人死亡 5人心肺停止 少なくとも7人安否不明",
+    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189221000.html",
+    "description": "熊本県によりますと、今回の地震では29日午前9時半の時点で、3人が死亡し5人が心肺停止、31人がけがをしたほか、安否不明となっている人が少なくとも7人いるということです。",
+    "pubDate": "Wed, 29 Jul 2026 13:18:34 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "九州で危険な暑さ 熊本も猛暑日に 熱中症対策の徹底を",
+    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189271000.html",
+    "description": "29日も広い範囲で気温があがり、九州では危険な暑さとなっています。28日に震度7の激しい揺れを観測した熊本県でも35度以上の猛暑日となっていて、熱中症対策を徹底してください。",
+    "pubDate": "Wed, 29 Jul 2026 13:16:42 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "潮玩做手机链, 怎么就敢从3块包邮卖到129？",
+    "link": "https://www.tmtpost.com/8083099.html",
+    "description": "盲盒降温，潮玩的下一轮机会在哪？",
+    "pubDate": "Wed, 29 Jul 2026 12:12:48 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "从“普惠医疗”到“特色康养”：十五五规划下，民营医馆如何找到出路？",
+    "link": "https://www.tmtpost.com/8082830.html",
+    "description": "市场没变小，只是分“蛋糕”的方式变了。",
+    "pubDate": "Wed, 29 Jul 2026 12:11:52 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "在大模型的下一阶段议题上，我们找到了一家做持续学习的中国Neo Lab",
+    "link": "https://36kr.com/p/3916202023660929?f=rss",
+    "description": "文｜王欣逸\n编辑｜张雨忻\n见到Mind Lab创始人陈锴杰，是在北京的晚上9点半，他已经见了一天的投资人。\n陈锴杰是一位连续创业者，从杜克大学休学，做过AI互动故事平台MidReal，也推出了Personal Agent应用Macaron（马卡龙），上线当天就登顶了Product Hunt日榜；2025年10月，Mind Lab成立，团队约30余人，Mind Lab创始人Andrew Chen曾和姚顺雨共同发表FireAct论文，团队主要来自xAI、DeepMind、DeepSeek、字节跳动Seed、MIT和清华大学等企业与高校。他们以Neo Lab的形象再度出现在大众的视野里。\n他们所押注",
+    "pubDate": "2026-07-29 12:10:36  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "金龙鱼在广州成立蛋类食品公司，注册资本2000万",
+    "link": "https://36kr.com/newsflashes/3916190996950408?f=rss",
+    "description": "36氪获悉，天眼查App显示，近日，益海嘉里（广州）蛋类食品有限公司成立，法定代表人为邵斌，注册资本2000万人民币，经营范围包括食用农产品初加工、鲜蛋批发、鲜蛋零售、畜牧渔业饲料销售、食品销售等，由益海嘉里金龙鱼食品集团股份有限公司全资持股。",
+    "pubDate": "2026-07-29 12:10:24  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "AI浪潮狂奔VS算力供给失衡：走出规模陷阱，中国式算力基建如何突围？",
+    "link": "https://www.tmtpost.com/8081552.html",
+    "description": "AI浪潮推动算力总量扩张，结构性失衡问题也愈发凸显：美国受困于代际折旧与电力，中国受困于错配与调度。全球算力竞争下半场并非简单规模上的军备竞赛，而是关于系统工程能力的极限比拼，中国式算力基建该如何突围？",
+    "pubDate": "Wed, 29 Jul 2026 12:09:09 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "宁德时代的焦虑，和英伟达一模一样",
+    "link": "https://www.tmtpost.com/8082769.html",
+    "description": "新能源行业所有的争议，最终都会落在宁王的账本上。",
+    "pubDate": "Wed, 29 Jul 2026 12:08:36 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "深度实测：阅文做付费漫剧App，图什么？",
+    "link": "https://www.tmtpost.com/8083103.html",
+    "description": "为什么阅文要用网文的逻辑做漫剧App？",
+    "pubDate": "Wed, 29 Jul 2026 12:07:26 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "脑机接口，风再起时",
+    "link": "https://www.tmtpost.com/8082842.html",
+    "description": "这样一个极具诱惑力的未知未来，值得更多勇敢者参与探索。",
+    "pubDate": "Wed, 29 Jul 2026 12:03:47 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "恒指午间休盘涨1.37%，恒生科技指数涨2.2%",
+    "link": "https://36kr.com/newsflashes/3916197466812039?f=rss",
+    "description": "36氪获悉，恒指午间休盘涨1.37%，恒生科技指数涨2.2%；汽车、零售、食品饮料板块领涨，理想汽车涨超10%，农夫山泉涨超7%，京东健康涨超5%；半导体、硬件设备、企业服务板块跌幅居前，胜宏科技跌超11%，华虹宏力跌超7%，创想三维跌超5%；南向资金净流出44.76亿港元。",
+    "pubDate": "2026-07-29 12:02:04  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "三国游戏，离“黑神话时刻”还有多远？",
+    "link": "https://www.tmtpost.com/8083100.html",
+    "description": "我们什么时候能拥有属于自己的《真三国无双》、属于自己的《三国志》，甚至属于自己的三国宇宙？",
+    "pubDate": "Wed, 29 Jul 2026 12:01:48 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "奢侈品卖不动，得物不得不干起租赁生意",
+    "link": "https://www.tmtpost.com/8082874.html",
+    "description": "租赁“回春”，得物驶向下一站。",
+    "pubDate": "Wed, 29 Jul 2026 12:01:27 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "杭州迎来第二家香格里拉，却不再是“豪华酒店”",
+    "link": "https://www.tmtpost.com/8082438.html",
+    "description": "JEN会不会成为下一代旅居方式的新样本？",
+    "pubDate": "Wed, 29 Jul 2026 12:00:12 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Blue Brew Coffee Roaster, Kyōjima, Tokyo: Uniting People and the City with Coffee",
+    "link": "https://www.nippon.com/en/guide-to-japan/b11714/",
+    "description": "The Kyōjima district in Sumida, Tokyo, survived the firebombings of World War II remarkably unscathed. Recently, an old Kyōjima home has been transformed into a café with old Tokyo charm.",
+    "pubDate": "Wed, 29 Jul 2026 13:00:07 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "据传古瑞瓦特一高管因行贿在澳大利亚被捕，一包茶叶、两万澳元，砸穿企业出海路",
+    "link": "https://www.tmtpost.com/8082831.html",
+    "description": "中国企业高管海外行贿被捕，IPO再添变数。",
+    "pubDate": "Wed, 29 Jul 2026 11:58:34 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "缺席新能源汽车下乡，零跑把目光瞄准了海外",
+    "link": "https://www.tmtpost.com/8083097.html",
+    "description": "海外为何卖得好？",
+    "pubDate": "Wed, 29 Jul 2026 11:58:16 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "熊本 日本製紙の八代工場 2人心肺停止 2人大けが 7人安否不明",
+    "link": "http://www3.nhk.or.jp/news/html/20260728/k10015188691000.html",
+    "description": "震度6強の揺れを観測した熊本県八代市にある日本製紙の八代工場では2人が心肺停止の状態となり、2人が大けがをしました。依然として7人の安否がわかっておらず、警察と消防が捜索を続けています。",
+    "pubDate": "Wed, 29 Jul 2026 12:54:57 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "刚过保就鼓包！家用车的电池，扛不住网约车的强度",
+    "link": "https://www.ifanr.com/1673315?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "电池大考，网约车提前交卷。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Wed, 29 Jul 2026 03:54:13 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "被贴上“软”标签的杭州，凭什么长出“硬骨头”？",
+    "link": "https://www.tmtpost.com/8082897.html",
+    "description": "城市密码。",
+    "pubDate": "Wed, 29 Jul 2026 11:53:27 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "车长超 5.3 米！奥迪全新 Q9 海外上市，大六座市场又添「9 系」",
+    "link": "https://www.ifanr.com/1673335?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "「灭霸」来了。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Wed, 29 Jul 2026 03:52:43 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "半日主力资金加仓电力设备股，抛售电子股",
+    "link": "https://36kr.com/newsflashes/3916187731095175?f=rss",
+    "description": "主力资金早间净流入电力设备、有色金属、传媒、汽车等板块，净流出电子、计算机、通信、建筑材料等板块。具体到个股来看，风华高科、宁德时代、巨人网络获净流入33.43亿元、15.81亿元、8.45亿元。净流出方面，兆易创新、紫光股份、东山精密遭抛售73.57亿元、37.06亿元、16.46亿元。（第一财经）",
+    "pubDate": "2026-07-29 11:52:10  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "熊本震度7 台湾“要請あれば4時間以内に救助隊出発可能”",
+    "link": "http://www3.nhk.or.jp/news/html/20260728/k10015188781000.html",
+    "description": "熊本県の地震を受けて、台湾の消防を管轄する内政部トップの劉世芳部長は、救助隊の派遣に向けた準備を整えていることを29日明らかにしました。そのうえで「要請があれば、4時間以内に出発できる」と述べ、日本側から要請があれば熊本県に台湾の救助隊を派遣する考えを示しました。",
+    "pubDate": "Wed, 29 Jul 2026 12:49:11 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "从跟跑到定义：中国机器人凭什么站上《时代》封面",
+    "link": "https://www.tmtpost.com/8083064.html",
+    "description": "时隔八年，中国科技创业者再登《时代》封面。从百度李彦宏到宇树王兴兴，从搜索引擎到载人机甲，改变的不仅是主角和赛道，更是中国产业从跟随到定义的历史性跨越。",
+    "pubDate": "Wed, 29 Jul 2026 11:49:02 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "具身智能“200亿俱乐部”：8家公司、吸金千亿，豪赌一个未来",
+    "link": "https://www.tmtpost.com/8082765.html",
+    "description": "同样200亿，买的不是同一样东西。",
+    "pubDate": "Wed, 29 Jul 2026 11:40:41 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Moonshot AI reportedly eyes more Nvidia Blackwell chips for Kimi K4 despite US export curbs",
+    "link": "https://www.digitimes.com/news/a20260729VL210/nvidia-moonshot-blackwell-chips-startup.html",
+    "description": "Chinese AI startup Moonshot AI is planning its next frontier model, Kimi K4, and is seeking additional access to Nvidia's advanced Blackwell GPUs despite US export restrictions intended to keep such chips out of China, according to The Information. The report says K4 would be significantly larger th",
+    "pubDate": "Wed, 29 Jul 2026 03:39:57 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "知情人士：市场监管总局将开展光伏行业价格合规指导活动",
+    "link": "https://36kr.com/newsflashes/3916175563238789?f=rss",
+    "description": "从业内人士处获悉，国家市场监督管理总局价格监督检查和反不正当竞争局定于7月31日开展光伏行业价格合规指导活动，邀请参会单位包括中国光伏行业协会和相关光伏行业企业。此次会议为指导光伏行业加强成本核算，落实《光伏行业成本核算模型通则》，遏制非理性竞争。（财联社）",
+    "pubDate": "2026-07-29 11:39:47  +0800",
+    "source": "36氪",
+    "category": "policy"
+  },
+  {
+    "title": "我们究竟需要什么样的AI手机？",
+    "link": "https://www.tmtpost.com/8083026.html",
+    "description": "三条路线，三种未来。",
+    "pubDate": "Wed, 29 Jul 2026 11:39:04 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "雷军回应小米为何要做增程车：增程市场远未饱和，大有可为",
+    "link": "https://36kr.com/newsflashes/3916174129606019?f=rss",
+    "description": "36氪获悉，雷军微博发文解释小米澎程为什么要做增程。“增程还是纯电，没有技术路线的绝对优劣，只有产品体验的高下之分。”雷军表示，增程市场远未饱和，反而大有可为。“小米澎程的增程，解决了非常多槽点，和早期增程已经不可同日而语”。",
+    "pubDate": "2026-07-29 11:38:19  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "两个最懂女人的IPO",
+    "link": "https://www.tmtpost.com/8083080.html",
+    "description": "小红书和SHEIN的估值底牌。",
+    "pubDate": "Wed, 29 Jul 2026 11:34:38 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "全球资金大搬家：模型在卖，风格切换",
+    "link": "https://www.tmtpost.com/8083075.html",
+    "description": "从\"看价格\"掰到\"看量能”。",
+    "pubDate": "Wed, 29 Jul 2026 11:34:33 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "China's first home-grown immersion DUV production reveals real test beyond prototypes",
+    "link": "https://www.digitimes.com/news/a20260729VL216/china-duv-equipment-shanghai-asml.html",
+    "description": "China has begun producing domestically developed immersion deep-ultraviolet (DUV) lithography machines, moving a critical semiconductor-equipment programme beyond prototypes and towards limited commercial deployment.",
+    "pubDate": "Wed, 29 Jul 2026 03:33:32 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "A股三大指数午间休盘集体下跌，中公教育涨停",
+    "link": "https://36kr.com/newsflashes/3916168229498501?f=rss",
+    "description": "36氪获悉，A股三大指数午间休盘集体下跌，沪指跌0.53%，深成指跌0.43%，创业板指跌0.47%；教育、饮料、汽车板块领涨，中公教育、李子园涨停，赛力斯涨超3%；电脑硬件、半导体、电子元器件板块跌幅居前，茂莱光学跌超18%，微导纳米跌超16%，浪潮信息跌超7%。",
+    "pubDate": "2026-07-29 11:32:19  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "消费企业集体涌入硬科技，钱花得值吗？",
+    "link": "https://www.tmtpost.com/8082824.html",
+    "description": "资本买不到时间。",
+    "pubDate": "Wed, 29 Jul 2026 11:31:43 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "亿华通1.94亿奖补纠纷背后，四家龙头企业营收集体下滑，氢能行业的“补贴病”该治了",
+    "link": "https://www.tmtpost.com/8082826.html",
+    "description": "氢能行业补贴依赖症显现，龙头亏损，千亿补贴引发企业诉讼。",
+    "pubDate": "Wed, 29 Jul 2026 11:30:23 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "policy"
+  },
+  {
+    "title": "首个鸿蒙PC开源AI统一工作台JiuwenSwarm，办公编程一站式搞定",
+    "link": "https://www.qbitai.com/2026/07/462065.html",
+    "description": "让多智能体团队随时随地为你干活",
+    "pubDate": "Wed, 29 Jul 2026 03:29:59 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "公募机构年内耗资超380亿元参与定增",
+    "link": "https://36kr.com/newsflashes/3916160422063747?f=rss",
+    "description": "公募排排网数据显示，按增发上市日统计，截至2026年7月28日，今年以来共有24家公募机构参与到75只个股定增，合计获配金额380.05亿元，较2025年同期增长173.42%。（证券时报）",
+    "pubDate": "2026-07-29 11:24:23  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "【29日】熊本 震度7 活動が活発 同程度の地震に1週間ほど注意",
+    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189251000.html",
+    "description": "28日、熊本県熊本地方でマグニチュード7.1の大地震が発生して熊本県の宇城市と氷川町で震度7の揺れを観測し、熊本県では大きな被害が出ています。その後も震度5弱を観測する地震が3回発生するなど地震活動が活発になっていて、気象庁は今後、1週間ほどは最大震度7程度の地震に注意するよう呼びかけています。熊本県では29日、猛烈な暑さが予想されていて、復旧作業などの際は熱中症対策を心がけてください。",
+    "pubDate": "Wed, 29 Jul 2026 12:23:37 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Corning bets on SiPh and CPO to drive AI data center growth",
+    "link": "https://www.digitimes.com/news/a20260729VL213/corning-siph-growth-cpo-photonics.html",
+    "description": "Corning expects AI infrastructure to become an increasingly powerful growth engine, outlining how its glass technologies will move beyond traditional optical fiber and into silicon photonics (SiPh) and co-packaged optics (CPO) for next-generation AI data centers.",
+    "pubDate": "Wed, 29 Jul 2026 03:23:16 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "韩国交易所对KOSDAQ指数启动熔断机制",
+    "link": "https://36kr.com/newsflashes/3916157434310020?f=rss",
+    "description": "36氪获悉，韩国交易所对KOSDAQ指数启动熔断机制，交易暂停20分钟。",
+    "pubDate": "2026-07-29 11:21:20  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "恒生科技指数涨幅扩大至3%",
+    "link": "https://36kr.com/newsflashes/3916149870980743?f=rss",
+    "description": "36氪获悉，恒生科技指数涨幅扩大至3%。",
+    "pubDate": "2026-07-29 11:13:39  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "イオンモール熊本で爆発 警察が映像公開 2人死亡1人心肺停止",
+    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189291000.html",
+    "description": "地震のあと爆発があった熊本県嘉島町のショッピングセンター「イオンモール熊本」では、29日も警察や消防などによる捜索活動が続いています。",
+    "pubDate": "Wed, 29 Jul 2026 12:11:58 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Haitians living in fear as Temporary Protected Status ends in the US",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/29/haitians-living-in-fear-as-temporary-protected-status-ends-in-the-us?traffic_source=rss",
+    "description": "New York’s Haitian community is living in limbo and fear after Temporary Protected Status (TPS) was terminated Monday.",
+    "pubDate": "Wed, 29 Jul 2026 03:09:15 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "VITURE将于8月6日发布“五周年特别系列”新品",
+    "link": "https://36kr.com/newsflashes/3916143777574532?f=rss",
+    "description": "7月29日，VITURE宣布将于8月6日品牌成立五周年当日，正式发布“VITURE五周年特别系列”新品。更多产品细节与核心亮点将于发布当日揭晓。",
+    "pubDate": "2026-07-29 11:07:27  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "韩国KOSPI跌幅扩大至8%",
+    "link": "https://36kr.com/newsflashes/3916143610769027?f=rss",
+    "description": "36氪获悉，韩国KOSPI跌幅扩大至8%。SK海力士跌幅扩大至近12%，三星电子跌超7%。",
+    "pubDate": "2026-07-29 11:07:17  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "张小龙卸任粉笔关联公司职务",
+    "link": "https://36kr.com/newsflashes/3916139456441992?f=rss",
+    "description": "36氪获悉，天眼查App显示，近日，粉笔关联公司北京粉笔蓝天科技有限公司发生工商变更，张小龙卸任法定代表人、经理、董事，由罗成兴接任。该公司成立于2015年2月，注册资本1000万人民币，经营范围包括教育咨询服务、软件开发等，由张小龙、北京粉笔盒子企业管理合伙企业（有限合伙）、魏亮共同持股。据媒体报道，此前，粉笔发布公告称，张小龙将不再担任公司任何职位，即日起生效。",
+    "pubDate": "2026-07-29 11:03:03  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "China chip substitution accelerates as chill effect looms",
+    "link": "https://www.digitimes.com/news/a20260729PD217/chips-beijing-ic-design-automotive-nvidia.html",
+    "description": "China's semiconductor self-reliance push has notched new gains, with Chinese AI giants expanding purchases of domestic AI chips and facing direct pressure from Beijing to use more local silicon, market sources say. Industry players say the trend toward chip substitution has been building for years, ",
+    "pubDate": "Wed, 29 Jul 2026 03:00:10 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Samsung reportedly weighs Chinese DRAM for budget smartphones as memory inflation squeezes mobile market",
+    "link": "https://www.digitimes.com/news/a20260729VL212/samsung-smartphone-dram-budget-low-cost.html",
+    "description": "Samsung Electronics is considering using low-cost Chinese mobile DRAM in smartphones sold in China as it looks to cut manufacturing costs and expand its presence in the country's budget handset market, according to Asia Time.",
+    "pubDate": "Wed, 29 Jul 2026 02:59:24 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Iran missiles target US forces in Jordan after a five-day pause in war",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/29/iran-missiles-target-us-forces-in-jordan-after-a-five-day-pause-in-war?traffic_source=rss",
+    "description": "The US military says it has successfully intercepted a barrage of missiles fired by Iran at its troops in Jordan.",
+    "pubDate": "Wed, 29 Jul 2026 02:54:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "国家知识产权局：预计在“十五五”时期战略性新兴产业专利比重将进一步提升",
+    "link": "https://36kr.com/newsflashes/3916131177328262?f=rss",
+    "description": "国家知识产权局战略规划司司长梁心新7月29日在国新办新闻发布会上表示，目前，我国高价值发明专利中，战略性新兴产业的专利占比超过七成，预计在“十五五”时期，这一比重将进一步提升，为新兴产业提质扩容和未来产业布局落地，提供更加有力的创新支撑。（证券时报）",
+    "pubDate": "2026-07-29 10:54:38  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Live: US and Saudi Arabia launch strikes on Iraq, target Iran allies",
+    "link": "https://www.france24.com/en/middle-east/20260729-live-us-and-saudi-arabia-launch-strikes-on-iraq-target-iran-allies",
+    "description": "US and Saudi warplanes carried out strikes on Tuesday against Iran-backed militants in Iraq who launched more than two dozen drone attacks in recent days, the US military said. Meanwhile, Iran's Revolutionary Guards said they struck and halted three oil tankers in the Strait of Hormuz early Wednesda",
+    "pubDate": "Wed, 29 Jul 2026 02:51:49 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "美国7月消费者信心指数下滑",
+    "link": "https://36kr.com/newsflashes/3916124210065033?f=rss",
+    "description": "当地时间28日，美国研究机构世界大型企业联合会发布的数据显示，美国7月消费者信心指数较上月有所下降。美国研究机构世界大型企业联合会28日发布的初步调查结果显示，美国7月消费者信心指数为90.8，低于6月的92.2。调查显示，7月美国消费者对当前商业和就业市场条件的评估指数下降3.6，至114.9。反映短期收入前景、商业和就业市场环境的消费者预期指数则维持在74.7不变。（央视新闻）",
+    "pubDate": "2026-07-29 10:47:33  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Japan earthquake: What we know so far",
+    "link": "https://www.bbc.co.uk/news/articles/cgewgxlpj3po?at_medium=RSS&at_campaign=rss",
+    "description": "Japan is reeling from a major earthquake that hit Kyushu island. Here is what we know so far.",
+    "pubDate": "Wed, 29 Jul 2026 02:47:08 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Israel kills Palestinian, destroys mosque in Gaza",
+    "link": "https://www.aljazeera.com/news/2026/7/29/israel-kills-palestinian-destroys-mosque-in-gaza?traffic_source=rss",
+    "description": "Israeli settlers also attack a Palestinian family in Bethlehem in the occupied West Bank.",
+    "pubDate": "Wed, 29 Jul 2026 02:45:59 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "蚂蚁阿福升级“AI拍饮食”功能，支持随手拍、记、改",
+    "link": "https://36kr.com/newsflashes/3916121712061833?f=rss",
+    "description": "7月29日，蚂蚁阿福升级上线“AI拍饮食”功能，用户可以通过拍照、文字、语音等多种方式，让阿福测算食物的热量和营养信息，获得健康饮食搭配、运动消耗计划等建议。还可以让阿福将饮食信息一键记录到健康档案，并支持灵活修改。今年6月，蚂蚁阿福正式发起了“科学减重一亿斤”健康行动，目前已有近150万网友参与，成功减重超210万斤。",
+    "pubDate": "2026-07-29 10:45:00  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "OpenAI的ChatGPT周活跃用户数接近10亿",
+    "link": "https://36kr.com/newsflashes/3916120299498883?f=rss",
+    "description": "据OpenAI内部披露的信息，该公司旗下聊天机器人周活跃用户量即将突破10亿大关。这一里程碑原本是企业计划在去年年底达成的目标。尽管比原定预期晚了七个月才有望实现该目标，但ChatGPT上线不足四年就积累如此庞大的用户规模，即便不算增速第一，也属于互联网应用中增长速度最快的产品之一。公司发言人对此未予置评。（新浪财经）",
+    "pubDate": "2026-07-29 10:43:34  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Analysis: How Xiaomi's range-extended EV push could redraw China's supplier map",
+    "link": "https://www.digitimes.com/news/a20260729PD211/xiaomi-technology-supplier-vehicle-market.html",
+    "description": "Xiaomi is preparing to unveil a new car technology platform on July 30, signaling a deeper move into the range-extended electric vehicle market. The launch is expected to spotlight not only two flagship SUVs, but also the company's supplier strategy, which could influence competition across China's ",
+    "pubDate": "Wed, 29 Jul 2026 02:35:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Trump administration bans new Chinese humanoid robots",
+    "link": "https://www.bbc.co.uk/news/articles/cp9e2ex3ekyo?at_medium=RSS&at_campaign=rss",
+    "description": "The US and China are locked in a race to the lead the world in robotics and artificial intelligence.",
+    "pubDate": "Wed, 29 Jul 2026 02:30:50 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Moonshot AI's Kimi K3 secures Day 0 support from Alibaba Cloud,  Huawei Ascend",
+    "link": "https://www.digitimes.com/news/a20260729PD212/kimi-k3-ascend-huawei-cloud-alibaba.html",
+    "description": "China's two major AI computing ecosystems moved quickly to support Kimi K3 after Moonshot AI released the large language model as open source.",
+    "pubDate": "Wed, 29 Jul 2026 02:30:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Smartphone chip earnings will gauge 2026 demand as prices rise",
+    "link": "https://www.digitimes.com/news/a20260729PD201/smartphone-2026-earnings-demand-market.html",
+    "description": "Major smartphone system-on-chip vendors are set to report earnings this week and share outlooks for the traditional second-half peak season, giving investors a fresh read on 2026 consumer demand. The results come as chip inflation remains elevated, supply stays tight, and brands weigh whether higher",
+    "pubDate": "Wed, 29 Jul 2026 02:20:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "ASM raises 2027 revenue outlook as AI-driven chip demand lifts forecast",
+    "link": "https://www.digitimes.com/news/a20260729VL203/revenue-outlook-2027-demand-forecast.html",
+    "description": "On July 28, ASM International raised its revenue outlook for 2027 and issued third-quarter guidance above market expectations after reporting higher second-quarter revenue and profit, supported by continued investment in artificial intelligence infrastructure and advanced semiconductor manufacturing",
+    "pubDate": "Wed, 29 Jul 2026 02:20:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Pre-Silicon Power Side-Channel Leakage In Processors (University of Lübeck)",
+    "link": "https://semiengineering.com/pre-silicon-power-side-channel-leakage-in-processors-university-of-lubeck/",
+    "description": "Researchers from University of Lübeck published a technical paper titled “SPARC: Automated Root-Cause Analysis of Pre-Silicon Power Side-Channel Leakage in the Processor Design Flow.” Abstract Excerpt: “This paper presents SPARC, an automated framework for pre-silicon PSCL evaluation and root-cause ",
+    "pubDate": "Wed, 29 Jul 2026 02:16:31 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Macronix sees 80% gross margin within reach but warns LTAs could deepen memory downturn",
+    "link": "https://www.digitimes.com/news/a20260729PD218/macronix-international-nand-flash-emmc-gross-margin-earnings-revenue-2026.html",
+    "description": "Macronix International posted a sharp earnings increase in the second quarter of 2026, with gross margin reaching a record 64.4%. Its board also approved an additional NT$15.8 billion (approx. US$490 million) in capex to expand 12-inch wafer capacity.",
+    "pubDate": "Wed, 29 Jul 2026 02:12:31 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "AI researchers urge international safeguards as industry pushes for mechanisms to slow frontier AI",
+    "link": "https://www.digitimes.com/news/a20260729VL208/development-openai-governance-anthropic-cybersecurity.html",
+    "description": "More than 1,100 employees and executives from leading artificial intelligence companies have called for an international framework that could deliberately slow frontier AI development if risks outpace human oversight, highlighting a growing shift from voluntary safety commitments toward formal gover",
+    "pubDate": "Wed, 29 Jul 2026 02:06:02 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "OpenAI’s rogue agent hacked an account at a second technology firm: Report",
+    "link": "https://www.aljazeera.com/news/2026/7/29/openais-rogue-agent-hacked-an-account-at-a-second-technology-firm-report?traffic_source=rss",
+    "description": "The latest hack comes after an autonomous agent escaped a controlled test and accessed AI firm Hugging Face’s servers.",
+    "pubDate": "Wed, 29 Jul 2026 02:05:41 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "SK Hynix prepares for prolonged memory tightness as AI infrastructure expands",
+    "link": "https://www.digitimes.com/news/a20260729VL209/sk-hynix-demand-infrastructure-dram-revenue.html",
+    "description": "SK Hynix reported record second-quarter revenue, underscoring the firm's strong demand for AI-related memory despite supply constraints and shifting customer buying patterns. The South Korean chipmaker said it is expanding long-term agreements with major customers to lock in demand and support inves",
+    "pubDate": "Wed, 29 Jul 2026 02:05:30 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Seagate forecasts strong 1Q growth on sustained AI-driven cloud demand",
+    "link": "https://www.digitimes.com/news/a20260729VL202/seagate-demand-revenue-growth-profit.html",
+    "description": "On July 28, Seagate Technology reported sharply higher revenue and profit for its fiscal fourth quarter, driven by continued demand from cloud data center customers and higher-capacity storage products tied to artificial intelligence infrastructure. The company also issued first-quarter fiscal 2027 ",
+    "pubDate": "Wed, 29 Jul 2026 02:00:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Boeing 737 MAX 10 certification could come in autumn, FAA says",
+    "link": "https://www.digitimes.com/news/a20260728PD248/certification-airbus-cash-flow-bloomberg.html",
+    "description": "Boeing is moving closer to final safety certification for the 737 MAX 10, with the Federal Aviation Administration targeting September or October should the review stay on track. The approval would clear a long-delayed hurdle for the largest member of the 737 MAX family and could help Boeing improve",
+    "pubDate": "Wed, 29 Jul 2026 02:00:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "周鸿祎发布纳米Work：新一代企业智能体工作平台，为企业而生",
+    "link": "https://www.qbitai.com/2026/07/462062.html",
+    "description": "",
+    "pubDate": "Wed, 29 Jul 2026 01:53:15 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "TDK and LG Innotek form partnership on physical AI sensors",
+    "link": "https://www.digitimes.com/news/a20260729PR203/tdk-lg-innotek-partnership-robotics-sensor.html",
+    "description": "TDK and LG Innotek are joining forces to develop sensors for Physical AI, a move that could shape future robotics and automation products used worldwide. The collaboration combines optical, tactile, and motion technologies, with an early focus on humanoid robots and advanced sensing modules for broa",
+    "pubDate": "Wed, 29 Jul 2026 01:52:23 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Corning raises long-term growth targets after 2Q26 profit increases",
+    "link": "https://www.digitimes.com/news/a20260729VL200/corning-growth-profit-revenue-sales.html",
+    "description": "On July 28, Corning reported higher revenue and profit for the second quarter, supported by growth across several business segments, particularly Optical Communications and Solar. The company also raised its long-term Springboard growth targets, citing continued demand and expanded partnerships with",
+    "pubDate": "Wed, 29 Jul 2026 01:51:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "KLA executives outline growth strategy amid accelerating AI infrastructure demand",
+    "link": "https://www.digitimes.com/news/a20260729VL206/kla-growth-demand-revenue-2026.html",
+    "description": "During KLA's June 2026 earnings call, held on July 28, executives detailed the company's financial performance and strategic outlook, highlighting a period of record revenue and accelerating investment across the semiconductor ecosystem. CEO Rick Wallace and CFO Bren Higgins addressed several critic",
+    "pubDate": "Wed, 29 Jul 2026 01:46:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "九章云极Alaya Token完成Kimi K3适配 全球首个开源3T级模型入驻Token工厂",
+    "link": "https://www.qbitai.com/2026/07/462058.html",
+    "description": "",
+    "pubDate": "Wed, 29 Jul 2026 01:45:36 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Joby and Virgin Atlantic plan UK air taxi service by late 2026",
+    "link": "https://www.digitimes.com/news/a20260728PD249/uk-aircraft-certification-commercial-partnership.html",
+    "description": "Joby Aviation said at the Farnborough International Airshow that it had reached a multi-year exclusive partnership with Virgin Atlantic to launch a UK air taxi service, and added that certification test flights for its S4 electric vertical takeoff and landing aircraft were moving ahead on schedule. ",
+    "pubDate": "Wed, 29 Jul 2026 01:45:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Saudi Arabia, US carry out strikes on Iran-backed groups in Iraq",
+    "link": "https://www.aljazeera.com/news/2026/7/29/saudi-arabia-us-carry-out-strikes-on-iran-backed-groups-in-iraq?traffic_source=rss",
+    "description": "Riyadh says its targeted attacks were done in coordination with the US military.",
+    "pubDate": "Wed, 29 Jul 2026 01:37:23 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Compal launches Employee Stock Ownership Trust to boost talent retention",
+    "link": "https://www.digitimes.com/news/a20260728PD253/compal-talent-development-2026.html",
+    "description": "Compal Electronics announced it officially launched its Welfare Employee Stock Ownership Trust (ESOT) plan in July 2026 to deepen its talent strategy amid intensifying global competition for talent and the growing focus on corporate sustainability. The company is partnering with CTBC Bank to establi",
+    "pubDate": "Wed, 29 Jul 2026 01:34:46 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "After fleeing Sudan’s war, refugees battle thirst in Chad’s camps",
+    "link": "https://www.aljazeera.com/news/2026/7/29/after-fleeing-sudans-war-refugees-battle-thirst-in-chads-camps?traffic_source=rss",
+    "description": "After escaping war and atrocities, families now battle water shortages and fading hopes of returning home.",
+    "pubDate": "Wed, 29 Jul 2026 01:30:14 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "柔性触觉感知企业获新一轮融资，预计2026年公司营收翻10倍｜硬氪首发",
+    "link": "https://36kr.com/p/3915175290901889?f=rss",
+    "description": "作者｜黄楠\n编辑｜袁斯来\n硬氪获悉，柔性触觉感知企业「尧乐科技」近日完成Pre-A+新一轮融资，本轮融资由鼎和高达领投，上市公司常熟汽饰、祖龙娱乐跟投，云道资本担任长期独家财务顾问。资金将主要用于柔性织物传感技术研发、产品性能迭代升级，加快数据手套产能拓展和批量交付，并完善数据采集、标定与接口能力，加速面向具身智能、世界模型与智能座舱等场景落地。\n尧乐科技以柔性织物传感为硬件入口，面向具身智能与世界模型所需的真实物理交互数据采集与预处理。创始人兼CEO吕莉蕴曾任国际汽车电子头部企业Harman首席架构工程师，曾主导多模态传感器融合计算平台的研发工作；核心团队成员多来自中科院、密歇根大学、北京大",
+    "pubDate": "2026-07-29 09:30:00  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "KLA raises wafer equipment market outlook as AI investment drives record quarterly revenue",
+    "link": "https://www.digitimes.com/news/a20260729VL205/kla-revenue-equipment-wafer-market.html",
+    "description": "KLA raised its outlook for the global wafer equipment market and forecast record revenue for the current quarter after reporting better-than-guidance fourth-quarter results, citing sustained investment in artificial intelligence infrastructure, advanced semiconductor manufacturing, and advanced pack",
+    "pubDate": "Wed, 29 Jul 2026 01:30:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Kbro lifts broadband investment as 10G service expands across Taiwan",
+    "link": "https://www.digitimes.com/news/a20260728PD250/10g-taiwan-broadband-investment-demand.html",
+    "description": "Kbro Broadband said on the 27th that it will begin the second phase of its full-area upgrade plan in August and roll out its Kbro New Speed 10G service amid rising demand for faster internet in Taiwan. The cable operator also said capital expenditure will stay elevated in the coming years, with spen",
+    "pubDate": "Wed, 29 Jul 2026 01:30:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "UEFA accuses FIFA of 'selling football' with World Cup investment plan",
+    "link": "https://www.france24.com/en/sport/20260729-uefa-accuses-fifa-of-selling-football-with-world-cup-investment-plan",
+    "description": "The proposal to spin off the commercial rights to the World Cup and other competitions into a semi-private company has triggered a fierce backlash, with critics warning it could create conflicts between investors' profit motives and FIFA's role as the sport's regulator.",
+    "pubDate": "Wed, 29 Jul 2026 01:26:29 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "AI shift to inference boosts CPU server demand across the supply chain",
+    "link": "https://www.digitimes.com/news/a20260729PD210/ai-server-cpu-demand-server-shipments-supply-chain.html",
+    "description": "The move from AI model training to inference is widening server demand beyond accelerators and easing margin pressure on hardware assemblers. For global readers, the shift signals a broader buildout in data centers, with implications for cloud costs, server makers, chip suppliers, and enterprise AI ",
+    "pubDate": "Wed, 29 Jul 2026 01:23:34 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Media not invited as Trump, Netanyahu hold talks at the White House",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/29/media-not-invited-as-trump-netanyahu-hold-talks-at-the-white-house?traffic_source=rss",
+    "description": "US President Donald Trump has held talks at the White House with Israeli Prime Minister Benjamin Netanyahu.",
+    "pubDate": "Wed, 29 Jul 2026 01:19:55 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "NXP posts strong 2Q as investors remain cautious on chip outlook",
+    "link": "https://www.digitimes.com/news/a20260729VL201/automotive-nxp-performance-outlook-demand.html",
+    "description": "Despite robust performance in the automotive sector and growing demand for artificial intelligence, NXP Semiconductors' second-quarter earnings and third-quarter projections fell short of investor expectations due to cautious market sentiment regarding semiconductor valuations and heightened competi",
+    "pubDate": "Wed, 29 Jul 2026 01:15:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Huawei targets 2027 glass substrate production to gain an edge in AI chips",
+    "link": "https://www.digitimes.com/news/a20260729PD209/huawei-production-chips-2027-technology.html",
+    "description": "Huawei is reportedly working through its domestic supply chain to begin mass production of semiconductor glass substrates in 2027, with plans to adopt the technology in its own AI chips. Industry sources said that if the strategy proceeds successfully, leadership in global semiconductor glass-substr",
+    "pubDate": "Wed, 29 Jul 2026 01:15:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
     "title": "SK海力士：公司韩国股票转换为美国ADR的规模或将有限",
     "link": "https://36kr.com/newsflashes/3916026308193923?f=rss",
     "description": "SK海力士表示，公司韩国股票转换为美国ADR的规模或将有限。韩国股票转ADR流程耗时或将长达数周；目前尚未作出扩大ADR发行规模的相关决策。（财联社）",
@@ -8,12 +744,28 @@
     "category": "ai-tech"
   },
   {
+    "title": "Turkiye takes ‘historic step’ on energy alliance with Iraq",
+    "link": "https://www.aljazeera.com/news/2026/7/29/turkiye-takes-historic-step-on-energy-alliance-with-iraq?traffic_source=rss",
+    "description": "Ankara could receive 1 million barrels per day of Iraqi oil after Turkish Petroleum stake in BP-run Kirkuk oilfield.",
+    "pubDate": "Wed, 29 Jul 2026 01:07:09 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "商务部新闻发言人就美国防部将部分中国科研机构列入制裁清单事答记者问",
     "link": "https://36kr.com/newsflashes/3916022955208073?f=rss",
     "description": "商务部新闻发言人就美国防部将部分中国科研机构列入制裁清单事答记者问。\n\n有记者问：美东时间7月23日，美国防部更新公布“从事问题活动的外国科研机构清单”（1286清单），对中方部分科研机构实施列单制裁。请问商务部对此有何评论？答：我们注意到这一情况。中方对此强烈不满、坚决反对。美方不断泛化国家安全概念，人为设置歧视性壁垒，将科研合作政治化、武器化、工具化，阻碍中美科研领域交流合作，这与全球科技创新合作大势背道而驰。中方敦促美方停止对中国科研机构无端抹黑，尽快纠正错误做法，为中国科研机构提供公平、公正、非歧视待遇。中方将采取必要措施，维护中方科研机构的正当合法权益，为正常科技交流合作保驾护航。（",
     "pubDate": "2026-07-29 09:04:32  +0800",
     "source": "36氪",
     "category": "policy"
+  },
+  {
+    "title": "Protests in Lima as Keiko Fujimori sworn in as Peru president",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/29/protests-in-lima-as-keiko-fujimori-sworn-in-as-peru-president?traffic_source=rss",
+    "description": "Keiko Fujimori has been sworn in as Peru's president amid protests and promises to crackdown on crime.",
+    "pubDate": "Wed, 29 Jul 2026 01:03:49 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
   },
   {
     "title": "比亚迪李云飞：投资长鑫科技5000万元为公司行为，董事长王传福不存在个人对外投资情形",
@@ -40,20 +792,20 @@
     "category": "policy"
   },
   {
-    "title": "高市首相 「熊本地震との関連調査中を含め死者13人」明らかに",
-    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189461000.html",
-    "description": "高市総理大臣は総理大臣官邸で記者団に対し、今回の地震で午前8時半時点で、災害との関連の調査中を含め、死者が13人となっていると明らかにしました。",
-    "pubDate": "Wed, 29 Jul 2026 10:00:56 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
     "title": "In-depth: why China's 2026 tech breakthroughs look like a generational harvest",
     "link": "https://www.digitimes.com/news/a20260729PD208/2026-technology-equipment-industrial-manufacturing.html",
     "description": "Judging only by the news of summer 2026, China's technology sector appears to have entered an unusually concentrated period of breakthroughs.",
     "pubDate": "Wed, 29 Jul 2026 01:00:42 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
+  },
+  {
+    "title": "Audi has a new flagship designed with the US in mind: The 2027 Q9",
+    "link": "https://arstechnica.com/cars/2026/07/audi-has-a-new-flagship-designed-with-the-us-in-mind-the-2027-q9/",
+    "description": "The new full-size flagship SUV starts at $87,700 when it goes on sale in Q4.",
+    "pubDate": "Wed, 29 Jul 2026 01:00:36 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
   },
   {
     "title": "AI算力需求催热上半年业绩，MLCC产业链高景气度下半年将延续",
@@ -64,17 +816,17 @@
     "category": "ai-tech"
   },
   {
-    "title": "SK Hynix sees record-breaking 2Q on surging AI demand",
-    "link": "https://www.digitimes.com/news/a20260729VL204/sk-hynix-demand-2026-growth-revenue.html",
-    "description": "SK Hynix has announced its financial results for the second quarter of fiscal year 2026, reporting unprecedented growth in revenue and profitability. Driven by rapid expansion in the artificial intelligence (AI) market, the company achieved record-high margins and a significant surge in net profit, ",
+    "title": "Shield AI and GE Aerospace complete X-BAT engine tests for late-2026 flight",
+    "link": "https://www.digitimes.com/news/a20260728PD243/ge-testing-aircraft-hardware-launch.html",
+    "description": "Shield AI and GE Aerospace said on July 20 that they had completed integration, actuation and engine ignition testing for the Axisymmetric Vectoring Exhaust Nozzle (AVEN) on the X-BAT vertical takeoff and landing unmanned combat aircraft. The milestone brings the AI-enabled, runway-independent fight",
     "pubDate": "Wed, 29 Jul 2026 01:00:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
   },
   {
-    "title": "Shield AI and GE Aerospace complete X-BAT engine tests for late-2026 flight",
-    "link": "https://www.digitimes.com/news/a20260728PD243/ge-testing-aircraft-hardware-launch.html",
-    "description": "Shield AI and GE Aerospace said on July 20 that they had completed integration, actuation and engine ignition testing for the Axisymmetric Vectoring Exhaust Nozzle (AVEN) on the X-BAT vertical takeoff and landing unmanned combat aircraft. The milestone brings the AI-enabled, runway-independent fight",
+    "title": "SK Hynix sees record-breaking 2Q on surging AI demand",
+    "link": "https://www.digitimes.com/news/a20260729VL204/sk-hynix-demand-2026-growth-revenue.html",
+    "description": "SK Hynix has announced its financial results for the second quarter of fiscal year 2026, reporting unprecedented growth in revenue and profitability. Driven by rapid expansion in the artificial intelligence (AI) market, the company achieved record-high margins and a significant surge in net profit, ",
     "pubDate": "Wed, 29 Jul 2026 01:00:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
@@ -136,30 +888,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "【県まとめ】3人死亡 5人心肺停止 少なくとも7人安否不明",
-    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189221000.html",
-    "description": "熊本県は29日午前9時半すぎから災害対策本部会議を開き、現時点で、3人が死亡し、5人が心肺停止、けが人は31人と明らかにしました。このほか、少なくとも7人が安否不明となっているということです。",
-    "pubDate": "Wed, 29 Jul 2026 09:52:08 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "Iran and US trade strikes, shattering brief lull in fighting",
-    "link": "https://www.bbc.co.uk/news/articles/c70g6y24d76o?at_medium=RSS&at_campaign=rss",
-    "description": "US Central Command says it intercepted \"multiple\" ballistic missiles fired by Iran.",
-    "pubDate": "Wed, 29 Jul 2026 00:51:45 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Trump administration bans new Chinese humanoid robots",
-    "link": "https://www.bbc.co.uk/news/articles/cp9e2ex3ekyo?at_medium=RSS&at_campaign=rss",
-    "description": "The US and China are locked in a race to the lead the world in robotics and artificial intelligence.",
-    "pubDate": "Wed, 29 Jul 2026 00:50:33 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "新易盛：正有序推进H股发行相关工作",
     "link": "https://36kr.com/newsflashes/3916003997462144?f=rss",
     "description": "36氪获悉，新易盛在互动平台表示，公司正有序推进H股发行相关工作，公司将严格按照相关法律法规履行信息披露义务。",
@@ -176,9 +904,9 @@
     "category": "semiconductor"
   },
   {
-    "title": "Taiwan detains Nvidia manager as AI server smuggling probe widens",
+    "title": "Samsung reveals battery life, durability details for smart glasses coming this fall",
     "link": "https://www.digitimes.com/news/a20260728VL210/nvidia-taiwan-supermicro-investigation-staff.html",
-    "description": "Taiwanese prosecutors have detained an Nvidia employee as part of a widening investigation into the alleged smuggling of advanced AI servers containing Nvidia chips into China, marking the first known case involving a current Nvidia staff member in the island's export-control enforcement campaign.",
+    "description": "Samsung Electronics has shared new details about its upcoming smart glasses, including battery life and durability specifications, as the company moves to get ahead of privacy concerns that have dogged the category since Meta's Ray-Ban glasses sparked a backlash earlier this year.",
     "pubDate": "Wed, 29 Jul 2026 00:42:18 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
@@ -246,14 +974,6 @@
     "pubDate": "Wed, 29 Jul 2026 00:40:52 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
-  },
-  {
-    "title": "【ライブ】熊本震度7 地震活動活発 同程度の地震1週間ほど注意",
-    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189251000.html",
-    "description": "28日に熊本県熊本地方でマグニチュード7.1の大地震が発生して熊本県の宇城市と氷川町で震度7の揺れを観測し、熊本県では大きな被害が出ています。その後も震度5弱を観測する地震が3回発生するなど地震活動が活発になっていて、気象庁は、今後1週間ほどは最大震度7程度の地震に注意するよう呼びかけています。熊本県では、29日、厳しい暑さが予想されていて、復旧作業などの際は熱中症対策を心がけてください。",
-    "pubDate": "Wed, 29 Jul 2026 09:40:13 +0900",
-    "source": "NHKニュース",
-    "category": "international"
   },
   {
     "title": "中信证券：看好特斯拉机器人的量产和应用前景",
@@ -370,7 +1090,7 @@
   {
     "title": "China Mobile adds AI and HD video to its mobile voice calling service",
     "link": "https://www.digitimes.com/news/a20260728PD205/china-mobile-hd-communications-cybersecurity-telecom.html",
-    "description": "China Mobile has upgraded its traditional voice service with generative AI, cybersecurity, and high-definition video, as China’s telecom sector pushes basic communications toward more intelligent offerings. The revised service was rolled out recently and is designed to give users a smarter calling e",
+    "description": "China Mobile has upgraded its traditional voice service with generative AI, cybersecurity, and high-definition video, as China's telecom sector pushes basic communications toward more intelligent offerings. The revised service was rolled out recently and is designed to give users a smarter calling e",
     "pubDate": "Wed, 29 Jul 2026 00:27:26 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
@@ -378,7 +1098,7 @@
   {
     "title": "South Korea unveils US$950 billion AI partnerships with Nvidia, Samsung, SK Group",
     "link": "https://www.digitimes.com/news/a20260728PD204/nvidia-samsung-sk-group-2026-government.html?chid=10",
-    "description": "South Korea announced a US$950 billion package of AI cooperation initiatives in Silicon Valley on July 24, 2026, as President Lee Jae Myung led a delegation of government and business leaders to meet US tech executives. The agreements covered semiconductors, AI data centers, AI factories, robotics, ",
+    "description": "South Korea announced a US$950 billion package of AI cooperation initiatives in Silicon Valley on July 24, 2026, as President Lee Jae-Myung led a delegation of government and business leaders to meet US tech executives. The agreements covered semiconductors, AI data centers, AI factories, robotics, ",
     "pubDate": "Wed, 29 Jul 2026 00:27:17 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
@@ -596,22 +1316,6 @@
     "link": "http://www3.nhk.or.jp/news/html/20260728/k10015188721000.html",
     "description": "震度7の揺れを観測した熊本県では、地震のあとの午後6時ごろ嘉島町のショッピングセンター「イオンモール熊本」で爆発が起きました。熊本県によりますと、29日午前4時までに建物から8人が救助されましたが、2人が死亡し、1人が心肺停止の状態になっているということです。警察と消防によりますと、28日午後6時ごろ、嘉島町にあるショッピングセンター「イオンモール熊本」で「爆発音がして白い煙が上がっている」という通報が複数寄せられました。建物の中央付近が爆発したとみられ、2階部分が崩落したほか、建物の外壁がはがれ落ちて鉄骨のようなものがむき出しになり、多数の人が閉じ込められているという情報が寄せられました。そ",
     "pubDate": "Wed, 29 Jul 2026 07:25:34 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "広い範囲で厳しい暑さ 熊本など地震の被災地でも熱中症対策を",
-    "link": "http://www3.nhk.or.jp/news/html/20260729/k10015189271000.html",
-    "description": "29日も東北から九州・沖縄にかけての広い範囲で気温が上がり、28日に震度7の激しい揺れを観測した熊本県など地震の被災地でも猛暑日となるところがある見込みです。熱中症対策を徹底してください。一方、前線の影響で東京の伊豆諸島南部では今後3時間以内に線状降水帯が発生する可能性が高まっているとして「線状降水帯直前予測」が発表されていて気象庁は厳重な警戒を呼びかけています。",
-    "pubDate": "Wed, 29 Jul 2026 07:25:00 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "熊本 八代 日本製紙の工場 2人心肺停止 9人安否不明",
-    "link": "http://www3.nhk.or.jp/news/html/20260728/k10015188691000.html",
-    "description": "総務省消防庁によりますと、震度6強の揺れを観測し、煙突が崩落するなどの被害が出た熊本県八代市の日本製紙の八代工場では、午後10時までに、地元の消防から「救助が必要な人が9人いる」という報告が寄せられたということです。熊本県によりますと、この地震で、煙突が崩落するなどの被害が出た熊本県八代市の日本製紙の八代工場では、2人が心肺停止の状態で見つかったということです。県によりますと、ほかに安否がわからない人が9人いるということです。",
-    "pubDate": "Wed, 29 Jul 2026 07:18:31 +0900",
     "source": "NHKニュース",
     "category": "international"
   },
@@ -981,6 +1685,14 @@
     "description": "Perus neue Präsidentin Keiko Fujimori verspricht mehr Sicherheit und Investitionen. Zugleich muss sie das Land im geopolitischen Wettbewerb zwischen China und den USA positionieren.",
     "pubDate": "2026-07-28T20:01:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Tech Life",
+    "link": "https://www.bbc.co.uk/sounds/play/live:bbc_world_service_south_asia?at_medium=RSS&at_campaign=rss",
+    "description": "What do we need to know about agentic AI?",
+    "pubDate": "Tue, 28 Jul 2026 20:00:00 GMT",
+    "source": "BBC News",
     "category": "international"
   },
   {
@@ -1357,14 +2069,6 @@
     "description": "Political déjà vu as US President Donald Trump says negotiations with Iran are back on.",
     "pubDate": "Tue, 28 Jul 2026 17:15:20 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Japan earthquake: What we know so far",
-    "link": "https://www.bbc.co.uk/news/articles/cgewgxlpj3po?at_medium=RSS&at_campaign=rss",
-    "description": "Japan is reeling from a major earthquake that hit Kyushu island. Here is what we know so far.",
-    "pubDate": "Tue, 28 Jul 2026 17:15:14 GMT",
-    "source": "BBC News",
     "category": "international"
   },
   {
@@ -3294,709 +3998,5 @@
     "pubDate": "Tue, 28 Jul 2026 08:25:07 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
-  },
-  {
-    "title": "环旭电子：上半年度归母净利润8.22亿元，同比增长28.85%",
-    "link": "https://36kr.com/newsflashes/3915037036467330?f=rss",
-    "description": "36氪获悉，环旭电子发布2026年上半年度业绩快报，报告期内实现营业收入273.36亿元，同比增长0.45%；归属于上市公司股东的净利润8.22亿元，同比增长28.85%；基本每股收益0.35元。",
-    "pubDate": "2026-07-28 16:21:37  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "蔚能电池等在武汉成立新能源再生循环科技公司，注册资本3000万",
-    "link": "https://36kr.com/newsflashes/3915012831581568?f=rss",
-    "description": "36氪获悉，天眼查App显示，近日，蔚能巡鹰（武汉）新能源再生循环科技有限公司成立，法定代表人为赖晓明，注册资本3000万人民币，经营范围含资源再生利用技术研发、再生资源销售、电池销售、储能技术服务等。股东信息显示，该公司由武汉蔚能电池资产有限公司、安徽巡鹰绿色能源发展有限公司共同持股。",
-    "pubDate": "2026-07-28 16:20:49  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "OPPO 宣布启动小布Next计划，开放首个端侧Multi-Agent系统内测",
-    "link": "https://www.leiphone.com/category/industrynews/5jw67pStgWuUfS0n.html",
-    "description": "2026年7月27日，深圳 —— OPPO 宣布启动「小布 Next 计划」，开放行业首个端侧Multi-Agent协同系统内测。「小布 Next」 搭载行业首个端侧全域记忆系统，提供全面强化的用户理解能力和超前的主动服务能力。通过小布 Next 计划，OPPO 希望与AI专业用户以及AI技术爱好者，共同探索端侧AI在主动智能服务方面的潜力。在小布 Next 计划中验证成熟的能力，未来将持续融入OPPO AI 产品。\n\nOPPO首席产品官刘作虎表示：“主动智能将是AI手机真正的拐点。下一代AI应主动感知需求、主动服务用户，真正成为用户的智能伙伴。我们希望通过小布Next计划，让这个未来提前到来",
-    "pubDate": "Tue, 28 Jul 2026 16:20:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Will Purging Chinese Tech Cost Europe Its Digital Future?",
-    "link": "https://www.eetimes.com/will-purging-chinese-tech-cost-europe-its-digital-future/",
-    "description": "The EU faces challenges in building its digital defenses, as the cost of replacing Chinese telecom equipment across Europe could reach $46 billion.\nThe post Will Purging Chinese Tech Cost Europe Its Digital Future? appeared first on EE Times.",
-    "pubDate": "Tue, 28 Jul 2026 08:19:26 +0000",
-    "source": "EE Times",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Colombia’s president-elect to suspend Palestine embassy",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/28/colombias-president-elect-to-suspend-palestine-embassy?traffic_source=rss",
-    "description": "Colombia’s far-right president-elect says he'll close or suspend embassies in these countries",
-    "pubDate": "Tue, 28 Jul 2026 08:19:12 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "ICE extends lease on Texas detention centre where three migrants died",
-    "link": "https://www.aljazeera.com/news/2026/7/28/ice-extends-lease-on-texas-detention-centre-where-three-migrants-died?traffic_source=rss",
-    "description": "Three people have died in the Texas detainment centre Camp East Montana since it opened last year.",
-    "pubDate": "Tue, 28 Jul 2026 08:18:58 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Justin Greaves sets new cricket bowling record with five wicket maiden",
-    "link": "https://www.aljazeera.com/sports/2026/7/28/justin-greaves-sets-new-cricket-bowling-record-with-five-wicket-maiden?traffic_source=rss",
-    "description": "Greaves, a West Indies paceman, becomes the first player in Test history to bowl five straight wicket maidens.",
-    "pubDate": "Tue, 28 Jul 2026 08:17:11 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Kimi K3、Unlimited OCR包揽全球前二，中国开源模型持续刷屏海外",
-    "link": "https://www.qbitai.com/2026/07/461949.html",
-    "description": "",
-    "pubDate": "Tue, 28 Jul 2026 08:17:05 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "OpenAI首席执行官将与美国���长、商务部长及国会议员会谈，讨论人工智能相关政策",
-    "link": "https://36kr.com/newsflashes/3915020321871232?f=rss",
-    "description": "据知情人士透露，OpenAI首席执行官萨姆・奥特曼预计将于当地时间周三、周四重返华盛顿，与白宫及美国政府其他官员、国会两党议员举行会谈，讨论人工智能相关政策。其中一名消息人士透露，奥特曼预计将会见美国财长斯科特・贝森特；另有两名消息人士称，他还将与美国商务部长霍华德・卢特尼克会面。奥特曼此次访问正值关键节点，这不仅事关OpenAI，也关乎所有拥有前沿模型的人工智能企业。目前美国国会议员与监管机构正艰难寻求平衡：一方面要防范前沿模型被滥用造成危害，另一方面也要保障创新蓬勃发展。（新浪财经）",
-    "pubDate": "2026-07-28 16:15:18  +0800",
-    "source": "36氪",
-    "category": "policy"
-  },
-  {
-    "title": "财政部、税务总局：9月1日起对部分企业土地免征城镇土地使用税",
-    "link": "https://36kr.com/newsflashes/3915029993084292?f=rss",
-    "description": "36氪获悉，财政部、税务总局两部门公告，自2026年9月1日起，对企业自有或通过承租、无偿使用等方式取得并用于下列用途的土地，免征城镇土地使用税。包括石油天然气���含页岩气、煤层气）生产企业在工矿区内的消防、防洪排涝、防风、防沙设施用地，厂区（含生产、办公、生活区）以外的铁路专用线、公路用地； 油气长输管道线路用地及施工临时用地； 供电企业的输电线路（含杆塔基础）用地及其施工临时用地等。",
-    "pubDate": "2026-07-28 16:14:27  +0800",
-    "source": "36氪",
-    "category": "policy"
-  },
-  {
-    "title": "恒指收涨0.41%，恒生科技指数涨0.61%",
-    "link": "https://36kr.com/newsflashes/3915025916532100?f=rss",
-    "description": "36氪获悉，恒指收涨0.41%，恒生科技指数涨0.61%；半导体、GEO、CPO概念大跌，剑桥科技、智谱、兆易创新跌超17%，MINIMAX-W、澜起科技、长飞光纤光缆跌超13%；黄金珠宝走弱，老铺黄金跌近24%，周六福跌超4%；食品饮料、消费者服务板块涨幅居前，齐云山食品涨超107%，名仕快相涨超94%；南向资金净流出24.95亿港元。",
-    "pubDate": "2026-07-28 16:10:18  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "‘War criminal’: Protesters confront Netanyahu motorcade in Washington DC",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/28/war-criminal-protesters-confront-netanyahu-motorcade-in-washington-dc?traffic_source=rss",
-    "description": "‘F*** you Bibi.’ ‘War criminal!’",
-    "pubDate": "Tue, 28 Jul 2026 08:06:35 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Lyft and Baidu enter London’s robotaxi battleground as testing begins",
-    "link": "https://techcrunch.com/2026/07/28/lyft-and-baidu-enter-londons-robotaxi-battleground-as-testing-begins/",
-    "description": "Baidu's Apollo Go autonomous vehicles will be available on Freenow, the mobility network that Lyft acquired in 2025.",
-    "pubDate": "Tue, 28 Jul 2026 08:00:00 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "科达利：拟1.5亿元-3亿元回购公司股份，回购价不超292元/股",
-    "link": "https://36kr.com/newsflashes/3915003254068611?f=rss",
-    "description": "36氪获悉，科达利公告，拟以集中竞价交易方式回购公司股份，回购总金额不低于1.5亿元且不超过3亿元。回购价格不超过292元/股。回购股份将用于员工持股计划或股权激励。回购期限为自董事会审议通过最终回购股份方案之日起12个月内。",
-    "pubDate": "2026-07-28 15:58:12  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "岱美股份：拟收购茸明科技100%股权",
-    "link": "https://36kr.com/newsflashes/3914994551395719?f=rss",
-    "description": "36氪获悉，岱美股份公告，公司与张庆、袁树斌签署股权转让意向协议，拟通过现金方式收购茸明汽车科技（上海）有限公司100%股权。标的公司为汽车表面装饰件及功能部件高新技术企业，本次交易若能顺利实施，将延伸公司汽车内饰产品覆盖面，提升综合竞争力和盈利能力。交易方案尚需进一步协商，存在不确定性。",
-    "pubDate": "2026-07-28 15:55:34  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "商务部：人工智能相关产品成为中国外贸“新名片”",
-    "link": "https://36kr.com/newsflashes/3915011137918345?f=rss",
-    "description": "商务部外贸司副司长贺少军在28日举行的国新办发布会上表示，根据海关统计，今年上半年，我国工业机器人、3D打印机等人工智能相关产品出口表现亮眼，同比分别增长18.6%、109.3%，成为中国外贸“新名片”。（新华社）",
-    "pubDate": "2026-07-28 15:55:16  +0800",
-    "source": "36氪",
-    "category": "policy"
-  },
-  {
-    "title": "飞天茅台双价格体系：自营门店价格上调至1719元/瓶，多家称“无现货”",
-    "link": "https://36kr.com/newsflashes/3915000097576068?f=rss",
-    "description": "贵州茅台自营门店飞天零售价已上调至1719元/瓶，较i茅台售价高出80元。从北京、上海、安徽、四川、贵州等多家茅台线下自营门店获悉，飞天53%vol 500ml贵州茅台酒（2026）（“飞天茅台”）当前线下零售价已上调至1719元/瓶，单瓶售价较比i茅台上的1639元高出80元。这意味着，在同属于贵州茅台自营渠道体系的i茅台平台与线下自营门店，飞天茅台的零售价不再统一，开始执行“双价格体系”。不过，上述自营门店的工作人员均表示，目前飞天茅台没有现货，个人购买仍需通过i茅台App。（澎湃）",
-    "pubDate": "2026-07-28 15:51:49  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "恒瑞医药在浙江成立新公司，注册资本5000万",
-    "link": "https://36kr.com/newsflashes/3914995016078720?f=rss",
-    "description": "36氪获悉，天眼查App显示，近日，浙江恒瑞医药有限公司成立，法定代表人为戴洪斌，注册资本5000万人民币，经营范围含医学研究和试验发展、药品批发、药品零售、药品委托生产等。股东信息显示，该公司由江苏恒瑞医药��份有限公司全资持股。\n天眼查信息：",
-    "pubDate": "2026-07-28 15:47:47  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Conor McGregor calls for third UFC fight against Max Holloway in 2027",
-    "link": "https://www.aljazeera.com/sports/2026/7/28/conor-mcgregor-calls-for-third-ufc-fight-against-max-holloway-in-2027?traffic_source=rss",
-    "description": "Star fighter wants another chance to take on Holloway after he sustained a knee injury at UFC 329 on July 11.",
-    "pubDate": "Tue, 28 Jul 2026 07:47:25 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Ukraine’s ‘volunteer army’ helps rebuild what Russia destroys",
-    "link": "https://www.aljazeera.com/news/2026/7/28/ukraines-volunteer-army-helps-rebuild-what-russia-destroys?traffic_source=rss",
-    "description": "Made up of mostly locals and some foreign visitors, a large group of volunteers step in to fix war damage.",
-    "pubDate": "Tue, 28 Jul 2026 07:34:38 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "当AI学会“仿真思维”，教师才能回归育人本质",
-    "link": "https://www.qbitai.com/2026/07/461939.html",
-    "description": "从“工具效率”到“认知理解”，教育AI进入深水区",
-    "pubDate": "Tue, 28 Jul 2026 07:32:47 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "海尔智家正在讲述一个全新的AI故事",
-    "link": "https://www.leiphone.com/category/smarthome/WLbDBZNSU4ThxVsG.html",
-    "description": "商业世界里最持久的认知差，往往藏在固化的行业标签里。\n当市场仍习惯性地用“家电企业”的标尺丈量海尔智家时，一场由AI驱动的系统性重构，早已重塑了这家企业的底层逻辑与价值边界。\n7月17日，上海。在2026世界人工智能大会“人工智能+消费”论坛上，海尔智家董事长兼总裁李华刚宣布了一个消息：海尔智家将承建聚焦消费领域·家居家电方向的国家人工智能应用中试基地。\n说白了，这个基地就是专门解决AI进家庭的难题——技术落地难、产品体验参差不齐、不同品牌的设备各玩各的、规模化推广推不动。\n一家做冰箱起家的企业，如今被国家层面选中来承建AI领域中试基地。这件事本身就在传递一个信号：海尔智家的企业身份，正在发生",
-    "pubDate": "Tue, 28 Jul 2026 15:32:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "老人突发“脑干出血”致残事件追踪：安顿称在消费者病发前已预警，将追究河南明神医公司违约责任",
-    "link": "https://www.leiphone.com/category/industrynews/IBDqPMiauBK0j0km.html",
-    "description": "（本文转自央广网客户端）\n央广网北京7月27日消息（记者刘保奇）近日，央广网发布独家报道《啄木鸟消费投诉｜老人突发脑干出血致残，健康管理套餐提前预警慢病的智能手表缘何失灵？》，引发关注。\n据此前报道，江苏徐州市民李秀梅向央广网反映，其母亲花费3万元购买了河南明神医生物科技有限公司（以下简称“河南明神医公司”）的健康管理套餐，并被附赠一块生命预警手表。由于长期依赖设备监测数据，她母亲放弃日常血压监测。\n李秀梅母亲被附赠的手表名叫安顿生命预警表，是北京雪扬科技有限公司（以下简称“北京雪扬公司”）自主研发产品。北京雪扬公司相关负责人对记者表示，安顿预警平台在李秀梅母亲住院前，已进行了2批预警（共4人",
-    "pubDate": "Tue, 28 Jul 2026 15:31:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "国内首个！阿里Qoder上线实时语音交互智能体，让Agent像真人一样交流干活",
-    "link": "https://www.leiphone.com/category/industrynews/Le7pnnrg155qtynu.html",
-    "description": "7月28日，阿里Qoder上线国内首个实时语音交互智能体Qoder Voice，用户语音唤醒智能体后，智能体可像真人助手一样实时与用户互动并执行任务，让用户解放双手，实现“动动嘴，让Agent干活”。\n\n目前，Agent的交互形式以文本为主，在长上下文场景下输入效率较低，传统语音交互则以“对讲机”式的单向输入为主，Agent只能被动接受指令，无法以语音的形式主动与用户进行讨论。Qoder Voice提供了一种全新的Agent交互模式，它由实时全双工语音模型Qwen-Audio-3.0-Realtime驱动，该模型斩获了多项权威榜单第一，在Artificial Analysis上的综合指数（Sp",
-    "pubDate": "Tue, 28 Jul 2026 15:26:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Refugee Convention at 75: The world must keep the promise that saved me",
-    "link": "https://www.aljazeera.com/opinions/2026/7/28/refugee-convention-at-75-the-world-must-keep-the-promise-that-saved-me?traffic_source=rss",
-    "description": "Millions of people forced to flee need the same chance that protection gave me.",
-    "pubDate": "Tue, 28 Jul 2026 07:24:43 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Sole Survivor: Inside Wang Xiaochuan’s Lone Gamble on Healthcare AI",
-    "link": "https://www.tmtpost.com/8082100.html",
-    "description": "As competition among China’s premier artificial intelligence startups intensifies, Baichuan AI has executed a radical operational shift. By abandoning the general-purpose foundation model race to focus exclusively on medical AI, CEO Wang Xiaochuan orchestrated a sweeping organizational contraction t",
-    "pubDate": "Tue, 28 Jul 2026 15:24:03 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "从家清到个护，切入出行赛道：蓝月亮的效率仗撬动经营拐点",
-    "link": "https://www.tmtpost.com/8082027.html",
-    "description": "大单品连续爆发，蓝月亮做对了什么？",
-    "pubDate": "Tue, 28 Jul 2026 15:19:42 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "当AI学会“仿真思维”，教师才能回归育人本质——从“工具效率”到“认知理解”，教育AI进入深水区",
-    "link": "https://www.leiphone.com/category/ai/Y7Md1KutNgNzfyFH.html",
-    "description": "2026年，教育部等五部门印发《“人工智能+教育”行动计划》，文件明确要求分层提升教师AI数字素养，全面构建人机协同的新型课堂模式。政策方向已然明朗，但落地层面的讨论仍在发酵。7月23日，复旦大学副校长周磊在接受人民网专访时表示：“智能化转型浪潮下，教学创新比任何时候都更关乎教育本质。”他同时指出，一线教师首要的能力迭代，是从“AI工具使用者”转向“智能教学设计者”。\n这句话精准点出当众多学校共同面临的深层焦虑——教育AI应用并不稀缺，但多数浮于表面，难以真正服务因材施教，教师转型缺少完整支撑体系。\n当前AI赋能教育存在三大结构性难题：第一，师资结构性缺口难以消解。县域、乡村学校骨干教师稀缺，",
-    "pubDate": "Tue, 28 Jul 2026 15:11:00 +0800",
-    "source": "雷峰网",
-    "category": "policy"
-  },
-  {
-    "title": "Some people's chats with Claude AI found to be publicly available online",
-    "link": "https://www.bbc.co.uk/news/articles/cly5qgjk5ywo?at_medium=RSS&at_campaign=rss",
-    "description": "Hundreds of conversations with Anthropic’s chatbot were discovered as being publicly accessible.",
-    "pubDate": "Tue, 28 Jul 2026 07:10:37 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "地平线会赚钱，Momenta会上市？",
-    "link": "https://www.tmtpost.com/8081894.html",
-    "description": "自动驾驶第N股，物理AI第一股。",
-    "pubDate": "Tue, 28 Jul 2026 15:10:28 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Chip Industry Technical Paper Roundup: July 28",
-    "link": "https://semiengineering.com/chip-industry-technical-paper-roundup-july-28/",
-    "description": "HW methods to throttle AI; M3D DRAM; interconnect signal-integrity analysis; 3D mask effects in high/hyper-NA EUV litho; compute-in-interconnect and memory; NbAs nanowire interconnects; and 3D conformal thin-film patterning.\nThe post Chip Industry Technical Paper Roundup: July 28 appeared first on S",
-    "pubDate": "Tue, 28 Jul 2026 07:01:45 +0000",
-    "source": "Semiconductor Engineering",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Research Bits: July 28",
-    "link": "https://semiengineering.com/research-bits-july-28/",
-    "description": "Photonics: Inverse design; slowing down light; on-chip electro-optic isolator.\nThe post Research Bits: July 28 appeared first on Semiconductor Engineering.",
-    "pubDate": "Tue, 28 Jul 2026 07:01:02 +0000",
-    "source": "Semiconductor Engineering",
-    "category": "semiconductor"
-  },
-  {
-    "title": "News kompakt: Trump trifft Netanjahu und Selenskyj",
-    "link": "https://www.dw.com/de/news-kompakt-trump-trifft-netanjahu-und-selenskyj/a-78138142?maca=de-rss-de-all-1119-rdf",
-    "description": "Zur Beerdigung des Senators Lindsey Graham werden auch der israelische Ministerpräsident und der ukrainische Präsident erwartet. Auch in Portugal sind Waldbrände ausgebrochen. Der DW-Nachrichtenüberblick.",
-    "pubDate": "2026-07-28T07:00:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Kimi K3 一开源，Anthropic 终于不装了",
-    "link": "https://www.ifanr.com/1673258?utm_source=rss&utm_medium=rss&utm_campaign=",
-    "description": "科技的浪潮或许还是要从开源中涌现\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-    "pubDate": "Tue, 28 Jul 2026 06:50:29 +0000",
-    "source": "爱范儿",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Netanyahu to meet Trump for first time since Iran war strained ties",
-    "link": "https://www.france24.com/en/netanyahu-to-meet-trump-at-white-house-for-first-time-since-iran-war-strained-ties",
-    "description": "US President Donald Trump will meet Israeli Prime Minister Benjamin Netanyahu at the White House on Tuesday for the first time since US-Israeli strikes on Iran in late February triggered new regional conflict in the Middle East. Both leaders are expected to downplay their frayed ties after public – ",
-    "pubDate": "Tue, 28 Jul 2026 06:45:16 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Squeezed by China, Taiwan ODMs pivot to AI for new growth",
-    "link": "https://www.digitimes.com/news/a20260728PD231/taiwan-manufacturing-growth-wistron-component.html",
-    "description": "China's notebook manufacturing industry is rising rapidly just as Taiwan's ODMs retreat from notebook assembly, but Wistron chairman Simon Lin said the shift also reflects new opportunities as companies pivot toward AI. Lin said each era has its own mission, and many companies would rather move note",
-    "pubDate": "Tue, 28 Jul 2026 06:43:55 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Kimi K3 发布 47 页技术报告，最有价值的创新点是这些",
-    "link": "https://www.leiphone.com/category/ai/z5MDzpTPInNSRTkt.html",
-    "description": "它把架构、训练和 Agent infra连接成了一套完整系统。\n\n\n\n\n\n    作者丨郑佳美\n\n    编辑丨马晓宁\n\n                                                                                                       \n\n\nKimi K3 发布开放权重，最抢眼的数字有三个：2.8T 总参数、104B 激活参数，以及 100 万 token 上下文。\n这些数字当然重要，但读完 47 页技术报告会发现，它们更多是技术改造后的结果，而不是这份报告真正值得关注的部分。\n\nKimi K3 想解决",
-    "pubDate": "Tue, 28 Jul 2026 14:37:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "黄仁勋倡议的开源联名信，Anthropic 为何不愿签名?",
-    "link": "https://www.leiphone.com/category/ai/W2vBQuWfmmiIJOtO.html",
-    "description": "权重、协议与运行环境，或许成了这场开放争论的三条线。\n\n\n\n\n\n    作者丨郑佳美\n\n    编辑丨马晓宁\n                                                                                                       \n\n\n黄仁勋开通个人 X 账号后，发布的第一篇帖子没有介绍新 GPU，而是分享了一封支持开放权重模型的联名信。\n这封信主要讨论的是：一家机构把大模型训练好后，要不要把模型文件公开出来，让其他开发者下载到自己的电脑或服务器上运行，并根据具体任务继续调整。\nNVIDIA、Google、O",
-    "pubDate": "Tue, 28 Jul 2026 14:24:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Zinedine Zidane to be officially introduced as France head coach",
-    "link": "https://www.france24.com/en/tv-shows/sports/20260728-zinedine-zidane-to-be-officially-introduced-as-france-head-coach",
-    "description": "More than 120 journalists and photographers are expected at the headquarters of the French Football Federation for the presentation of Zinédine Zidane as the new manager of the French national team.",
-    "pubDate": "Tue, 28 Jul 2026 06:16:32 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "元プロ野球投手 板東英二さん死去 タレントとしても活躍 86歳",
-    "link": "http://www3.nhk.or.jp/news/html/20260728/k10015188041000.html",
-    "description": "プロ野球・中日で、投手として活躍したあと、巧みな話術と明るいキャラクターでタレントや俳優としても活躍した板東英二さんが7月22日、慢性心不全のため亡くなりました。86歳でした。",
-    "pubDate": "Tue, 28 Jul 2026 15:09:24 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "集邦咨询：AI需求催出日韩MLCC厂单月出货新高，消费级订单外溢效应显现",
-    "link": "https://36kr.com/newsflashes/3914906526586244?f=rss",
-    "description": "36氪获悉，根据TrendForce集邦咨询最新MLCC产业调查，得益于AI需求畅旺，2026年6月村田、三星电机、太阳诱电等三大日韩厂出货同步创下近五年单月新高；其消费级订单持续外溢，利好其他制造商和渠道报价皆有上涨。因日韩厂加速将消费级X5R产能转向AI用X6S/X7R高端规格，消费级中高容MLCC（1uF-22uF）产能受挤压，主流料号的库存水位普遍已低于30天。在此排挤效应下，渠道、代理商与Tier 2/3客户急单涌现，订单外溢效应持续扩大，其他制造商的接单能见度明显改善，报价同步走扬。此外，已提前备货的代理商把握机会调高产品价格，平均涨幅达20%-25%，现货市场更提高价格至原本的二",
-    "pubDate": "2026-07-28 14:08:51  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "特朗普说加征关税保护了美国汽车业",
-    "link": "https://36kr.com/newsflashes/3914901362037894?f=rss",
-    "description": "据美联社报道，当地时间27日，美国总统特朗普在通用汽车公司首席执行官玛丽·博拉及其他高管的陪同下，参观了该公司位于密歇根州米尔福德的一家工厂，并向工人们发表讲话。特朗普说政府对进口汽车加征25%的关税，保护了美国汽车产业并推动生产回流美国。特朗普指出，关税政策为通用汽车公司带来令人惊讶的变化。特朗普还表示，美国汽车业在他上任前面临危机，而其政府取消民主党推出的部分监管措施后，整个美国汽车行业得以复苏。（央视财经）",
-    "pubDate": "2026-07-28 14:03:36  +0800",
-    "source": "36氪",
-    "category": "policy"
-  },
-  {
-    "title": "东野圭吾：他以推理见众生、写人间",
-    "link": "https://www.tmtpost.com/8081138.html",
-    "description": "他留下的是对人性、时代与善意的永恒思考。",
-    "pubDate": "Tue, 28 Jul 2026 14:00:49 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "武汉也在憋大招，8000亿的国产海力士要来了",
-    "link": "https://www.tmtpost.com/8081171.html",
-    "description": "带领全民致富。",
-    "pubDate": "Tue, 28 Jul 2026 14:00:48 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Taiwan accelerates winter energy preparations as Middle East conflict raises supply risk",
-    "link": "https://www.digitimes.com/news/a20260728PD228/taiwan-demand-government-red-sea-electricity.html?chid=10",
-    "description": "Taiwan moved up winter oil and gas planning on July 27 after the Middle East conflict expanded into the Red Sea, while domestic supply remained stable and consumer impact stayed limited. The Ministry of Economic Affairs said it had already begun advance preparations for seasonal energy demand and is",
-    "pubDate": "Tue, 28 Jul 2026 05:58:29 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Palestine weekly: West Bank in flames after Tal killings",
-    "link": "https://www.aljazeera.com/news/2026/7/28/palestine-weekly-west-bank-in-flames-after-tal-killings?traffic_source=rss",
-    "description": "Deadly settler attack outside Nablus sets off days of raids, arson, closures and mass arrests.",
-    "pubDate": "Tue, 28 Jul 2026 05:58:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "TCC launches Europe listing plan as revenue from the region reaches 44%",
-    "link": "https://www.digitimes.com/news/a20260728PD227/tcc-europe-region-revenue-materials.html",
-    "description": "Taiwan Cement Corp. (TCC) formally launched its Europe listing plan, Project Arcadia, on July 27 after holding a video meeting with its first group of international investment banks and advisers. The company said the move marked a major step in its effort to build a capital markets presence in Europ",
-    "pubDate": "Tue, 28 Jul 2026 05:58:20 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Nvidia invests in Ilya Sutskever's SSI, providing access to Vera Rubin compute platform",
-    "link": "https://www.digitimes.com/news/a20260728VL207/nvidia-rubin-investment-partnership-openai.html",
-    "description": "Nvidia has made a strategic investment in Safe Superintelligence Inc. and announced a long-term partnership with the secretive AI lab founded by OpenAI co-founder Ilya Sutskever, giving SSI access to Nvidia's next-generation Vera Rubin systems and expanding its computing capacity by an order of magn",
-    "pubDate": "Tue, 28 Jul 2026 05:58:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "中国人寿在天津成立新股权投资基金，出资额50亿",
-    "link": "https://36kr.com/newsflashes/3914895772456069?f=rss",
-    "description": "36氪获悉，天眼查App显示，近日，天津晟和芯程股权投资基金合伙企业（有限合伙）成立，执行事务合伙人为国寿产业投资管理有限公司，出资额50亿人民币，经营范围为以私募基金从事股权投资、投资管理、资产管理等活动。合伙人信息显示，该基金由中国人寿保险股份有限公司、国寿产业投资管理有限公司共同出资。",
-    "pubDate": "2026-07-28 13:57:55  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Qualcomm chip price hike to squeeze China's Android makers on two fronts",
-    "link": "https://www.digitimes.com/news/a20260728PD218/qualcomm-price-android-smartphone-cost.html",
-    "description": "China's smartphone brands are bracing for a new round of cost pressure after Qualcomm reportedly notified customers of double-digit percentage price increases on products shipped from September 1—a move that compounds already rising memory and materials costs hitting the Android supply chain.",
-    "pubDate": "Tue, 28 Jul 2026 05:57:49 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Samsung trims Z Fold8 display module 10% using Flex Titanium",
-    "link": "https://www.digitimes.com/news/a20260728PD229/samsung-display-flex-technology-galaxy.html",
-    "description": "Samsung Electronics has introduced Flex Titanium technology in its next-generation foldables, the Galaxy Z Fold8 and Z Fold8 Ultra, cutting display module thickness by 10% to make room for a larger battery and improve user experience. According to ZDNet Korea, Samsung is applying the technology to t",
-    "pubDate": "Tue, 28 Jul 2026 05:57:38 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "中国机器人制造商跨维智能据悉正考虑在香港上市",
-    "link": "https://36kr.com/newsflashes/3914893399856512?f=rss",
-    "description": "中国���器人制造商跨维智能据悉正考虑在香港上市。（新浪财经）",
-    "pubDate": "2026-07-28 13:55:30  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Apple plans OLED touch MacBook Pro with Samsung Display as sole panel supplier",
-    "link": "https://www.digitimes.com/news/a20260728PD233/apple-sdc-macbook-pro-supplier-panel.html",
-    "description": "Apple is developing a new MacBook Pro with OLED touch panels and is expected to rely solely on Samsung Display for the screens, according to South Korean media reports citing industry sources. The 14-inch and 16-inch models are said to be targeted for a launch in late 2026 or 2027.",
-    "pubDate": "Tue, 28 Jul 2026 05:54:45 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "“昌郁医药”完成2.5亿元D轮融资",
-    "link": "https://36kr.com/newsflashes/3914892535633025?f=rss",
-    "description": "36氪获悉，据启点资本消息，“昌郁医药”宣布完成2.5亿元人民币D轮融资。本轮融资由倚锋资本、高特佳投资联合领投，另有嘉兴远帆、Real Capital Global等机构共同参与。启点资本连续担任财务顾问。本轮融资资金将主要用于昌郁医药首发产品XG005在美国开展Ⅲ期急性疼痛临床研究，并支持公司核心产品管线的持续开发及全球化推进。",
-    "pubDate": "2026-07-28 13:54:37  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "広島県 横田知事 「副首都」指定目指す意向表明",
-    "link": "http://www3.nhk.or.jp/news/html/20260728/k10015187971000.html",
-    "description": "大規模災害の際に首都の代替機能を担う「副首都」構想の関連法が成立したことを受けて、広島県の横田知事は県の「副首都」への指定を目指す考えを表明しました。",
-    "pubDate": "Tue, 28 Jul 2026 14:49:36 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "新投資枠 予算要求に上限設けず 政府 基本方針案を自民に提示",
-    "link": "http://www3.nhk.or.jp/news/html/20260728/k10015187941000.html",
-    "description": "来年度 2027年度予算案の編成に向けて、政府は、自民党の会合で、概算要求の基本方針の案を示し、経済成長の実現に向けた新たな投資枠では各省庁からの予算要求に上限を設けないなどとしています。",
-    "pubDate": "Tue, 28 Jul 2026 14:47:52 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "Ilya获黄仁勋50亿美元押注：“是时候Scaling了”",
-    "link": "https://www.qbitai.com/2026/07/461911.html",
-    "description": "迷人的Scaling曲线",
-    "pubDate": "Tue, 28 Jul 2026 05:46:59 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "How can you keep yourself safe from forever chemicals and cadmium in food? (Part 2/2)",
-    "link": "https://www.france24.com/en/france/20260728-how-can-you-keep-yourself-safe-from-forever-chemicals-and-cadmium-in-food-part-2-3",
-    "description": "Food-related health warnings have become increasingly frequent in recent years, to the point where maintaining a diet free of contaminants can seem almost impossible. So what’s the best way to limit your exposure, and will there ever be a way to fully remove these harmful pollutants from our blood? ",
-    "pubDate": "Tue, 28 Jul 2026 05:46:12 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "韩国将加大对旅游业乱收费处罚力度",
-    "link": "https://36kr.com/newsflashes/3914884204647811?f=rss",
-    "description": "韩国将对旅游业乱收费行为加大处罚韩国财政部周二表示，为促进旅游业发展，政府计划从下月起对住宿和餐饮行业中的乱收费行为实施更严厉的处罚。韩国财政部表示，内阁已批准对《旅游促进法》执行条例进行修订，旨在对向游客乱收费行为处以更严厉的处罚，该修订将于8月4日生效。（新浪财经）",
-    "pubDate": "2026-07-28 13:46:09  +0800",
-    "source": "36氪",
-    "category": "policy"
-  },
-  {
-    "title": "日本央行潜在通胀指标仍远高于2%",
-    "link": "https://36kr.com/newsflashes/3914876885603721?f=rss",
-    "description": "日本央行周二表示，6月一项衡量通胀趋势的价格指标仍远高于央行2%的目标。据央行数据，剔除生鲜食品和特殊因素后的消费者价格同比涨幅6月维持在2.7%，进一步剔除能源价格后的指标上涨2%。（财联社）",
-    "pubDate": "2026-07-28 13:38:42  +0800",
-    "source": "36氪",
-    "category": "policy"
-  },
-  {
-    "title": "Chip stocks slide in US and Asia as AI jitters rattle investors",
-    "link": "https://www.bbc.co.uk/news/articles/cly8zng43npo?at_medium=RSS&at_campaign=rss",
-    "description": "Trading on South Korea's Kospi index was paused temporarily on Tuesday morning after slumping by 8%.",
-    "pubDate": "Tue, 28 Jul 2026 05:31:30 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "花旗通过在新加坡招聘三名高级交易员，扩大了其亚洲外汇期权交易部门",
-    "link": "https://36kr.com/newsflashes/3914869397722244?f=rss",
-    "description": "据花旗周二发布的声明称，花旗集团已任命三名高级交易员加入其新加坡外汇期权交易团队，旨在提升该行的区域做市和风险管理能力。（新浪财经）",
-    "pubDate": "2026-07-28 13:31:05  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Hugging Face Has a Deepfake Nudes Problem",
-    "link": "https://www.wired.com/story/hugging-face-has-a-nonconsensual-deepfakes-problem/",
-    "description": "Researchers tested top image editing models on Hugging Face and found they could easily create explicit deepfakes—and 1,000 image editing prompts show how people use the software.",
-    "pubDate": "Tue, 28 Jul 2026 05:30:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "“国科超导”完成超亿元融资",
-    "link": "https://36kr.com/newsflashes/3914865264760198?f=rss",
-    "description": "36氪获悉，近日，“国科超导”完成超亿元新一轮融资。本轮融资由国科创投领投，中关村资本、顺禧基金、鼎峰、水木清华校友种子基金等老股东持续追加，东恒石油、北京科创亦庄直投基金、东方证券、中科神光、中赢创投、纳珍投资等多家机构共同参与。本轮融资资金将重点用于铁基高温超导材料的性能攻关、中试线建设与产能爬坡、下游应用场景的验证拓展，以及核心岗位人才梯队扩充。",
-    "pubDate": "2026-07-28 13:26:53  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "科创50指数跌幅扩大至5%",
-    "link": "https://36kr.com/newsflashes/3914864393786755?f=rss",
-    "description": "36氪获悉，科创50指数跌幅扩大至5%，源杰科技跌近15%，生益电子跌超10%，寒武纪跌近9%。",
-    "pubDate": "2026-07-28 13:25:59  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "世界模型有触觉了！50万小时视频，训出首个隐式触觉世界动作模型",
-    "link": "https://www.qbitai.com/2026/07/461827.html",
-    "description": "",
-    "pubDate": "Tue, 28 Jul 2026 05:25:31 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "梅赛德斯-奔驰集团第二季度销售额320.6亿欧元",
-    "link": "https://36kr.com/newsflashes/3914859514631303?f=rss",
-    "description": "梅赛德斯-奔驰集团第二季度销售额320.6亿欧元，预估321.3亿欧元；第二季度调整后EBIT 23亿欧元，预估17.2亿欧元。（财联社）",
-    "pubDate": "2026-07-28 13:21:02  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "宇瞳光学：公司MT插芯产品尚处于送样阶段",
-    "link": "https://36kr.com/newsflashes/3914850614858889?f=rss",
-    "description": "36氪获悉，宇瞳光学在互动平台表示，目前康宁GlassBridge玻璃桥处于提供样品，进行工程验证和可靠性测试阶段，行业预测离大规模量产交付时间最快不低于一年，未对当前FAU方案市场造成影响。公司MT插芯产品尚处于送样阶段，验证周期较长。",
-    "pubDate": "2026-07-28 13:11:58  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "从Token到Action：北京走进物理AI时刻",
-    "link": "https://www.tmtpost.com/8081728.html",
-    "description": "Kimi代表在数字世界继续上探，千寻则代表AI进入物理世界。",
-    "pubDate": "Tue, 28 Jul 2026 13:08:34 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Indien: Junge Protestierende verändern Bildungspolitik",
-    "link": "https://www.dw.com/de/indien-junge-protestierende-verändern-bildungspolitik/a-78133480?maca=de-rss-de-all-1119-rdf",
-    "description": "Mit dem Rücktritt des indischen Bildungsministers endet die sogenannte Kakerlaken-Bewegung. Die Politiker spüren die enorme Dynamik der jungen Menschen, ihre Regierung zu Zugeständnissen zu zwingen.",
-    "pubDate": "2026-07-28T05:03:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "商务部发布《关于所谓“产能过剩”问题的中方立场》",
-    "link": "https://36kr.com/newsflashes/3914841281188999?f=rss",
-    "description": "商务部7月28日发布《关于所谓“产能过剩”问题的中方立场》，澄清有关事实，阐明中方对所谓“产能过剩”相关问题的政策立场。文件除前言、结束语外共四章，分别是全面客观看待全球产能和所谓“过剩”、对“产能过剩”相关四对关系的看法立场、中国坚持在开放合作中建设现代化产业体系、共同推动构建开放包容的全球产供链合作格局。文件提出，中方始终认为，看待产能问题，要坚持全面、客观、公正的态度，既要历史地看、也要辩证地看，秉持开放合作、互利共赢，共同化解矛盾和分歧。搞保护主义，只会扰乱全球经贸秩序，不利于全球产供链安全稳定和产业合作健康有序发展，给世界经济增长带来长期风险。（央视新闻）",
-    "pubDate": "2026-07-28 13:02:29  +0800",
-    "source": "36氪",
-    "category": "policy"
-  },
-  {
-    "title": "Ulta Promo Codes: Up to 50% Off in July 2026",
-    "link": "https://www.wired.com/story/ulta-coupon/",
-    "description": "Shop the latest beauty trends and save big using an Ulta promo code for beauty tech, makeup, and more.",
-    "pubDate": "Tue, 28 Jul 2026 05:02:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Confronting gang members at the heart of Ecuador's drug battle",
-    "link": "https://www.bbc.co.uk/news/videos/c1l1d429m8eo?at_medium=RSS&at_campaign=rss",
-    "description": "Orla Guerin speaks to a gang leader about violence, drugs and infiltrating the police.",
-    "pubDate": "Tue, 28 Jul 2026 05:01:35 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "The cocaine superhighway from Ecuador to Europe - the BBC reports on gangs and the police fightback",
-    "link": "https://www.bbc.co.uk/news/articles/cdx7n1r54nno?at_medium=RSS&at_campaign=rss",
-    "description": "The BBC goes on patrol with Ecuador's police, who are grappling with a huge surge in drug crime.",
-    "pubDate": "Tue, 28 Jul 2026 05:01:19 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Mamdani tackles cost of living crisis in New York with 30% discounts",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/28/mamdani-tackles-cost-of-living-crisis-in-new-york-with-30-discounts?traffic_source=rss",
-    "description": "New York City Mayor Zohran Mamdani has announced a new plan to sell discounted grocery baskets at city-run stores.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:05 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "AirDoctor Coupon Codes: 40% Off | July 2026",
-    "link": "https://www.wired.com/story/airdoctor-coupon-code/",
-    "description": "Save up to $400 on top air purifiers and filters with verified AirDoctor promo codes and special offers for 2026.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Google Workspace Promo Codes: 14% Off for July",
-    "link": "https://www.wired.com/story/google-workspace-promo-code/",
-    "description": "Boost your productivity and save with exclusive Google Workspace coupons from WIRED. Get up to 14% off plans for three months, including Starter, Standard, and Plus tiers.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Birdfy Discount Codes: 15% Off Sitewide",
-    "link": "https://www.wired.com/story/birdfy-discount-code/",
-    "description": "Use these verified Birdfy discount codes to score up to 40% off smart feeders, camera kits, and accessories.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Priceline Promo Codes & Coupons: 10% Off July",
-    "link": "https://www.wired.com/story/priceline-promo-code/",
-    "description": "Unlock massive discounts on Priceline hotels, flights, and rental cars. Find verified Priceline coupon codes and deals for Express Deals, student discounts, and more.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Booking.com Promo Codes: 20% Off | July 2026",
-    "link": "https://www.wired.com/story/booking-com-promo-code/",
-    "description": "Enjoy big savings on your next adventure with our Booking.com promo codes, coupons, and handpicked travel deals.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Corsair Discount Code: Up to 50% Off for July 2026",
-    "link": "https://www.wired.com/story/corsair-coupon/",
-    "description": "Upgrade your gaming setup or PC build for less with these verified Corsair coupon codes, student discounts, and refurbished deals.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Ray-Ban Promo Codes: Save 50% in July 2026",
-    "link": "https://www.wired.com/story/ray-ban-promo-code/",
-    "description": "Upgrade your frames with major savings on classic shapes, custom designs, and prescription lenses using these verified Ray-Ban discounts.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Uber Eats Promo Codes: $15 Off│July 2026",
-    "link": "https://www.wired.com/story/uber-eats-promo-code/",
-    "description": "Hunger meets savings. Discover verified Uber Eats promo codes, new user offers, and Uber One discounts to slash your delivery fees and meal costs.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "B&H Photo Promo Codes and Deals This July 2026",
-    "link": "https://www.wired.com/story/bh-photo-coupon/",
-    "description": "Enjoy top deals on cameras, computers, and tech essentials at B&H Photo.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Herman Miller Promo Codes: 40% Off July 2026",
-    "link": "https://www.wired.com/story/herman-miller-promo-code/",
-    "description": "Whether you’re looking for a Herman Miller promo code or discounts in their sale, here is how to save on the world's best ergonomic office furniture in July 2026.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Altra Running Promo Codes: 10% Off July 2026",
-    "link": "https://www.wired.com/story/altra-promo-code/",
-    "description": "Score big savings on Altra Running shoes with up to 50% off sale styles, 20% off select models, 10% off your first order when you sign up, plus free standard delivery on every purchase.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Newegg Promo Codes and Coupons for July 2026",
-    "link": "https://www.wired.com/story/newegg-promo-code/",
-    "description": "Enjoy up to 10% off your entire order with today’s Newegg promo code and discount codes. Save with the latest deals for gaming PCs, laptops, and computer parts.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "30% Off Samsung Promo Code | July 2026",
-    "link": "https://www.wired.com/story/samsung-promo-codes/",
-    "description": "Save 30% or 10% with Samsung coupon codes, up to $1,000 on appliances, plus limited-time deals on the Galaxy Z Fold7, Flip7, and S25.",
-    "pubDate": "Tue, 28 Jul 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
   }
 ]
