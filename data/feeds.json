@@ -1,5 +1,181 @@
 [
   {
+    "title": "Europeans Are About to Find Out How Entrenched AI Is in Their Daily Lives",
+    "link": "https://www.wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives/",
+    "description": "New EU rules stipulate that people must be told when they’re interacting with AI or looking at AI-generated or -edited content, leading to fear of “disclosure fatigue.”",
+    "pubDate": "Sun, 02 Aug 2026 06:37:42 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Trump says he is cancelling strikes on Iran subject to deal being made 'rapidly'",
+    "link": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o?at_medium=RSS&at_campaign=rss",
+    "description": "The US president claims Iran and other Middle Eastern countries asked Washington to hold off on any attack as the \"perimeters\" of a deal had been agreed.",
+    "pubDate": "Sun, 02 Aug 2026 06:24:01 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "中国产品包揽全球大模型调用量前五",
+    "link": "https://36kr.com/newsflashes/3921989528432259?f=rss",
+    "description": "近日，全球多模型聚合平台OpenRouter发布最新一周AI大模型调用量榜单，排名前五的产品全部由中国企业研发。登顶榜单首位的是小米MiMo-V2.5，单周调用量达到10.5万亿Token，环比增长12%。排名第二和第五的均来自DeepSeek，两款模型形成高低搭配，覆盖不同开发需求，其中旗舰Pro版本在代码、复杂智能体任务性能对标海外顶级闭源模型。而这些模型的共同之处，是发布时间很短便快速上榜，位列第三的腾讯混元3，7月6日才正式开源，单周环比增幅超999%，是榜单增长势头最猛的模型。（人民财讯）",
+    "pubDate": "2026-08-02 14:14:03  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "トランプ大統領  イランへの攻撃を中止することに同意と投稿",
+    "link": "http://www3.nhk.or.jp/news/html/20260802/k10015194141000.html",
+    "description": "アメリカのトランプ政権がこの週末にも、イランへの大規模な攻撃を計画していると報じられる中、トランプ大統領は、1日、イランやほかの中東諸国から要請があったとして、迅速に合意を成立させることを条件に、攻撃を中止することに同意したと明らかにしました。",
+    "pubDate": "Sun, 02 Aug 2026 14:53:44 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "\"Umrisse einer Einigung\" - Trump sagt Angriffe auf Iran ab",
+    "link": "https://www.dw.com/de/umrisse-einer-einigung-trump-sagt-angriffe-auf-iran-ab/a-78205884?maca=de-rss-de-all-1119-rdf",
+    "description": "Das US-Militär soll kurz vor einer massiven Angriffswelle auf den Iran gestanden haben. Nun will US-Präsident Trump darauf verzichten - vorausgesetzt seine Bedingungen werden schnell erfüllt.",
+    "pubDate": "2026-08-02T05:52:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "高知・和歌山で40度超の酷暑日 東北・関東甲信は激しい雨警戒",
+    "link": "http://www3.nhk.or.jp/news/html/20260802/k10015193981000.html",
+    "description": "西日本と東日本は2日も気温が上がり、高知県と和歌山県では40度を超える酷暑日に、熊本県でも39度を超える危険な暑さになっているところがあり、引き続き熱中症への対策を徹底してください。一方、前線などの影響で東北では土砂災害や氾濫の危険性が非常に高まっている地域があり、厳重な警戒が必要です。",
+    "pubDate": "Sun, 02 Aug 2026 14:51:03 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
+    "title": "Three killed after bomb detonated at Moscow restaurant, state media say",
+    "link": "https://www.bbc.co.uk/news/articles/c86n4ljxp63o?at_medium=RSS&at_campaign=rss",
+    "description": "Security officials said a woman tried to enter the restaurant with explosives but was stopped by a security guard.",
+    "pubDate": "Sun, 02 Aug 2026 05:40:42 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "At least three dead in Idaho shopping mall mass shooting",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/at-least-three-dead-in-idaho-shopping-mall-mass-shooting?traffic_source=rss",
+    "description": "Police said at least three people were killed several others were wounded in a shooting at an In-N-Out Burger in Idaho.",
+    "pubDate": "Sun, 02 Aug 2026 05:29:36 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "新一代通信网建设加快，千兆光网覆盖超九成国民经济大类",
+    "link": "https://36kr.com/newsflashes/3921943840353668?f=rss",
+    "description": "记者从工业和信息化部了解到，我国正加快新一代通信网建设，目前千兆光网典型应用已覆盖超九成国民经济大类。工业和信息化部信息通信发展司副司长赵策介绍，千兆光网与人工智能、云计算、大数据等技术加速融合，覆盖我国国民经济97个大类中的91个，在智能制造、智慧交通、数字医疗、智慧教育等领域形成一批可复制、可推广的典型方案。我国已经实现“县县通千兆”“村村通宽带”，千兆光网典型应用案例超过5万个，重庆等城市已实现千兆光网城乡全域覆盖。工业和信息化部依托全光网络通过实施城域“毫秒用算”专项行动，形成一批辨识度高、可复制推广的代表性实践成果。截至6月底，我国具备千兆网络服务能力的10G无源光网络端口数达到32",
+    "pubDate": "2026-08-02 13:27:35  +0800",
+    "source": "36氪",
+    "category": "policy"
+  },
+  {
+    "title": "Gaza students overcome Israel’s genocide to mark Tawjihi results",
+    "link": "https://www.aljazeera.com/features/2026/8/2/gaza-students-overcome-israels-genocide-to-celebrate-tawjihi-results?traffic_source=rss",
+    "description": "Students in Gaza overcome distressing conditions amid Israel's genocide to finish their Tawjihi high school exams.",
+    "pubDate": "Sun, 02 Aug 2026 05:27:04 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Mountaineer Nirmal Purja killed in Pakistan avalanche, his company says",
+    "link": "https://www.bbc.co.uk/news/articles/clyljq79kdko?at_medium=RSS&at_campaign=rss",
+    "description": "The renowned mountaineer was known for scaling the world's 14 highest peaks in just over six months in 2019.",
+    "pubDate": "Sun, 02 Aug 2026 05:26:39 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "全国首票保税仓库注册登记电子证照落地山东",
+    "link": "https://36kr.com/newsflashes/3921922007920004?f=rss",
+    "description": "36氪获悉，据山东发布消息，近日，万华化学集团登录“互联网+海关”一体化网上办事服务平台，仅用几分钟，一份加盖青岛海关印章的《保税仓库注册登记证书》便打印出来，标志着全国首票保税仓库注册登记电子证照在烟台落地。“电子证照与纸质证照具备同等法律效力，同时满足全程可追溯、防篡改、无纸化管理要求，帮助企业实现业务零跑腿、即时办。”青岛海关自贸区和特殊区域发展处副处长闵雪莲说。",
+    "pubDate": "2026-08-02 13:05:22  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "住房公积金缴存覆盖面扩大 灵活就业人员可自愿缴纳",
+    "link": "https://36kr.com/newsflashes/3921921311452807?f=rss",
+    "description": "为了深化住房公积金制度改革，更好满足缴存人多元化住房需求，住房城乡建设部前不久启动了《住房公积金管理条例》修订工作，并就《住房公积金管理条例（修订征求意见稿）》向社会公开征求意见。记者梳理发现，征求意见稿主要体现出三大亮点。首先，缴存覆盖面扩大了，明确个体工商户、非全日制从业人员以及其他灵活就业人员，可自愿参加住房公积金制度，也就是说包括外卖员、快递员、网约车司机等，以后也能缴纳了。其次，拓宽了使用范围，明确将自住住房装修、支付物业费纳入可提取住房公积金的情形。也就是说，从“购房”“租房”拓展到“修房”“养房”，让资金用途更丰富。此外，明确要强化公积金数字化能力建设，强化跨地区、跨部门、跨层级",
+    "pubDate": "2026-08-02 13:04:40  +0800",
+    "source": "36氪",
+    "category": "policy"
+  },
+  {
+    "title": "全球语音大模型，角逐方向盘后的麦克风",
+    "link": "https://www.tmtpost.com/8088265.html",
+    "description": "语音大模型的硬件入口之战。",
+    "pubDate": "Sun, 02 Aug 2026 12:45:33 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Three dead including female bomber in Moscow restaurant attack",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/three-dead-including-female-bomber-in-moscow-restaurant-attack?traffic_source=rss",
+    "description": "At least three people are dead and more than 20 injured after a bomb exploded outside a restaurant in central Moscow.",
+    "pubDate": "Sun, 02 Aug 2026 04:44:55 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Why isn’t anyone challenging Infantino for FIFA’s top job?",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/2/why-isnt-anyone-challenging-infantino-for-fifas-top-job?traffic_source=rss",
+    "description": "FIFA’s Gianni Infantino has scrapped his controversial plan to sell a stake in the World Cup after global outrage.",
+    "pubDate": "Sun, 02 Aug 2026 04:34:19 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "银河证券：Kimi K3正式开源重塑大模型商业生态，建议关注国产超节点及产业链相关公司",
+    "link": "https://36kr.com/newsflashes/3921888283848068?f=rss",
+    "description": "银河证券研报指出，Kimi K3上线后仅48小时，请求量便把现有集群打满，随后Kimi宣布暂停C端新用户会员订阅，验证Kimi K3模型能力突出与算力紧缺。银河证券认为，Kimi K3并非抑制算力需求，一方面国产开源模型的能力逼近全球顶级闭源模型，倒逼顶级大模型厂商通过更大规模的训练以及更快的迭代来维持差异化，另一方面持续引爆推理算力需求，当前Kimi K3已实现与多家国产算力平台的‌Day 0极速适配，拉动国产超节点的需求，进而推动产业链中服务器、交换机、光模块、液冷、电源等国产算力产业链环节配套需求，建议关注国产超节点及产业链相关公司。（界面）",
+    "pubDate": "2026-08-02 12:31:04  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "重庆上市公司价值重估：汽车与环保抬升上限，医药与传统产业分化加剧",
+    "link": "https://www.tmtpost.com/8088415.html",
+    "description": "从本次重庆66家样本看，综合ESG-V评级呈现出“头部特色鲜明、中间层占主导、尾部压力集中”的结构。AAA企业1家，AA企业3家，A企业8家，A及以上企业合计12家，占比约18.2%；BBB、BB、B三级企业共41家，占比约62.1%；CCC及以下企业13家，占比约19.7%。",
+    "pubDate": "Sun, 02 Aug 2026 12:23:26 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "A股规模实力百强榜：谁构筑了资本市场的经营基本盘？",
+    "link": "https://www.tmtpost.com/8088411.html",
+    "description": "从榜单结果看，本次规模实力排名前100的上市公司全部获得AAA评级。其中，最高得分为第1名工商银行的99.583分，最低得分为第100名药明康德的94.507分。工商银行、建设银行、农业银行、中国银行位列前四，中国石油、中国移动、中国石化、中国平安、中国建筑和招商银行进入前十。",
+    "pubDate": "Sun, 02 Aug 2026 12:22:03 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "价值判断：涨停板的投资机会和风险提示（7月31日）｜上市公司观察",
+    "link": "https://www.tmtpost.com/8088406.html",
+    "description": "行业板块呈现普涨态势，广告营销、机器人、IT服务、软件开发、影视院线、传媒、计算机设备、元件、半导体板块涨幅居前，仅银行、保险、能源金属板块逆市下跌。个股方面，上涨股票数量接近4700只，逾百股涨停。",
+    "pubDate": "Sun, 02 Aug 2026 12:21:53 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "山东：力争3年内集聚万名人工智能OPC创新人才",
+    "link": "https://36kr.com/newsflashes/3921849987706240?f=rss",
+    "description": "36氪获悉，据山东政府网官微消息，山东省工信厅等12部门近日联合印发《关于支持人工智能OPC创新发展的行动方案》，培育壮大人工智能OPC（One Person Company，一人公司）新型市场主体，推动“AI+超级个体”新型创业模式加速落地。力争3年内，建成百个定位清晰、功能完善的特色载体，培育千家技术领先、成长性强的创业主体，集聚万名优秀人工智能OPC创新人才。支持济南、青岛、烟台等市结合产业禀赋，统筹规划存量资源与新增空间，依托数字经济产业园、广告产业园、网络视听产业园、双创孵化中心等，打造一批人工智能OPC特色园区。",
+    "pubDate": "2026-08-02 12:07:01  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "从翻译到桌面Agent，网易有道全线产品完成DeepSeek-V4-Flash正式版升级",
+    "link": "https://www.leiphone.com/category/industrynews/2kEmhUVR27NJL1rC.html",
+    "description": "日前，网易有道宣布旗下AI Agent产品矩阵已完成DeepSeek-V4-Flash正式版的全面接入，覆盖全场景办公助手 Agent LobsterAI、有道词典、有道翻译、有道AI同传、Hi Echo、有道AI答疑笔、企业级大模型聚合平台ThinkFlow等系列产品和服务。这是继今年5月有道接入DeepSeek-V4预览版后，产品能力的又一次重要升级。\n7月31日，DeepSeek正式开放V4-Flash正式版API公测。值得注意的是，DeepSeek-V4-Flash-0731 与预览版模型结构、参数规模完全一致，底层基座未做改动，仅完成新一轮后训练优化——底座没有变，变的是“后天教育”",
+    "pubDate": "Sun, 02 Aug 2026 12:07:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
     "title": "【数智周报】长鑫科技市值登顶A股；字节调整飞书、火山、豆包组织架构；Kimi K3开源上线即爆火",
     "link": "https://www.tmtpost.com/8081682.html",
     "description": "（7月27日~8月1日）DeepSeek-V4-Flash正式版API上线公测；Anthropic自曝大模型“脱缰”入侵三家公司；宇树科技将登陆科创板，8月10日申购；AI推动软件漏洞发现数量激增，微软、谷歌安全漏洞披露创新高……",
@@ -14,6 +190,14 @@
     "pubDate": "2026-08-02 11:50:53  +0800",
     "source": "36氪",
     "category": "ai-tech"
+  },
+  {
+    "title": "消費税減税 財源は予算編成過程で明確に 城内成長戦略相",
+    "link": "http://www3.nhk.or.jp/news/html/20260802/k10015194131000.html",
+    "description": "高市総理大臣が表明した食料品の消費税減税の方針について、城内成長戦略担当大臣は、NHKの日曜討論で、物価高が続く中、特に中低所得の人の負担軽減を図るねらいがあるとした上で、財源は来年度の予算編成過程で明確にする考えを示し、理解を求めました。",
+    "pubDate": "Sun, 02 Aug 2026 12:46:28 +0900",
+    "source": "NHKニュース",
+    "category": "international"
   },
   {
     "title": "How Virunga Park protects people and gorillas from Ebola in eastern DRC",
@@ -48,18 +232,10 @@
     "category": "international"
   },
   {
-    "title": "熊本地震 関連調査中含め38人死亡 9226人が避難",
+    "title": "熊本地震 関連調査中含め38人死亡 初の災害関連死の疑いも",
     "link": "http://www3.nhk.or.jp/news/html/20260802/k10015193881000.html",
     "description": "熊本県は、2日午前の災害対策本部会議で、県内では災害との関連を調査している人も含めて38人が死亡したと発表しました。避難のため車中泊をしていた70代の女性が熱中症の疑いで死亡し、県は今回の地震では初めての災害関連死の疑いがある事例だとして、避難している人たちに熱中症対策などを呼びかけています。",
     "pubDate": "Sun, 02 Aug 2026 12:32:17 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "大分 日田で40度の酷暑日予想 東北 関東甲信は激しい雨警戒を",
-    "link": "http://www3.nhk.or.jp/news/html/20260802/k10015193981000.html",
-    "description": "西日本と東日本は2日も気温が上がり、大分県日田市では40度と「酷暑日」が予想されているほか、熊本県の地震の被災地でも危険な暑さとなる見込みで、引き続き熱中症への対策を徹底してください。一方、前線などの影響で東北では土砂災害や氾濫の危険性が非常に高まっている地域があり、厳重な警戒が必要です。",
-    "pubDate": "Sun, 02 Aug 2026 12:20:58 +0900",
     "source": "NHKニュース",
     "category": "international"
   },
@@ -72,25 +248,9 @@
     "category": "international"
   },
   {
-    "title": "トランプ大統領  イランへの攻撃を中止することに同意と投稿",
-    "link": "http://www3.nhk.or.jp/news/html/20260802/k10015194141000.html",
-    "description": "アメリカのトランプ政権がこの週末にも、イランへの大規模な攻撃を計画していると報じられる中、トランプ大統領は、1日、イランやほかの中東諸国から要請があったとして、迅速に合意を成立させることを条件に、攻撃を中止することに同意したと明らかにしました。",
-    "pubDate": "Sun, 02 Aug 2026 12:05:33 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "Trump says he is cancelling strikes on Iran subject to 'rapidly' making deal",
-    "link": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o?at_medium=RSS&at_campaign=rss",
-    "description": "The US president's message came amid media reports that he was planning new, intense strikes on Iran over the weekend.",
-    "pubDate": "Sun, 02 Aug 2026 03:05:16 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Israel kills five in Gaza despite Trump’s Hamas disarmament plan",
+    "title": "Israel kills eight in Gaza despite Trump’s Hamas disarmament plan",
     "link": "https://www.aljazeera.com/news/2026/8/2/israel-kills-five-in-gaza-despite-trumps-hamas-disarmament-plan?traffic_source=rss",
-    "description": "Strikes hit Gaza homes after the US unveiled plan for Hamas disarmament and Israeli withdrawal.",
+    "description": "Strikes hit Gaza homes after the US unveiled plans for Hamas disarmament and Israeli withdrawal.",
     "pubDate": "Sun, 02 Aug 2026 02:58:51 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
@@ -202,7 +362,7 @@
   {
     "title": "今年上半年北京“双枢纽”机场进出口超4000亿元",
     "link": "https://36kr.com/newsflashes/3921706031721861?f=rss",
-    "description": "据北京海关统计，今年上半年，北京“双��纽”机场——首都国际机场和大兴国际机场进出境航班6.3万架次，进出口货物4109.8亿元，同比增长18.7%。生物医药、集成电路、精密设备等进出口需求旺盛，高附加值产品成为拉动航空货运增长的主要力量。（央视新闻）",
+    "description": "据北京海关统计，今年上半年，北京“双枢纽”机场——首都国际机场和大兴国际机场进出境航班6.3万架次，进出口货物4109.8亿元，同比增长18.7%。生物医药、集成电路、精密设备等进出口需求旺盛，高附加值产品成为拉动航空货运增长的主要力量。（央视新闻）",
     "pubDate": "2026-08-02 09:39:35  +0800",
     "source": "36氪",
     "category": "ai-tech"
@@ -216,9 +376,9 @@
     "category": "ai-tech"
   },
   {
-    "title": "Gunman kills two in Idaho fast-food restaurant shooting",
+    "title": "Gunman opens fire at Idaho fast-food restaurant, killing two",
     "link": "https://www.aljazeera.com/news/2026/8/2/gunman-kills-several-at-idaho-fast-food-restaurant?traffic_source=rss",
-    "description": "Deaths reported after gunman opens fire at In-N-Out Burger in Twin Falls, Idaho.",
+    "description": "Fatalities reported after gunman opens fire at In-N-Out Burger in Twin Falls, Idaho.",
     "pubDate": "Sun, 02 Aug 2026 01:26:44 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
@@ -304,15 +464,7 @@
     "category": "ai-tech"
   },
   {
-    "title": "Three killed after bomb detonated at Moscow restaurant, state media say",
-    "link": "https://www.bbc.co.uk/news/articles/c86n4ljxp63o?at_medium=RSS&at_campaign=rss",
-    "description": "Security officials said a woman tried to enter the restaurant with explosives but was stopped by a security guard.",
-    "pubDate": "Sun, 02 Aug 2026 00:02:18 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Iran war live: Trump cancels attack, says ‘perimeters of a deal’ agreed",
+    "title": "Iran war live: Trump cancels attack, calls for a ‘rapid’ deal on Hormuz",
     "link": "https://www.aljazeera.com/news/liveblog/2026/8/2/iran-war-live-tehran-warns-of-decisive-response-to-any-us-aggression?traffic_source=rss",
     "description": "Move comes after Iran's top diplomat warned of a 'decisive response' to any US-Israeli 'aggression'.",
     "pubDate": "Sun, 02 Aug 2026 00:00:00 +0000",
@@ -568,7 +720,7 @@
     "category": "ai-tech"
   },
   {
-    "title": "How Australia combines modern tech and Indigenous knowledge to fight fire",
+    "title": "How Australia combines modern tech and Indigenous knowledge to fight wildfires",
     "link": "https://www.bbc.co.uk/news/articles/czdmvr984yyo?at_medium=RSS&at_campaign=rss",
     "description": "As Europe faces its worst wildfires in decades, Australia offers lessons in disaster preparedness.",
     "pubDate": "Sat, 01 Aug 2026 21:03:42 GMT",
@@ -965,14 +1117,6 @@
     "description": "US President Donald Trump's posts on his Truth Social platform can move markets with a few keystrokes. Starting Saturday, for a fee of $100,000 a month, Wall Street traders can access his \"Truth API\" service to have high-speed access to the president's announcements about economic policy and global ",
     "pubDate": "Sat, 01 Aug 2026 15:29:08 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Mountaineer Nirmal Purja killed in Pakistan avalanche, his company says",
-    "link": "https://www.bbc.co.uk/news/articles/clyljq79kdko?at_medium=RSS&at_campaign=rss",
-    "description": "The renowned mountaineer was known for scaling the world's 14 highest peaks in just over six months in 2019.",
-    "pubDate": "Sat, 01 Aug 2026 15:25:30 GMT",
-    "source": "BBC News",
     "category": "international"
   },
   {
@@ -1968,102 +2112,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "FCC禁令之后，具身智能企业还能站上CES2027么？｜ 出海参考",
-    "link": "https://www.tmtpost.com/8087586.html",
-    "description": "FCC禁令真正改变的，或许不是中国具身机器人的研发速度，而是具身企业全球化的难度。",
-    "pubDate": "Sat, 01 Aug 2026 14:31:24 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "吉尔吉斯斯坦与阿塞拜疆签署同盟关系条约",
-    "link": "https://36kr.com/newsflashes/3920436488678789?f=rss",
-    "description": "据吉尔吉斯斯坦总统网站7月31日消息，吉总统扎帕罗夫当天在吉尔吉斯斯坦乔尔蓬阿塔市与来访的阿塞拜疆总统阿利耶夫签署同盟关系条约。扎帕罗夫当天与阿利耶夫举行会谈后向媒体发表声明。扎帕罗夫表示，两国签署同盟关系条约是元首会谈的一项重要成果，标志着双方合作进入新阶段。",
-    "pubDate": "2026-08-01 14:30:05  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "浙江实施人工智能OPC术语团体标准：由1名核心自然人主导",
-    "link": "https://36kr.com/newsflashes/3920435807923841?f=rss",
-    "description": "由浙江省数字经济发展中心等编制的《人工智能OPC术语》团体标准2026年8月1日起实施，将人工智能OPC（One Person Company，一人公司）界定为由1名核心自然人主导控制，员工一般不超过10人，以AI技术研究、开发、应用或服务为主营业务的公司。",
-    "pubDate": "2026-08-01 14:15:22  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "ジャワ原人 赤ちゃんを未発達なまま出産し協力して子育てか",
-    "link": "http://www3.nhk.or.jp/news/html/20260801/k10015192831000.html",
-    "description": "およそ10万年前の「ジャワ原人」の赤ちゃんは、現代のヒトと同じように長期間子育てが必要な、未発達な状態で生まれていたとみられることが、東京大学などのグループの骨の分析で明らかになりました。グループでは、ジャワ原人は互いに協力して赤ちゃんを育てていた可能性があるとしています。",
-    "pubDate": "Sat, 01 Aug 2026 15:14:20 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "US drops Reflecting Pool case against former Olympian, admits 'botched installation'",
-    "link": "https://www.france24.com/en/americas/20260801-us-admits-reflecting-pool-damage-due-to-botched-renovation-drops-charges-against-former-olympian",
-    "description": "The US Justice Department on Friday dropped its case against a former Olympian accused of damaging the Lincoln Memorial Reflecting Pool after saying the damage was a result of \"a botched installation\", not vandalism. Trump had personally overseen the Reflecting Pool's renovation, which was estimated",
-    "pubDate": "Sat, 01 Aug 2026 06:09:11 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "US drops Reflecting Pool case, admits damage due to botched renovation",
-    "link": "https://www.france24.com/en/live-news/20260801-us-drops-reflecting-pool-case-admits-damage-due-to-botched-renovation",
-    "description": "The US Justice Department on Friday dropped its case against a former Olympian accused of damaging the Lincoln Memorial Reflecting Pool, saying the hurried renovations ordered by President Donald Trump had been botched.",
-    "pubDate": "Sat, 01 Aug 2026 06:09:11 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "鸿蒙智行月交付45046台",
-    "link": "https://36kr.com/newsflashes/3920418360569216?f=rss",
-    "description": "鸿蒙智行：7月交付45,046台，1-7月累计交付28.6万台，同比增长13.7%。",
-    "pubDate": "2026-08-01 14:00:40  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "中国国家博物馆严正声明：从未在馆外开展扫码入群、信息采集活动",
-    "link": "https://36kr.com/newsflashes/3920419149573509?f=rss",
-    "description": "中国国家博物馆网站7月31日发布公告称，近日，观众反映有社会人员冒用“国家博物馆工作人员”名义从事引导公众扫码，收集获取手机号码、身份证号码等个人信息的活动。对此，国家博物馆高度重视，特此发布严正声明：国家博物馆从未授权任何机构、个人在馆外公共场所开展扫码入群、信息采集等活动，凡是以国家博物馆名义进行的此类活动，均与国家博物馆无任何关联。上述行为严重侵犯了国家博物馆的合法权益，国家博物馆将依法保留追究相关组织及个人法律责任的权利。在此，国家博物馆特别提醒公众，提高安全防范意识，妥善保管个人信息，切勿轻易扫描来源不明的二维码。如发现有组织或个人以国家博物馆名义进行非法活动，请及时向相关执法部门举",
-    "pubDate": "2026-08-01 13:45:29  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Fifa scraps controversial World Cup investment plan",
-    "link": "https://www.bbc.co.uk/sport/football/articles/czekr6kn58po?at_medium=RSS&at_campaign=rss",
-    "description": "Football's world governing body Fifa abandons plans to sell off stakes in its major competitions after widespread opposition to president Gianni Infantino's proposal.",
-    "pubDate": "Sat, 01 Aug 2026 05:42:31 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "2025年地方养老基金投资收益率为5.76%",
-    "link": "https://36kr.com/newsflashes/3920417829416325?f=rss",
-    "description": "全国社会保障基金理事会今天（1日）发布报告，2025年地方养老基金投资收益额1420.71亿元，投资收益率5.76%。自2016年12月受托运营以来，地方养老基金累计投资收益额5544.30亿元，年均投资收益率5.14%，超过年均保底收益率2.63%约2.51个百分点。报告指出，社保基金会坚持并持续丰富“长期投资、价值投资、责任投资”理念，审慎稳健开展投资运营管理，忠实履行好基金安全和保值增值主体责任。",
-    "pubDate": "2026-08-01 13:30:07  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "2026年上半年，浙江机场累计运输生鲜近4万吨",
-    "link": "https://36kr.com/newsflashes/3920417355558276?f=rss",
-    "description": "据统计，上半年浙江省机场累计运输生鲜近4万吨，同比增长超26%，其中进出口生鲜近1.5万吨，同比增长超178%。作为核心枢纽，杭州机场上半年生鲜运输量约2.7万吨，同比增长超23%。",
-    "pubDate": "2026-08-01 13:15:38  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Russian attack on Ukrainian capital kills at least nine people",
-    "link": "https://www.france24.com/en/europe/20260801-russian-attack-on-ukrainian-capital-kills-at-least-nine-people",
-    "description": "At least nine people were killed and 28 others wounded in Ukraine's capital Kyiv after Russia launched a series of ballistic missiles overnight into Saturday, authorities said. Both Russia and Ukraine have ramped up attacks in recent months, with Moscow increasing its long-range strikes on towns and",
-    "pubDate": "Sat, 01 Aug 2026 05:14:39 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
     "title": "Wie zwei Kriege und El Niño den Hunger weltweit beeinflussen",
     "link": "https://www.dw.com/de/wie-zwei-kriege-und-el-niño-den-hunger-weltweit-beeinflussen/a-78192532?maca=de-rss-de-all-1119-rdf",
     "description": "Noch funktioniert die weltweite Versorgung mit Lebensmitteln, ungeachtet der Kriege in der Ukraine und in Nahost. Doch nun kommt ein Wetterphänomen wie El Niño hinzu, das die Situation kippen könnte.",
@@ -2086,14 +2134,6 @@
     "pubDate": "Sat, 01 Aug 2026 05:01:56 GMT",
     "source": "BBC News",
     "category": "international"
-  },
-  {
-    "title": "中国—乌兹别克斯坦AEO互认安排正式实施",
-    "link": "https://36kr.com/newsflashes/3920416879062662?f=rss",
-    "description": "今天（1日），中国与乌兹别克斯坦海关“经认证的经营者”（AEO）互认安排正式实施，两国贸易便利化水平将会进一步提升。AEO互认安排落地后，中国海关、乌兹别克斯坦海关在进口货物通关时，向互认的AEO企业提供多项便利措施：适用较低的进口货物查验率；对需要实货检查的货物给予优先检查；指定海关联络员，负责沟通处理项目成员在通关中遇到的问题；在国际贸易中断、恢复后优先通关。",
-    "pubDate": "2026-08-01 13:00:09  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
   },
   {
     "title": "Paramount+ Coupon Codes and Deals for August 2026",
@@ -2205,70 +2245,6 @@
     "description": "下一场竞争，是谁能造出更多“有用的世界”",
     "pubDate": "Sat, 01 Aug 2026 04:53:33 +0000",
     "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "报道称OpenAI面临投资者担忧与竞争压力 IPO或推迟至明年",
-    "link": "https://36kr.com/newsflashes/3920415886061193?f=rss",
-    "description": "据报道，OpenAI可能会将其IPO推迟到明年。参与相关讨论的人士透露，近几个月来，OpenAI的一些大投资者已私下对这家初创公司相对于其增长的现金消耗速度过快表示担忧，而其他投资者则通过向Anthropic投入资金来对冲他们对OpenAI的押注。与此同时，Anthropic的营收增长近期已超过OpenAI，其估值也是如此。据知情人士透露，Anthropic正在加速秋季IPO的计划，并已开始与潜在投资者会面，强调其相对于ChatGPT制造商所保持的领先优势。而最初希望抢在Anthropic之前上市，OpenAI现在可能会等到明年再IPO。",
-    "pubDate": "2026-08-01 12:45:09  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Protesters detained at rally in support of Pakistan-administered Kashmir",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/1/protesters-detained-at-rally-in-support-of-pakistan-administered-kashmir?traffic_source=rss",
-    "description": "Police detained several protesters in Lahore, Pakistan as they rallied in solidarity with Pakistan-administered Kashmir.",
-    "pubDate": "Sat, 01 Aug 2026 04:39:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "US drops charges against Olympian for damage to Reflecting Pool",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/1/us-drops-charges-against-olympian-for-damage-to-reflecting-pool?traffic_source=rss",
-    "description": "The US Department of Justice has moved to dismiss its case against Olympian David Hearn.",
-    "pubDate": "Sat, 01 Aug 2026 04:36:10 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "【地震情報】北海道 青森 岩手で震度4(11:48)",
-    "link": "http://www3.nhk.or.jp/news/html/20260801/k10015193381000.html",
-    "description": "1日午前11時48分ごろ北海道と青森県、岩手県で震度4の揺れを観測する地震がありました。この地震による津波の心配はありません。",
-    "pubDate": "Sat, 01 Aug 2026 13:36:04 +0900",
-    "source": "NHKニュース",
-    "category": "international"
-  },
-  {
-    "title": "快递外卖电动车须悬挂专用号牌 北京新规今起施行",
-    "link": "https://36kr.com/newsflashes/3920415204978310?f=rss",
-    "description": "《北京市快递、外卖行业非机动车管理办法（试行）》正式施行。新规明确用于快递、外卖服务的电动自行车须登记并悬挂专用号牌，实行“专车专用”。停止用于快递外卖服务的，应在停用之日起30日内变更普通号牌。同时，新购置用于快递、外卖服务的电动自行车，应符合2024年版《电动自行车安全技术规范》国家标准并列入北京市产品目录。",
-    "pubDate": "2026-08-01 12:30:25  +0800",
-    "source": "36氪",
-    "category": "policy"
-  },
-  {
-    "title": "蔚来公司7月交付35934台，同比增长71%",
-    "link": "https://36kr.com/newsflashes/3920471544934019?f=rss",
-    "description": "36氪获悉，2026年7月，蔚来公司交付新车35934台，同比增长71.0%。其中，蔚来品牌交付新车20008台，同比增长57.9%；乐道品牌交付新车10155台，同比增长69.9%；firefly萤火虫品牌交付新车5771台，同比增长143.9%。",
-    "pubDate": "2026-08-01 12:29:53  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "暑运过半 全国铁路累计发送旅客4.32亿人次",
-    "link": "https://36kr.com/newsflashes/3920387953897088?f=rss",
-    "description": "记者今天（8月1日）从国铁集团获悉，为期两个月的铁路暑运自7月1日启动以来至7月31日，累计发送旅客4.32亿人次。进入暑运以来，成渝、京津冀、长三角、粤港澳大湾区客流集中。数据显示，截至7月31日，国铁北京局累计发送旅客3877.4万人次，国铁广州局累计发送旅客5892.5万人次。",
-    "pubDate": "2026-08-01 12:15:42  +0800",
-    "source": "36氪",
-    "category": "ai-tech"
-  },
-  {
-    "title": "韩国7月出口飙升至历史第二高 半导体出口同比���增近180%",
-    "link": "https://36kr.com/newsflashes/3920386651319944?f=rss",
-    "description": "在存储芯片需求旺盛的推动下，韩国7月出口同比飙升近63%至989.9亿美元，创历史第二高单月出口额，仅次于6月的1022亿美元。进口增长26.5%至685.6亿美元，贸易顺差达303.2亿美元。从行业来看，半导体出口暴增179%至410亿美元，连续两个月突破400亿大关，尽管竞争加剧，但全球存储产品价格仍维持高位。数据显示，受大型高科技公司推出的AI数据中心投资项目的推动，对美出口额激增68.7%，达到174亿美元。韩国产业通商资源部长官金正宽表示，在半导体行业强劲表现的带动下，韩国20个主要出口类别中有19个实现了增长，出口组合多元化成效显著。",
-    "pubDate": "2026-08-01 12:00:25  +0800",
-    "source": "36氪",
     "category": "ai-tech"
   },
   {
@@ -3136,6 +3112,363 @@
     "category": "ai-tech"
   },
   {
+    "title": "实测 DeepSeek V4 正式版：3 块钱干完 5 件事，AI「智价比」之战开打了",
+    "link": "https://www.ifanr.com/1673553?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "顶级模型的竞争，正在从单纯比拼能力上限，转向同时争夺「智价比」。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Fri, 31 Jul 2026 11:50:59 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Kimi K3 已提前亮相？神秘模型「Kivine」现身，百万上下文能力惊艳全球",
+    "link": "https://www.leiphone.com/category/ai/mER69AfKN23gn4Yt.html",
+    "description": "如果传闻属实，Kimi K3 将成为国产模型的重要节点。\n\n\n\n\n\n    作者丨郑佳美、樊天骄\n\n    编辑丨马晓宁\n                                                                                                       \n\n\n7 月 15 日，一款名为 Kivine 的匿名模型突然出现在 LMArena。雷峰网\n按照正常流程，它本应该只是众多匿名测试模型中的一个，等待用户通过盲测判断能力高低。但这一次情况有些不同，在上线之后短短几个小时内，Kivine 就迅速成为全球 AI 社区关注的焦",
+    "pubDate": "Fri, 31 Jul 2026 19:30:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "卡帕西力推的 LLM Wiki，会淘汰传统 RAG 吗？",
+    "link": "https://www.leiphone.com/category/ai/Q24LRPqt1A6EUYiv.html",
+    "description": "看清 Agent Wiki ≠ AI 用户记忆，你的知识库落地就成功一半了。\n\n\n\n\n\n    作者丨樊天骄\n\n    编辑丨郑佳美\n                                                                                                       \n\n\n2026 年 4 月，AI 领域知名研究者 Andrej Karpathy 在 GitHub 发布了一篇技术 Gist，提出「LLM Wiki」的技术构想，迅速在行业内引发跟进热潮。雷峰网\n短短数月内，Cognition、Factory、LangChai",
+    "pubDate": "Fri, 31 Jul 2026 19:26:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "美团联合苏州正式上线“等灯停表”，即日起在全国20城落地试点",
+    "link": "https://www.leiphone.com/category/industrynews/3QgMEdc9pkFxrmt4.html",
+    "description": "“等灯停表”真的来了，外卖骑手等红灯时间，将实现单独累加计算并在配送时间中顺延。7月31日，美团和苏州公安联合正式上线了外卖骑手“等灯停表”功能首个正式版本，目前已在率先接入交通数据的苏州道路进行实际路测。\n根据美团提供的测试视频来看，当骑手在交通路口等红灯时，页面呈现红灯倒计时读秒信息，美团骑手AI安全助手发布提示信息“红灯停一停，正在记录等灯时长，订单结束时将延长本单配送时间”，骑手还可在该页面中看到所在区域的禁行道路信息，选择不同的配送路线，或根据需求自主决定配送线路。\n配送完成后，骑手页面弹窗提示“订单号、等红灯累计时间”，系统告知“相应顺延最晚送达时间”，完成“等灯停表”功能。\n美团",
+    "pubDate": "Fri, 31 Jul 2026 19:21:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Schon früh aggressiv: Wer war der CSD-Täter Abdul Ballout?",
+    "link": "https://www.dw.com/de/schon-früh-aggressiv-wer-war-der-csd-täter-abdul-ballout/a-78185133?maca=de-rss-de-all-1119-rdf",
+    "description": "Als Schüler schon voller Gewalt und Konflikte, als junger Mann ein entschlossener Islamist. Die sicheren Fakten zeigen einen zerrissenen Charakter, der sich vor allem im Internet radikalisierte.",
+    "pubDate": "2026-07-31T11:18:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "一键分享＝全网公开？Claude 被曝聊天记录可在谷歌直接搜到",
+    "link": "https://www.leiphone.com/category/ai/JpGvdH7oYOZjU3lS.html",
+    "description": "从加密货币私钥到身份信息，Reddit 正掀起一场窥探他人的狂欢。\n\n\n\n\n\n    作者丨樊天骄\n\n    编辑丨郑佳美\n                                                                                                       \n\n\n2026 年 7 月 26 日，一名 Reddit 用户在社区发帖称，使用谷歌站点检索语法 site:claude.ai/share，就能批量调出成千上万条 Claude 用户的共享对话记录。雷峰网\n用户在 Claude 中点击 “分享” 按钮后，系统会生成一张无",
+    "pubDate": "Fri, 31 Jul 2026 19:16:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "谁在训练 Kimi K3 ? 深挖贡献者名单，这有一份最全档案",
+    "link": "https://www.leiphone.com/category/ai/3UBe8gjtw8tFTQvJ.html",
+    "description": "起底 K3 背后核心极客天团，人均扛起 7 亿估值！\n\n\n\n\n\n    作者丨高允毅  樊天骄\n\n    编辑丨马晓宁\n                                                                                                       \n\n\n7 月 27 日，月之暗面拿出全部诚意，直接把满血版 2.8T 模型 Kimi K3 全部开源了。在技术报告的最后，他们首次公布了Kimi K3背后的实际贡献者名单，我们细数了一下，有401位成员，可以说，这是月之暗面人才团队的一次全面亮相。\n\n\n从当初那个估值仅几亿",
+    "pubDate": "Fri, 31 Jul 2026 19:10:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Daisy One Review: Comfy and Tactile Headphones",
+    "link": "https://www.wired.com/review/daisy-one/",
+    "description": "The company’s first headphones look very stylish and have great tactile features but underwhelm on sound quality.",
+    "pubDate": "Fri, 31 Jul 2026 11:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "6 Best Phones With Headphone Jacks (2026), Tested and Reviewed",
+    "link": "https://www.wired.com/gallery/best-headphone-jack-phones/",
+    "description": "Headphone jacks are endangered, but they’re not gone. Here are our favorite smartphones that still let you plug and play.",
+    "pubDate": "Fri, 31 Jul 2026 11:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Aleksander Ceferin: Europas Gegenspieler der FIFA",
+    "link": "https://www.dw.com/de/aleksander-ceferin-europas-gegenspieler-der-fifa/a-78189625?maca=de-rss-de-all-1119-rdf",
+    "description": "Aleksander Ceferin gilt als wichtigster Gegenspieler von FIFA-Präsident Gianni Infantino. Im Streit um die Investorenpläne der FIFA hat der UEFA-Präsident Europas Fußballverbände geschlossen hinter sich gebracht.",
+    "pubDate": "2026-07-31T10:59:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Nach OpenAI-Vorfall weitere KI-Hackerangriffe enthüllt",
+    "link": "https://www.dw.com/de/nach-openai-vorfall-weitere-ki-hackerangriffe-enthüllt/a-78188828?maca=de-rss-de-all-1119-rdf",
+    "description": "Diesmal ist pikanterweise ein Unternehmen betroffen, das für den verantwortungsvollen Umgang mit Künstlicher Intelligenz einstand. Die Attacken seiner KI traten erst im Nachhinein zutage.",
+    "pubDate": "2026-07-31T10:48:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Sudan: Wenn die Drohne ins Klassenzimmer einschlägt",
+    "link": "https://www.dw.com/de/sudan-wenn-die-drohne-ins-klassenzimmer-einschlägt/a-78076700?maca=de-rss-de-all-1119-rdf",
+    "description": "Wenig Lebensmittel und Trinkwasser, kaum Medikamente. Die Lage in der belagerten Stadt Al-Obeid im Sudan spitzt sich täglich zu. Besonders betroffen sind die Kinder, von denen sich viele nicht mehr in die Schule trauen.",
+    "pubDate": "2026-07-31T10:45:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Powerchip founder Frank Huang dies at 76; vice chair steps in as acting chief",
+    "link": "https://www.digitimes.com/news/a20260731VL220/chairman-psmc-dram-taiwan-tsmc.html",
+    "description": "Powerchip Semiconductor Manufacturing Corp. (PSMC, TWSE: 6770) said in a material-information filing on July 31 that its chairman, Frank Huang, died peacefully in his sleep at his home around midday that day of cardiopulmonary failure. He was 76.",
+    "pubDate": "Fri, 31 Jul 2026 10:41:58 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "AI 正在变成一门制造业 | WAIC 2026 Agent 产品观察",
+    "link": "https://www.leiphone.com/category/yanxishe/uSlPIJ79kvvSAf9r.html",
+    "description": "国内 Agent 产品当前主要是供给侧繁荣，不是需求侧繁荣。\n\n\n\n\n\n    作者丨李   娜\n\n    编辑丨马晓宁\n                                                                                                       \n\n\n2026 年的 WAIC 真是太热闹了，人潮拥挤，在地铁站排着队进入 WAIC 场馆的时候， 我看见地铁站广告牌上的百度智能体“百度搭子”的广告，这场关于智能体没有硝烟的战争，从入口处就拉开了帷幕。(雷峰网雷峰网雷峰网)\n\nWAIC 主场馆世博中心附近地铁站“百度搭",
+    "pubDate": "Fri, 31 Jul 2026 18:41:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "首家国产自研GPU厂商登陆ChinaJoy，砺算LX 7G100消费显卡零售版全面开售",
+    "link": "https://www.leiphone.com/category/industrynews/dtHMAsbab0PVgnhU.html",
+    "description": "2026年7月末，中国消费级GPU市场迎来重要时刻。\n在刚刚开幕的2026年中国国际数码互动娱乐展览会（2026 ChinaJoy）上，砺算科技作为首家国产自研GPU厂商亮相，打破此前从未有国产自研GPU原厂以独立展商身份参展的历史。与此同时，砺算首款全自研消费级显卡LX 7G100零售版已在砺算科技京东自营旗舰店正式开售。\n从今年5月LX 7G100创始版1000张秒罄、二手市场溢价超4000元，到如今零售版全面放量，砺算LX 7G100不仅终结了国产消费级显卡市场“无芯可用”的局面，更以完全自主自研的TrueGPU天图架构，向全球GPU格局发出强音。\n国产自研GPU厂商ChinaJoy首秀",
+    "pubDate": "Fri, 31 Jul 2026 18:33:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "SJY Zeph Open-Back Headphones Review: Music Through Magnets",
+    "link": "https://www.wired.com/review/sjy-zeph-open-back-planar-magnetic-headphones/",
+    "description": "SJY’s Zeph are brilliant wired headphones, using flippable earcups for two different takes on your favorite music.",
+    "pubDate": "Fri, 31 Jul 2026 10:30:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "36氪独家｜曾爱玲入职B站担任AI视频生成业务负责人，向CEO陈睿汇报",
+    "link": "https://36kr.com/p/3910776673064073?f=rss",
+    "description": "文｜王毓婵 兰杰\n编辑｜乔芊\n36氪独家获悉，曾爱玲入职哔哩哔哩（下称“B站”），担任AI视频生成业务负责人，向CEO陈睿汇报。\n36氪就此事向B站方面求证，对方暂无回应。\n\n曾爱玲\nB站此前已公开表示，AI投入主要聚焦视频理解、视频推荐和辅助视频创作等方向。曾爱玲入职后，或将参与相关业务。\n曾爱玲的个人主页显示，她曾在腾讯混元&AI Lab团队和国际数字经济研究院（IDEA）工作三年，领导以人为中心的感知与生成研究团队。其后，她加入米哈游创始人蔡浩宇旗下AI公司Anuttacon，负责开发以人为中心的交互式多模态视频生成系统。这些模型使AI智能体能够感知、交互并生成实时、长时程的视频。\n曾爱",
+    "pubDate": "2026-07-31 18:27:38  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "\n        AIGC 的中场，我们需要创作领域的「Codex」\n      ",
+    "link": "http://www.geekpark.net/news/368267",
+    "description": "作者｜Moonshot\n编辑｜郑玄\n \n最近，影视飓风开始进入 AI 影视赛道，选择与 TapNow 推出一套 AI 影像创作教程。\n一套教程的出现，本身就是个信号，它说明 AI 影像正在走出「展示奇观」的阶段，开始形成可以被讲解、学习和复用的创作方法。\n被教程吸引进来的，也未必都是准备拍电影的人。\n车企、游戏公司和消费品牌都在增加视频内容的使用：产品发布需要概念片，游戏上线需要世界观短片，市场部门则要持续生产品牌视频、更新社交媒体。\n对这些团队来说，AI 影像正在从一项新技术，变成工作里可以调用的制作能力。\n\n但真正开始做视频以后，问题很快就从「怎么生成」变成了「怎么把视频做下去」。\n一条完",
+    "pubDate": "Fri, 31 Jul 2026 18:07:42 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "氪星晚报 ｜Prada集团上半年营收增长16%，Miu Miu增速显著放缓；浪潮数据发布自研AI数据操作系统",
+    "link": "https://36kr.com/p/3919378312670857?f=rss",
+    "description": "大公司：\n途牛：8月中上旬或将迎新一轮客流高峰\n36氪获悉，进入8月后，学生假期仍有充足余量，亲子游、避暑游、海滨海岛游等需求持续释放，预计将在8月中上旬迎来新一轮客流高峰。途牛截至目前最新预订数据显示，暑期后半程，上海、北京、成都、三亚、广州、南京、贵阳、杭州、重庆、青岛等目的地预计将成为途牛境内游用户更为热门的选择。\nPrada集团上半年营收增长16%，Miu Miu增速显著放缓\n2026年上半年，Prada集团营收按固定汇率计同比增长16%至30.48亿欧元（约合人民币237亿元），有机增长5%，其中第二季度增长7%。分品牌看，上半年Prada零售额同比增长3%，其中第二季度增速提升至6",
+    "pubDate": "2026-07-31 18:01:34  +0800",
+    "source": "36氪",
+    "category": "ai-tech"
+  },
+  {
+    "title": "1/8 参数，跑赢 80B 大模型：Boogu-Image 是黑马还是鸡肋？",
+    "link": "https://www.leiphone.com/category/industrynews/mjR1R5Z1wgosxBg7.html",
+    "description": "(雷峰网)\n摘要：“跑分反超只是开胃菜，生产级交付才是真考场。”\n2026 年 6 月，HuggingFace 上一个名为 Boogu-Image-0.1 的开源模型，在上传以后迅速引爆了 AI 圈。\n这款模型最引人注目的地方，在于它以区区 10B 的参数规模，就在多项关键能力上超过了很多参数量更大的模型。\n更大就意味着更强，长期以来这在 AI 圈都是颠扑不破的真理，语言模型如此，图像模型亦然。\n但在 Qwen-Image-Bench 基准测试中，10B 的 Boogu-Image-0.1 以 53.58 的最终得分，领先于 20B 的 Qwen-Image-2512（52.06）和 80B ",
+    "pubDate": "Fri, 31 Jul 2026 18:01:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The New Defcon Badges Pack a Unique Open Source Chip That Doubles as a Security Key",
+    "link": "https://www.wired.com/story/defcon-34-badge-baochip-andrew-bunnie-huang/",
+    "description": "Created by legendary hardware hacker Andrew “bunnie” Huang, the badges for this year’s famed security conference aim to push the boundaries of security and transparency.",
+    "pubDate": "Fri, 31 Jul 2026 10:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "FCC禁令之后，具身智能企业还能站上CES2027么？｜ 出海参考",
+    "link": "https://www.tmtpost.com/8087586.html",
+    "description": "FCC禁令真正改变的，或许不是中国具身机器人的研发速度，而是具身企业全球化的难度。",
+    "pubDate": "Sat, 01 Aug 2026 14:31:24 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "吉尔吉斯斯坦与阿塞拜疆签署同盟关系条约",
+    "link": "https://36kr.com/newsflashes/3920436488678789?f=rss",
+    "description": "据吉尔吉斯斯坦总统网站7月31日消息，吉总统扎帕罗夫当天在吉尔吉斯斯坦乔尔蓬阿塔市与来访的阿塞拜疆总统阿利耶夫签署同盟关系条约。扎帕罗夫当天与阿利耶夫举行会谈后向媒体发表声明。扎帕罗夫表示，两国签署同盟关系条约是元首会谈的一项重要成果，标志着双方合作进入新阶段。",
+    "pubDate": "2026-08-01 14:30:05  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "浙江实施人工智能OPC术语团体标准：由1名核心自然人主导",
+    "link": "https://36kr.com/newsflashes/3920435807923841?f=rss",
+    "description": "由浙江省数字经济发展中心等编制的《人工智能OPC术语》团体标准2026年8月1日起实施，将人工智能OPC（One Person Company，一人公司）界定为由1名核心自然人主导控制，员工一般不超过10人，以AI技术研究、开发、应用或服务为主营业务的公司。",
+    "pubDate": "2026-08-01 14:15:22  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "ジャワ原人 赤ちゃんを未発達なまま出産し協力して子育てか",
+    "link": "http://www3.nhk.or.jp/news/html/20260801/k10015192831000.html",
+    "description": "およそ10万年前の「ジャワ原人」の赤ちゃんは、現代のヒトと同じように長期間子育てが必要な、未発達な状態で生まれていたとみられることが、東京大学などのグループの骨の分析で明らかになりました。グループでは、ジャワ原人は互いに協力して赤ちゃんを育てていた可能性があるとしています。",
+    "pubDate": "Sat, 01 Aug 2026 15:14:20 +0900",
+    "source": "NHKニュース",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "US drops Reflecting Pool case against former Olympian, admits 'botched installation'",
+    "link": "https://www.france24.com/en/americas/20260801-us-admits-reflecting-pool-damage-due-to-botched-renovation-drops-charges-against-former-olympian",
+    "description": "The US Justice Department on Friday dropped its case against a former Olympian accused of damaging the Lincoln Memorial Reflecting Pool after saying the damage was a result of \"a botched installation\", not vandalism. Trump had personally overseen the Reflecting Pool's renovation, which was estimated",
+    "pubDate": "Sat, 01 Aug 2026 06:09:11 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "US drops Reflecting Pool case, admits damage due to botched renovation",
+    "link": "https://www.france24.com/en/live-news/20260801-us-drops-reflecting-pool-case-admits-damage-due-to-botched-renovation",
+    "description": "The US Justice Department on Friday dropped its case against a former Olympian accused of damaging the Lincoln Memorial Reflecting Pool, saying the hurried renovations ordered by President Donald Trump had been botched.",
+    "pubDate": "Sat, 01 Aug 2026 06:09:11 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "鸿蒙智行月交付45046台",
+    "link": "https://36kr.com/newsflashes/3920418360569216?f=rss",
+    "description": "鸿蒙智行：7月交付45,046台，1-7月累计交付28.6万台，同比增长13.7%。",
+    "pubDate": "2026-08-01 14:00:40  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "中国国家博物馆严正声明：从未在馆外开展扫码入群、信息采集活动",
+    "link": "https://36kr.com/newsflashes/3920419149573509?f=rss",
+    "description": "中国国家博物馆网站7月31日发布公告称，近日，观众反映有社会人员冒用“国家博物馆工作人员”名义从事引导公众扫码，收集获取手机号码、身份证号码等个人信息的活动。对此，国家博物馆高度重视，特此发布严正声明：国家博物馆从未授权任何机构、个人在馆外公共场所开展扫码入群、信息采集等活动，凡是以国家博物馆名义进行的此类活动，均与国家博物馆无任何关联。上述行为严重侵犯了国家博物馆的合法权益，国家博物馆将依法保留追究相关组织及个人法律责任的权利。在此，国家博物馆特别提醒公众，提高安全防范意识，妥善保管个人信息，切勿轻易扫描来源不明的二维码。如发现有组织或个人以国家博物馆名义进行非法活动，请及时向相关执法部门举",
+    "pubDate": "2026-08-01 13:45:29  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Fifa scraps controversial World Cup investment plan",
+    "link": "https://www.bbc.co.uk/sport/football/articles/czekr6kn58po?at_medium=RSS&at_campaign=rss",
+    "description": "Football's world governing body Fifa abandons plans to sell off stakes in its major competitions after widespread opposition to president Gianni Infantino's proposal.",
+    "pubDate": "Sat, 01 Aug 2026 05:42:31 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "2025年地方养老基金投资收益率为5.76%",
+    "link": "https://36kr.com/newsflashes/3920417829416325?f=rss",
+    "description": "全国社会保障基金理事会今天（1日）发布报告，2025年地方养老基金投资收益额1420.71亿元，投资收益率5.76%。自2016年12月受托运营以来，地方养老基金累计投资收益额5544.30亿元，年均投资收益率5.14%，超过年均保底收益率2.63%约2.51个百分点。报告指出，社保基金会坚持并持续丰富“长期投资、价值投资、责任投资”理念，审慎稳健开展投资运营管理，忠实履行好基金安全和保值增值主体责任。",
+    "pubDate": "2026-08-01 13:30:07  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "2026年上半年，浙江机场累计运输生鲜近4万吨",
+    "link": "https://36kr.com/newsflashes/3920417355558276?f=rss",
+    "description": "据统计，上半年浙江省机场累计运输生鲜近4万吨，同比增长超26%，其中进出口生鲜近1.5万吨，同比增长超178%。作为核心枢纽，杭州机场上半年生鲜运输量约2.7万吨，同比增长超23%。",
+    "pubDate": "2026-08-01 13:15:38  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Russian attack on Ukrainian capital kills at least nine people",
+    "link": "https://www.france24.com/en/europe/20260801-russian-attack-on-ukrainian-capital-kills-at-least-nine-people",
+    "description": "At least nine people were killed and 28 others wounded in Ukraine's capital Kyiv after Russia launched a series of ballistic missiles overnight into Saturday, authorities said. Both Russia and Ukraine have ramped up attacks in recent months, with Moscow increasing its long-range strikes on towns and",
+    "pubDate": "Sat, 01 Aug 2026 05:14:39 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "中国—乌兹别克斯坦AEO互认安排正式实施",
+    "link": "https://36kr.com/newsflashes/3920416879062662?f=rss",
+    "description": "今天（1日），中国与乌兹别克斯坦海关“经认证的经营者”（AEO）互认安排正式实施，两国贸易便利化水平将会进一步提升。AEO互认安排落地后，中国海关、乌兹别克斯坦海关在进口货物通关时，向互认的AEO企业提供多项便利措施：适用较低的进口货物查验率；对需要实货检查的货物给予优先检查；指定海关联络员，负责沟通处理项目成员在通关中遇到的问题；在国际贸易中断、恢复后优先通关。",
+    "pubDate": "2026-08-01 13:00:09  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "报道称OpenAI面临投资者担忧与竞争压力 IPO或推迟至明年",
+    "link": "https://36kr.com/newsflashes/3920415886061193?f=rss",
+    "description": "据报道，OpenAI可能会将其IPO推迟到明年。参与相关讨论的人士透露，近几个月来，OpenAI的一些大投资者已私下对这家初创公司相对于其增长的现金消耗速度过快表示担忧，而其他投资者则通过向Anthropic投入资金来对冲他们对OpenAI的押注。与此同时，Anthropic的营收增长近期已超过OpenAI，其估值也是如此。据知情人士透露，Anthropic正在加速秋季IPO的计划，并已开始与潜在投资者会面，强调其相对于ChatGPT制造商所保持的领先优势。而最初希望抢在Anthropic之前上市，OpenAI现在可能会等到明年再IPO。",
+    "pubDate": "2026-08-01 12:45:09  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Protesters detained at rally in support of Pakistan-administered Kashmir",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/1/protesters-detained-at-rally-in-support-of-pakistan-administered-kashmir?traffic_source=rss",
+    "description": "Police detained several protesters in Lahore, Pakistan as they rallied in solidarity with Pakistan-administered Kashmir.",
+    "pubDate": "Sat, 01 Aug 2026 04:39:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "US drops charges against Olympian for damage to Reflecting Pool",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/1/us-drops-charges-against-olympian-for-damage-to-reflecting-pool?traffic_source=rss",
+    "description": "The US Department of Justice has moved to dismiss its case against Olympian David Hearn.",
+    "pubDate": "Sat, 01 Aug 2026 04:36:10 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "【地震情報】北海道 青森 岩手で震度4(11:48)",
+    "link": "http://www3.nhk.or.jp/news/html/20260801/k10015193381000.html",
+    "description": "1日午前11時48分ごろ北海道と青森県、岩手県で震度4の揺れを観測する地震がありました。この地震による津波の心配はありません。",
+    "pubDate": "Sat, 01 Aug 2026 13:36:04 +0900",
+    "source": "NHKニュース",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "快递外卖电动车须悬挂专用号牌 北京新规今起施行",
+    "link": "https://36kr.com/newsflashes/3920415204978310?f=rss",
+    "description": "《北京市快递、外卖行业非机动车管理办法（试行）》正式施行。新规明确用于快递、外卖服务的电动自行车须登记并悬挂专用号牌，实行“专车专用”。停止用于快递外卖服务的，应在停用之日起30日内变更普通号牌。同时，新购置用于快递、外卖服务的电动自行车，应符合2024年版《电动自行车安全技术规范》国家标准并列入北京市产品目录。",
+    "pubDate": "2026-08-01 12:30:25  +0800",
+    "source": "36氪",
+    "category": "policy",
+    "_stale": true
+  },
+  {
+    "title": "蔚来公司7月交付35934台，同比增长71%",
+    "link": "https://36kr.com/newsflashes/3920471544934019?f=rss",
+    "description": "36氪获悉，2026年7月，蔚来公司交付新车35934台，同比增长71.0%。其中，蔚来品牌交付新车20008台，同比增长57.9%；乐道品牌交付新车10155台，同比增长69.9%；firefly萤火虫品牌交付新车5771台，同比增长143.9%。",
+    "pubDate": "2026-08-01 12:29:53  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "暑运过半 全国铁路累计发送旅客4.32亿人次",
+    "link": "https://36kr.com/newsflashes/3920387953897088?f=rss",
+    "description": "记者今天（8月1日）从国铁集团获悉，为期两个月的铁路暑运自7月1日启动以来至7月31日，累计发送旅客4.32亿人次。进入暑运以来，成渝、京津冀、长三角、粤港澳大湾区客流集中。数据显示，截至7月31日，国铁北京局累计发送旅客3877.4万人次，国铁广州局累计发送旅客5892.5万人次。",
+    "pubDate": "2026-08-01 12:15:42  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "韩国7月出口飙升至历史第二高 半导体出口同比���增近180%",
+    "link": "https://36kr.com/newsflashes/3920386651319944?f=rss",
+    "description": "在存储芯片需求旺盛的推动下，韩国7月出口同比飙升近63%至989.9亿美元，创历史第二高单月出口额，仅次于6月的1022亿美元。进口增长26.5%至685.6亿美元，贸易顺差达303.2亿美元。从行业来看，半导体出口暴增179%至410亿美元，连续两个月突破400亿大关，尽管竞争加剧，但全球存储产品价格仍维持高位。数据显示，受大型高科技公司推出的AI数据中心投资项目的推动，对美出口额激增68.7%，达到174亿美元。韩国产业通商资源部长官金正宽表示，在半导体行业强劲表现的带动下，韩国20个主要出口类别中有19个实现了增长，出口组合多元化成效显著。",
+    "pubDate": "2026-08-01 12:00:25  +0800",
+    "source": "36氪",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
     "title": "Peru’s ex-president Humala released after conviction overturned",
     "link": "https://www.aljazeera.com/news/2026/8/1/perus-ex-president-humala-released-after-conviction-overturned?traffic_source=rss",
     "description": "Humala and his wife were sentenced to 15 years last year after being convicted of money laundering.",
@@ -3753,357 +4086,6 @@
     "description": "New York is one of many states with cases against Kalshi and others in dispute with Trump gov't on who gets to regulate.",
     "pubDate": "Fri, 31 Jul 2026 17:52:23 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "George Clooney's family evacuates their home in France amid wildfires",
-    "link": "https://www.france24.com/en/europe/20260731-george-clooney-s-family-evacuates-their-home-in-france-amid-wildfires",
-    "description": "George Clooney and his family have evacuated their home in southeastern France after a nearby wildfire threatened the area, his agent said Thursday. Blazes continued to scorch parts of the country during a prolonged spell of extreme summer heat.",
-    "pubDate": "Fri, 31 Jul 2026 17:47:35 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "FIFA COO Lamour says staff deceived over Infantino’s World Cup plan",
-    "link": "https://www.aljazeera.com/sports/2026/7/31/fifas-lamour-says-staff-deceived-over-infantinos-world-cup-sell-off-plan?traffic_source=rss",
-    "description": "Senior FIFA executive, Kevin Lamour, says staff were deceived over President Gianni Infantino's World Cup sell-off plan.",
-    "pubDate": "Fri, 31 Jul 2026 17:38:04 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The ban on robot vacuums won’t make them safer, only worse",
-    "link": "https://www.theverge.com/tech/973738/robot-vacuum-ban-fewer-choices-higher-prices",
-    "description": "No other gadget knows as much about your home as a robot vacuum. They map your space, learn your routines, and many now carry a camera and microphone into every room in your house. As AI gives them a better understanding of what they see, the privacy and security risks these autonomous robots pose a",
-    "pubDate": "2026-07-31T17:30:49.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Tomodachi Life: Living the Dream is a quirky life sim that’s worth buying at this discount",
-    "link": "https://www.theverge.com/gadgets/973723/tomodachi-life-apple-marshall-stanmore-deal-sale",
-    "description": "Looking to start your own island paradise full of Miis based on family, friends, and celebrities, but don’t feel like paying full fare? Woot has Tomodachi Life: Living the Dream for Switch on sale for $52.99 (usually $59.95). Sort of like Animal Crossing, but more off-kilter, this unique game sees y",
-    "pubDate": "2026-07-31T17:09:13.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Western allies warn North Korean IT workers funding nuclear arsenal",
-    "link": "https://www.aljazeera.com/news/2026/7/31/western-allies-warn-north-korean-it-workers-funding-nuclear-arsenal?traffic_source=rss",
-    "description": "Pyongyang accused of using hard currency earned by AI-assisted workers to power armaments programme.",
-    "pubDate": "Fri, 31 Jul 2026 17:06:52 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Here’s the problem with putting an AI image generator in Google Earth",
-    "link": "https://www.theverge.com/ai-artificial-intelligence/973764/google-earth-ai-satellite-images",
-    "description": "A text prompt was all it took to generate reality-warping images using Google Earth's satellite, aerial, and 3D imagery with a now-rolled back AI feature, like these images generated by Digital Digging's Henk van Ess that show \"refugees near the Mexican border\" and a bomb crater near a hospital in G",
-    "pubDate": "2026-07-31T17:05:46.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Spain's PM blames traffickers after 60,000 migrants reach Ceuta from Morocco",
-    "link": "https://www.bbc.co.uk/news/articles/cx2kp639yx4o?at_medium=RSS&at_campaign=rss",
-    "description": "Spain said most had returned to Morocco by Friday evening, as Italy suspended its Schengen agreement on free movement with Madrid.",
-    "pubDate": "Fri, 31 Jul 2026 17:03:47 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "DR Congo Ebola epidemic becomes world’s second largest outbreak",
-    "link": "https://www.aljazeera.com/news/2026/7/31/dr-congo-ebola-epidemic-becomes-worlds-second-largest-outbreak?traffic_source=rss",
-    "description": "Officials declare the outbreak the fastest spreading ever, warning the world to 'pay much more attention'.",
-    "pubDate": "Fri, 31 Jul 2026 16:52:04 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Strong El Nino 'adding fuel to a planet already on fire', warns UN chief",
-    "link": "https://www.france24.com/en/americas/20260731-strong-el-nino-adding-fuel-to-a-planet-already-on-fire-warns-un-chief",
-    "description": "UN Secretary-General António Guterres warned on Friday that a strengthening El Niño is intensifying an already worsening climate crisis, saying the weather phenomenon is \"adding fuel to a planet already on fire\" and could drive record-breaking global temperatures.",
-    "pubDate": "Fri, 31 Jul 2026 16:41:11 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The major labels propose rules to keep AI slop off the charts",
-    "link": "https://www.theverge.com/ai-artificial-intelligence/973741/ai-music-major-record-labels-charts",
-    "description": "Several record labels, including the big three - Universal Music Group, Sony Music, and Warner Music Group - have proposed rules regarding chart eligibility for AI songs. In short, they wouldn't be. The proposal goes quite a bit further than a labeling proposal put forth by the RIAA, the Internation",
-    "pubDate": "2026-07-31T16:36:48.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Three-year roadmap proposed for Hamas disarmament in Gaza",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/31/three-year-roadmap-proposed-for-hamas-disarmament-in-gaza?traffic_source=rss",
-    "description": "Under a US-backed proposal, Hamas and Israel would have 14 days to finalise Gaza's political transition",
-    "pubDate": "Fri, 31 Jul 2026 16:35:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Trump blames Spain for migrant chaos despite return of tens of thousands to Morocco",
-    "link": "https://www.france24.com/en/europe/20260731-trump-blames-spain-for-migrant-chaos-despite-return-of-tens-of-thousands-to-morocco",
-    "description": "US President Donald Trump and other far-right leaders on Friday seized on Spain's migration crisis to bolster their political messaging on immigration, while over half of the migrants who had crossed the border made their way back to Morocco voluntarily the same day.",
-    "pubDate": "Fri, 31 Jul 2026 16:27:28 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Replay: US President Donald Trump addresses Cabinet meeting",
-    "link": "https://www.france24.com/en/replay-us-president-donald-trump-addresses-cabinet-meeting",
-    "description": "Rewatch US President Donald Trump's address during a cabinet meeting at the Camp David retreat following the announcement that Hamas had agreed to disarm in Gaza as part of a US-brokered plan.",
-    "pubDate": "Fri, 31 Jul 2026 16:22:04 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "BYD’s first 7-seat SUV is cheaper than the Defender in the UK",
-    "link": "https://electrek.co/2026/07/31/byds-first-7-seat-suv-cheaper-than-defender-uk/",
-    "description": "BYD is bringing its boxy, seven-seat SUV to Europe and the UK. The Ti 7 is now on sale in the UK, and it’s even cheaper than the Land Rover Defender PHEV.",
-    "pubDate": "Fri, 31 Jul 2026 16:21:39 +0000",
-    "source": "Electrek",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Donald Trump trying to 'change the narrative away from the Iran war' ahead of midterms",
-    "link": "https://www.france24.com/en/donald-trump-trying-to-change-the-narrative-away-from-the-iran-war-ahead-of-midterms",
-    "description": "US President Donald Trump held a cabinet meeting at the Camp David retreat where he addressed a wide range of subjects, from Iran to the midterm elections. He also blamed the Spanish government for the mass migrant arrivals in Spain's Ceuta enclave, calling it an invasion. FRANCE 24's Fraser Jackson",
-    "pubDate": "Fri, 31 Jul 2026 16:20:04 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Pathirage tops Chopra, Nadeem for Commonwealth Games javelin gold – updates",
-    "link": "https://www.aljazeera.com/sports/liveblog/2026/7/31/live-chopra-nadeem-and-patharige-in-commonwealth-games-javelin-final?traffic_source=rss",
-    "description": "All the live commentary stream coverage updates as Rumesh Tharanga Pathirage sees off Neeraj Chopra and Arshad Nadeem.",
-    "pubDate": "Fri, 31 Jul 2026 16:18:42 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Spain PM: Ceuta migrant surge a ‘violation of territorial integrity’",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/7/31/spain-pm-ceuta-migrant-surge-a-violation-of-territorial?traffic_source=rss",
-    "description": "Spanish Prime Minister Pedro Sanchez has said that the massive influx of migrants from Morocco was a “violation.\"",
-    "pubDate": "Fri, 31 Jul 2026 16:17:59 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Hamas disarming would be 'first concrete step to re-energise peace plan', but questions remain",
-    "link": "https://www.france24.com/en/hamas-disarmament-would-be-first-concrete-step-to-re-energise-peace-plan-but-questions-remain",
-    "description": "Israel will not withdraw from the Gaza Strip until Hamas's \"genuine disarmament\", a political source told AFP on July 31, after the group said it had agreed to a deal involving its disarmament and Israel's exit. But officially, the country has stayed silent regarding the agreement. It was announced ",
-    "pubDate": "Fri, 31 Jul 2026 16:16:13 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Tunisian wildfires expose failing infrastructure, community vulnerabilities",
-    "link": "https://www.aljazeera.com/features/2026/7/31/tunisian-wildfires-expose-failing-infrastructure-community-vulnerabilities?traffic_source=rss",
-    "description": "For families in Tunisia's north, the wildfires have meant lost homes, livestock and harvests.",
-    "pubDate": "Fri, 31 Jul 2026 16:06:05 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "What's in the Gaza peace deal roadmap?",
-    "link": "https://www.bbc.co.uk/news/articles/c20e94k2ex5o?at_medium=RSS&at_campaign=rss",
-    "description": "Hamas says it has accepted a disarmament plan for Gaza which will see it lay down its arms and Israeli troops withdraw from the territory.",
-    "pubDate": "Fri, 31 Jul 2026 16:00:56 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Gaza Strip: Will Hamas really disarm?",
-    "link": "https://www.france24.com/en/video/20260731-gaza-strip-will-hamas-really-disarm",
-    "description": "🇮🇱 🇵🇸 Hamas confirmed Friday it had agreed to a deal with #Israel that would lead to the group's disarmament.\n \n🇺🇸 This was a condition of the second phase of a #Gaza peace plan brokered by #US President Donald #Trump.",
-    "pubDate": "Fri, 31 Jul 2026 16:00:52 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "'The #Odyssey': What's missing from #Nolan's film according to Homer's translator",
-    "link": "https://www.france24.com/en/video/20260731-the-odyssey-what-s-missing-from-nolan-s-film-according-to-homer-s-translator",
-    "description": "Since Christopher Nolan's \"The Odyssey\" came out, it has generated over $300 million…  and a growing conversation about what is missing compared to the original poem. But what is that exactly? In a scathing review published recently, classicist and translator of Homer’s epic, Emily Wilson, had much ",
-    "pubDate": "Fri, 31 Jul 2026 15:53:13 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Why did Riyadh join US strikes on Tehran's allies in Iraq?",
-    "link": "https://www.france24.com/en/middle-east/20260731-why-has-riyadh-joined-the-us-in-striking-tehran",
-    "description": "Saudi Arabia joined the United States for the first time in launching air strikes against Iran-backed militias in Iraq on Wednesday, marking a significant shift in the kingdom's regional posture after months of restraint. While Riyadh insists it was acting in self-defence, the operation raises quest",
-    "pubDate": "Fri, 31 Jul 2026 15:41:12 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Samsung expects memory shortage to worsen through 2027 and last until 2028",
-    "link": "https://techcrunch.com/2026/07/31/samsung-expects-memory-shortage-to-worsen-through-2027-and-last-until-2028/",
-    "description": "AI data center demand is fueling a multi-year chip shortage, pushing up component costs and retail device prices.",
-    "pubDate": "Fri, 31 Jul 2026 15:37:58 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "The promise I made to Ismail al-Ghoul",
-    "link": "https://www.aljazeera.com/opinions/2026/7/31/the-promise-i-made-to-ismail-al-ghoul?traffic_source=rss",
-    "description": "He asked me to keep telling Gaza’s story. Two years after Israel killed him, I have not stopped.",
-    "pubDate": "Fri, 31 Jul 2026 15:30:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "New York sues Kalshi for allegedly running an ‘illegal gambling operation’",
-    "link": "https://www.theverge.com/tech/973709/new-york-kalshi-lawsuit-illegal-gambling-operation",
-    "description": "New York is suing Kalshi over claims the prediction market is running \"an illegal gambling operation.\" In the lawsuit, New York Attorney General Letitia James accuses Kalshi of violating state laws by accepting wagers without a license from the state's gaming commission, as reported earlier by CNBC.",
-    "pubDate": "2026-07-31T15:30:13.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "SpaceX won’t remove all of xAI’s unpermitted turbines for another year",
-    "link": "https://techcrunch.com/2026/07/31/spacex-wont-remove-all-of-xais-unpermitted-turbines-for-another-year/",
-    "description": "SpaceX is building a new power plant for xAI's Colossus data centers, but it won't remove existing, unpermitted turbines for many more months.",
-    "pubDate": "Fri, 31 Jul 2026 15:16:17 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "きょうも熊本など猛烈な暑さ予想 できるかぎりの熱中症対策を",
-    "link": "http://www3.nhk.or.jp/news/html/20260731/k10015191291000.html",
-    "description": "31日も西日本と東日本を中心に広い範囲で気温が上がり、危険な暑さとなったところがありました。1日も気温が上がり、熊本県の地震の被災地でも猛烈な暑さが予想されていて、熱中症を防ぐためにできるかぎりの対策を行ってください。一方、湿った空気の影響で東北や新潟県では断続的に雨が降っていて、福島県ではレベル4の危険警報が発表されている地域があり、土砂災害に厳重な警戒が必要です。",
-    "pubDate": "Sat, 01 Aug 2026 00:11:55 +0900",
-    "source": "NHKニュース",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "World Cup: FIFA studying impact of expanding to 64 teams for 2030 edition",
-    "link": "https://www.aljazeera.com/sports/2026/7/31/world-cup-fifa-studying-impact-of-expanding-to-64-teams-for-2030-edition?traffic_source=rss",
-    "description": "FIFA's World Cup 2026 expansion was their first since 1998, but the 2030 edition could rise to 64 teams.",
-    "pubDate": "Fri, 31 Jul 2026 15:05:55 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Greece orders partial evacuation of Athens suburb as wildfire burns",
-    "link": "https://www.france24.com/en/europe/20260731-greece-orders-partial-evacuation-of-athens-suburb-as-wildfire-burns",
-    "description": "Greek authorities on Friday ordered the partial evacuation of a suburb west of Athens after a forest fire broke out on a nearby mountain, prompting an emergency alert as firefighters battled to contain the blaze.",
-    "pubDate": "Fri, 31 Jul 2026 14:55:48 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "从裁员到降本，宝马打响一场利润保卫战",
-    "link": "https://www.tmtpost.com/8087700.html",
-    "description": "宝马半年报暴露盈利压力：中国少卖6.7万辆、利润率下滑、成本收缩加速，Neue Klasse 将面临巨大挑战。",
-    "pubDate": "Fri, 31 Jul 2026 22:55:43 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Reddit is testing a new way to watch — and listen to — its viral posts",
-    "link": "https://techcrunch.com/2026/07/31/reddit-is-testing-a-new-way-to-watch-and-listen-to-its-viral-posts/",
-    "description": "Reddit is developing a new video experience that lets users watch — or simply listen to — its most popular posts, taking inspiration from the viral TikTok videos that pair Reddit stories with gameplay or other footage. CEO Steve Huffman said the feature is already in the works and could begin testin",
-    "pubDate": "Fri, 31 Jul 2026 14:49:21 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Smallest.ai raises $13M to build ultra-fast voice AI that sounds genuinely human",
-    "link": "https://techcrunch.com/2026/07/31/smallest-ai-raises-13m-to-build-ultra-fast-voice-ai-that-sounds-genuinely-human/",
-    "description": "The startup is building voice models designed to make AI phone calls pass the Turing test.",
-    "pubDate": "Fri, 31 Jul 2026 14:47:11 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Although France's mega fire has eased, the dangers firefighters face haven't",
-    "link": "https://www.france24.com/en/although-france-s-mega-fire-has-eased-the-dangers-firefighters-face-haven-t",
-    "description": "Firefighters in southwestern France were working to control the last hot spots of a massive wildfire that has burned an area four times the size of Paris and forced thousands out of their homes. The blazes that have burned 42,000 hectares of pine forest and touristic areas in Bordeaux's Gironde regi",
-    "pubDate": "Fri, 31 Jul 2026 14:46:37 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Police chief resigns days after deadly shooting in US city of Seattle",
-    "link": "https://www.aljazeera.com/news/2026/7/31/police-chief-resigns-days-after-deadly-shooting-in-us-city-of-seattle?traffic_source=rss",
-    "description": "Shon Barnes steps down amid questions over authorities’ handling of the shooting at a popular food festival.",
-    "pubDate": "Fri, 31 Jul 2026 14:46:09 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Thousands start returning to Morocco after mass arrivals in Spain's Ceuta",
-    "link": "https://www.france24.com/en/thousands-start-returning-to-morocco-after-mass-arrivals-in-spain-s-ceuta",
-    "description": "At least 34 people have died attempting to reach the Spanish exclave of Ceuta from Morocco, according to Spanish authorities. Officials are pushing for a national emergency to be declared as around 60,000 migrants crossed into the territory via land and sea over the past 24 hours. Over 37,500 have s",
-    "pubDate": "Fri, 31 Jul 2026 14:41:52 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "WhatsApp is testing a new folder for messages from large businesses",
-    "link": "https://techcrunch.com/2026/07/31/whatsapp-is-testing-a-new-folder-for-messages-from-large-businesses/",
-    "description": "WhatsApp will automatically move messages from large businesses to a new folder a few hours after you receive them.",
-    "pubDate": "Fri, 31 Jul 2026 14:39:43 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Chelsea fined $13.5m for FA breaches, avoid Premier League points deduction",
-    "link": "https://www.aljazeera.com/sports/2026/7/31/chelsea-fined-13-5m-for-fa-breaches-avoid-premier-league-points-deduction?traffic_source=rss",
-    "description": "Chelsea rule breaches that led to action were self-reported following takeover by Todd ⁠⁠Boehly and Clearlake Capital.",
-    "pubDate": "Fri, 31 Jul 2026 14:36:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Heatwave pushes energy-hungry Tunisia to enforce rolling blackouts",
-    "link": "https://www.france24.com/en/video/20260731-heatwave-forces-energy-hungry-tunisia-to-enforce-rolling-blackouts",
-    "description": "In Tunisia, after weeks of extended power cuts, the effects are serious. Between 150 and 200 died in the heatwave, according to the Order of Young Doctors, and businesses took severe hits after their goods spoiled. Authorities have announced that power is returning to normal as temperatures go back ",
-    "pubDate": "Fri, 31 Jul 2026 14:30:22 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
     "_stale": true
   }
