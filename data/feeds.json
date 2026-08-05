@@ -1,5 +1,277 @@
 [
   {
+    "title": "D-Wave on rails: Company tests entanglement on its dual-rail qubits",
+    "link": "https://arstechnica.com/science/2026/08/d-wave-on-rails-company-tests-entanglement-on-its-dual-rail-qubits/",
+    "description": "Company noted for building quantum annealers now also making gate-based hardware.",
+    "pubDate": "Wed, 05 Aug 2026 16:37:07 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Silicon Photonics MEMS-based Optical Switch Using a Zero-Change Foundry–Compatible Process (UC Berkeley)",
+    "link": "https://semiengineering.com/silicon-photonics-mems-based-optical-switch-using-a-zero-change-foundry-compatible-process-uc-berkeley/",
+    "description": "Researchers from UC Berkeley published a technical paper titled “Zero-change foundry compatible silicon photonics MEMS optical switch.” Abstract Excerpt: The paper demonstrates a broadband silicon photonics MEMS switch with “more than 30 dB extinction ratio” using a “zero-change foundry compatible p",
+    "pubDate": "Wed, 05 Aug 2026 16:27:01 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Meta Ran Ads That Contained AI-Generated Child Sexual Abuse Imagery",
+    "link": "https://www.wired.com/story/meta-ran-ads-that-contained-ai-generated-child-sexual-abuse-imagery/",
+    "description": "More than 50 offending image and video ads were published across Facebook, Instagram, Messenger, or Threads, according to Meta’s ad library data. Some ran as recently as this week.",
+    "pubDate": "Wed, 05 Aug 2026 16:26:36 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Left-wing political outsider wins Democratic Senate primary in Michigan",
+    "link": "https://www.bbc.co.uk/news/articles/ckgdkpz07kvo?at_medium=RSS&at_campaign=rss",
+    "description": "Abdul El-Sayed, the son of Egyptian immigrants, would be the first Muslim US senator if elected in November.",
+    "pubDate": "Wed, 05 Aug 2026 16:20:14 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "GPU-Accelerated Differentiable Framework Resolving Trade-off Between Speed and Accuracy in Switching Power Analysis (Duke, Synopsys)",
+    "link": "https://semiengineering.com/gpu-accelerated-differentiable-framework-resolving-trade-off-between-speed-and-accuracy-in-switching-power-analysis-duke-synopsys/",
+    "description": "Researchers from Duke University and Synopsys published a technical paper titled “DiffPower: GPU-Accelerated Differentiable Switching Power Analysis and Optimization.” Abstract Excerpt: The paper presents DiffPower as “a GPU-accelerated framework for differentiable power analysis and optimization. D",
+    "pubDate": "Wed, 05 Aug 2026 16:10:41 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "US: Progressive Democrat El-Sayed wins key Michigan primary",
+    "link": "https://www.france24.com/en/video/20260805-us-progressive-candidate-el-sayed-wins-key-michigan-primary",
+    "description": "He could help the #Democrats swing the #US #Senate in the upcoming #midterms. Progressive Abdul #ElSayed just won a tight #primary race in #Michigan, against more moderate congresswoman Haley #Stevens.",
+    "pubDate": "Wed, 05 Aug 2026 16:07:30 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Drone carrying explosives found at German airport, police say",
+    "link": "https://www.bbc.co.uk/news/articles/cyvlg4q48l3o?at_medium=RSS&at_campaign=rss",
+    "description": "The drone was found near Ukrainian cargo planes before another object collided with a cargo aircraft in mid-air.",
+    "pubDate": "Wed, 05 Aug 2026 16:06:30 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Pope Leo XIV to visit Peru, Argentina and Uruguay in November",
+    "link": "https://www.aljazeera.com/news/2026/8/5/pope-leo-xiv-to-visit-peru-argentina-and-uruguay-in-november?traffic_source=rss",
+    "description": "The pontiff’s first Latin America trip will take him back to Peru, where he spent decades as a missionary and bishop.",
+    "pubDate": "Wed, 05 Aug 2026 16:05:58 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "El-Sayed's victory sends tremors through Democratic Party",
+    "link": "https://www.bbc.co.uk/news/articles/cp309ng0xq1o?at_medium=RSS&at_campaign=rss",
+    "description": "His win in Michigan sets up a high-stakes contest in November, testing a left-wing candidate's popularity in a swing state.",
+    "pubDate": "Wed, 05 Aug 2026 16:04:16 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Puerto Rican cities hit with water rationing measures during record drought",
+    "link": "https://www.aljazeera.com/news/2026/8/5/puerto-rican-cities-hit-with-water-rationing-measures-during-record-drought?traffic_source=rss",
+    "description": "Governor Jenniffer Gonzalez says she does not know how long the rationing measures will remain in place.",
+    "pubDate": "Wed, 05 Aug 2026 16:02:58 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Reddit is introducing a new moderator: AI",
+    "link": "https://www.theverge.com/tech/975398/reddit-ai-rules-hub-moderator-old-reddit-developer-platform",
+    "description": "Reddit is enlisting AI to help moderate new subreddits - and eventually the rest of site. The company is introducing automated moderation tools that rely on LLMs to help mods manage their communities, and it's expanding who can use those tools today ahead of a full launch later this year. The compan",
+    "pubDate": "2026-08-05T16:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Google’s Top AI Brains Are Leaving to Launch Discovery Loop",
+    "link": "https://www.wired.com/story/jeff-dean-google-discovery-loop-startup/",
+    "description": "Jeff Dean and other high-profile Google executives have founded Discovery Loop, a startup that will seek AI-powered breakthroughs in everything from drug discovery to chip design.",
+    "pubDate": "Wed, 05 Aug 2026 16:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Arab officials call for action over Jerusalem tensions",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/5/arab-officials-call-for-action-over-jerusalem-tensions?traffic_source=rss",
+    "description": "Arab officials call for action over Jerusalem tensions",
+    "pubDate": "Wed, 05 Aug 2026 15:59:52 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Why perception is the key to scaling industrial autonomy",
+    "link": "https://www.therobotreport.com/why-perception-is-the-key-to-scaling-industrial-autonomy/",
+    "description": "Autonomy is no longer just about robotic motor skills. It encompasses machine awareness, dynamic decision-making, multi-vehicle coordination, and spatial precision at a large scale. \nThe post Why perception is the key to scaling industrial autonomy appeared first on The Robot Report.",
+    "pubDate": "Wed, 05 Aug 2026 15:56:45 +0000",
+    "source": "The Robot Report",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Shopify says AI search is driving more traffic and sales, not replacing Google",
+    "link": "https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/",
+    "description": "Shopify says AI isn’t cannibalizing search traffic the way it has for publishers. Instead, AI-driven traffic and orders to Shopify stores tripled year over year in Q2.",
+    "pubDate": "Wed, 05 Aug 2026 15:56:14 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Top Arab, Muslim diplomats launch plan to protect Jerusalem religious sites",
+    "link": "https://www.aljazeera.com/news/2026/8/5/arab-and-muslim-ministers-launch-plan-to-protect-jerusalem-religious-sites?traffic_source=rss",
+    "description": "Foreign ministers warn Christian and Islamic holy sites 'threatened' by Israel 'as never before'.",
+    "pubDate": "Wed, 05 Aug 2026 15:50:06 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Hark previews its browser use agent for completing tasks",
+    "link": "https://techcrunch.com/2026/08/05/hark-previews-its-browser-use-agent-for-completing-tasks/",
+    "description": "Hark claims that its browser use agent is faster and cheaper than competition.",
+    "pubDate": "Wed, 05 Aug 2026 15:46:27 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "GM will begin shipping electric Buick vehicles from China overseas, starting with this SUV",
+    "link": "https://electrek.co/2026/08/05/gm-buick-evs-china-overseas-suv/",
+    "description": "GM and SAIC Motor extended their joint venture partnership in China for another 20 years. Beyond China, SAIC-GM will begin exporting Buick vehicles overseas later this year.",
+    "pubDate": "Wed, 05 Aug 2026 15:46:20 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "MAGA Is In Turmoil Over Tucker Carlson’s Possible 2028 Presidential Bid",
+    "link": "https://www.wired.com/story/maga-is-in-turmoil-over-tucker-carlsons-possible-2028-presidential-bid/",
+    "description": "Joe Kent says that he and other anti–Donald Trump MAGA figures have formed a new movement. They want Tucker Carlson to run for the presidency in 2028.",
+    "pubDate": "Wed, 05 Aug 2026 15:30:21 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Google plans to kill Assistant on your phone on September 4",
+    "link": "https://arstechnica.com/ai/2026/08/google-plans-to-kill-assistant-on-your-phone-on-september-4/",
+    "description": "Assistant will disappear, leaving only Gemini for voice control in the coming weeks.",
+    "pubDate": "Wed, 05 Aug 2026 15:30:02 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Wird die Ukraine nie der NATO beitreten?",
+    "link": "https://www.dw.com/de/wird-die-ukraine-nie-der-nato-beitreten/a-78251444?maca=de-rss-de-all-1119-rdf",
+    "description": "Der frühere ukrainische Armeechef Walerij Saluschnyj fordert, nach neuen Sicherheitsformaten zu suchen, anstatt auf einen Beitritt zur NATO zu warten. Ist diese Einschätzung realistisch und gibt es Alternativen?",
+    "pubDate": "2026-08-05T15:26:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "How to enjoy the most complete solar eclipse since 1989?",
+    "link": "https://www.france24.com/en/how-to-enjoy-the-most-complete-solar-eclipse-since-1989",
+    "description": "No matter how sharp your vision, you're going to need some special glasses next week… Wednesday August 12 will bring the most complete solar eclipse since 1989 – the moon will fully cover the sun. To fully appreciate the celestial spectacle,you will require dedicated spectacles. Bryan Quinn and our ",
+    "pubDate": "Wed, 05 Aug 2026 15:23:45 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "UK tribunal confirms professor’s anti-Zionism is legally protected belief",
+    "link": "https://www.aljazeera.com/news/2026/8/5/uk-tribunal-confirms-professors-anti-zionism-is-legally-protected-belief?traffic_source=rss",
+    "description": "David Miller has told Al Jazeera the ruling is a victory that will encourage others to speak out against Zionism.",
+    "pubDate": "Wed, 05 Aug 2026 15:22:39 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Who is Abdul El-Sayed, Michigan Democrats' best hope at taking back the Senate?",
+    "link": "https://www.france24.com/en/who-is-abdul-el-sayed-michigan-democrats-best-hope-at-taking-back-the-senate",
+    "description": "Abdul El-Sayed won the Michigan Democratic primary election to contest one of the state's two Senate seats. He is just the latest progressive upstart to upset the game plan of the Democratic party's centrist establishment, with a platform that focused on working towards universal health care and get",
+    "pubDate": "Wed, 05 Aug 2026 15:22:19 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Israel resumes military strikes on southern Lebanon as Rome hosts peace talks",
+    "link": "https://www.france24.com/en/middle-east/20260805-israel-resumes-military-strikes-on-southern-lebanon-as-rome-hosts-peace-talks",
+    "description": "Israel again fired on southern Lebanon on Wednesday, blaming Hezbollah for violating a ceasefire, as US-backed negotiations in Rome sought to end months of cross-border hostilities. Lebanon said at least one person was killed in the attacks, while Israel issued its first evacuation alert in weeks fo",
+    "pubDate": "Wed, 05 Aug 2026 15:20:14 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Gymshark names new chief supply chain officer",
+    "link": "https://www.supplychaindive.com/news/gymshark-names-new-chief-supply-chain-officer/826891/",
+    "description": "Matt Rogers joined the fitness apparel brand in 2023 and previously held the role of global supply chain director.",
+    "pubDate": "Wed, 05 Aug 2026 11:19:00 -0400",
+    "source": "Supply Chain Dive - Latest News",
+    "category": "supply-chain"
+  },
+  {
+    "title": "Rogue AI agents created fake online identities in another hacking attempt",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/975577/aisi-openai-anthropic-agent-hacking",
+    "description": "Yet more rogue AI agents from OpenAI and Anthropic have been caught attempting to hack real targets online without permission. The discoveries add to a growing list of previously unknown incidents that have alarmed AI safety experts and intensified pressure for greater oversight of frontier systems.",
+    "pubDate": "2026-08-05T15:14:57.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "War on Iran: US-Iran deal edges closer",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/5/war-on-iran-us-iran-deal-edges-closer?traffic_source=rss",
+    "description": "A deal between the US and Iran could be signed within 48 hours, according to US officials.",
+    "pubDate": "Wed, 05 Aug 2026 15:12:34 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Zoox to start charging for robotaxi rides in Las Vegas",
+    "link": "https://techcrunch.com/2026/08/05/zoox-to-start-charging-for-robotaxi-rides-in-las-vegas/",
+    "description": "This marks the official launch of Zoox's commercial operations.",
+    "pubDate": "Wed, 05 Aug 2026 15:06:42 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "TechCrunch Disrupt 2026’s Real World AI Stage features robots, automated factories, and extinct animals ",
+    "link": "https://techcrunch.com/2026/08/05/techcrunch-disrupt-2026s-real-world-ai-stage-features-robots-automated-factories-and-extinct-animals/",
+    "description": "On our new Real World AI stage, we’ll be focusing on the intersection between the digital and physical, and all the ways we’ll continue to see a blending of the two.",
+    "pubDate": "Wed, 05 Aug 2026 15:05:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Tesla is suing this Canadian province for cutting it out of its EV incentives",
+    "link": "https://electrek.co/2026/08/05/tesla-sues-manitoba-ev-rebate-ban/",
+    "description": "Tesla is suing the Canadian province of Manitoba for cutting the automaker out of its electric vehicle rebate program, and the fight has now reached a courtroom.\nThe province is asking Manitoba’s Court of King’s Bench to throw out the challenge. Tesla says the ban has already cost its Canadian custo",
+    "pubDate": "Wed, 05 Aug 2026 15:04:39 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Neue Ölraffinierie in Kenia soll die Wirtschaft ankurbeln",
+    "link": "https://www.dw.com/de/neue-ölraffinierie-in-kenia-soll-die-wirtschaft-ankurbeln/a-78160387?maca=de-rss-de-all-1119-rdf",
+    "description": "Wird Kenia Afrikas nächster wichtiger Energieknotenpunkt? Der nigerianische Milliardär Aliko Dangote plant eine riesige Raffinerie. Sie könnte die Kraftstoffversorgung, den Handel und das Wirtschaftswachstum verändern.",
+    "pubDate": "2026-08-05T15:01:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "South Africa plans new rules on ex-leaders' foreign trips after Zuma's visit to India",
+    "link": "https://www.bbc.co.uk/news/articles/c1e14lj7vg7o?at_medium=RSS&at_campaign=rss",
+    "description": "Jacob Zuma was pictured with a businessmen allegedly at the heart of a corruption scandal in South Africa",
+    "pubDate": "Wed, 05 Aug 2026 14:58:41 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Puzzle Corner",
+    "link": "https://www.technologyreview.com/2026/08/05/1141230/puzzle-corner-84/",
+    "description": "Ready for a fresh set of puzzles? Click here for the September/October 2026 Puzzle Corner, brought to you by Michael S. Branicky, ScD ’95, of the Puzzle Corner Puzzle Crew (aka PC2), which also includes Edward Faulkner ’03, MEng ’04, and Abe Kunin ’03. This column includes solutions to the May/June ",
+    "pubDate": "Wed, 05 Aug 2026 14:56:29 +0000",
+    "source": "MIT Technology Review",
+    "category": "ai-tech"
+  },
+  {
     "title": "艾斯迪：客户高度集中，资金紧张仍分红，临上会剔除补流项目｜IPO观察",
     "link": "https://www.tmtpost.com/8092274.html",
     "description": "报告期内，艾斯迪营收、净利润保持增长，但经营现金流持续萎缩，净利润现金含量逐年走低，毛利率连续下滑。",
@@ -40,20 +312,20 @@
     "category": "international"
   },
   {
+    "title": "Germany investigates explosive device attached to drone at Leipzig airport",
+    "link": "https://www.aljazeera.com/news/2026/8/5/germany-investigates-explosive-device-attached-to-drone-at-leipzig-airport?traffic_source=rss",
+    "description": "An airport employee spotted the object carrying what authorities described as 'an unknown explosive device'.",
+    "pubDate": "Wed, 05 Aug 2026 14:40:32 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Trump EPA wrongly canceled $20B in climate funds, appeals court rules",
     "link": "https://techcrunch.com/2026/08/05/trump-epa-wrongly-canceled-20b-in-climate-funds-appeals-court-rules/",
     "description": "Climate nonprofits can again access their federal funding more than a year after the Trump EPA ordered Citibank to freeze their accounts.",
     "pubDate": "Wed, 05 Aug 2026 14:40:13 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
-  },
-  {
-    "title": "Left-wing political outsider wins Democratic Senate primary in Michigan",
-    "link": "https://www.bbc.co.uk/news/articles/ckgdkpz07kvo?at_medium=RSS&at_campaign=rss",
-    "description": "Abdul El-Sayed, the son of Egyptian immigrants, would be the first Muslim US senator if elected in November.",
-    "pubDate": "Wed, 05 Aug 2026 14:39:45 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Woman arrested after four stabbed in London's popular Covent Garden",
@@ -64,20 +336,20 @@
     "category": "international"
   },
   {
+    "title": "AI 実在の人標的にメッセージ“自律的に人だますリスク”",
+    "link": "http://www3.nhk.or.jp/news/html/20260805/k10015197651000.html",
+    "description": "イギリスの研究機関はアメリカ企業のAIモデルの性能テストを実施していたところ、偽のアカウントを作ったり、実在する人を標的にメッセージを送ったりして不正アクセスを行おうとしたと明らかにし「自律的に人をだますリスクがこれほど明確になった事例は初めてだ」と指摘しています。",
+    "pubDate": "Wed, 05 Aug 2026 23:33:07 +0900",
+    "source": "NHKニュース",
+    "category": "international"
+  },
+  {
     "title": "Chipotle pulls some jalapeños over Salmonella concerns",
     "link": "https://www.supplychaindive.com/news/chipotle-pulls-some-jalapenos-over-salmonella-concerns/827066/",
     "description": "The brand removed peppers that its ingredient traceability system identified as potentially contaminated and replaced them with products from alternate suppliers.",
     "pubDate": "Wed, 05 Aug 2026 10:33:00 -0400",
     "source": "Supply Chain Dive - Latest News",
     "category": "supply-chain"
-  },
-  {
-    "title": "Drone carrying explosives found at German airport, police say",
-    "link": "https://www.bbc.co.uk/news/articles/cyvlg4q48l3o?at_medium=RSS&at_campaign=rss",
-    "description": "The drone was found near Ukrainian cargo planes before another object collided with a cargo aircraft in mid-air.",
-    "pubDate": "Wed, 05 Aug 2026 14:32:27 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Demolition complicates the search for bodies after Venezuela’s earthquakes",
@@ -114,7 +386,7 @@
   {
     "title": "Anthropic is hiring an AI chip design team",
     "link": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/",
-    "description": "Anthropic is building a team for designing its own custom AI chips. The Claude-maker said it would co-design hardware and models to help its technology run faster and more efficiently.",
+    "description": "Anthropic is building a team for designing its own custom AI chips. The Claude maker said it would co-design hardware and models to help its technology run faster and more efficiently.",
     "pubDate": "Wed, 05 Aug 2026 14:13:18 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -125,6 +397,14 @@
     "description": "Sunbird Messaging is back on the Google Play Store, offering Android users blue bubble privileges in iMessage complete with reactions and high quality videos for $2.99 a month. Apple and Google have made cross platform messaging better in recent years with support for RCS, but Android users can stil",
     "pubDate": "2026-08-05T14:13:15.000Z",
     "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "别再吹AI生图了，不能图层编辑的AI都是“画饼”",
+    "link": "https://www.qbitai.com/2026/08/467034.html",
+    "description": "兔展智能发布RabbitVis，让AI真正走完设计全流程",
+    "pubDate": "Wed, 05 Aug 2026 14:09:18 +0000",
+    "source": "量子位",
     "category": "ai-tech"
   },
   {
@@ -173,6 +453,14 @@
     "description": "There's a chance that you've already taken your big summer trip. If not, August and early autumn are wonderful times to travel. No matter when or where you go, there are some products that can make the boring parts of your trip more fun, and the fun parts of your trip even better. We picked [&#8230;",
     "pubDate": "2026-08-05T14:00:00.000Z",
     "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "SpaceX spooks investors with debut earnings report",
+    "link": "https://arstechnica.com/ai/2026/08/spacex-spooks-investors-with-debut-earnings-report/",
+    "description": "Shares slide in pre-market trading even as group says its quarterly revenues nearly doubled.",
+    "pubDate": "Wed, 05 Aug 2026 13:59:17 +0000",
+    "source": "Ars Technica - All content",
     "category": "ai-tech"
   },
   {
@@ -442,7 +730,7 @@
   {
     "title": "Waste workers help winner find binned €1m lottery ticket in Italy",
     "link": "https://www.bbc.co.uk/news/articles/c62qvll0z94o?at_medium=RSS&at_campaign=rss",
-    "description": "The player only realised he binned the life-changing ticket after family told him the numbers he played for years had been drawn.",
+    "description": "The player only realised they binned the life-changing ticket after family told them the numbers he played for years had been drawn.",
     "pubDate": "Wed, 05 Aug 2026 12:33:43 GMT",
     "source": "BBC News",
     "category": "international"
@@ -544,6 +832,14 @@
     "category": "international"
   },
   {
+    "title": "AI Influencers Are Heading Into Uncharted Territory",
+    "link": "https://www.wired.com/story/algorithm-turning-on-ai-influencers-are-humans-worried/",
+    "description": "Some creators fear the EU AI Act’s regulatory chaos will upend their lucrative businesses. Others are owning it by incorporating AI transparency into their creative process.",
+    "pubDate": "Wed, 05 Aug 2026 11:43:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
     "title": "Ex-Liverpool star Salah arrives in Turkiye before move to Trabzonspor",
     "link": "https://www.aljazeera.com/sports/2026/8/5/ex-liverpool-star-salah-arrives-in-turkiye-ahead-of-move-to-trabzonspor?traffic_source=rss",
     "description": "Egypt forward Mohamed Salah landed in Istanbul on Wednesday to complete his move to Turkiye club Trabzonspor.",
@@ -616,7 +912,7 @@
     "category": "international"
   },
   {
-    "title": "What can scientists learn from a stray SpaceX rocket hitting the Moon?",
+    "title": "Why some scientists are thrilled that a SpaceX rocket has crashed into the Moon",
     "link": "https://www.bbc.co.uk/news/articles/c62q0xerzrno?at_medium=RSS&at_campaign=rss",
     "description": "While the collision was an accident, it is a unique scientific gift for planetary geologists that could provide important data for future space missions.",
     "pubDate": "Wed, 05 Aug 2026 11:19:24 GMT",
@@ -706,7 +1002,7 @@
   {
     "title": "AI makes weather prediction better. Can WindBorne make it lucrative?",
     "link": "https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/",
-    "description": "WindBorne Systems has raised $37 million Series B round to scale its weather balloons and AI forecasts.",
+    "description": "WindBorne Systems has raised a $37 million Series B round to scale its weather balloons and AI forecasts.",
     "pubDate": "Wed, 05 Aug 2026 11:00:00 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -756,6 +1052,14 @@
     "link": "https://www.france24.com/en/the-era-of-the-machine-silicon-valley-shows-off-humanoid-robots",
     "description": "For decades, humanoid robots belonged to the realm of science fiction. But today, they're one of Silicon Valley's hottest markets. According to consulting firm McKinsey, automation could transform up to 30 percent of all hours worked across the US economy by 2030. Dozens of companies are already dev",
     "pubDate": "Wed, 05 Aug 2026 10:48:44 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Ceuta appeals for aid as child migrant crisis becomes 'unsustainable'",
+    "link": "https://www.france24.com/en/europe/20260805-ceuta-warns-of-unsustainable-situation-for-child-migrants-after-influx",
+    "description": "Spain's north African enclave of Ceuta has appealed for urgent government assistance after hundreds of unaccompanied migrant children overwhelmed its reception system following last week's mass border crossing from Morocco. Local authorities have warned that the situation is \"unsustainable\".",
+    "pubDate": "Wed, 05 Aug 2026 10:45:13 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
@@ -2632,14 +2936,6 @@
     "category": "international"
   },
   {
-    "title": "AI Influencers Are Heading Into Uncharted Territory",
-    "link": "https://www.wired.com/story/algorithm-turning-on-ai-influencers-are-humans-worried/",
-    "description": "Some creators fear the EU AI Act’s regulatory chaos will upend their lucrative businesses. Others are owning it by incorporating AI transparency into their creative process.",
-    "pubDate": "Wed, 05 Aug 2026 00:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
     "title": "Iran war live: Tehran-Oman talks on Hormuz ‘positive’; ship hit in Red Sea",
     "link": "https://www.aljazeera.com/news/liveblog/2026/8/5/iran-war-live-tehran-oman-talks-on-hormuz-positive-ship-hit-in-red-sea?traffic_source=rss",
     "description": "Iran says talks with Oman are proceeding 'positively' as US officials say a deal could be possible soon.",
@@ -3702,301 +3998,5 @@
     "pubDate": "Tue, 04 Aug 2026 17:50:06 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
-  },
-  {
-    "title": "FIFA crisis: Jordan chief accuses Infantino of ‘blackmail’ over endorsement",
-    "link": "https://www.aljazeera.com/sports/2026/8/4/jordan-fa-chief-accuses-fifas-infantino-of-blackmail-over-endorsement?traffic_source=rss",
-    "description": "Fallout from failed FIFA World Cup selloff continues, as Jordan FA president joins list of Gianni Infantino detractors.",
-    "pubDate": "Tue, 04 Aug 2026 17:49:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Real Madrid: Vinicius Junior drops huge future hint amid Arsenal interest",
-    "link": "https://www.aljazeera.com/sports/2026/8/4/real-madrid-vinicius-junior-drops-huge-future-hint-amid-arsenal-interest?traffic_source=rss",
-    "description": "Brazil's Vinicius has been linked to Arsenal and Manchester United, but heaps praise on new Real coach Jose Mourinho.",
-    "pubDate": "Tue, 04 Aug 2026 17:47:04 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "How an OpenAI influencer trip backfired ",
-    "link": "https://www.theverge.com/tech/975173/openai-influencers-brand-trip-ai-backlash-marketing",
-    "description": "The brand trip is a right of passage for influencers. It's a mark of legitimacy that a sponsor wants to invite them on an all-expenses-paid vacation, often with luxurious freebies and activities. Trips can also spur hard feelings from uninvited influencers, trigger criticism from the public, and pro",
-    "pubDate": "2026-08-04T17:46:41.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Republicans clear Todd Blanche for top US Justice Department role",
-    "link": "https://www.aljazeera.com/news/2026/8/4/republicans-clear-todd-blanche-for-top-us-justice-department-role?traffic_source=rss",
-    "description": "Blanche's nomination now goes to the full US Senate for a vote.",
-    "pubDate": "Tue, 04 Aug 2026 17:38:46 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Lenovo&#8217;s Legion Go S with SteamOS is down to its lowest price ever",
-    "link": "https://www.theverge.com/gadgets/975113/lenovo-legion-go-s-steamos-deal-sale",
-    "description": "Memory and storage prices will be inflated for the foreseeable future, so we’re always happy to find a good deal on capable gaming hardware, like this discount on the Lenovo Legion Go S with a Z2 Go processor and SteamOS. Normally $1,137.41 (and selling for close to $1,000 at Best Buy), Lenovo has t",
-    "pubDate": "2026-08-04T17:35:04.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "China is Tesla's cash cow, but for how much longer?",
-    "link": "https://arstechnica.com/cars/2026/08/china-is-teslas-cash-cow-but-for-how-much-longer/",
-    "description": "Tesla's Shanghai factory is busier than ever but might be cut loose.",
-    "pubDate": "Tue, 04 Aug 2026 17:34:48 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "‘Not healthy’ LLM use is more common than you think",
-    "link": "https://www.theverge.com/ai-artificial-intelligence/975180/llm-ai-chatbot-use-not-healthy",
-    "description": "Hank Green, a popular YouTuber and science communicator, said he is stepping back from production amid intense criticism over his use of AI. Green described his AI usage as \"not healthy,\" but stressed that he used it for finding research sources and not to write scripts. Much of the ensuing firestor",
-    "pubDate": "2026-08-04T17:33:46.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Jamie Urquhart (1957-2026): Friendly, Supportive, Right to the End",
-    "link": "https://www.eetimes.com/jamie-urquhart-1957-2026-friendly-supportive-right-to-the-end/",
-    "description": "Arm co-founder Jamie Urquhart backed chips, startups, and people to the end—read how his quiet force shaped an industry.\nThe post Jamie Urquhart (1957-2026): Friendly, Supportive, Right to the End appeared first on EE Times.",
-    "pubDate": "Tue, 04 Aug 2026 17:33:32 +0000",
-    "source": "EE Times",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Waymo opens up robotaxi service in Dallas to everyone",
-    "link": "https://techcrunch.com/2026/08/04/waymo-opens-up-robotaxi-service-in-dallas-to-everyone/",
-    "description": "Waymo has dropped the waitlist for its robotaxi service in Dallas, the latest step in the company's bid to scale its self-driving technology across the United States, U.K., and Europe.",
-    "pubDate": "Tue, 04 Aug 2026 17:31:01 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Israel-Lebanon negotiations 'stalling': 'Situation on ground far from spirit of framework agreement'",
-    "link": "https://www.france24.com/en/video/20260804-israel-lebanon-negotiations-stalling-situation-on-ground-far-from-spirit-of-framework-agreement",
-    "description": "Carys Garland is pleased to welcome Joseph BAHOUT, Director, Issam Fares Institute for Public Policy & International Affairs. Despite the symbolism of a seventh round of US-sponsored negotiations between Lebanon and Israel, Bahout argues that the process is increasingly characterised by stagnation r",
-    "pubDate": "Tue, 04 Aug 2026 17:29:05 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Senate Democrat’s report says major banks ‘looked the other way’ on Epstein",
-    "link": "https://www.aljazeera.com/news/2026/8/4/senate-democrats-report-says-major-banks-looked-the-other-way-on-epstein?traffic_source=rss",
-    "description": "The report accuses banks of failing to meet their legal requirements to flag suspicious activity and calls for a probe.",
-    "pubDate": "Tue, 04 Aug 2026 17:27:26 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Video shows Russian drone chasing Ukrainian street vendor in 'human safari' attack",
-    "link": "https://www.bbc.co.uk/news/articles/cn4n03xg981o?at_medium=RSS&at_campaign=rss",
-    "description": "Ukraine said the video - showing a terrified civilian being hounded by a remotely controlled drone - amounted to a war crime.",
-    "pubDate": "Tue, 04 Aug 2026 17:26:06 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Hyundai confirms the IONIQ 6 N is still on track to launch in the US soon",
-    "link": "https://electrek.co/2026/08/04/hyundai-confirms-ioniq-6-n-on-track-launch-us/",
-    "description": "Hyundai shut down rumors that the IONIQ 6 N has been canceled for the US. The IONIQ 6 N is still on track to launch by the end of 2026.",
-    "pubDate": "Tue, 04 Aug 2026 17:25:48 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Take an extra $100 off your TechCrunch Disrupt 2026 pass: This week only!",
-    "link": "https://techcrunch.com/2026/08/04/take-an-extra-100-off-your-techcrunch-disrupt-2026-pass-this-week-only/",
-    "description": "Starting today, you can take an additional $100 off your founder, investor, or attendee TechCrunch Disrupt 2026 pass, which is a nice bonus on top of our current discounted pricing.",
-    "pubDate": "Tue, 04 Aug 2026 17:20:54 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "BMW’s in-car Spider-Man ad is villain behavior",
-    "link": "https://www.theverge.com/transportation/975172/bmw-spider-man-movie-infotainment-ad",
-    "description": "When a premium car brand like BMW says it has a \"special surprise\" in store for drivers, I'd expect something more luxurious than having a movie commercial beamed onto the dashboard. That's exactly what's happening to many BMW owners, however, who are being shown banner ads for Spider-man: Brand New",
-    "pubDate": "2026-08-04T17:17:14.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "TV Time co-founder launches Bingers to revive the beloved TV-tracking app",
-    "link": "https://techcrunch.com/2026/08/04/tv-time-co-founder-launches-bingers-to-revive-the-beloved-tv-tracking-app/",
-    "description": "Bingers is a new TV and movie tracker that revives the social features fans loved with TV Time, while adding support for importing their viewing history.",
-    "pubDate": "Tue, 04 Aug 2026 17:05:48 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Gaza holds mass funeral for 112 people killed in Israel’s 2023 Sabra attack",
-    "link": "https://www.aljazeera.com/news/2026/8/4/gaza-holds-mass-funeral-for-112-people-killed-in-israels-2023-sabra-attack?traffic_source=rss",
-    "description": "Thousands join to bury remains after they were recovered from rubble of homes destroyed during Israel’s genocidal war.",
-    "pubDate": "Tue, 04 Aug 2026 17:03:24 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Shift Left with S2C Prodigy: From RTL Verification to Real-World Software Validation",
-    "link": "https://semiwiki.com/prototyping/s2c-eda/371771-shift-left-with-s2c-prodigy-from-rtl-verification-to-real-world-software-validation/",
-    "description": "For modern SoC teams, “shift left” no longer means finding a few more RTL bugs before tape-out. It means moving meaningful system validation earlier—far enough left that firmware, operating systems, drivers, applications, and external interfaces can be exercised before first silicon arrives. This ch",
-    "pubDate": "Tue, 04 Aug 2026 17:00:02 +0000",
-    "source": "SemiWiki",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Watch: Evacuations as Guatemala volcano erupts",
-    "link": "https://www.bbc.co.uk/news/videos/c9q91dnljpeo?at_medium=RSS&at_campaign=rss",
-    "description": "The Fuego volcano is located near  Escuintla, Chimaltenango, and Sacatepéquez.",
-    "pubDate": "Tue, 04 Aug 2026 16:50:07 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "EU offers emergency aid to Spain to strengthen Ceuta border",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/4/eu-offers-emergency-aid-to-spain-to-strengthen-ceuta-border?traffic_source=rss",
-    "description": "EU offers Spain border assistance after emergency meeting over influx of more than 70,000 migrants into Ceuta last week",
-    "pubDate": "Tue, 04 Aug 2026 16:41:30 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Ukraine: Drone follows man before detonating and injuring him",
-    "link": "https://www.france24.com/en/video/20260804-ukraine-drone-follows-man-before-detonating-and-injuring-him",
-    "description": "The Kherson Regional Military Administration released a video showing a drone flying in front of a man, before detonating and injuring him. The army says the incident occurred on August 4, 2026.\n \nThe war in Ukraine has become the first major conflict dominated by unmanned aerial vehicles. Kyiv has ",
-    "pubDate": "Tue, 04 Aug 2026 16:40:54 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Ivory Coast reappoint Herve Renard for attempt at repeat of AFCON title",
-    "link": "https://www.aljazeera.com/sports/2026/8/4/ivory-coast-reappoint-herve-renard-for-attempt-at-repeat-of-afcon-title?traffic_source=rss",
-    "description": "Former Saudi Arabia and Tunisia coach Herve Renard returns to Ivory Coast in attempt to repeat 2015 AFCON success.",
-    "pubDate": "Tue, 04 Aug 2026 16:40:44 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Infantino’s FIFA crisis: What we know about UEFA’s threatened legal action",
-    "link": "https://www.aljazeera.com/sports/2026/8/4/uefas-threatened-legal-action-against-infantino-and-fifa-what-we-know?traffic_source=rss",
-    "description": "What UEFA's legal letter to FIFA could mean for its president Gianni Infantino after World Cup private investment plan.",
-    "pubDate": "Tue, 04 Aug 2026 16:36:47 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "India denies involvement in ex-Bangladesh PM Hasina’s planned speech",
-    "link": "https://www.aljazeera.com/news/2026/8/4/india-denies-involvement-in-ex-bangladesh-pm-hasinas-planned-speech?traffic_source=rss",
-    "description": "New Delhi, where Hasina is in exile, says it ⁠has nothing to do with her 'private' event.",
-    "pubDate": "Tue, 04 Aug 2026 16:34:54 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Hackers steal over $130M by exploiting bug in offline hardware wallets",
-    "link": "https://techcrunch.com/2026/08/04/hackers-steal-over-130-million-by-exploiting-bug-in-offline-hardware-wallets/",
-    "description": "A security vulnerability in the cryptocurrency hardware wallet Coldcard is allowing hackers to drain the crypto from victims’ wallets. The total losses amount to more than $130 million, according to blockchain-monitoring firms.",
-    "pubDate": "Tue, 04 Aug 2026 16:27:59 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Photos: Guatemala’s Fuego volcano erupts, forcing evacuations",
-    "link": "https://www.aljazeera.com/gallery/2026/8/4/photos-guatemalas-fuego-volcano-erupts-forcing-evacuations?traffic_source=rss",
-    "description": "Guatemala raises alert as Fuego volcano erupts, spewing ash and forcing village evacuations.",
-    "pubDate": "Tue, 04 Aug 2026 16:14:34 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "'World's largest humanitarian crisis Thirty five million Sudanese need humanitarian assistance'",
-    "link": "https://www.france24.com/en/world-s-largest-humanitarian-crisis-thirty-five-million-sudanese-need-humanitarian-assistance",
-    "description": "Camille Knight is pleased to welcome Derk Segaar, IFRC Special Envoy for Sudan. Sudan's humanitarian crisis has become one of the defining yet least visible crises of the twenty first century. Segaar argues that the conflict can no longer be understood merely through the lens of shifting frontlines ",
-    "pubDate": "Tue, 04 Aug 2026 16:14:16 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Ceuta als Stresstest für Europas neuen Asylpakt",
-    "link": "https://www.dw.com/de/ceuta-als-stresstest-für-europas-neuen-asylpakt/a-78235760?maca=de-rss-de-all-1119-rdf",
-    "description": "Nach dem massenhaften Grenzübertritt in die spanische Exklave demonstriert die EU Geschlossenheit. Spanien erhält Lob, Frontex soll gestärkt und Schleuser sollen verfolgt werden. Einige Streitfragen sind weiter ungelöst.",
-    "pubDate": "2026-08-04T16:14:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "War on Iran: Trump says Iran has one ‘last chance’",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/4/war-on-iran-trump-says-iran-has-one-last-chance?traffic_source=rss",
-    "description": "US President Donald Trump says Iran has ‘one last chance’ to make a deal, but Tehran is in no hurry to take it.",
-    "pubDate": "Tue, 04 Aug 2026 16:13:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "The Pixel 11's \"glow\" feature is actually called HiLight—here's what it does",
-    "link": "https://arstechnica.com/gadgets/2026/08/the-pixel-11s-glow-feature-is-actually-called-hilight-heres-what-it-does/",
-    "description": "The camera flash will evolve into a multicolor LED that illuminates when your phone is face down.",
-    "pubDate": "Tue, 04 Aug 2026 16:11:05 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "‘Europe passed the test’ of Ceuta crisis, says EU commissioner",
-    "link": "https://www.france24.com/en/video/20260804-europe-passed-the-test-of-ceuta-crisis-says-eu-commissioner",
-    "description": "The EU's migration chief said Tuesday the bloc successfully met a \"test\" of its border security and \"resilience to disinformation\" in the handling of a migrant rush into Spain's North African territory of Ceuta.\n \nLast Thursday, more than 70,000 migrants crossed the border from Morocco to the Spanis",
-    "pubDate": "Tue, 04 Aug 2026 16:08:45 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "T-Mobile’s $0-down financing plan bundles taxes and fees",
-    "link": "https://www.theverge.com/tech/975115/t-mobile-financing-eip-flex-36-plan",
-    "description": "T-Mobile is launching a new financing option that will allow you to pay for a device, taxes, and fees over 36 months. In an update on Tuesday, T-Mobile says its new Equipment Installment Plan (EIP) Flex 36 requires no upfront payment and will come with a 0 percent APR for a limited time. Even if [&#",
-    "pubDate": "2026-08-04T16:07:02.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Skylight&#8217;s smart calendars are up to $90 off during its back-to-school sale",
-    "link": "https://www.theverge.com/gadgets/973789/skylight-calendar-2-max-back-to-school-deal-sale",
-    "description": "The start of a new school year can feel hectic, as parents juggle their kids’ classes, extracurriculars and sports on top of work, appointments, and other responsibilities. It&#8217;s easy for things to slip through the cracks, but Skylight&#8217;s shared smart calendars can help keep everyone on tr",
-    "pubDate": "2026-08-04T16:01:57.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Why did Trump attack Jeanine Pirro over US reflecting pool ‘vandalism’?",
-    "link": "https://www.aljazeera.com/news/2026/8/4/why-did-trump-attack-jeanine-pirro-over-us-reflecting-pool-vandalism?traffic_source=rss",
-    "description": "US president's hand-picked DC attorney in firing line after dropping charges for vandalism of Washington landmark.",
-    "pubDate": "Tue, 04 Aug 2026 16:01:35 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "NVIDIA Joins NSF State and Regional AI Hubs Program to Expand AI Research and Education Across the US",
-    "link": "https://blogs.nvidia.com/blog/nsf-state-regional-ai-hub-program/",
-    "description": "NVIDIA is participating in the U.S. National Science Foundation’s (NSF) State and Regional Artificial Intelligence Infrastructure Hubs program, an effort launching today to expand access to the advanced computing, data, software and expertise needed for AI-enabled research and education. Consistent ",
-    "pubDate": "Tue, 04 Aug 2026 16:00:56 +0000",
-    "source": "NVIDIA Blog",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Guatemala issues second-highest ‘danger’ alert after Fuego volcano erupts",
-    "link": "https://www.aljazeera.com/news/2026/8/4/guatemala-issues-second-highest-danger-alert-after-fuego-volcano-erupts?traffic_source=rss",
-    "description": "Fuego, one of the region's most active volcanoes, has erupted repeatedly in recent years, forcing mass evacuations.",
-    "pubDate": "Tue, 04 Aug 2026 16:00:36 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Subaru’s new Trailseeker EV is already outselling its other electric vehicles",
-    "link": "https://electrek.co/2026/08/04/subarus-new-trailseeker-ev-outselling-other-electric-vehicles/",
-    "description": "The Trailseeker is already outselling the Solterra and Subaru’s other electric vehicles just months after its launch.",
-    "pubDate": "Tue, 04 Aug 2026 15:59:21 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
   }
 ]
