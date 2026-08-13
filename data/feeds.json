@@ -1,5 +1,61 @@
 [
   {
+    "title": "The Safety Reckoning Inside OpenAI",
+    "link": "https://www.wired.com/story/openai-safety-security-ai-agents-culture/",
+    "description": "OpenAI’s rogue agent hack was a watershed moment for AI safety and cybersecurity. It also sparked internal questions about the culture that led to it.",
+    "pubDate": "Thu, 13 Aug 2026 22:37:19 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "This electric aircraft fire truck hits 50 mph in under 20 seconds",
+    "link": "https://electrek.co/2026/08/13/electric-aircraft-rescue-fire-truck-rosenbauer-dallas/",
+    "description": "The “world’s first” electric aircraft fire truck now has a 400 kW fast charger to keep it ready for emergencies at Dallas Love Field Airport.",
+    "pubDate": "Thu, 13 Aug 2026 22:33:18 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Investors sue Selena Gomez alleging fraud tied to her mental health startup",
+    "link": "https://techcrunch.com/2026/08/13/investors-sue-selena-gomez-alleging-fraud-tied-to-her-mental-health-startup/",
+    "description": "The plaintiffs say they invested nearly $1.2 million in the company, and are accusing Gomez of failing to build and market the startup.",
+    "pubDate": "Thu, 13 Aug 2026 22:12:40 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Conditions on US aircraft carrier at sea for more than 250 days raise alarms",
+    "link": "https://www.bbc.co.uk/news/articles/cyvl2d5j52lo?at_medium=RSS&at_campaign=rss",
+    "description": "Thousands of sailors on the USS Abraham Lincoln have reportedly faced food shortages and broken plumbing, with some considering jumping overboard.",
+    "pubDate": "Thu, 13 Aug 2026 22:02:54 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Flock says its new tool will help identify police abuse, but hasn’t explained how it works",
+    "link": "https://techcrunch.com/2026/08/13/flock-says-its-new-tool-will-help-identify-police-abuse-but-hasnt-explained-how-it-works/",
+    "description": "The surveillance company announced it's making a tool called \"Audit Assistance\" mandatory for all customers, claiming it's already helped catch abuse. But the company has yet to explain how the tool works in detail, raising questions about its effectiveness.",
+    "pubDate": "Thu, 13 Aug 2026 22:02:04 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "'I lost $14,000 in a month': Investors hit by Korean stock market's wild swings",
+    "link": "https://www.bbc.co.uk/news/articles/c2k7zj4knwlo?at_medium=RSS&at_campaign=rss",
+    "description": "Some traders are reeling from heavy losses after a brutal correction in South Korea's stock market.",
+    "pubDate": "Thu, 13 Aug 2026 22:00:10 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "‘That is not acceptable’: Judge orders Google to make rival app store installs easier",
+    "link": "https://www.theverge.com/policy/979852/that-is-not-acceptable-judge-orders-google-to-make-rival-app-store-installs-easier",
+    "description": "One month after Epic Games and Google seemingly stopped fighting over the future of Android app distribution, they were back in a San Francisco courtroom today - where Judge James Donato just ordered Google to make it easier to install rival app stores on Android. It's been nearly three years since ",
+    "pubDate": "2026-08-13T21:53:04.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
     "title": "If Apple sends you a push notification alerting you to a spyware attack, take it seriously",
     "link": "https://techcrunch.com/2026/08/13/if-apple-sends-you-a-push-notification-alerting-you-to-a-spyware-attack-take-it-seriously/",
     "description": "Apple now sends out push notifications to iPhone lock screens when the company identifies government spyware targeting someone's devices.",
@@ -16,9 +72,17 @@
     "category": "ai-tech"
   },
   {
+    "title": "Engine parts smashed Ryanair window that man's head was sucked out of, report says",
+    "link": "https://www.bbc.co.uk/news/articles/cr59j4z3vl8o?at_medium=RSS&at_campaign=rss",
+    "description": "A preliminary report by US investigators says an engine fan blade broke on last month's flight from Greece to Germany.",
+    "pubDate": "Thu, 13 Aug 2026 21:43:47 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
     "title": "Microsoft’s Clippy-like Mico character is no longer the face of Copilot",
     "link": "https://www.theverge.com/tech/979871/microsoft-copilot-mico-retired",
-    "description": "Microsoft Copilot will no longer show its emotive yellow blob Mico when you use the chatbot's voice mode. In a support page, Microsoft says it's going to move Mico to its Learn Live platform, where the avatar will have \"more to react to,\" as reported earlier by GeekWire. Mico launched in Copilot's v",
+    "description": "Microsoft Copilot will no longer show its emotive yellow blob, Mico, when you use the chatbot's voice mode. In a support page, Microsoft says it's going to move Mico to its Learn Live platform, where the avatar will have \"more to react to,\" as reported earlier by GeekWire. Mico launched in Copilot's",
     "pubDate": "2026-08-13T21:42:38.000Z",
     "source": "The Verge",
     "category": "ai-tech"
@@ -48,7 +112,7 @@
     "category": "international"
   },
   {
-    "title": "Mark Zuckerberg’s AI Manifesto Is 6,500-Words—and Barely Says Anything",
+    "title": "Mark Zuckerberg’s AI Manifesto Is 6,500 Words—and Barely Says Anything",
     "link": "https://www.wired.com/story/mark-zuckerbergs-ai-manifesto-is-6500-words-and-barely-says-anything/",
     "description": "AI is shifting the culture, from tech CEO manifestos to 1 am job interviews. We unpack some of the latest, along with the top findings from Black Hat and Defcon, this week on Uncanny Valley.",
     "pubDate": "Thu, 13 Aug 2026 21:14:43 +0000",
@@ -237,14 +301,6 @@
     "description": "Sam Altman just said AI has entered \"the singularity.\"",
     "pubDate": "Thu, 13 Aug 2026 20:07:29 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Conditions on US aircraft carrier at sea for more than 250 days raise alarms",
-    "link": "https://www.bbc.co.uk/news/articles/cyvl2d5j52lo?at_medium=RSS&at_campaign=rss",
-    "description": "Thousands of sailors on the USS Abraham Lincoln have reportedly faced food shortages and broken plumbing, with some considering jumping overboard.",
-    "pubDate": "Thu, 13 Aug 2026 20:01:30 GMT",
-    "source": "BBC News",
     "category": "international"
   },
   {
@@ -3885,7 +3941,8 @@
     "description": "Researchers from NVIDIA and Duke University published a technical paper titled “SCALE: Self-Supervised Constraint-Aware Layout GEneration for Local P&R DRV Fixing at Advanced Nodes.” Abstract “As semiconductor manufacturing advances toward sub-2nm nodes, local place-and-route (P&R) design-rule viola",
     "pubDate": "Wed, 12 Aug 2026 22:47:43 +0000",
     "source": "Semiconductor Engineering",
-    "category": "semiconductor"
+    "category": "semiconductor",
+    "_stale": true
   },
   {
     "title": "The Best Photos of the Big August Solar Eclipse",
@@ -3893,7 +3950,8 @@
     "description": "It’s been a century since the Iberian Peninsula has been in the full shadow of the moon. Here’s what it looked like in the path of totality.",
     "pubDate": "Wed, 12 Aug 2026 22:47:30 +0000",
     "source": "WIRED",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Woman pulled alive from rubble 36 hours after Colombia quake",
@@ -3901,7 +3959,8 @@
     "description": "Following a 10-hour rescue operation, emergency workers pulled the 32-year-old from beneath slabs of concrete.",
     "pubDate": "Wed, 12 Aug 2026 22:41:46 GMT",
     "source": "BBC News",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Toddler's tragic death from brain-destroying amoeba offers lessons for doctors",
@@ -3909,7 +3968,8 @@
     "description": "Boy's unusual symptoms could help identify the next case sooner.",
     "pubDate": "Wed, 12 Aug 2026 22:31:19 +0000",
     "source": "Ars Technica - All content",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Some Claude users are mad that Anthropic’s new watermarks will catch them using it at their jobs, classes",
@@ -3917,7 +3977,8 @@
     "description": "Is Anthropic's new watermarking system a travesty? Some have taken to social media to complain that it is.",
     "pubDate": "Wed, 12 Aug 2026 22:26:37 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "AI nuclear power firm Fermi finally has a new CEO",
@@ -3925,7 +3986,8 @@
     "description": "Lee McIntire, an independent member of Fermi's board, has been hired as CEO, more than three months since the company fired co-founder Toby Neugebauer from the top post.",
     "pubDate": "Wed, 12 Aug 2026 22:24:00 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Trump administration plans to give ICE officers electric-shock gloves",
@@ -3933,7 +3995,8 @@
     "description": "US Homeland Security is expected to buy up to $20m in gloves amid criticism of the president's immigration crackdown.",
     "pubDate": "Wed, 12 Aug 2026 22:22:57 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Oil spill from grounded tanker reaches Oman’s mainland beaches",
@@ -3941,62 +4004,6 @@
     "description": "Oman’s Environment Authority said Wednesday that oil leaking from a tanker grounded off the country’s coast had reached mainland beaches. The spill threatened marine habitats and a nearby protected area as strong winds and monsoon currents spread the oil, raising fears it could reach other islands.",
     "pubDate": "Wed, 12 Aug 2026 22:18:17 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Why are 'human fridges' being sold in Japan?",
-    "link": "https://www.bbc.co.uk/news/videos/cjej4y3gvzlo?at_medium=RSS&at_campaign=rss",
-    "description": "As Japan swelters through extreme summer heat, BBC Tokyo correspondent Kurumi Mori tries out a new way to cool down.",
-    "pubDate": "Wed, 12 Aug 2026 22:07:47 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "The web’s newest weapon against AI scrapers is a font",
-    "link": "https://arstechnica.com/ai/2026/08/new-font-turns-ordinary-webpages-into-nonsense-for-ai-scrapers/",
-    "description": "“ShieldFont” aims to poison AI training data without making pages unreadable for people.",
-    "pubDate": "Wed, 12 Aug 2026 22:02:25 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Trump's White House spokesperson Karoline Leavitt to leave role",
-    "link": "https://www.france24.com/en/americas/20260812-white-house-press-secretary-and-trump-adviser-karoline-leavitt-to-leave-role",
-    "description": "White House press secretary Karoline Leavitt will leave her role at the end of the month, US President Donald Trump said on Wednesday, ending the tenure of one of his most prominent and trusted advisers as the administration heads towards November's midterm elections.",
-    "pubDate": "Wed, 12 Aug 2026 21:54:09 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "ICE plans to equip agents with gloves that can deliver electric shocks",
-    "link": "https://www.bbc.co.uk/news/articles/c20d292gdp4o?at_medium=RSS&at_campaign=rss",
-    "description": "The US immigration agency is spending $20m on gloves that deliver a sharp electric shock intended to compel subjects to comply.",
-    "pubDate": "Wed, 12 Aug 2026 21:53:26 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "US strikes in Yemen killed 153 civilians in 2025, says Pentagon review",
-    "link": "https://www.aljazeera.com/news/2026/8/12/us-strikes-in-yemen-killed-153-civilians-in-2025-says-pentagon-review?traffic_source=rss",
-    "description": "The unclassified Pentagon review sheds new light on civilian harm from the US campaign against Yemen’s Houthis.",
-    "pubDate": "Wed, 12 Aug 2026 21:53:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Hegseth cautions that ICC may investigate US boat strikes in Latin America",
-    "link": "https://www.aljazeera.com/news/2026/8/12/hegseth-cautions-that-icc-may-investigate-us-boat-strikes-in-latin-america?traffic_source=rss",
-    "description": "US defence chief vows to continue campaign against drug cartels, says Colombia has joined regional military coalition.",
-    "pubDate": "Wed, 12 Aug 2026 21:52:18 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "PSG win back-to-back UEFA Super Cups with victory over Aston Villa",
-    "link": "https://www.aljazeera.com/sports/2026/8/12/psg-win-back-to-back-uefa-super-cups-with-victory-over-aston-villa?traffic_source=rss",
-    "description": "Kvaratskhelia and Doue earn a win for Paris Saint-Germain as 17-year-old Brian Madjo's goal is in vain for Aston Villa.",
-    "pubDate": "Wed, 12 Aug 2026 21:50:27 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international",
     "_stale": true
   }
