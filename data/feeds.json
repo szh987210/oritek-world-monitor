@@ -1,5 +1,53 @@
 [
   {
+    "title": "OpenAI lays out new security changes after its AI hacked Hugging Face",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/981640/openai-security-changes-ai-hugging-face-hack",
+    "description": "OpenAI is announcing security updates following the July news that its AI broke out of a sandboxed environment and accidentally hacked Hugging Face, including improvements to its research environments, monitoring, and alignment techniques. The company had already put the brakes on a new model, Astra",
+    "pubDate": "2026-08-18T19:28:30.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The ‘witch-hunt’ of Jason Arday",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/18/the-witch-hunt-of-jason-arday?traffic_source=rss",
+    "description": "The ‘witch-hunt’ of Jason Arday",
+    "pubDate": "Tue, 18 Aug 2026 19:22:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "France to expel two Iranian diplomats as arrests row heightens",
+    "link": "https://www.france24.com/en/france/20260818-france-expel-two-iranian-diplomats-row-over-interference-arrests-heightens",
+    "description": "Paris is to expel two Iranian diplomats serving in France following the banning by Iran of two French diplomats posted to the embassy in Tehran, French Foreign Minister Jean-Noël Barrot said Tuesday. He said Iran's treatment of the French diplomats briefly arrested in Tehran last month over accusati",
+    "pubDate": "Tue, 18 Aug 2026 19:22:11 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "US announces new sanctions on top ICC figures ",
+    "link": "https://www.bbc.co.uk/news/articles/cnvnl0elz47o?at_medium=RSS&at_campaign=rss",
+    "description": "The Trump administration has vowed to dismantle the international court \"brick by brick\".",
+    "pubDate": "Tue, 18 Aug 2026 19:18:30 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Amazon preps 1M-square-foot distribution center in Connecticut",
+    "link": "https://www.supplychaindive.com/news/amazon-preps-1m-square-foot-distribution-center-in-connecticut/828085/",
+    "description": "The Norwich facility would store, pick, pack and ship goods to sortations centers and localized delivery centers further downstream the supply chain.",
+    "pubDate": "Tue, 18 Aug 2026 15:11:00 -0400",
+    "source": "Supply Chain Dive - Latest News",
+    "category": "supply-chain"
+  },
+  {
+    "title": "US judge says government can revoke deportation protections for Ethiopians",
+    "link": "https://www.aljazeera.com/news/2026/8/18/us-judge-says-government-can-revoke-deportation-protections-for-ethiopians?traffic_source=rss",
+    "description": "Ruling permits Trump administration to nix Ethiopians' protected status despite concern over conditions in the country.",
+    "pubDate": "Tue, 18 Aug 2026 19:09:23 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Garmin Watches Are Up to $250 Off Right Now On Amazon (2026)",
     "link": "https://www.wired.com/story/garmin-deals-august-2026/",
     "description": "Save $250 off the Garmin Fenix 8, plus discounts on other popular fitness trackers from the brand.",
@@ -80,6 +128,14 @@
     "category": "international"
   },
   {
+    "title": "‘You have to be careful, to go slow & fast’: Inside high-risk mission at International Space Station",
+    "link": "https://www.france24.com/en/you-have-to-be-careful-to-go-slow-fast-inside-high-risk-mission-at-international-space-station",
+    "description": "Mark Owen is pleased to welcome Michel Tognini, former head of the European Astronaut Centre of the European Space Agency. Tognini sees a spacewalk as a paradox of human spaceflight: from the ground, it can look almost effortless, but outside the space station, even the simplest movement takes place",
+    "pubDate": "Tue, 18 Aug 2026 17:52:48 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
     "title": "Analysis: Syrian airbase attack is an Israeli message to Damascus, Ankara",
     "link": "https://www.aljazeera.com/features/2026/8/18/analysis-syrian-airbase-attack-is-an-israeli-message-to-damascus-ankara?traffic_source=rss",
     "description": "Analysts say the attack on Abu al-Duhur was likely an Israeli message warning to not rebuild Syria's air force.",
@@ -102,14 +158,6 @@
     "pubDate": "Tue, 18 Aug 2026 17:44:27 +0000",
     "source": "Electrek",
     "category": "ai-tech"
-  },
-  {
-    "title": "US announces new sanctions on top ICC figures ",
-    "link": "https://www.bbc.co.uk/news/articles/cnvnl0elz47o?at_medium=RSS&at_campaign=rss",
-    "description": "The Trump administration has vowed to dismantle the international court \"brick by brick\".",
-    "pubDate": "Tue, 18 Aug 2026 17:40:09 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "The British state has recast protest as terrorism",
@@ -514,7 +562,7 @@
   {
     "title": "Honeywell Aerospace targets supplier bottlenecks to boost output",
     "link": "https://www.supplychaindive.com/news/honeywell-aerospace-targets-supplier-bottlenecks-to-boost-output/827975/",
-    "description": "The systems maker found that a significant share of its 3,000 suppliers underperformed in the first half of the year, President and CEO James Currier said.",
+    "description": "A significant share of the company's 3,000 suppliers underperformed in the first half of the year, President and CEO James Currier said.",
     "pubDate": "Tue, 18 Aug 2026 10:38:00 -0400",
     "source": "Supply Chain Dive - Latest News",
     "category": "supply-chain"
@@ -530,7 +578,7 @@
   {
     "title": "Experts call FCC’s block on foreign robotics a nearshoring tactic",
     "link": "https://www.supplychaindive.com/news/experts-call-fccs-block-on-foreign-robotics-a-nearshoring-tactic/827423/",
-    "description": "While cyber threats are a growing risk to national security, the agency’s sweeping block on humanoids, quadrupeds and mobile robot imports could reinvigorate domestic suppliers.",
+    "description": "While cyberthreats are a growing risk to national security, the agency’s sweeping block on humanoids, quadrupeds and mobile robot imports could reinvigorate domestic suppliers.",
     "pubDate": "Tue, 18 Aug 2026 10:31:00 -0400",
     "source": "Supply Chain Dive - Latest News",
     "category": "supply-chain"
@@ -664,16 +712,16 @@
     "category": "ai-tech"
   },
   {
-    "title": "3 ways Kimberly-Clark is leveraging technology to boost supply chain efficiency",
-    "link": "https://www.supplychaindive.com/news/3-ways-kimberly-clark-is-leveraging-technology-to-boost-supply-chain-effici/828037/",
+    "title": "3 ways Kimberly-Clark is using technology to boost supply chain efficiency",
+    "link": "https://www.supplychaindive.com/news/3-ways-kimberly-clark-is-using-technology-to-boost-supply-chain-efficiency/828037/",
     "description": "The CPG maker is leveraging newly installed global procurement software, AI agents and a skill-based training program to unlock improvements.",
     "pubDate": "Tue, 18 Aug 2026 09:55:00 -0400",
     "source": "Supply Chain Dive - Latest News",
     "category": "supply-chain"
   },
   {
-    "title": "3 ways Kimberly-Clark is using technology to boost supply chain efficiency",
-    "link": "https://www.supplychaindive.com/news/3-ways-kimberly-clark-is-using-technology-to-boost-supply-chain-efficiency/828037/",
+    "title": "3 ways Kimberly-Clark is leveraging technology to boost supply chain efficiency",
+    "link": "https://www.supplychaindive.com/news/3-ways-kimberly-clark-is-leveraging-technology-to-boost-supply-chain-effici/828037/",
     "description": "The CPG maker is leveraging newly installed global procurement software, AI agents and a skill-based training program to unlock improvements.",
     "pubDate": "Tue, 18 Aug 2026 09:55:00 -0400",
     "source": "Supply Chain Dive - Latest News",
@@ -904,14 +952,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Firefox&#8217;s Smart Window promises a better AI browser",
-    "link": "https://www.theverge.com/ai-artificial-intelligence/981283/mozilla-firefox-smart-window-ai-features",
-    "description": "Starting today, AI chats in Firefox's Smart Window AI browsing mode can pull from current web info and show source links in chat responses through a partnership with Exa. Smart Window can also now automatically suggest tab groups and show visual previews of pages you previously visited when you sear",
-    "pubDate": "2026-08-18T13:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
     "title": "Can the Upcoming ‘Expanse’ Game Avoid the Biggest Mistake of ‘Mass Effect’?",
     "link": "https://www.wired.com/story/the-upcoming-expanse-game-has-to-make-some-hard-choices/",
     "description": "The universe may never tell you if your choices mattered. Owlcat’s Osiris Reborn might not either.",
@@ -925,6 +965,14 @@
     "description": "Octopus Energy is taking a swing at one of the most irritating parts of public EV charging: needing a phone full of apps just to plug in.",
     "pubDate": "Tue, 18 Aug 2026 13:00:00 +0000",
     "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Firefox&#8217;s Smart Window promises a better AI browser",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/981283/mozilla-firefox-smart-window-ai-features",
+    "description": "Starting today, AI chats in Firefox's Smart Window AI browsing mode can pull from current web info and show source links in chat responses through a partnership with Exa. Smart Window can also now automatically suggest tab groups and show visual previews of pages you previously visited when you sear",
+    "pubDate": "2026-08-18T13:00:00.000Z",
+    "source": "The Verge",
     "category": "ai-tech"
   },
   {
@@ -2416,6 +2464,14 @@
     "category": "ai-tech"
   },
   {
+    "title": "Womanizer Coupons: Save 15% in August",
+    "link": "https://www.wired.com/story/womanizer-coupon/",
+    "description": "Save on the Womanizer Duo Premium and more with our latest Womanizer discount codes.",
+    "pubDate": "Tue, 18 Aug 2026 05:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
     "title": "Vivid Seats Promo Codes and Deals: Get 10% Off",
     "link": "https://www.wired.com/story/vivid-seats-promo-code/",
     "description": "Whether you are heading to a sold-out concert or a championship game, use a Vivid Seats discount code to secure your seats for less this August 2026.",
@@ -2443,14 +2499,6 @@
     "title": "Ring Promo Code: 50% Off",
     "link": "https://www.wired.com/story/ring-promo-code/",
     "description": "Discover how to save on Ring cameras, doorbells, outdoor cameras, and more.",
-    "pubDate": "Tue, 18 Aug 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Womanizer Coupons: Save 15% in August",
-    "link": "https://www.wired.com/story/womanizer-coupon/",
-    "description": "Save on the Womanizer Duo Premium and more with our latest Womanizer discount codes.",
     "pubDate": "Tue, 18 Aug 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -3517,7 +3565,8 @@
     "description": "US president cites good relationship with North Korean leader Kim Jong Un",
     "pubDate": "Mon, 17 Aug 2026 19:34:20 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Save up to $300 on your TechCrunch Disrupt 2026 pass until August 21 ",
@@ -3525,7 +3574,8 @@
     "description": "If you’ve been circling around Disrupt, then now’s the best time to lock in your pass and start getting ready to join the rest of the startup community gathering in San Francisco from October 13-15 at Moscone West!",
     "pubDate": "Mon, 17 Aug 2026 19:33:51 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "How Generalist uses human demonstration data for robot learning",
@@ -3533,7 +3583,8 @@
     "description": "Research around the Universal Manipulation Interface is enabling Generalist, Walden Robotics, and others to turn data into robot behaviors.\nThe post How Generalist uses human demonstration data for robot learning appeared first on The Robot Report.",
     "pubDate": "Mon, 17 Aug 2026 19:32:31 +0000",
     "source": "The Robot Report",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Gaza flotilla sets sail from the UK in bid to break Israeli siege",
@@ -3541,7 +3592,8 @@
     "description": "A boat has left Bristol as part of a wider campaign to break Israel’s blockade and deliver aid to Gaza.",
     "pubDate": "Mon, 17 Aug 2026 19:32:06 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "This compact Glorious mechanical keyboard is just $35",
@@ -3549,7 +3601,8 @@
     "description": "Are you curious about custom mechanical keyboards, but don’t want to spend hundreds just to get started without being sure you’ll enjoy the hobby? You can grab the 65-percent Glorious GMMK 3 mechanical keyboard at Woot for $34.99 (usually $139.99) by entering the coupon code WOOTGAMING at checkout, ",
     "pubDate": "2026-08-17T19:27:49.000Z",
     "source": "The Verge",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Trump threatens to bomb US ally Oman if it 'gets in the way' over Iran deal",
@@ -3557,7 +3610,8 @@
     "description": "Trump's threat on Oman, which has been holding its own talks with Iran to reopen the Strait of Hormuz, comes as a 60-day window for peace negotiations expires.",
     "pubDate": "Mon, 17 Aug 2026 19:25:05 GMT",
     "source": "BBC News",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Spotify’s new Playlist Notes let users and editors explain their song picks",
@@ -3565,7 +3619,8 @@
     "description": "Spotify launches a new feature that gives users a chance to explain the stories and reasoning behind their favorite music. Editors will be using the feature, too, on top playlists like RapCaviar and others.",
     "pubDate": "Mon, 17 Aug 2026 19:24:43 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Photos: Indonesia earthquake rescue efforts continue as death toll hits 68",
@@ -3573,7 +3628,8 @@
     "description": "At least 68 killed in eastern Indonesia as aftershocks and landslides hamper aid.",
     "pubDate": "Mon, 17 Aug 2026 19:22:54 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "2027 Hyundai IONIQ 5 prices revealed, starting at $35,000",
@@ -3581,7 +3637,8 @@
     "description": "Starting at $35,000, the 2027 Hyundai IONIQ 5 will remain among the most affordable EVs in the US.",
     "pubDate": "Mon, 17 Aug 2026 19:19:18 +0000",
     "source": "Electrek",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "What Flock’s defenders are missing",
@@ -3589,7 +3646,8 @@
     "description": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Flock, the police-tech giant known for its network of some 120,000 automatic license plate readers around the US, announced some changes to its platform last Thur",
     "pubDate": "Mon, 17 Aug 2026 19:16:09 +0000",
     "source": "MIT Technology Review",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "At least 92 dead in Zimbabwe after Lake Kariba ferry disaster",
@@ -3597,7 +3655,8 @@
     "description": "Search efforts to recover the remaining victims are still underway.",
     "pubDate": "Mon, 17 Aug 2026 19:12:19 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Higgsfield raises $400M Series B, quadrupling its valuation in 8 months to $5.4B",
@@ -3605,7 +3664,8 @@
     "description": "Higgsfield, founded by former Snap exec Alex Mashrabov, lets users create AI images and videos.",
     "pubDate": "Mon, 17 Aug 2026 19:04:27 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Wordle meets Clippy in this new word game",
@@ -3613,7 +3673,8 @@
     "description": "Like many of us, Sam Rosenthal plays games like Wordle every day, chasing after good scores and sharing the results with friends and family. But he's also a game designer, the creative director at Blaseball developer The Game Band, and so this regular habit got him thinking about what else could be ",
     "pubDate": "2026-08-17T19:03:41.000Z",
     "source": "The Verge",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Russian politician sentenced to 11 years for opposing war in Ukraine",
@@ -3991,60 +4052,6 @@
     "pubDate": "Mon, 17 Aug 2026 15:51:35 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Indonesian mother recounts emergency birth during 7.7-magnitude quake",
-    "link": "https://www.france24.com/en/video/20260817-indonesian-mother-recounts-emergency-birth-during-7-7-magnitude-quake",
-    "description": "As an earthquake tore apart homes, buildings and bridges in eastern Indonesia on Saturday, Maria Florida Nogo Kelen was giving birth to her daughter. The 39-year-old went in for emergency surgery during the quake that killed 68 people.",
-    "pubDate": "Mon, 17 Aug 2026 15:40:43 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "BYD’s cheapest EV spotted with an upgraded interior and a single large display screen",
-    "link": "https://electrek.co/2026/08/17/byds-cheapest-ev-spotted-upgraded-interior-big-screen/",
-    "description": "BYD’s low-cost Seagull EV, sold as the Dolphin Surf in Europe and Dolphin Mini in other overseas markets, is due for an upgrade. Here’s a sneak peek.",
-    "pubDate": "Mon, 17 Aug 2026 15:38:00 +0000",
-    "source": "Electrek",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "DR Congo Ebola outbreak becomes country’s deadliest",
-    "link": "https://www.france24.com/en/dr-congo-ebola-outbreak-becomes-country-s-deadliest",
-    "description": "The DRC’s latest Ebola outbreak has killed 2,325 people, making it the country’s deadliest outbreak on record. Nearly 5,000 cases have been confirmed as the virus spreads to a sixth province, while health authorities work to tackle mistrust and contain transmission. Two vaccines have also entered ea",
-    "pubDate": "Mon, 17 Aug 2026 15:28:03 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "NoMIS demos 6.5kV large-die SiC MOSFET",
-    "link": "https://semiconductor-today.com/news_items/2026/aug/nomis-170826.shtml",
-    "description": "NoMIS Power Corp of Albany, NY, USA — which was spun off from State University of New York Polytechnic Institute (SUNY Poly) in 2020, and develops silicon carbide (SiC) technologies for medium- and high-voltage power conversion — has demonstrated its first 6.5kV large-die SiC MOSFET. The device was ",
-    "pubDate": "Mon, 17 Aug 2026 16:25:06 +0100",
-    "source": "lSemiconductor Today News",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Rights group urges FIFA to block Infantino re-election bid over term limits",
-    "link": "https://www.aljazeera.com/sports/2026/8/17/rights-group-urges-fifa-to-block-infantino-re-election-bid-over-term-limits?traffic_source=rss",
-    "description": "FairSquare says the FIFA president should not be able to run again under the world football organisation's statutes.",
-    "pubDate": "Mon, 17 Aug 2026 15:21:47 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Blank sailings curb ocean capacity gains",
-    "link": "https://www.supplychaindive.com/news/blank-sailings-curb-ocean-capacity-gains/827944/",
-    "description": "The uneven growth may lead to longer lead times, reduced schedule reliability, Pete Mento, a director at Baker Tilly’s global trade management services, said.",
-    "pubDate": "Mon, 17 Aug 2026 11:20:00 -0400",
-    "source": "Supply Chain Dive - Latest News",
-    "category": "supply-chain",
     "_stale": true
   }
 ]
