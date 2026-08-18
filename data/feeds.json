@@ -1,5 +1,213 @@
 [
   {
+    "title": "Why Standardized Interfaces Are Critical to Accelerating Humanoid Development",
+    "link": "https://www.eetimes.com/why-standardized-interfaces-are-critical-to-accelerating-humanoid-development/",
+    "description": "Humanoids won’t scale on AI hype alone; standardized MIPI interfaces can cut power, wiring, and cost. \nThe post Why Standardized Interfaces Are Critical to Accelerating Humanoid Development appeared first on EE Times.",
+    "pubDate": "Tue, 18 Aug 2026 08:15:00 +0000",
+    "source": "EE Times",
+    "category": "semiconductor"
+  },
+  {
+    "title": "从厨师到高管，黄仁勋女儿四年薪资暴涨670%",
+    "link": "https://www.tmtpost.com/8107359.html",
+    "description": "黄仁勋为英伟达找到了新边界。",
+    "pubDate": "Tue, 18 Aug 2026 16:10:17 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "3 个月亏掉 100 亿美元，DAT 公司开始回归理性",
+    "link": "https://www.tmtpost.com/8107344.html",
+    "description": "「囤囤鼠」们的股价开始触底反弹。",
+    "pubDate": "Tue, 18 Aug 2026 16:10:13 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "IVF staff accused of misleading UK parents about sperm and egg donors in northern Cyprus",
+    "link": "https://www.bbc.co.uk/news/articles/c75gv9xnr3po?at_medium=RSS&at_campaign=rss",
+    "description": "Multiple children are feared to have been conceived using sperm and egg donors which were not the ones selected by the parents.",
+    "pubDate": "Tue, 18 Aug 2026 08:07:37 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "腾讯的AI Capex，还可以更高",
+    "link": "https://www.tmtpost.com/8106867.html",
+    "description": "硬的东西，比软的故事更值得信任。",
+    "pubDate": "Tue, 18 Aug 2026 16:04:57 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Hushan eyes stronger 2H26 on drone cameras, OE push",
+    "link": "https://www.digitimes.com/news/a20260818PD220/hushan-camera-automotive-2026-market.html",
+    "description": "Aftermarket (AM) parts and automotive camera maker Hushan Autoparts saw its first-half 2026 operations impacted by US tariff policies and surging memory and IC prices, though long-term growth trends remain unaffected, said chairman Yingzhi Chen. He added that the company's focus in the second half w",
+    "pubDate": "Tue, 18 Aug 2026 07:55:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "SK hynix's No. 2 customer closes in on Nvidia in 1H26 sales",
+    "link": "https://www.digitimes.com/news/a20260818VL214/sales-nvidia-revenue-2026-technology.html",
+    "description": "SK hynix's second-largest customer generated KRW17.19 trillion (approx. US$12.4 billion) in sales in the first half of 2026, nearly matching the KRW17.61 trillion contributed by its largest customer. Yonhap News Agency identified the largest customer as Nvidia.",
+    "pubDate": "Tue, 18 Aug 2026 07:55:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "China AI chip sales scale: Biren's revenue rockets up to 21-fold",
+    "link": "https://www.digitimes.com/news/a20260818VL213/biren-revenue-ai-chip-2026-growth.html",
+    "description": "Chinese AI chipmaker Biren expects first-half 2026 revenue to reach CNY1.15-1.3 billion (US$171-193 million), up about 1,852% to 2,107% from a year earlier, as demand for GPGPU computing expands across AI coding, long-horizon AI agents and generative AI workloads, according to Cninfo data cited in a",
+    "pubDate": "Tue, 18 Aug 2026 07:52:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "AI中转站的生死一梦",
+    "link": "https://www.tmtpost.com/8107107.html",
+    "description": "一边是名人砸钱入场、媒体争相报道，一边是普通从业者排队进局子、社交账号连夜注销。",
+    "pubDate": "Tue, 18 Aug 2026 15:50:06 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "AI代码过剩后，给代码“冲厕所”的公司贵了十倍",
+    "link": "https://www.tmtpost.com/8107004.html",
+    "description": "AI越会写代码，Blacksmith需要跑的机器反而越多。",
+    "pubDate": "Tue, 18 Aug 2026 15:47:26 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "年费2100元，英超开始做自己的「Netflix」",
+    "link": "https://www.tmtpost.com/8107003.html",
+    "description": "摒弃「中间商」，是体育版权的出路吗？",
+    "pubDate": "Tue, 18 Aug 2026 15:47:21 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "WorkBuddy们，正在终结钉钉、飞书、企业微信的旧战争",
+    "link": "https://www.tmtpost.com/8107000.html",
+    "description": "协同办公已\"死\",AI办公当“立”？",
+    "pubDate": "Tue, 18 Aug 2026 15:47:16 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Zambia's president wins second term with 60% of the vote",
+    "link": "https://www.bbc.co.uk/news/articles/c5y6j4jl03xo?at_medium=RSS&at_campaign=rss",
+    "description": "Hakainde Hichilema says he was “truly humbled” by the victory and promised to work for all Zambians.",
+    "pubDate": "Tue, 18 Aug 2026 07:46:55 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "6个Agent组团Vibe Gaming：自己生成、试玩、修Bug",
+    "link": "https://www.qbitai.com/2026/08/474806.html",
+    "description": "代码能跑≠游戏能玩",
+    "pubDate": "Tue, 18 Aug 2026 07:33:00 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Israeli settler children attack ambulance in occupied West Bank",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/18/israeli-settler-children-attack-ambulance-in-occupied-west-bank?traffic_source=rss",
+    "description": "Video released by the Palestinian Red Crescent shows Israeli settler children attacking and blocking an ambulance.",
+    "pubDate": "Tue, 18 Aug 2026 07:20:35 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "今日起，阿里“千问办公”接入企业微信",
+    "link": "https://www.qbitai.com/2026/08/474803.html",
+    "description": "国内三大办公平台全面支持",
+    "pubDate": "Tue, 18 Aug 2026 07:17:42 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "China censors public mourning as it holds former premier's funeral",
+    "link": "https://www.bbc.co.uk/news/articles/c8dn3rqlyrgo?at_medium=RSS&at_campaign=rss",
+    "description": "While hailing Zhu’s legacy, authorities are wary that the nostalgia could lead to criticisms of Xi’s rule.",
+    "pubDate": "Tue, 18 Aug 2026 07:17:07 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Chip Industry Technical Paper Roundup: Aug. 18",
+    "link": "https://semiengineering.com/chip-industry-technical-paper-roundup-aug-18/",
+    "description": "2D CFET scaling; PIM chiplet voltage-droop control; advanced-node layout repair; lithography defect prediction; 3D-IC failure analysis; chiplet and interposer optimization; 4H-SiC wafer slicing.\nThe post Chip Industry Technical Paper Roundup: Aug. 18 appeared first on Semiconductor Engineering.",
+    "pubDate": "Tue, 18 Aug 2026 07:01:59 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Semiconductor Earnings Roundup: Revenue, Growth and Takeaways",
+    "link": "https://semiengineering.com/chip-industry-earnings-roundup/",
+    "description": "Company-by-company breakdown: Earnings across 80 semiconductor companies show AI-driven demand extending well beyond the usual suspects.\nThe post Semiconductor Earnings Roundup: Revenue, Growth and Takeaways appeared first on Semiconductor Engineering.",
+    "pubDate": "Tue, 18 Aug 2026 07:01:24 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Research Bits: Aug. 18",
+    "link": "https://semiengineering.com/research-bits-aug-18/",
+    "description": "Edge AI hardware/algorithm co-design; memtransistor with programmable response speeds; artificial synapse with long- and short-term memory.\nThe post Research Bits: Aug. 18 appeared first on Semiconductor Engineering.",
+    "pubDate": "Tue, 18 Aug 2026 07:01:22 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "News kompakt: Trump droht Sultanat Oman mit Bombardierung",
+    "link": "https://www.dw.com/de/news-kompakt-trump-droht-sultanat-oman-mit-bombardierung/a-78405908?maca=de-rss-de-all-1119-rdf",
+    "description": "Der US-Präsident richtet eine scharfe Warnung an den Oman, der im Konflikt mit dem Iran vermittelt. In Deutschland wird das neue \"Technologiezentrum Drohnensicherheit\" eröffnet. Der DW-Nachrichtenüberblick.",
+    "pubDate": "2026-08-18T07:00:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Samsung deepens humanoid push with new robotics lab",
+    "link": "https://www.digitimes.com/news/a20260818VL210/samsung-robotics-robot-manufacturing-data.html",
+    "description": "Samsung Electronics has begun operating a dedicated physical AI research lab focused on humanoid control and manipulation, according to South Korean news outlet Edaily. The move extends its robotics push from hardware investment into the AI and control technologies needed for robots to operate in re",
+    "pubDate": "Tue, 18 Aug 2026 06:55:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Doctors remove 3.1kg stone from man's bladder and claim record",
+    "link": "https://www.bbc.co.uk/news/articles/cg5l9n7d803o?at_medium=RSS&at_campaign=rss",
+    "description": "The bladder stone, which weighs as much as a full-term baby, is believed to be the largest on record.",
+    "pubDate": "Tue, 18 Aug 2026 06:53:11 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "奔驰连发两款重磅油车：C 级全面焕新，国产 GLE 剑指 X5L",
+    "link": "https://www.ifanr.com/1675486?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "奔驰最近很忙。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Tue, 18 Aug 2026 06:52:06 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Russia says more than 600 drones targeted Moscow region",
+    "link": "https://www.aljazeera.com/news/2026/8/18/russia-says-more-than-600-drones-targeted-moscow-region?traffic_source=rss",
+    "description": "The attacks injured at least three people, including a girl, and damaged a Wildberries warehouse, Russian officials say.",
+    "pubDate": "Tue, 18 Aug 2026 06:47:40 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "吉利汽车业绩高点，李书福激流勇退",
+    "link": "https://www.qbitai.com/2026/08/474736.html",
+    "description": "“吉利不再研发传统燃油车”",
+    "pubDate": "Tue, 18 Aug 2026 06:46:46 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
     "title": "Russia says UK 'will pay' for supplying drones to Ukraine",
     "link": "https://www.bbc.co.uk/news/articles/cy5dz0kkn0wo?at_medium=RSS&at_campaign=rss",
     "description": "An MoD spokesperson responds by saying Britain stands \"shoulder to shoulder\" with Ukraine.",
@@ -16,11 +224,43 @@
     "category": "international"
   },
   {
-    "title": "Can China’s new Arctic Sea route to Europe replace Middle East chokepoints?",
+    "title": "War in Ukraine: At least 10 killed in Kharkiv, several wounded in Moscow drone attack",
+    "link": "https://www.france24.com/en/europe/20260818-war-in-ukraine-several-people-wounded-in-drone-attack-on-moscow-region",
+    "description": "At least 10 people were killed and eight wounded in a strike on Pechenigy, in Ukraine's Kharkiv region, the local governor said Tuesday, as 620 drones targeted the Moscow region overnight, Russian officials said, with several people wounded and buildings struck.",
+    "pubDate": "Tue, 18 Aug 2026 06:32:32 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "South Korea's NPS backs AI optical link amid US scrutiny",
+    "link": "https://www.digitimes.com/news/a20260818PD217/investment-ipo-cmc-policy-communications.html",
+    "description": "South Korea's National Pension Service (NPS) has drawn fresh attention after joining a cornerstone investment in the Hong Kong IPO of Chinese optical communications maker Zhongji Innolight. The investment came at a time when the company had already been placed on the US Department of Defense's list ",
+    "pubDate": "Tue, 18 Aug 2026 06:30:13 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Analysis: China's AI chip ambitions collide with Ajinomoto's 95% grip on ABF film",
+    "link": "https://www.digitimes.com/news/a20260818VL208/ai-chip-materials-packaging-chips.html?chid=10",
+    "description": "China's semiconductor self-reliance campaign is moving beyond lithography machines and advanced processors into less visible materials that can be just as difficult to replace. Ajinomoto Build-up Film, or ABF, has become the latest pressure point.",
+    "pubDate": "Tue, 18 Aug 2026 06:30:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Can China’s new Arctic sea route to Europe replace Middle East chokepoints?",
     "link": "https://www.aljazeera.com/news/2026/8/18/can-chinas-new-arctic-sea-route-to-europe-replace-middle-east-chokepoints?traffic_source=rss",
-    "description": "Beijing's new 'Ice Silk Road' cuts through a melting Arctic, and could prompt fresh tensions with the US, say analysts.",
+    "description": "Beijing's new 'Ice Silk Road' cuts through a melting Arctic, and could prompt new tensions with the US, analysts say.",
     "pubDate": "Tue, 18 Aug 2026 06:28:31 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Clamping down: China tightens exit rules",
+    "link": "https://www.france24.com/en/asia-pacific/20260818-clamping-down-china-tightens-exit-rules",
+    "description": "The Chinese government announced new border regulations in late July in a move seen as expanding state control over its citizens. The new rules, which come into effect on September 15, tighten checks on travellers and provide new grounds for restricting Chinese citizens from leaving the country, inc",
+    "pubDate": "Tue, 18 Aug 2026 06:00:11 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -53,6 +293,14 @@
     "description": "US president says conversations with Kim Jong Un at a 'positive' stage and slams Seoul for refusing to join war on Iran.",
     "pubDate": "Tue, 18 Aug 2026 05:44:05 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Senior FIFA official FIFA Kevin Lamour leaves after criticising Gianni Infantino",
+    "link": "https://www.france24.com/en/tv-shows/sports/20260818-fifa-chief-of-operations-kevin-lamour-leaves-after-criticizing-gianni-infatino",
+    "description": "FIFA's Chief Operating ​Officer Kevin Lamour has been dismissed from his post. He had strongly criticised his boss Gianni Infantino and the latter's plan to set up a commercial company.",
+    "pubDate": "Tue, 18 Aug 2026 05:29:05 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -96,6 +344,14 @@
     "category": "international"
   },
   {
+    "title": "Live: Iran declares 60-day memorandum of understanding negotiation deadline null and void",
+    "link": "https://www.france24.com/en/middle-east/20260818-middle-east-live-iran-declares-60-day-negotiation-deadline-null-and-void",
+    "description": "Iran's foreign ministry spokesman Esmaeil Baghaei said the 60-day negotiation deadline set out under the June Iran-US memorandum of understanding for a lasting settlement had been rendered null and void by \"violations\" committed by Washington. After meeting with Benjamin Netanyahu, US envoy Jared Ku",
+    "pubDate": "Tue, 18 Aug 2026 05:07:06 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
     "title": "Inside secret police warehouse as Germany targets small boats gangs",
     "link": "https://www.bbc.co.uk/news/articles/cpq809zrvqdo?at_medium=RSS&at_campaign=rss",
     "description": "German authorities seize dinghies and life jackets during their first raids under a new law that cracks down on smuggling.",
@@ -110,14 +366,6 @@
     "pubDate": "Tue, 18 Aug 2026 13:02:00 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech"
-  },
-  {
-    "title": "IVF staff accused of misleading UK parents about sperm and egg donors in northern Cyprus",
-    "link": "https://www.bbc.co.uk/news/articles/c75gv9xnr3po?at_medium=RSS&at_campaign=rss",
-    "description": "Multiple children are feared to have been conceived using sperm and egg donors which were not the ones selected by the parents.",
-    "pubDate": "Tue, 18 Aug 2026 05:00:04 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Noom Promo Codes: 50% Off Best Deals & Free Trials for August 2026",
@@ -350,6 +598,14 @@
     "pubDate": "Tue, 18 Aug 2026 11:49:00 +0800",
     "source": "雷峰网",
     "category": "ai-tech"
+  },
+  {
+    "title": "Student killed in Philippines Catholic school shooting",
+    "link": "https://www.bbc.co.uk/news/articles/c1e154qjw96o?at_medium=RSS&at_campaign=rss",
+    "description": "The alleged shooter, also a student, later took his own life.",
+    "pubDate": "Tue, 18 Aug 2026 03:43:53 GMT",
+    "source": "BBC News",
+    "category": "international"
   },
   {
     "title": "AI Infra进入自进化时代！清华团队AI优化AI造就国产万亿Token工厂",
@@ -744,7 +1000,7 @@
     "category": "ai-tech"
   },
   {
-    "title": "Zambia's president Hichilema wins re-election with big economic promises",
+    "title": "Zambia's President Hichilema wins re-election with big economic promises",
     "link": "https://www.france24.com/en/africa/20260818-zambia-president-hichilema-wins-re-election-with-big-economic-promises",
     "description": "Zambian President Hakainde Hichilema won a second term on Tuesday after campaigning on his record of economic recovery, including a major debt restructuring deal. The 64-year-old faces pressure to deliver more jobs and opportunities as critics accuse his government of failing to ease poverty and bec",
     "pubDate": "Tue, 18 Aug 2026 01:22:51 GMT",
@@ -954,7 +1210,7 @@
   {
     "title": "FIFA chief operating officer leaves after criticising Infantino investor plan",
     "link": "https://www.france24.com/en/sport/20260817-fifa-chief-operating-officer-leaves-after-criticising-infantino-investor-plan",
-    "description": "FIFA's third-highest-ranking official Kevin Lamour has left his post, the organisation confirmed Monday, after publicly criticising president Gianni Infantino's plan to sell stakes in major competitions to private investors. The departure comes as Infantino faces growing scrutiny over his leadership",
+    "description": "FIFA's third-highest-ranking official, Frenchman Kevin Lamour, has left his post, the organisation confirmed Monday, after publicly criticising president Gianni Infantino's plan to sell stakes in major competitions to private investors. The departure comes as Infantino faces growing scrutiny over hi",
     "pubDate": "Mon, 17 Aug 2026 23:32:47 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
@@ -1384,6 +1640,14 @@
     "category": "semiconductor"
   },
   {
+    "title": "Tupac's accused murderer out for 'revenge', Las Vegas jury hears",
+    "link": "https://www.france24.com/en/americas/20260817-tupac-s-accused-murderer-out-for-revenge-las-vegas-jury-hears",
+    "description": "Tupac Shakur was shot dead in an act of \"revenge\", Las Vegas jury heard on Monday, as the legendary West Coast rapper's assassination trial got underway more than three decades after his death.",
+    "pubDate": "Mon, 17 Aug 2026 18:19:09 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
     "title": "Netanyahu, Kushner agree US general to verify Hamas disarmament before Israel withdraws from Gaza",
     "link": "https://www.france24.com/en/middle-east/20260817-netanyahu-kushner-agree-us-general-verify-hamas-disarmament-before-israel-withdraws-from-gaza",
     "description": "Israeli Prime Minister Benjamin Netanyahu and US envoy Jared Kushner agreed Monday that an American general would oversee the disarmament of Hamas, an Israeli official said, as Netanyahu insisted Israel would not withdraw from Gaza until the group gives up its weapons.The understanding comes as Pres",
@@ -1770,7 +2034,7 @@
   {
     "title": "Kurilen-Inseln: Japan im Dauerstreit mit Russland",
     "link": "https://www.dw.com/de/kurilen-inseln-japan-im-dauerstreit-mit-russland/a-78400801?maca=de-rss-de-all-1119-rdf",
-    "description": "Mit seinem Besuch auf der umstrittenen Insel der Kurilen macht der russische Präsident Putin Wahlkampf. Im September wird das Parlament in Moskau neu gewählt. Er will auch Japans Premierministerin Takaichi schwächen.",
+    "description": "Mit seinem Besuch auf einer Kurilen-Insel macht der russische Präsident Putin Wahlkampf. Im September wird das Parlament in Moskau neu gewählt. Er will auch Japans Premierministerin Takaichi schwächen.",
     "pubDate": "2026-08-17T14:55:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
@@ -2848,52 +3112,12 @@
     "category": "international"
   },
   {
-    "title": "Kushner meets Netanyahu to push Trump Gaza plan",
-    "link": "https://www.aljazeera.com/news/2026/8/17/kushner-to-meet-netanyahu-to-push-trump-gaza-plan?traffic_source=rss",
-    "description": "The talks come one day after the US president's son-in-law held a rare meeting with Hamas leaders in Egypt.",
-    "pubDate": "Mon, 17 Aug 2026 08:13:04 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "TSMC overseas fabs see profit flip in 1H26",
-    "link": "https://www.digitimes.com/news/a20260817PD221/tsmc-2025-profit-investment-manufacturing.html",
-    "description": "Since 2020, when TSMC began its overseas manufacturing buildout, the company has tracked financial results at its foreign subsidiaries across the first half of 2025, full-year 2025, and the first half of 2026. The Arizona fab, long seen as difficult to make profitable, has expanded sharply, while Ja",
-    "pubDate": "Mon, 17 Aug 2026 08:06:05 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "Trump bremst Militärmanöver mit Südkorea aus",
     "link": "https://www.dw.com/de/trump-bremst-militärmanöver-mit-südkorea-aus/a-78392023?maca=de-rss-de-all-1119-rdf",
     "description": "An den elftägigen Übungen beteiligen sich Tausende Soldaten aus den USA und Südkorea. Diesmal sind drei Feldübungen weniger vorgesehen als im Vorjahr. Nordkorea kritisiert die Manöver seit Jahren scharf.",
     "pubDate": "2026-08-17T08:06:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
-  },
-  {
-    "title": "Lightmatter sets optical interconnect blueprint as AI hits copper wall",
-    "link": "https://www.digitimes.com/news/a20260817PD218/copper-data-siph-cpo-photonics.html",
-    "description": "AI data centers are approaching a physical limit: as scale-up architectures stretch across multiple racks and SerDes speeds near 448G, copper's effective transmission distance is shrinking to just a few dozen centimeters, accelerating the industry's shift toward all-optical interconnect architecture",
-    "pubDate": "Mon, 17 Aug 2026 08:03:29 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "At least six people killed in Ukrainian missile attack on Russia’s Belgorod",
-    "link": "https://www.aljazeera.com/news/2026/8/17/at-least-six-people-killed-in-ukrainian-missile-attack-on-russias-belgorod?traffic_source=rss",
-    "description": "Overnight Russian missile and drone attacks across Ukraine kill two people and injure 19.",
-    "pubDate": "Mon, 17 Aug 2026 08:00:05 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "“耐心资本”大迁徙：泰康保险少帅陈奕伦的宇树赌局",
-    "link": "https://www.tmtpost.com/8105749.html",
-    "description": "泰康保险集团创始人陈东升之子",
-    "pubDate": "Mon, 17 Aug 2026 15:55:23 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
   },
   {
     "title": "Wenn die Erde zittert: Sieben Beben, die 2026 erschütterten",
@@ -2912,76 +3136,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "OpenAI解散风险团队，冲刺史上最大IPO：先把安全放下",
-    "link": "https://www.tmtpost.com/8105814.html",
-    "description": "安全评估拆分并入业务线，取舍引人深思。",
-    "pubDate": "Mon, 17 Aug 2026 15:43:27 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "终于！世界模型进入“有声时代”：24FPS画面+48kHz立体声实时生成",
-    "link": "https://www.qbitai.com/2026/08/474334.html",
-    "description": "即将完全开源",
-    "pubDate": "Mon, 17 Aug 2026 07:39:56 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Phison CEO sees years of NAND shortage, AI growth chance",
-    "link": "https://www.digitimes.com/news/a20260814PD232/phison-ceo-nand-2027.html",
-    "description": "Phison Electronics CEO Pua Khein-Seng said the company is seizing a once-in-a-lifetime chance to transform into a high-growth business as AI agents drive massive demand, keeping NAND Flash supply tight for many years. He said 2027 capacity constraints will be even more severe than in 2026, leaving r",
-    "pubDate": "Mon, 17 Aug 2026 07:39:28 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "用一座磨坊，彻底讲透AI到底是什么？",
-    "link": "https://www.tmtpost.com/8105536.html",
-    "description": "AI进化迭代不是玄学，是一级一级爬楼梯。从被动生成到主动思考，从人工喂养到自我迭代，每一步都有迹可循。",
-    "pubDate": "Mon, 17 Aug 2026 15:39:24 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "躺赢30年的旺旺，总算醒了",
-    "link": "https://www.tmtpost.com/8105571.html",
-    "description": "旺旺们该如何应对新变化？‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍",
-    "pubDate": "Mon, 17 Aug 2026 15:25:46 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Liblib冲击上市，大模型“中间商”值30亿美元？",
-    "link": "https://www.tmtpost.com/8105360.html",
-    "description": "短期做补贴，长期拿用户。",
-    "pubDate": "Mon, 17 Aug 2026 15:25:43 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "policy"
-  },
-  {
-    "title": "Samsung's China sales overtake US; Nvidia not among top five customers",
-    "link": "https://www.digitimes.com/news/a20260817VL216/samsung-sales-nvidia-2026-hbm.html",
-    "description": "Samsung Electronics' sales to China and the US surged in the first half of 2026 as an AI-driven memory upcycle boosted its semiconductor business, while Nvidia did not rank among the company's five largest customers despite growing ties between the two companies in high-bandwidth memory (HBM).",
-    "pubDate": "Mon, 17 Aug 2026 07:24:54 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "Diplomatie: Israel gewinnt neue Verbündete in Lateinamerika",
     "link": "https://www.dw.com/de/diplomatie-israel-gewinnt-neue-verbündete-in-lateinamerika/a-78374910?maca=de-rss-de-all-1119-rdf",
     "description": "Kolumbien und Venezuela wenden sich nach diplomatisch schwierigen Jahren Israel zu. Andere Länder Südamerikas ziehen nach. Doch Brasilien und Mexiko zeigen die Grenzen dieses regionalen Neuausrichtungsprozesses auf.",
     "pubDate": "2026-08-17T07:12:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
-  },
-  {
-    "title": "Record orders, yet profits squeezed: Asia-Pacific electronics supply chain caught in cost crunch",
-    "link": "https://www.digitimes.com/news/a20260817PD210/cost-electronics-supply-chain-demand-2026.html",
-    "description": "Global Electronics Association survey data show that demand across the global electronics manufacturing industry maintained steady expansion in the first half of 2026, with orders, shipments, and capacity utilization strengthening in most months. Capacity utilization, in particular, reached an all-t",
-    "pubDate": "Mon, 17 Aug 2026 07:10:49 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
   },
   {
     "title": "800VDC Pushes AI Power Design From Grid To Gate",
@@ -3000,36 +3160,12 @@
     "category": "semiconductor"
   },
   {
-    "title": "News kompakt: Kushner trifft Hamas und al-Sisi",
-    "link": "https://www.dw.com/de/news-kompakt-kushner-trifft-hamas-und-al-sisi/a-78391253?maca=de-rss-de-all-1119-rdf",
-    "description": "US-Unterhändler Jared Kushner hat in Ägypten Gespräche über die Zukunft des Gazastreifens geführt. Die Bekämpfung des Brands im Hohen Venn in Belgien geht weiter. Der DW-Nachrichtenüberblick.",
-    "pubDate": "2026-08-17T07:00:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "I’m hooked on Peak Design’s new City bags",
-    "link": "https://www.theverge.com/tech/980137/peak-design-city-line-review",
-    "description": "It's just a hook, sewn into a bag, but I really, really like it. Peak Design is so proud of its clever integration that the San Francisco-based maker of camera gear gave it a name: BagLev, for its ability to keep its new City Line of bags levitated above the dirty ground. How many of [&#8230;]",
-    "pubDate": "2026-08-17T07:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
     "title": "\n        被 AI 碾压 30 年后，人们重新爱上了下棋\n      ",
     "link": "http://www.geekpark.net/news/368897",
     "description": "作者｜Techno 之王\n编辑｜靖宇\n \n1997 年 5 月 11 日，纽约。\nIBM 的超级计算机「深蓝」在六局对决中，以 3.5 比 2.5 击败国际象棋世界冠军卡斯帕罗夫。\n这是人类第一次在智力游戏的最高殿堂输给机器。\n那场比赛的最后一局只用了 19 步。卡斯帕罗夫在一个经典开局中走出了罕见的失误，深蓝精准地抓住了机会，迅速将局面推向不可挽回。\n终局时，卡斯帕罗夫猛地站起来离开棋桌，脸上写满了震惊和愤怒。他后来公开指控 IBM 在幕后使用了人类棋手协助，拒绝接受这个结果。\n那一天，全世界都在讨论同一个问题——在机器面前，人类的智力还有尊严吗？\n时间快进到 2016 年 3 月，首尔。\n",
     "pubDate": "Mon, 17 Aug 2026 13:54:45 +0800",
     "source": "极客公园",
     "category": "ai-tech"
-  },
-  {
-    "title": "Aussie rules footy players under investigation as police probe sexual assault claim",
-    "link": "https://www.bbc.co.uk/news/articles/cg4dd420ezlo?at_medium=RSS&at_campaign=rss",
-    "description": "The Sydney Swans confirmed an incident had occurred in the hours after the team's win on Sunday.",
-    "pubDate": "Mon, 17 Aug 2026 05:46:45 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "The Defender’s Window",
@@ -3054,22 +3190,6 @@
     "pubDate": "Mon, 17 Aug 2026 05:00:00 GMT",
     "source": "OpenAI News",
     "category": "ai-tech"
-  },
-  {
-    "title": "Ebola outbreak in DR Congo becomes deadliest in its history",
-    "link": "https://www.bbc.co.uk/news/articles/cvgll74vvydo?at_medium=RSS&at_campaign=rss",
-    "description": "The outbreak was already the fastest growing on record, caused by a rare species of Ebola called Bundibugyo.",
-    "pubDate": "Mon, 17 Aug 2026 04:41:31 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Record rains drench South Korean city as landslide kills one",
-    "link": "https://www.bbc.co.uk/news/articles/cvgww971nn2o?at_medium=RSS&at_campaign=rss",
-    "description": "It comes as large swathes of East and South East Asia have been pummelled by dats of heavy rain.",
-    "pubDate": "Mon, 17 Aug 2026 04:34:09 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "拒绝「差不多」，电商模型测评迎来「最严厉的父亲」",
@@ -3102,14 +3222,6 @@
     "pubDate": "Mon, 17 Aug 2026 03:15:00 GMT",
     "source": "OpenAI News",
     "category": "ai-tech"
-  },
-  {
-    "title": "Ferrari's first ever electric car sold for record $40m",
-    "link": "https://www.bbc.co.uk/news/articles/c77ggpgrp2do?at_medium=RSS&at_campaign=rss",
-    "description": "The Luce's launch drew backlash from some commentators who said it broke from the brand's signature dramatic styling.",
-    "pubDate": "Mon, 17 Aug 2026 02:22:04 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "\n        问界「童车」上市，华为联合设计；DeepSeek 涨价策略今日实行；大学生用 AI 人脸视频盗刷 5 万元被判刑\n      ",
@@ -3176,236 +3288,139 @@
     "category": "semiconductor"
   },
   {
-    "title": "Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+",
-    "link": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
-    "description": "OpenRouter's CEO recently described the startup as Stripe for AI.",
-    "pubDate": "Sun, 16 Aug 2026 20:57:04 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "Kushner meets Netanyahu to push Trump Gaza plan",
+    "link": "https://www.aljazeera.com/news/2026/8/17/kushner-to-meet-netanyahu-to-push-trump-gaza-plan?traffic_source=rss",
+    "description": "The talks come one day after the US president's son-in-law held a rare meeting with Hamas leaders in Egypt.",
+    "pubDate": "Mon, 17 Aug 2026 08:13:04 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Why people aren’t buying Mark Zuckerberg’s AI future",
-    "link": "https://techcrunch.com/2026/08/16/why-people-arent-buying-mark-zuckerbergs-ai-future/",
-    "description": "On the latest episode of Equity podcast, we discuss why not everyone is buying Zuckerberg’s vision.",
-    "pubDate": "Sun, 16 Aug 2026 20:32:01 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "TSMC overseas fabs see profit flip in 1H26",
+    "link": "https://www.digitimes.com/news/a20260817PD221/tsmc-2025-profit-investment-manufacturing.html",
+    "description": "Since 2020, when TSMC began its overseas manufacturing buildout, the company has tracked financial results at its foreign subsidiaries across the first half of 2025, full-year 2025, and the first half of 2026. The Arizona fab, long seen as difficult to make profitable, has expanded sharply, while Ja",
+    "pubDate": "Mon, 17 Aug 2026 08:06:05 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "JLR’s new Freelander 8 takes off with 10,000 orders in first 48 hours",
-    "link": "https://electrek.co/2026/08/16/jlrs-new-freelander-8-takes-off-with-10000-orders-in-first-48-hours/",
-    "description": "The new, retro-inspired Freelander 8 is Jaguar Land Rover’s latest global entry into the West’s red-hot luxury SUV market, and the off-roader is off to a strong start with over 10,000 orders flooding in in just 48 hours.",
-    "pubDate": "Sun, 16 Aug 2026 17:43:56 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
+    "title": "Lightmatter sets optical interconnect blueprint as AI hits copper wall",
+    "link": "https://www.digitimes.com/news/a20260817PD218/copper-data-siph-cpo-photonics.html",
+    "description": "AI data centers are approaching a physical limit: as scale-up architectures stretch across multiple racks and SerDes speeds near 448G, copper's effective transmission distance is shrinking to just a few dozen centimeters, accelerating the industry's shift toward all-optical interconnect architecture",
+    "pubDate": "Mon, 17 Aug 2026 08:03:29 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "CEO Interview with Jerry Chen of Upbeat Technology",
-    "link": "https://semiwiki.com/ceo-interviews/371606-ceo-interview-with-jerry-chen-of-upbeat-technology/",
-    "description": "Jerry Chen, CEO and Founder of Upbeat Technology, received his Master of Science in ECE from the University of Texas at Austin. Started working as an IC design engineer in Silicon Valley at Intel, Lucent, Apple, and Procket Network since 1995. Later transitioned into Technical Marketing roles, servi",
-    "pubDate": "Sun, 16 Aug 2026 17:00:37 +0000",
-    "source": "SemiWiki",
-    "category": "semiconductor"
+    "title": "At least six people killed in Ukrainian missile attack on Russia’s Belgorod",
+    "link": "https://www.aljazeera.com/news/2026/8/17/at-least-six-people-killed-in-ukrainian-missile-attack-on-russias-belgorod?traffic_source=rss",
+    "description": "Overnight Russian missile and drone attacks across Ukraine kill two people and injure 19.",
+    "pubDate": "Mon, 17 Aug 2026 08:00:05 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "E-quipment highlight: LiuGong 924FE electric excavator is coming to America",
-    "link": "https://electrek.co/2026/08/16/e-quipment-highlight-liugong-924fe-electric-excavator-is-coming-to-america/",
-    "description": "Global equipment brand LiuGong says its 924FE 30-ton electric excavator isn’t an alternative to diesel. Instead, it’s better in every way – and the company’s North American customers are about to see for themselves.",
-    "pubDate": "Sun, 16 Aug 2026 16:11:08 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
+    "title": "“耐心资本”大迁徙：泰康保险少帅陈奕伦的宇树赌局",
+    "link": "https://www.tmtpost.com/8105749.html",
+    "description": "泰康保险集团创始人陈东升之子",
+    "pubDate": "Mon, 17 Aug 2026 15:55:23 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "First Ferrari Luce EV sells for $40 million, 36x its estimate",
-    "link": "https://electrek.co/2026/08/16/ferrari-luce-chassis-0-sells-40-million-record/",
-    "description": "Ferrari’s first electric car sold for $40 million at RM Sotheby’s Monterey auction Saturday night. The pre-sale estimate was $1.1 million.\nThat’s more than 36 times the estimate, and roughly 62 times what the Luce costs on Ferrari’s own price list. Every dollar goes to charity.",
-    "pubDate": "Sun, 16 Aug 2026 15:53:52 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
+    "title": "OpenAI解散风险团队，冲刺史上最大IPO：先把安全放下",
+    "link": "https://www.tmtpost.com/8105814.html",
+    "description": "安全评估拆分并入业务线，取舍引人深思。",
+    "pubDate": "Mon, 17 Aug 2026 15:43:27 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Nordkoreanische Soldaten: Fehlen Russland wirklich Kräfte?",
-    "link": "https://www.dw.com/de/nordkoreanische-soldaten-fehlen-russland-wirklich-kräfte/a-78363582?maca=de-rss-de-all-1119-rdf",
-    "description": "Aus Kyjiw heißt es, Moskau wolle bis zu 50.000 nordkoreanische Soldaten stationieren und verstärkt von Pjöngjang gelieferte Raketen einsetzen. Ist das realistisch? Und wie könnte das den Ukraine-Krieg beeinflussen?",
-    "pubDate": "2026-08-16T15:27:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "我用 161 个新闻源「养」了个 AI 主编，它比我更懂什么叫「大新闻」｜附教程",
-    "link": "https://www.ifanr.com/1675326?utm_source=rss&utm_medium=rss&utm_campaign=",
-    "description": "信息爆炸时代，质量比数量重要得多。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-    "pubDate": "Sun, 16 Aug 2026 14:47:36 +0000",
-    "source": "爱范儿",
-    "category": "ai-tech"
-  },
-  {
-    "title": "今年最激动人心的 AI 宣言，来自科技圈最不受待见的人",
-    "link": "https://www.ifanr.com/1674733?utm_source=rss&utm_medium=rss&utm_campaign=",
-    "description": "是未来，还是黑暗森林？\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-    "pubDate": "Sun, 16 Aug 2026 14:29:56 +0000",
-    "source": "爱范儿",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Waldbrand in Belgien: Keine Evakuierung in Deutschland",
-    "link": "https://www.dw.com/de/waldbrand-in-belgien-keine-evakuierung-in-deutschland/a-78386835?maca=de-rss-de-all-1119-rdf",
-    "description": "Fast 3000 Hektar sind bereits verbrannt, internationale Einsatzkräfte kämpfen gegen die Flammen. Für die Menschen auf deutscher Seite bleibt vor allem die starke Rauchentwicklung problematisch.",
-    "pubDate": "2026-08-16T13:04:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "AfD-Debatte erklärt: von rechtsextrem bis extremistisch",
-    "link": "https://www.dw.com/de/afd-debatte-erklärt-von-rechtsextrem-bis-extremistisch/a-78354747?maca=de-rss-de-all-1119-rdf",
-    "description": "Rechts, rechtsextrem, faschistisch: In der Debatte um die AfD fallen viele Schlagwörter. Was bedeuten sie und wie angemessen sind sie im Umgang mit der AfD?",
-    "pubDate": "2026-08-16T12:56:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "How robotics is revolutionizing stroke rehabilitation",
-    "link": "https://www.therobotreport.com/how-robotics-is-revolutionizing-stroke-rehabilitation/",
-    "description": "Eyal Samuel Shachar, the CEO of Bioxtreme, says the growing synergy of robotics, AI, and human-centered care will improve patient outcomes.\nThe post How robotics is revolutionizing stroke rehabilitation appeared first on The Robot Report.",
-    "pubDate": "Sun, 16 Aug 2026 12:30:18 +0000",
-    "source": "The Robot Report",
-    "category": "ai-tech"
-  },
-  {
-    "title": "BBC visits smouldering Kyiv market after Russian strikes",
-    "link": "https://www.bbc.co.uk/news/videos/c8dnn05e90lo?at_medium=RSS&at_campaign=rss",
-    "description": "Six people were injured in the strike on the market selling second-hand records, posters, toys and tools.",
-    "pubDate": "Sun, 16 Aug 2026 12:18:09 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "杭州95后小伙，5亿买走硅谷城堡",
-    "link": "https://www.qbitai.com/2026/08/474245.html",
-    "description": "辞别马斯克xAI半年之后…",
-    "pubDate": "Sun, 16 Aug 2026 11:51:08 +0000",
+    "title": "终于！世界模型进入“有声时代”：24FPS画面+48kHz立体声实时生成",
+    "link": "https://www.qbitai.com/2026/08/474334.html",
+    "description": "即将完全开源",
+    "pubDate": "Mon, 17 Aug 2026 07:39:56 +0000",
     "source": "量子位",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "350-ton Longking ZL230E is the biggest, baddest battery mining rig you can buy",
-    "link": "https://electrek.co/2026/08/16/350-ton-longking-zl230e-is-the-biggest-baddest-battery-mining-rig-you-can-buy/",
-    "description": "Zijin Longking rolled into a media ceremony in Longyan City, Fujian Province this week with the all-electric ZL230E electric mining truck – a 350-ton GVW haul truck that sits in a class of its own as the single largest-tonnage battery electric mining truck in China.",
-    "pubDate": "Sun, 16 Aug 2026 11:15:00 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
+    "title": "Phison CEO sees years of NAND shortage, AI growth chance",
+    "link": "https://www.digitimes.com/news/a20260814PD232/phison-ceo-nand-2027.html",
+    "description": "Phison Electronics CEO Pua Khein-Seng said the company is seizing a once-in-a-lifetime chance to transform into a high-growth business as AI agents drive massive demand, keeping NAND Flash supply tight for many years. He said 2027 capacity constraints will be even more severe than in 2026, leaving r",
+    "pubDate": "Mon, 17 Aug 2026 07:39:28 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "Astronomers Discover the Existence of a Black Hole Star",
-    "link": "https://www.wired.com/story/black-hole-stars-are-becoming-less-hypothetical/",
-    "description": "An object observed by the James Webb Space Telescope lends credence to a strange explanation for the mysterious red spots in the early universe.",
-    "pubDate": "Sun, 16 Aug 2026 11:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
+    "title": "用一座磨坊，彻底讲透AI到底是什么？",
+    "link": "https://www.tmtpost.com/8105536.html",
+    "description": "AI进化迭代不是玄学，是一级一级爬楼梯。从被动生成到主动思考，从人工喂养到自我迭代，每一步都有迹可循。",
+    "pubDate": "Mon, 17 Aug 2026 15:39:24 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Samsung Galaxy Z Fold8 and Galaxy Z Fold8 Ultra Review: The Right Shape",
-    "link": "https://www.wired.com/review/samsung-galaxy-z-fold8-and-z-fold8-ultra/",
-    "description": "Nearly a decade after its debut, Samsung’s Galaxy Fold finally comes into its own.",
-    "pubDate": "Sun, 16 Aug 2026 11:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
+    "title": "躺赢30年的旺旺，总算醒了",
+    "link": "https://www.tmtpost.com/8105571.html",
+    "description": "旺旺们该如何应对新变化？‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍",
+    "pubDate": "Mon, 17 Aug 2026 15:25:46 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Massive Drohnenangriffe auf Moskau - Raketen auf Kyjiw",
-    "link": "https://www.dw.com/de/massive-drohnenangriffe-auf-moskau-raketen-auf-kyjiw/a-78387581?maca=de-rss-de-all-1119-rdf",
-    "description": "Russland und die Ukraine überziehen sich erneut mit umfangreichen Luftangriffen. Zugleich schießt ein spanischer NATO-Kampfjet eine Drohne über Rumänien ab.",
-    "pubDate": "2026-08-16T10:53:00.000Z",
+    "title": "Liblib冲击上市，大模型“中间商”值30亿美元？",
+    "link": "https://www.tmtpost.com/8105360.html",
+    "description": "短期做补贴，长期拿用户。",
+    "pubDate": "Mon, 17 Aug 2026 15:25:43 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "policy",
+    "_stale": true
+  },
+  {
+    "title": "Samsung's China sales overtake US; Nvidia not among top five customers",
+    "link": "https://www.digitimes.com/news/a20260817VL216/samsung-sales-nvidia-2026-hbm.html",
+    "description": "Samsung Electronics' sales to China and the US surged in the first half of 2026 as an AI-driven memory upcycle boosted its semiconductor business, while Nvidia did not rank among the company's five largest customers despite growing ties between the two companies in high-bandwidth memory (HBM).",
+    "pubDate": "Mon, 17 Aug 2026 07:24:54 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Record orders, yet profits squeezed: Asia-Pacific electronics supply chain caught in cost crunch",
+    "link": "https://www.digitimes.com/news/a20260817PD210/cost-electronics-supply-chain-demand-2026.html",
+    "description": "Global Electronics Association survey data show that demand across the global electronics manufacturing industry maintained steady expansion in the first half of 2026, with orders, shipments, and capacity utilization strengthening in most months. Capacity utilization, in particular, reached an all-t",
+    "pubDate": "Mon, 17 Aug 2026 07:10:49 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "News kompakt: Kushner trifft Hamas und al-Sisi",
+    "link": "https://www.dw.com/de/news-kompakt-kushner-trifft-hamas-und-al-sisi/a-78391253?maca=de-rss-de-all-1119-rdf",
+    "description": "US-Unterhändler Jared Kushner hat in Ägypten Gespräche über die Zukunft des Gazastreifens geführt. Die Bekämpfung des Brands im Hohen Venn in Belgien geht weiter. Der DW-Nachrichtenüberblick.",
+    "pubDate": "2026-08-17T07:00:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "李飞飞最新访谈：AI咋能代替人呢？",
-    "link": "https://www.qbitai.com/2026/08/474140.html",
-    "description": "AI不是替代者，而是个人能力的放大镜",
-    "pubDate": "Sun, 16 Aug 2026 10:45:47 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "It’s Never Too Early to Start Planning for the Next Two Solar Eclipses",
-    "link": "https://www.wired.com/story/its-never-too-early-to-start-planning-for-the-next-two-solar-eclipses/",
-    "description": "In 2027 and 2028, there will be two spectacular, long-duration solar eclipses. Here’s what you need to know about them.",
-    "pubDate": "Sun, 16 Aug 2026 10:30:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Someone Finally Fixed Installing Apps on a Mac",
-    "link": "https://www.wired.com/story/easydmg-finally-fixed-installing-apps-on-a-mac/",
-    "description": "The installation utility EasyDMG makes it so you never drag and drop an icon again.",
-    "pubDate": "Sun, 16 Aug 2026 10:30:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "TerraMow V1000 Review: Show Your Lawn Some Love",
-    "link": "https://www.wired.com/review/terramow-v1000/",
-    "description": "With automatic mapping, Spot Mode functionality, and smart AI cameras, the TerraMow V1000 is the complete package.",
-    "pubDate": "Sun, 16 Aug 2026 10:30:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Zwölf Menschen sterben bei Busunglück in Ungarn",
-    "link": "https://www.dw.com/de/zwölf-menschen-sterben-bei-busunglück-in-ungarn/a-78387495?maca=de-rss-de-all-1119-rdf",
-    "description": "Der Bus aus Polen kam von der Fahrbahn ab und stürzte in den Straßengraben. Nach ersten Erkenntnissen der Polizei war der Fahrer am Lenkrad eingeschlafen.",
-    "pubDate": "2026-08-16T10:28:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Wildfire smoke now bigger prenatal threat than human sources of air pollution",
-    "link": "https://arstechnica.com/science/2026/08/wildfire-smoke-now-bigger-prenatal-threat-than-human-sources-of-air-pollution/",
-    "description": "Regulations reduced prenatal exposure to harmful emissions, but wildfire smoke is erasing gains.",
-    "pubDate": "Sun, 16 Aug 2026 10:00:59 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Inside the Experimental Traps Scientists Set for Ghostly Neutrinos",
-    "link": "https://www.wired.com/story/inside-experimental-traps-scientists-set-for-neutrinos/",
-    "description": "Observatories have been built in mines, deep under the Antarctic ice sheet, and elsewhere in an effort to detect the fleeting particles.",
-    "pubDate": "Sun, 16 Aug 2026 10:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "The Best Cat Water Fountains of 2026: Petlibro, Petkit, Oneisall",
-    "link": "https://www.wired.com/gallery/best-cat-water-fountains/",
-    "description": "Ensuring your cat stays hydrated is one of the best ways to keep your pet healthy. The right pet water fountain can help.",
-    "pubDate": "Sun, 16 Aug 2026 09:33:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Immer mehr Syrer verlieren Schutzstatus in Deutschland",
-    "link": "https://www.dw.com/de/immer-mehr-syrer-verlieren-schutzstatus-in-deutschland/a-78386798?maca=de-rss-de-all-1119-rdf",
-    "description": "Die Bundesregierung meldet einen deutlichen Anstieg bei Widerrufen des Schutzstatus für Syrer. Doch zu Abschiebungen kommt es selten.",
-    "pubDate": "2026-08-16T08:28:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "\"Lala\" unterbricht Stromversorgung auf Hawaii",
-    "link": "https://www.dw.com/de/lala-unterbricht-stromversorgung-auf-hawaii/a-78386750?maca=de-rss-de-all-1119-rdf",
-    "description": "Ein Hurrikan der Kategorie 1 zieht dicht an Big Island vorbei. Das hat auf der größten Insel des Hawaii-Archipels erhebliche Folgen für viele Menschen.",
-    "pubDate": "2026-08-16T05:51:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Extreme Dürre: Wie retten wir unsere Bäume?",
-    "link": "https://www.dw.com/de/extreme-dürre-wie-retten-wir-unsere-bäume/a-78372685?maca=de-rss-de-all-1119-rdf",
-    "description": "Bäume leiden in diesem Dürresommer unter akutem Wassermangel. Doch sie werden als natürliche Klimaanlagen in Städten gebraucht. Müssen Bürger die Stadtbäume gießen? Was Bäumen jetzt hilft, die Trockenheit zu überstehen.",
-    "pubDate": "2026-08-16T04:13:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "I’m hooked on Peak Design’s new City bags",
+    "link": "https://www.theverge.com/tech/980137/peak-design-city-line-review",
+    "description": "It's just a hook, sewn into a bag, but I really, really like it. Peak Design is so proud of its clever integration that the San Francisco-based maker of camera gear gave it a name: BagLev, for its ability to keep its new City Line of bags levitated above the dirty ground. How many of [&#8230;]",
+    "pubDate": "2026-08-17T07:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "小米在江浙沪推出免费检测、免费维修服务，为小米服务年内第三次专项行动",
@@ -3495,6 +3510,15 @@
     "pubDate": "Mon, 17 Aug 2026 05:55:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Aussie rules footy players under investigation as police probe sexual assault claim",
+    "link": "https://www.bbc.co.uk/news/articles/cg4dd420ezlo?at_medium=RSS&at_campaign=rss",
+    "description": "The Sydney Swans confirmed an incident had occurred in the hours after the team's win on Sunday.",
+    "pubDate": "Mon, 17 Aug 2026 05:46:45 GMT",
+    "source": "BBC News",
+    "category": "international",
     "_stale": true
   },
   {
@@ -3615,6 +3639,15 @@
     "_stale": true
   },
   {
+    "title": "Ebola outbreak in DR Congo becomes deadliest in its history",
+    "link": "https://www.bbc.co.uk/news/articles/cvgll74vvydo?at_medium=RSS&at_campaign=rss",
+    "description": "The outbreak was already the fastest growing on record, caused by a rare species of Ebola called Bundibugyo.",
+    "pubDate": "Mon, 17 Aug 2026 04:41:31 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "从「3D相册」到「物理底座」：CVPR 2026 开启 3DGS 的具身智能时代",
     "link": "https://www.leiphone.com/category/private/aUhbF0DAHdEEWDDY.html",
     "description": "秒级前馈生成、Neural ODE 物理碰撞与真实抗噪建图，3DGS 正演变为机器人模仿学习的数字孪生工厂。\n\n\n\n\n\n    作者丨张   璐\n\n    编辑丨齐铖湧\n                                                                                                       \n\n\n在过去两年的 3DGS 研发浪潮中，我们经常看到这样的奇观：算法在论文里跑出了惊艳的 3D 渲染画面，但一拿到真实手机或机器人上，立刻卡成ppt甚至崩溃。\n“能在实验室发论文”与“能在工业现场干活”之间，隔着一条残酷的",
@@ -3638,6 +3671,15 @@
     "description": "More than 12,000 people displaced by a deadly 7.7-magnitude earthquake in eastern Indonesia were awaiting urgent aid on Monday as they sheltered at schools, police stations and government offices, while many remained stranded outside.",
     "pubDate": "Mon, 17 Aug 2026 04:37:14 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Record rains drench South Korean city as landslide kills one",
+    "link": "https://www.bbc.co.uk/news/articles/cvgww971nn2o?at_medium=RSS&at_campaign=rss",
+    "description": "It comes as large swathes of East and South East Asia have been pummelled by dats of heavy rain.",
+    "pubDate": "Mon, 17 Aug 2026 04:34:09 GMT",
+    "source": "BBC News",
     "category": "international",
     "_stale": true
   },
@@ -3939,6 +3981,15 @@
     "_stale": true
   },
   {
+    "title": "Ferrari's first ever electric car sold for record $40m",
+    "link": "https://www.bbc.co.uk/news/articles/c77ggpgrp2do?at_medium=RSS&at_campaign=rss",
+    "description": "The Luce's launch drew backlash from some commentators who said it broke from the brand's signature dramatic styling.",
+    "pubDate": "Mon, 17 Aug 2026 02:22:04 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "口服PCSK9，预期大分化",
     "link": "https://www.tmtpost.com/8105194.html",
     "description": "降脂治疗底层逻辑的重构？",
@@ -4035,42 +4086,6 @@
     "pubDate": "Mon, 17 Aug 2026 08:55:07 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Modi pledges more chip plants, mass AI training, and an export push in Independence Day address",
-    "link": "https://www.digitimes.com/news/a20260817VL200/training-manufacturing-policy.html",
-    "description": "Prime Minister Narendra Modi used India's 80th Independence Day address from the Red Fort on August 15 to tie semiconductor manufacturing, artificial intelligence training, and trade policy into a single self-reliance push, framing all three as building blocks toward a \"Viksit Bharat,\" or developed ",
-    "pubDate": "Mon, 17 Aug 2026 00:53:21 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "LG, Nvidia deepen ties on humanoid robots, AI factories, and vehicles",
-    "link": "https://www.digitimes.com/news/a20260817PR200/lg-nvidia-robot-data-manufacturing.html",
-    "description": "LG said on Wednesday that it is developing a next-generation bipedal humanoid robot with Nvidia technology, a move that could influence how factories, vehicles, and service robots are built and deployed worldwide. The South Korean conglomerate also outlined plans for AI manufacturing sites and a fut",
-    "pubDate": "Mon, 17 Aug 2026 00:52:23 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Edge AI Daily 早报（8月17日）",
-    "link": "https://www.tmtpost.com/8105300.html",
-    "description": "华盛顿大学研究证明预训练数据知识边界决定模型能力上限，挑战“更多数据更大模型”范式。加拿大首次对中资企业涉及第三国资产交易主张审查权，华联控股收购阿根廷锂矿面临长臂管辖升级。柔佛数据中心热潮受电网、审批等执行端风险制约，结构性机遇与泡沫并存。Common Earth项目联合Imec探索芯片制造中稀土替代方案，试图打破地缘材料锁定。",
-    "pubDate": "Mon, 17 Aug 2026 08:49:39 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "裁员1600人！诺基亚计划关闭中国研发中心；DeepSeek API 峰谷定价方案今日生效，高峰时段价格翻倍；Claude出现大规模服务故障",
-    "link": "https://www.leiphone.com/category/zaobao/oRfuqgy8MLhvuQax.html",
-    "description": "要闻提示\n\n\n\n\n\n\n1.诺基亚计划关闭中国杭州研发中心，裁员 1600 人\n2.DeepSeek API 峰谷定价方案今日生效，高峰时段价格翻倍\n3.苹果阿里合作再深入：不止千问接入，还参与模型训练\n4.华为天才少年宁博宇离职：焦虑对不起公司，回村卖玉米，将赴瑞典深造\n5.字节付费小说平台红烛故事正式关停\n6.宇树科技未上市先疯抢，部分中介出价520元/股！业内人士回应\n7.Claude出现大规模服务故障，旗下多项服务无法登录/无法加载\n7.曾担任网络安全公司 Wiz 总裁兼首席运营官，OpenAI 挖角 Dali Rajic 担任首席营收官\n\n\n\n\n\n今日头条\n\n\n\n\n\n\n\n\n诺基亚计划关",
-    "pubDate": "Mon, 17 Aug 2026 08:32:00 +0800",
-    "source": "雷峰网",
-    "category": "policy",
     "_stale": true
   }
 ]
