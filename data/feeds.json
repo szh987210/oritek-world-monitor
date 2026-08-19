@@ -1,5 +1,37 @@
 [
   {
+    "title": "AI was supposed to win people over by now — it hasn’t",
+    "link": "https://techcrunch.com/2026/08/19/ai-was-supposed-to-win-people-over-by-now-it-hasnt/",
+    "description": "As AI becomes harder to avoid, consumers are growing more wary of the technology — and Silicon Valley is discovering that widespread adoption doesn’t necessarily lead to acceptance.",
+    "pubDate": "Wed, 19 Aug 2026 19:11:40 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Protests in Kyiv back ex-defence minister Fedorov’s call for elections",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/19/19-08-reported-audreymacalpine-kyiv-ua?traffic_source=rss",
+    "description": "Ukrainians in Kyiv held a protest in support of ousted defence Minister Mykailo Fedorov.",
+    "pubDate": "Wed, 19 Aug 2026 19:09:53 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Who is Natalie Harp, Trump's right-hand woman?",
+    "link": "https://www.bbc.co.uk/news/articles/c80nzdjgmk3o?at_medium=RSS&at_campaign=rss",
+    "description": "One of Trump's longest serving and most loyal aides, Harp was thrust again into the spotlight when Democrat Jon Ossoff noted her closeness to the president.",
+    "pubDate": "Wed, 19 Aug 2026 19:02:41 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Google packs Search and Gemini with new AI study tools",
+    "link": "https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/",
+    "description": "The launch of the new study features marks Google's latest effort to make Gemini the AI assistant that students turn to when learning and studying, as it continues to compete with companies like OpenAI.",
+    "pubDate": "Wed, 19 Aug 2026 19:00:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
     "title": "Offering Zero Data Retention for frontier models",
     "link": "https://openai.com/index/our-commitment-to-zero-data-retention",
     "description": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
@@ -8,9 +40,25 @@
     "category": "ai-tech"
   },
   {
+    "title": "Violence in the New Syria?",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/19/violence-in-the-new-syria?traffic_source=rss",
+    "description": "The death of Syrian White Helmets rescuer Mohammad Ghamira after an alleged police beating has sparked protests.",
+    "pubDate": "Wed, 19 Aug 2026 18:50:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Trump nominates Heidi Overton to lead US Food and Drug Administration",
+    "link": "https://www.aljazeera.com/news/2026/8/19/trump-nominates-heidi-overton-to-lead-us-food-and-drug-administration?traffic_source=rss",
+    "description": "Former think tank policy officer Heidi Overton to lead FDA in a controversial push to reshape US health regulations.",
+    "pubDate": "Wed, 19 Aug 2026 18:48:49 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Researchers say OpenAI revoked their access to limited cyber program",
     "link": "https://techcrunch.com/2026/08/19/researchers-complain-that-openai-revoked-their-access-to-limited-cyber-program/",
-    "description": "Multiple cybersecurity researchers said they suddenly lost access to OpenAI’s Trusted Access for Cyber (TAC) program, which offers models with fewer guardrails for vetted users.",
+    "description": "The idea behind OpenAI's Trusted Access for Cyber program is to give trusted defenders better models so they can report bugs and vulnerabilities to companies, with the aim of getting flaws patched faster.",
     "pubDate": "Wed, 19 Aug 2026 18:46:14 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
@@ -82,7 +130,7 @@
   {
     "title": "Kennedy Center board says it won’t try to immediately restore Trump’s name",
     "link": "https://www.aljazeera.com/news/2026/8/19/kennedy-center-board-says-it-wont-try-to-immediately-restore-trumps-name?traffic_source=rss",
-    "description": "Opponents argue the venue seems 'intent on defying' a court order to remove the president's name from the building.",
+    "description": "Opponents argue the venue seems 'intent on defying' a court order to remove the US president's name from the building.",
     "pubDate": "Wed, 19 Aug 2026 18:06:55 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
@@ -320,6 +368,14 @@
     "category": "ai-tech"
   },
   {
+    "title": "Home Depot rolls out express delivery in 3 hours or less across US",
+    "link": "https://www.supplychaindive.com/news/home-depot-rolls-out-express-delivery-in-3-hours-or-less-across-us/828175/",
+    "description": "The service covers thousands of SKUs and uses more than 2,000 U.S. stores as fulfillment hubs.",
+    "pubDate": "Wed, 19 Aug 2026 12:46:17 -0400",
+    "source": "Supply Chain Dive - Latest News",
+    "category": "supply-chain"
+  },
+  {
     "title": "Coders Say They Already Found Workarounds to Claude’s Invisible Watermarks",
     "link": "https://www.wired.com/story/coders-say-they-already-found-workarounds-to-claudes-invisible-watermarks/",
     "description": "Anthropic announced last week it would include invisible watermarks in AI-generated content to comply with new EU rules. Within hours, overrides were being touted online.",
@@ -352,7 +408,7 @@
     "category": "international"
   },
   {
-    "title": "Lindsay Clancy's trial puts postpartum psychosis on the map",
+    "title": "Trial of mum accused of killing her three children puts postpartum psychosis on the map",
     "link": "https://www.bbc.co.uk/news/articles/c5yedy98j7po?at_medium=RSS&at_campaign=rss",
     "description": "Postpartum psychosis is a psychiatric emergency that can involve mania, depression, hallucinations and delusions.",
     "pubDate": "Wed, 19 Aug 2026 16:30:55 GMT",
@@ -928,9 +984,9 @@
     "category": "ai-tech"
   },
   {
-    "title": "Israeli army launches criminal probe into killing of five-year-old Hind Rajab in Gaza",
+    "title": "Israeli army launches criminal probe into killing of 5-year-old Hind Rajab in Gaza",
     "link": "https://www.france24.com/en/middle-east/20260819-israeli-army-launches-criminal-probe-into-its-troops-killing-of-five-year-old-hind-rajab",
-    "description": "The Israeli military will open internal criminal investigations into its troops' 2024 killing of five-year-old Palestinian girl Hind Rajab alongside six of her relatives, as well as the killings of 15 medics and humanitarian workers in 2025, it announced Wednesday. Israeli rights groups have warned ",
+    "description": "The Israeli military will open internal criminal investigations into its troops' 2024 killing of 5-year-old Palestinian girl Hind Rajab alongside six of her relatives, as well as the killings of 15 medics and humanitarian workers in 2025, it announced Wednesday. Israeli rights groups have warned tha",
     "pubDate": "Wed, 19 Aug 2026 13:07:12 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
@@ -3757,7 +3813,8 @@
     "description": "OpenAI is announcing security updates following the July news that its AI broke out of a sandboxed environment and accidentally hacked Hugging Face, including improvements to its research environments, monitoring, and alignment techniques. The company had already put the brakes on a new model, Astra",
     "pubDate": "2026-08-18T19:28:30.000Z",
     "source": "The Verge",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "The ‘witch-hunt’ of Jason Arday",
@@ -3765,7 +3822,8 @@
     "description": "The ‘witch-hunt’ of Jason Arday",
     "pubDate": "Tue, 18 Aug 2026 19:22:45 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "France to expel two Iranian diplomats as arrests row heightens",
@@ -3773,7 +3831,8 @@
     "description": "Paris is to expel two Iranian diplomats serving in France following the banning by Iran of two French diplomats posted to the embassy in Tehran, French Foreign Minister Jean-Noël Barrot said Tuesday. He said Iran's treatment of the French diplomats briefly arrested in Tehran last month over accusati",
     "pubDate": "Tue, 18 Aug 2026 19:22:11 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Amazon preps 1M-square-foot distribution center in Connecticut",
@@ -3781,7 +3840,8 @@
     "description": "The Norwich facility would store, pick, pack and ship goods to sortations centers and localized delivery centers further downstream the supply chain.",
     "pubDate": "Tue, 18 Aug 2026 15:11:00 -0400",
     "source": "Supply Chain Dive - Latest News",
-    "category": "supply-chain"
+    "category": "supply-chain",
+    "_stale": true
   },
   {
     "title": "US judge says government can revoke deportation protections for Ethiopians",
@@ -3789,7 +3849,8 @@
     "description": "Ruling permits Trump administration to nix Ethiopians' protected status despite concern over conditions in the country.",
     "pubDate": "Tue, 18 Aug 2026 19:09:23 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Against all odds, SpaceX finally tugs Starship into port after 24 days at sea",
@@ -3797,7 +3858,8 @@
     "description": "\"A team of SpaceX engineers is on their way to conduct additional analysis on the vehicle.\"",
     "pubDate": "Tue, 18 Aug 2026 19:01:09 +0000",
     "source": "Ars Technica - All content",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Strengthening democratic oversight in national security",
@@ -3805,7 +3867,8 @@
     "description": "OpenAI launches an initiative to strengthen democratic oversight of AI in national security, supporting government institutions with tools, training, and expertise.",
     "pubDate": "Tue, 18 Aug 2026 19:00:00 GMT",
     "source": "OpenAI News",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Garmin Watches Are Up to $250 Off Right Now On Amazon (2026)",
@@ -3958,69 +4021,6 @@
     "pubDate": "Tue, 18 Aug 2026 17:31:01 +0000",
     "source": "TechCrunch",
     "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Tropical Storm Lala leaves Hawaii flooded and without power",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/18/tropical-storm-lala-leaves-hawaii-flooded-and-without-power?traffic_source=rss",
-    "description": "Tropical Storm Lala leaves Hawaii flooded and without power",
-    "pubDate": "Tue, 18 Aug 2026 17:22:38 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Etched’s valuation doubles to $21B in a month",
-    "link": "https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/",
-    "description": "Jane Street has installed Etched's first shipped AI cluster system, and was so impressed, it led another massive round, the startup says.",
-    "pubDate": "Tue, 18 Aug 2026 17:21:58 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "PlayStation&#8217;s wireless gaming speakers launch in November",
-    "link": "https://www.theverge.com/tech/981562/sony-playstation-pulse-elevate-wireless-gaming-speakers-launch-date-preorder",
-    "description": "Sony's Pulse Elevate wireless gaming speakers are launching on November 12th and will cost $219.99, the company announced on Tuesday. Announced nearly a year ago, the speakers are compatible with a PS5, PlayStation Portal, PC, and Mac, and they include \"studio-inspired planar magnetic drivers\" that ",
-    "pubDate": "2026-08-18T17:18:57.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Earthquake rocks Spain's historic Granada, injuring three",
-    "link": "https://www.bbc.co.uk/news/articles/cdx755dyy1yo?at_medium=RSS&at_campaign=rss",
-    "description": "A number of buildings and cars are damaged in the historic city, and the world famous Alhambra palace has temporarily closed.",
-    "pubDate": "Tue, 18 Aug 2026 17:15:39 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Apple overhauls its EU App Store fees, loosens rules for alternative app stores",
-    "link": "https://techcrunch.com/2026/08/18/apple-overhauls-its-eu-app-store-fees-loosens-rules-for-alternative-app-stores/",
-    "description": "Apple is simplifying its EU App Store fees, replacing its per-install fee with a 5% commission for apps distributed outside the App Store and making it easier for developers to operate alternative app marketplaces.",
-    "pubDate": "Tue, 18 Aug 2026 17:12:13 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Tesla ‘Robotaxi’ rams through bollards weeks after ‘impeccable’ claim",
-    "link": "https://electrek.co/2026/08/18/tesla-robotaxi-rams-through-bollards-austin/",
-    "description": "A Tesla “Robotaxi” running with no safety monitor onboard drove straight through a row of bollards protecting a closed-off lane in Austin, then kept driving.\nThe video surfaced Monday, less than a month after Tesla’s head of AI told investors the Robotaxi program has an “impeccable safety record” wi",
-    "pubDate": "Tue, 18 Aug 2026 17:04:56 +0000",
-    "source": "Electrek",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Zambia's Hichilema re-elected president as main rival in hiding over alleged threats",
-    "link": "https://www.bbc.co.uk/news/articles/c5y6j4jl03xo?at_medium=RSS&at_campaign=rss",
-    "description": "Hakainde Hichilema says he was “truly humbled” by the victory and promised to work for all Zambians.",
-    "pubDate": "Tue, 18 Aug 2026 17:00:29 GMT",
-    "source": "BBC News",
-    "category": "international",
     "_stale": true
   }
 ]
