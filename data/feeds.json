@@ -1,5 +1,29 @@
 [
   {
+    "title": "GTA VI keeps leaking ahead of its gameplay premiere",
+    "link": "https://www.theverge.com/games/982338/grand-theft-auto-vi-gta-leaks-videos",
+    "description": "Clips of what appears to be Grand Theft Auto VI have hit the internet, possibly spoiling aspects of the game ahead of Rockstar Games' deep dive debuting on Netflix next week and its long-awaited launch in November. I've seen three clips seemingly showing off the game, though two have been pulled fro",
+    "pubDate": "2026-08-19T17:03:11.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Meta AI is getting a Mac app",
+    "link": "https://www.theverge.com/tech/982270/meta-ai-mac-app",
+    "description": "Meta is launching a new Mac app dedicated to its AI chatbot. In an announcement on Wednesday, Meta says you can share your window with its AI chatbot, which can provide suggestions, answer questions, or create content based on what's on your screen. Meta AI on the Mac also supports dictation across ",
+    "pubDate": "2026-08-19T17:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Coders Say They Already Found Workarounds to Claude’s Invisible Watermarks",
+    "link": "https://www.wired.com/story/coders-say-they-already-found-workarounds-to-claudes-invisible-watermarks/",
+    "description": "Anthropic announced last week it would include invisible watermarks in AI-generated content to comply with new EU rules. Within hours, overrides were being touted online.",
+    "pubDate": "Wed, 19 Aug 2026 16:44:07 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
     "title": "Google Pixel Watch 5 Review: More Health, More AI",
     "link": "https://www.wired.com/review/google-pixel-watch-5/",
     "description": "With smarter gym tracking, new health alerts, and offline Gemini, the Pixel Watch 5 fine-tunes a winning formula—for a price.",
@@ -8,10 +32,26 @@
     "category": "ai-tech"
   },
   {
+    "title": "Why extreme heat is much more dangerous for the elderly than we realised",
+    "link": "https://www.aljazeera.com/news/2026/8/19/why-extreme-heat-is-much-more-dangerous-for-the-elderly-than-we-realised?traffic_source=rss",
+    "description": "Human heat tolerance limits are lower than previously thought, and age is a major risk, Stanford researchers say.",
+    "pubDate": "Wed, 19 Aug 2026 16:32:28 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Ukrainian man arrested in Croatia over Nord Stream pipeline blasts",
     "link": "https://www.bbc.co.uk/news/articles/c78gp7l5348o?at_medium=RSS&at_campaign=rss",
     "description": "The man is alleged to have been one of the scuba divers who planted explosives on the pipelines in 2022.",
     "pubDate": "Wed, 19 Aug 2026 16:31:48 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Lindsay Clancy's trial puts postpartum psychosis on the map",
+    "link": "https://www.bbc.co.uk/news/articles/c5yedy98j7po?at_medium=RSS&at_campaign=rss",
+    "description": "Postpartum psychosis is a psychiatric emergency that can involve mania, depression, hallucinations and delusions.",
+    "pubDate": "Wed, 19 Aug 2026 16:30:55 GMT",
     "source": "BBC News",
     "category": "international"
   },
@@ -29,6 +69,14 @@
     "description": "If you’ve been circling around Disrupt, then now’s the best time to lock in your pass and start getting ready to join the rest of the startup community gathering in San Francisco from October 13-15 at Moscone West!",
     "pubDate": "Wed, 19 Aug 2026 16:16:18 +0000",
     "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "We reviewed the new Pixel lineup, ask us anything",
+    "link": "https://www.theverge.com/tech/981537/pixel-11-pro-fold-watch-5-ama",
+    "description": "The embargo has lifted on Google's Pixel 11 series, as well as for its Pixel Watch 5. Now we get to talk smack - just kidding, the new hardware is good. We have four reviews live on the site that you can peruse at your leisure. We're giving subscribers a chance to engage with us [&#8230;]",
+    "pubDate": "2026-08-19T16:15:00.000Z",
+    "source": "The Verge",
     "category": "ai-tech"
   },
   {
@@ -104,9 +152,9 @@
     "category": "international"
   },
   {
-    "title": "France probes tax database massive cyberattack",
+    "title": "France probes massive cyberattack on tax database",
     "link": "https://www.france24.com/en/video/20260819-france-probes-tax-database-massive-cyberattack",
-    "description": "A massive cyberattack in France has exposed the personal information of some 700,000 people. After hackers breached the government database for taxes, it has now been revealed that other government sites have also been hacked.",
+    "description": "A massive cyberattack in France has exposed the personal information of some 700,000 people. After hackers breached the government database for taxes in June, it has now been revealed that other government sites have also been hacked.",
     "pubDate": "Wed, 19 Aug 2026 15:51:00 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
@@ -176,7 +224,7 @@
     "category": "international"
   },
   {
-    "title": "Rivian spinout Also raises another $150 million",
+    "title": "Rivian spinout Also raises another $150M",
     "link": "https://techcrunch.com/2026/08/19/rivian-spinout-also-raises-another-150-million/",
     "description": "The round, led by Prysm Capital, will fund the company's expansion beyond pedal-assist electric bikes and commercial cargo quads to autonomous delivery vehicles.",
     "pubDate": "Wed, 19 Aug 2026 15:39:47 +0000",
@@ -3629,7 +3677,8 @@
     "description": "Hakainde Hichilema says he was “truly humbled” by the victory and promised to work for all Zambians.",
     "pubDate": "Tue, 18 Aug 2026 17:00:29 GMT",
     "source": "BBC News",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Beyond Moore: Co-Optimizing AI from Systems to Materials",
@@ -3637,7 +3686,8 @@
     "description": "At the OCP APAC Summit in Taiwan, August 11–12, 2026, Applied Materials’ Subi Kengeri framed artificial intelligence as the semiconductor industry’s largest inflection point. AI demand is accelerating the industry toward one trillion dollars in annual revenue, but the keynote’s central message was m",
     "pubDate": "Tue, 18 Aug 2026 17:00:26 +0000",
     "source": "SemiWiki",
-    "category": "semiconductor"
+    "category": "semiconductor",
+    "_stale": true
   },
   {
     "title": "Beyond Moore: Co-Optimizing AI from Systems to Materials",
@@ -3645,7 +3695,8 @@
     "description": "At the OCP APAC Summit in Taiwan, August 11–12, 2026, Applied Materials’ Subi Kengeri framed artificial intelligence as the semiconductor industry’s largest inflection point. AI demand is accelerating the industry toward one trillion dollars in annual revenue, but the keynote’s central message was m",
     "pubDate": "Tue, 18 Aug 2026 17:00:26 +0000",
     "source": "SemiWiki",
-    "category": "semiconductor"
+    "category": "semiconductor",
+    "_stale": true
   },
   {
     "title": "Apple squashes EU beef with new App Store rules",
@@ -3653,7 +3704,8 @@
     "description": "Apple is once again overhauling App Store rules in the European Union, which the company says will resolve its \"disagreements with the Commission over business terms and alternative distribution.\" As part of the changes, every developer that distributes apps will be moved to a single set of business",
     "pubDate": "2026-08-18T16:48:26.000Z",
     "source": "The Verge",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Peacock raises prices by 18 percent after becoming profitable",
@@ -3661,7 +3713,8 @@
     "description": "Peacock's quarterly profitability isn't guaranteed.",
     "pubDate": "Tue, 18 Aug 2026 16:42:30 +0000",
     "source": "Ars Technica - All content",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "Comcast adds motion sensing to millions of its newer routers, with a privacy catch",
@@ -3669,7 +3722,8 @@
     "description": "A new feature added to Comcast's newest routers can detect if there is motion inside your home without needing traditional motion sensors.",
     "pubDate": "Tue, 18 Aug 2026 16:39:05 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "The United States is about to wake up to the threat from China's space program",
@@ -3982,60 +4036,6 @@
     "link": "https://www.france24.com/en/sport/20260818-france-vieira-appointed-head-coach-senegal-national-football-team",
     "description": "Former France midfielder Patrick Vieira has been appointed Senegal coach, succeeding Pape Thiaw following the team's World Cup elimination. Born in Dakar, the 50-year-old takes charge of a national team for the first time after coaching in England, France and Italy. Vieira will begin his tenure next",
     "pubDate": "Tue, 18 Aug 2026 14:38:59 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Honeywell Aerospace targets supplier bottlenecks to boost output",
-    "link": "https://www.supplychaindive.com/news/honeywell-aerospace-targets-supplier-bottlenecks-to-boost-output/827975/",
-    "description": "A significant share of the company's 3,000 suppliers underperformed in the first half of the year, President and CEO James Currier said.",
-    "pubDate": "Tue, 18 Aug 2026 10:38:00 -0400",
-    "source": "Supply Chain Dive - Latest News",
-    "category": "supply-chain",
-    "_stale": true
-  },
-  {
-    "title": "29.98万元起，奕境X9正式开启预售，华为乾崑携手东风打造第二代家庭旗舰",
-    "link": "https://www.leiphone.com/category/industrynews/f5eBtu877ZOCgqNo.html",
-    "description": "2026年8月18日，奕境X9预售发布会在成都盛大启幕。作为东风与华为乾崑全栈合作打造的新能源汽车品牌，奕境首款车型——第二代家庭旗舰SUV奕境X9正式开启预售，预售价29.98万起。\n\n \n当下，多成员家庭出游意愿越来越强烈，家庭消费者购车需求也随之升级，希望进一步享受到最前沿的智能科技、座舱体验和安全防护。奕境X9倾注了东风的深厚造车底蕴与华为乾崑领先的汽车智能化解决方案，全面定义第二代家庭旗舰。\n \n华为公司高级副总裁、引望公司CEO靳玉志表示，第一代家庭旗舰是“移动的家”，有冰箱、彩电和大沙发，第二代家庭旗舰不仅是它的“加强版”，还要配置两大“智慧伙伴”——全家人的专属司机和贴心助理。",
-    "pubDate": "Tue, 18 Aug 2026 22:37:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Experts call FCC’s block on foreign robotics a nearshoring tactic",
-    "link": "https://www.supplychaindive.com/news/experts-call-fccs-block-on-foreign-robotics-a-nearshoring-tactic/827423/",
-    "description": "While cyberthreats are a growing risk to national security, the agency’s sweeping block on humanoids, quadrupeds and mobile robot imports could reinvigorate domestic suppliers.",
-    "pubDate": "Tue, 18 Aug 2026 10:31:00 -0400",
-    "source": "Supply Chain Dive - Latest News",
-    "category": "supply-chain",
-    "_stale": true
-  },
-  {
-    "title": "What to watch in the Alaska and Wyoming primary elections",
-    "link": "https://www.aljazeera.com/news/2026/8/18/what-to-watch-in-the-alaska-and-wyoming-primary-elections?traffic_source=rss",
-    "description": "Republican-led states face leadership shuffling.",
-    "pubDate": "Tue, 18 Aug 2026 14:29:11 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Volodymyr Zelensky names new Defence minister after weeks of political crisis",
-    "link": "https://www.france24.com/en/volodymyr-zelensky-names-new-defence-minister-after-weeks-of-political-crisis",
-    "description": "President ​Volodymyr Zelensky nominated ​Yevheny Khmara for parliamentary approval ​to become Defence minister. Khmara served ​as acting ‌minister following the abrupt dismissal of ‌his predecessor, Mykhailo Fedorov, in June, which ​sparked public outrage and a week-long ​political crisis ​for Zelen",
-    "pubDate": "Tue, 18 Aug 2026 14:27:17 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "ISS: Sophie Adenot and Anil Menon conduct spacewalk to replace space-to-ground antenna",
-    "link": "https://www.france24.com/en/iss-sophie-adenot-and-anil-menon-conduct-spacewalk-to-replace-space-to-ground-antenna",
-    "description": "Nadia Massih is pleased to welcome Daniel Neuenschwander, Director of Human and Robotic Exploration at the European Space Agency (ESA). According to Neuenschwander, this latest ISS mission demonstrates what makes the International Space Station exceptional: interdependence. European, American, Japan",
-    "pubDate": "Tue, 18 Aug 2026 14:18:58 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
     "_stale": true
