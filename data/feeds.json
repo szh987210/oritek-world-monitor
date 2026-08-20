@@ -1,11 +1,163 @@
 [
   {
-    "title": "ChatGPT can now send texts for you with new Apple Messages plugin",
+    "title": "Jailed Pakistan ex-PM Imran Khan taken to hospital for treatment",
+    "link": "https://www.bbc.co.uk/news/articles/ckgdr9vr50po?at_medium=RSS&at_campaign=rss",
+    "description": "Khan was taken from Adiala jail and sent to Shifa International Hospital under heavy security, according to his party.",
+    "pubDate": "Thu, 20 Aug 2026 22:43:42 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "OpenAI is gaining on Anthropic with business users, new data indicates",
+    "link": "https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/",
+    "description": "Businesses are willing to flop back and forth as each lab releases new models, volatility that should give both companies' investors pause about how \"sticky\" enterprise AI spending really is.",
+    "pubDate": "Thu, 20 Aug 2026 22:36:37 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Charts: TSMC's share of Taiwan chip manufacturing revenue falls to 81.8% as memory makers scale up",
+    "link": "https://www.digitimes.com/news/a20260820VL216/revenue-tsmc-taiwan-growth-demand.html",
+    "description": "Foundry leader Taiwan Semiconductor Manufacturing Company (TSMC) grew 37% year to date — and still lost four percentage points of the sub-sector's revenue share, because the other 26 manufacturers grew more than twice as fast.",
+    "pubDate": "Thu, 20 Aug 2026 22:17:33 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "US ban on robot dogs clears the way for Taiwan's Swancor",
+    "link": "https://www.digitimes.com/news/a20260820PD231/robot-swancor-taiwan-ban-supply-chain.html",
+    "description": "To safeguard national security and the development of the AI supply chain, the US has banned imports of advanced humanoid robots. Against that backdrop, Taiwan-based Swancor unveiled its first \"Taiwan AI robot ecosystem\" at Automation Taipei 2026, joining with more than 10 Taiwanese industry, techno",
+    "pubDate": "Thu, 20 Aug 2026 22:17:13 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "JCET hits 1.5&mu;m TSV milestone for denser HBM and 2.5D/3D packaging",
+    "link": "https://www.digitimes.com/news/a20260820VL208/tsv-jcet-packaging-hbm-production.html",
+    "description": "JCET Group has completed trial production of a 1.5μm-diameter, 17μm-deep through-silicon via (TSV) with an aspect ratio of 11.3:1, extending its advanced packaging capabilities towards denser 2.5D and 3D integration.",
+    "pubDate": "Thu, 20 Aug 2026 22:16:36 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Charts: AI test demand drives broadest growth among Taiwan's chip equipment suppliers",
+    "link": "https://www.digitimes.com/news/a20260820VL215/demand-growth-equipment-revenue-probe.html",
+    "description": "Thirty-eight of 43 companies grew year to date at a median rate of 28.7% — the highest of any semiconductor sub-sector — with test handlers, sockets and probe cards recurring across company filings.",
+    "pubDate": "Thu, 20 Aug 2026 22:16:01 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Elice to build South Korea's first warm-water-cooled AI data center, unveils coding agent",
+    "link": "https://www.digitimes.com/news/a20260820PD227/ai-data-center-cooling-gpu-infrastructure.html",
+    "description": "South Korean AI infrastructure provider Elice Group is expanding on two fronts, adding enterprise AI transformation (AX) solutions while building what it says will be the country's first AI data center to use warm-water cooling above 40°C.",
+    "pubDate": "Thu, 20 Aug 2026 22:15:40 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Korean display makers step up OLED patent push as China narrows technology gap",
+    "link": "https://www.digitimes.com/news/a20260820VL213/patent-display-technology-licensing-lg-display.html",
+    "description": "Korean display makers are stepping up patent licensing and cross-border enforcement as Chinese rivals have sharply narrowed the technology and market-share gap in OLED since 2020, just as competition expands into higher-value panels for notebooks and monitors.",
+    "pubDate": "Thu, 20 Aug 2026 22:15:08 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Nitto Denko to expand HDD baseboard capacity for AI data center demand",
+    "link": "https://www.digitimes.com/news/a20260820PD226/nitto-denko-hdd-demand-capacity-data-center.html",
+    "description": "Nitto Denko said it will invest JPY28 billion (US$176.68 million) through fiscal 2028 to expand production of thin-film metal base boards for hard disk drives, raising capacity by 40% from fiscal 2025 levels. The move is aimed at meeting demand driven by AI-related data center growth.",
+    "pubDate": "Thu, 20 Aug 2026 22:14:36 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "China silicon wafer maker NSIG nears 1.2 million monthly 300mm capacity after 90% shipment jump",
+    "link": "https://www.digitimes.com/news/a20260820VL212/nsig-300mm-capacity-silicon-wafer-silicon.html",
+    "description": "National Silicon Industry Group (NSIG) reported a 36.51% rise in first-half 2026 revenue as shipments of 300mm semiconductor silicon wafers increased more than 90%, though continued R&D spending, currency movements and inventory impairments widened its net loss.",
+    "pubDate": "Thu, 20 Aug 2026 22:14:21 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Samsung holds off on High-NA EUV until 1nm production",
+    "link": "https://www.digitimes.com/news/a20260820VL217/samsung-high-na-euv-production-1nm-high-na.html",
+    "description": "Samsung Electronics does not expect to move High-NA EUV lithography into volume production until its 1nm-class generation, a timeline that points to around 2030, after it had earlier hoped to introduce the technology at the 2nm and 1.4nm nodes.",
+    "pubDate": "Thu, 20 Aug 2026 22:13:56 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "China's humanoid robot shipments hit 40,000 in the first half of 2026",
+    "link": "https://www.digitimes.com/news/a20260820PD225/china-humanoid-robot-shipments-development-2026.html",
+    "description": "China shipped more than 40,000 humanoid robots in the first half of 2026, lifting its share of global shipments to 97%, according to a development report released on August 20 at the 2026 World Robot Conference in Beijing. The figure marked the highest share ever recorded in the report's historical ",
+    "pubDate": "Thu, 20 Aug 2026 22:12:49 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "TXC pivots to AI infrastructure as 1.6T optical modules surge",
+    "link": "https://www.digitimes.com/news/a20260820PD223/txc-component-infrastructure-automotive-2026.html",
+    "description": "Quartz component leader TXC is targeting AI and automotive applications as demand grows for faster data transmission, with 1.6T optical modules expected to see explosive growth in the second half of 2026. The company aims to lift AI revenue to 20% by the end of 2026, with roughly 20-30% of that comi",
+    "pubDate": "Thu, 20 Aug 2026 22:12:24 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "DIGITIMES's Colley Hwang warns Taiwan AI data center capacity lags South Korea",
+    "link": "https://www.digitimes.com/news/a20260820PD233/taiwan-economy-capacity-digitimes-data-center.html",
+    "description": "The inference economy has arrived, and Taiwan's tech industry must transition from the \"knowledge economy\" to the \"inference economy,\" DIGITIMES chairman Colley Hwang said on August 20 at a forum exploring future trends in the semiconductor industry. He also warned that Taiwan's AI data center capac",
+    "pubDate": "Thu, 20 Aug 2026 22:10:38 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Longcheer and Luxshare move into robot ODM",
+    "link": "https://www.digitimes.com/news/a20260820PD220/luxshare-longcheer-robot-odm-electronics.html",
+    "description": "China consumer electronics ODMs are extending their R&D, supply chain integration and mass production capabilities into the embodied AI robot market. Longcheer announced on August 19 that it had signed an agreement with the Nanchang High-tech Zone in Jiangxi, officially establishing an embodied AI r",
+    "pubDate": "Thu, 20 Aug 2026 22:10:16 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "ChatGPT can now send texts for you with new Apple Messages plug-in",
     "link": "https://techcrunch.com/2026/08/20/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plugin/",
     "description": "Ever wanted someone else to do your texting for you? ChatGPT is being offered up as an automated text scribe via a new Apple Messages integration.",
     "pubDate": "Thu, 20 Aug 2026 22:09:51 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
+  },
+  {
+    "title": "How credit allocation is becoming part of the AI supply chain",
+    "link": "https://www.digitimes.com/news/a20260820PD222/ai-hardware-supply-chain.html",
+    "description": "As artificial intelligence (AI) evolves, shifting bottlenecks reflect the maturity of the AI boom. Initial constraints emerged at the semiconductor level with GPUs, high bandwidth memory (HBM), and advanced packaging. Next came system-level challenges around networking, power, and thermal management",
+    "pubDate": "Thu, 20 Aug 2026 22:09:50 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Column: Is 800V really 'high voltage'? &mdash;AI data centers revive an old power debate",
+    "link": "https://www.digitimes.com/news/a20260820PD211/data-transmission-technology-data-center-cables.html",
+    "description": "High-voltage direct current (HVDC) is currently one of the hottest areas of technology and product development for AI data centers. It is not only the first layer of what Nvidia CEO Jensen Huang has described as the industry's \"five-layer cake,\" but also a concrete manifestation of the idea that com",
+    "pubDate": "Thu, 20 Aug 2026 22:09:26 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Kenmec surges on AI, advanced packaging to record orders, revenue",
+    "link": "https://www.digitimes.com/news/a20260820PD217/kenmec-revenue-packaging-demand-expansion.html",
+    "description": "Fueled by robust global demand for artificial intelligence and the rapid expansion of semiconductor advanced packaging capacity, Kenmec Mechanical Engineering, a subsidiary of Kenmec Group, has seen its order backlog surge to nearly NT$6.661 billion (approx. US$209.1 million). Driven by this momentu",
+    "pubDate": "Thu, 20 Aug 2026 22:09:03 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Charts: Foxconn is losing share of Taiwan's EMS revenue as Quanta and Wistron near double",
+    "link": "https://www.digitimes.com/news/a20260820VL218/ems-foxconn-quanta-revenue-taiwan-wistron.html",
+    "description": "The sub-sector's dominant supplier grew 37.9% year to date and still ranks only seventh of 20, while the other 19 companies grew 56.9% between them.",
+    "pubDate": "Thu, 20 Aug 2026 22:08:13 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
   },
   {
     "title": "Google Discover is getting an AI chatbot-tuned feed",
@@ -100,14 +252,6 @@
     "link": "https://www.bbc.co.uk/news/videos/c1l10g94yg1o?at_medium=RSS&at_campaign=rss",
     "description": "The men, aged 53 and 32, lost contact with their fishing cooperative on 14 August, 75 miles off the coast of Mexico.",
     "pubDate": "Thu, 20 Aug 2026 20:41:31 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Jailed Pakistan ex-PM Imran Khan taken to hospital for treatment",
-    "link": "https://www.bbc.co.uk/news/articles/ckgdr9vr50po?at_medium=RSS&at_campaign=rss",
-    "description": "Khan was taken from Adiala jail and sent to Shifa International Hospital under heavy security, local media report.",
-    "pubDate": "Thu, 20 Aug 2026 20:40:17 GMT",
     "source": "BBC News",
     "category": "international"
   },
@@ -2808,14 +2952,6 @@
     "category": "international"
   },
   {
-    "title": "Chewy Promo Codes: $20 Off August 2026",
-    "link": "https://www.wired.com/story/chewy-promo-code/",
-    "description": "Explore Chewy coupon codes for $30 off, $20 off your first order $49, 50% off pet food, and more August 2026 discounts.",
-    "pubDate": "Thu, 20 Aug 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
     "title": "Peacock Promo Codes: 40% Off August 2026",
     "link": "https://www.wired.com/story/peacock-promo-code/",
     "description": "Stream your favorite shows for up to $80 off this month, and save on subscription plans with the latest Peacock TV coupons from WIRED.",
@@ -2848,17 +2984,17 @@
     "category": "ai-tech"
   },
   {
-    "title": "Dell Coupon Codes: 20% Off for August 2026",
-    "link": "https://www.wired.com/story/dell-coupon-code/",
-    "description": "Get 20% off with verified Dell promo code, plus today’s coupons for up to $600 off laptops, Alienware monitors, and all things tech.",
+    "title": "Chewy Promo Codes: $20 Off August 2026",
+    "link": "https://www.wired.com/story/chewy-promo-code/",
+    "description": "Explore Chewy coupon codes for $30 off, $20 off your first order $49, 50% off pet food, and more August 2026 discounts.",
     "pubDate": "Thu, 20 Aug 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
   },
   {
-    "title": "20% Off Samsung Promo Code | August 2026",
-    "link": "https://www.wired.com/story/samsung-promo-codes/",
-    "description": "Save 30% or 10% with Samsung coupon codes, up to $1,000 on appliances, plus limited-time deals on the Galaxy Z Fold7, Flip7, and S25.",
+    "title": "Dell Coupon Codes: 20% Off for August 2026",
+    "link": "https://www.wired.com/story/dell-coupon-code/",
+    "description": "Get 20% off with verified Dell promo code, plus today’s coupons for up to $600 off laptops, Alienware monitors, and all things tech.",
     "pubDate": "Thu, 20 Aug 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -2891,6 +3027,14 @@
     "title": "eBay Coupons: 20% Off in August 2026",
     "link": "https://www.wired.com/story/ebay-coupon-code/",
     "description": "Save up to 60% on a selection of items at eBay, including electronics, home products, card games, car parts and more.",
+    "pubDate": "Thu, 20 Aug 2026 05:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "20% Off Samsung Promo Code | August 2026",
+    "link": "https://www.wired.com/story/samsung-promo-codes/",
+    "description": "Save 30% or 10% with Samsung coupon codes, up to $1,000 on appliances, plus limited-time deals on the Galaxy Z Fold7, Flip7, and S25.",
     "pubDate": "Thu, 20 Aug 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -3800,62 +3944,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Prince Harry and Meghan to move back to UK six years after royal exit",
-    "link": "https://www.france24.com/en/europe/20260819-prince-harry-meghan-move-back-uk-six-years-after-royal-exit",
-    "description": "Prince Harry and his wife Meghan plan to move back to Britain six years after stepping down as working royals, British media reported on Wednesday. The couple are expected to leave the United States by month-end and live outside London, while their two children have reportedly enrolled in a British ",
-    "pubDate": "Wed, 19 Aug 2026 22:39:43 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Does giving a camera wings dodge the FCC’s drone ban?",
-    "link": "https://www.theverge.com/tech/981834/hoverair-versa-drone-camera-fcc-loophole-indiegogo",
-    "description": "HoverAir drones always have intriguing gimmicks. This one folds flat to fit in your pocket. This one can land on water. Another can charge inside its carrying case. But the brand's latest trick might be its riskiest: it's attempting to sneak a drone past the FCC. In December 2025, the US government ",
-    "pubDate": "2026-08-19T22:35:20.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Waymo’s cheaper, next-gen robotaxi is now open to all riders in these three cities",
-    "link": "https://techcrunch.com/2026/08/19/waymos-cheaper-next-gen-robotaxi-is-now-open-to-all-riders-in-these-three-cities/",
-    "description": "The next-generation robotaxi, called the Waymo Ojai, is central to the company's push towards mass scale, and eventually, profitability.",
-    "pubDate": "Wed, 19 Aug 2026 22:25:01 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "US national debt exceeds $40 trillion for first time amid rising borrowing",
-    "link": "https://www.france24.com/en/economy/20260819-us-national-debt-exceeds-40-trillion-for-first-time-amid-rising-borrowing",
-    "description": "The US gross national debt surpassed $40 trillion for the first time, Treasury data showed on Wednesday, exceeding earlier forecasts as borrowing, interest costs and long-term obligations rose. Total public debt reached $40.05 trillion on Tuesday, above a Congressional Budget Office forecast of $39.",
-    "pubDate": "Wed, 19 Aug 2026 22:12:39 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "OpenAI seeks to one-up Anthropic with new customer privacy protections",
-    "link": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/",
-    "description": "A competition is developing between OpenAI and Anthropic over who can provide the best privacy protections for enterprise customer data.",
-    "pubDate": "Wed, 19 Aug 2026 22:10:46 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
     "title": "Amazon aims for delivery drones to reach 500 US neighborhoods by end of 2026",
     "link": "https://arstechnica.com/gadgets/2026/08/amazon-aims-for-delivery-drones-to-reach-500-us-neighborhoods-by-end-of-2026/",
     "description": "US residents face trade-offs as delivery drone services such as Prime Air expand.",
     "pubDate": "Wed, 19 Aug 2026 22:02:38 +0000",
     "source": "Ars Technica - All content",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "What the social media addiction lawsuit could cost Meta",
-    "link": "https://www.aljazeera.com/economy/2026/8/19/what-the-social-media-addiction-lawsuit-could-cost-meta?traffic_source=rss",
-    "description": "Landmark trial against Meta could lead to fines and fundamental changes in Facebook and Instagram's operations.",
-    "pubDate": "Wed, 19 Aug 2026 22:01:26 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
+    "category": "ai-tech"
   },
   {
     "title": "Andes Condor Closure Came Amid Broader Cost-Cutting Effort",
@@ -3863,8 +3957,7 @@
     "description": "Andes Technology’s decision to close Condor was part of a broader 10-20% operational cost-cutting exercise, with Condor probably considered too expensive a bet.\nThe post Andes Condor Closure Came Amid Broader Cost-Cutting Effort appeared first on EE Times.",
     "pubDate": "Wed, 19 Aug 2026 22:00:00 +0000",
     "source": "EE Times",
-    "category": "semiconductor",
-    "_stale": true
+    "category": "semiconductor"
   },
   {
     "title": "Wawa-branded EV chargers are expanding beyond Tesla",
@@ -3872,80 +3965,7 @@
     "description": "Wawa launched self-branded Tesla Superchargers earlier this year, and now it’s doing the same with Electrify America EV fast chargers.",
     "pubDate": "Wed, 19 Aug 2026 21:53:47 +0000",
     "source": "Electrek",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Cognition CEO denies report that SpaceX tried to acquire the startup",
-    "link": "https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/",
-    "description": "SpaceX was reportedly in talks to buy AI coding startup Cognition. SpaceX has already acquired Cursor as it races to catch up to rivals like OpenAI and Anthropic in enterprise AI.",
-    "pubDate": "Wed, 19 Aug 2026 21:51:23 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Travis Kalanick kicks off another round of VC bashing: ‘1% are helpful’",
-    "link": "https://techcrunch.com/2026/08/19/travis-kalanick-kicks-off-another-round-of-vc-bashing-1-are-helpful/",
-    "description": "After raising $1.7 billion for his new robotics company Atoms, Travis Kalanick is introspective about the role VCs have played in his career.",
-    "pubDate": "Wed, 19 Aug 2026 21:48:24 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Angélique Kidjo makes Hollywood history as first Black African on Walk of Fame",
-    "link": "https://www.france24.com/en/tv-shows/eye-on-africa/20260819-ang%C3%A9lique-kidjo-makes-hollywood-history-as-first-black-african-on-walk-of-fame",
-    "description": "Beninese music icon Angélique Kidjo celebrates her global legacy with a star on the Hollywood Walk of Fame, the first dedicated to a Black African. Also, in Nigeria, the town of Ogijo has more lead-recycling factories than anywhere else in Africa, supplying the American auto industry at a heavy cost",
-    "pubDate": "Wed, 19 Aug 2026 21:36:37 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Trump says he plans to meet Kim Jong Un later this year",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/19/i-get-along-with-him-very-well?traffic_source=rss",
-    "description": "US President Donald Trump praised his relationship with North Korea’s leader Kim Jong Un.",
-    "pubDate": "Wed, 19 Aug 2026 21:35:34 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Israeli strike on Gaza City police headquarters kills women’s police chief",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/19/israeli-strike-on-gaza-city-police-headquarters-kills-womens-police-chief?traffic_source=rss",
-    "description": "An Israeli strike on Gaza City’s police headquarters has killed the women’s police chief and several officers.",
-    "pubDate": "Wed, 19 Aug 2026 21:22:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Displaced Lebanese watch southern Lebanon’s ‘pilot zones’ from afar",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/19/displaced-lebanese-watch-southern-lebanons-pilot-zones-from-afar-2?traffic_source=rss",
-    "description": "“You can't do anything. Just stand here and watch.”\r\nAl Jazeera’s Ali Hashem watched Israeli attacks near his home town.",
-    "pubDate": "Wed, 19 Aug 2026 21:10:39 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Israel orders inquiry into killing of 6-year-old Hind Rajab in Gaza",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/19/israel-orders-inquiry-into-killing-of-6-year-old-hind-rajab-in-gaza?traffic_source=rss",
-    "description": "The Israeli military announced criminal investigations into the killings of six-year-old Hind Rajab.",
-    "pubDate": "Wed, 19 Aug 2026 21:09:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "USS Lincoln woes highlight US Navy limits in prolonged Iran war: Experts",
-    "link": "https://www.aljazeera.com/news/2026/8/19/uss-lincoln-woes-highlight-us-navy-limits-in-prolonged-iran-war-experts?traffic_source=rss",
-    "description": "Reports of dire conditions underscore supply challenges, questions of US plans going forward, experts say.",
-    "pubDate": "Wed, 19 Aug 2026 21:01:54 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
+    "category": "ai-tech"
   },
   {
     "title": "Hot Chips 2026: Architectures for the Agentic Computing Era",
@@ -3953,8 +3973,7 @@
     "description": "Hot Chips 2026, formally the thirty-eighth Symposium on High Performance Chips, arrives at Stanford’s Memorial Auditorium from August 23 through 25 with a program that captures a decisive shift in computer architecture. Peak arithmetic throughput remains important, but the conference is increasingly",
     "pubDate": "Wed, 19 Aug 2026 21:00:08 +0000",
     "source": "SemiWiki",
-    "category": "semiconductor",
-    "_stale": true
+    "category": "semiconductor"
   },
   {
     "title": "Kako Satoshi: Yokohama Exhibition Celebrates Picture Book Master",
@@ -3962,8 +3981,7 @@
     "description": "A Yokohama exhibition celebrates the works of picture book author Kako Satoshi 100 years after his birth. Kako’s stories of Little Daruma, novice thieves, and crow bakers have charmed generations of Japanese children.",
     "pubDate": "Thu, 20 Aug 2026 06:00:07 +0900 ",
     "source": "nippon.com / en ",
-    "category": "international",
-    "_stale": true
+    "category": "international"
   },
   {
     "title": "“Shōnen Jump” Print Circulation Drops Below 1 Million as Manga Readers Go Digital",
@@ -3971,35 +3989,7 @@
     "description": "The print version of Japan’s Weekly Shōnen Jump manga magazine hit a peak circulation of 6.5 million in the 1990s, but it has now fallen below 1 million as readers shift to digital platforms.",
     "pubDate": "Thu, 20 Aug 2026 06:00:07 +0900 ",
     "source": "nippon.com / en ",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Spain plans transfer of 500 migrant children from Ceuta to mainland",
-    "link": "https://www.aljazeera.com/news/2026/8/19/spain-plans-transfer-of-500-migrant-children-from-ceuta-to-mainland?traffic_source=rss",
-    "description": "Ceuta leaders want children returned to Morocco, but Madrid says deporting them is 'outrageous'.",
-    "pubDate": "Wed, 19 Aug 2026 20:53:55 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Moderna, Merck unveil mRNA-based cancer vaccine that cuts spread",
-    "link": "https://www.aljazeera.com/news/2026/8/19/moderna-merck-unveil-mrna-based-cancer-vaccine-that-cuts-spread?traffic_source=rss",
-    "description": "Moderna's mRNA vaccine Intismeran shows promise, reducing melanoma recurrence and spread in late-stage trials.",
-    "pubDate": "Wed, 19 Aug 2026 20:39:14 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Sacked Ukrainian defence minister calls for presidential election",
-    "link": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&at_campaign=rss",
-    "description": "Martial law has been in place in Ukraine since February 2022, under which elections are suspended.",
-    "pubDate": "Wed, 19 Aug 2026 20:34:39 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
+    "category": "international"
   },
   {
     "title": "Framework responds to complaints that BIOS update bricks Ryzen 7040 laptops",
@@ -4007,16 +3997,6 @@
     "description": "Framework says it's replacing some out-of-warranty AMD mainboards.",
     "pubDate": "Wed, 19 Aug 2026 20:21:59 +0000",
     "source": "Ars Technica - All content",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "What’s behind Israel’s latest attack on Syria?",
-    "link": "https://www.aljazeera.com/video/inside-story/2026/8/19/whats-behind-israels-latest-attack-on-syria?traffic_source=rss",
-    "description": "US envoy warns Israel's strike could have sparked direct confrontation with Turkish forces.",
-    "pubDate": "Wed, 19 Aug 2026 20:18:40 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
+    "category": "ai-tech"
   }
 ]
