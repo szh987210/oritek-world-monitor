@@ -24,6 +24,14 @@
     "category": "international"
   },
   {
+    "title": "Pentagon quizzes NATO allies on political loyalty, documents reveal",
+    "link": "https://www.aljazeera.com/news/2026/8/19/pentagon-quizzes-nato-allies-on-political-loyalty-documents-reveal?traffic_source=rss",
+    "description": "NATO allies probed on loyalty to US policies in Pentagon questionnaire obtained exclusively by Al Jazeera.",
+    "pubDate": "Wed, 19 Aug 2026 23:24:43 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Lebanon hands former Syrian army general to Damascus after arrest warrant",
     "link": "https://www.aljazeera.com/news/2026/8/19/lebanon-hands-former-syrian-army-general-to-damascus-after-arrest-warrant?traffic_source=rss",
     "description": "The transfer is the first from Lebanon involving a Syrian military officer who fled after al-Assad's government fell.",
@@ -56,7 +64,7 @@
     "category": "international"
   },
   {
-    "title": "Elon Musk Is Expected to Point His Money Machine at Texas",
+    "title": "Elon Musk Is Expected to Point His Money Machine at Texas Politics",
     "link": "https://www.wired.com/story/elon-musk-is-expected-to-point-his-money-machine-at-texas/",
     "description": "Sources tell WIRED that Elon Musk is expected to spend up to $200 million in the midterms. It could be a big boost for GOP Senate candidate Ken Paxton, who’s struggled to raise cash.",
     "pubDate": "Wed, 19 Aug 2026 23:00:00 +0000",
@@ -864,19 +872,19 @@
     "category": "international"
   },
   {
-    "title": "Google Pixel 11 Pro and Pixel 11 Pro XL Review: Smart Software, Small Upgrade",
-    "link": "https://www.wired.com/review/google-pixel-11-pro-and-pixel-11-pro-xl/",
-    "description": "Google’s new voice typing is pure magic, but subpar gaming performance and a useless rear LED keep these flagships from true greatness.",
-    "pubDate": "Wed, 19 Aug 2026 16:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
     "title": "The Pixel 11 Pro is a great phone, no thanks to its flashiest new features",
     "link": "https://www.theverge.com/tech/981713/google-pixel-11-pro-review",
     "description": "Google is trying to get you off your phone. The Pixel 11 Pro is \"A Phone Designed to Help You Use It Less,\" the company promises. It can proactively help you book restaurant reservations, take the best frames from a video, and help you voice-text significantly faster. The pitch is that the new featu",
     "pubDate": "2026-08-19T16:00:00.000Z",
     "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Google Pixel 11 Pro and Pixel 11 Pro XL Review: Smart Software, Small Upgrade",
+    "link": "https://www.wired.com/review/google-pixel-11-pro-and-pixel-11-pro-xl/",
+    "description": "Google’s new voice typing is pure magic, but subpar gaming performance and a useless rear LED keep these flagships from true greatness.",
+    "pubDate": "Wed, 19 Aug 2026 16:00:00 +0000",
+    "source": "WIRED",
     "category": "ai-tech"
   },
   {
@@ -2360,20 +2368,20 @@
     "category": "ai-tech"
   },
   {
-    "title": "以GLM-5为例，探究九章智算云强化学习系统如何落地“训推一致”",
-    "link": "https://www.leiphone.com/category/ai/Nn76Eez52eSpxeXr.html",
-    "description": "过去几年，大模型竞争的主线很清晰：更大的模型、更多的数据和更强的GPU集群。\n但随着预训练边际收益递减，模型能力Scaling正从单纯的预训练堆叠向后训练强化学习（RL）转变，数学推理、代码生成、复杂决策、长时序Agent等高阶能力，越来越依赖后训练强化学习（RL）激发。RL通过生成、执行、反馈和奖励，让模型持续学习推理、规划与自我纠错的能力。\n由此，大模型发展从“一次性训练”进入“持续训练”，模型能力Scaling也从预训练延伸至生成、反馈和迭代全过程。SemiAnalysis指出，当RL成为模型能力持续Scaling的关键，竞争的就不只是算法，还有支撑模型持续生成、训练和更新的AI基础设施",
-    "pubDate": "Wed, 19 Aug 2026 15:55:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
     "title": "China accelerates Microsoft Windows 10 exit from state systems",
     "link": "https://www.digitimes.com/news/a20260819VL205/microsoft-windows-10-software-technology-security.html",
     "description": "China is accelerating efforts to remove foreign technology from sensitive state-linked systems, ordering some government-affiliated entities to uninstall a customised version of Microsoft Windows 10 months ahead of schedule.",
     "pubDate": "Wed, 19 Aug 2026 07:55:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
+  },
+  {
+    "title": "以GLM-5为例，探究九章智算云强化学习系统如何落地“训推一致”",
+    "link": "https://www.leiphone.com/category/ai/Nn76Eez52eSpxeXr.html",
+    "description": "过去几年，大模型竞争的主线很清晰：更大的模型、更多的数据和更强的GPU集群。\n但随着预训练边际收益递减，模型能力Scaling正从单纯的预训练堆叠向后训练强化学习（RL）转变，数学推理、代码生成、复杂决策、长时序Agent等高阶能力，越来越依赖后训练强化学习（RL）激发。RL通过生成、执行、反馈和奖励，让模型持续学习推理、规划与自我纠错的能力。\n由此，大模型发展从“一次性训练”进入“持续训练”，模型能力Scaling也从预训练延伸至生成、反馈和迭代全过程。SemiAnalysis指出，当RL成为模型能力持续Scaling的关键，竞争的就不只是算法，还有支撑模型持续生成、训练和更新的AI基础设施",
+    "pubDate": "Wed, 19 Aug 2026 15:55:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
   },
   {
     "title": "制糖工厂发布「绿魔」细雳线 Pro：2m 主动式高速贴贴线，重塑专业体验",
@@ -3744,12 +3752,141 @@
     "category": "international"
   },
   {
+    "title": "The critical tech staying safe by going underground",
+    "link": "https://www.bbc.co.uk/news/articles/c20ydrndr0wo?at_medium=RSS&at_campaign=rss",
+    "description": "The war in Ukraine has spurred people to consider putting vital infrastructure underground.",
+    "pubDate": "Tue, 18 Aug 2026 23:25:21 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "\"Sabotage\": Experts, lawmakers blast RFK Jr. for destroying healthcare research",
+    "link": "https://arstechnica.com/health/2026/08/sabotage-experts-lawmakers-blast-rfk-jr-for-destroying-healthcare-research/",
+    "description": "US healthcare is broken. Under RFK Jr., the research agency working to fix it is, too.",
+    "pubDate": "Tue, 18 Aug 2026 22:32:46 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Ukrainian drones overwhelm Russian tanks’ new active protection system—for now",
+    "link": "https://arstechnica.com/gadgets/2026/08/ukrainian-drones-overwhelm-russian-tanks-new-active-protection-system-for-now/",
+    "description": "Tanks with defensive tech for shooting down drones are still proving vulnerable.",
+    "pubDate": "Tue, 18 Aug 2026 22:18:13 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Meta hooked children on Facebook and Instagram, US court hears",
+    "link": "https://www.bbc.co.uk/news/articles/cly5r7vr7q1o?at_medium=RSS&at_campaign=rss",
+    "description": "Meta argued social media addiction does not exist, as a trial stemming from a major lawsuit brought by US states started.",
+    "pubDate": "Tue, 18 Aug 2026 22:11:07 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "The 2027 Toyota bZ is now on sale: Here’s how much it costs",
+    "link": "https://electrek.co/2026/08/18/2027-toyota-bz-now-on-sale-how-much-it-costs/",
+    "description": "The 2027 Toyota bZ is now on sale, starting at $34,980 in the US and CA$45,985 in Canada.",
+    "pubDate": "Tue, 18 Aug 2026 22:02:52 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "ChatGPT Ads expands across Europe",
+    "link": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+    "description": "ChatGPT Ads is expanding to 31 European markets. Learn how advertisers can reach people as they explore, compare options, and make decisions.",
+    "pubDate": "Tue, 18 Aug 2026 22:00:00 GMT",
+    "source": "OpenAI News",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The Ultimate Glow Up: NUS CDE Researchers Push Flexible Display Brightness to New Records",
+    "link": "https://www.semiconductor-digest.com/the-ultimate-glow-up-nus-cde-researchers-push-flexible-display-brightness-to-new-records/?utm_source=rss&utm_medium=rss&utm_campaign=the-ultimate-glow-up-nus-cde-researchers-push-flexible-display-brightness-to-new-records",
+    "description": "From a skin patch that changes colour to flag abnormal blood sugar, to a diver’s sleeve display that stays readable underwater, the need for bright, flexible screens is growing, but no existing technology delivers the combination of simplicity, low power and robustness these applications need.\nThe p",
+    "pubDate": "Tue, 18 Aug 2026 21:19:24 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "SUNY Poly Joins $19.9M National Science Foundation Initiative to Accelerate AI-Driven Materials Discovery",
+    "link": "https://www.semiconductor-digest.com/suny-poly-joins-19-9m-national-science-foundation-initiative-to-accelerate-ai-driven-materials-discovery/?utm_source=rss&utm_medium=rss&utm_campaign=suny-poly-joins-19-9m-national-science-foundation-initiative-to-accelerate-ai-driven-materials-discovery",
+    "description": "SUNY Polytechnic Institute (SUNY Poly) is playing a key role in a new national research initiative led by Rice University, which has received a $19.9 million award from the National Science Foundation (NSF).\nThe post SUNY Poly Joins $19.9M National Science Foundation Initiative to Accelerate AI-Driv",
+    "pubDate": "Tue, 18 Aug 2026 21:16:22 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Michael Robbins Named President and CEO of Semiconductor Industry Association",
+    "link": "https://www.semiconductor-digest.com/michael-robbins-named-president-and-ceo-of-semiconductor-industry-association/?utm_source=rss&utm_medium=rss&utm_campaign=michael-robbins-named-president-and-ceo-of-semiconductor-industry-association",
+    "description": "Robbins, who currently serves as president and CEO of the Association for Uncrewed Vehicle Systems International (AUVSI), will succeed John Neuffer as head of SIA.\nThe post Michael Robbins Named President and CEO of Semiconductor Industry Association appeared first on Semiconductor Digest.",
+    "pubDate": "Tue, 18 Aug 2026 21:11:06 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "How to achieve high voltage in industrial systems without high complexity",
+    "link": "https://www.therobotreport.com/how-achieve-high-voltage-industrial-systems-without-high-complexity/",
+    "description": "Kollmorgen discusses the importance of fitting voltage systems closely to the application while still making the best use of infrastructure.\nThe post How to achieve high voltage in industrial systems without high complexity appeared first on The Robot Report.",
+    "pubDate": "Tue, 18 Aug 2026 21:07:45 +0000",
+    "source": "The Robot Report",
+    "category": "ai-tech"
+  },
+  {
+    "title": "HANMI Semiconductor To Invest in Its Largest-Ever 8th Production Facility",
+    "link": "https://www.semiconductor-digest.com/hanmi-semiconductor-to-invest-in-its-largest-ever-8th-production-facility/?utm_source=rss&utm_medium=rss&utm_campaign=hanmi-semiconductor-to-invest-in-its-largest-ever-8th-production-facility",
+    "description": "HANMI Semiconductor today announced that it will acquire a factory from Mercury Co., Ltd., located in the Juan National Industrial Complex in Incheon.\nThe post HANMI Semiconductor To Invest in Its Largest-Ever 8th Production Facility appeared first on Semiconductor Digest.",
+    "pubDate": "Tue, 18 Aug 2026 21:06:06 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Kintsugi and the Art of Embracing Imperfection: Suezaki Hiroki’s Vision for Artisan Renewal ",
+    "link": "https://www.nippon.com/en/japan-topics/g02612/",
+    "description": "Kintsugi is the Japanese art of repairing broken ceramics with lacquer and gold. The technique highlights imperfection, rather than hiding it. Suezaki Hiroki stands at the forefront of this movement, capturing global attention by turning cracks into luminous seams and giving objects new depth and be",
+    "pubDate": "Wed, 19 Aug 2026 06:01:00 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "Popularity of Bottled Barley Tea Booms in Japan as Summer Temperatures Soar",
+    "link": "https://www.nippon.com/en/japan-data/h02855/",
+    "description": "During the intense heat of summer in Japan, mugicha (barley tea) has become increasingly popular as a way to stay hydrated.",
+    "pubDate": "Wed, 19 Aug 2026 06:00:12 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "PDF Solutions’ Exensio Was Built for Semiconductor Analytics. The New Exensio Aurora Architecture Is Built for Semiconductor Intelligence.",
+    "link": "https://semiwiki.com/artificial-intelligence/372347-pdf-solutions-exensio-was-built-for-semiconductor-analytics-the-new-exensio-aurora-architecture-is-built-for-semiconductor-intelligence/",
+    "description": "The semiconductor industry doesn’t have a shortage of data. It has a shortage of ways to turn that data into useful manufacturing insights quickly enough to matter.\nThat is the problem PDF Solutions’ Exensio solution has addressed for years. Built specifically for semiconductor manufacturing, Exensi",
+    "pubDate": "Tue, 18 Aug 2026 21:00:04 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Squeeze More Juice Out of Your Dead Batteries—Using Physics",
+    "link": "https://www.wired.com/story/squeeze-more-juice-out-of-a-dead-battery/",
+    "description": "How the joule thief circuit “steals” energy from seemingly depleted power cells.",
+    "pubDate": "Tue, 18 Aug 2026 20:11:03 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Tech Life",
+    "link": "https://www.bbc.co.uk/sounds/play/w3ct8jy9?at_medium=RSS&at_campaign=rss",
+    "description": "Vapour trails from aircraft contribute to warming in the atmosphere.",
+    "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
     "title": "Iran war live: Rubio discusses Hormuz security with UAE official",
     "link": "https://www.aljazeera.com/news/liveblog/2026/8/19/iran-war-live-trump-denies-iran-talks-tehran-claims-us-begging?traffic_source=rss",
     "description": "Trump says no talks with Tehran scheduled; Iranian Foreign Minister Abbas Araghchi claims US 'begging' for negotiations.",
     "pubDate": "Wed, 19 Aug 2026 00:00:00 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Al Jazeera reports from Indonesia’s quake zone, desperate for help",
@@ -3757,7 +3894,8 @@
     "description": "Thousands are still displaced on Indonesia’s Flores Island after a 7.7-magnitude earthquake killed at least 70 people.",
     "pubDate": "Tue, 18 Aug 2026 23:59:43 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Democrats call for USS Lincoln probe, question US Navy’s readiness",
@@ -3765,7 +3903,8 @@
     "description": "Lawmakers question whether conditions on the aircraft carrier indicate a 'pattern' of poor planning amid the Iran war.",
     "pubDate": "Tue, 18 Aug 2026 23:45:16 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Europe’s seas reach record heat as climate change threatens marine life",
@@ -3773,15 +3912,6 @@
     "description": "Human-caused climate change was the main driver of record-breaking sea temperatures around Europe this summer, scientists said on Wednesday, warning of severe risks to marine ecosystems and coastal communities. The Mediterranean averaged a record 27 degrees Celsius in July, while waters near Mallorc",
     "pubDate": "Tue, 18 Aug 2026 23:34:08 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The critical tech staying safe by going underground",
-    "link": "https://www.bbc.co.uk/news/articles/c20ydrndr0wo?at_medium=RSS&at_campaign=rss",
-    "description": "The war in Ukraine has spurred people to consider putting vital infrastructure underground.",
-    "pubDate": "Tue, 18 Aug 2026 23:25:21 GMT",
-    "source": "BBC News",
     "category": "international",
     "_stale": true
   },
@@ -3822,15 +3952,6 @@
     "_stale": true
   },
   {
-    "title": "\"Sabotage\": Experts, lawmakers blast RFK Jr. for destroying healthcare research",
-    "link": "https://arstechnica.com/health/2026/08/sabotage-experts-lawmakers-blast-rfk-jr-for-destroying-healthcare-research/",
-    "description": "US healthcare is broken. Under RFK Jr., the research agency working to fix it is, too.",
-    "pubDate": "Tue, 18 Aug 2026 22:32:46 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
     "title": "ZZ Top drummer Frank Beard dies aged 77",
     "link": "https://www.bbc.co.uk/news/articles/czdmzdnp3z0o?at_medium=RSS&at_campaign=rss",
     "description": "A statement on the blues-rock band's website said he died on Monday in hospice",
@@ -3858,47 +3979,11 @@
     "_stale": true
   },
   {
-    "title": "Ukrainian drones overwhelm Russian tanks’ new active protection system—for now",
-    "link": "https://arstechnica.com/gadgets/2026/08/ukrainian-drones-overwhelm-russian-tanks-new-active-protection-system-for-now/",
-    "description": "Tanks with defensive tech for shooting down drones are still proving vulnerable.",
-    "pubDate": "Tue, 18 Aug 2026 22:18:13 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
     "title": "Cursor capitalizes on GitHub frustration, launches rival hosting platform",
     "link": "https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/",
     "description": "Cursor, known for its AI Code Editor, is launching a new code-hosting platform to rival developers' long preferred favorite, GitHub.",
     "pubDate": "Tue, 18 Aug 2026 22:14:25 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Meta hooked children on Facebook and Instagram, US court hears",
-    "link": "https://www.bbc.co.uk/news/articles/cly5r7vr7q1o?at_medium=RSS&at_campaign=rss",
-    "description": "Meta argued social media addiction does not exist, as a trial stemming from a major lawsuit brought by US states started.",
-    "pubDate": "Tue, 18 Aug 2026 22:11:07 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The 2027 Toyota bZ is now on sale: Here’s how much it costs",
-    "link": "https://electrek.co/2026/08/18/2027-toyota-bz-now-on-sale-how-much-it-costs/",
-    "description": "The 2027 Toyota bZ is now on sale, starting at $34,980 in the US and CA$45,985 in Canada.",
-    "pubDate": "Tue, 18 Aug 2026 22:02:52 +0000",
-    "source": "Electrek",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "ChatGPT Ads expands across Europe",
-    "link": "https://openai.com/index/chatgpt-ads-expands-across-europe",
-    "description": "ChatGPT Ads is expanding to 31 European markets. Learn how advertisers can reach people as they explore, compare options, and make decisions.",
-    "pubDate": "Tue, 18 Aug 2026 22:00:00 GMT",
-    "source": "OpenAI News",
     "category": "ai-tech",
     "_stale": true
   },
@@ -3926,105 +4011,6 @@
     "description": "US Agriculture Department says rescinding 2001 rule will help reduce wildfire risk and return control to local managers.",
     "pubDate": "Tue, 18 Aug 2026 21:26:47 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Why is the US ramping up Tomahawk production?",
-    "link": "https://www.aljazeera.com/video/inside-story/2026/8/18/why-is-the-us-ramping-up-tomahawk-production?traffic_source=rss",
-    "description": "The Pentagon has contracted a defence manufacturer to increase the output of cruise missiles.",
-    "pubDate": "Tue, 18 Aug 2026 21:26:07 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Syria opens Assad-era nuclear programme to UN probe",
-    "link": "https://www.aljazeera.com/news/2026/8/18/syria-opens-assad-era-nuclear-programme-to-un-probe?traffic_source=rss",
-    "description": "UN watchdog reports that it found large amounts of material at undisclosed sites in Syria.",
-    "pubDate": "Tue, 18 Aug 2026 21:25:06 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "DR Congo’s Ebola outbreak ‘global emergency’ as infections pass 5,000: WHO",
-    "link": "https://www.aljazeera.com/news/2026/8/18/congo-ebola-outbreak-global-emergency-as-infections-pass-5000-who?traffic_source=rss",
-    "description": "Officials warn they are continuing to identify new chains of transmission that need to be broken to stop the spread.",
-    "pubDate": "Tue, 18 Aug 2026 21:24:52 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The Ultimate Glow Up: NUS CDE Researchers Push Flexible Display Brightness to New Records",
-    "link": "https://www.semiconductor-digest.com/the-ultimate-glow-up-nus-cde-researchers-push-flexible-display-brightness-to-new-records/?utm_source=rss&utm_medium=rss&utm_campaign=the-ultimate-glow-up-nus-cde-researchers-push-flexible-display-brightness-to-new-records",
-    "description": "From a skin patch that changes colour to flag abnormal blood sugar, to a diver’s sleeve display that stays readable underwater, the need for bright, flexible screens is growing, but no existing technology delivers the combination of simplicity, low power and robustness these applications need.\nThe p",
-    "pubDate": "Tue, 18 Aug 2026 21:19:24 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "SUNY Poly Joins $19.9M National Science Foundation Initiative to Accelerate AI-Driven Materials Discovery",
-    "link": "https://www.semiconductor-digest.com/suny-poly-joins-19-9m-national-science-foundation-initiative-to-accelerate-ai-driven-materials-discovery/?utm_source=rss&utm_medium=rss&utm_campaign=suny-poly-joins-19-9m-national-science-foundation-initiative-to-accelerate-ai-driven-materials-discovery",
-    "description": "SUNY Polytechnic Institute (SUNY Poly) is playing a key role in a new national research initiative led by Rice University, which has received a $19.9 million award from the National Science Foundation (NSF).\nThe post SUNY Poly Joins $19.9M National Science Foundation Initiative to Accelerate AI-Driv",
-    "pubDate": "Tue, 18 Aug 2026 21:16:22 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Michael Robbins Named President and CEO of Semiconductor Industry Association",
-    "link": "https://www.semiconductor-digest.com/michael-robbins-named-president-and-ceo-of-semiconductor-industry-association/?utm_source=rss&utm_medium=rss&utm_campaign=michael-robbins-named-president-and-ceo-of-semiconductor-industry-association",
-    "description": "Robbins, who currently serves as president and CEO of the Association for Uncrewed Vehicle Systems International (AUVSI), will succeed John Neuffer as head of SIA.\nThe post Michael Robbins Named President and CEO of Semiconductor Industry Association appeared first on Semiconductor Digest.",
-    "pubDate": "Tue, 18 Aug 2026 21:11:06 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "How to achieve high voltage in industrial systems without high complexity",
-    "link": "https://www.therobotreport.com/how-achieve-high-voltage-industrial-systems-without-high-complexity/",
-    "description": "Kollmorgen discusses the importance of fitting voltage systems closely to the application while still making the best use of infrastructure.\nThe post How to achieve high voltage in industrial systems without high complexity appeared first on The Robot Report.",
-    "pubDate": "Tue, 18 Aug 2026 21:07:45 +0000",
-    "source": "The Robot Report",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "HANMI Semiconductor To Invest in Its Largest-Ever 8th Production Facility",
-    "link": "https://www.semiconductor-digest.com/hanmi-semiconductor-to-invest-in-its-largest-ever-8th-production-facility/?utm_source=rss&utm_medium=rss&utm_campaign=hanmi-semiconductor-to-invest-in-its-largest-ever-8th-production-facility",
-    "description": "HANMI Semiconductor today announced that it will acquire a factory from Mercury Co., Ltd., located in the Juan National Industrial Complex in Incheon.\nThe post HANMI Semiconductor To Invest in Its Largest-Ever 8th Production Facility appeared first on Semiconductor Digest.",
-    "pubDate": "Tue, 18 Aug 2026 21:06:06 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Trump says no talks planned with Iran amid anger over Iran-Oman Hormuz deal",
-    "link": "https://www.aljazeera.com/news/2026/8/18/no-talks-with-iran-says-trump-as-us-president-stews-over-hormuz-deal?traffic_source=rss",
-    "description": "US president hits out as states bordering the Strait of Hormuz continue talks on managing the strategic waterway.",
-    "pubDate": "Tue, 18 Aug 2026 21:03:59 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Israeli strike reported to kill at least six in Gaza City",
-    "link": "https://www.aljazeera.com/news/2026/8/18/israeli-strike-reported-to-kill-at-least-six-in-gaza-city?traffic_source=rss",
-    "description": "The strike comes as efforts to push an agreement aimed at ending hostilities remain stalled.",
-    "pubDate": "Tue, 18 Aug 2026 21:03:04 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Kintsugi and the Art of Embracing Imperfection: Suezaki Hiroki’s Vision for Artisan Renewal ",
-    "link": "https://www.nippon.com/en/japan-topics/g02612/",
-    "description": "Kintsugi is the Japanese art of repairing broken ceramics with lacquer and gold. The technique highlights imperfection, rather than hiding it. Suezaki Hiroki stands at the forefront of this movement, capturing global attention by turning cracks into luminous seams and giving objects new depth and be",
-    "pubDate": "Wed, 19 Aug 2026 06:01:00 +0900 ",
-    "source": "nippon.com / en ",
     "category": "international",
     "_stale": true
   }
