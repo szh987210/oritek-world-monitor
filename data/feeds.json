@@ -1672,22 +1672,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "US debt tops $40 trillion, Americans left with the bill",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/21/us-debt-tops-40-trillion-americans-left-with-the-bill-3?traffic_source=rss",
-    "description": "The US national debt has officially surpassed $40 trillion for the first time in history, and it’s growing fast.",
-    "pubDate": "Fri, 21 Aug 2026 23:19:48 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Trump: ‘We’re seeing what happens’ on sanctions for Iran",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/21/pakistans-imran-khan-back-to-prison-after-evaluation-at-hospital?traffic_source=rss",
-    "description": "Donald Trump repeated claims that Iran is weakened economically and militarily and ‘would love’ to make a deal.",
-    "pubDate": "Fri, 21 Aug 2026 23:19:37 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Tesla’s Door Handles Lead to Its Biggest Recall Yet",
     "link": "https://www.wired.com/story/teslas-door-handles-lead-to-its-biggest-recall-yet/",
     "description": "A Chinese agency says the two recalls affecting some 3 million vehicles can mostly be fixed by over-the-air updates—but they will also require physical warning stickers and camera-related updates.",
@@ -2552,17 +2536,17 @@
     "category": "semiconductor"
   },
   {
-    "title": "Hiwin expands into CPO optical coupling process; 2H26 robotics revenue outlook brightens",
-    "link": "https://www.digitimes.com/news/a20260821PD218/hiwin-technologies-cpo-robotics-revenue-equipment.html",
-    "description": "Hiwin Technologies Chairman Eric Y. T. Chuo stated that the company has supplied samples of miniature ball screws and single-axis robots to co-packaged optics (CPO) vendors across Taiwan and China for validation. Meanwhile, the timeline for its dual-arm logistics robot, originally scheduled for smal",
+    "title": "Cambricon advances sixth-gen AI silicon, broadens support for DeepSeek, Qwen and GLM",
+    "link": "https://www.digitimes.com/news/a20260821PD227/cambricon-deepseek-qwen-llm.html",
+    "description": "Cambricon Technologies chairman and president Chen Tian-shi said the company's sixth-generation AI processor and instruction set remain under development, with the next-generation platform targeting large-model training and inference while improving programmability, ease of use, performance, power e",
     "pubDate": "Fri, 21 Aug 2026 07:55:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
   },
   {
-    "title": "Cambricon advances sixth-gen AI silicon, broadens support for DeepSeek, Qwen and GLM",
-    "link": "https://www.digitimes.com/news/a20260821PD227/cambricon-deepseek-qwen-llm.html",
-    "description": "Cambricon Technologies chairman and president Chen Tian-shi said the company's sixth-generation AI processor and instruction set remain under development, with the next-generation platform targeting large-model training and inference while improving programmability, ease of use, performance, power e",
+    "title": "Hiwin expands into CPO optical coupling process; 2H26 robotics revenue outlook brightens",
+    "link": "https://www.digitimes.com/news/a20260821PD218/hiwin-technologies-cpo-robotics-revenue-equipment.html",
+    "description": "Hiwin Technologies Chairman Eric Y. T. Chuo stated that the company has supplied samples of miniature ball screws and single-axis robots to co-packaged optics (CPO) vendors across Taiwan and China for validation. Meanwhile, the timeline for its dual-arm logistics robot, originally scheduled for smal",
     "pubDate": "Fri, 21 Aug 2026 07:55:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
@@ -3022,6 +3006,24 @@
     "pubDate": "Fri, 21 Aug 2026 03:16:24 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
+  },
+  {
+    "title": "US debt tops $40 trillion, Americans left with the bill",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/21/us-debt-tops-40-trillion-americans-left-with-the-bill-3?traffic_source=rss",
+    "description": "The US national debt has officially surpassed $40 trillion for the first time in history, and it’s growing fast.",
+    "pubDate": "Fri, 21 Aug 2026 23:19:48 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Trump: ‘We’re seeing what happens’ on sanctions for Iran",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/21/pakistans-imran-khan-back-to-prison-after-evaluation-at-hospital?traffic_source=rss",
+    "description": "Donald Trump repeated claims that Iran is weakened economically and militarily and ‘would love’ to make a deal.",
+    "pubDate": "Fri, 21 Aug 2026 23:19:37 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "US Vice President JD Vance holds midterm election rally in Ohio hometown",
