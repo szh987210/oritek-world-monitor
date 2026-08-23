@@ -1,10 +1,26 @@
 [
   {
-    "title": "Trump arrives at high-speed IndyCar race through Washington's streets",
+    "title": "Trump waves green flag kicking off high-speed IndyCar race through Washington",
     "link": "https://www.bbc.co.uk/news/articles/c0qvq24vlj4o?at_medium=RSS&at_campaign=rss",
     "description": "The president took a ceremonial lap of the track before the race, which is the culmination of a summer of events to mark the country's 250th birthday.",
-    "pubDate": "Sun, 23 Aug 2026 17:31:29 GMT",
+    "pubDate": "Sun, 23 Aug 2026 17:54:34 GMT",
     "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "France links sharp rise in drownings to heatwaves",
+    "link": "https://www.bbc.co.uk/news/articles/cqlxlp4lx9yo?at_medium=RSS&at_campaign=rss",
+    "description": "A government minister says people have been taking risks by going into the water, with 301 deaths since 19 June.",
+    "pubDate": "Sun, 23 Aug 2026 17:39:33 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Landfill collapse in Guinea kills at least 30 people",
+    "link": "https://www.aljazeera.com/news/2026/8/23/landfill-collapse-in-guinea-kills-at-least-22-people-official-says?traffic_source=rss",
+    "description": "Heavy rains wash over the site, triggering a landslide that buries several shacks.",
+    "pubDate": "Sun, 23 Aug 2026 17:35:01 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
@@ -126,14 +142,6 @@
     "pubDate": "Sun, 23 Aug 2026 15:00:35 +0000",
     "source": "SemiWiki",
     "category": "semiconductor"
-  },
-  {
-    "title": "France links rise in drownings to heatwaves",
-    "link": "https://www.bbc.co.uk/news/articles/cqlxlp4lx9yo?at_medium=RSS&at_campaign=rss",
-    "description": "A government minister says people have been taking risks by going into the water, with 301 deaths since 19 June.",
-    "pubDate": "Sun, 23 Aug 2026 15:00:17 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Is it legal to train AI models on copyrighted books? It’s complicated",
@@ -1444,30 +1452,6 @@
     "link": "https://www.aljazeera.com/news/2026/8/22/armed-men-kidnap-dozens-in-attacks-on-nigerian-villages?traffic_source=rss",
     "description": "Police say three villages and a mosque were attacked, and worshippers kidnapped in central Niger State.",
     "pubDate": "Sat, 22 Aug 2026 17:58:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Israel’s Chief Rabbi says Palestinians are not a people and have no rights",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/22/08-22-26-israel-rabbi-palestinians-clip?traffic_source=rss",
-    "description": "Israel’s Chief Rabbi denied Palestinians are a people, claimed Gaza for Jews and called for its destruction and return.",
-    "pubDate": "Sat, 22 Aug 2026 17:54:52 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Trump seeks to block the BBC’s attempt to subpoena Ivanka Trump, Trump Jr",
-    "link": "https://www.aljazeera.com/news/2026/8/22/trump-seeks-to-block-the-bbcs-attempt-to-subpoena-ivanka-trump-trump-jr?traffic_source=rss",
-    "description": "While lawyers for the US president argue the subpoenas are 'cynical', the BBC says they could help shine light on case.",
-    "pubDate": "Sat, 22 Aug 2026 17:52:42 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "‘Not a small issue’: People deported by US to Liberia face uncertain future",
-    "link": "https://www.aljazeera.com/news/2026/8/22/not-a-small-issue-people-deported-by-us-to-liberia-face-uncertain-future?traffic_source=rss",
-    "description": "Liberia's government announced the move on Tuesday, two days before the flight. Politicians say they were not consulted.",
-    "pubDate": "Sat, 22 Aug 2026 17:47:02 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
@@ -2798,6 +2782,33 @@
     "pubDate": "Fri, 21 Aug 2026 05:45:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
+  },
+  {
+    "title": "Israel’s Chief Rabbi says Palestinians are not a people and have no rights",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/22/08-22-26-israel-rabbi-palestinians-clip?traffic_source=rss",
+    "description": "Israel’s Chief Rabbi denied Palestinians are a people, claimed Gaza for Jews and called for its destruction and return.",
+    "pubDate": "Sat, 22 Aug 2026 17:54:52 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Trump seeks to block the BBC’s attempt to subpoena Ivanka Trump, Trump Jr",
+    "link": "https://www.aljazeera.com/news/2026/8/22/trump-seeks-to-block-the-bbcs-attempt-to-subpoena-ivanka-trump-trump-jr?traffic_source=rss",
+    "description": "While lawyers for the US president argue the subpoenas are 'cynical', the BBC says they could help shine light on case.",
+    "pubDate": "Sat, 22 Aug 2026 17:52:42 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "‘Not a small issue’: People deported by US to Liberia face uncertain future",
+    "link": "https://www.aljazeera.com/news/2026/8/22/not-a-small-issue-people-deported-by-us-to-liberia-face-uncertain-future?traffic_source=rss",
+    "description": "Liberia's government announced the move on Tuesday, two days before the flight. Politicians say they were not consulted.",
+    "pubDate": "Sat, 22 Aug 2026 17:47:02 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Seven killed, including two police officers, in UK ‘wrong-side’ car crash",
@@ -4136,15 +4147,6 @@
     "link": "https://www.aljazeera.com/news/2026/8/21/trump-waives-out-of-quota-beef-tariffs-for-90-days-to-lower-prices?traffic_source=rss",
     "description": "The president did not mention with whom he made the deal or where the imported ground beef is coming from.",
     "pubDate": "Fri, 21 Aug 2026 19:42:51 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "US court slashes Alex Jones fines for Sandy Hook school shooting case",
-    "link": "https://www.aljazeera.com/news/2026/8/21/us-court-slashes-alex-jones-fines-for-sandy-hook-school-shooting-case?traffic_source=rss",
-    "description": "Court cuts Infowars founder's penalty for false claims that school shooting was a 'hoax' from $50m to $1.5m.",
-    "pubDate": "Fri, 21 Aug 2026 19:29:20 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international",
     "_stale": true
