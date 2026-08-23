@@ -1,5 +1,13 @@
 [
   {
+    "title": "LIVE: Elche vs Barcelona – La Liga",
+    "link": "https://www.aljazeera.com/sports/liveblog/2026/8/23/live-elche-vs-barcelona-la-liga?traffic_source=rss",
+    "description": "Follow updates as Barcelona kick off their La Liga campaign - including the build-up, analysis and live text commentary.",
+    "pubDate": "Sun, 23 Aug 2026 16:50:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "French President Macron to host Saudi Crown Prince MBS in Paris for talks",
     "link": "https://www.aljazeera.com/economy/2026/8/23/french-president-macron-to-host-saudi-crown-prince-mbs-in-paris-for-talks?traffic_source=rss",
     "description": "Energy, regional conflicts, and bilateral cooperation to dominate Emmanuel Macron and Mohammed bin Salman's discussions.",
@@ -37,6 +45,14 @@
     "description": "In the town of Gary, where a third of residents live in poverty, people say they have been living in \"survival mode\".",
     "pubDate": "Sun, 23 Aug 2026 15:54:32 GMT",
     "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Emergency declared in Nevada as wildfire forces evacuation of 14,000 people",
+    "link": "https://www.france24.com/en/emergency-declared-in-nevada-as-wildfire-forces-evacutation-of-14-000-people",
+    "description": "Firefighters in Nevada are struggling to contain a fast-growing wildfire which has already forced the evacuation of nearly 14,000 people. A state of emergency has been called, meaning federal responders are working alongside local firefighters to try and keep it from residential areas. Details by Ca",
+    "pubDate": "Sun, 23 Aug 2026 15:54:21 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -1464,22 +1480,6 @@
     "category": "international"
   },
   {
-    "title": "South Korea sending first container ship through Arctic route",
-    "link": "https://www.aljazeera.com/news/2026/8/22/south-korea-sending-first-container-ship-through-arctic-route?traffic_source=rss",
-    "description": "PanStar Acro, bound for Europe via Arctic, is testing whether a route opened by melting sea ice is commercially viable.",
-    "pubDate": "Sat, 22 Aug 2026 16:46:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Sanctioned by EU, Israeli settler steals and kills Palestinian donkey",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/22/22-08-clip-palestinian-donkey-killed-by-setllers-ps?traffic_source=rss",
-    "description": "A donkey belonging to a Palestinian farmer was reportedly stolen and dragged to death by Israeli settlers.",
-    "pubDate": "Sat, 22 Aug 2026 16:41:43 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "OpenAI says California should strengthen its AI safety bill",
     "link": "https://techcrunch.com/2026/08/22/openai-says-california-should-strengthen-its-ai-safety-bill/",
     "description": "OpenAI is calling for California to strengthen SB 53, an AI safety bill that the company previously opposed.",
@@ -2784,28 +2784,38 @@
     "category": "semiconductor"
   },
   {
-    "title": "Paramount+ Coupon Codes and Deals for August 2026",
-    "link": "https://www.wired.com/story/paramount-plus-coupon-code/",
-    "description": "Save on streaming with the latest Paramount+ promo codes and deals, including 50% off subscriptions, free trials, and more.",
-    "pubDate": "Fri, 21 Aug 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Zoro Coupon Codes: 55% Off August",
-    "link": "https://www.wired.com/story/zoro-promo-code/",
-    "description": "Find the best Zoro coupon codes, deals, and free shipping offers to save big on industrial equipment, tools, and supplies this month.",
-    "pubDate": "Fri, 21 Aug 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
     "title": "NordVPN Coupons: 75% Off, Plus 3 Months Free in August 2026",
     "link": "https://www.wired.com/story/nordvpn-coupon/",
     "description": "Save up to 77% on 2-year plans and get 3 free months with our NordVPN discount codes.",
     "pubDate": "Fri, 21 Aug 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
+  },
+  {
+    "title": "Ruggable Discount Code: 30% Off Rugs | August 2026",
+    "link": "https://www.wired.com/story/ruggable-discount-code/",
+    "description": "Keep your floors pristine and your budget intact. Save up to 30% off machine-washable rugs, runners, mats, and pillows using Ruggable coupons plus our expert advice.",
+    "pubDate": "Fri, 21 Aug 2026 05:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "South Korea sending first container ship through Arctic route",
+    "link": "https://www.aljazeera.com/news/2026/8/22/south-korea-sending-first-container-ship-through-arctic-route?traffic_source=rss",
+    "description": "PanStar Acro, bound for Europe via Arctic, is testing whether a route opened by melting sea ice is commercially viable.",
+    "pubDate": "Sat, 22 Aug 2026 16:46:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Sanctioned by EU, Israeli settler steals and kills Palestinian donkey",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/22/22-08-clip-palestinian-donkey-killed-by-setllers-ps?traffic_source=rss",
+    "description": "A donkey belonging to a Palestinian farmer was reportedly stolen and dragged to death by Israeli settlers.",
+    "pubDate": "Sat, 22 Aug 2026 16:41:43 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Espanyol 1-2 Real Madrid: La Liga – as it happened",
@@ -4135,15 +4145,6 @@
     "link": "https://www.aljazeera.com/economy/2026/8/21/libya-rivals-test-a-new-path-towards-unity-15-years-after-gadaffi-overthrow?traffic_source=rss",
     "description": "Fifteen years since Tripoli fell, Libyan parties are finally working towards unity.",
     "pubDate": "Fri, 21 Aug 2026 19:21:08 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "US, Canada negotiators race to ink a deal as Trump’s tariff deadline looms",
-    "link": "https://www.aljazeera.com/economy/2026/8/21/us-canada-negotiators-race-to-ink-a-deal-as-trumps-tariff-deadline-looms?traffic_source=rss",
-    "description": "Experts say even a last-minute breakthrough will not result in the US lifting all its tariffs on Canadian goods.",
-    "pubDate": "Fri, 21 Aug 2026 19:20:17 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international",
     "_stale": true
