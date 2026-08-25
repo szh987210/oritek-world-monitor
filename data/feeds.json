@@ -1,11 +1,83 @@
 [
   {
+    "title": "Songs created by AI banned from Australia's music charts",
+    "link": "https://www.bbc.co.uk/news/articles/c20vl4vm2pno?at_medium=RSS&at_campaign=rss",
+    "description": "The move comes weeks after a DJ admitted using AI to remix a Madonna song that topped the Australian charts.",
+    "pubDate": "Tue, 25 Aug 2026 04:54:01 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "营收47亿、净利暴增477%，重估大普微的稀缺价值",
+    "link": "https://www.tmtpost.com/8115617.html",
+    "description": "AI浪潮重塑全球存储产业竞争格局，国产厂商不再仅仅是跟随者。",
+    "pubDate": "Tue, 25 Aug 2026 12:38:26 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Ukraine nimmt Russlands Schwarzmeer-Häfen ins Visier",
+    "link": "https://www.dw.com/de/ukraine-nimmt-russlands-schwarzmeer-häfen-ins-visier/a-78485726?maca=de-rss-de-all-1119-rdf",
+    "description": "Als Reaktion auf russische Angriffe beschießt die Ukraine Russlands Infrastruktur am Schwarzen Meer mit Drohnen. Das trifft Russland massiv: Exporte von Getreide und Erdöl brechen ein.",
+    "pubDate": "2026-08-25T04:37:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "世界模型离通用还有多远？",
+    "link": "https://www.tmtpost.com/8114742.html",
+    "description": "通用世界模型不是单一的生成器、模拟器、机器人动作模型或策略模型，也不是这些能力的割裂片段或简单线性串联，而是三种能力耦合在一起的闭环反馈系统。",
+    "pubDate": "Tue, 25 Aug 2026 12:06:06 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Data Centers Are Driving an Alarming Gas Power Expansion in the US",
+    "link": "https://www.wired.com/story/us-data-centers-drive-gas-power-expansion/",
+    "description": "There’s no clearer sign of the data center boom than rampant gas projects that have been proposed or that are already under construction.",
+    "pubDate": "Tue, 25 Aug 2026 04:01:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Rare tornado near Carcassonne in France causes damage and injuries",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/25/rare-tornado-near-carcassonne-in-france-causes-damage-and-injuries?traffic_source=rss",
+    "description": "Footage shows a rare tornado making its way through southern France.",
+    "pubDate": "Tue, 25 Aug 2026 03:56:30 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "AI boom drives Foxconn past 40% of Taiwan-listed firms' China returns, with FII leading the way",
+    "link": "https://www.digitimes.com/news/a20260825PD214/foxconn-fii-demand-taiwan-investment.html",
+    "description": "Global demand for AI and high-performance computing (HPC) has lifted investment returns for Taiwan-listed companies in China, with Foxconn continuing to lead the pack. According to CRIF, Foxconn's total China investment returns in the first half of 2026 reached NT$117.6 billion (US$3.7 billion).",
+    "pubDate": "Tue, 25 Aug 2026 03:55:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
     "title": "Iran says it is ready for what US calls 'greatest financial offensive ever'",
     "link": "https://www.bbc.co.uk/news/articles/c0qxew81y83o?at_medium=RSS&at_campaign=rss",
     "description": "The US calls its latest sanctions on Iran an \"economic D-Day\", but Tehran says it has a plan to counter them.",
     "pubDate": "Tue, 25 Aug 2026 03:50:06 GMT",
     "source": "BBC News",
     "category": "international"
+  },
+  {
+    "title": "TSMC suppliers reportedly plan Taiwan plant for critical chipmaking tubing",
+    "link": "https://www.digitimes.com/news/a20260825VL212/taiwan-semiconductor-supply-chain-taiwan-tsmc-plant-materials.html",
+    "description": "Taiwan's semiconductor supply chain is moving to close a gap that turned costly during the industry's last major crunch: the plastic tubing that carries chemicals through chip fabs. TSMC suppliers Nichias and Gold Stone Development are building a factory in Hsinchu to produce fluoropolymer (PFA) tub",
+    "pubDate": "Tue, 25 Aug 2026 03:45:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "AI's power crunch hits Taiwan: foundry capacity tightens, chip prices climb into 2H26",
+    "link": "https://www.digitimes.com/news/a20260825VL203/capacity-taiwan-data-demand-cooling.html",
+    "description": "AI data centres are becoming a new stress point for the global power and semiconductor supply chain. As facilities shift towards megawatt-scale architectures, demand is rising for power semiconductors, battery backup systems, liquid cooling, grid capacity and low-carbon electricity.",
+    "pubDate": "Tue, 25 Aug 2026 03:35:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
   },
   {
     "title": "被智谱封号的会员，有多少是被冤枉的？",
@@ -32,6 +104,14 @@
     "category": "international"
   },
   {
+    "title": "Vera Rubin transition gap eases as ASIC, general servers rescue supply chain",
+    "link": "https://www.digitimes.com/news/a20260825PD212/rubin-asic-nvidia-supply-chain-shipments.html",
+    "description": "As Nvidia's next-generation Vera Rubin platform enters deployment, Taiwan's server supply chain is finding ways to bridge the transition gap before ramping up volume production. Ongoing shipments of the existing GB series, custom ASIC server deployments led by Google and Amazon Web Services (AWS), a",
+    "pubDate": "Tue, 25 Aug 2026 03:31:28 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
     "title": "港股史上最大增发：阿里 800 亿港元押注 AI",
     "link": "https://www.tmtpost.com/8115058.html",
     "description": "阿里巴巴宣布配售新股募资800亿港元。",
@@ -54,6 +134,46 @@
     "pubDate": "Tue, 25 Aug 2026 03:30:00 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
+  },
+  {
+    "title": "US voices first complaint over South Korea's KRW800 trillion chip cluster as investment pressure mounts",
+    "link": "https://www.digitimes.com/news/a20260825PD218/investment-government-chipmakers-demand-production.html",
+    "description": "The US has informally expressed dissatisfaction with the South Korean government's KRW800 trillion (US$578.5 billion) plan to build a semiconductor cluster in the country's southwest. The complaint comes as Washington escalates its demands for South Korean investment on American soil, and reflects f",
+    "pubDate": "Tue, 25 Aug 2026 03:24:50 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Kulicke and Soffa names Raj Talluri as CEO",
+    "link": "https://www.digitimes.com/news/a20260825PR205/president-manufacturing-equipment-ceo-2026.html",
+    "description": "Kulicke and Soffa Industries has appointed Raj Talluri as president and chief executive officer, a leadership change that may influence the company's strategy in semiconductor equipment markets used across Asia, the US, and Europe. The move signals continuity for investors, while highlighting the gl",
+    "pubDate": "Tue, 25 Aug 2026 03:14:31 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Intel pitches Diamond Rapids at Hot Chips as server CPU competition heats up",
+    "link": "https://www.digitimes.com/news/a20260825VL205/intel-cpu-xeon-amd-2026.html",
+    "description": "Intel pitched its next-generation Diamond Rapids Xeon at Hot Chips 2026 as the company bets that agentic AI will increase the role of general-purpose processors in AI infrastructure, even as AMD and Arm gain ground in the server CPU market. The company also detailed Crescent Island, a GPU aimed at A",
+    "pubDate": "Tue, 25 Aug 2026 03:10:17 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "NZ religious sect leader jailed over death of Chinese follower",
+    "link": "https://www.bbc.co.uk/news/articles/c3d79z4z953o?at_medium=RSS&at_campaign=rss",
+    "description": "The body of 70-year-old Shulai Wang was found near a marina in Auckland in 2024.",
+    "pubDate": "Tue, 25 Aug 2026 03:07:34 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Energy law amendments lift AIDC storage demand in Taiwan",
+    "link": "https://www.digitimes.com/news/a20260825PD207/aidc-demand-taiwan-data-revenue.html",
+    "description": "AI data centers (AIDCs) will increasingly rely on energy storage because of its fast response and grid impact mitigation capabilities, according to Recharge Power, a Taiwan-based battery energy storage system integrator (BESSI) which has seen overseas project revenue gradually bearing fruit. In Taiw",
+    "pubDate": "Tue, 25 Aug 2026 03:01:38 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
   },
   {
     "title": "月销10万、市值不如蔚小理，零跑怎么了？",
@@ -160,6 +280,22 @@
     "category": "semiconductor"
   },
   {
+    "title": "Meoo打通AI做App全链路，“一句话”就能做出安卓与iOS应用",
+    "link": "https://www.leiphone.com/category/industrynews/lMrMgzHoUVOGceOK.html",
+    "description": "近日，阿里AI应用搭建产品Meoo（秒悟）打通了自然语言做App的全链路。不懂编程的普通用户只需用自然语言描述想法，Meoo即可自动生成页面与功能，支持真机测试、持续修改与一键打包，最终产出可直接安装使用的原生应用，覆盖安卓与iOS双端。“一个想法”到“一款应用”之间的门槛被大幅拉低。\n \n过去，想法要变成真正可以安装的App，中间隔着产品设计、界面开发、数据处理、真机测试和打包发布等多道环节。即使外包给开发者或借助低代码工具，也普遍面临成本高、周期长、专业逻辑欠缺等问题。“想得到、做不出”成为大量非技术用户的共同痛点。\n \nMeoo把“做App”的链路压缩为一次对话。用户进入Meoo选择“手",
+    "pubDate": "Tue, 25 Aug 2026 10:32:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "豆包工作正式发布：让 AI 从生成内容到完成工作",
+    "link": "https://www.leiphone.com/category/industrynews/bzevr2er8UPJfMtm.html",
+    "description": "8月25日，豆包工作正式发布。作为豆包面向生产力场景推出的全新 Agent 产品与品牌，豆包工作能围绕用户目标自主拆解任务、调用工具、持续推进复杂工作流程。豆包工作还与飞书深度打通，让 Agent 基于企业上下文更准确地完成工作。\n目前，豆包工作电脑版已可通过官网下载，用户也可在最新豆包电脑版中直接使用。即日起下载登录或升级，便可免费领取 30 天订阅权益。\n\n针对日常办公中最常见、也最花时间的工作，豆包工作提供了强大的内容生成和编辑能力。无论是写方案、整理会议纪要、起草报告、做调研总结，还是做表格、分析数据，豆包工作都能交付高质量的任务结果。在更复杂的制作场景中，豆包工作还能生成和编辑图片、",
+    "pubDate": "Tue, 25 Aug 2026 10:30:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
     "title": "Commentary: Nvidia's 15% hike piles pressure on the AI supply chain, lifts ASIC prospects",
     "link": "https://www.digitimes.com/news/a20260825PD211/nvidia-price-chips-cost-asic.html",
     "description": "Nvidia has reportedly notified major customers that server systems using its AI chips will rise by more than 15%, with the new pricing set to apply to models shipping from early 2027, including Grace Blackwell and the next-generation Vera Rubin platform. The move is expected to ripple through the ch",
@@ -174,6 +310,14 @@
     "pubDate": "Tue, 25 Aug 2026 02:25:09 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
+  },
+  {
+    "title": "李飞飞押注的空间智能：生成的世界，如何「经得起折腾」？",
+    "link": "https://www.leiphone.com/category/academic/cFG5JACmqzkxWGDb.html",
+    "description": "AI 生成的大多数世界“中看不中用”，根本原因是 AI 少了一本“底账”：一份记住世界里有什么、每次行动改变了什么、并且能被检查和回滚的状态记录。\n\n\n\n\n\n    作者丨刘紫东\n\n    编辑丨幸丽娟\n                                                                                                       \n\n\n李飞飞押注的空间智能，被视为世界模型的主流路线之一。\n这条路线的基本构想是，让 AI 从识别二维画面，走向理解、推理和生成可进入、可操作、可持续编辑的三维世界。\n但真正的考验在于：一个",
+    "pubDate": "Tue, 25 Aug 2026 10:23:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
   },
   {
     "title": "具身大满贯还全开源！原力灵机DM0.5登顶RoboDojo，且clone且珍惜",
@@ -197,6 +341,14 @@
     "description": "定价权代表的高端价值，正是最难被复制的部分。",
     "pubDate": "Tue, 25 Aug 2026 10:20:34 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "通用模型竟然比医疗专用模型更懂医疗？一篇 ACL 论文的两个反直觉发现 | GAIR Paper 123",
+    "link": "https://www.leiphone.com/category/academic/bWyxqU8pelb4TNJg.html",
+    "description": "Doubao 、DeepSeek 在三语数据集上的表现，普遍超过 GPT-4o 和 Gemini。\n\n\n    作者丨幸丽娟\n    编辑丨岑   峰\n                                                                                                       \n\n\n医疗，是大模型落地最特殊的场景之一。\n特殊在哪里？特殊在一个很微小的错误，就可能导致致命的后果；也特殊在你不能用直觉去判断它\"行\"还是\"不行\"——\n你觉得医疗专用模型肯定比通用模型更懂医疗？直觉上是。但实验数据不支持。\n你觉得英语训练出",
+    "pubDate": "Tue, 25 Aug 2026 10:18:00 +0800",
+    "source": "雷峰网",
     "category": "ai-tech"
   },
   {
@@ -224,12 +376,28 @@
     "category": "international"
   },
   {
+    "title": "IJCAI 2026 复盘局：中国人投了最多的稿，却到不了最多的场",
+    "link": "https://www.leiphone.com/category/academic/PwTwlHYVu0ZCHAuW.html",
+    "description": "CCF降级没能让中国学者少投，但一纸签证却让他们没法到场。\n\n\n\n\n\n    作者丨幸丽娟\n\n    编辑丨岑   峰\n                                                                                                       \n\n\n德国不莱梅当地时间8月22日下午，IJCAI-ECAI 2026 迎来闭幕式。程序委员会主席 Diego Calvanese走上讲台，用一组详实的数据为这场为期一周的学术盛会画上句号。\n而站在这个节点上，IJCAI所呈现的不仅是论文与参会者的数字图谱，也是一张值得 A",
+    "pubDate": "Tue, 25 Aug 2026 10:11:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
     "title": "French tourist dies in Death Valley after car gets stuck in mud",
     "link": "https://www.bbc.co.uk/news/articles/clyl81jlzr2o?at_medium=RSS&at_campaign=rss",
     "description": "The 68-year-old man was found dead in California's salt flats amid 116°F (46.6C) heat.",
     "pubDate": "Tue, 25 Aug 2026 02:08:57 GMT",
     "source": "BBC News",
     "category": "international"
+  },
+  {
+    "title": "IJCAI 2026 四项论文奖、三项个人成就奖，回答 AI 的「来路」与「去路」",
+    "link": "https://www.leiphone.com/category/private/tuJcJrenqJuB2Isk.html",
+    "description": "AI 正在走的，是一条螺旋上升的路。\n\n\n\n\n\n    作者丨幸丽娟\n\n    编辑丨岑   峰\n                                                                                                       \n\n\n8月20日，IJCAI-ECAI 2026 正会进入第三天。 如果说18日的开幕式是荣誉的加冕，那么今天，聚光灯从获奖者转向了获奖研究本身。\nAIJ/JAIR 获奖论文报告环节，获奖论文作者依次登台发表获奖感言、回顾获奖论文，诠释这些经典研究在最新语境下的生命力和再思考。从1990年的抽象",
+    "pubDate": "Tue, 25 Aug 2026 10:06:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
   },
   {
     "title": "100块遛一天，北京家长把机器人大会当成亲子乐园",
@@ -548,6 +716,14 @@
     "link": "https://www.digitimes.com/news/a20260824VL211/infrastructure-alibaba-hardware-silicon-demand.html",
     "description": "The AI infrastructure race has been marked by a near-fixated drive to expand AI-powered buildouts, as demand for increasingly complex chip configurations pushes against the physical and economic limits of scalability.",
     "pubDate": "Tue, 25 Aug 2026 00:05:25 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Samsung pushes HBM toward logic, SK Hynix targets packaging at Hot Chips 2026",
+    "link": "https://www.digitimes.com/news/a20260824VL214/samsung-hbm-packaging-dram-design.html",
+    "description": "Samsung Electronics and SK Hynix outlined different areas of emphasis for overcoming the next high-bandwidth memory (HBM) bottleneck at Hot Chips 2026, with Samsung pushing more logic and customer-specific functions into the HBM base die while SK Hynix focuses on packaging, heat and the challenges o",
+    "pubDate": "Tue, 25 Aug 2026 00:04:43 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
   },
@@ -2624,20 +2800,20 @@
     "category": "ai-tech"
   },
   {
-    "title": "Etron chair sees memory boom extending to 2028-2030",
-    "link": "https://www.digitimes.com/news/a20260824PD230/etron-chairman-2027-demand-growth.html",
-    "description": "The memory industry is undergoing a structural shift as AI demand surges, and Etron Technology chairman Nicky Lu said the sector's boom will stretch beyond 2027, with shortages likely lasting through 2028 and possibly into 2030. He said supply is tightening further as AI and edge computing create ri",
-    "pubDate": "Mon, 24 Aug 2026 08:45:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "USA wollen Iran mit massiven Sanktionen in die Knie zwingen",
     "link": "https://www.dw.com/de/usa-wollen-iran-mit-massiven-sanktionen-in-die-knie-zwingen/a-78481872?maca=de-rss-de-all-1119-rdf",
     "description": "Seit Wochen bewegt sich im Konflikt zwischen den USA und Iran kaum etwas. Washington setzt nun auf drakonische Maßnahmen auf wirtschaftlicher Ebene. Präsident Trump braucht wegen der baldigen Zwischenwahlen einen Erfolg.",
     "pubDate": "2026-08-24T08:45:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
+  },
+  {
+    "title": "Etron chair sees memory boom extending to 2028-2030",
+    "link": "https://www.digitimes.com/news/a20260824PD230/etron-chairman-2027-demand-growth.html",
+    "description": "The memory industry is undergoing a structural shift as AI demand surges, and Etron Technology chairman Nicky Lu said the sector's boom will stretch beyond 2027, with shortages likely lasting through 2028 and possibly into 2030. He said supply is tightening further as AI and edge computing create ri",
+    "pubDate": "Mon, 24 Aug 2026 08:45:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
   },
   {
     "title": "\n        年轻人的网络社交，正在偷偷「鸽化」\n      ",
@@ -3168,123 +3344,11 @@
     "category": "international"
   },
   {
-    "title": "SK Hynix charts advanced HBM packaging path: hybrid bonding, Intel EMIB and 3D integration",
-    "link": "https://www.digitimes.com/news/a20260824PD224/hbm-packaging-sk-hynix-bandwidth-intel.html",
-    "description": "Competition in high bandwidth memory (HBM) is shifting from raw memory performance to advanced packaging. As bandwidth, capacity and stack heights keep climbing, thermal management, power consumption and packaging have emerged as the new bottlenecks. At Hot Chips 2026, SK Hynix laid out its advanced",
-    "pubDate": "Mon, 24 Aug 2026 04:55:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "What do locals think of IndyCar in Washington DC?",
     "link": "https://www.bbc.co.uk/news/videos/c93e5q5783wo?at_medium=RSS&at_campaign=rss",
     "description": "US President Donald Trump was among hundreds of people who gathered to see the race through Washington DC streets on Sunday.",
     "pubDate": "Mon, 24 Aug 2026 04:51:49 GMT",
     "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Live: Zelensky calls on allies to cover €27 billion gap for Ukraine’s air defence needs",
-    "link": "https://www.france24.com/en/europe/20260824-live-ukraine-backers-gather-as-russian-attacks-escalate-air-defence-runs-low",
-    "description": "President Volodymyr ​Zelensky on Monday urged Ukraine's ​allies to help ​cover a funding gap of €27 billion for ​its air defence needs ​in 2026. Ukraine is hosting a meeting of its key European backers in Kyiv as the country marks its 35th Independence Day. Follow our liveblog for the latest updates",
-    "pubDate": "Mon, 24 Aug 2026 04:50:32 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "在闲鱼卖AI，普通人的搞钱天堂？",
-    "link": "https://www.tmtpost.com/8114147.html",
-    "description": "闲鱼，中国最大的二手电商平台，怎么就成了倒卖AI最快的地方？",
-    "pubDate": "Mon, 24 Aug 2026 12:25:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Maradona’s ‘Hand of God’ ball from Mexico sells for $3.35m",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/24/08-24-26-mardona-ball-sold-clip?traffic_source=rss",
-    "description": "Maradona’s 1986 World Cup ball sold for $3.35m. He used his hand to score against England, dubbing it the ‘Hand of God’.",
-    "pubDate": "Mon, 24 Aug 2026 04:19:46 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "腾讯在 AI 时代的船票，不是 WorkBuddy",
-    "link": "https://www.tmtpost.com/8114162.html",
-    "description": "素来求稳的腾讯，也开始烧钱。",
-    "pubDate": "Mon, 24 Aug 2026 12:19:43 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Climbers escape rockfall crossing ‘Death Pass’ on Mont Blanc",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/24/climbers-escape-rockfall-crossing-death-pass-on-mont-blanc?traffic_source=rss",
-    "description": "Footage filmed by a climber on Mont Blanc shows rocks cascading down the Goûter Couloir, known as ‘Death Pass’. The clim",
-    "pubDate": "Mon, 24 Aug 2026 04:18:16 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Europe's struggling auto industry turns to China, drawing US scrutiny",
-    "link": "https://www.digitimes.com/news/a20260824PD223/europe-auto-industry-automakers-capacity-production.html",
-    "description": "European automakers have been increasing collaboration with their Chinese counterparts in recent years, as they seek to break through the vicious cycle of weak demand, rising costs, and low capacity utilization, as well as difficulties in their transition to electric vehicles (EVs). However, the fac",
-    "pubDate": "Mon, 24 Aug 2026 04:17:09 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "具身江湖志（二）：谁拿走了最聪明的钱？",
-    "link": "https://www.tmtpost.com/8114154.html",
-    "description": "一家具身智能企业，拿的是谁的钱，几乎决定了它的一切。",
-    "pubDate": "Mon, 24 Aug 2026 12:10:51 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "具身江湖志（一）：学术派下山记",
-    "link": "https://www.tmtpost.com/8114148.html",
-    "description": "是时候翻开这部《具身江湖志》了。",
-    "pubDate": "Mon, 24 Aug 2026 12:10:45 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Analysis: SK Hynix pushes beyond HBM with HBF and CPO",
-    "link": "https://www.digitimes.com/news/a20260824PD216/sk-hynix-hbm-cpo-capacity-competition.html",
-    "description": "SK Hynix is moving on several fronts as it pushes deeper into system-level memory competition. From high-bandwidth memory (HBM) and high-bandwidth flash (HBF) to a recently published roadmap proposing to extend co-packaged optics (CPO) to the memory interface, the company increasingly appears to be ",
-    "pubDate": "Mon, 24 Aug 2026 04:08:26 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "WRC 2026：机器人的“试用期”结束了？",
-    "link": "https://www.tmtpost.com/8113903.html",
-    "description": "具身智能的下半场，拼的是交付。",
-    "pubDate": "Mon, 24 Aug 2026 12:08:24 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "快手要成可灵的“子公司”了",
-    "link": "https://www.tmtpost.com/8114071.html",
-    "description": "如果可灵IPO，它的市值会超过快手吗？",
-    "pubDate": "Mon, 24 Aug 2026 12:08:20 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "脱单也靠AI，“赛博媒婆”拿到1500万元天使融资",
-    "link": "https://www.tmtpost.com/8114111.html",
-    "description": "AI是婚恋的良配吗?",
-    "pubDate": "Mon, 24 Aug 2026 12:08:15 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "‘We know this movie’: Iran mocks latest US sanctions",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/24/we-know-this-movie-iran-mocks-latest-us-sanctions?traffic_source=rss",
-    "description": "Abbas Araghchi said new US sanctions, likely to be unveiled Monday, are like watching the 'same movie on repeat'.",
-    "pubDate": "Mon, 24 Aug 2026 04:02:14 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
@@ -3312,35 +3376,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "王田苗三问具身大牛：大模型还在「拨号上网」，机器人靠什么拿下真实订单？| WRC 2026",
-    "link": "https://www.leiphone.com/category/private/YOACtSjPnZwavbFo.html",
-    "description": "当狂热的资本逐渐冷静，具身智能行业必须面对一场从“展示Demo”到“真实产线”的生死大考。\n\n\n\n\n    编辑丨岑峰\n                                                                                                       \n\n\n“如果大模型现在还处在‘拨号上网’的时代，那谁能告诉我，制约具身智能规模化的致命卡点到底是什么？大模型解决物理世界问题的巅峰时刻，究竟何时到来？”\n在 2026 世界机器人大会（WRC）的一场重磅圆桌论坛上，北京航空航天大学教授、中国机器人学术泰斗王田苗，向台下的五位",
-    "pubDate": "Mon, 24 Aug 2026 11:23:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "希音开启全球发售，预计募资净额约131.23亿港元",
-    "link": "https://www.leiphone.com/category/industrynews/C0s8Qo4obQJjUEBv.html",
-    "description": "8月24日，希音（00625.HK）正式开启全球发售。高盛、摩根士丹利及摩根大通担任联席保荐人兼整体协调人，基石投资者包括Boyu、Tiger Global、General Atlantic、腾讯、景林、泰康人寿、UBS AM Singapore。业内人士表示，这直观体现出全球主流资本市场对企业综合实力、经营壁垒及长期成长前景的高度认可。\n本次拟全球发售共约27999万股B类股份（可予重新分配及视乎超额配股权行使与否而定），其中香港公开发售近2800万股（可予重新分配），国际发售约25199万股（可予重新分配及视乎超额配股权行使与否而定），发售价格区间定为每股47.6港元至49.5港元。香港公",
-    "pubDate": "Mon, 24 Aug 2026 10:26:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
     "title": "100 万像素的摄像头，为什么是苹果 AI 最重要的零件？｜硬哲学",
     "link": "https://www.ifanr.com/1676333?utm_source=rss&utm_medium=rss&utm_campaign=",
     "description": "随时在的硬件，记录完整的你\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
     "pubDate": "Mon, 24 Aug 2026 02:18:22 +0000",
     "source": "爱范儿",
-    "category": "ai-tech"
-  },
-  {
-    "title": "光子跃迁亮相BIRTV 2026：以\"AI+影像\"重构创作范式，三大板块解码下一代影像生态",
-    "link": "https://www.leiphone.com/category/industrynews/x0aFA1VyGB6qPmHp.html",
-    "description": "8月19日，BIRTV 2026（北京国际广播电影电视展览会）在北京拉开帷幕。在这场汇聚全球广电与影像领域顶尖技术与创意的盛会上，光子跃迁以\"AI+影像\"为核心叙事，携个人智能影像生态重磅亮相，向行业展示了一个由AI驱动、以人为中心的影像未来。\n与行业展会常见的深色科技风不同，光子跃迁的展台以纯净白色为主基调，辅以品牌蓝色进行点睛点缀，在千篇一律的深色展台中脱颖而出，传递出品牌年轻、活力、面向未来的基因。白色与蓝色的碰撞，不仅是一种视觉上的耳目一新，更是对\"AI+影像\"这一命题的隐喻，用最纯粹的色彩，承载最智能的影像体验。\n\n这不是一次简单的产品陈列，而是一场关于\"AI如何重塑影像创作\"的完整",
-    "pubDate": "Mon, 24 Aug 2026 10:11:00 +0800",
-    "source": "雷峰网",
     "category": "ai-tech"
   },
   {
@@ -3352,11 +3392,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "阿里拟配售800亿港元新股，全部投入AI建设；网友造谣「小红书因遭举报上市失败」被行拘；李斌：中国汽车行业三五年后玩家基本确定",
-    "link": "https://www.leiphone.com/category/zaobao/Vqz97pOeMU2EkowJ.html",
-    "description": "要闻提示\n\n\n\n\n\n1.“我们大学硕士不就白读了吗”，上市公司被曝要求应届生离职与“打螺丝”二选一\n2.阿里巴巴拟配售800亿港元新股，全部投入AI建设\n\n3.网友造谣“小红书因遭举报上市失败”被行拘\n\n4.李斌：中国汽车行业三五年后玩家基本确定\n5.雷军：十车PK，小米SU7 Pro续航CLTC排第四、实测排第一\n6.马斯克母亲谈儿子推荐大家来中国：埃隆发自内心喜爱中国，中国人非常智慧\n7.董宇辉等主播走后东方甄选扭亏为盈：从亏1.10亿到盈利6.63亿\n8.外媒：英伟达搭载人工智能芯片的服务器价格将上涨超15%\n\n\n\n\n\n今日头条\n\n\n\n\n\n\n\n\n“我们大学硕士不就白读了吗”，上市公司被曝",
-    "pubDate": "Mon, 24 Aug 2026 08:39:00 +0800",
-    "source": "雷峰网",
+    "title": "\n        传 Hugging Face 寻求出售，估值 130 亿美元；Altman：担心 AI 被少数强势主体掌控；成都 AG.AL 获电竞世俱杯冠军\n      ",
+    "link": "http://www.geekpark.net/news/369224",
+    "description": "OpenAI CEO 奥特曼：担心人工智能会被少数强势主体掌控\n8 月 24 日消息，OpenAI 首席执行官萨姆 · 奥特曼表示，他担心人工智能终有一天会被少数公司、模型或个人所控制，让绝大多数消费者在技术如何塑造世界这个问题上没有发言权。\nAnthropic 还是上个月唯一一家没有签署支持开放权重模型联名信的大型人工智能公司。开放权重模型允许开发者在自己的基础设施上分享、下载、修改和部署人工智能模型。\n中国已经拥抱了开放权重模型，这使其能够以极低的成本跟上硅谷的步伐。美国的一些公司，包括英伟达、Meta 和微软，认为美国也需要这样做，否则就有可能在人工智能竞赛中把阵地拱手让给竞争对手。\n在",
+    "pubDate": "Mon, 24 Aug 2026 08:40:47 +0800",
+    "source": "极客公园",
     "category": "ai-tech"
   },
   {
@@ -3400,14 +3440,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "万兴科技全新推出AI画布工作台",
-    "link": "https://www.leiphone.com/category/industrynews/YsrKuxqEsqebPdN5.html",
-    "description": "近日，AIGC软件A股上市公司万兴科技（300624.SZ）加码AI视频创意与品牌营销赛道，正式全球发布TVC（商业电视广告）专业人群的AI画布工作台Filmora.TV。该产品基于风靡全球的视频创意软件Wondershare Filmora全新打造，以AI原生工作流融合无限画布、脚本与分镜生成、多轨剪辑、团队协同及成片交付等能力，打通品牌广告从创意预演到后期制作的全链路。同时，万兴科技携手知名茶饮品牌茶颜悦色，重磅发布由Filmora.TV赋能创作的新品“冷香凝”品牌视频，展现其在TVC品牌广告场景中的应用能力。\n当前，全球广告市场持续扩容。据WARC数据，2024年全球广告市场规模首次突破",
-    "pubDate": "Mon, 24 Aug 2026 03:46:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
     "title": "Uber faces fine of nearly $1B over automated driver suspensions",
     "link": "https://techcrunch.com/2026/08/23/uber-faces-fine-of-nearly-1b-over-automated-driver-suspensions/",
     "description": "The Dutch Data Protection Authority is fining Uber €825 million in the second-largest penalty issued under Europe’s GDPR.",
@@ -3424,156 +3456,130 @@
     "category": "ai-tech"
   },
   {
-    "title": "TechCrunch Mobility: The custom chip driving Waymo’s robotaxi ambitions",
-    "link": "https://techcrunch.com/2026/08/23/techcrunch-mobility-the-custom-chip-driving-waymos-robotaxi-ambitions/",
-    "description": "Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation.",
-    "pubDate": "Sun, 23 Aug 2026 16:03:00 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "SK Hynix charts advanced HBM packaging path: hybrid bonding, Intel EMIB and 3D integration",
+    "link": "https://www.digitimes.com/news/a20260824PD224/hbm-packaging-sk-hynix-bandwidth-intel.html",
+    "description": "Competition in high bandwidth memory (HBM) is shifting from raw memory performance to advanced packaging. As bandwidth, capacity and stack heights keep climbing, thermal management, power consumption and packaging have emerged as the new bottlenecks. At Hot Chips 2026, SK Hynix laid out its advanced",
+    "pubDate": "Mon, 24 Aug 2026 04:55:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "Selenskyj will 30 Milliarden Euro von der EU",
-    "link": "https://www.dw.com/de/selenskyj-will-30-milliarden-euro-von-der-eu/a-78476565?maca=de-rss-de-all-1119-rdf",
-    "description": "Im ukrainischen Verteidigungshaushalt klafft nach Angaben von Präsident Wolodymyr Selenskyj eine milliardenschwere Lücke. Vor allem für Soldaten und die Produktion von Drohnen brauche das Land zusätzliche Unterstützung.",
-    "pubDate": "2026-08-23T15:45:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "Live: Zelensky calls on allies to cover €27 billion gap for Ukraine’s air defence needs",
+    "link": "https://www.france24.com/en/europe/20260824-live-ukraine-backers-gather-as-russian-attacks-escalate-air-defence-runs-low",
+    "description": "President Volodymyr ​Zelensky on Monday urged Ukraine's ​allies to help ​cover a funding gap of €27 billion for ​its air defence needs ​in 2026. Ukraine is hosting a meeting of its key European backers in Kyiv as the country marks its 35th Independence Day. Follow our liveblog for the latest updates",
+    "pubDate": "Mon, 24 Aug 2026 04:50:32 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Reit-WM: Steve Guerdat ist Weltmeister im Springreiten",
-    "link": "https://www.dw.com/de/reit-wm-steve-guerdat-ist-weltmeister-im-springreiten/a-78477871?maca=de-rss-de-all-1119-rdf",
-    "description": "Bei der Weltmeisterschaft in Aachen setzt sich der Schweizer als beständigster Reiter durch. Drei Deutsche starten ebenfalls aussichtsreich in den Schlusstag der WM, leisten sich aber zu viele Fehler.",
-    "pubDate": "2026-08-23T15:38:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "在闲鱼卖AI，普通人的搞钱天堂？",
+    "link": "https://www.tmtpost.com/8114147.html",
+    "description": "闲鱼，中国最大的二手电商平台，怎么就成了倒卖AI最快的地方？",
+    "pubDate": "Mon, 24 Aug 2026 12:25:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Due to need for \"absolute success,\" China delays critical Moon launch to 2027",
-    "link": "https://arstechnica.com/space/2026/08/due-to-need-for-absolute-success-china-delays-critical-moon-launch-to-2027/",
-    "description": "\"The Chang’e 7 mission does not meet the conditions for launch.\"",
-    "pubDate": "Sun, 23 Aug 2026 14:30:16 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
+    "title": "Maradona’s ‘Hand of God’ ball from Mexico sells for $3.35m",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/24/08-24-26-mardona-ball-sold-clip?traffic_source=rss",
+    "description": "Maradona’s 1986 World Cup ball sold for $3.35m. He used his hand to score against England, dubbing it the ‘Hand of God’.",
+    "pubDate": "Mon, 24 Aug 2026 04:19:46 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Asus ROG Swift RGB Stripe OLED Review: Clarity King",
-    "link": "https://www.wired.com/review/asus-rog-swift-rgb-stripe-oled-pg27ucwm/",
-    "description": "The Asus PG27UCWM brings a new sub-pixel layout to the world of OLED gaming monitors, and in my testing, I appreciated the improvements it brings to the table.",
-    "pubDate": "Sun, 23 Aug 2026 13:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
+    "title": "腾讯在 AI 时代的船票，不是 WorkBuddy",
+    "link": "https://www.tmtpost.com/8114162.html",
+    "description": "素来求稳的腾讯，也开始烧钱。",
+    "pubDate": "Mon, 24 Aug 2026 12:19:43 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Use a digital twin to explore automation before committing capital",
-    "link": "https://www.therobotreport.com/use-digital-twin-explore-automation-before-committing-capital/",
-    "description": "While a digital twin does not necessarily replace a systems integrator, it can help manufacturers evaluate robots and plan applications, says RoboDK.\nThe post Use a digital twin to explore automation before committing capital appeared first on The Robot Report.",
-    "pubDate": "Sun, 23 Aug 2026 12:30:14 +0000",
-    "source": "The Robot Report",
-    "category": "ai-tech"
+    "title": "Climbers escape rockfall crossing ‘Death Pass’ on Mont Blanc",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/24/climbers-escape-rockfall-crossing-death-pass-on-mont-blanc?traffic_source=rss",
+    "description": "Footage filmed by a climber on Mont Blanc shows rocks cascading down the Goûter Couloir, known as ‘Death Pass’. The clim",
+    "pubDate": "Mon, 24 Aug 2026 04:18:16 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "What’s the Best Kindle of 2026? (So Far)",
-    "link": "https://www.wired.com/gallery/best-kindle/",
-    "description": "I’ve tested every single Kindle. Here’s how Amazon’s ebook readers stack up.",
-    "pubDate": "Sun, 23 Aug 2026 11:03:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
+    "title": "Europe's struggling auto industry turns to China, drawing US scrutiny",
+    "link": "https://www.digitimes.com/news/a20260824PD223/europe-auto-industry-automakers-capacity-production.html",
+    "description": "European automakers have been increasing collaboration with their Chinese counterparts in recent years, as they seek to break through the vicious cycle of weak demand, rising costs, and low capacity utilization, as well as difficulties in their transition to electric vehicles (EVs). However, the fac",
+    "pubDate": "Mon, 24 Aug 2026 04:17:09 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "Volcanoes that made history",
-    "link": "https://arstechnica.com/science/2026/08/volcanoes-that-made-history/",
-    "description": "Enormous eruptions altered Earth’s climate and societies all over the globe.",
-    "pubDate": "Sun, 23 Aug 2026 11:02:54 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
+    "title": "具身江湖志（二）：谁拿走了最聪明的钱？",
+    "link": "https://www.tmtpost.com/8114154.html",
+    "description": "一家具身智能企业，拿的是谁的钱，几乎决定了它的一切。",
+    "pubDate": "Mon, 24 Aug 2026 12:10:51 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Transistors Changed Everything. Here’s How They Work",
-    "link": "https://www.wired.com/story/transistors-changed-everything-heres-how-they-work/",
-    "description": "How a tiny little electronic switch sparked the computer revolution.",
-    "pubDate": "Sun, 23 Aug 2026 11:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
+    "title": "具身江湖志（一）：学术派下山记",
+    "link": "https://www.tmtpost.com/8114148.html",
+    "description": "是时候翻开这部《具身江湖志》了。",
+    "pubDate": "Mon, 24 Aug 2026 12:10:45 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Kasachstan wählt nach Verfassungsreform neues Parlament",
-    "link": "https://www.dw.com/de/kasachstan-wählt-nach-verfassungsreform-neues-parlament/a-78475382?maca=de-rss-de-all-1119-rdf",
-    "description": "Erstmals bestimmen die Kasachen die Abgeordneten des neuen Einkammerparlaments. Die Regierung verspricht mehr politische Mitsprache. Kritiker sehen dagegen eine weitere Stärkung von Präsident Tokajew.",
-    "pubDate": "2026-08-23T10:57:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "Analysis: SK Hynix pushes beyond HBM with HBF and CPO",
+    "link": "https://www.digitimes.com/news/a20260824PD216/sk-hynix-hbm-cpo-capacity-competition.html",
+    "description": "SK Hynix is moving on several fronts as it pushes deeper into system-level memory competition. From high-bandwidth memory (HBM) and high-bandwidth flash (HBF) to a recently published roadmap proposing to extend co-packaged optics (CPO) to the memory interface, the company increasingly appears to be ",
+    "pubDate": "Mon, 24 Aug 2026 04:08:26 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "The 6 Best Laptop Docking Stations to Unlock the Full Desktop Experience (2026)",
-    "link": "https://www.wired.com/gallery/best-laptop-docking-stations/",
-    "description": "Docking stations expand what your laptop can do, and I’ve been testing the best of the best to see which you should buy.",
-    "pubDate": "Sun, 23 Aug 2026 10:37:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
+    "title": "WRC 2026：机器人的“试用期”结束了？",
+    "link": "https://www.tmtpost.com/8113903.html",
+    "description": "具身智能的下半场，拼的是交付。",
+    "pubDate": "Mon, 24 Aug 2026 12:08:24 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Wenn die Erde zittert: Beben, die 2026 erschütterten",
-    "link": "https://www.dw.com/de/wenn-die-erde-zittert-beben-die-2026-erschütterten/a-78350627?maca=de-rss-de-all-1119-rdf",
-    "description": "Japan, Indonesien, Kolumbien, Venezuela etc.: 2026 haben schwere Erdbeben Tausende Menschen getötet. Die Ereignisse zeigen, warum nicht allein die Magnitude über das Ausmaß einer Katastrophe entscheidet.",
-    "pubDate": "2026-08-23T10:23:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "快手要成可灵的“子公司”了",
+    "link": "https://www.tmtpost.com/8114071.html",
+    "description": "如果可灵IPO，它的市值会超过快手吗？",
+    "pubDate": "Mon, 24 Aug 2026 12:08:20 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Viele Vermisste nach Schiffsunglück vor indischer Küste",
-    "link": "https://www.dw.com/de/viele-vermisste-nach-schiffsunglück-vor-indischer-küste/a-78475344?maca=de-rss-de-all-1119-rdf",
-    "description": "Ihr Schiff sank innerhalb weniger Minuten. Nach dem Untergang eines Frachters vor der Ostküste Indiens werden noch mehr als 20 Menschen vermisst. Zwei Seeleute konnten gerettet werden.",
-    "pubDate": "2026-08-23T10:06:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "脱单也靠AI，“赛博媒婆”拿到1500万元天使融资",
+    "link": "https://www.tmtpost.com/8114111.html",
+    "description": "AI是婚恋的良配吗?",
+    "pubDate": "Mon, 24 Aug 2026 12:08:15 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "7 Basic iPhone Tricks I Built With iOS 27’s Revamped Shortcuts App",
-    "link": "https://www.wired.com/story/7-basic-iphone-tricks-i-built-with-ios-27s-revamped-shortcuts-app/",
-    "description": "From halting my doomscrolls to automating air-quality checks, Apple’s streamlined Shortcuts app is my favorite iOS 27 feature.",
-    "pubDate": "Sun, 23 Aug 2026 09:30:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Is Expensive Bottled Water Actually Better for You?",
-    "link": "https://www.wired.com/story/is-expensive-bottled-water-actually-better-for-you/",
-    "description": "Luxury water can contain different minerals and taste noticeably different. But a remote source, alkaline pH, and high price do not necessarily mean better hydration.",
-    "pubDate": "Sun, 23 Aug 2026 09:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Südkorea schickt erstmals Frachter über Arktis nach Europa",
-    "link": "https://www.dw.com/de/südkorea-schickt-erstmals-frachter-über-arktis-nach-europa/a-78474386?maca=de-rss-de-all-1119-rdf",
-    "description": "Ein Containerschiff aus Südkorea soll über die Nordostpassage mehrere europäische Häfen anlaufen. Seoul will herausfinden, ob sich die deutlich kürzere Strecke wirtschaftlich für den regulären Frachtverkehr eignet.",
-    "pubDate": "2026-08-23T08:18:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Deutschland: Bahngewerkschaft EVG droht mit Streiks",
-    "link": "https://www.dw.com/de/deutschland-bahngewerkschaft-evg-droht-mit-streiks/a-78473716?maca=de-rss-de-all-1119-rdf",
-    "description": "Im Februar war ein Schaffner in einem Regionalzug bei der Ticketkontrolle tödlich verletzt worden. Von der Bundesregierung gab es seither nur wortreiche Versprechen. Die Bahnmitarbeiter sind empört.",
-    "pubDate": "2026-08-23T05:58:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Kenias \"politische Banden\" schüren Ängste vor den Wahlen",
-    "link": "https://www.dw.com/de/kenias-politische-banden-schüren-ängste-vor-den-wahlen/a-78156052?maca=de-rss-de-all-1119-rdf",
-    "description": "Gewalttätige Störungen politischer und zivilgesellschaftlicher Veranstaltungen geben Anlass zur Sorge, angeheuerte Schlägerbanden könnten Unruhe stiften, während Kenia auf die Wahlen im Jahr 2027 zusteuert.",
-    "pubDate": "2026-08-23T05:31:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "AI 即将接管流量，而广告正在疯狂「末日反扑」",
-    "link": "https://www.ifanr.com/1676208?utm_source=rss&utm_medium=rss&utm_campaign=",
-    "description": "我们在腌臜的广告泥潭中，畅想着美好的 AGI 未来。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-    "pubDate": "Sun, 23 Aug 2026 03:53:55 +0000",
-    "source": "爱范儿",
-    "category": "ai-tech"
+    "title": "‘We know this movie’: Iran mocks latest US sanctions",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/24/we-know-this-movie-iran-mocks-latest-us-sanctions?traffic_source=rss",
+    "description": "Abbas Araghchi said new US sanctions, likely to be unveiled Monday, are like watching the 'same movie on repeat'.",
+    "pubDate": "Mon, 24 Aug 2026 04:02:14 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Rapidus 2nm ramp stays on track as Japan readies JPY150 billion investment",
@@ -3636,6 +3642,15 @@
     "pubDate": "Mon, 24 Aug 2026 03:33:42 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "王田苗三问具身大牛：大模型还在「拨号上网」，机器人靠什么拿下真实订单？| WRC 2026",
+    "link": "https://www.leiphone.com/category/private/YOACtSjPnZwavbFo.html",
+    "description": "当狂热的资本逐渐冷静，具身智能行业必须面对一场从“展示Demo”到“真实产线”的生死大考。\n\n\n\n\n    编辑丨岑峰\n                                                                                                       \n\n\n“如果大模型现在还处在‘拨号上网’的时代，那谁能告诉我，制约具身智能规模化的致命卡点到底是什么？大模型解决物理世界问题的巅峰时刻，究竟何时到来？”\n在 2026 世界机器人大会（WRC）的一场重磅圆桌论坛上，北京航空航天大学教授、中国机器人学术泰斗王田苗，向台下的五位",
+    "pubDate": "Mon, 24 Aug 2026 11:23:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech",
     "_stale": true
   },
   {
@@ -3765,6 +3780,15 @@
     "_stale": true
   },
   {
+    "title": "希音开启全球发售，预计募资净额约131.23亿港元",
+    "link": "https://www.leiphone.com/category/industrynews/C0s8Qo4obQJjUEBv.html",
+    "description": "8月24日，希音（00625.HK）正式开启全球发售。高盛、摩根士丹利及摩根大通担任联席保荐人兼整体协调人，基石投资者包括Boyu、Tiger Global、General Atlantic、腾讯、景林、泰康人寿、UBS AM Singapore。业内人士表示，这直观体现出全球主流资本市场对企业综合实力、经营壁垒及长期成长前景的高度认可。\n本次拟全球发售共约27999万股B类股份（可予重新分配及视乎超额配股权行使与否而定），其中香港公开发售近2800万股（可予重新分配），国际发售约25199万股（可予重新分配及视乎超额配股权行使与否而定），发售价格区间定为每股47.6港元至49.5港元。香港公",
+    "pubDate": "Mon, 24 Aug 2026 10:26:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
     "title": "Shanghai accepts YMTC's STAR Market listing application",
     "link": "https://www.digitimes.com/news/a20260824VL204/ymtc-shanghai-nand-flash-profit-ipo.html",
     "description": "China's largest NAND flash maker is moving toward a major Shanghai listing, but global investors will be watching more than the size of the deal. YMTC's IPO comes as chip demand rises, US export controls bite, and memory markets remain highly cyclical, raising questions about whether its rapid profi",
@@ -3780,6 +3804,15 @@
     "pubDate": "Mon, 24 Aug 2026 02:17:53 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "光子跃迁亮相BIRTV 2026：以\"AI+影像\"重构创作范式，三大板块解码下一代影像生态",
+    "link": "https://www.leiphone.com/category/industrynews/x0aFA1VyGB6qPmHp.html",
+    "description": "8月19日，BIRTV 2026（北京国际广播电影电视展览会）在北京拉开帷幕。在这场汇聚全球广电与影像领域顶尖技术与创意的盛会上，光子跃迁以\"AI+影像\"为核心叙事，携个人智能影像生态重磅亮相，向行业展示了一个由AI驱动、以人为中心的影像未来。\n与行业展会常见的深色科技风不同，光子跃迁的展台以纯净白色为主基调，辅以品牌蓝色进行点睛点缀，在千篇一律的深色展台中脱颖而出，传递出品牌年轻、活力、面向未来的基因。白色与蓝色的碰撞，不仅是一种视觉上的耳目一新，更是对\"AI+影像\"这一命题的隐喻，用最纯粹的色彩，承载最智能的影像体验。\n\n这不是一次简单的产品陈列，而是一场关于\"AI如何重塑影像创作\"的完整",
+    "pubDate": "Mon, 24 Aug 2026 10:11:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech",
     "_stale": true
   },
   {
@@ -4030,24 +4063,6 @@
     "link": "https://www.tmtpost.com/8113554.html",
     "description": "同样类型的场景Demo，公司间的差距，大到像是两个时代的产品。",
     "pubDate": "Mon, 24 Aug 2026 09:20:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "机器人运动会现场：有人破纪录，有人“骨折”了",
-    "link": "https://www.tmtpost.com/8113496.html",
-    "description": "机器人会跑、会跳、会打拳，但比赛现场最忙的人，可能是维修工程师。",
-    "pubDate": "Mon, 24 Aug 2026 09:17:43 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "AI办公助手，没有葵花宝典：五款应用万字实测报告",
-    "link": "https://www.tmtpost.com/8113654.html",
-    "description": "单项冠军各有其人。",
-    "pubDate": "Mon, 24 Aug 2026 09:12:59 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech",
     "_stale": true
