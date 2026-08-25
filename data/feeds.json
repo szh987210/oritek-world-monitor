@@ -1,5 +1,53 @@
 [
   {
+    "title": "Omega Just Released a Mini Moonwatch",
+    "link": "https://www.wired.com/story/omega-just-released-a-mini-moonwatch/",
+    "description": "Say hello to a revamped collection of perfectly proportioned 38-mm Speedmasters.",
+    "pubDate": "Tue, 25 Aug 2026 06:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "风雪唐古拉，海尔智家AI科技走进极地考场",
+    "link": "https://www.tmtpost.com/8115136.html",
+    "description": "设备只有在真实场景里扛住了这种“震荡”的折磨，回到普通家庭的客厅与厨房时，面对日常的气候变化或用电波动，才会具备碾压式的稳定性。这便是技术上真正的“降维打击”。",
+    "pubDate": "Tue, 25 Aug 2026 13:49:11 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "对话张朝阳：AI狂奔，为什么要做“反效率”内容",
+    "link": "https://www.tmtpost.com/8115155.html",
+    "description": "在大模型算法追求极致效率的时代，保留一些“笨拙”的空间。",
+    "pubDate": "Tue, 25 Aug 2026 13:44:31 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "上海这栋楼，正在批量制造“一人公司”",
+    "link": "https://www.tmtpost.com/8115834.html",
+    "description": "一个人就是一支队伍。",
+    "pubDate": "Tue, 25 Aug 2026 13:43:04 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "算力风口之下：电子布淘金潮，泥沙俱现",
+    "link": "https://www.tmtpost.com/8115074.html",
+    "description": "AI 算力拉动电子布普涨背后，两条赛道冰火两重天",
+    "pubDate": "Tue, 25 Aug 2026 13:39:47 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Two US carrier groups in Middle East strain navy resources",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/25/two-us-carrier-groups-in-middle-east-strain-navy-resources?traffic_source=rss",
+    "description": "Deploying two US carrier strike groups to the Middle East represents a significant concentration of firepower",
+    "pubDate": "Tue, 25 Aug 2026 05:19:24 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "\n        《有头有脸的大模型公司，集体搞起「匿名公测」》\n      ",
     "link": "http://www.geekpark.net/news/369324",
     "description": "头图来源：oxalpha.com\n \n最近，海外开发者圈又被一个没有名字的模型刷屏了。\n8 月 20 日，OpenRouter 上多了一个叫 Ox Alpha 的模型，100 万 token 上下文、支持图片和视频输入、能调用工具、免费。随后，它被接进 OpenCode、Hermes 等编程 Agent。有人拿它修代码，有人用它跑软件工程基准，还有人盯着 tokenizer 和报错信息，试图猜出它到底是谁家的。\n目前，Ox Alpha 的身份还没有得到官方确认。社区最流行的猜测是，它与智谱 GLM-5.x 系列关系很近；依据是 tokenizer、推理模式报错和部分输出习惯的相似性。但这还只是",
@@ -62,6 +110,14 @@
     "pubDate": "Tue, 25 Aug 2026 04:24:37 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
+  },
+  {
+    "title": "UK drone factories may face attacks from 'unknown sources', says Kremlin adviser",
+    "link": "https://www.bbc.co.uk/news/articles/cg598m3meeyo?at_medium=RSS&at_campaign=rss",
+    "description": "The comments on BBC Newsnight come after the UK announced it has agreed to hand over blueprints for British-made missile components to Ukraine.",
+    "pubDate": "Tue, 25 Aug 2026 04:06:34 GMT",
+    "source": "BBC News",
+    "category": "international"
   },
   {
     "title": "世界模型离通用还有多远？",
@@ -261,6 +317,14 @@
     "description": "Amnesty says India used lethal weapons on ‘Cockroach’ protesters.",
     "pubDate": "Tue, 25 Aug 2026 02:53:48 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "US-Canada trade war escalates as Trump threatens tariff hike on vehicles",
+    "link": "https://www.bbc.co.uk/news/articles/c93vpd60654o?at_medium=RSS&at_campaign=rss",
+    "description": "Mark Carney accused Trump of wanting to \"destroy\" Canada's auto industry, and said he would only resume trade talks if the US comes with the \"right attitude\".",
+    "pubDate": "Tue, 25 Aug 2026 02:51:53 GMT",
+    "source": "BBC News",
     "category": "international"
   },
   {
@@ -922,9 +986,17 @@
   {
     "title": "Tornado devastates village in southwestern France’s Aude region",
     "link": "https://www.france24.com/en/france/20260824-tornado-devastates-village-southwestern-france-aude-region",
-    "description": "A tornado tore through the southwestern French village of Pomas on Monday, injuring 41 people and damaging about 300 homes, authorities said. The storm ripped roofs from buildings as severe weather battered the region, causing power outages and transport disruption and forcing officials to cancel a ",
+    "description": "A tornado tore through the southwestern French village of Pomas on Monday, injuring 41 people and damaging about 300 homes, authorities said. The storm ripped roofs from buildings as severe weather battered the region, causing power outages, transport disruption and forcing officials to cancel a Vue",
     "pubDate": "Mon, 24 Aug 2026 22:16:12 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Lockerbie bombing trial postponed days before it was due to start",
+    "link": "https://www.bbc.co.uk/news/articles/cq63rmj1zl1o?at_medium=RSS&at_campaign=rss",
+    "description": "The trial of a Libyan man is delayed for a third time, after new evidence on the 37-year-old case came to light three days ago.",
+    "pubDate": "Mon, 24 Aug 2026 22:13:36 GMT",
+    "source": "BBC News",
     "category": "international"
   },
   {
@@ -932,6 +1004,14 @@
     "link": "https://www.bbc.co.uk/news/articles/c62m4zn1q6mo?at_medium=RSS&at_campaign=rss",
     "description": "There are more than two million robots working in China's factories - and they are scaling up fast.",
     "pubDate": "Mon, 24 Aug 2026 22:13:20 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Kit Harington joins HBO's Harry Potter series as Gilderoy Lockhart",
+    "link": "https://www.bbc.co.uk/news/articles/c783lnz12vlo?at_medium=RSS&at_campaign=rss",
+    "description": "The role marks Harington's third collaboration with HBO, after starring in the tentpole Game of Thrones and financial drama The Industry.",
+    "pubDate": "Mon, 24 Aug 2026 21:58:49 GMT",
     "source": "BBC News",
     "category": "international"
   },
@@ -3296,38 +3376,6 @@
     "category": "international"
   },
   {
-    "title": "8月25日直播预告 | AFAC2026金融智能创新大赛，总决赛路演倒计时来啦！",
-    "link": "https://www.qbitai.com/2026/08/478447.html",
-    "description": "AFAC2026总决赛路演将于8月25-26日在上海阿纳迪酒店（长宁区临虹路7号）举办。",
-    "pubDate": "Mon, 24 Aug 2026 06:03:13 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Nvidia reportedly weighs Perplexity investment as AI strategy expands beyond chips",
-    "link": "https://www.digitimes.com/news/a20260824VL208/nvidia-investment-chips-software-startup.html",
-    "description": "Nvidia is reportedly in discussions to invest in artificial intelligence startup Perplexity as part of a funding round that would value the company at more than US$30 billion, underscoring the chipmaker's increasingly aggressive effort to deepen its influence across the AI software ecosystem.",
-    "pubDate": "Mon, 24 Aug 2026 05:59:58 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "German auto industry hardens stance against Chinese competition",
-    "link": "https://www.digitimes.com/news/a20260824PD213/auto-industry-germany-competition-europe-market.html",
-    "description": "Germany's top auto industry lobby, the German Association of the Automotive Industry (VDA), is overhauling its strategy as it hardens its stance on China. The group has said China must put forward constructive proposals, quickly stop distorting competition, and avoid using export restrictions on tec",
-    "pubDate": "Mon, 24 Aug 2026 05:55:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Taiwan semiconductor materials hit golden opportunity",
-    "link": "https://www.digitimes.com/news/a20260824PD219/taiwan-supply-chain-materials-semi-taiwan-demand.html",
-    "description": "Rising concerns over potential supply chain chokepoints for critical raw materials have driven the formation of the SEMI Taiwan Materials Alliance. Wei-Wang Chen, General Manager of Everlight Chemical and Chairman of the Taiwan Chemical Industry Association (TCIA), noted that Taiwan boasts the world",
-    "pubDate": "Mon, 24 Aug 2026 05:45:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "China probes use of formaldehyde to keep cabbages fresh",
     "link": "https://www.bbc.co.uk/news/articles/cy9ze48l2yeo?at_medium=RSS&at_campaign=rss",
     "description": "Using the carcinogen to preserve food is prohibited in China, the world's largest producer of cabbages.",
@@ -3336,27 +3384,11 @@
     "category": "international"
   },
   {
-    "title": "Ligue 1: Ferran Torres saves Paris Saint-Germain against Rennes",
-    "link": "https://www.france24.com/en/tv-shows/sports/20260824-ligue-1-ferran-torres-saves-paris-saint-germain-against-rennes",
-    "description": "Paris Saint-Germain snatched a draw away at Rennes (2-2) on the opening day of Ligue 1. Ferran Torres, Paris’s new signing, came on after the break and saved the day for PSG.",
-    "pubDate": "Mon, 24 Aug 2026 05:36:33 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
     "title": "折叠 iPhone 最全爆料汇总：用过的都说好，但有两个大缺点",
     "link": "https://www.ifanr.com/1676426?utm_source=rss&utm_medium=rss&utm_campaign=",
     "description": "一万五的 iPhone，你会买吗\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
     "pubDate": "Mon, 24 Aug 2026 05:19:31 +0000",
     "source": "爱范儿",
-    "category": "ai-tech"
-  },
-  {
-    "title": "阿里视频大模型Wan3.0正式上线，行业评价“稳定、真实、有质感”",
-    "link": "https://www.qbitai.com/2026/08/478427.html",
-    "description": "8月24日，阿里巴巴视频生成大模型Wan3.0正式上线。",
-    "pubDate": "Mon, 24 Aug 2026 05:09:27 +0000",
-    "source": "量子位",
     "category": "ai-tech"
   },
   {
@@ -3464,12 +3496,130 @@
     "category": "ai-tech"
   },
   {
+    "title": "Uber faces fine of nearly $1B over automated driver suspensions",
+    "link": "https://techcrunch.com/2026/08/23/uber-faces-fine-of-nearly-1b-over-automated-driver-suspensions/",
+    "description": "The Dutch Data Protection Authority is fining Uber €825 million in the second-largest penalty issued under Europe’s GDPR.",
+    "pubDate": "Sun, 23 Aug 2026 19:30:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Linkdaze’s smart calendar is built to run a household, not just track a schedule",
+    "link": "https://techcrunch.com/2026/08/23/linkdazes-smart-calendar-is-built-to-run-a-household-not-just-track-a-schedule/",
+    "description": "Linkdaze's smart digital calendar stands out for not putting its features behind a paywall, including an AI meal planner tool.",
+    "pubDate": "Sun, 23 Aug 2026 19:14:08 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "TechCrunch Mobility: The custom chip driving Waymo’s robotaxi ambitions",
+    "link": "https://techcrunch.com/2026/08/23/techcrunch-mobility-the-custom-chip-driving-waymos-robotaxi-ambitions/",
+    "description": "Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation.",
+    "pubDate": "Sun, 23 Aug 2026 16:03:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Selenskyj will 30 Milliarden Euro von der EU",
+    "link": "https://www.dw.com/de/selenskyj-will-30-milliarden-euro-von-der-eu/a-78476565?maca=de-rss-de-all-1119-rdf",
+    "description": "Im ukrainischen Verteidigungshaushalt klafft nach Angaben von Präsident Wolodymyr Selenskyj eine milliardenschwere Lücke. Vor allem für Soldaten und die Produktion von Drohnen brauche das Land zusätzliche Unterstützung.",
+    "pubDate": "2026-08-23T15:45:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Reit-WM: Steve Guerdat ist Weltmeister im Springreiten",
+    "link": "https://www.dw.com/de/reit-wm-steve-guerdat-ist-weltmeister-im-springreiten/a-78477871?maca=de-rss-de-all-1119-rdf",
+    "description": "Bei der Weltmeisterschaft in Aachen setzt sich der Schweizer als beständigster Reiter durch. Drei Deutsche starten ebenfalls aussichtsreich in den Schlusstag der WM, leisten sich aber zu viele Fehler.",
+    "pubDate": "2026-08-23T15:38:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "\n        Gen1.5 模型带来重要进展：物理 AI 正在接近 GPT3 时刻\n      ",
+    "link": "http://www.geekpark.net/news/369223",
+    "description": "如果物理 AI 也能 scaling，意味着什么？\n作者｜Li Yuan\n编辑｜靖宇\n研究人员先教机器人拿起刷子，把桌上的积木扫进碗里。\n然后，他们把刷子拿走，换成一根香蕉。\n机器人抓起香蕉，将它横过来贴住桌面，把积木一点点扫进碗中。\n随后，香蕉又被换成了一只簸箕。机器人这次没有继续照搬「扫」的动作，而是伸出另一只手，把积木推上簸箕，再端起来倒进碗里。\n重点来了，研究人员从来没有在这项任务里教它用香蕉和簸箕，它是自己推理出来的。\n\n\n\n\n\n\n\n\n已关注\n\n关注\n 重播   分享    赞                                随便看看              -->\n",
+    "pubDate": "Sun, 23 Aug 2026 22:35:51 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "\n        世界机器人大会观察，银河星脑的愿景：让所有机器人共享「大脑」\n      ",
+    "link": "http://www.geekpark.net/news/369221",
+    "description": "从人形、轮式到重载，从家庭、零售到工业，银河星脑正在走进更多身体和真实场景。\n\n作者｜Li Yuan\n\n编辑｜靖宇\n \n每年走进世界机器人大会，人们最先看到的都是身体。\n有的机器人长出双腿，有的装上轮子；有的把手指做得越来越像人，有的用钢铁手臂扛起几十公斤重物。我们也因此习惯用外形给机器人分类：会跳舞的是一种，能搬箱子的是另一种，会进厨房和卧室的，又是另一种。\n今年的世界机器人大会上，这套认识开始松动。\n银河通用在分论坛发布了小型双足人形机器人 ET1。它第一次登台便跳起一段高动态舞蹈，也第一次让银河通用拥有了一副可以走路、舞动，并从人类动作中继续学习的双足身体。\n银河通用创始人兼 CTO 王",
+    "pubDate": "Sun, 23 Aug 2026 22:33:26 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Due to need for \"absolute success,\" China delays critical Moon launch to 2027",
+    "link": "https://arstechnica.com/space/2026/08/due-to-need-for-absolute-success-china-delays-critical-moon-launch-to-2027/",
+    "description": "\"The Chang’e 7 mission does not meet the conditions for launch.\"",
+    "pubDate": "Sun, 23 Aug 2026 14:30:16 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "8月25日直播预告 | AFAC2026金融智能创新大赛，总决赛路演倒计时来啦！",
+    "link": "https://www.qbitai.com/2026/08/478447.html",
+    "description": "AFAC2026总决赛路演将于8月25-26日在上海阿纳迪酒店（长宁区临虹路7号）举办。",
+    "pubDate": "Mon, 24 Aug 2026 06:03:13 +0000",
+    "source": "量子位",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Nvidia reportedly weighs Perplexity investment as AI strategy expands beyond chips",
+    "link": "https://www.digitimes.com/news/a20260824VL208/nvidia-investment-chips-software-startup.html",
+    "description": "Nvidia is reportedly in discussions to invest in artificial intelligence startup Perplexity as part of a funding round that would value the company at more than US$30 billion, underscoring the chipmaker's increasingly aggressive effort to deepen its influence across the AI software ecosystem.",
+    "pubDate": "Mon, 24 Aug 2026 05:59:58 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "German auto industry hardens stance against Chinese competition",
+    "link": "https://www.digitimes.com/news/a20260824PD213/auto-industry-germany-competition-europe-market.html",
+    "description": "Germany's top auto industry lobby, the German Association of the Automotive Industry (VDA), is overhauling its strategy as it hardens its stance on China. The group has said China must put forward constructive proposals, quickly stop distorting competition, and avoid using export restrictions on tec",
+    "pubDate": "Mon, 24 Aug 2026 05:55:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Taiwan semiconductor materials hit golden opportunity",
+    "link": "https://www.digitimes.com/news/a20260824PD219/taiwan-supply-chain-materials-semi-taiwan-demand.html",
+    "description": "Rising concerns over potential supply chain chokepoints for critical raw materials have driven the formation of the SEMI Taiwan Materials Alliance. Wei-Wang Chen, General Manager of Everlight Chemical and Chairman of the Taiwan Chemical Industry Association (TCIA), noted that Taiwan boasts the world",
+    "pubDate": "Mon, 24 Aug 2026 05:45:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Ligue 1: Ferran Torres saves Paris Saint-Germain against Rennes",
+    "link": "https://www.france24.com/en/tv-shows/sports/20260824-ligue-1-ferran-torres-saves-paris-saint-germain-against-rennes",
+    "description": "Paris Saint-Germain snatched a draw away at Rennes (2-2) on the opening day of Ligue 1. Ferran Torres, Paris’s new signing, came on after the break and saved the day for PSG.",
+    "pubDate": "Mon, 24 Aug 2026 05:36:33 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "Australian shark attack victim grateful for 'second chance at life'",
     "link": "https://www.bbc.co.uk/news/articles/c87n792dnlno?at_medium=RSS&at_campaign=rss",
     "description": "Leah Stewart was mauled by a shark in June, suffering multiple bites to her arms and legs.",
     "pubDate": "Mon, 24 Aug 2026 05:31:53 GMT",
     "source": "BBC News",
     "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "阿里视频大模型Wan3.0正式上线，行业评价“稳定、真实、有质感”",
+    "link": "https://www.qbitai.com/2026/08/478427.html",
+    "description": "8月24日，阿里巴巴视频生成大模型Wan3.0正式上线。",
+    "pubDate": "Mon, 24 Aug 2026 05:09:27 +0000",
+    "source": "量子位",
+    "category": "ai-tech",
     "_stale": true
   },
   {
@@ -3902,168 +4052,6 @@
     "pubDate": "Mon, 24 Aug 2026 02:02:28 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "India-based Raana Semiconductors in talks to raise US$10.4 million Series A for crystal-growth expansion",
-    "link": "https://www.digitimes.com/news/a20260824VL203/startup-materials-venture-capital-lithium-growth.html",
-    "description": "According to Inc42, Indian semiconductor startup Raana Semiconductors is in advanced discussions to raise about INR100 crore (US$10.44 million) in a Series A funding round, as the company seeks to expand its work in semiconductor and advanced-material crystal growth.",
-    "pubDate": "Mon, 24 Aug 2026 01:57:53 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Jeilin shifts upmarket as high-end image SoCs drive margins higher",
-    "link": "https://www.digitimes.com/news/a20260824PD212/high-end-chips-revenue-market-security.html",
-    "description": "Jeilin's move into higher-end image-processing chips is reshaping its revenue mix and boosting profitability, with implications for cameras, security devices, and drones used by customers worldwide. The Taiwan-based chip designer said new products, tighter cost controls, and broader market reach are",
-    "pubDate": "Mon, 24 Aug 2026 01:56:47 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "年产500万辆，“三蹦子”蹦出海外，背后是一个县城在操盘",
-    "link": "https://www.tmtpost.com/8113874.html",
-    "description": "从田间地头到全球市场：“三蹦子”的出海密码。",
-    "pubDate": "Mon, 24 Aug 2026 09:53:40 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "组件电池收入暴增600%，8年亏掉105亿的老牌光伏企业又翻身了",
-    "link": "https://www.tmtpost.com/8113849.html",
-    "description": "扣非净利润仍亏损8467.37万元。",
-    "pubDate": "Mon, 24 Aug 2026 09:53:36 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "阿丽拉“地标”深圳，奢华度假为何集体进城？",
-    "link": "https://www.tmtpost.com/8113693.html",
-    "description": "丽思卡尔顿隐世、阿丽拉、六善、丽世创造的都市“异世界”。",
-    "pubDate": "Mon, 24 Aug 2026 09:53:30 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "India crushes cockroach dissent as ‘Fix Schools’ campaign riles Modi",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/24/india-crushes-cockroach-dissent-as-fix-schools-campaign-riles-modi?traffic_source=rss",
-    "description": "The Cockroach Janta Party’s ‘Fix the Schools’ campaign in India is facing pushback from BJP leaders and supporters.",
-    "pubDate": "Mon, 24 Aug 2026 01:51:40 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "AI医疗：千亿赛道，谁在领跑？",
-    "link": "https://www.tmtpost.com/8113701.html",
-    "description": "热钱涌入、赛道扎堆，三类玩家疯抢。",
-    "pubDate": "Mon, 24 Aug 2026 09:51:03 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "百年股市的残酷真相：4%的公司创造了全部财富",
-    "link": "https://www.tmtpost.com/8113667.html",
-    "description": "赢家通吃，但赢家也是轮换的。",
-    "pubDate": "Mon, 24 Aug 2026 09:46:26 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Robots shift from POC to ROI as logistics, manufacturing lead",
-    "link": "https://www.digitimes.com/news/a20260824PD208/2026-logistics-manufacturing-robot-inspection.html",
-    "description": "The 2026 World Robot Conference (WRC 2026) ran from Aug. 19 to 23 in Beijing, and one question dominated the show floor: whether robots are truly ready for real work settings and whether customers can calculate a clear return on investment (ROI).",
-    "pubDate": "Mon, 24 Aug 2026 01:43:40 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "USITC opens cylindrical battery probe as China-Korea competition intensifies",
-    "link": "https://www.digitimes.com/news/a20260824VL200/investigation-north-america-lges-nanjing-policy.html",
-    "description": "The US International Trade Commission (USITC) has opened a trade investigation into certain cylindrical batteries and related products. This case could affect battery supply chains spanning Asia, Europe, and North America. The move adds uncertainty for manufacturers, automakers, and consumers worldw",
-    "pubDate": "Mon, 24 Aug 2026 01:43:21 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "8月18日费半 -4.98%：不是 AI 泡沫，是久期清算",
-    "link": "https://www.tmtpost.com/8113619.html",
-    "description": "8/18 费半暴跌 4.98%，光通信腰斩，英伟达却相对抗跌。一周过去，市场归因仍停在 AI 泡沫破了，或英伟达 1050 亿担保吓的。本文用\"长债抽水、明斯基资本栈、四管道流动性\"框架拆解：这不是信仰崩塌，是久期清算——地基期遇上 5.33% 折现率，高 Beta 卫星仓先死。",
-    "pubDate": "Mon, 24 Aug 2026 09:36:03 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "FAN BEAUTY的美妆生意：靠面膜起飞，卡在面霜上",
-    "link": "https://www.tmtpost.com/8113579.html",
-    "description": "除了范冰冰，FAN BEAUTY还剩下什么？",
-    "pubDate": "Mon, 24 Aug 2026 09:36:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "2.6万中国学生30个月追踪：AI把作业分抬高18%，把中考分打掉24%",
-    "link": "https://www.tmtpost.com/8113492.html",
-    "description": "作业越漂亮考试越空心。",
-    "pubDate": "Mon, 24 Aug 2026 09:35:55 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Weekly news roundup: Google diversifies custom chips, TSMC share falls, SK Hynix deepens HBM co-design",
-    "link": "https://www.digitimes.com/news/a20260823VL200/hbm-google-sk-hynix-chips-silicon.html",
-    "description": "Semiconductor supply chains, custom silicon, high-bandwidth memory (HBM), robotics, and India's chip buildout shaped this week's technology agenda, with major moves from Google, Marvell, SK Hynix, Micron, Samsung, and Taiwan's chipmakers. Below are the most-read DIGITIMES stories from the week of Au",
-    "pubDate": "Mon, 24 Aug 2026 01:34:40 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Half of GenAI projects stall at PoC as data gaps widen",
-    "link": "https://www.digitimes.com/news/a20260824PD209/data-genai-governance-taiwan-government.html",
-    "description": "As generative AI spreads rapidly across enterprise operations, gaps in data foundations and governance are emerging as a key dividing line in how quickly AI projects move forward. Anna Yen, chairman of the Taiwan Data Management Association, said financial firms are currently more mature in data gov",
-    "pubDate": "Mon, 24 Aug 2026 01:33:39 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "“消失”的万亿债务：深扒数据中心“影子借贷”、GPU金融化与次贷风险",
-    "link": "https://www.tmtpost.com/8113444.html",
-    "description": "AI数据中心背后的债务账。",
-    "pubDate": "Mon, 24 Aug 2026 09:33:38 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Jinpao Precision anticipates 2H26 growth from AI orders, aerospace progress",
-    "link": "https://www.digitimes.com/news/a20260823PD200/jinpao-ai-server-supply-chain-revenue-growth-2026.html?chid=10",
-    "description": "Thailand-based precision sheet metal manufacturer Jinpao Precision Industry delivered strong results in the second quarter of 2026. Fueled by orders for artificial intelligence (AI) server racks, power cabinets, and energy storage-related structural components, second-quarter consolidated revenue hi",
-    "pubDate": "Mon, 24 Aug 2026 01:31:13 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "赛力斯的利润，去哪了？",
-    "link": "https://www.tmtpost.com/8113567.html",
-    "description": "销量涨了，利润却转亏了。",
-    "pubDate": "Mon, 24 Aug 2026 09:26:14 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
     "_stale": true
   }
 ]
