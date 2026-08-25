@@ -1,5 +1,21 @@
 [
   {
+    "title": "\n        《有头有脸的大模型公司，集体搞起「匿名公测」》\n      ",
+    "link": "http://www.geekpark.net/news/369324",
+    "description": "头图来源：oxalpha.com\n \n最近，海外开发者圈又被一个没有名字的模型刷屏了。\n8 月 20 日，OpenRouter 上多了一个叫 Ox Alpha 的模型，100 万 token 上下文、支持图片和视频输入、能调用工具、免费。随后，它被接进 OpenCode、Hermes 等编程 Agent。有人拿它修代码，有人用它跑软件工程基准，还有人盯着 tokenizer 和报错信息，试图猜出它到底是谁家的。\n目前，Ox Alpha 的身份还没有得到官方确认。社区最流行的猜测是，它与智谱 GLM-5.x 系列关系很近；依据是 tokenizer、推理模式报错和部分输出习惯的相似性。但这还只是",
+    "pubDate": "Tue, 25 Aug 2026 13:14:40 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "France and Saudi Arabia plan Dragon Ball Z theme park near Paris",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/25/08-25-26-saudi-france-dragon-ball-sv?traffic_source=rss",
+    "description": "France and Saudi Arabia plan to invest $7bn in three amusement parks near Paris, including one based on Japanese manga.",
+    "pubDate": "Tue, 25 Aug 2026 05:09:25 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Songs created by AI banned from Australia's music charts",
     "link": "https://www.bbc.co.uk/news/articles/c20vl4vm2pno?at_medium=RSS&at_campaign=rss",
     "description": "The move comes weeks after a DJ admitted using AI to remix a Madonna song that topped the Australian charts.",
@@ -16,12 +32,36 @@
     "category": "ai-tech"
   },
   {
+    "title": "Syrian president thanks nation for getting off US state terror list",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/25/syrian-president-thanks-nation-for-getting-off-us-state-terror-list?traffic_source=rss",
+    "description": "Syrian president Ahmed al-Sharaa thanks his nation for getting off US state terror list.",
+    "pubDate": "Tue, 25 Aug 2026 04:38:24 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "France, Saudi Arabia agree on $7bn theme park project near Paris",
+    "link": "https://www.aljazeera.com/news/2026/8/25/france-saudi-arabia-agree-on-7bn-theme-park-project-near-paris?traffic_source=rss",
+    "description": "Theme park project is among a raft of deals spanning energy, defence, AI and tourism signed during MBS's visit to Paris.",
+    "pubDate": "Tue, 25 Aug 2026 04:38:20 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Ukraine nimmt Russlands Schwarzmeer-Häfen ins Visier",
     "link": "https://www.dw.com/de/ukraine-nimmt-russlands-schwarzmeer-häfen-ins-visier/a-78485726?maca=de-rss-de-all-1119-rdf",
     "description": "Als Reaktion auf russische Angriffe beschießt die Ukraine Russlands Infrastruktur am Schwarzen Meer mit Drohnen. Das trifft Russland massiv: Exporte von Getreide und Erdöl brechen ein.",
     "pubDate": "2026-08-25T04:37:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
+  },
+  {
+    "title": "Taiwan AI server supply chain expands China footprint",
+    "link": "https://www.digitimes.com/news/a20260825PD215/taiwan-ai-server-supply-chain-production-investment.html",
+    "description": "Taiwan's AI server supply chain is stepping up investment in China, but expansion is concentrated in components rather than full-system assembly. By contrast, Taiwan's notebook PC production in China is mostly flat as the industry shifts to Southeast Asia and other non-China locations.",
+    "pubDate": "Tue, 25 Aug 2026 04:24:37 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
   },
   {
     "title": "世界模型离通用还有多远？",
@@ -98,7 +138,7 @@
   {
     "title": "Mideast live: Oil tanker struck by projectile in Strait of Hormuz off Oman",
     "link": "https://www.france24.com/en/middle-east/20260825-mideast-live-oil-tanker-struck-by-projectile-in-strait-of-hormuz-off-oman",
-    "description": "An oil tanker was struck by a projectile in the Strait of Hormuz off the coast of Oman, causing damage but no casualties, the the United Kingdom Maritime Trade Operations (UKMTO) said early Tuesday. Follow our liveblog for the latest updates.",
+    "description": "An oil tanker was struck by a projectile in the Strait of Hormuz off the coast of Oman, causing damage but no casualties, the the United Kingdom Maritime Trade Operations (UKMTO) said early Tuesday. Tehran has imposed an effective blockade of the strait since the United States and Israel struck Iran",
     "pubDate": "Tue, 25 Aug 2026 03:31:45 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
@@ -555,7 +595,7 @@
     "title": "地址决定货色：电商AB货的分级生意",
     "link": "https://www.tmtpost.com/8115466.html",
     "description": "同一款商品按收货地址分层发货，一线城市拿到优品，乡镇消费者收到次品。价格内卷传导到品控，监管正在收紧。",
-    "pubDate": "Tue, 25 Aug 2026 09:16:57 +0800",
+    "pubDate": "Tue, 25 Aug 2026 09:16:00 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
     "category": "policy"
   },
@@ -768,9 +808,9 @@
     "category": "semiconductor"
   },
   {
-    "title": "Iran war live: US slaps new sanctions on Iran, warns Tehran trade partners",
+    "title": "Iran war live: Pakistan reports progress on restoring US-Iran MoU",
     "link": "https://www.aljazeera.com/news/liveblog/2026/8/25/iran-war-live-drat?traffic_source=rss",
-    "description": "US tells countries to choose between Washington and Tehran, warns Iran's trade partners they will face consequences.",
+    "description": "Washington has slapped new sanctions on Tehran and warned Iran's trade partners they will face consequences.",
     "pubDate": "Tue, 25 Aug 2026 00:00:00 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
@@ -824,7 +864,7 @@
     "category": "ai-tech"
   },
   {
-    "title": "Trump administration to revoke visas of foreigners seeking asylum in US, officials say",
+    "title": "Trump administration to revoke hundreds of thousands of asylum visas, officials say",
     "link": "https://www.france24.com/en/americas/20260824-trump-administration-revoke-visas-foreigners-seeking-asylum",
     "description": "President Donald Trump’s administration said on Monday it plans to revoke non-immigrant visas held by foreigners who applied for or are seeking asylum in the United States. The move could affect up to 200,000 people, the Associated Press reported, potentially making it the largest mass visa revocati",
     "pubDate": "Mon, 24 Aug 2026 22:54:49 GMT",
@@ -3304,14 +3344,6 @@
     "category": "international"
   },
   {
-    "title": "Australian shark attack victim grateful for 'second chance at life'",
-    "link": "https://www.bbc.co.uk/news/articles/c87n792dnlno?at_medium=RSS&at_campaign=rss",
-    "description": "Leah Stewart was mauled by a shark in June, suffering multiple bites to her arms and legs.",
-    "pubDate": "Mon, 24 Aug 2026 05:31:53 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "折叠 iPhone 最全爆料汇总：用过的都说好，但有两个大缺点",
     "link": "https://www.ifanr.com/1676426?utm_source=rss&utm_medium=rss&utm_campaign=",
     "description": "一万五的 iPhone，你会买吗\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
@@ -3324,14 +3356,6 @@
     "link": "https://www.qbitai.com/2026/08/478427.html",
     "description": "8月24日，阿里巴巴视频生成大模型Wan3.0正式上线。",
     "pubDate": "Mon, 24 Aug 2026 05:09:27 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "WRC 2026｜原生全模态世界模型：从模拟世界到交互世界",
-    "link": "https://www.qbitai.com/2026/08/478421.html",
-    "description": "",
-    "pubDate": "Mon, 24 Aug 2026 05:04:52 +0000",
     "source": "量子位",
     "category": "ai-tech"
   },
@@ -3440,20 +3464,22 @@
     "category": "ai-tech"
   },
   {
-    "title": "Uber faces fine of nearly $1B over automated driver suspensions",
-    "link": "https://techcrunch.com/2026/08/23/uber-faces-fine-of-nearly-1b-over-automated-driver-suspensions/",
-    "description": "The Dutch Data Protection Authority is fining Uber €825 million in the second-largest penalty issued under Europe’s GDPR.",
-    "pubDate": "Sun, 23 Aug 2026 19:30:00 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "Australian shark attack victim grateful for 'second chance at life'",
+    "link": "https://www.bbc.co.uk/news/articles/c87n792dnlno?at_medium=RSS&at_campaign=rss",
+    "description": "Leah Stewart was mauled by a shark in June, suffering multiple bites to her arms and legs.",
+    "pubDate": "Mon, 24 Aug 2026 05:31:53 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Linkdaze’s smart calendar is built to run a household, not just track a schedule",
-    "link": "https://techcrunch.com/2026/08/23/linkdazes-smart-calendar-is-built-to-run-a-household-not-just-track-a-schedule/",
-    "description": "Linkdaze's smart digital calendar stands out for not putting its features behind a paywall, including an AI meal planner tool.",
-    "pubDate": "Sun, 23 Aug 2026 19:14:08 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "WRC 2026｜原生全模态世界模型：从模拟世界到交互世界",
+    "link": "https://www.qbitai.com/2026/08/478421.html",
+    "description": "",
+    "pubDate": "Mon, 24 Aug 2026 05:04:52 +0000",
+    "source": "量子位",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
     "title": "SK Hynix charts advanced HBM packaging path: hybrid bonding, Intel EMIB and 3D integration",
@@ -4036,33 +4062,6 @@
     "link": "https://www.tmtpost.com/8113567.html",
     "description": "销量涨了，利润却转亏了。",
     "pubDate": "Mon, 24 Aug 2026 09:26:14 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "AI packaging demand exposes supply-chain gaps for Taiwan materials makers",
-    "link": "https://www.digitimes.com/news/a20260824PD204/capacity-ase-demand-supplier-investment.html",
-    "description": "AI demand is pushing semiconductor manufacturing deeper into advanced packaging, and ASE vice president Hiro Huang said suppliers are meeting less than half of overall demand. He warned that capacity for the next three years is already largely booked, underscoring pressure on Taiwan's materials make",
-    "pubDate": "Mon, 24 Aug 2026 01:22:23 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "India targets domestic mobile phone design capabilities with new US$7.5 billion manufacturing scheme",
-    "link": "https://www.digitimes.com/news/a20260824VL201/manufacturing-mobile-phone-design-government-electronics.html",
-    "description": "India has announced an INR625 billion (US$6.53 billion) Mobile Phone Manufacturing Scheme aimed at moving the country's electronics industry beyond large-scale assembly and toward higher domestic value addition, indigenous product design, and locally owned intellectual property.",
-    "pubDate": "Mon, 24 Aug 2026 01:20:11 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "WRC的场景大考，谁在用心做Demo，谁在敷衍交答卷",
-    "link": "https://www.tmtpost.com/8113554.html",
-    "description": "同样类型的场景Demo，公司间的差距，大到像是两个时代的产品。",
-    "pubDate": "Mon, 24 Aug 2026 09:20:00 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech",
     "_stale": true
