@@ -1,5 +1,61 @@
 [
   {
+    "title": "\n        从「告警找人」到「Agent 先接手」，「古茗」如何用 AI Agent 重构万店运维？\n      ",
+    "link": "http://www.geekpark.net/news/369401",
+    "description": "AI to B，要真的能「救火」。\n去年年底的一个深夜，古茗科技集团运维负责人刘星光再次被手机震动惊醒——屏幕上跳动着上百条数据库告警短信。\n「这不是什么意外。」刘星光说，「古茗全国上万家门店，每一杯奶茶的下单、库存调度、会员积分、联名营销，都跑在 100 多个数据库实例上——RDS、Redis、MongoDB、PolarDB，什么都有。门店在扩，订单在涨，联名活动的频率比以往翻了一倍，尖刺流量来得快去得也快。」\n而支撑这一切的 DBA 团队，一共就那么几个人。\n「每天 70% 的时间耗在『接警—登跳板机—看 Process List—Kill 慢 SQL—判断是否扩容』这套流程上。」刘星光回",
+    "pubDate": "Wed, 26 Aug 2026 16:02:33 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Huawei and HP sign multiyear global patent deal covering Wi-Fi tech",
+    "link": "https://www.digitimes.com/news/a20260826VL206/huawei-hp-patent-wi-fi-technology.html",
+    "description": "Huawei Technologies and HP Inc. have signed a multiyear global patent cross-licensing agreement that includes a license for HP to use certain Huawei Wi-Fi patents, the Chinese technology company said Wednesday.",
+    "pubDate": "Wed, 26 Aug 2026 07:43:57 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "GATE 2026 opens with Sino-ASEAN auto cooperation in focus",
+    "link": "https://www.digitimes.com/news/a20260826PD233/2026-technology-expo-asean-investment.html",
+    "description": "The Global Automotive and Technology Expo 2026 (GATE 2026) officially opened on August 26, spotlighting efforts to deepen Malaysia's local supply chain, accelerate technology adoption and position the country as ASEAN's leading automotive and smart mobility hub. Cooperation between China, Malaysia a",
+    "pubDate": "Wed, 26 Aug 2026 07:41:47 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Palestinian boy shot during Israeli raid on UNRWA centre",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/26/palestinian-boy-shot-during-israeli-raid-on-unrwa-centre?traffic_source=rss",
+    "description": "Video shows the moment a Palestinian boy was shot during an Israeli raid on a UN facility in occupied East Jerusalem.",
+    "pubDate": "Wed, 26 Aug 2026 07:41:02 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The RSF’s defeat will not end Sudan’s war but merely fragment it",
+    "link": "https://www.aljazeera.com/opinions/2026/8/26/the-rsfs-defeat-will-not-end-sudans-war-but-merely-fragment-it?traffic_source=rss",
+    "description": "Sudanese army's battlefield gains rely on an armed coalition it may struggle to control once the common enemy is gone.",
+    "pubDate": "Wed, 26 Aug 2026 07:26:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Man United’s Fernandes, City’s Shaw named PFA Players of the Year",
+    "link": "https://www.aljazeera.com/sports/2026/8/26/man-uniteds-fernandes-citys-shaw-named-pfa-players-of-the-year?traffic_source=rss",
+    "description": "Fernandes rewarded for an outstanding season with a record number of assists in the league; Shaw builds on league win and Golden Boot.",
+    "pubDate": "Wed, 26 Aug 2026 07:20:06 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Trump threatens Iran’s partners: How do secondary sanctions work?",
+    "link": "https://www.aljazeera.com/economy/2026/8/26/trump-threatens-irans-partners-how-do-secondary-sanctions-work?traffic_source=rss",
+    "description": "The US has used threats of secondary sanctions, whereby countries trading with a sanctioned country also face sanctions.",
+    "pubDate": "Wed, 26 Aug 2026 07:18:07 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Feuer-Katastrophe in einer Entbindungsstation in Pakistan",
     "link": "https://www.dw.com/de/feuer-katastrophe-in-einer-entbindungsstation-in-pakistan/a-78503891?maca=de-rss-de-all-1119-rdf",
     "description": "Der Brand brach in den frühen Morgenstunden in der Neugeborenenstation eines Krankenhauses in Islamabad aus. Für fast alle Babys gab es keine Rettung.",
@@ -14,6 +70,22 @@
     "pubDate": "Wed, 26 Aug 2026 15:10:12 +0800",
     "source": "极客公园",
     "category": "ai-tech"
+  },
+  {
+    "title": "Blog Review: Aug. 26",
+    "link": "https://semiengineering.com/blog-review-aug-26-3/",
+    "description": "GAA to CFET; prioritize communication, not compute; verification headwinds; scale-up networks; local AI; high-volume CPO.\nThe post Blog Review: Aug. 26 appeared first on Semiconductor Engineering.",
+    "pubDate": "Wed, 26 Aug 2026 07:01:36 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Chip Security Moves From Checkbox Compliance To Continuous Defense",
+    "link": "https://semiengineering.com/chip-security-moves-from-checkbox-compliance-to-continuous-defense/",
+    "description": "As AI, chiplets, software-defined systems, and new regulations expand the attack surface, visibility, accountability, and real deployment discipline matter more than certification alone. \nThe post Chip Security Moves From Checkbox Compliance To Continuous Defense appeared first on Semiconductor Engi",
+    "pubDate": "Wed, 26 Aug 2026 07:01:27 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
   },
   {
     "title": "Bill Gates says we’ve passed AI’s danger thresholds. Now what?",
@@ -46,6 +118,30 @@
     "pubDate": "2026-08-26T07:00:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
+  },
+  {
+    "title": "China chip equipment maker Naura posts 25% revenue growth, but R&amp;D and margins squeeze profit",
+    "link": "https://www.digitimes.com/news/a20260826VL215/naura-technology-ic-manufacturing-equipment-growth-revenue-profit.html",
+    "description": "Naura Technology Group posted faster revenue growth than profit in the first half of 2026, with stronger semiconductor equipment sales offset by heavier R&D spending, higher sales costs and weaker gross margins.",
+    "pubDate": "Wed, 26 Aug 2026 06:55:34 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "India's AI buildout accelerates as Vera Rubin demand meets data center expansion",
+    "link": "https://www.digitimes.com/news/a20260826VL203/data-center-demand-rubin-infrastructure-expansion.html",
+    "description": "India's AI infrastructure push is gaining pace, with implications that extend far beyond the country's borders. According to Bloomberg, AM Intelligence has ordered 9,000 Nvidia Vera Rubin systems as global demand for advanced computing continues to strain supply, underscoring how power, data centers",
+    "pubDate": "Wed, 26 Aug 2026 06:54:46 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Hot Chips 2026: Samsung advances LPDDR5X-PIM as HBM costs mount",
+    "link": "https://www.digitimes.com/news/a20260826VL212/samsung-2026-hbm-dram-silicon.html",
+    "description": "At Hot Chips 2026, Samsung Electronics moved processing-in-memory (PIM) closer to practical deployment, presenting what it described as the industry's first LPDDR-based PIM device for AI inference alongside working silicon, performance data and a design intended to minimize changes to existing memor",
+    "pubDate": "Wed, 26 Aug 2026 06:49:46 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
   },
   {
     "title": "把城市变成机器人的“试验场”，长沙的具身智能实验",
@@ -86,6 +182,22 @@
     "pubDate": "Wed, 26 Aug 2026 06:30:38 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
+  },
+  {
+    "title": "Deloitte Taiwan sees slow physical AI adoption despite high expectations",
+    "link": "https://www.digitimes.com/news/a20260826PD214/deloitte-taiwan-adoption-talent-manufacturing.html",
+    "description": "Deloitte Taiwan said global companies are rushing to discuss physical AI, but only a small share have embedded it into day-to-day operations, highlighting a widening gap between ambition and deployment. For readers worldwide, the finding signals that industrial AI's next phase may advance unevenly, ",
+    "pubDate": "Wed, 26 Aug 2026 06:16:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "LGES weighs US drone battery push against brand risk",
+    "link": "https://www.digitimes.com/news/a20260826PD210/lges-brand-lg-market-supply-chain.html",
+    "description": "LG Energy Solution (LGES) is weighing whether to expand into the US defense supply chain as the EV market remains sluggish and the company broadens into energy storage systems (ESS). The possible move has drawn attention because LG Group has long stayed away from defense businesses since its split w",
+    "pubDate": "Wed, 26 Aug 2026 06:09:53 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
   },
   {
     "title": "穿越周期的钱大妈：社区生鲜的稳健增长样本",
@@ -312,6 +424,14 @@
     "category": "ai-tech"
   },
   {
+    "title": "LegalZoom Promo Code: Exclusive 10% Off LLC Formations",
+    "link": "https://www.wired.com/story/legalzoom-promo-code/",
+    "description": "Save on top services at LegalZoom, like LLC registration, incorporation, estate plans, and more with coupons and deals from WIRED.",
+    "pubDate": "Wed, 26 Aug 2026 05:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
     "title": "HP Coupon Codes and Deals August 2026",
     "link": "https://www.wired.com/story/hp-coupon-code/",
     "description": "Save up to 60%, plus an extra 20% with HP promo codes for laptops, printers, PCs, and more tech.",
@@ -328,17 +448,9 @@
     "category": "ai-tech"
   },
   {
-    "title": "Tuft & Needle Promo Codes: 30% Off | August 2026",
-    "link": "https://www.wired.com/story/tuft-and-needle-promo-code/",
-    "description": "Save 30% on best-selling mattresses with our top Tuft & Needle coupon codes.",
-    "pubDate": "Wed, 26 Aug 2026 05:00:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "LegalZoom Promo Code: Exclusive 10% Off LLC Formations",
-    "link": "https://www.wired.com/story/legalzoom-promo-code/",
-    "description": "Save on top services at LegalZoom, like LLC registration, incorporation, estate plans, and more with coupons and deals from WIRED.",
+    "title": "PlayStation Discount Code: Save on PS5 Games August 2026",
+    "link": "https://www.wired.com/story/playstation-discount-code/",
+    "description": "Want to stretch your gaming budget? Learn how to unlock massive savings on PS5 games, DualSense controllers, and PlayStation Plus memberships using gift cards and exclusive promotional codes.",
     "pubDate": "Wed, 26 Aug 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -352,17 +464,17 @@
     "category": "ai-tech"
   },
   {
-    "title": "PlayStation Discount Code: Save on PS5 Games August 2026",
-    "link": "https://www.wired.com/story/playstation-discount-code/",
-    "description": "Want to stretch your gaming budget? Learn how to unlock massive savings on PS5 games, DualSense controllers, and PlayStation Plus memberships using gift cards and exclusive promotional codes.",
+    "title": "Vitamix Promo Codes and Deals: $25 Off + Free Shipping",
+    "link": "https://www.wired.com/story/vitamix-promo-code/",
+    "description": "Score discounts on blenders, food processors, immersion blenders, and more with our selection of Vitamix coupons and deals.",
     "pubDate": "Wed, 26 Aug 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
   },
   {
-    "title": "Vitamix Promo Codes and Deals: $25 Off + Free Shipping",
-    "link": "https://www.wired.com/story/vitamix-promo-code/",
-    "description": "Score discounts on blenders, food processors, immersion blenders, and more with our selection of Vitamix coupons and deals.",
+    "title": "Tuft & Needle Promo Codes: 30% Off | August 2026",
+    "link": "https://www.wired.com/story/tuft-and-needle-promo-code/",
+    "description": "Save 30% on best-selling mattresses with our top Tuft & Needle coupon codes.",
     "pubDate": "Wed, 26 Aug 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -3520,68 +3632,12 @@
     "category": "international"
   },
   {
-    "title": "AI Moves Deeper Into Hospitals, but Who Pays Remains the Hard Question",
-    "link": "https://www.tmtpost.com/8116017.html",
-    "description": "The market for AI in healthcare has grown rapidly, with imaging tools widely deployed and large technology firms, device makers and specialist startups all competing. Scale is real; sustainable payment models are still forming.",
-    "pubDate": "Tue, 25 Aug 2026 16:09:02 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Iran says it is 'fully prepared' to counter widened US economic sanctions",
-    "link": "https://www.bbc.co.uk/news/articles/c0qxew81y83o?at_medium=RSS&at_campaign=rss",
-    "description": "The US calls its latest sanctions on Iran an \"economic D-Day\", but Tehran says it has a plan to address them.",
-    "pubDate": "Tue, 25 Aug 2026 08:08:26 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "《道路交通安全法》拟大改：「电鸡」限速上调至 20km/h，将严管「暴走团」占道",
     "link": "https://www.ifanr.com/1676652?utm_source=rss&utm_medium=rss&utm_campaign=",
     "description": "车进步了，法规也要跟着进步。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
     "pubDate": "Tue, 25 Aug 2026 08:06:50 +0000",
     "source": "爱范儿",
     "category": "policy"
-  },
-  {
-    "title": "Anthropic bets on in-house chips, reshaping ASIC orders",
-    "link": "https://www.digitimes.com/news/a20260825PD222/anthropic-asic-chips-silicon-design.html",
-    "description": "Anthropic confirmed on August 5 that it is building an internal silicon team to design custom chips for its Claude models, signaling a sharper push into self-developed AI hardware. The move is set to influence the company's compute procurement plans and could reshape order shares among ASIC vendors.",
-    "pubDate": "Tue, 25 Aug 2026 07:57:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Luxshare breaks beyond consumer electronics: Auto sales soar 274%, data centres jump 50%",
-    "link": "https://www.digitimes.com/news/a20260825VL210/luxshare-electronics-sales-data-revenue.html",
-    "description": "Luxshare Precision posted a 40.16% rise in first-half 2026 revenue as rapid growth in automotive electronics, communications and data-centre products reduced its reliance on consumer electronics.",
-    "pubDate": "Tue, 25 Aug 2026 07:56:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Thai vendor confronts Israeli tourists, raises Palestinian flag",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/25/thai-vendor-confronts-israeli-tourists-raises-palestinian-flag?traffic_source=rss",
-    "description": "A Thai vendor confronted Israeli tourists outside his shop on the island of Phuket, waving a Palestinian flag.",
-    "pubDate": "Tue, 25 Aug 2026 07:50:26 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Bangladesh-India reset stalls over Hasina: What would break the deadlock?",
-    "link": "https://www.aljazeera.com/news/2026/8/25/hasina-spat-stalls-bangladesh-india-reset-what-would-break-the-deadlock?traffic_source=rss",
-    "description": "Analysts say an Indian commitment not to allow ousted Bangladesh PM to engage in politics from their soil would help.",
-    "pubDate": "Tue, 25 Aug 2026 07:46:56 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Federer to play tennis at US Open but rules out Williams-like return",
-    "link": "https://www.aljazeera.com/sports/2026/8/25/federer-to-play-tennis-at-us-open-but-rules-out-williams-like-return?traffic_source=rss",
-    "description": "The 20-time Grand Slam champion confirmed he’s only going to play in an exhibition match and has no plans to return.",
-    "pubDate": "Tue, 25 Aug 2026 07:45:34 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "Kit Harington replaces Nicholas Hoult in HBO's Harry Potter series",
@@ -3598,14 +3654,6 @@
     "pubDate": "Tue, 25 Aug 2026 07:35:58 +0000",
     "source": "爱范儿",
     "category": "ai-tech"
-  },
-  {
-    "title": "Premier League: Chelsea defeat Fulham in Xabi Alonso's first game as manager",
-    "link": "https://www.france24.com/en/tv-shows/sports/20260825-premier-league-chelsea-defeat-fulham-in-xabi-alonso-s-first-game-as-manager",
-    "description": "In Xabi Alonso’s first match as manager, Chelsea beat Fulham 3–2 in the Premier League.",
-    "pubDate": "Tue, 25 Aug 2026 07:31:47 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "Google AI 把「地球」玩坏了，这是对 10 亿人的不负责",
@@ -3808,219 +3856,151 @@
     "category": "international"
   },
   {
-    "title": "What to know about Trump's Canada tariffs and the escalating trade war",
-    "link": "https://www.france24.com/en/americas/20260825-what-to-know-about-trump-s-tariffs-on-canadian-goods-as-neigbours-spiral-into-trade-war",
-    "description": "Canada plans to respond to US President Donald Trump's new tariffs on Tuesday, as the once close neighbouring allies spiral into a trade war. Ottawa and Washington failed to reach a deal on Friday to avert new 50 percent US tariffs on select Canadian goods after weeks of talks.",
-    "pubDate": "Tue, 25 Aug 2026 07:21:46 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
+    "title": "对话雷鸟创新李宏伟：智能眼镜的终局仍然是「AI + AR」，AI 是我们现在最重要的事丨多样性公司",
+    "link": "https://www.ifanr.com/1676571?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "让 AI 「增强人类」，而不是让 AI 取代人类。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Tue, 25 Aug 2026 02:46:22 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
   },
   {
-    "title": "From podium to production line: China's robots ace the sprint, but stumble on the real test",
-    "link": "https://www.digitimes.com/news/a20260825PD220/robot-robotics-beijing-manufacturing.html",
-    "description": "The 2nd World Humanoid Robot Games put China's rapid advances in robotics on full display — but beyond the record-breaking sprints and human-robot sports demonstrations, the event raised a tougher question for the industry: can humanoid robots move past the highlight reel and become reliable, econom",
-    "pubDate": "Tue, 25 Aug 2026 07:20:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
+    "title": "实测小米 AI 手机：性能超 iPhone，端侧 AI 超级快",
+    "link": "https://www.ifanr.com/1676596?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "真的很快。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Tue, 25 Aug 2026 02:41:56 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
   },
   {
-    "title": "China foundry Nexchip breaks beyond display chips: CIS reaches 25% of revenue",
-    "link": "https://www.digitimes.com/news/a20260825VL214/nexchip-revenue-chips-display-cis.html",
-    "description": "Nexchip Semiconductor reported higher first-half 2026 revenue as broadening demand for CMOS image sensors, power management chips and display drivers diversified its product mix, even though profit declined.",
-    "pubDate": "Tue, 25 Aug 2026 07:15:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
+    "title": "Meoo打通AI做App全链路，“一句话”就能做出安卓与iOS应用",
+    "link": "https://www.leiphone.com/category/industrynews/lMrMgzHoUVOGceOK.html",
+    "description": "近日，阿里AI应用搭建产品Meoo（秒悟）打通了自然语言做App的全链路。不懂编程的普通用户只需用自然语言描述想法，Meoo即可自动生成页面与功能，支持真机测试、持续修改与一键打包，最终产出可直接安装使用的原生应用，覆盖安卓与iOS双端。“一个想法”到“一款应用”之间的门槛被大幅拉低。\n \n过去，想法要变成真正可以安装的App，中间隔着产品设计、界面开发、数据处理、真机测试和打包发布等多道环节。即使外包给开发者或借助低代码工具，也普遍面临成本高、周期长、专业逻辑欠缺等问题。“想得到、做不出”成为大量非技术用户的共同痛点。\n \nMeoo把“做App”的链路压缩为一次对话。用户进入Meoo选择“手",
+    "pubDate": "Tue, 25 Aug 2026 10:32:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
   },
   {
-    "title": "从1.1元出厂价到9.9美元售价，华北产业带想拿回“控价权”｜ 出海参考",
-    "link": "https://www.tmtpost.com/8114673.html",
-    "description": "华北产业带能不能拿回“售价差”，跨境电商不是答案本身，它只是让华北第一次有机会，回答这个问题。",
-    "pubDate": "Tue, 25 Aug 2026 15:10:25 +0800",
+    "title": "豆包工作正式发布：让 AI 从生成内容到完成工作",
+    "link": "https://www.leiphone.com/category/industrynews/bzevr2er8UPJfMtm.html",
+    "description": "8月25日，豆包工作正式发布。作为豆包面向生产力场景推出的全新 Agent 产品与品牌，豆包工作能围绕用户目标自主拆解任务、调用工具、持续推进复杂工作流程。豆包工作还与飞书深度打通，让 Agent 基于企业上下文更准确地完成工作。\n目前，豆包工作电脑版已可通过官网下载，用户也可在最新豆包电脑版中直接使用。即日起下载登录或升级，便可免费领取 30 天订阅权益。\n\n针对日常办公中最常见、也最花时间的工作，豆包工作提供了强大的内容生成和编辑能力。无论是写方案、整理会议纪要、起草报告、做调研总结，还是做表格、分析数据，豆包工作都能交付高质量的任务结果。在更复杂的制作场景中，豆包工作还能生成和编辑图片、",
+    "pubDate": "Tue, 25 Aug 2026 10:30:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "李飞飞押注的空间智能：生成的世界，如何「经得起折腾」？",
+    "link": "https://www.leiphone.com/category/academic/cFG5JACmqzkxWGDb.html",
+    "description": "AI 生成的大多数世界“中看不中用”，根本原因是 AI 少了一本“底账”：一份记住世界里有什么、每次行动改变了什么、并且能被检查和回滚的状态记录。\n\n\n\n\n\n    作者丨刘紫东\n\n    编辑丨幸丽娟\n                                                                                                       \n\n\n李飞飞押注的空间智能，被视为世界模型的主流路线之一。\n这条路线的基本构想是，让 AI 从识别二维画面，走向理解、推理和生成可进入、可操作、可持续编辑的三维世界。\n但真正的考验在于：一个",
+    "pubDate": "Tue, 25 Aug 2026 10:23:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "通用模型竟然比医疗专用模型更懂医疗？一篇 ACL 论文的两个反直觉发现 | GAIR Paper 123",
+    "link": "https://www.leiphone.com/category/academic/bWyxqU8pelb4TNJg.html",
+    "description": "Doubao 、DeepSeek 在三语数据集上的表现，普遍超过 GPT-4o 和 Gemini。\n\n\n    作者丨幸丽娟\n    编辑丨岑   峰\n                                                                                                       \n\n\n医疗，是大模型落地最特殊的场景之一。\n特殊在哪里？特殊在一个很微小的错误，就可能导致致命的后果；也特殊在你不能用直觉去判断它\"行\"还是\"不行\"——\n你觉得医疗专用模型肯定比通用模型更懂医疗？直觉上是。但实验数据不支持。\n你觉得英语训练出",
+    "pubDate": "Tue, 25 Aug 2026 10:18:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "IJCAI 2026 复盘局：中国人投了最多的稿，却到不了最多的场",
+    "link": "https://www.leiphone.com/category/academic/PwTwlHYVu0ZCHAuW.html",
+    "description": "CCF降级没能让中国学者少投，但一纸签证却让他们没法到场。\n\n\n\n\n\n    作者丨幸丽娟\n\n    编辑丨岑   峰\n                                                                                                       \n\n\n德国不莱梅当地时间8月22日下午，IJCAI-ECAI 2026 迎来闭幕式。程序委员会主席 Diego Calvanese走上讲台，用一组详实的数据为这场为期一周的学术盛会画上句号。\n而站在这个节点上，IJCAI所呈现的不仅是论文与参会者的数字图谱，也是一张值得 A",
+    "pubDate": "Tue, 25 Aug 2026 10:11:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "French tourist dies in Death Valley after car gets stuck in mud",
+    "link": "https://www.bbc.co.uk/news/articles/clyl81jlzr2o?at_medium=RSS&at_campaign=rss",
+    "description": "The 68-year-old man was found dead in California's salt flats amid 116°F (46.6C) heat.",
+    "pubDate": "Tue, 25 Aug 2026 02:08:57 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "IJCAI 2026 四项论文奖、三项个人成就奖，回答 AI 的「来路」与「去路」",
+    "link": "https://www.leiphone.com/category/private/tuJcJrenqJuB2Isk.html",
+    "description": "AI 正在走的，是一条螺旋上升的路。\n\n\n\n\n\n    作者丨幸丽娟\n\n    编辑丨岑   峰\n                                                                                                       \n\n\n8月20日，IJCAI-ECAI 2026 正会进入第三天。 如果说18日的开幕式是荣誉的加冕，那么今天，聚光灯从获奖者转向了获奖研究本身。\nAIJ/JAIR 获奖论文报告环节，获奖论文作者依次登台发表获奖感言、回顾获奖论文，诠释这些经典研究在最新语境下的生命力和再思考。从1990年的抽象",
+    "pubDate": "Tue, 25 Aug 2026 10:06:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "承泰科技CTO周珂：AI雷达的时代已经到来",
+    "link": "https://www.leiphone.com/category/transportation/Nfqbj40LKk9Lb4KL.html",
+    "description": "近年来，\"AI雷达\"成为行业热词。围绕它是什么、为何现在出现、将如何改变毫米波雷达产业，业界正在形成越来越多的讨论。本文基于公开研究、产业实践及超级雷达社区的行业讨论，对其中的核心观点进行梳理。超级雷达社区由承泰科技发起，面向雷达产业链、科研机构与开发者开放，关注技术交流、工具共建、数据协作与标准讨论。\nAI雷达 vs 传统雷达\nAI雷达，简单说是AI赋能的雷达，准确说是支持AI模型部署、由模型定义功能的雷达（Model-Defined Radar, MDR）。\n传统雷达的功能由工程师把人工设计的算法和硬性规则写进固件，出厂即定格；AI雷达的功能则由可训练、可迭代的AI模型实现，模型可部署、替",
+    "pubDate": "Tue, 25 Aug 2026 09:44:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "追觅造车一周年：展车地库蒙灰，千人团队剩约百人，烧掉的钱谁来买单？",
+    "link": "https://www.ifanr.com/1676439?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "一年前全网围观追觅造车，一年后全网关注追觅裁员。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Tue, 25 Aug 2026 00:49:24 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Tesla to inaugurate new Semi factory in Nevada next month",
+    "link": "https://electrek.co/2026/08/24/tesla-semi-factory-inauguration-nevada/",
+    "description": "Tesla says it will officially inaugurate its new Semi factory in Nevada next month, marking the grand opening of the plant it has designed to build 50,000 electric trucks a year.\nThe company announced the event through its Tesla Semi account, though the milestone comes roughly five months after Tesl",
+    "pubDate": "Tue, 25 Aug 2026 00:40:18 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "早报｜小米把「OK」藏进玄戒O3,雷军:不建议拆开看彩蛋/vivo官宣X500系列/MINI车机接入阿里与DeepSeek模型",
+    "link": "https://www.ifanr.com/1676529?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "· 曝 Hugging Face 评估出售，交易估值至少 130 亿美元\r\n· Counterpoint：今年全球智能手机出货量预计下降 14.3%\r\n· 蔚来智驾负责人任少卿创立具身智能公司\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Tue, 25 Aug 2026 00:25:59 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "\n        TRAE、扣子并入豆包，字节将推「豆包工作」；拓竹回应 2027 年 IPO 传闻：消息不实；要钱还是使命，Anthropic 面试流程曝光｜极客早知道\n      ",
+    "link": "http://www.geekpark.net/news/369303",
+    "description": "TRAE、扣子并入豆包，字节将推统一办公品牌 \"豆包工作\"\n8 月 24 日消息，字节跳动对旗下的办公 AI 产品完成了一轮团队整合，TRAE、扣子（Coze）团队将整体并入豆包体系，其中 TRAE Work、扣子将与豆包在工作场景的产品能力进行整合；TRAE IDE 及 CLI 将作为豆包品牌下的编程产品线持续发展。\n此次调整后，字节也进一步明确了豆包的 AI 主干业务定位，将 AI 办公类产品的重心集中到豆包。\n此前，有消息称，豆包最快将于本周内推出一款独立的 AI 办公类产品，作为字节面向 AI 办公场景的统一产品及品牌。\n针对该消息，字节方面回应称，此次调整旨在更好地协同产品和技术资源",
+    "pubDate": "Tue, 25 Aug 2026 08:25:52 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "AI Moves Deeper Into Hospitals, but Who Pays Remains the Hard Question",
+    "link": "https://www.tmtpost.com/8116017.html",
+    "description": "The market for AI in healthcare has grown rapidly, with imaging tools widely deployed and large technology firms, device makers and specialist startups all competing. Scale is real; sustainable payment models are still forming.",
+    "pubDate": "Tue, 25 Aug 2026 16:09:02 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech",
     "_stale": true
   },
   {
-    "title": "News kompakt: Tanker in Straße von Hormus angegriffen",
-    "link": "https://www.dw.com/de/news-kompakt-tanker-in-straße-von-hormus-angegriffen/a-78491739?maca=de-rss-de-all-1119-rdf",
-    "description": "Vor der Küste Omans ist wieder ein Handelsschiff von einem Geschoss getroffen worden. US-Präsident Trump kann seine umstrittenen Briefwahlpläne laut Supreme Court vorerst weiterverfolgen. Der DW-Nachrichtenüberblick.",
-    "pubDate": "2026-08-25T07:00:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
+    "title": "Iran says it is 'fully prepared' to counter widened US economic sanctions",
+    "link": "https://www.bbc.co.uk/news/articles/c0qxew81y83o?at_medium=RSS&at_campaign=rss",
+    "description": "The US calls its latest sanctions on Iran an \"economic D-Day\", but Tehran says it has a plan to address them.",
+    "pubDate": "Tue, 25 Aug 2026 08:08:26 GMT",
+    "source": "BBC News",
     "category": "international",
     "_stale": true
   },
   {
-    "title": "Samsung Foundry sees higher 4nm volumes as Nvidia ramps Groq 3",
-    "link": "https://www.digitimes.com/news/a20260825VL216/nvidia-groq-4nm-samsung-production.html",
-    "description": "Nvidia's Groq 3 ramp is adding meaningful 4nm volume to Samsung Electronics' foundry business, with monthly wafer input estimated at about 10,000 and expected to rise above 15,000 in 2027. The increase comes as reported yields improve, Samsung's 4nm capacity remains tight, and pricing on the node mo",
-    "pubDate": "Tue, 25 Aug 2026 06:56:47 GMT",
+    "title": "Anthropic bets on in-house chips, reshaping ASIC orders",
+    "link": "https://www.digitimes.com/news/a20260825PD222/anthropic-asic-chips-silicon-design.html",
+    "description": "Anthropic confirmed on August 5 that it is building an internal silicon team to design custom chips for its Claude models, signaling a sharper push into self-developed AI hardware. The move is set to influence the company's compute procurement plans and could reshape order shares among ASIC vendors.",
+    "pubDate": "Tue, 25 Aug 2026 07:57:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor",
     "_stale": true
   },
   {
-    "title": "GATE 2026 to spotlight Southeast Asia's pivot to EV supply chains",
-    "link": "https://www.digitimes.com/news/a20260825PD217/2026-asia-market-technology-automotive.html",
-    "description": "GATE 2026 is set to bring together automakers, suppliers, and technology firms in Kuala Lumpur as Southeast Asia deepens its focus on electric vehicles, smart manufacturing, and industrial upgrading. The event's scale and timing could make it a key indicator of where the region's auto supply chains ",
-    "pubDate": "Tue, 25 Aug 2026 06:55:00 GMT",
+    "title": "Luxshare breaks beyond consumer electronics: Auto sales soar 274%, data centres jump 50%",
+    "link": "https://www.digitimes.com/news/a20260825VL210/luxshare-electronics-sales-data-revenue.html",
+    "description": "Luxshare Precision posted a 40.16% rise in first-half 2026 revenue as rapid growth in automotive electronics, communications and data-centre products reduced its reliance on consumer electronics.",
+    "pubDate": "Tue, 25 Aug 2026 07:56:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Nvidia and SK Hynix CPO strategies diverge as 3D optics look toward a post-2030 horizon",
-    "link": "https://www.digitimes.com/news/a20260825PD216/sk-hynix-cpo-nvidia-3d-optics.html",
-    "description": "On August 20, SK Hynix's global research team published a paper in Nature Electronics detailing its co-packaged optics (CPO) development for high-performance computing (HPC) and AI. Highlighting key technical hurdles and outlining the trajectory for next-generation optical interconnect technology, t",
-    "pubDate": "Tue, 25 Aug 2026 06:47:15 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "The Iran war is bringing cyberwarfare into critical infrastructure",
-    "link": "https://www.aljazeera.com/opinions/2026/8/25/the-iran-war-is-bringing-cyberwarfare-into-critical-infrastructure?traffic_source=rss",
-    "description": "Recent attacks in the UK and the US demonstrate critical vulnerabilities that governments need to urgently address.",
-    "pubDate": "Tue, 25 Aug 2026 06:37:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Fulham vs Chelsea: Alonso starts new era with thrilling 3–2 win",
-    "link": "https://www.aljazeera.com/sports/2026/8/25/fulham-vs-chelsea-alonso-starts-new-era-with-thrilling-3-2?traffic_source=rss",
-    "description": "Joao Pedro, Morgan Rogers and Cole Palmer on target as Chelsea open scoring within 31 seconds of the match in London.",
-    "pubDate": "Tue, 25 Aug 2026 06:32:43 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "车市下行周期逆势增长20%，科大讯飞做对了什么？",
-    "link": "https://www.tmtpost.com/8115040.html",
-    "description": "车市销量、营收、利润三重回落、全行业收缩预算，科大讯飞智能汽车业务却逆势增长20%，其反周期增长的核心密码是什么？",
-    "pubDate": "Tue, 25 Aug 2026 14:31:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Chinese automakers expand to humanoid robotics with technology, supply chain and scenario advantages",
-    "link": "https://www.digitimes.com/news/a20260824RS400/automakers-humanoid-robot-robotics-supply-chain-technology.html?chid=2",
-    "description": "DIGITIMES observes that the humanoid robot market is expanding rapidly, supported by global labor shortages and advances in artificial intelligence (AI), and Chinese automakers are also moving aggressively into this emerging field.",
-    "pubDate": "Tue, 25 Aug 2026 06:25:25 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "China power chip makers CRM, Silan post sharp 1H profit gains",
-    "link": "https://www.digitimes.com/news/a20260825VL208/silan-china-resources-profit-market-2026.html",
-    "description": "China Resources Microelectronics (CRM) and Hangzhou Silan Microelectronics (Silan), two of China's leading integrated device manufacturers, reported strong first-half 2026 results as firmer semiconductor demand, higher utilisation and improved product mix lifted earnings.",
-    "pubDate": "Tue, 25 Aug 2026 06:20:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Angel Reese breaks WNBA record with 26 rebounds in Dream’s win over Sparks",
-    "link": "https://www.aljazeera.com/sports/2026/8/25/angel-reese-breaks-wnba-record-with-26-rebounds-in-dreams-win-over-sparks?traffic_source=rss",
-    "description": "Reese broke Chamique Holdsclaw's record of 24 rebounds and added 11 points for her 27th double-double of the season.",
-    "pubDate": "Tue, 25 Aug 2026 06:12:43 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Libya factions draft initial election pact amid lingering mistrust",
-    "link": "https://www.aljazeera.com/news/2026/8/25/libya-factions-draft-initial-election-pact-despite-lingering-mistrust?traffic_source=rss",
-    "description": "Libyan factions sign an initial an election pact, but divided institutions and deep legal gaps threaten its execution.",
-    "pubDate": "Tue, 25 Aug 2026 06:10:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "中国商业航天，开启整星出口新节点",
-    "link": "https://www.tmtpost.com/8115859.html",
-    "description": "从卖卫星到输出能力，中国商业航天开始走向海外。",
-    "pubDate": "Tue, 25 Aug 2026 14:06:33 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Australia’s music charts ban AI-made songs amid backlash over Madonna cover",
-    "link": "https://www.aljazeera.com/economy/2026/8/25/australias-music-charts-ban-ai-made-songs-amid-backlash-over-madonna-cover?traffic_source=rss",
-    "description": "Tracks that use AI in a 'supporting role' will still be eligible for inclusion in the official charts.",
-    "pubDate": "Tue, 25 Aug 2026 06:00:38 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "风雪唐古拉，海尔智家AI科技走进极地考场",
-    "link": "https://www.tmtpost.com/8115136.html",
-    "description": "设备只有在真实场景里扛住了这种“震荡”的折磨，回到普通家庭的客厅与厨房时，面对日常的气候变化或用电波动，才会具备碾压式的稳定性。这便是技术上真正的“降维打击”。",
-    "pubDate": "Tue, 25 Aug 2026 13:49:11 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "对话张朝阳：AI狂奔，为什么要做“反效率”内容",
-    "link": "https://www.tmtpost.com/8115155.html",
-    "description": "在大模型算法追求极致效率的时代，保留一些“笨拙”的空间。",
-    "pubDate": "Tue, 25 Aug 2026 13:44:31 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "上海这栋楼，正在批量制造“一人公司”",
-    "link": "https://www.tmtpost.com/8115834.html",
-    "description": "一个人就是一支队伍。",
-    "pubDate": "Tue, 25 Aug 2026 13:43:04 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "算力风口之下：电子布淘金潮，泥沙俱现",
-    "link": "https://www.tmtpost.com/8115074.html",
-    "description": "AI 算力拉动电子布普涨背后，两条赛道冰火两重天",
-    "pubDate": "Tue, 25 Aug 2026 13:39:47 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "赛博义父Tibo最新访谈：专门实体按钮搞重置，“我想重置就重置”",
-    "link": "https://www.qbitai.com/2026/08/478996.html",
-    "description": "下一代Agent天然会走向云端和更大规模的计算资源",
-    "pubDate": "Tue, 25 Aug 2026 05:20:50 +0000",
-    "source": "量子位",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Two US carrier groups in Middle East strain navy resources",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/25/two-us-carrier-groups-in-middle-east-strain-navy-resources?traffic_source=rss",
-    "description": "Deploying two US carrier strike groups to the Middle East represents a significant concentration of firepower",
-    "pubDate": "Tue, 25 Aug 2026 05:19:24 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "王虹合作者获奖！科学探索奖2026年度获奖名单公布",
-    "link": "https://www.qbitai.com/2026/08/478912.html",
-    "description": "今年50位获奖人来自13个城市的30家高校、医院和科研机构",
-    "pubDate": "Tue, 25 Aug 2026 05:15:23 +0000",
-    "source": "量子位",
-    "category": "ai-tech",
     "_stale": true
   }
 ]
