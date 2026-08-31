@@ -1,11 +1,499 @@
 [
   {
+    "title": "\n        编辑部来了 AI 实习生｜千问入职 20 天，我给它写了一份实习小结\n      ",
+    "link": "http://www.geekpark.net/news/369517",
+    "description": "作者｜Moonshot\n编辑｜郑玄\n8 月 20 日晚，MoonshotAI 在 GitHub 上更新了 kimi-code 0.38.0。没有发布会，也没有新闻稿。但这条信息，被我通过千问部署的一个定时任务「捕获」了。\n很快，千问把一篇 3100 字的稿件推到了我的飞书上，题目是《月之暗面把 500 亿美元估值，押在了一个代码模型上》。\n\n图源：千问\n如果我在值班，可能这时才点开 GitHub，正在判断这个模型是正式版还是测试版。但千问已经找完资料，做完核查，完成了一篇新闻初稿。\n我是如何实现这些的？\n这要回到 8 月 7 日，千问 APP 完成了一次功能更新，包括上线针对复杂任务的「工作助",
+    "pubDate": "Mon, 31 Aug 2026 09:14:19 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Edge AI Daily 早报（8月31日）",
+    "link": "https://www.tmtpost.com/8122304.html",
+    "description": "马斯克自建涡轮叶片破解AI电力瓶颈，苹果25亿美元实现iPhone玻璃全美制造并布局健康与车载AI生态，Anthropic遭五家音乐出版商起诉CEO面临个人责任，AI编程助手被曝时间感知缺陷，Meta数据中心机器人替代80%人力，谷歌与微软抢夺WSL开发者市场，MirroS以代码重写物理世界开创范式转换。英国5G落后警示AI竞赛基础设施赤字。",
+    "pubDate": "Mon, 31 Aug 2026 08:51:29 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "What are the implications of the US-Venezuela oil deal?",
+    "link": "https://www.aljazeera.com/video/inside-story/2026/8/31/what-are-the-implications-of-the-us-venezuela-oil-deal?traffic_source=rss",
+    "description": "Opposition in Venezuela as interim leader insists the deal with Washington will help with the country's recovery.",
+    "pubDate": "Mon, 31 Aug 2026 00:41:12 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Dozens evacuated and about 15 missing after Grand Canyon flash flood",
+    "link": "https://www.aljazeera.com/news/2026/8/31/dozens-evacuated-and-about-15-missing-after-grand-canyon-flash-flood?traffic_source=rss",
+    "description": "More than 60 people have been evacuated after flooding swept large boulders and other debris into the Colorado River.",
+    "pubDate": "Mon, 31 Aug 2026 00:31:51 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Flash flooding in Grand Canyon leaves more than 20 people missing",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/31/08-31-26-arizona-flash-floods-sv?traffic_source=rss",
+    "description": "A search is under way for more than 20 people who may be missing after flash floods tore through Arizona’s Grand Canyon.",
+    "pubDate": "Mon, 31 Aug 2026 00:19:04 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "早报｜库克明日卸任苹果CEO/长鑫LPDDR6量产,小米首发搭载/官方回应建议取消ETC设备",
+    "link": "https://www.ifanr.com/1677344?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "· Codex 修复 8 类额度异常，最高可多用 50%\r\n· 乔布斯八年级科学展项目以 34375 美元成交\r\n· 曝小米测试智能防窥屏，可按应用和敏感页面自动启用\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Mon, 31 Aug 2026 00:02:45 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Iran war live: IRGC attacks US bases in Jordan after US bombs Larak Island",
+    "link": "https://www.aljazeera.com/news/liveblog/2026/8/31/iran-war-live-irgc-attacks-us-bases-in-jordan-after-us-bombs-larak-island?traffic_source=rss",
+    "description": "US Central Command says its forces bombed two rocket launchers of the IRGC on Larak Island.",
+    "pubDate": "Mon, 31 Aug 2026 00:00:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "US strikes Iranian launchers on Larak Island in first known attack in weeks",
+    "link": "https://www.bbc.co.uk/news/articles/cx2z72x5z1po?at_medium=RSS&at_campaign=rss",
+    "description": "Iran says the attack killed some civilians and is the first known US strike on Iran since late July.",
+    "pubDate": "Sun, 30 Aug 2026 23:53:03 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "15 hikers feared missing after 'terrifying' flash flooding hits Grand Canyon",
+    "link": "https://www.bbc.co.uk/news/articles/clylkjyez1do?at_medium=RSS&at_campaign=rss",
+    "description": "\"It was a beautiful day - and then people were screaming,\" one hiker who was airlifted to safety tells the BBC.",
+    "pubDate": "Sun, 30 Aug 2026 23:52:27 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "What is Notting Hill Carnival’s Jab Jab parade?",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/what-is-notting-hill-carnivals-jab-jab-parade?traffic_source=rss",
+    "description": "The Jab Jab parade sees hundreds don devil horns and cover their skin in motor oil for London’s Notting Hill Carnival.",
+    "pubDate": "Sun, 30 Aug 2026 23:29:21 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Lightel posts record first-half revenue, profit as LEO satellite demand rises",
+    "link": "https://www.digitimes.com/news/a20260828PD238/revenue-profit-2026-communications-laser.html",
+    "description": "Lightel Technologies reported record first-half results for 2026, with consolidated revenue reaching NT$590 million (US$18.7 million), net profit at NT$107 million, and earnings per share of NT$4.34. The Taiwan-based optical components maker said the gains came as shipments tied to low Earth orbit s",
+    "pubDate": "Sun, 30 Aug 2026 23:26:26 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Samsung launches Galaxy S26 FE with lower price",
+    "link": "https://www.digitimes.com/news/a20260828PD239/samsung-galaxy-price-mediatek-camera.html",
+    "description": "Samsung Electronics launched its Galaxy S26 Fan Edition in the second half of 2026 with a starting price of 1.045 million won in South Korea, or about US$714, as it sought to round out its smartphone lineup and address rising component costs. According to ET News and Bloomberg, global sales of the 2",
+    "pubDate": "Sun, 30 Aug 2026 23:25:44 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "India roundup: India broadens semiconductor and AI ambitions across manufacturing, design, materials and data centers",
+    "link": "https://www.digitimes.com/news/a20260828VL209/design-data-manufacturing-materials-packaging.html",
+    "description": "India's semiconductor ambitions are expanding from packaging and testing to chip design, materials, mobile devices and data centers. New investments by CG Power, Infineon, Foxconn, Samsung and LG highlight rising industrial activity, while skills shortages, environmental constraints and import depen",
+    "pubDate": "Sun, 30 Aug 2026 23:25:24 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Podcast highlights: Xiaomi's 3nm chip cap, HBM in Malaysia, and Nvidia's margin tradeoff",
+    "link": "https://www.digitimes.com/news/a20260828PD237/xiaomi-hbm-malaysia-nvidia-tsmc-chips.html",
+    "description": "Can Xiaomi's in-house chip reach 2nm? Is HBM rerouting to Malaysia TSMC giving Intel a pass? Can Nvidia hold a 75% gross margin or protect market share? Ahead of Apple's September 10 event, the pre-event technology lull was anything but quiet, and DIGITIMES analyst Luke Lin broke down three stories ",
+    "pubDate": "Sun, 30 Aug 2026 23:25:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "China optical display investment shrinks 80% in 1H26",
+    "link": "https://www.digitimes.com/news/a20260828PD228/display-investment-materials-production-2026.html",
+    "description": "China's optical display industry is cooling after years of aggressive panel fab construction that has reshaped the global display landscape. Investments in China's optical display sector fell 80.3% year-on-year in the first half of 2026, underscoring a slowdown in capacity expansion with capital now",
+    "pubDate": "Sun, 30 Aug 2026 23:24:18 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "USI advances optical interconnect push with ELSFP laser module",
+    "link": "https://www.digitimes.com/news/a20260828PD226/usi-laser-data-data-center-production.html",
+    "description": "Universal Scientific Industrial (USI), part of ASE Technology Holding, is expanding its optical interconnect footprint for AI data centers. EugenLight Technologies, in which USI holds a controlling stake, has launched its ultra-high-power (UHP) external laser source form-factor pluggable (ELSFP) mod",
+    "pubDate": "Sun, 30 Aug 2026 23:23:36 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Nan Juen to ship Vera Rubin rails in August, ramp ASIC in September",
+    "link": "https://www.digitimes.com/news/a20260828PD225/rubin-asic-vr-shipping-production.html",
+    "description": "Server rail maker Nan Juen International (Repon) began shipping Nvidia's Vera Rubin rack products in August 2026, with ASIC server rack rails set for mass production in September. The higher average selling price of Vera Rubin rack rails, along with a growing number of end customers, is expected to ",
+    "pubDate": "Sun, 30 Aug 2026 23:23:16 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Tex Year's specialty chemicals push could reshape its growth mix as AI and optics expand",
+    "link": "https://www.digitimes.com/news/a20260828PD222/tex-year-chemical-materials-optical-communications-siph-business-demand-growth.html",
+    "description": "Tex Year is widening its specialty chemicals business beyond LCDs and electronics into AI servers, in-vehicle electronics, Mini LED, and optical lenses, while also targeting optical communications, silicon photonics (SiPh), and advanced packaging. The company says the segment is set to become its se",
+    "pubDate": "Sun, 30 Aug 2026 23:22:48 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "MCE expands auto electronics capacity to defend Malaysia's domestic market",
+    "link": "https://www.digitimes.com/news/a20260828PD218/capacity-electronics-johor.html",
+    "description": "MCE Holdings Berhad (MCE) is expanding its product lines and capacity as Chinese competitors intensify pressure on Malaysia's auto parts industry, with the company aiming to defend its position as a leading local supplier.",
+    "pubDate": "Sun, 30 Aug 2026 23:22:20 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "AI pushes autonomous driving toward a more pragmatic commercial model",
+    "link": "https://www.digitimes.com/news/a20260828PD204/autonomous-driving-commercial-automakers-competition-automotive.html",
+    "description": "AI is reshaping the autonomous driving competition by shifting automakers away from an all-or-nothing race toward higher levels of self-driving. Instead, the industry is focusing on Level 2+ systems that mimic Level 3 performance, while building data, revenue, and regulatory groundwork that could ma",
+    "pubDate": "Sun, 30 Aug 2026 23:21:59 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Taiwan boosts talent retention with innovation law changes",
+    "link": "https://www.digitimes.com/news/a20260828PD201/taiwan-talent-startup-investment-moea.html?chid=10",
+    "description": "Taiwan's Legislative Yuan on August 27 passed amendments to parts of the Industrial Innovation Act, extending the startup eligibility period from under 5 years to under 8 years and raising the tax deferral cap on employee stock compensation from NT$5 million to NT$10 million. The changes, aimed at s",
+    "pubDate": "Sun, 30 Aug 2026 23:21:31 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "【钛晨报】个人住房贷款政策有大变化，个人房贷期限延至最长40年；OpenAI将终止向Cursor提供模型服务，马斯克回应；报告称AI公司每赚100美元近40美元流向云巨头",
+    "link": "https://www.tmtpost.com/8122212.html",
+    "description": "追觅起诉小红书；硅谷知名风投a16z成立11亿美元基金，布局芯片、内存与机器人；国家数据局局长刘烈宏：要围绕国民经济重大场景，研究探索词元增值订阅、按效付费等商业模式；沪市公司半年报交卷：扣非后净利润增速创2022年以来新高；多家液冷企业订单排至年底",
+    "pubDate": "Mon, 31 Aug 2026 07:20:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "policy"
+  },
+  {
+    "title": "Vote count starts in Guinea-Bissau referendum on strengthening presidency",
+    "link": "https://www.aljazeera.com/news/2026/8/30/vote-count-starts-in-guinea-bissau-referendum-on-strengthening-presidency?traffic_source=rss",
+    "description": "Ten months after a coup, military leaders say the referendum is designed to stabilise future civilian governments.",
+    "pubDate": "Sun, 30 Aug 2026 23:08:01 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Middle East Live: US strikes Iran for first time in a month as Tehran retaliates against Jordan base",
+    "link": "https://www.france24.com/en/middle-east/20260830-middle-east-live-us-strikes-iran-for-first-time-in-a-month",
+    "description": "US forces struck Iranian rocket launchers on the Strait of Hormuz in their first military action in a month on Sunday, breaking a lull in fighting during an intermittent war that has lasted more than six months. Iran swiftly vowed to retaliate for what it called a deadly attack. Follow our liveblog ",
+    "pubDate": "Sun, 30 Aug 2026 23:02:17 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "US Treasury bars certain journalists from G20 meeting in North Carolina",
+    "link": "https://www.france24.com/en/americas/20260830-us-treasury-journalists-from-g20",
+    "description": "The US Treasury Department denied credentials to reporters from The New York Times, Wall Street Journal and Bloomberg for a Group of 20 finance meeting in North Carolina, the latest restriction on media access under President Donald Trump. Treasury Secretary Scott Bessent said the decision was unrel",
+    "pubDate": "Sun, 30 Aug 2026 22:48:02 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "A 12TB Steam “teraleak” spills more than a decade of lost PC gaming history",
+    "link": "https://arstechnica.com/gaming/2026/08/a-12tb-steam-teraleak-spills-more-than-a-decade-of-lost-pc-gaming-history/",
+    "description": "Cut content from Portal 2, hints of Half Life 2: Episode 3, and so much more.",
+    "pubDate": "Sun, 30 Aug 2026 21:40:56 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Lamine Yamal getting back to ‘top level’, Barcelona coach Flick says",
+    "link": "https://www.aljazeera.com/sports/2026/8/30/lamine-yamal-getting-back-to-top-level-barcelona-coach-flick-says?traffic_source=rss",
+    "description": "Teenager struggled in Barca's La Liga start at Elche but improves against Athletic Bilbao, according to Hansi Flick.",
+    "pubDate": "Sun, 30 Aug 2026 21:28:16 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Professor Murder Rides the Subway is a forgotten slice of dance punk perfection",
+    "link": "https://www.theverge.com/entertainment/986564/professor-murder-rides-the-subway-dance-punk-perfection-review",
+    "description": "I recently dug out my CDs and started reripping them all. I've found a few forgotten gems in there, but few hit harder for me than the beautifully concise Professor Murder Rides the Subway EP. There was a period of time in the mid-aughts in NYC where it seemed like every indie band wanted you [&#823",
+    "pubDate": "2026-08-30T21:18:59.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Israeli strike kills 3-year-old child in Gaza",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/israeli-strike-kills-3-year-old-child-in-gaza?traffic_source=rss",
+    "description": "A deadly Israeli strike on Deir el-Balah killed two Palestinians including a 3-year-old child.",
+    "pubDate": "Sun, 30 Aug 2026 21:02:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "CEO Interview with Phillip Stanley-Marbell of Signaloid",
+    "link": "https://semiwiki.com/ceo-interviews/372496-ceo-interview-with-phillip-stanley-marbell-of-signaloid/",
+    "description": "Phillip Stanley-Marbell is the founder and CEO of Signaloid. Up until September 2025, he was a full Professor (Chair of Physical Computation) in the Electrical Engineering Division of the Department of Engineering at the University of Cambridge, where he led the Physical Computation Laboratory. He c",
+    "pubDate": "Sun, 30 Aug 2026 21:00:36 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Hokusai’s Giant Daruma: The Street Performance Sensibilities of a Master Painter",
+    "link": "https://www.nippon.com/en/japan-topics/g02634/",
+    "description": "Hokusai, one of Japan’s greatest artists, was shaped by the vibrant entertainment culture of Edo (the former name for Tokyo). Nowhere was this more vividly demonstrated than in the legendary spectacle where Hokusai himself stepped into the role of performer, painting an enormous image of Daruma befo",
+    "pubDate": "Mon, 31 Aug 2026 06:00:13 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "Government Survey Finds More Screen Time Means Lower Scores for Japanese Students ",
+    "link": "https://www.nippon.com/en/japan-data/h02871/",
+    "description": "Japanese elementary and junior high students are spending more time using social media and watching videos online, and longer screen time has been linked to lower academic performance.",
+    "pubDate": "Mon, 31 Aug 2026 06:00:13 +0900 ",
+    "source": "nippon.com / en ",
+    "category": "international"
+  },
+  {
+    "title": "Lucid’s ‘fire risk’ recall was for LED lights & already fixed by a July software update",
+    "link": "https://electrek.co/2026/08/30/lucids-fire-risk-recall-was-for-led-lights-already-fixed-by-a-july-software-update/",
+    "description": "A number of headlines have made a big deal out of Lucid’s recall of 27k vehicles for an apparent fire risk. But the problem had to do with an electronic fuse controlling LED lights, and a software update distributed last month already fixed the overheating issue.",
+    "pubDate": "Sun, 30 Aug 2026 20:56:53 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Jose Andres renews call for investigation into WCK Gaza staff killings",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/jose-andres-renews-call-for-investigation-into-wck-gaza-staff-killings?traffic_source=rss",
+    "description": "World Central Kitchen founder José Andrés is renewing his call for an independent investigation into Israeli strikes.",
+    "pubDate": "Sun, 30 Aug 2026 20:50:04 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Nepal flood relief vehicles trapped as heavy rain turns roads to mud",
+    "link": "https://www.bbc.co.uk/news/videos/c5ydwy004v0o?at_medium=RSS&at_campaign=rss",
+    "description": "Heavy rain has hampered relief efforts in Nepal where thousands remain missing after flash floods hit its border with Tibet.",
+    "pubDate": "Sun, 30 Aug 2026 20:40:02 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "‘Opening a new chapter’: Syria reopens embassy in Libya after talks",
+    "link": "https://www.aljazeera.com/news/2026/8/30/opening-a-new-chapter-syria-to-reopen-embassy-in-libya-after-talks?traffic_source=rss",
+    "description": "Syrian foreign minister and Libyan PM agree to cooperation committee and reopening of diplomatic missions.",
+    "pubDate": "Sun, 30 Aug 2026 20:38:56 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Video: Raging floodwaters sweep away lorry in the Philippines",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/video-raging-floodwaters-sweep-away-lorry-in-the-philippines?traffic_source=rss",
+    "description": "Video shows a lorry being swept away by raging floodwaters in Rodriguez as torrential rains batter the Philippines.",
+    "pubDate": "Sun, 30 Aug 2026 20:31:34 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "US forces strike Iranian launchers on Larak island in Strait of Hormuz",
+    "link": "https://www.france24.com/en/middle-east/20260830-us-forces-strike-iranian-launchers-on-larak-island-in-strait-of-hormuz",
+    "description": "US forces struck Iranian rocket launchers on the Strait of Hormuz in the first military action in a month, a US official said Sunday. ⁠Iran's ⁠Revolutionary ​Guards ​said the US attack on Larak ​island ‌killed and wounded ⁠several Iranian fighters and ​civilians, and ‌vowed to punish those ​responsi",
+    "pubDate": "Sun, 30 Aug 2026 20:27:09 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "\n        折叠屏的尽头，是不折叠：华为 Pura X View 体验\n      ",
+    "link": "http://www.geekpark.net/news/369558",
+    "description": "阔直板不是「发明」，是用户投出来的票\n作者｜张勇毅\n编辑｜靖宇\nPura X View 到办公室的第一天，来围观的同事，好几个人的第一反应是同一句话「这个尺寸有点像曾经的黑莓手机」。\n华为 Pura X View 实机，是一个直屏手机前所未见的尺寸｜图片来源：极客公园\n我理解这个联想：方方正正一块宽屏，确实像那个年代的东西。但用了一周之后，我觉得「像黑莓」是个无心插柳的结果。它没打算致敬谁，只是一台顺着用户真实需求长出来的手机，恰好长成了这个样子。复古感是结果，不是目的。\n真正有意思的，是它的来历。\n01\n\n\n\n\n先有用法后有机\n阔直板这个形态是怎么来的，江湖上流传很广的说法是：华为翻用户数据",
+    "pubDate": "Mon, 31 Aug 2026 04:25:08 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Iran attacks US bases in Jordan after US strikes Larak Island",
+    "link": "https://www.aljazeera.com/news/2026/8/30/us-strikes-irans-lark-island-in-first-attack-in-weeks?traffic_source=rss",
+    "description": "The exchange of attacks is the first flare-up in violence between the two sides since late July.",
+    "pubDate": "Sun, 30 Aug 2026 20:15:47 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Butcher of Bosnia Ratko Mladic still hailed as a hero by some Serbs",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/30-08-sv-mladic-serbs-tributes-bosnia-fm?traffic_source=rss",
+    "description": "Hundreds of Bosnian Serbs gathered to pay tribute to former Bosnian Serb commander Ratko Mladić.",
+    "pubDate": "Sun, 30 Aug 2026 20:12:36 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Eight killed and others missing after ferry capsizes off northern Cyprus",
+    "link": "https://www.bbc.co.uk/news/articles/c770jyd4l7lo?at_medium=RSS&at_campaign=rss",
+    "description": "A search and rescue operation is under way after a ferry carrying nearly 270 people turns over after leaving port.",
+    "pubDate": "Sun, 30 Aug 2026 20:02:43 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Real Madrid cruise past Malaga 4-0 to maintain Mourinho’s perfect start",
+    "link": "https://www.aljazeera.com/sports/2026/8/30/real-madrid-cruise-past-malaga-4-0-to-maintain-mourinhos-perfect-start?traffic_source=rss",
+    "description": "Jude Bellingham and Kylian Mbappe on the scoresheet as Jose Mourinho's Real Madrid continues to move at pace in La Liga.",
+    "pubDate": "Sun, 30 Aug 2026 19:50:15 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Israeli settler rabbi says Palestinians should leave the occupied West Bank",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/israeli-settler-rabbi-says-palestinians-should-leave-the-occupied-west-bank?traffic_source=rss",
+    "description": "Video shows an Israeli settler rabbi telling peace activists that non-Jews in Israel have no national rights.",
+    "pubDate": "Sun, 30 Aug 2026 19:33:18 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Enormous 12TB Steam leak includes abandoned Half-Life 2: Episode 3 assets",
+    "link": "https://www.theverge.com/games/986552/12tb-steam-leak-half-life-2-episode-3",
+    "description": "Over 12 terabytes of data, containing builds of every game uploaded to Steam between 2003 and 2013, has been leaked. We don't know everything in the archives yet because of its massive size. But people have already dug up assets related to the canceled Half-Life 2: Episode 3, content cut from Portal",
+    "pubDate": "2026-08-30T19:14:08.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Former Israeli soldiers pose as Pro-Palestinian supporters in the US",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/former-israeli-soldiers-pose-as-pro-palestinian-supporters-in-the-us?traffic_source=rss",
+    "description": "Former Israeli soldiers posed as pro-Palestinian supporters in New York City to deceive people into engaging with them.",
+    "pubDate": "Sun, 30 Aug 2026 19:06:11 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Five Billion Pulses Later: What DUV Optics Testing Reveals About Semiconductor Tool Uptime",
+    "link": "https://semiwiki.com/lithography/372789-five-billion-pulses-later-what-duv-optics-testing-reveals-about-semiconductor-tool-uptime/",
+    "description": "By Dr. Sabina Kuprėnaitė\nDeep-ultraviolet optics used in semiconductor lithography may be exposed to billions of pulses over their service life. That creates a qualification challenge that initial reflectance specifications or laser-induced damage thresholds alone cannot answer.\nA mirror may meet it",
+    "pubDate": "Sun, 30 Aug 2026 19:00:06 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "'A giant leap forward': Nasa launches powerful new space telescope",
+    "link": "https://www.bbc.co.uk/news/articles/ce87e55vgpjo?at_medium=RSS&at_campaign=rss",
+    "description": "The US space agency's telescope is starting a multi-year mission to create a new map of the universe and learn more about dark energy and dark matter.",
+    "pubDate": "Sun, 30 Aug 2026 18:53:53 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "‘Do you miss Mogadishu?’ Inside Sweden’s far-right campaign",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/do-you-miss-mogadishu-inside-swedens-far-right-campaign?traffic_source=rss",
+    "description": "How a far-right party with neo-Nazi roots bought every ad surface in Sweden's biggest train station.",
+    "pubDate": "Sun, 30 Aug 2026 18:51:33 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Devastation from the Nepal-China Floods in 30 photos",
+    "link": "https://www.aljazeera.com/gallery/2026/8/30/in-pictures-devastation-from-the-nepal-china-floods?traffic_source=rss",
+    "description": "More than 3,000 people missing after glacier collapse unleashes destruction in Himalayas.",
+    "pubDate": "Sun, 30 Aug 2026 18:34:59 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Liux’s Big microcar bets on sustainability to take on Chinese rivals",
+    "link": "https://techcrunch.com/2026/08/30/liuxs-big-microcar-bets-on-sustainability-to-take-on-chinese-rivals/",
+    "description": "The Liux Big microcar is made in Spain. The startup thinks it can compete in a crowded market with its tiny electric car built around sustainability.",
+    "pubDate": "Sun, 30 Aug 2026 18:33:44 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Fernandes hat-trick fires Man Utd in seven-goal thriller with Ipswich",
+    "link": "https://www.aljazeera.com/sports/2026/8/30/fernandes-hat-trick-fires-man-utd-in-seven-goal-thriller-with-ipswich?traffic_source=rss",
+    "description": "Bruno Fernandes's hat-trick inspires Manchester United's comeback 5-2 win against Ipswich Town in the Premier League.",
+    "pubDate": "Sun, 30 Aug 2026 18:33:39 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "First images of Maduro in US custody released since his abduction",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/first-images-of-maduro-in-us-custody-released-since-his-abduction?traffic_source=rss",
+    "description": "Former Venezuelan President Nicolas Maduro has appeared in the first photos from US custody since his January abduction.",
+    "pubDate": "Sun, 30 Aug 2026 18:28:01 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Top officials from Turkiye, Saudi Arabia, Pakistan to meet in Istanbul",
+    "link": "https://www.aljazeera.com/news/2026/8/30/top-officials-from-turkiye-saudi-arabia-pakistan-to-meet-in-istanbul?traffic_source=rss",
+    "description": "Foreign, defence ministers and military chiefs from three countries to meet for first time since signing Mecca pact.",
+    "pubDate": "Sun, 30 Aug 2026 18:19:03 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Nepal’s flood survivors search for missing loved ones",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/nepals-flood-survivors-search-for-missing-loved-ones?traffic_source=rss",
+    "description": "A young girl is pulled alive from the rubble as rescuers search for survivors and families for missing loved ones.",
+    "pubDate": "Sun, 30 Aug 2026 17:57:08 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Manhunt after shooting at Swiss rave kills woman, 22, and injures five",
+    "link": "https://www.bbc.co.uk/news/articles/c9qr750je1go?at_medium=RSS&at_campaign=rss",
+    "description": "Five others in their twenties were injured after shots were fired at a techno event near Zurich.",
+    "pubDate": "Sun, 30 Aug 2026 17:49:31 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "NASA launches $4.3bn Roman Telescope to uncover universe’s hidden secrets",
+    "link": "https://www.aljazeera.com/news/2026/8/30/nasa-launches-4-3bn-roman-telescope-to-uncover-universes-hidden-secrets?traffic_source=rss",
+    "description": "SpaceX Falcon Heavy propels telescope on cosmic quest to investigate dark energy and matter.",
+    "pubDate": "Sun, 30 Aug 2026 17:44:57 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Survey Sunday: will the Ford Fathom steal Slate Auto’s thunder?",
+    "link": "https://electrek.co/2026/08/30/survey-sunday-will-the-ford-fathom-steal-slate-autos-thunder/",
+    "description": "For the last few weeks, we’ve been running a sidebar survey about whether Electrek readers believed the announcement of Ford’s upcoming, all-electric $30,000 Fathom pickup would sink Bezos-backed startup Slate Auto before it even got to set sail. After nearly 2,700 responses, here’s what you told us",
+    "pubDate": "Sun, 30 Aug 2026 17:43:59 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Why it matters that President Trump just dialed into a NASA news conference",
+    "link": "https://arstechnica.com/space/2026/08/why-it-matters-that-president-trump-just-dialed-into-a-nasa-news-conference/",
+    "description": "With just one more major mission upcoming, NASA's science programs need a boost.",
+    "pubDate": "Sun, 30 Aug 2026 17:40:30 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Trump threatens to report journalist Kristen Welker to broadcast regulator",
+    "link": "https://www.aljazeera.com/news/2026/8/30/trump-threatens-to-report-journalist-kristen-welker-to-broadcast-regulator?traffic_source=rss",
+    "description": "The Federal Communications Commission under Trump has tried to target news outlets for spreading 'fake' news.",
+    "pubDate": "Sun, 30 Aug 2026 17:22:06 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Amazon’s massive 2026 Labor Day sale now live! Thousands of deals: Apple, Android, TVs, tech under $100, more from under $5",
     "link": "https://9to5toys.com/2026/08/30/amazon-2026-labor-day-now-live/",
     "description": "The official 2026 Amazon Labor Day Sale is now live. Featuring thousands and thousands of price drops across just about every product category, the Amazon Labor Day Sale has now taken the site over with deals on everything from AirPods Pro 3 and AirTag 2 through to Bose headphones, Anker charging ge",
     "pubDate": "Sun, 30 Aug 2026 17:21:38 +0000",
     "source": "Electrek",
     "category": "ai-tech"
+  },
+  {
+    "title": "Zambia opposition leader Brian Mundubile charged with treason",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/30/zambia-opposition-leader-brian-mundubile-charged-with-treason?traffic_source=rss",
+    "description": "Zambian opposition leader Brian Mundubile and his running mate, Makebi Zulu, have been charged with treason.",
+    "pubDate": "Sun, 30 Aug 2026 17:18:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
   },
   {
     "title": "Trump says NBC journalist to be reported to FCC for ‘punishment’ over endorsement coverage",
@@ -90,10 +578,18 @@
   {
     "title": "Google Maps Now Shows ‘Lake America’ Instead of Lake Ontario",
     "link": "https://www.wired.com/story/google-maps-now-shows-lake-america-instead-of-lake-ontario/",
-    "description": "After Donald Trump’s executive order demanding the name change, Google is the first major online maps provider to flip the switch.",
+    "description": "After Donald Trump’s executive order demanding the name change, Google is the first major online map provider to flip the switch.",
     "pubDate": "Sun, 30 Aug 2026 16:16:24 +0000",
     "source": "WIRED",
     "category": "ai-tech"
+  },
+  {
+    "title": "British woman killed in stabbing at German railway station",
+    "link": "https://www.bbc.co.uk/news/articles/cx2zy118q7ko?at_medium=RSS&at_campaign=rss",
+    "description": "A 27-year-old German man was arrested immediately after the incident in Rosenheim, Bavaria.",
+    "pubDate": "Sun, 30 Aug 2026 16:11:46 GMT",
+    "source": "BBC News",
+    "category": "international"
   },
   {
     "title": "Iceland votes against restarting EU membership talks",
@@ -166,6 +662,14 @@
     "pubDate": "2026-08-30T15:35:10.000Z",
     "source": "The Verge",
     "category": "ai-tech"
+  },
+  {
+    "title": "Warum ist es so schwer, Social Media zu regulieren?",
+    "link": "https://www.dw.com/de/warum-ist-es-so-schwer-social-media-zu-regulieren/a-78550903?maca=de-rss-de-all-1119-rdf",
+    "description": "Meta und andere Social-Media-Plattformen werden mit Klagen überzogen. Ihnen wird vorgeworfen, Nutzende - insbesondere Kinder und Jugendliche - durch ihre Algorithmen abhängig zu machen.",
+    "pubDate": "2026-08-30T15:35:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
   },
   {
     "title": "Nepal flood victims fear more bodies are buried under mud",
@@ -378,7 +882,7 @@
   {
     "title": "Mehrere Tote bei Fährunglück vor Nordzypern",
     "link": "https://www.dw.com/de/mehrere-tote-bei-fährunglück-vor-nordzypern/a-78563674?maca=de-rss-de-all-1119-rdf",
-    "description": "Wenige Kilometer vor der Küste von Nordzypern drang Wasser in die Fähre ein, wenig später kenterte sie. Mindestens sieben Passagiere kamen ums Leben. 237 Menschen an Bord wurden nach Behördenangaben bisher gerettet.",
+    "description": "Wenige Kilometer vor der Küste von Nordzypern drang Wasser in die Fähre ein, wenig später kenterte sie. Mindestens acht Passagiere kamen ums Leben. Mehr als 250 Menschen wurden nach Behördenangaben bisher gerettet.",
     "pubDate": "2026-08-30T12:50:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
@@ -398,14 +902,6 @@
     "pubDate": "Sun, 30 Aug 2026 12:45:51 +0000",
     "source": "The Robot Report",
     "category": "ai-tech"
-  },
-  {
-    "title": "Manhunt after shooting at Swiss rave kills woman, 22, and injures five",
-    "link": "https://www.bbc.co.uk/news/articles/c9qr750je1go?at_medium=RSS&at_campaign=rss",
-    "description": "Five others in their twenties were injured after shots were fired at a techno event near Zurich.",
-    "pubDate": "Sun, 30 Aug 2026 12:44:08 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "LIVE: Manchester United vs Ipswich Town – Premier League",
@@ -464,9 +960,9 @@
     "category": "international"
   },
   {
-    "title": "Several killed, rescues under way after ferry with more than 260 on board sinks off northern Cyprus",
+    "title": "Ferry capsizes and sinks off northern Cyprus, killing 8",
     "link": "https://www.france24.com/en/europe/20260830-ferry-carrying-more-than-250-passengers-capsizes-off-northern-cyprus",
-    "description": "At least seven people died when a ferry carrying more than 260 people capsized and sunk off the coast of northern Cyprus on Sunday, according to local authorities. Rescue crews were dispatched to the scene, with footage showing passengers in life jackets in the water around the overturned vessel.",
+    "description": "At least eight people died when a ferry carrying more than 260 people capsized and sunk off the coast of northern Cyprus on Sunday, according to local authorities. The ship's captain and seven crew members were arrested, said the prime minister of the self-proclaimed Turkish Republic of Northern Cyp",
     "pubDate": "Sun, 30 Aug 2026 12:08:37 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
@@ -1008,7 +1504,7 @@
     "category": "international"
   },
   {
-    "title": "WhatsApp chat used to send cash for crime and extremism",
+    "title": "WhatsApp chat used to launder cash for crime and extremism",
     "link": "https://www.bbc.co.uk/news/articles/cgk57lg7566o?at_medium=RSS&at_campaign=rss",
     "description": "The WhatsApp money launderers arranged cash transfers in the UK and around the world with no paper trail.",
     "pubDate": "Sun, 30 Aug 2026 04:59:56 GMT",
@@ -1144,38 +1640,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Turkiye, Somalia forces free cargo vessel hijacked by pirates",
-    "link": "https://www.aljazeera.com/news/2026/8/30/turkiye-somalia-forces-frees-cargo-vessel-hijacked-by-pirates?traffic_source=rss",
-    "description": "Somali authorities say 14 pirates were killed in the 10-day operation to free a Cameroon-flagged cargo vessel.",
-    "pubDate": "Sun, 30 Aug 2026 00:16:58 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Online anti-Muslim backlash collides with different reality in South Africa",
-    "link": "https://www.aljazeera.com/news/2026/8/30/online-anti-muslim-backlash-collides-with-different-reality-in-south-africa?traffic_source=rss",
-    "description": "Online anti-Muslim rhetoric is growing, but life on the ground tells a more complicated story.",
-    "pubDate": "Sun, 30 Aug 2026 00:06:30 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Iran war live: Tehran in no rush to reopen Hormuz; settlers besiege Qusra",
-    "link": "https://www.aljazeera.com/news/liveblog/2026/8/30/iran-war-live-iran-pledges-to-stand-firm-against-unjust-us-sanctions?traffic_source=rss",
-    "description": "Deputy foreign minister says Iranian forces have 'full oversight' of movements in the strait.",
-    "pubDate": "Sun, 30 Aug 2026 00:00:00 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Israeli settlers attack international news team in occupied West Bank",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/israeli-settlers-attack-international-news-team-in-occupied-west-bank?traffic_source=rss",
-    "description": "A news team, working for the US network NBC and a Palestinian woman were injured in an attack by masked Israeli settler",
-    "pubDate": "Sat, 29 Aug 2026 23:48:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Innodisk says AI demand is lifting margins while memory supply remains tight",
     "link": "https://www.digitimes.com/news/a20260828PD221/innodisk-demand-revenue-infrastructure-2026.html",
     "description": "Innodisk said its AI-focused product mix is driving stronger revenue and profitability, a sign that global demand for memory and infrastructure hardware remains robust. The company also warned that tight supply and rising prices may continue for years, with implications for AI builders, industrial u",
@@ -1200,36 +1664,12 @@
     "category": "semiconductor"
   },
   {
-    "title": "Spectacular fireworks over Damascus as ‘Syria Shines Again’",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/spectacular-fireworks-over-damascus-as-syria-shines?traffic_source=rss",
-    "description": "Footage shows fireworks lighting up Damascus as the Syrian capital hosts the Damascus International Fair.",
-    "pubDate": "Sat, 29 Aug 2026 23:34:11 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Humanoid robot shipments top 22,000 in 1H26 as industrial use gains ground",
     "link": "https://www.digitimes.com/news/a20260828VL213/robot-industrial-shipments-data-expansion.html",
     "description": "As embodied intelligence takes physical form amid widespread production-capacity expansion in the humanoid robot sector, it is becoming increasingly possible to envision a society in which the boundaries between human intelligence and machine activity grow progressively blurred under AI's expanding ",
     "pubDate": "Sat, 29 Aug 2026 23:33:52 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
-  },
-  {
-    "title": "Voting closes in Iceland’s knife-edge EU referendum",
-    "link": "https://www.aljazeera.com/news/2026/8/29/voting-closes-in-icelands-knife-edge-eu-referendum?traffic_source=rss",
-    "description": "Iceland's leadership has promised to honour whatever the country's people decide.",
-    "pubDate": "Sat, 29 Aug 2026 23:33:03 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Ukrainian nuclear power plant without external power for over a week",
-    "link": "https://www.aljazeera.com/news/2026/8/29/ukrainian-nuclear-power-plant-without-external-power-for-over-a-week?traffic_source=rss",
-    "description": "This is the 27th time since Russia invaded Ukraine that Zaporizhzhia plant has had to rely on emergency diesel supplies.",
-    "pubDate": "Sat, 29 Aug 2026 23:25:07 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "They fell in love - then had to check they weren't brother and sister",
@@ -1245,22 +1685,6 @@
     "description": "The BBC's Laura Cress gets a first look at the biggest games in Cologne from Witcher 3 to Alien: Isolation 2.",
     "pubDate": "Sat, 29 Aug 2026 23:02:28 GMT",
     "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Ontario’s Doug Ford prods Trump with sign rejecting ‘Lake America’ name",
-    "link": "https://www.aljazeera.com/news/2026/8/29/ontarios-doug-ford-prods-trump-with-sign-rejecting-lake-america-name?traffic_source=rss",
-    "description": "The 'Lake Ontario' sign comes in response to the US president's efforts to rename the body of water 'Lake America'.",
-    "pubDate": "Sat, 29 Aug 2026 22:50:27 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "What’s behind the US deal to seize control of Venezuelan oil reserves?",
-    "link": "https://www.aljazeera.com/news/2026/8/29/whats-behind-the-us-deal-to-seize-control-of-venezuelan-oil-reserves?traffic_source=rss",
-    "description": "Few details have emerged about deal between Washington and Caracas, criticised as takeover of Venezuela's resources.",
-    "pubDate": "Sat, 29 Aug 2026 22:33:01 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
@@ -1280,67 +1704,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "Anger mounts in Nepal over the government’s response to flash flood",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/anger-mounts-in-nepal-over-the-governments-response-to-flash-flood?traffic_source=rss",
-    "description": "Anger grows in Nepal as flood survivors accuse the government of delays in delivering aid and finding missing relatives.",
-    "pubDate": "Sat, 29 Aug 2026 20:58:25 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Iceland votes in a tight race on whether to resume talks to join the EU",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/iceland-votes-in-a-tight-race-on-whether-to-resume-talks-to-join-the-eu?traffic_source=rss",
-    "description": "Iceland’s Prime Minister, Kristrún Frostadóttir, cast her vote on Saturday as the country held a referendum.",
-    "pubDate": "Sat, 29 Aug 2026 20:36:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Norway’s new king pays tribute to his late father as the country mourns",
-    "link": "https://www.aljazeera.com/news/2026/8/29/norways-new-king-pays-tribute-to-his-late-father-as-the-country-mourns?traffic_source=rss",
-    "description": "King Haakon VIII says King Harald represented Norway with 'pride and joy', promises to listen to Norwegians as monarch.",
-    "pubDate": "Sat, 29 Aug 2026 20:32:02 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "At least 37 dead and hundreds evacuated after strike on Kyiv weapons depot",
     "link": "https://www.bbc.co.uk/news/articles/c86xwqez4npo?at_medium=RSS&at_campaign=rss",
     "description": "An investigation has begun into the storage of weapons for Ukraine's military near a residential area.",
     "pubDate": "Sat, 29 Aug 2026 20:13:16 GMT",
     "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Missing toll from Nepal, China flood nears 3,000 as race for survivors continues",
-    "link": "https://www.france24.com/en/asia-pacific/20260829-missing-toll-from-nepal-china-flood-nears-3-000-as-race-for-survivors-continues",
-    "description": "Rescuers in Nepal and China on Saturday continued to search for the nearly 3,000 people missing after devastating flooding along the border with China engulfed entire villages earlier this week. At least 682 bodies were recovered in both countries, including 675 in Nepal and seven in China.",
-    "pubDate": "Sat, 29 Aug 2026 20:12:45 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Gaza runs out of cancer medicines, as Israeli strikes continue",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/29-08-sv-gaza-hospitals-targetting-fm?traffic_source=rss",
-    "description": "Officials at Gaza’s Al-Aqsa Martyrs Hospital say cancer medicines have completely run out, as Israeli strikes continue.",
-    "pubDate": "Sat, 29 Aug 2026 20:07:47 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Algeria wildfire death toll expected to rise as survivors say nothing left",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/08-29-26-algeria-wildfires-sv?traffic_source=rss",
-    "description": "Algeria says at least 12 people have been killed in wildfires sweeping the northeast, with the toll expected to rise.",
-    "pubDate": "Sat, 29 Aug 2026 20:05:46 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Can international diplomacy find a way forward in Libya?",
-    "link": "https://www.aljazeera.com/video/inside-story/2026/8/29/can-international-diplomacy-find-a-way-forward-in-libya?traffic_source=rss",
-    "description": "Efforts intensify to break political impasse in a divided country.",
-    "pubDate": "Sat, 29 Aug 2026 20:01:02 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
@@ -1352,35 +1720,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "The rise of K-Beauty: Can South Korea overtake France?",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/the-rise-of-k-beauty-can-south-korea-overtake-france?traffic_source=rss",
-    "description": "South Korea’s beauty industry has surpassed the US to become the world’s second-largest cosmetics exporter.",
-    "pubDate": "Sat, 29 Aug 2026 19:45:43 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Former Ecuadorian president imprisoned for corruption",
     "link": "https://www.bbc.co.uk/news/articles/cvgym9rz07zo?at_medium=RSS&at_campaign=rss",
     "description": "Lenín Moreno denies taking bribes from a Chinese firm to secure a contract to build a hydroelectric plant.",
     "pubDate": "Sat, 29 Aug 2026 19:44:54 GMT",
     "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "US says far-right provocateur Milo Yiannopoulos has been deported to UK",
-    "link": "https://www.aljazeera.com/news/2026/8/29/us-says-far-right-provocateur-milo-yiannopoulos-has-been-deported-to-uk?traffic_source=rss",
-    "description": "The social media personality had been detained by immigration agents at an airport in New Orleans earlier in the week.",
-    "pubDate": "Sat, 29 Aug 2026 19:26:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Tunisians desperate for water as taps run dry",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/tunisians-desperate-for-water-as-taps-run-dry?traffic_source=rss",
-    "description": "Tunisians are struggling to access water as extreme heat, power cuts, and aging infrastructure disrupt tap supplies.",
-    "pubDate": "Sat, 29 Aug 2026 19:19:36 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
@@ -1392,28 +1736,12 @@
     "category": "international"
   },
   {
-    "title": "US judge rules against Trump’s effort to deport pro-Palestinian students",
-    "link": "https://www.aljazeera.com/news/2026/8/29/us-judge-rules-against-trumps-effort-to-deport-pro-palestinian-students?traffic_source=rss",
-    "description": "A federal judge criticised the Trump government for attempting to infringe upon foreign students' rights to free speech.",
-    "pubDate": "Sat, 29 Aug 2026 18:56:19 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft",
     "link": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
     "description": "This latest lawsuit is particularly broad and homes in on accusations of illegal piracy.",
     "pubDate": "Sat, 29 Aug 2026 18:41:59 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
-  },
-  {
-    "title": "Netanyahu condemns 'criminal acts of violence' by settlers in West Bank villages",
-    "link": "https://www.france24.com/en/middle-east/20260829-netanyahu-condemns-criminal-acts-of-violence-by-settlers-in-west-bank-villages",
-    "description": "Israeli Prime Minister Benjamin Netanyahu on Saturday condemned what he called \"criminal acts of violence\" perpetrated by Israeli settlers in two Palestinian villages. Earlier in August, a group of settlers blocked supplies from entering Palestinian houses on the outskirts of Qusra and attacked a Pa",
-    "pubDate": "Sat, 29 Aug 2026 18:34:03 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "Australia usually hosts the world's biggest cuttlefish mating event - not this year",
@@ -1424,44 +1752,12 @@
     "category": "international"
   },
   {
-    "title": "Haitian gangs release 13 captives after mass kidnapping in Kenscoff",
-    "link": "https://www.aljazeera.com/news/2026/8/29/haitian-gangs-release-13-captives-after-mass-kidnapping-in-kenscoff?traffic_source=rss",
-    "description": "The attack in Kenscoff killed at least 47 people and resulted in the kidnapping of more than 50, as gangs exert control.",
-    "pubDate": "Sat, 29 Aug 2026 18:30:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Pakistan suspends eight officials over hospital fire that killed 14 babies",
-    "link": "https://www.aljazeera.com/news/2026/8/29/pakistan-suspends-eight-officials-over-hospital-fire-that-killed-14-babies?traffic_source=rss",
-    "description": "Interim inquiry finds lack of fire safety protocols at Islamabad hospital, prompting suspensions and criminal probe.",
-    "pubDate": "Sat, 29 Aug 2026 18:26:29 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Sony Music Publishing and Warner Chappell are suing Anthropic",
     "link": "https://www.theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright",
     "description": "Sony Music Publishing and Warner Chappell have filed suit against Anthropic in the US District Court for the Northern District of California seeking damages for \"tens of thousands\" copyrighted works. The companies are asking for up to $150,000 per work, plus up to $25,000 for each instance when iden",
     "pubDate": "2026-08-29T18:19:53.000Z",
     "source": "The Verge",
     "category": "ai-tech"
-  },
-  {
-    "title": "DR Congo begins vaccinating against largest and deadliest Ebola outbreak",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/dr-congo-begins-vaccinating-against-largest-and-deadliest-ebola-outbreak?traffic_source=rss",
-    "description": "70,000 Ervebo vaccine doses have been sent to DR Congo in hope they prove effective against the Bundibugyo strain.",
-    "pubDate": "Sat, 29 Aug 2026 18:13:05 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Sudan’s date palm trees under threat from drought and wildfires",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/sudans-date-palm-trees-under-threat-from-drought-and-wildfires?traffic_source=rss",
-    "description": "In Sudan, date palm trees are an economic lifeline for residents of Northern State.",
-    "pubDate": "Sat, 29 Aug 2026 18:07:24 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "Right-wing commentator Milo Yiannopoulos deported from US to UK",
@@ -1478,14 +1774,6 @@
     "pubDate": "Sat, 29 Aug 2026 17:51:10 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
-  },
-  {
-    "title": "Turkiye summons Ukraine ambassador over Black Sea attacks",
-    "link": "https://www.aljazeera.com/news/2026/8/29/turkiye-summons-ukraine-ambassador-over-black-sea-attacks-2?traffic_source=rss",
-    "description": "Two Turkish-operated vessels have been struck this week as a result of the war between Russia and Ukraine.",
-    "pubDate": "Sat, 29 Aug 2026 17:41:57 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "“We’re not doing 30 bets a year”: Vijay Pande on betting small after running $4 billion at a16z",
@@ -1517,22 +1805,6 @@
     "description": "The numbers 666 and 13 don’t have the best of reputations in certain circles, but Chinese car brand Nio hopes its latest Firefly hatchback will have better luck with them – offering a limited run of 666 special edition EVs at a price that’s 13% higher than usual.",
     "pubDate": "Sat, 29 Aug 2026 16:08:01 +0000",
     "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Distraction-free writing gadget BYOK is adding custom extensions",
-    "link": "https://www.theverge.com/gadgets/986427/distraction-free-writing-gadget-byok-scripts-extensions",
-    "description": "BYOK is a no-frills, single-purpose gadget that 90 percent of people will find absolutely frivolous. But for those who spend a significant chunk of their lives putting words to virtual paper, there is an obvious allure. Personally, I think it's at its best when you just stick to the bare minimum, fo",
-    "pubDate": "2026-08-29T16:01:13.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Welcome to Night Vale cocreator Joseph Fink learned storytelling from Grim Fandango ",
-    "link": "https://www.theverge.com/entertainment/983448/welcome-to-night-vale-cocreator-joseph-fink-learned-storytelling-from-grim-fandango",
-    "description": "Joseph Fink is the cocreator and cowriter of Welcome to Night Vale, arguably the most important fiction podcast ever. He's also the creator of the noir podcast Unlicensed and Alice Isn't Dead, which takes some of the conspiratorial cosmic horror of Night Vale and turns it into fodder for a more seri",
-    "pubDate": "2026-08-29T15:00:00.000Z",
-    "source": "The Verge",
     "category": "ai-tech"
   },
   {
@@ -1613,14 +1885,6 @@
     "description": "AI「自进化」，越来越近了",
     "pubDate": "Sat, 29 Aug 2026 12:50:31 +0000",
     "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "八万亿中国人寿的科技进阶",
-    "link": "https://www.tmtpost.com/8121809.html",
-    "description": "伴随着算力成为关键生产要素和生产力，这家总资产超过8万亿元的寿险公司，正在通过数智化将规模优势持续转化为经营效率和发展韧性。",
-    "pubDate": "Sat, 29 Aug 2026 20:49:58 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech"
   },
   {
@@ -1744,14 +2008,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Dutch health institute issues 'red alert' over Trump-shaped ecstasy pills",
-    "link": "https://www.bbc.co.uk/news/articles/cy8z9084d00o?at_medium=RSS&at_campaign=rss",
-    "description": "The drugs have a delayed effect which \"increases the risk of overdose\", the health institute says.",
-    "pubDate": "Sat, 29 Aug 2026 08:48:34 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "Himalaya-Sturzflut: Zahl der Toten steigt weiter",
     "link": "https://www.dw.com/de/himalaya-sturzflut-zahl-der-toten-steigt-weiter/a-78555105?maca=de-rss-de-all-1119-rdf",
     "description": "Drei Tage nach der Sturzflut im Himalaya sind inzwischen fast 700 Tote zu beklagen. Die Behörden ‌in Nepal ⁠teilten mit, 675 Leichen seien geborgen worden. Tausende Menschen konnten aber gerettet werden.",
@@ -1766,14 +2022,6 @@
     "pubDate": "2026-08-29T08:24:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
-  },
-  {
-    "title": "MiniMax 的中报魔术：亏损在收窄，烧钱在加速",
-    "link": "https://www.tmtpost.com/8121654.html",
-    "description": "用30亿美元和B端转型，赢 了继续留场的资格",
-    "pubDate": "Sat, 29 Aug 2026 15:50:53 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
   },
   {
     "title": "从Data到Agent：华为云AI-Ready数据基础设施全链路能力亮相数博会",
@@ -2000,14 +2248,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Berlin is being blackmailed by hackers, mayor says",
-    "link": "https://www.bbc.co.uk/news/articles/cm2q7gv3l5qo?at_medium=RSS&at_campaign=rss",
-    "description": "Kai Wegner says the German capital and city-state would not cave in to a ransom demand for data stolen in a cyber-attack.",
-    "pubDate": "Fri, 28 Aug 2026 21:29:01 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "97-year-old woman rescued after Nepali floods looked like 'a warrior'",
     "link": "https://www.bbc.co.uk/news/videos/cj64kgrpgjdo?at_medium=RSS&at_campaign=rss",
     "description": "A 97-year-old woman, Guna Maya Bohara, survived the flash floods and was rescued using an excavator.",
@@ -2190,14 +2430,6 @@
     "pubDate": "Fri, 28 Aug 2026 17:29:48 +0000",
     "source": "Semiconductor Digest",
     "category": "semiconductor"
-  },
-  {
-    "title": "Thieves steal 600-diamond necklace from Vienna museum in broad daylight",
-    "link": "https://www.bbc.co.uk/news/articles/cqxvwpe0plro?at_medium=RSS&at_campaign=rss",
-    "description": "Police are hunting two suspects they believe bought a ticket for the exhibition to get at the jewellery.",
-    "pubDate": "Fri, 28 Aug 2026 17:29:16 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Diodes Completes Acquisition of ElevATE Semiconductor",
@@ -2408,14 +2640,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "a16z creates a $1.1B ‘Machine Age’ fund to ‘accelerate the physical buildout of AI’",
-    "link": "https://techcrunch.com/2026/08/28/a16z-creates-a-1-1b-machine-age-fund-to-accelerate-the-physical-buildout-of-ai/",
-    "description": "The firm, known for its focus on software, is going to start throwing more money at the hardware behind AI.",
-    "pubDate": "Fri, 28 Aug 2026 13:24:43 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
     "title": "\n        Coding 自由之后，人开始成为最大的瓶颈\n      ",
     "link": "http://www.geekpark.net/news/369547",
     "description": "过去，一个人有了一个产品想法，首先遇到的问题可能是：我会不会编程？我要不要组一个团队？甚至，要不要先去融一笔钱？\n但 AI Coding 正在改变这条路径。\n在 TRAE AI 创造力大赛现场，极客公园创始人张鹏和科技创作者小狮日记、参赛选手不憨，以及 TRAE 核心开发者天猪坐到了一起。\n小狮日记用一周时间做出了帮助老人记录一生的「人生之书」；不憨用两天做出了可以挥舞双手、在空气中创作音乐的「空气指挥家」。过去可能因为成本、技术或者需求过于小众而止步于想法的东西，现在正在迅速成为可以运行的产品。\n于是，一个新的问题出现了：\n当「做出来」越来越容易之后，什么才真正决定一个产品的价值？当 Cod",
@@ -2446,14 +2670,6 @@
     "pubDate": "Fri, 28 Aug 2026 12:52:59 +0000",
     "source": "Electrek",
     "category": "ai-tech"
-  },
-  {
-    "title": "Watch: Stargazers around the world glimpse 'Blood Moon' lunar eclipse",
-    "link": "https://www.bbc.co.uk/news/videos/ce3rykzvevno?at_medium=RSS&at_campaign=rss",
-    "description": "Some parts of the globe had a chance to see the rare event when the Sun, Earth and Moon line up in the night sky.",
-    "pubDate": "Fri, 28 Aug 2026 12:49:55 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "The Download: a secretive antiaging drug and joining virtual power plants",
@@ -2592,14 +2808,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Watch: Why rescuers fear new barrier lake could cause another Nepal-Tibet flood",
-    "link": "https://www.bbc.co.uk/news/videos/cj06j16vpr5o?at_medium=RSS&at_campaign=rss",
-    "description": "Laura Bicker explains how a lake which formed after the recent landslide near the Nepal-Tibet border is raising fears of a second flood.",
-    "pubDate": "Fri, 28 Aug 2026 10:35:06 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "XGIMI Vibe One Battery-Powered Projector Review (2026)",
     "link": "https://www.wired.com/review/xgimi-vibe-one-battery-powered-projector/",
     "description": "With the curtains closed and the power cable nearby, this affordable Full HD smart projector is a compact delight.",
@@ -2656,188 +2864,238 @@
     "category": "ai-tech"
   },
   {
-    "title": "How to sign up for a virtual power plant—and decide whether you should",
-    "link": "https://www.technologyreview.com/2026/08/28/1142956/how-to-sign-up-for-a-virtual-power-plant-and-decide-whether-you-should/",
-    "description": "MIT Technology Review’s How To series helps you get things done.  Your thermostat may not look like a power plant. Neither does your electric vehicle, home battery, or HVAC system. But utility and energy companies increasingly want to treat them like one. A virtual power plant, or VPP, is a collecti",
-    "pubDate": "Fri, 28 Aug 2026 09:00:00 +0000",
-    "source": "MIT Technology Review",
-    "category": "ai-tech"
+    "title": "Turkiye, Somalia forces free cargo vessel hijacked by pirates",
+    "link": "https://www.aljazeera.com/news/2026/8/30/turkiye-somalia-forces-frees-cargo-vessel-hijacked-by-pirates?traffic_source=rss",
+    "description": "Somali authorities say 14 pirates were killed in the 10-day operation to free a Cameroon-flagged cargo vessel.",
+    "pubDate": "Sun, 30 Aug 2026 00:16:58 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Winstar's AI push gains momentum with some orders extending into 2027",
-    "link": "https://www.digitimes.com/news/a20260828PD232/winstar-2027-2026-expansion-ai-applications.html",
-    "description": "Winstar Display is accelerating its expansion into AI applications, with its products already integrated into data centers, power management systems, controllers, testing equipment, and semiconductor facilities. The company projects AI-related orders to grow by 30% to 40% in 2026, with AI revenue sh",
-    "pubDate": "Fri, 28 Aug 2026 08:55:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Online anti-Muslim backlash collides with different reality in South Africa",
+    "link": "https://www.aljazeera.com/news/2026/8/30/online-anti-muslim-backlash-collides-with-different-reality-in-south-africa?traffic_source=rss",
+    "description": "Online anti-Muslim rhetoric is growing, but life on the ground tells a more complicated story.",
+    "pubDate": "Sun, 30 Aug 2026 00:06:30 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Humanoid robot demand boosts planetary gear reducers",
-    "link": "https://www.digitimes.com/news/a20260828PD229/apex-robot-demand-market-business.html",
-    "description": "Apex Dynamics is optimistic about its business outlook for the second half of 2026, with planetary gear reducers emerging as a key growth driver. The company said its results for the first half of the year posted double-digit profit growth, while the reducer business continued to lead expansion.",
-    "pubDate": "Fri, 28 Aug 2026 08:45:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Iran war live: Tehran in no rush to reopen Hormuz; settlers besiege Qusra",
+    "link": "https://www.aljazeera.com/news/liveblog/2026/8/30/iran-war-live-iran-pledges-to-stand-firm-against-unjust-us-sanctions?traffic_source=rss",
+    "description": "Deputy foreign minister says Iranian forces have 'full oversight' of movements in the strait.",
+    "pubDate": "Sun, 30 Aug 2026 00:00:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Foxconn eyes higher margins with push beyond contract manufacturing",
-    "link": "https://www.digitimes.com/news/a20260828PD212/foxconn-manufacturing-technology-adoption-data.html",
-    "description": "AI adoption continues to expand, but putting the technology to work and integrating it into everyday operations remain key hurdles. Speaking at the 2026 Taiwan Sustainability Summit, Yung-Hui Li, director of the Artificial Intelligence Research Center at the Hon Hai Research Institute, outlined Foxc",
-    "pubDate": "Fri, 28 Aug 2026 08:25:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Israeli settlers attack international news team in occupied West Bank",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/israeli-settlers-attack-international-news-team-in-occupied-west-bank?traffic_source=rss",
+    "description": "A news team, working for the US network NBC and a Palestinian woman were injured in an attack by masked Israeli settler",
+    "pubDate": "Sat, 29 Aug 2026 23:48:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "ASIC makers see CSP orders stay strong through 2028",
-    "link": "https://www.digitimes.com/news/a20260828PD234/asic-2028-csp-2026-demand.html",
-    "description": "The four major US cloud service providers (CSPs) have already rewritten their 2026 capital expenditure records, and ASIC vendors are increasingly confident that demand will remain strong through 2028 as customer spending and supply-chain visibility both extend farther out.",
-    "pubDate": "Fri, 28 Aug 2026 08:18:38 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Spectacular fireworks over Damascus as ‘Syria Shines Again’",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/spectacular-fireworks-over-damascus-as-syria-shines?traffic_source=rss",
+    "description": "Footage shows fireworks lighting up Damascus as the Syrian capital hosts the Damascus International Fair.",
+    "pubDate": "Sat, 29 Aug 2026 23:34:11 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Apple's M6 marks a transitional step before wider 2nm adoption",
-    "link": "https://www.digitimes.com/news/a20260828PD233/apple-chips-mac-mini-performance-capacity.html",
-    "description": "Apple on August 25 unveiled the M6 and M5 Ultra chips without holding a launch event, with the M6 becoming the company's first processor built on TSMC's 2nm process and debuting in the new Mac mini. But industry watchers say the M6's short-term significance lies mainly in showcasing 2nm design techn",
-    "pubDate": "Fri, 28 Aug 2026 08:06:51 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Voting closes in Iceland’s knife-edge EU referendum",
+    "link": "https://www.aljazeera.com/news/2026/8/29/voting-closes-in-icelands-knife-edge-eu-referendum?traffic_source=rss",
+    "description": "Iceland's leadership has promised to honour whatever the country's people decide.",
+    "pubDate": "Sat, 29 Aug 2026 23:33:03 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Huawei targets 100 million HarmonyOS 6 devices, paving way for global expansion next",
-    "link": "https://www.digitimes.com/news/a20260828PD227/harmonyos-huawei-expansion-chairman-operating-system.html",
-    "description": "Huawei rotating chairman Eric Xu said at the HarmonyOS Ecosystem Conference 2026 in Shenzhen on August 28 that the HarmonyOS ecosystem now has more than 100,000 native applications, while HarmonyOS smartphones can access more than 400,000 apps. As of August 20, the number of devices running HarmonyO",
-    "pubDate": "Fri, 28 Aug 2026 08:05:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Ukrainian nuclear power plant without external power for over a week",
+    "link": "https://www.aljazeera.com/news/2026/8/29/ukrainian-nuclear-power-plant-without-external-power-for-over-a-week?traffic_source=rss",
+    "description": "This is the 27th time since Russia invaded Ukraine that Zaporizhzhia plant has had to rely on emergency diesel supplies.",
+    "pubDate": "Sat, 29 Aug 2026 23:25:07 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "\"Wir haben keine Verbindung nach Kathmandu\"",
-    "link": "https://www.dw.com/de/wir-haben-keine-verbindung-nach-kathmandu/a-78541324?maca=de-rss-de-all-1119-rdf",
-    "description": "Die DW sprach mit Menschen aus den von Sturzfluten verwüsteten Regionen Nepals über das Schicksal ihrer Angehörigen. Ein Minister in Nepal warnte zudem, der Staat sei auf eine derartige Katastrophe nicht vorbereitet",
-    "pubDate": "2026-08-28T08:03:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "Ontario’s Doug Ford prods Trump with sign rejecting ‘Lake America’ name",
+    "link": "https://www.aljazeera.com/news/2026/8/29/ontarios-doug-ford-prods-trump-with-sign-rejecting-lake-america-name?traffic_source=rss",
+    "description": "The 'Lake Ontario' sign comes in response to the US president's efforts to rename the body of water 'Lake America'.",
+    "pubDate": "Sat, 29 Aug 2026 22:50:27 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "China chip profits jump 18.5-fold on AI demand; advanced-node self-sufficiency seen at 66% by 2035",
-    "link": "https://www.digitimes.com/news/a20260828VL205/demand-2035-self-sufficiency-investment-capacity.html",
-    "description": "China's AI investment boom is translating into sharply higher semiconductor profits while accelerating a longer-term expansion of domestic advanced-node capacity, memory production and chipmaking equipment.",
-    "pubDate": "Fri, 28 Aug 2026 07:55:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "What’s behind the US deal to seize control of Venezuelan oil reserves?",
+    "link": "https://www.aljazeera.com/news/2026/8/29/whats-behind-the-us-deal-to-seize-control-of-venezuelan-oil-reserves?traffic_source=rss",
+    "description": "Few details have emerged about deal between Washington and Caracas, criticised as takeover of Venezuela's resources.",
+    "pubDate": "Sat, 29 Aug 2026 22:33:01 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "威科集团与蚂蚁健康达成战略合作，JCO等28本医学顶刊上线阿福医生版",
-    "link": "https://www.leiphone.com/category/aihealth/KTUmk96pCdHsO4R5.html",
-    "description": "从海外到中国，全球临床医生正加速将AI工具融入日常工作流。为切实帮医生减负提效、辅助诊疗，8月28日，蚂蚁健康宣布与全球领先的临床信息和决策支持解决方案提供商威科集团（Wolters Kluwer）（以下简称“威科”）达成战略合作。双方将通过整合威科的权威医学内容与蚂蚁阿福的AI技术和平台能力，为全国数百万医生提供即时、可信赖、基于循证的临床洞见。\n作为双方合作的首期成果，威科旗下28本具备行业标杆意义的顶尖医学期刊即日起入驻阿福医生版，为全国医生提供可信赖的文献。这28本期刊覆盖17个二级学科，囊括引领全球肿瘤学研究方向的《临床肿瘤学杂志》（Journal of Clinical Oncol",
-    "pubDate": "Fri, 28 Aug 2026 15:51:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "Anger mounts in Nepal over the government’s response to flash flood",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/anger-mounts-in-nepal-over-the-governments-response-to-flash-flood?traffic_source=rss",
+    "description": "Anger grows in Nepal as flood survivors accuse the government of delays in delivering aid and finding missing relatives.",
+    "pubDate": "Sat, 29 Aug 2026 20:58:25 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "老黄把CPU机柜搬上台，一场五年混战开始了",
-    "link": "https://www.leiphone.com/category/chips/HXcJQubeLhbCrXOL.html",
-    "description": "作者｜包永刚\n编辑｜林觉民 \n英伟达GTC，聚光灯总属于最新一代GPU，但中国芯片投资人李华今年却盯上了CPU。\n黄仁勋在台上表示，进入推理时代，并不是所有任务都需要塞进GPU机柜。随后，他展示了独立的CPU机柜、存储机柜和LPU机柜。过去几年站在GPU身后的CPU，被单独摆到了聚光灯下。\n\n看到这一幕，李华重新联系了一家自己此前看过、最终没有投资的Arm CPU创业公司。几个月前，他还认为CPU市场格局稳定、初创公司机会有限；这一次，他开始询问对方的融资情况和产品进度。\n李华不是唯一回头研究CPU的投资人。\n“我们从2025年底就开始系统性研究CPU的投资机会。”商汤国香资本合伙人李扬对雷峰",
-    "pubDate": "Fri, 28 Aug 2026 15:51:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "Iceland votes in a tight race on whether to resume talks to join the EU",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/iceland-votes-in-a-tight-race-on-whether-to-resume-talks-to-join-the-eu?traffic_source=rss",
+    "description": "Iceland’s Prime Minister, Kristrún Frostadóttir, cast her vote on Saturday as the country held a referendum.",
+    "pubDate": "Sat, 29 Aug 2026 20:36:49 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Jingwei Hirain targets Malaysia, ASEAN smart mobility supply chains",
-    "link": "https://www.digitimes.com/news/a20260828PD219/asean-tier-1-market-sales-supply-chain.html",
-    "description": "China's largest domestic Tier 1 auto parts supplier, Jingwei Hirain, is stepping up its push into Malaysia and the ASEAN market, with President Chengjian Fan saying the region will become an important window for auto supply chain planning over the next 3-5 years.",
-    "pubDate": "Fri, 28 Aug 2026 07:45:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Norway’s new king pays tribute to his late father as the country mourns",
+    "link": "https://www.aljazeera.com/news/2026/8/29/norways-new-king-pays-tribute-to-his-late-father-as-the-country-mourns?traffic_source=rss",
+    "description": "King Haakon VIII says King Harald represented Norway with 'pride and joy', promises to listen to Norwegians as monarch.",
+    "pubDate": "Sat, 29 Aug 2026 20:32:02 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "首家“碰一下”机器人租赁体验店落地上海徐家汇！支付宝“碰一下”解锁机器人互动与租赁新体验",
-    "link": "https://www.leiphone.com/category/industrynews/gE5Am1JMBQG2AjNJ.html",
-    "description": "只需手机“碰一下”，就能租借机器人，甚至让它跳舞表演？\n8月28日，全国首家“碰一下”机器人租赁体验店在上海徐汇区新六百YOUNG商场焕新开业。该店由宇树科技核心生态伙伴具深科技旗下品牌“机时租”接入支付宝“碰一下”能力打造，实现线下机器人“碰一下”快捷租赁，并支持“碰一下”唤醒AI智能体操控机器人动作。活动当日，普通市民可实现零门槛沉浸式感受“一碰即控”的机器人互动乐趣。\n\n开业当天，“机时租”联合支付宝发起 “碰一下”机器人痛楼答题闯关活动。顾客在商场内找到部署好的多台宇树机器人，用手机“碰一下”参与答题挑战，每通过一关就有机会获得操控机器狗的体验奖励，三关全过还能解锁隐藏福利，到店观看机",
-    "pubDate": "Fri, 28 Aug 2026 15:35:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "Missing toll from Nepal, China flood nears 3,000 as race for survivors continues",
+    "link": "https://www.france24.com/en/asia-pacific/20260829-missing-toll-from-nepal-china-flood-nears-3-000-as-race-for-survivors-continues",
+    "description": "Rescuers in Nepal and China on Saturday continued to search for the nearly 3,000 people missing after devastating flooding along the border with China engulfed entire villages earlier this week. At least 682 bodies were recovered in both countries, including 675 in Nepal and seven in China.",
+    "pubDate": "Sat, 29 Aug 2026 20:12:45 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "KKCompany taps PressPlay to expand into knowledge learning, creator economy",
-    "link": "https://www.digitimes.com/news/a20260828PD215/economy-kkbox-taipei-advertising-2026.html",
-    "description": "KKCompany Technologies, parent of KKBOX, will officially list on the Taipei Exchange's Emerging Stock Board on August 31, with chairman and CEO Steve Wang detailing, for the first time, the group's integration of PressPlay during a pre-listing investor briefing. The transaction, completed in the sec",
-    "pubDate": "Fri, 28 Aug 2026 07:30:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Gaza runs out of cancer medicines, as Israeli strikes continue",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/29-08-sv-gaza-hospitals-targetting-fm?traffic_source=rss",
+    "description": "Officials at Gaza’s Al-Aqsa Martyrs Hospital say cancer medicines have completely run out, as Israeli strikes continue.",
+    "pubDate": "Sat, 29 Aug 2026 20:07:47 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Jalapeño 跑分炸场，GPU 推理路线开始分裂？",
-    "link": "https://www.leiphone.com/category/ai/B0TkvWHMs5AJIym6.html",
-    "description": "Token 成本成为大模型硬件竞争的新坐标。\n\n\n\n\n\n    作者丨郑佳美\n\n    编辑丨岑   峰\n\n                                                                                                       \n\n\n今天，OpenAI 的自研推理芯片 Jalapeño，终于从规格表走到了跑分台。\n这次公开的数据很接地气：Token 吞吐、生成延迟、单位功耗下能跑多少推理。因为大模型上线以后，芯片面对的早就不只是一次训练任务。ChatGPT 要一直回消息，Reasoning 模型要持续生成长链",
-    "pubDate": "Fri, 28 Aug 2026 15:27:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "Algeria wildfire death toll expected to rise as survivors say nothing left",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/08-29-26-algeria-wildfires-sv?traffic_source=rss",
+    "description": "Algeria says at least 12 people have been killed in wildfires sweeping the northeast, with the toll expected to rise.",
+    "pubDate": "Sat, 29 Aug 2026 20:05:46 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Sora 为什么输给 Codex？",
-    "link": "https://www.leiphone.com/category/ai/aolA6aSnqLoYTm3d.html",
-    "description": "GPU 时间能否被复用，开始决定产品的扩张速度。\n\n\n\n\n\n    作者丨郑佳美\n\n    编辑丨岑   峰\n                                                                                                       \n\n\n8 月 23 日，奥特曼在 David Senra 的播客中谈到 OpenAI 内部的资源取舍时主动提到了 Sora。\n他说得很直接：Sora 本身是个好产品，继续做下去也能成为一门不错的生意，但它实在太吃 compute，同一时期，Codex 的优先级更高，于是算力和团队投入",
-    "pubDate": "Fri, 28 Aug 2026 15:25:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "Can international diplomacy find a way forward in Libya?",
+    "link": "https://www.aljazeera.com/video/inside-story/2026/8/29/can-international-diplomacy-find-a-way-forward-in-libya?traffic_source=rss",
+    "description": "Efforts intensify to break political impasse in a divided country.",
+    "pubDate": "Sat, 29 Aug 2026 20:01:02 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "一段视频，让机器人学会开门并穿越：Video2DoorTraversal 如何打通 Real-to-Sim-to-Real",
-    "link": "https://www.leiphone.com/category/industrynews/H2PFxmf25qYtFbee.html",
-    "description": "对人来说，推门近乎是一种下意识动作。对移动操作机器人来说，这是一道把感知、移动、操作和控制绑在一起的综合题。\n机器人需要找到并靠近把手，完成接触与旋转，在门体移动时协调底盘、机械臂和夹爪，还要避开门框、连续穿过狭窄门口。任何一步出现误差，都可能让整段任务中断。\n近日，由纽娲机器人、上海交通大学和山东大学研究人员共同完成的 Video2DoorTraversal 预印本公开发布。上海交通大学博士生唐心诚为第一作者， 纽娲机器人创始人、上海交通大学特聘教授杨睿刚为论文通讯作者。\n\n\n\n\n论文提出了一套面向轮足移动操作机器人的单视频 Real-to-Sim-to-Real 框架：用一段普通 RGB ",
-    "pubDate": "Fri, 28 Aug 2026 15:24:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "The rise of K-Beauty: Can South Korea overtake France?",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/the-rise-of-k-beauty-can-south-korea-overtake-france?traffic_source=rss",
+    "description": "South Korea’s beauty industry has surpassed the US to become the world’s second-largest cosmetics exporter.",
+    "pubDate": "Sat, 29 Aug 2026 19:45:43 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Claude Code 额度回落：Agent 正在制造新的「祖传代码屎山」？",
-    "link": "https://www.leiphone.com/category/ai/5weAutjetefMob2a.html",
-    "description": "代码确实是 Agent 写的，只是后来的 Agent 已经不知道前面的 Agent 为什么这么写了。\n\n\n\n\n\n    作者丨郑佳美\n\n    编辑丨岑   峰\n                                                                                                       \n\n\nClaude Code 原定于 8 月 19 日结束的 +50% 周额度加成，又被 Anthropic 延长到了 8 月 31 日。也就在原定截止日前后，Hacker News 上出现了一轮关于 Claude Code 使用成",
-    "pubDate": "Fri, 28 Aug 2026 15:23:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "US says far-right provocateur Milo Yiannopoulos has been deported to UK",
+    "link": "https://www.aljazeera.com/news/2026/8/29/us-says-far-right-provocateur-milo-yiannopoulos-has-been-deported-to-uk?traffic_source=rss",
+    "description": "The social media personality had been detained by immigration agents at an airport in New Orleans earlier in the week.",
+    "pubDate": "Sat, 29 Aug 2026 19:26:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Cursor Origin 上线，GitHub 的老玩法还够用吗？",
-    "link": "https://www.leiphone.com/category/ai/BkzW0yPibWRl8D7U.html",
-    "description": "代码仓库的主人，正在从人变成 Agent。\n\n\n\n\n\n    作者丨郑佳美\n\n    编辑丨岑   峰\n\n                                                                                                       \n\n\n8 月 17 日，GitHub 出现大范围服务异常。Web、API、Actions、Pull Requests、Git Operations、Webhooks 等核心链路陆续受到影响，部分时段 Web 与 API 请求错误率接近 20%。\n\n同一天前后，Cursor 开始向全部付费",
-    "pubDate": "Fri, 28 Aug 2026 15:21:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "Tunisians desperate for water as taps run dry",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/tunisians-desperate-for-water-as-taps-run-dry?traffic_source=rss",
+    "description": "Tunisians are struggling to access water as extreme heat, power cuts, and aging infrastructure disrupt tap supplies.",
+    "pubDate": "Sat, 29 Aug 2026 19:19:36 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Anthropic 技术栈里的「五宗罪」由何而来？",
-    "link": "https://www.leiphone.com/category/ai/aOdmq7dqZFokTCzh.html",
-    "description": "代码低熵、上下文污染、错误回灌正在同时压住 Claude。\n\n\n\n\n\n    作者丨郑佳美\n\n    编辑丨岑   峰\n                                                                                                       \n\n\n比模型跑分掉了更麻烦的，是模型还在升级，用户却开始觉得越来越不好用。\nAnthropic 最近就有点这个味道。\n这几天 X 上有一条帖子，把 Claude 这段时间几种很典型的不满放到了一起：文本和代码开始被加入机器可读标记，Sonnet 5 的实际体验没有跟上模型升",
-    "pubDate": "Fri, 28 Aug 2026 15:20:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "US judge rules against Trump’s effort to deport pro-Palestinian students",
+    "link": "https://www.aljazeera.com/news/2026/8/29/us-judge-rules-against-trumps-effort-to-deport-pro-palestinian-students?traffic_source=rss",
+    "description": "A federal judge criticised the Trump government for attempting to infringe upon foreign students' rights to free speech.",
+    "pubDate": "Sat, 29 Aug 2026 18:56:19 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Anthropic sets sights on custom hardware to fuel AI ambitions, reportedly eyed $7B MatX deal",
-    "link": "https://www.digitimes.com/news/a20260828VL215/hardware-anthropic-silicon-startup-google.html",
-    "description": "In an effort to accelerate its custom silicon initiative and curb reliance on external hardware suppliers, artificial intelligence developer Anthropic held discussions to acquire AI chip startup MatX for roughly US$7 billion, according to Reuters. While the acquisition talks have since evolved into ",
-    "pubDate": "Fri, 28 Aug 2026 07:19:49 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
+    "title": "Netanyahu condemns 'criminal acts of violence' by settlers in West Bank villages",
+    "link": "https://www.france24.com/en/middle-east/20260829-netanyahu-condemns-criminal-acts-of-violence-by-settlers-in-west-bank-villages",
+    "description": "Israeli Prime Minister Benjamin Netanyahu on Saturday condemned what he called \"criminal acts of violence\" perpetrated by Israeli settlers in two Palestinian villages. Earlier in August, a group of settlers blocked supplies from entering Palestinian houses on the outskirts of Qusra and attacked a Pa",
+    "pubDate": "Sat, 29 Aug 2026 18:34:03 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "大晓联合香港大学发布StreamPI，让 VLA 真正理解时间，迈向连续物理智能",
-    "link": "https://www.leiphone.com/category/ai/ncVQF4d9AckBMZwP.html",
-    "description": "当 VLA 模型理解语言、感知环境并直接生成机器人动作，一个更基础的问题开始浮现：机器人如何理解一个持续变化的物理世界？物体从哪里移动而来、杯子此前遮住了什么、机械臂正在接近还是远离目标——真正决定下一步动作的信息，往往不只存在于当前一帧，而存在于连续的时间之中。\n近日，大晓机器人联合香港大学发布全新的连续物理智能研究成果 StreamPI（Streaming Multimodal Temporal Modeling for Vision-Language-Action Models），直指 VLA 长期存在的“单帧智能”瓶颈，为其补上关键的“时间维度”。不同于传统 VLA 主要依据当前观测独",
-    "pubDate": "Fri, 28 Aug 2026 15:17:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "Haitian gangs release 13 captives after mass kidnapping in Kenscoff",
+    "link": "https://www.aljazeera.com/news/2026/8/29/haitian-gangs-release-13-captives-after-mass-kidnapping-in-kenscoff?traffic_source=rss",
+    "description": "The attack in Kenscoff killed at least 47 people and resulted in the kidnapping of more than 50, as gangs exert control.",
+    "pubDate": "Sat, 29 Aug 2026 18:30:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "华润啤酒即时零售劲增50%，与歪马送酒合作产品日销量超16万罐",
-    "link": "https://www.leiphone.com/category/industrynews/y6G2DUWMrPw9R32v.html",
-    "description": "近日，啤酒行业密集发布半年报，从数据来看，即时零售正成为行业不可忽视的重要增长方向——华润啤酒的半年报显示：2026年上半年，华润啤酒的即时零售GMV同比增长近50%；青岛啤酒则在半年报中披露，报告期内，线上、即时零售及现代零售销量均创历史新高，其加速布局的即时零售等新兴高潜力渠道，增速持续领跑行业；方正证券研报数据则预计，2026年即时零售全行业规模有望达到1.2万亿元，啤酒品类有望保持30%以上的增速。\n即时零售成为啤酒行业“求增量”的共识，其带来的不仅是销售渠道的改变，也意味着如今啤酒行业面向的消费群体更年轻、消费场景更多样、对产品需求更丰富。不少行业观察都指出，酒企与即时零售的合作正从",
-    "pubDate": "Fri, 28 Aug 2026 15:16:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
+    "title": "Pakistan suspends eight officials over hospital fire that killed 14 babies",
+    "link": "https://www.aljazeera.com/news/2026/8/29/pakistan-suspends-eight-officials-over-hospital-fire-that-killed-14-babies?traffic_source=rss",
+    "description": "Interim inquiry finds lack of fire safety protocols at Islamabad hospital, prompting suspensions and criminal probe.",
+    "pubDate": "Sat, 29 Aug 2026 18:26:29 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "DR Congo begins vaccinating against largest and deadliest Ebola outbreak",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/dr-congo-begins-vaccinating-against-largest-and-deadliest-ebola-outbreak?traffic_source=rss",
+    "description": "70,000 Ervebo vaccine doses have been sent to DR Congo in hope they prove effective against the Bundibugyo strain.",
+    "pubDate": "Sat, 29 Aug 2026 18:13:05 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Sudan’s date palm trees under threat from drought and wildfires",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/29/sudans-date-palm-trees-under-threat-from-drought-and-wildfires?traffic_source=rss",
+    "description": "In Sudan, date palm trees are an economic lifeline for residents of Northern State.",
+    "pubDate": "Sat, 29 Aug 2026 18:07:24 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Turkiye summons Ukraine ambassador over Black Sea attacks",
+    "link": "https://www.aljazeera.com/news/2026/8/29/turkiye-summons-ukraine-ambassador-over-black-sea-attacks-2?traffic_source=rss",
+    "description": "Two Turkish-operated vessels have been struck this week as a result of the war between Russia and Ukraine.",
+    "pubDate": "Sat, 29 Aug 2026 17:41:57 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Israeli army arrests six Palestinians after settler violence in West Bank",
@@ -2876,6 +3134,15 @@
     "_stale": true
   },
   {
+    "title": "Distraction-free writing gadget BYOK is adding custom extensions",
+    "link": "https://www.theverge.com/gadgets/986427/distraction-free-writing-gadget-byok-scripts-extensions",
+    "description": "BYOK is a no-frills, single-purpose gadget that 90 percent of people will find absolutely frivolous. But for those who spend a significant chunk of their lives putting words to virtual paper, there is an obvious allure. Personally, I think it's at its best when you just stick to the bare minimum, fo",
+    "pubDate": "2026-08-29T16:01:13.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
     "title": "'I am sure of myself': A look back at Dolly Parton's unspoken feminist legacy",
     "link": "https://www.france24.com/en/americas/20260829-i-am-sure-of-myself-a-look-back-at-dolly-parton-s-unspoken-feminist-legacy",
     "description": "Beloved country star Dolly Parton was many things to her fans, including an actor, singer, philanthropist and entrepreneur. But after her death on Tuesday at the age of 80, some admirers are remembering her as something she never overtly claimed: feminist icon.",
@@ -2909,6 +3176,15 @@
     "pubDate": "Sat, 29 Aug 2026 15:22:32 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Welcome to Night Vale cocreator Joseph Fink learned storytelling from Grim Fandango ",
+    "link": "https://www.theverge.com/entertainment/983448/welcome-to-night-vale-cocreator-joseph-fink-learned-storytelling-from-grim-fandango",
+    "description": "Joseph Fink is the cocreator and cowriter of Welcome to Night Vale, arguably the most important fiction podcast ever. He's also the creator of the noir podcast Unlicensed and Alice Isn't Dead, which takes some of the conspiratorial cosmic horror of Night Vale and turns it into fodder for a more seri",
+    "pubDate": "2026-08-29T15:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
     "_stale": true
   },
   {
@@ -3017,6 +3293,15 @@
     "pubDate": "Sat, 29 Aug 2026 12:56:27 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "八万亿中国人寿的科技进阶",
+    "link": "https://www.tmtpost.com/8121809.html",
+    "description": "伴随着算力成为关键生产要素和生产力，这家总资产超过8万亿元的寿险公司，正在通过数智化将规模优势持续转化为经营效率和发展韧性。",
+    "pubDate": "Sat, 29 Aug 2026 20:49:58 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
     "_stale": true
   },
   {
@@ -3254,6 +3539,15 @@
     "_stale": true
   },
   {
+    "title": "Dutch health institute issues 'red alert' over Trump-shaped ecstasy pills",
+    "link": "https://www.bbc.co.uk/news/articles/cy8z9084d00o?at_medium=RSS&at_campaign=rss",
+    "description": "The drugs have a delayed effect which \"increases the risk of overdose\", the health institute says.",
+    "pubDate": "Sat, 29 Aug 2026 08:48:34 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "LIVE: Liverpool 2-2 Nottingham Forest – Premier League",
     "link": "https://www.aljazeera.com/sports/liveblog/2026/8/29/live-liverpool-vs-nottingham-forest-premier-league?traffic_source=rss",
     "description": "All the updates from our text commentary stream coverage as Victor Munoz's late goal spares Andoni Iraola's blushes.",
@@ -3269,6 +3563,15 @@
     "pubDate": "Sat, 29 Aug 2026 08:07:53 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "MiniMax 的中报魔术：亏损在收窄，烧钱在加速",
+    "link": "https://www.tmtpost.com/8121654.html",
+    "description": "用30亿美元和B端转型，赢 了继续留场的资格",
+    "pubDate": "Sat, 29 Aug 2026 15:50:53 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
     "_stale": true
   },
   {
@@ -3835,312 +4138,6 @@
     "description": "DRC's is the fastest-spreading Ebola outbreak ever recorded, with 5,794 confirmed cases and 2,786 deaths.",
     "pubDate": "Fri, 28 Aug 2026 21:49:27 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "With the US and Canada locked in a trade war, fears of a recession lurk",
-    "link": "https://www.aljazeera.com/economy/2026/8/28/with-the-us-and-canada-locked-in-a-trade-war-fears-of-a-recession-lurk?traffic_source=rss",
-    "description": "Analysts say Canada may lose 100,000 jobs under the current tariffs and could go into recession if the USMCA pact ends.",
-    "pubDate": "Fri, 28 Aug 2026 21:39:40 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Before and after images show catastrophic impact of Nepal flash floods",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/28/08-28-26-nepal-b4-and-after-sv-mp4?traffic_source=rss",
-    "description": "Before-and-after satellite images reveal the scale of destruction from Nepal’s catastrophic flash floods.",
-    "pubDate": "Fri, 28 Aug 2026 21:26:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "RSS chief’s US visit faces protests over Hindu nationalism",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/28/28-08-sv-hr-groups-against-the-rss-fm?traffic_source=rss",
-    "description": "Indian Hindu leader Mohan Bhagwat is due to speak in New York as human rights groups protest his visit.",
-    "pubDate": "Fri, 28 Aug 2026 21:25:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "8-year-old Nepal flood survivor reunited with mother after rescue",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/8/28/8-year-old-nepal-flood-survivor-reunited-with-mother-after-rescue?traffic_source=rss",
-    "description": "Eight-year-old Nepal flood survivor reunited with mother after rescue",
-    "pubDate": "Fri, 28 Aug 2026 21:01:41 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Forced birth control in Greenland violated women’s rights, experts find",
-    "link": "https://www.aljazeera.com/news/2026/8/28/forced-birth-control-in-greenland-violated-womens-rights-experts-find?traffic_source=rss",
-    "description": "Truth commission to be established after two expert reports failed to agree whether scheme constituted genocide.",
-    "pubDate": "Fri, 28 Aug 2026 20:54:35 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Haaland and Cherki doubles send Man City to EPL win at Crystal Palace",
-    "link": "https://www.aljazeera.com/sports/2026/8/28/cherki-double-sends-man-city-to-win-at-crystal-palace-in-premier-league?traffic_source=rss",
-    "description": "Manchester City make it back-to-back wins to start the Premier League season as Crystal Palace slip to another defeat.",
-    "pubDate": "Fri, 28 Aug 2026 20:53:51 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "What lessons can be learned from the Nepal-Tibet flood disaster?",
-    "link": "https://www.aljazeera.com/video/inside-story/2026/8/28/what-lessons-can-be-learned-from-the-nepal-tibet-flood?traffic_source=rss",
-    "description": "Scientists are looking into cause and possible link to climate change.",
-    "pubDate": "Fri, 28 Aug 2026 20:44:41 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "DRC President Tshisekedi calls for national dialogue excluding M23 rebels",
-    "link": "https://www.france24.com/en/tv-shows/eye-on-africa/20260828-drc-president-tshisekedi-calls-for-national-dialogue-excluding-m23-rebels",
-    "description": "In the Democratic Republic of Congo, President Félix Tshisekedi calls for a national dialogue to ease tensions, while excluding M23 rebels from taking part, as the government plans to suspend 11 public universities in rebel-controlled areas. Meanwhile, in Ghana, 23 people, including 11 children, hav",
-    "pubDate": "Fri, 28 Aug 2026 20:36:41 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Timeline: Life of Ratko Mladic, general turned ‘Butcher of Bosnia’",
-    "link": "https://www.aljazeera.com/news/2026/8/28/timeline-life-of-ratko-mladic-general-turned-butcher-of-bosnia?traffic_source=rss",
-    "description": "Mladic died in prison in The Hague after failed requests by Serbian authorities to secure early release to home country.",
-    "pubDate": "Fri, 28 Aug 2026 19:58:41 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Greenland says findings on genocide allegation not final",
-    "link": "https://www.bbc.co.uk/news/articles/czxzv29p12lo?at_medium=RSS&at_campaign=rss",
-    "description": "Experts examined the use of forced contraception on the Inuit community during the 1960s and 70s.",
-    "pubDate": "Fri, 28 Aug 2026 19:57:50 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "US plans to cut off military aid to key Middle East ally, BBC told",
-    "link": "https://www.bbc.co.uk/news/articles/cn74m8e5rleo?at_medium=RSS&at_campaign=rss",
-    "description": "Iraqi Kurdistan fears the Trump administration's plan will make the region more vulnerable to further attacks from Iran.",
-    "pubDate": "Fri, 28 Aug 2026 19:45:39 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Norway mourns King Harald as Haakon VIII ascends throne",
-    "link": "https://www.bbc.co.uk/news/articles/cm2rzxrdr71o?at_medium=RSS&at_campaign=rss",
-    "description": "Mourners gather outside the palace as royals, politicians and citizens remember a beloved king, whose son has adopted the family motto \"all for norway\".",
-    "pubDate": "Fri, 28 Aug 2026 19:40:45 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Colombia’s new president faces backlash over ‘inhumane’ deportation policy",
-    "link": "https://www.aljazeera.com/news/2026/8/28/colombias-new-president-faces-backlash-over-inhumane-deportation-policy?traffic_source=rss",
-    "description": "Less than a month into his presidency, Abelardo de la Espriella has announced effort to expel undocumented immigrants.",
-    "pubDate": "Fri, 28 Aug 2026 19:26:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "President Donald Trump signs order creating US Space Academy",
-    "link": "https://www.aljazeera.com/news/2026/8/28/president-donald-trump-signs-order-creating-us-space-academy?traffic_source=rss",
-    "description": "The president said graduates of the new academy would serve the US Space Force, NASA and the civilian flight industry.",
-    "pubDate": "Fri, 28 Aug 2026 19:23:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Russia ramps up rhetoric but wants to avoid war with Nato, Western officials say",
-    "link": "https://www.bbc.co.uk/news/articles/cz0zm2j7ld1o?at_medium=RSS&at_campaign=rss",
-    "description": "But they say Moscow will likely continue its \"hybrid activity\" against Nato members, short of direct military action.",
-    "pubDate": "Fri, 28 Aug 2026 19:05:23 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Generative Design Optimizes Liquid-Cooling Channels For 2.5D And 3D Packages (UM-Dearborn)",
-    "link": "https://semiengineering.com/generative-design-optimizes-liquid-cooling-channels-for-2-5d-and-3d-packages-um-dearborn/",
-    "description": "Researchers from University of Michigan-Dearborn published a technical paper titled “Generative Design of Liquid-Cooling Channels for Thermal Management of 2.5D and 3D Integrated Advanced Packaging.” Abstract Excerpt: The paper presents “a physics-guided generative design framework for liquid coolin",
-    "pubDate": "Fri, 28 Aug 2026 17:34:14 +0000",
-    "source": "Semiconductor Engineering",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Sapphire Surface Modification Enables Wafer-Scale 2D Semiconductor Growth (Peking U., CAS et al.)",
-    "link": "https://semiengineering.com/sapphire-surface-modification-enables-wafer-scale-2d-semiconductor-growth-peking-u-cas-et-al/",
-    "description": "Researchers from Peking University, Chinese Academy of Sciences et al. published a technical paper titled “Homo-metal-element mediated surface modification of sapphire for robust epitaxy of wafer-scale single-crystalline 2D semiconductors.” Abstract Excerpt: The paper presents a “homo-metal-element ",
-    "pubDate": "Fri, 28 Aug 2026 17:28:19 +0000",
-    "source": "Semiconductor Engineering",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Deep Learning Automates Parameter Extraction For 2D Transistors (Stanford, SLAC)",
-    "link": "https://semiengineering.com/deep-learning-automates-parameter-extraction-for-2d-transistors-stanford-slac/",
-    "description": "Researchers from Stanford University and SLAC National Accelerator Laboratory published a technical paper titled “Deep Learning to Automate Parameter Extraction and Model Fitting of Two-Dimensional Transistors.” Abstract Excerpt: “We present a deep learning approach to extract physical parameters (e",
-    "pubDate": "Fri, 28 Aug 2026 17:20:53 +0000",
-    "source": "Semiconductor Engineering",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Israel army carries out rare West Bank air strike, killing 'three terrorists'",
-    "link": "https://www.france24.com/en/middle-east/20260828-israel-army-carries-out-rare-west-bank-air-strike-killing-three-terrorists",
-    "description": "Israel's military said it carried out an air strike in the Jenin area in the West Bank on Friday that killed a ​Palestinian it described as a Hamas militant operative as well as two of his accomplices, in a rare use of deadly Israeli air power in the occupied territory.",
-    "pubDate": "Fri, 28 Aug 2026 17:14:47 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "🔴Nepal-Tibet floods live: Death toll passes 580, nearly 2,500 people missing",
-    "link": "https://www.france24.com/en/asia-pacific/20260828-nepal-tibet-live-china-warns-lake-formed-by-mudslide-on-nepal-border-could-breach",
-    "description": "",
-    "pubDate": "Fri, 28 Aug 2026 17:06:15 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Save hundreds on a TCL mini-LED TV with quantum dots and high refresh rate",
-    "link": "https://www.theverge.com/gadgets/985741/tcl-qm7l-belkin-thunderbolt-dock-deal-sale",
-    "description": "Amazon and Best Buy have the TCL QM7L mini-LED TV on sale for as low as $797.99 for the 55-inch model, a $200 discount from the usual price. We spotted scaling discounts on larger sizes as well, although Amazon already listed low stock on the 65-inch version. While OLED televisions are great for dee",
-    "pubDate": "2026-08-28T17:03:07.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Nepal: 'Region has hundreds of high-altitude lakes prone to unleashing enormous volumes of water'",
-    "link": "https://www.france24.com/en/video/20260828-nepal-region-has-hundreds-of-high-altitude-lakes-prone-to-unleashing-enormous-volumes-of-water",
-    "description": "William Hilderbrandt is pleased to welcome David Fisher, Head of Delegation, Nepal International Federation of Red Cross. The scale of Nepal’s disaster cannot yet be fully measured. Entire communities remain difficult to reach, tens of thousands of people have been affected, and official assessments",
-    "pubDate": "Fri, 28 Aug 2026 16:57:59 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Nepal: Families cling to hope as nearly 1,000 remain missing",
-    "link": "https://www.france24.com/en/nepal-families-cling-to-hope-as-nearly-1-000-remain-missing",
-    "description": "Nepal's confirmed death toll has risen to at least 538, but families are still searching hospitals and disaster zones in the hope their loved ones will be found alive, with nearly 1,000 people still missing. More than 3,700 people have been rescued so far, though destroyed roads, bridges and thick m",
-    "pubDate": "Fri, 28 Aug 2026 16:56:39 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Violence breaks out in Ceuta as migrant crisis continues",
-    "link": "https://www.bbc.co.uk/news/articles/cy9zj11gwzxo?at_medium=RSS&at_campaign=rss",
-    "description": "A group of migrants is accused of throwing stones at a military vehicle, while some locals set fire to their camps on the beach.",
-    "pubDate": "Fri, 28 Aug 2026 16:30:59 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Trump’s EPA wants to let data centers hide their air pollution",
-    "link": "https://www.theverge.com/ai-artificial-intelligence/986176/data-center-pollution-epa-rule-change-air-permit",
-    "description": "Just as new data centers face growing backlash from neighboring communities, the US Environmental Protection Agency (EPA) is about to make it harder for people to weigh in on any pollution those centers create. The EPA plans to toss out a federal rule requiring public notice and an opportunity to co",
-    "pubDate": "2026-08-28T16:28:40.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "DLSS 5 leaked and modders are putting Nvidia&#8217;s AI effects on everything",
-    "link": "https://www.theverge.com/games/986197/nvidia-dlss-5-leak-ai",
-    "description": "Modders are trying out an unofficial version of Nvidia's DLSS 5 on Skyrim, Cyberpunk 2077, GTA V, and a bunch of other games after code for the AI upscaling tech appeared in an early-access build of NBA 2K27. Members of the RenoDX modding channel on Discord reportedly found a way to extract the DLSS",
-    "pubDate": "2026-08-28T16:22:16.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Nepal: Relief camp shelters grieving families",
-    "link": "https://www.france24.com/en/nepal-relief-camp-shelters-grieving-families",
-    "description": "Around 500 people are sheltering at a monastery-turned-relief camp in northern Kathmandu, where many families are still in shock after losing their homes and loved ones in the devastating Nepal floods. FRANCE 24's Shahzaib Wahlah reports from the camp as rescue teams continue searching for nearly 1,",
-    "pubDate": "Fri, 28 Aug 2026 16:20:59 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Greenland to open truth commission over forced contraception scheme",
-    "link": "https://www.france24.com/en/europe/20260828-greenland-to-open-truth-commission-over-forced-contraception-scheme",
-    "description": "Greenland's government said Friday it would ⁠establish a Truth and Reconciliation Commission to shed light on a campaign of forced contraception carried out by Danish authorities from the 1960s to 1990, after experts failed to agree on whether the practice constituted genocide. The brutal campaign s",
-    "pubDate": "Fri, 28 Aug 2026 16:05:16 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Austria: Anger over a business park being built on top of former Nazi camp",
-    "link": "https://www.france24.com/en/austria-anger-over-a-business-park-being-built-on-top-of-former-nazi-camp",
-    "description": "Anger is growing in #Austria over the planned construction of a business park on top of what was a #Nazi concentration camp during the #SecondWorldWar. Around six million #Jewish people were murdered in the Holocaust, around half of them in concentration or extermination camps.",
-    "pubDate": "Fri, 28 Aug 2026 15:50:44 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "There is no proof that this video shows a plane crash in Tel Aviv",
-    "link": "https://www.france24.com/en/middle-east/20260828-no-proof-video-shows-plane-crash-tel-aviv",
-    "description": "A video showing an airplane rammed into the side of a building has been circulating widely on social media. While social media users are claiming that the video shows a plane that crashed in Tel Aviv after an Iranian attack, its origin remains unknown and its authenticity highly questionable.",
-    "pubDate": "Fri, 28 Aug 2026 15:31:19 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The iPhone Fold could make concerts even worse",
-    "link": "https://www.theverge.com/podcast/986145/m6-mac-mini-meta-settlement-gta-6-vergecast",
-    "description": "You know the person blocking your view of the concert because their phone is swaying in the air, recording the entire thing? Get ready for the unfolded version of it. This week on The Vergecast, we dive right into the big week of Apple news. First, it's the refreshed Mac Mini and Mac Studio, as [&#8",
-    "pubDate": "2026-08-28T15:26:19.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Spanish government urges calm after Ceuta anti-migrant protesters clash with police",
-    "link": "https://www.france24.com/en/europe/20260828-spanish-government-urges-calm-anti-migrant-protesters-clash-police-ceuta",
-    "description": "Spain's left-wing government called for calm in the North African enclave of Ceuta on Friday after protests over security escalated into clashes between locals and police, a month after a mass influx of migrants from Morocco triggered a Europe-wide alert.",
-    "pubDate": "Fri, 28 Aug 2026 14:44:32 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Two-year curfew lifted in Sudan's capital",
-    "link": "https://www.bbc.co.uk/news/articles/c2076gxr0llo?at_medium=RSS&at_campaign=rss",
-    "description": "The military authorities retook control of the city 18 months ago, but the conflict continues elsewhere.",
-    "pubDate": "Fri, 28 Aug 2026 14:18:53 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Rescuers grapple with mountain of challenges after the Nepal-Tibet floods",
-    "link": "https://www.france24.com/en/asia-pacific/20260828-rescuers-grapple-with-mountain-of-challenges-after-the-nepal-tibet-floods",
-    "description": "Emergency services are rushing to find survivors and treat the wounded after a devastating flash flood on the border of Nepal and Tibet on Wednesday killed more than 500 people, with over a thousand still missing. But the remote and rugged terrain, as well as the risk of further flooding from upstre",
-    "pubDate": "Fri, 28 Aug 2026 14:14:00 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
     "_stale": true
   }
