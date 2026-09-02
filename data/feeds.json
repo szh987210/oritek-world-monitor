@@ -1,5 +1,557 @@
 [
   {
+    "title": "Trump Administration Sides With OpenAI in New York Times Copyright Lawsuit",
+    "link": "https://www.wired.com/story/trump-administration-sides-with-ai-giants-new-york-times-lawsuit/",
+    "description": "The US government wrote a letter in support of OpenAI’s argument that training AI on others' intellectual property is fair use.",
+    "pubDate": "Wed, 02 Sep 2026 18:41:02 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "ICE Plans to Pay $5 Million to Create National Voting Database",
+    "link": "https://www.wired.com/story/ice-plans-to-pay-5-million-to-create-national-voting-database/",
+    "description": "As part of a broader DHS surge to investigate alleged voter fraud, ICE has announced it plans to pay up to $5 million to create what amounts to a federal voter database.",
+    "pubDate": "Wed, 02 Sep 2026 18:32:01 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Israel kills or injures 7 children a day in Lebanon invasion, report says",
+    "link": "https://www.aljazeera.com/news/2026/9/2/israel-kills-or-injures-7-children-a-day-in-lebanon-invasion-report-says?traffic_source=rss",
+    "description": "Save the Children data shows toll on children in Lebanon, despite government agreement with Israel to halt fighting.",
+    "pubDate": "Wed, 02 Sep 2026 18:31:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "These Russian Mathematicians Taught AI Models How to Talk to Each Other Without Using Words",
+    "link": "https://www.wired.com/story/russian-startup-mostik-ai-models-communication/",
+    "description": "A startup called Mostik has a wild new approach to combining the capabilities of AI models.",
+    "pubDate": "Wed, 02 Sep 2026 18:20:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "UK’s Burnham faces first parliament grilling, vows to ‘bring back hope’",
+    "link": "https://www.aljazeera.com/economy/2026/9/2/uks-burnham-faces-first-parliament-grilling-vows-to-bring-back-hope?traffic_source=rss",
+    "description": "Newly appointed leader takes first Prime Minister’s Questions, pledges to fulfill defence, social spending goals.",
+    "pubDate": "Wed, 02 Sep 2026 18:11:48 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "🔴 Live: Macron and Charles III visit historic Bayeux tapestry exhibition together",
+    "link": "https://www.france24.com/en/europe/20260902-france-s-macron-in-britain-to-help-unveil-bayeux-tapestry",
+    "description": "",
+    "pubDate": "Wed, 02 Sep 2026 18:09:29 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Here’s what all the premium Genesis GV90 colors look like in person [Video]",
+    "link": "https://electrek.co/2026/09/02/genesis-gv90-colors-in-person-video/",
+    "description": "The flagship Genesis GV90 comes in 16 premium exterior finishes, each telling a “visual story” behind the design.\nmore…",
+    "pubDate": "Wed, 02 Sep 2026 18:09:11 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Waymo racked up 8,300+ SF parking tickets and nearly $1M in fines",
+    "link": "https://electrek.co/2026/09/02/waymo-san-francisco-parking-tickets/",
+    "description": "Waymo’s robotaxis have collected more than 8,300 parking tickets in San Francisco since the start of 2025, running up close to $1 million in fines along the way.\nThe citations tracked the fleet’s rapid growth across the city. In 2024, Waymo caught just 589 tickets. It’s now averaging more than 100 a",
+    "pubDate": "Wed, 02 Sep 2026 18:00:11 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Bluetti 1,004Wh Elite 100 Mini power station exclusive launch deals, Anker SOLIX Labor Day Sale, Tenways CGO600 Pro e-bike, more",
+    "link": "https://electrek.co/2026/09/02/bluetti-1004wh-elite-100-mini-power-station-anker-solix-labor-day-sale-tenways-cgo600-pro-e-bike-more/",
+    "description": "The Labor Day Sale train isn’t slowing down, and we have another jam-packed edition of Green Deals for the season, starting with the exclusive launch savings on Bluetti’s new Elite 100 Mini Portable Power Station starting from $408. Right behind that, we’ve got Anker’s SOLIX Labor Day Sale lineup wi",
+    "pubDate": "Wed, 02 Sep 2026 18:00:00 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "EU ministers in Ireland tackle Israeli settlement trade and Ukraine defence",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/2/09-02-26-reported-ireland-talks?traffic_source=rss",
+    "description": "EU ministers in Ireland have announced a mission to support Lebanon’s army but remain divided on sanctions on Israel.",
+    "pubDate": "Wed, 02 Sep 2026 17:56:18 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Amazon’s AI assistant can now spot fake emails from the company",
+    "link": "https://www.theverge.com/tech/988518/amazon-alexa-for-shopping-verify-emails",
+    "description": "Amazon is trying to combat impersonation scams with a new feature that allows you to use its AI assistant to determine whether an email, text message, or phone call actually came from the company. With the update, you can ask Alexa for Shopping about a message you received, and it will use AI to com",
+    "pubDate": "2026-09-02T17:52:56.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Israeli FM Gideon Sa'ar: 'I hope Iran will not make the mistake of attacking us'",
+    "link": "https://www.france24.com/en/tv-shows/t%C3%AAte-%C3%A0-t%C3%AAte/20260902-israeli-fm-gideon-sa-ar-i-hope-iran-will-not-make-the-mistake-of-attacking-us",
+    "description": "In an interview with FRANCE 24, Israel's Minister of Foreign Affairs Gideon Sa’ar addressed the resumption in fighting between the US and Iran, and warned that any Iranian attack on Israel would trigger a \"severe\" response. He also accused Tehran of continuing to pursue \"nuclear weapons aspirations\"",
+    "pubDate": "Wed, 02 Sep 2026 17:49:03 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Gunman in deadly Swiss rave attack ‘lone perpetrator’, police say",
+    "link": "https://www.aljazeera.com/news/2026/9/2/gunman-in-deadly-swiss-rave-attack-lone-perpetrator-police-say?traffic_source=rss",
+    "description": "Police say no indication anyone ​else involved in attack that killed 22-year-old Italian woman.",
+    "pubDate": "Wed, 02 Sep 2026 17:43:01 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Learn why food is physical AI’s hardest problem at RoboBusiness",
+    "link": "https://www.therobotreport.com/learn-why-food-is-physical-ai-hardest-problem-chef-robotics-robobusiness/",
+    "description": "Rajat Bhageria, the founder and CEO of Chef Robotics, will explore what makes food such a demanding benchmark for physical AI.\nThe post Learn why food is physical AI’s hardest problem at RoboBusiness appeared first on The Robot Report.",
+    "pubDate": "Wed, 02 Sep 2026 17:37:50 +0000",
+    "source": "The Robot Report",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Over 500 students hospitalised after eating state-supplied meals in Indones",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/2/over-500-students-hospitalised-after-eating-state-supplied-meals-in-indones?traffic_source=rss",
+    "description": "More than 500 students in Indonesia were hospitalised with food poisoning on Tuesday.",
+    "pubDate": "Wed, 02 Sep 2026 17:37:29 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "A year into Trump’s boat strike campaign, families search for answers",
+    "link": "https://www.aljazeera.com/news/2026/9/2/a-year-into-trumps-boat-strike-campaign-families-search-for-answers?traffic_source=rss",
+    "description": "While the Trump administration claims it has killed 'narcoterrorists', families fear fishermen are among the victims.",
+    "pubDate": "Wed, 02 Sep 2026 17:35:32 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says",
+    "link": "https://www.bbc.co.uk/news/articles/cx2zxgg4mx9o?at_medium=RSS&at_campaign=rss",
+    "description": "The kingdom condemns the targeting of Sidr, which was reportedly hit by unknown projectiles in the Strait of Hormuz on Monday.",
+    "pubDate": "Wed, 02 Sep 2026 17:33:45 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Videos and debris raise questions over alleged US strike on Iranian wedding",
+    "link": "https://www.france24.com/en/middle-east/20260902-videos-and-debris-raise-questions-over-alleged-us-strike-on-iranian-wedding",
+    "description": "On the evening of September 1, a barrage of US missile and drone attacks on a town in southern Iran allegedly struck a wedding ceremony, killing at least five people, including a four-year-old boy. FRANCE 24 geolocated a direct hit to the civilian building where local residents say the wedding was b",
+    "pubDate": "Wed, 02 Sep 2026 17:31:06 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "China now has more solar than coal to fuel its electric car boom",
+    "link": "https://electrek.co/2026/09/02/china-now-has-more-solar-than-coal-to-fuel-its-electric-car-boom/",
+    "description": "China, the world’s largest electricity market, now has more installed electricity generation capacity from solar than from coal plants. The news comes at just the right time – as China’s EV sales boom, as global energy prices spike, and as climate change continues to ravage the Earth.\nmore…",
+    "pubDate": "Wed, 02 Sep 2026 17:20:10 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Pangram’s Max Spero on why AI detection is harder than ‘Real or Fake’",
+    "link": "https://techcrunch.com/video/pangrams-max-spero-on-why-ai-detection-is-harder-than-real-or-fake/",
+    "description": "The internet has a trust problem, and it’s not just because social media feeds are filling up with AI slop. AI-generated text and images are now making their way into job applications, product reviews, and even insurance claims, leaving platforms and users alike scrambling to figure out what’s real.",
+    "pubDate": "Wed, 02 Sep 2026 17:18:13 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "X shifts US creator payouts from Stripe to X Money",
+    "link": "https://techcrunch.com/2026/09/02/x-shifts-us-creator-payouts-from-stripe-to-x-money/",
+    "description": "X says U.S. creator payouts will now be handled through its X Money payments service, a change that appears to replace the previous Stripe-powered payout system.",
+    "pubDate": "Wed, 02 Sep 2026 17:12:27 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Brazilian activist demands Tunisia release Sumud Flotilla organisers",
+    "link": "https://www.aljazeera.com/news/2026/9/2/brazilian-activist-demands-tunisia-release-sumud-flotilla-organisers?traffic_source=rss",
+    "description": "Activists say four organisers of flotilla that sought to break Gaza blockade have been held in Tunisia since March.",
+    "pubDate": "Wed, 02 Sep 2026 17:10:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "US government sides with OpenAI on issue of training LLMs on copyrighted material",
+    "link": "https://techcrunch.com/2026/09/02/u-s-government-sides-with-openai-on-issue-of-training-llms-on-copyrighted-material/",
+    "description": "\"The United States has a strong interest in continuing to develop a robust and competitive\nartificial intelligence industry that sets the standard for the practice and procedure of AI use\nglobally,\" the brief reads.",
+    "pubDate": "Wed, 02 Sep 2026 17:09:06 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Mercedes Spinout Athos Closes Its Doors",
+    "link": "https://www.eetimes.com/mercedes-spinout-athos-closes-its-doors/",
+    "description": "The startup was unable to secure the financing required to continue commercialising its chiplet-based technology \nThe post Mercedes Spinout Athos Closes Its Doors appeared first on EE Times.",
+    "pubDate": "Wed, 02 Sep 2026 17:07:04 +0000",
+    "source": "EE Times",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Woman charged with juror intimidation in Lindsay Clancy trial ",
+    "link": "https://www.bbc.co.uk/news/articles/cwyze4593zwo?at_medium=RSS&at_campaign=rss",
+    "description": "Dawn Light is accused of taking photos of jurors outside the Plymouth courthouse, a practice prohibited by the court.",
+    "pubDate": "Wed, 02 Sep 2026 17:05:09 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Range Rover’s new EV looks just like a regular Range Rover — that’s refreshing",
+    "link": "https://www.theverge.com/transportation/988232/range-rover-electric-range-battery-specs",
+    "description": "I think automakers are finally getting the memo. Rather than try to reinvent the wheel with its new electric vehicle, Range Rover just made one that looks nearly identical to its lineup of gas-powered SUVs. They didn't try to pass off some sleek, spaceship-looking pod as a Range Rover. Sometimes fam",
+    "pubDate": "2026-09-02T17:01:08.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Intel 18A-P Pushes RibbonFET and Backside Power Beyond the First Generation",
+    "link": "https://semiwiki.com/semiconductor-manufacturers/intel/372712-intel-18a-p-pushes-ribbonfet-and-backside-power-beyond-the-first-generation/",
+    "description": "Intel Foundry has a blog on LinkedIn that is worth a look. The blogs are by trusted Intel Foundry technical experts and are filled with content. I will cherry pick write a bit about them but be sure and subscribe to this, absolutely.\nIntel 18A-P is not a new process node in the conventional sense. I",
+    "pubDate": "Wed, 02 Sep 2026 17:00:42 +0000",
+    "source": "SemiWiki",
+    "category": "semiconductor"
+  },
+  {
+    "title": "South African airline behind daring  stadium stunt cancels next flyby, regulator says",
+    "link": "https://www.bbc.co.uk/news/articles/c2e0r4nwg30o?at_medium=RSS&at_campaign=rss",
+    "description": "The civil aviation authority says it is also investigating last Saturday's aerial display.",
+    "pubDate": "Wed, 02 Sep 2026 16:58:59 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "US oil giant Chevron to expand Venezuela operations",
+    "link": "https://www.aljazeera.com/economy/2026/9/2/us-oil-giant-chevron-to-expand-venezuela-operations?traffic_source=rss",
+    "description": "Chevron, the only US oil firm with major presence in Venezuela, said it has got extra acreage and will double output.",
+    "pubDate": "Wed, 02 Sep 2026 16:57:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Uber lays off 3,300 employees in largest cuts since the pandemic",
+    "link": "https://www.aljazeera.com/economy/2026/9/2/uber-lays-off-3300-employees-in-largest-cuts-since-the-pandemic?traffic_source=rss",
+    "description": "The layoffs aim to streamline management layers and simplify team structures, says Uber’s CEO Dara Khosrowshahi.",
+    "pubDate": "Wed, 02 Sep 2026 16:55:52 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Enhanced geothermal notches another win as Google buys 400 MW from Fervo",
+    "link": "https://techcrunch.com/2026/09/02/enhanced-geothermal-notches-another-win-as-google-buys-400-mw-from-fervo/",
+    "description": "Fervo's deal with Google could expand to 1 gigawatt of geothermal power, enough to supply a very large AI data center in Utah.",
+    "pubDate": "Wed, 02 Sep 2026 16:54:23 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Deadly bus crash in Egypt’s Sinai kills 22, injures 28",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/2/deadly-bus-crash-in-egypts-sinai-kills-22-injures-28?traffic_source=rss",
+    "description": "A deadly bus crash in Egypt’s South Sinai killed 22 people and injured 28",
+    "pubDate": "Wed, 02 Sep 2026 16:52:52 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Uber to cut over 3,000 jobs in major global restructuring",
+    "link": "https://www.bbc.co.uk/news/articles/cp3ky2w4y9no?at_medium=RSS&at_campaign=rss",
+    "description": "The company says cutting roles would make its operations \"simpler and faster\".",
+    "pubDate": "Wed, 02 Sep 2026 16:51:49 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "MiniMax, Z.ai revenues surge on API demand but adjusted losses widen",
+    "link": "https://www.digitimes.com/news/a20260902VL221/demand-z.ai-revenue-api-technology.html",
+    "description": "Two of China's first listed foundation-model developers are showing that demand for their technology can translate into rapidly growing revenue. Turning that demand into profit remains a much harder problem.",
+    "pubDate": "Wed, 2 Sep 2026 16:50:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "EU and Nato vow to step up pressure on Russia after 'new escalation' in Germany",
+    "link": "https://www.bbc.co.uk/news/articles/ce9e810pg7ko?at_medium=RSS&at_campaign=rss",
+    "description": "Russia is accused of growing increasingly reckless after Berlin blamed Russia for a failed drone attack on Leipzig airport.",
+    "pubDate": "Wed, 02 Sep 2026 16:49:00 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Zambia’s Hichilema begins second term amid disputed vote and arrests",
+    "link": "https://www.aljazeera.com/news/2026/9/2/zambias-hichilema-begins-second-term-amid-disputed-vote-and-arrests?traffic_source=rss",
+    "description": "Economic gains face growing scrutiny as political tensions deepen after the vote.",
+    "pubDate": "Wed, 02 Sep 2026 16:47:47 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The best tech and gadgets announced at IFA so far",
+    "link": "https://www.theverge.com/tech/986867/ifa-2026-smart-home-lights-laptop-robot-vacuum-ai-headphones",
+    "description": "The doors to Europe's largest consumer tech show haven't opened to the public yet, but there's already plenty of news coming out of IFA 2026 in Berlin, Germany. If you're already struggling to keep up with what has been announced, here are some of the best new gadgets and upgrades from the show - in",
+    "pubDate": "2026-09-02T16:43:50.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Researchers fear safety disaster ahead of OpenAI&#8217;s Astra release",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/988334/openai-astra-ai-monitoring-safety",
+    "description": "OpenAI is on the cusp of releasing its most powerful AI model yet, Astra, following weeks of delays to shore up safety protocols after its agents attacked real targets during testing. As details about the model trickle out, researchers are warning it \"may be the single worst development for AI secur",
+    "pubDate": "2026-09-02T16:40:50.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "TIME AI 100 spotlights China's new AI guard, from Moonshot, Z.ai to AgiBot, Manus",
+    "link": "https://www.digitimes.com/news/a20260902PD212/2026-z.ai-ceo-technology.html",
+    "description": "TIME recently unveiled its 2026 list of the 100 most influential people in AI. Alongside leaders of major technology companies, the list includes a new generation of Chinese entrepreneurs spanning AI models, humanoid robots, and AI agents, highlighting how China's AI industry is expanding beyond lar",
+    "pubDate": "Wed, 2 Sep 2026 16:36:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "SEMICON Taiwan 2026: Physical AI drives new demand for multimodal robot sensing",
+    "link": "https://www.digitimes.com/news/a20260902PD221/demand-robot-2026-taiwan-sensor.html",
+    "description": "The rise of physical AI is creating a new wave of demand for advanced sensors as robots move from controlled demonstrations toward practical deployment. Industry experts at SEMICON Taiwan 2026 said robots will need increasingly diverse sensing capabilities to perceive, interpret, and respond to comp",
+    "pubDate": "Wed, 2 Sep 2026 16:33:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "US court rules Google will not have to sell ad exchange after losing antitrust case",
+    "link": "https://arstechnica.com/gadgets/2026/09/us-court-rules-google-will-not-have-to-sell-ad-exchange-after-losing-antitrust-case/",
+    "description": "The DOJ proved to the court that Google acted illegally, but it won't get the big win it wanted.",
+    "pubDate": "Wed, 02 Sep 2026 16:30:11 +0000",
+    "source": "Ars Technica - All content",
+    "category": "ai-tech"
+  },
+  {
+    "title": "George Clooney: US government run by ‘least qualified people’",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/2/george-clooney-us-government-run-by-least-qualified-people?traffic_source=rss",
+    "description": "US actor George Clooney has described US President Donald Trump’s administration as a ‘kakistocracy’.",
+    "pubDate": "Wed, 02 Sep 2026 16:25:28 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Toyota is delaying its 3-row electric SUV again: Here’s when it’s expected to launch now",
+    "link": "https://electrek.co/2026/09/02/toyota-delaying-3-row-highlander-electric-suv-again/",
+    "description": "Toyota is pushing back the launch of its first three-row electric SUV, the Highlander BEV, even further. Here’s when it’s now expected to go on sale.\nmore…",
+    "pubDate": "Wed, 02 Sep 2026 16:20:51 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "WHO chief warns Ebola response must ramp up to stem DRC outbreak",
+    "link": "https://www.aljazeera.com/news/2026/9/2/who-chief-warns-ebola-response-must-ramp-up-to-stem-drc-outbreak?traffic_source=rss",
+    "description": "Number of people killed in the Democratic Republic of Congo from disease exceeds 3,000 amid response funding gap.",
+    "pubDate": "Wed, 02 Sep 2026 16:18:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Zelensky says airlines should avoid Russian airspace as Ukraine escalates drone operations",
+    "link": "https://www.bbc.co.uk/news/articles/c9v9yydy2wvo?at_medium=RSS&at_campaign=rss",
+    "description": "Chinese and Gulf state airlines are among those still using Russian airspace. Meanwhile, Russia says it will intensify its own attacks on Ukraine.",
+    "pubDate": "Wed, 02 Sep 2026 16:12:43 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "The Trump administration is supporting OpenAI in the NYT copyright lawsuit",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/988344/trump-administration-new-york-times-openai-lawsuit",
+    "description": "The Trump administration has intervened in The New York Times' copyright lawsuit against OpenAI, making an argument in favor of the AI lab. The landmark lawsuit, filed in December 2023, alleging that OpenAI unlawfully trained its AI systems on articles from The New York Times and seeks to recoup \"bi",
+    "pubDate": "2026-09-02T16:12:25.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Russia blamed for explosive-laden drone found at German airport",
+    "link": "https://www.france24.com/en/video/20260902-russia-blamed-for-explosive-laden-drone-found-at-german-airport",
+    "description": "After #Germany blamed #Russia for the explosive-laden #drone found at #Leipzig airport on August 4, #Berlin has introduced new sanctions against #Moscow. Namely, its consulate in #Bonn and the Russian House - a cultural centre thought to be a Russian #spy hub - in #Berlin.",
+    "pubDate": "Wed, 02 Sep 2026 16:11:30 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Yield has been semiconductor industry's oldest question; now it's Microsoft's test for AI",
+    "link": "https://www.digitimes.com/news/a20260902VL224/microsoft-semiconductor-industry-yield-rate-silicon-infrastructure-semicon-taiwan.html",
+    "description": "Microsoft brought the semiconductor industry's own measure of success back to it on Wednesday, and argued that AI will be judged by it.",
+    "pubDate": "Wed, 2 Sep 2026 16:05:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Wonderful more than doubles its valuation to $5B in under 6 months",
+    "link": "https://techcrunch.com/2026/09/02/wonderful-more-than-doubles-its-valuation-to-5b-in-under-6-months/",
+    "description": "Wonderful said it will use its $550 million Series C funding to develop products faster, expand its FDE teams, and meet demand for its products.",
+    "pubDate": "Wed, 02 Sep 2026 16:04:10 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "India’s richest man now wants to turn aging computers into AI-ready PCs",
+    "link": "https://techcrunch.com/2026/09/02/indias-richest-man-now-wants-to-turn-aging-computers-into-ai-ready-pcs/",
+    "description": "Jio is betting it can turn an aging computer into an AI-ready PC for as little as about $11 for two months.",
+    "pubDate": "Wed, 02 Sep 2026 16:01:48 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Nepal intensifies relief and recovery efforts after deadly floods, UN says",
+    "link": "https://www.bbc.co.uk/news/articles/c8xk45k9r1go?at_medium=RSS&at_campaign=rss",
+    "description": "More than 1,200 people have died and thousands are missing, as rescue efforts continue and aid is airlifted to villages.",
+    "pubDate": "Wed, 02 Sep 2026 15:57:13 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Dismissal of ex-US soldier Bergdahl’s conviction was invalid, court rules",
+    "link": "https://www.aljazeera.com/news/2026/9/2/dismissal-of-ex-us-soldier-bergdahls-conviction-was-invalid-court-rules?traffic_source=rss",
+    "description": "Appeals panel says only military tribunals may assess court-martial convictions in blow to former Afghan war prisoner.",
+    "pubDate": "Wed, 02 Sep 2026 15:53:33 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The Logical End Point of AI Job Interviews Is Two Bots Talking to Each Other",
+    "link": "https://www.wired.com/story/bot-vs-bot-job-interview-ai/",
+    "description": "Christopher was sick of being ghosted by AI recruiters. So he unleashed ChatGPT on his robot interviewer.",
+    "pubDate": "Wed, 02 Sep 2026 15:51:46 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Google is sending MrBeast into the wilderness, armed with AI",
+    "link": "https://www.theverge.com/tech/988355/mrbeast-google-partnership-gemini-fitbit",
+    "description": "MrBeast will feature Gemini, Google Health, and the Fitbit Air in upcoming videos as part of a multi-year partnership with Google. The deal will kick off with a video featuring Jimmy \"MrBeast\" Donaldson turning to Gemini for wilderness survival advice: First up on September 5 is a new MrBeast video ",
+    "pubDate": "2026-09-02T15:47:03.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Israeli PM Netanyahu in Gaza, ‘we are not withdrawing’",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/2/israeli-pm-netanyahu-in-gaza-we-are-not?traffic_source=rss",
+    "description": "Israeli Prime Minister Benjamin Netanyahu has said Israel does not plan to withdraw from Gaza",
+    "pubDate": "Wed, 02 Sep 2026 15:45:54 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Google dodges another breakup attempt",
+    "link": "https://www.theverge.com/policy/988316/google-ad-tech-antitrust-remedies-decision",
+    "description": "US District Court Judge Leonie Brinkema declined the Justice Department's request to make Google sell off parts of its ad tech business, accepting milder remedies to restore competition to markets it illegally monopolized for years. Brinkema said she would adopt most of the behavioral changes propos",
+    "pubDate": "2026-09-02T15:42:17.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "China’s Xi urges new Middle East security framework during rare Egypt visit",
+    "link": "https://www.aljazeera.com/news/2026/9/2/chinas-xi-urges-new-middle-east-security-framework-during-rare-egypt-visit?traffic_source=rss",
+    "description": "Chinese, Egyptian leaders discuss the US-Israel war on Iran, which has prompted regional powers to rethink defence.",
+    "pubDate": "Wed, 02 Sep 2026 15:42:01 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "🔴 Live: Trump suggests renaming Hormuz 'Trump Strait'",
+    "link": "https://www.france24.com/en/middle-east/20260902-us-military-striking-targets-in-iran-after-attempted-attacks-on-shipping",
+    "description": "",
+    "pubDate": "Wed, 02 Sep 2026 15:37:58 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Egypt welcomes Xi as Beijing expands influence in region",
+    "link": "https://www.france24.com/en/video/20260902-egypt-welcomes-xi-as-beijing-expands-influence-in-region",
+    "description": "Egyptian ​President Abdel Fattah al-Sisi welcomed China's Xi Jinping to Cairo on Wednesday, opening a visit that highlights Cairo's deepening ties with Beijing as regional turmoil prompts U.S. allies to reassess longstanding security relationships.",
+    "pubDate": "Wed, 02 Sep 2026 15:33:43 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Iran says US strike killed four at wedding in 'war crime' as US denies targeting civilians",
+    "link": "https://www.bbc.co.uk/news/articles/cj06q4ynpmjo?at_medium=RSS&at_campaign=rss",
+    "description": "Iranian media reports two children were among those killed when shrapnel hit a home. Iran then launched missiles and drones at US targets in the Middle East.",
+    "pubDate": "Wed, 02 Sep 2026 15:33:19 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Continuous glucose monitors are about to get more complicated",
+    "link": "https://www.theverge.com/column/988242/optimizer-abbott-libre-duo-ketones-diabetic-ketoacidosis",
+    "description": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. My mom was a dramatic woman prone to overreacting. When I was a snotty teen, I told ",
+    "pubDate": "2026-09-02T15:30:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "AIR to use Elmo Motion Control technology in uncrewed cargo aircraft",
+    "link": "https://www.therobotreport.com/air-uses-elmo-motion-control-technology-in-uncrewed-cargo-aircraft/",
+    "description": "The partnership brings together Elmo's compact, high-power density servo drives and AIR's electric aviation design.\nThe post AIR to use Elmo Motion Control technology in uncrewed cargo aircraft appeared first on The Robot Report.",
+    "pubDate": "Wed, 02 Sep 2026 15:29:23 +0000",
+    "source": "The Robot Report",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Philippine couple married in hip-deep floodwaters",
+    "link": "https://www.france24.com/en/video/20260902-philippine-couple-married-in-hip-deep-floodwaters",
+    "description": "A Philippine couple tied the knot on Tuesday at a Catholic church swamped in hip-deep waters, as heavy rains had pummelled large parts of the country for a month.",
+    "pubDate": "Wed, 02 Sep 2026 15:21:44 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Aubameyang ‘humiliated’ as ex-Arsenal striker quits Gabon national team",
+    "link": "https://www.aljazeera.com/sports/2026/9/2/aubameyang-humiliated-as-ex-arsenal-striker-quits-gabon-national-team?traffic_source=rss",
+    "description": "Pierre-Emerick Aubameyang cites 2025 Africa Cup of Nations treatment as captain steps away from Gabon duty.",
+    "pubDate": "Wed, 02 Sep 2026 15:21:43 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Lizzo 'grateful' after judge dismisses lawsuit against production company ",
+    "link": "https://www.bbc.co.uk/news/articles/c8xk4rl904vo?at_medium=RSS&at_campaign=rss",
+    "description": "The About Damn Time singer says she is \"relieved\" at the outcome and will \"continue to fight\" every claim.",
+    "pubDate": "Wed, 02 Sep 2026 15:20:19 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "US postal whistleblower warns thousands of midterm ballots could be lost",
+    "link": "https://www.france24.com/en/video/20260902-us-postal-whistleblower-warns-thousands-of-midterm-ballots-could-be-lost",
+    "description": "A US Postal Service whistleblower has warned that millions of Americans could be prevented from receiving mail ballots ahead of November's midterm elections because of a rushed, new system ordered by President Donald Trump and due for launch Tuesday. Trump signed an executive order in March seeking ",
+    "pubDate": "Wed, 02 Sep 2026 15:17:48 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Search continues for tunnel workers in Nepal floods",
+    "link": "https://www.france24.com/en/video/20260902-search-continues-for-tunnel-workers-in-nepal-floods",
+    "description": "Nepali authorities believe that the dozens of workers trapped in hydropower tunnels could still be alive, as some of the tunnels have chambers with air supplies. But rescue teams are still struggling, with difficult weather and heavy rains worsening the situation, reports France 24's Shahzaib Wahlah",
+    "pubDate": "Wed, 02 Sep 2026 15:17:20 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "'Nothing but mud and silt' - the village swept away by deadly floods in Nepal",
+    "link": "https://www.bbc.co.uk/news/videos/cn0j4k45z32o?at_medium=RSS&at_campaign=rss",
+    "description": "BBC South Asia correspondent Azadeh Moshiri spoke to a local, who is still waiting for his his wife's body to be retrieved, as rescue efforts continue.",
+    "pubDate": "Wed, 02 Sep 2026 15:16:42 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Nepal PM links deadly floods to climate change",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/2/nepal-pm-links-deadly-floods-to-climate-change?traffic_source=rss",
+    "description": "Nepal PM links deadly floods to climate change",
+    "pubDate": "Wed, 02 Sep 2026 15:11:19 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Zero will soon add the main feature its electric motorcycles have always lacked",
     "link": "https://electrek.co/2026/09/02/zero-will-soon-add-the-main-feature-its-electric-motorcycles-have-always-lacked/",
     "description": "Zero Motorcycles just announced that coming in 2027 is a much requested feature that the company has yet to include on its electric motorcycles: DC fast charging.\nmore…",
@@ -18,10 +570,18 @@
   {
     "title": "HiddenLayer nabs $100M as enterprises rush to secure their AI deployments",
     "link": "https://techcrunch.com/2026/09/02/hiddenlayer-nabs-100m-as-enterprises-rush-to-secure-their-ai-deployments/",
-    "description": "HiddenLayer has raised a $100M Series B from Delta-v Capital, Ten Eleven Ventures, Morgan Stanley, Microsoft's M12, Booz Allen Hamilton, and others.",
+    "description": "Security companies are scrambling to build products that can monitor not just agents but also the tools and add-ons they use.",
     "pubDate": "Wed, 02 Sep 2026 15:01:23 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
+  },
+  {
+    "title": "China’s Xi visits Egypt’s el-Sisi: Why it matters",
+    "link": "https://www.aljazeera.com/news/2026/9/2/chinas-xi-visits-egypts-el-sisi-why-it-matters?traffic_source=rss",
+    "description": "Xi Jinping's historic Egypt visit aims to strengthen China-Egypt ties amid rising Middle East tensions.",
+    "pubDate": "Wed, 02 Sep 2026 15:00:30 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
   },
   {
     "title": "Building a Faster Path from Semiconductor Idea to Commercial Silicon",
@@ -64,6 +624,14 @@
     "category": "ai-tech"
   },
   {
+    "title": "Can Ukraine’s drones shut Russian airspace? What that means for airlines",
+    "link": "https://www.aljazeera.com/features/2026/9/2/can-ukraines-drones-shut-russian-airspace-what-that-means-for-airlines?traffic_source=rss",
+    "description": "What happens if the airspace of the world's largest country by land mass is out of bounds because of Ukrainian drones?",
+    "pubDate": "Wed, 02 Sep 2026 14:55:16 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Toyohiro Akiyama, first Japanese citizen and journalist in space, dies at 84",
     "link": "https://arstechnica.com/space/2026/09/toyohiro-akiyama-first-japanese-citizen-and-journalist-in-space-dies-at-84/",
     "description": "He reported from space that only \"fat\" Japanese tree frogs enjoyed weightlessness.",
@@ -72,12 +640,36 @@
     "category": "ai-tech"
   },
   {
+    "title": "Gaza Civil Defence worker finds 21 relatives beneath rubble",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/2/gaza-civil-defence-worker-finds-21-relatives-beneath-rubble?traffic_source=rss",
+    "description": "A Gaza Civil Defence worker helped recover the bodies of 21 of his relatives from beneath the rubble.",
+    "pubDate": "Wed, 02 Sep 2026 14:45:26 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Range Rover’s first luxury electric SUV costs $140,000 and delivers V8 power [Images]",
     "link": "https://electrek.co/2026/09/02/range-rover-electric-launches-140k-v8-power-images/",
     "description": "The Range Rover Electric is now on sale with prices starting at about $140,000. It’s expensive, but the electric SUV is “the most accomplished Range Rover ever,” offering a quieter, more refined drive.\nmore…",
     "pubDate": "Wed, 02 Sep 2026 14:45:19 +0000",
     "source": "Electrek",
     "category": "ai-tech"
+  },
+  {
+    "title": "北京协和医学院与SKG签署合作协议，开展睡眠呼吸暂停检测算法临床研究",
+    "link": "https://www.leiphone.com/category/weiwu/66bHoBvGJOjv7lV0.html",
+    "description": "9月1日，SKG与北京协和医学院于签署合作协议，双方将围绕睡眠呼吸暂停检测算法开展联合研究。该项目纳入三家三甲医院进行多中心临床验证，计划以医学专家标注的多导睡眠监测（PSG）数据作为金标准，为SKG小警卫手表的算法校准提供临床依据。\n从公开信息看，SKG小警卫手表在硬件配置上选择了4通道PPG方案，相比市面上常见的单通道或双通道设计，理论上能够获取更丰富的血流信号，可能对睡眠呼吸暂停等事件的检出率有所提升。血压测量则同时采用示波法和PPG技术，其中示波法在临床中有较成熟的应用基础，标称精度为±3mmHg。\n不过，这款手表引起关注的更多是其异常事件发生后的处理机制。多数可穿戴设备目前停留在“检",
+    "pubDate": "Wed, 02 Sep 2026 22:42:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Russlands hybrider Krieg gegen Deutschland: Und was jetzt?",
+    "link": "https://www.dw.com/de/russlands-hybrider-krieg-gegen-deutschland-und-was-jetzt/a-78763342?maca=de-rss-de-all-1119-rdf",
+    "description": "Die Bundesregierung macht Russland für einen gescheiterten Anschlag in Leipzig verantwortlich. Doch die Konsequenzen sind Kritikern noch nicht hart genug.",
+    "pubDate": "2026-09-02T14:42:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
   },
   {
     "title": "Ist Deutschland schon im Krieg mit Russland?",
@@ -128,14 +720,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "EU and Nato vow to step up pressure on Russia after 'new escalation' in Germany",
-    "link": "https://www.bbc.co.uk/news/articles/ce9e810pg7ko?at_medium=RSS&at_campaign=rss",
-    "description": "Russia is accused of growing increasingly reckless after Berlin blamed Russia for a failed drone attack on Leipzig airport.",
-    "pubDate": "Wed, 02 Sep 2026 14:34:22 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "NYC bans AI use for students until they reach high school",
     "link": "https://www.theverge.com/policy/988228/nyc-ai-restrictions-in-schools-chatbot-ban",
     "description": "New York City mayor Zohran Mamdani has announced a new policy today that will ban younger schoolchildren from using AI in classrooms. The one-year moratorium, effective in the 2026-2027 school year, will impact about 600,000 public school students in 2-K through eighth grade and is being introduced ",
@@ -144,7 +728,7 @@
     "category": "ai-tech"
   },
   {
-    "title": "Paradox of Balladur's legacy: 'Highly popular' Gaullist elite yet 'too far away from the people'",
+    "title": "Paradox of Balladur's legacy: 'Highly popular' innovative Gaullist gradually became irrelevant",
     "link": "https://www.france24.com/en/paradox-of-balladur-s-legacy-highly-popular-gaullist-elite-yet-too-far-away-from-the-people",
     "description": "Sharon Gaffney is pleased to welcome Renaud Foucart, Senior Lecturer at Lancaster University. According to Foucart, Édouard Balladur’s political legacy mattered because he embodied a political model that was innovative and yet limited in scope and longevity. As PM under Socialist President François ",
     "pubDate": "Wed, 02 Sep 2026 14:29:58 GMT",
@@ -392,22 +976,6 @@
     "category": "semiconductor"
   },
   {
-    "title": "Nepal intensifies relief and recovery efforts after deadly floods, UN says",
-    "link": "https://www.bbc.co.uk/news/articles/c8xk45k9r1go?at_medium=RSS&at_campaign=rss",
-    "description": "More than 1,000 people have died and thousands are missing, as rescue efforts continue and aid is airlifted to villages.",
-    "pubDate": "Wed, 02 Sep 2026 13:17:43 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Zelensky says airlines should avoid Russian airspace as Ukraine escalates drone operations",
-    "link": "https://www.bbc.co.uk/news/articles/c9v9yydy2wvo?at_medium=RSS&at_campaign=rss",
-    "description": "Chinese and Gulf state airlines are among those still using Russian airspace. Meanwhile, Russia says it will intensify its own attacks on Ukraine.",
-    "pubDate": "Wed, 02 Sep 2026 13:16:26 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "Germany investigates suspected power substation sabotage, Russia summons German envoy",
     "link": "https://www.france24.com/en/europe/20260902-germany-ivestigates-suspected-power-substation-sabotage-russia-summons-german-envoy",
     "description": "Two incidents that disrupted power distribution systems in Germany are being investigated for sabotage, authorities said Wednesday, while one of them was also being examined for possible terrorism links. Meanwhile Russia said it was summoning Germany's charge d'affaires after Berlin blamed Moscow fo",
@@ -456,15 +1024,7 @@
     "category": "semiconductor"
   },
   {
-    "title": "‘Wordle in 1’ is the NYT’s new puzzle just for subscribers",
-    "link": "https://www.theverge.com/games/988099/nyt-bonus-puzzle-games-weekly-wordle",
-    "description": "The New York Times has prepared some exclusive goodies for its subscribers: a weekly drop of bonus puzzles based on the publication's popular games. Five to six new puzzles will be released every Wednesday, each featuring \"a twist\" on games like Wordle, Strands, Connections, and Crossword that are d",
-    "pubDate": "2026-09-02T13:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Tesla’s new Model Y L is having suspension problems in China",
+    "title": "Tesla’s new Model Y L is experiencing suspension failures",
     "link": "https://electrek.co/2026/09/02/teslas-new-model-y-l-is-having-big-suspension-problems-in-china/",
     "description": "Several Chinese owners of Tesla’s new Model Y L, the larger 3-row version of the popular Model Y, are going to Chinese social media to complain about suspension collapse issues – and it’s enough of a problem that fans have developed a “finger method” to test whether a vehicle is affected.\nmore…",
     "pubDate": "Wed, 02 Sep 2026 13:00:00 +0000",
@@ -478,6 +1038,22 @@
     "pubDate": "Wed, 02 Sep 2026 13:00:00 +0000",
     "source": "EE Times",
     "category": "semiconductor"
+  },
+  {
+    "title": "‘Wordle in 1’ is the NYT’s new puzzle just for subscribers",
+    "link": "https://www.theverge.com/games/988099/nyt-bonus-puzzle-games-weekly-wordle",
+    "description": "The New York Times has prepared some exclusive goodies for its subscribers: a weekly drop of bonus puzzles based on the publication's popular games. Five to six new puzzles will be released every Wednesday, each featuring \"a twist\" on games like Wordle, Strands, Connections, and Crossword that are d",
+    "pubDate": "2026-09-02T13:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Drone incident in Germany has ‘hallmarks of state-sponsored terrorism’, EU's Kallas says",
+    "link": "https://www.france24.com/en/europe/20260902-eu-summons-russia-envoys-eyes-sanctions-after-germany-drone-attack",
+    "description": "Last month's incident involving an explosive-laden drone at Leipzig airport bears \"all the hallmarks of state-sponsored terrorism,\" EU foreign policy chief Kaja Kallas said Wednesday. Germany has blamed Russia for the \"hybrid attack\". The EU has summoned the Russian envoy, and member states were doi",
+    "pubDate": "Wed, 02 Sep 2026 12:59:11 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
   },
   {
     "title": "Spritkrise im Iran",
@@ -578,18 +1154,10 @@
   {
     "title": "Uber is laying off 10% of staff, or 3,300 people",
     "link": "https://techcrunch.com/2026/09/02/uber-is-laying-off-10-of-staff-or-3300-people/",
-    "description": "Uber is laying off about 3,300 people, or about 10% of its global headcount, in a bid to reduce management layers and invest more in its ride-sharing, delivery, and robotaxi divisions.",
+    "description": "Uber is laying off about 3,300 people, or about 10% of its global headcount, in a bid to reduce management layers and invest more in its ridesharing, delivery, and robotaxi divisions.",
     "pubDate": "Wed, 02 Sep 2026 12:14:35 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
-  },
-  {
-    "title": "Lizzo 'grateful' after judge dismisses lawsuit against production company ",
-    "link": "https://www.bbc.co.uk/news/articles/c8xk4rl904vo?at_medium=RSS&at_campaign=rss",
-    "description": "The About Damn Time singer says she is \"relieved\" at the outcome and will \"continue to fight\" every claim.",
-    "pubDate": "Wed, 02 Sep 2026 12:14:31 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "The Download: AI puzzles and a path to our nearest star system",
@@ -680,14 +1248,6 @@
     "category": "international"
   },
   {
-    "title": "The amazing USB-C gadgets that play old Nintendo cartridges",
-    "link": "https://www.theverge.com/games/987972/epilogue-gb-sn-operator-review-nintendo-game-boy-snes",
-    "description": "Last week, I powered on a 26-year-old copy of Pok&#233;mon Pinball, one of the best Game Boy games ever made. My save file was no more. The Charmander I'd caught for my daughter, the high scores we'd set together… gone. Before flash memory, Nintendo cartridges used tiny watch batteries to save their",
-    "pubDate": "2026-09-02T11:30:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
     "title": "The Cybercab Is Almost Here. Now Comes the Hard Part",
     "link": "https://www.wired.com/story/here-comes-the-tesla-cybercab/",
     "description": "The electric-auto maker will officially debut its steering-wheel-free robotaxi on Thursday. But building the vehicle is the easy part.",
@@ -702,6 +1262,14 @@
     "pubDate": "2026-09-02T11:30:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
+  },
+  {
+    "title": "The amazing USB-C gadgets that play old Nintendo cartridges",
+    "link": "https://www.theverge.com/games/987972/epilogue-gb-sn-operator-review-nintendo-game-boy-snes",
+    "description": "Last week, I powered on a 26-year-old copy of Pok&#233;mon Pinball, one of the best Game Boy games ever made. My save file was no more. The Charmander I'd caught for my daughter, the high scores we'd set together… gone. Before flash memory, Nintendo cartridges used tiny watch batteries to save their",
+    "pubDate": "2026-09-02T11:30:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
   },
   {
     "title": "Filmfestspiele Venedig: Politik steht im Mittelpunkt",
@@ -768,19 +1336,19 @@
     "category": "ai-tech"
   },
   {
-    "title": "The robot butler dream doesn’t have legs",
-    "link": "https://www.theverge.com/tech/987756/humanoid-robot-butlers-lg-cloid-smart-home-ifa",
-    "description": "The idea of humanoid robots running our homes has been the stuff of science fiction for years. But unlike hoverboards and self-tying sneakers, a robot housekeeper has never felt close to rolling into our homes. Until now. This has been the year of the humanoid robot. At CES, there were dozens of hum",
-    "pubDate": "2026-09-02T11:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
     "title": "Best Sony Headphone Deals: WH-1000XM5 and More (2026)",
     "link": "https://www.wired.com/story/sony-headphone-deals-september-2026/",
     "description": "Our favorite Sony headphones are on sale, with discounts of up to 50 percent on top models.",
     "pubDate": "Wed, 02 Sep 2026 11:00:00 +0000",
     "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The robot butler dream doesn’t have legs",
+    "link": "https://www.theverge.com/tech/987756/humanoid-robot-butlers-lg-cloid-smart-home-ifa",
+    "description": "The idea of humanoid robots running our homes has been the stuff of science fiction for years. But unlike hoverboards and self-tying sneakers, a robot housekeeper has never felt close to rolling into our homes. Until now. This has been the year of the humanoid robot. At CES, there were dozens of hum",
+    "pubDate": "2026-09-02T11:00:00.000Z",
+    "source": "The Verge",
     "category": "ai-tech"
   },
   {
@@ -886,6 +1454,14 @@
     "pubDate": "Wed, 02 Sep 2026 18:42:00 +0800",
     "source": "雷峰网",
     "category": "ai-tech"
+  },
+  {
+    "title": "What we know about reported strike on Iran wedding celebrations",
+    "link": "https://www.bbc.co.uk/news/videos/c0lr1krdxxwo?at_medium=RSS&at_campaign=rss",
+    "description": "BBC Verify looks at footage showing the aftermath of a strike on a building in southern Iran.",
+    "pubDate": "Wed, 02 Sep 2026 10:33:47 GMT",
+    "source": "BBC News",
+    "category": "international"
   },
   {
     "title": "Guinea-Bissau referendum approves new constitution that expands president's powers",
@@ -1552,6 +2128,14 @@
     "category": "semiconductor"
   },
   {
+    "title": "Extending 18A With Significant Power And Performance Gains",
+    "link": "https://semiengineering.com/extending-18a-with-significant-power-and-performance-gains/",
+    "description": "A dual contact architecture with ultra-low-resistance contacts increases drive current and enables higher frequencies at matched capacitance.\nThe post Extending 18A With Significant Power And Performance Gains appeared first on Semiconductor Engineering.",
+    "pubDate": "Wed, 02 Sep 2026 07:01:16 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
     "title": "News kompakt: Russland nach deutschen Sanktionen empört",
     "link": "https://www.dw.com/de/news-kompakt-russland-nach-deutschen-sanktionen-empört/a-78657915?maca=de-rss-de-all-1119-rdf",
     "description": "Die Bundesregierung macht Russland für den Anschlagsversuch auf dem Flughafen Leipzig verantwortlich. Venezuela stimmt der Ausbeutung seiner gewaltigen Ölvorkommen durch US-Firmen zu. Der DW-Nachrichtenüberblick.",
@@ -1765,14 +2349,6 @@
     "description": "Visa cancellations or delays have forced international artists to rethink US tours under President Donald Trump.",
     "pubDate": "Wed, 02 Sep 2026 05:33:13 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Iran attacks US bases in Middle East after reports US strike killed five at wedding party",
-    "link": "https://www.bbc.co.uk/news/articles/cj06q4ynpmjo?at_medium=RSS&at_campaign=rss",
-    "description": "The Iranian Red Crescent says a child was among those killed when shrapnel from a US strike hit a home. The US military says it is aware of the reports and it never targets civilians.",
-    "pubDate": "Wed, 02 Sep 2026 05:12:07 GMT",
-    "source": "BBC News",
     "category": "international"
   },
   {
@@ -2365,14 +2941,6 @@
     "description": "German intelligence has concluded that an explosive-laden drone was linked to Russia. Officials promise consequences.",
     "pubDate": "Wed, 02 Sep 2026 01:40:01 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Middle East live: Iran launches retaliatory strikes after fresh US bombing kills 11 people",
-    "link": "https://www.france24.com/en/middle-east/20260902-us-military-striking-targets-in-iran-after-attempted-attacks-on-shipping",
-    "description": "Iranian state media reported Wednesday that US strikes killed 11 people in two separate attacks, including four at a wedding in the country’s south. Iran’s Revolutionary Guards said they have responded by attacking US assets in Kuwait, Bahrain, Jordan and Erbil in Iraqi Kurdistan. Follow our liveblo",
-    "pubDate": "Wed, 02 Sep 2026 01:38:58 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -3360,70 +3928,6 @@
     "category": "semiconductor"
   },
   {
-    "title": "Mass burials held in Nepal as bodies wash up after catastrophic flooding",
-    "link": "https://www.france24.com/en/mass-burials-held-in-nepal-as-bodies-wash-up-after-catastrophic-flooding",
-    "description": "Every day, new bodies are recovered in Nepal, but many remain unidentifiable. Several days after the disaster, some are already in an advanced state of decomposition. Morgues in the country's main cities are reaching capacity. Faced with the influx of remains, authorities have begun burying them wit",
-    "pubDate": "Tue, 01 Sep 2026 18:40:35 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Belgian mayor blocks club from hosting Israeli opponent in Europa League",
-    "link": "https://www.aljazeera.com/sports/2026/9/1/belgian-mayor-blocks-club-from-hosting-israeli-opponent-in-europa-league?traffic_source=rss",
-    "description": "Union Saint-Gilloise were to host Hapoel Beer-Sheva in Europa League, but Belgian mayor insists on different venue.",
-    "pubDate": "Tue, 01 Sep 2026 18:35:29 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Ex-gang boss guilty of orchestrating 1996 murder of rapper Tupac Shakur",
-    "link": "https://www.bbc.co.uk/news/articles/c24j5192j7jo?at_medium=RSS&at_campaign=rss",
-    "description": "Duane \"Keffe D\" Davis was convicted over the drive-by shooting of the rap superstar 30 years ago.",
-    "pubDate": "Tue, 01 Sep 2026 18:26:12 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "John Ternus sends first memo as Apple CEO teasing a &#8216;huge launch next week&#8217;",
-    "link": "https://www.theverge.com/tech/987583/apple-john-ternus-staff-memo",
-    "description": "New Apple CEO John Ternus sent out his first staff memo, thanking his predecessor Tim Cook, and quickly turning to what the company will do next, reports Bloomberg. \"We have a huge launch next week that's going to be phenomenal. Thanks for everything you've all done to make it possible,\" writes Tern",
-    "pubDate": "2026-09-01T18:24:16.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "School without screens: Will France's high school phone ban fly?",
-    "link": "https://www.france24.com/en/tv-shows/the-debate/20260901-school-wihout-screens-will-france-s-high-school-phone-ban-fly",
-    "description": "A lot happened during summer recess: France’s constitutional council struck down the core of a new law to ban social media for under 15 year olds, but it did validate the extension to high schoolers of a phone ban already in effect for younger pupils. Why one but not the other? On this the first day",
-    "pubDate": "Tue, 01 Sep 2026 18:23:47 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "UN food agency cuts aid in West Bank amid funding crisis",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/1/un-food-agency-cuts-aid-in-west-bank-amid-funding-crisis?traffic_source=rss",
-    "description": "UN food agency cuts aid in West Bank amid funding crisis",
-    "pubDate": "Tue, 01 Sep 2026 18:23:25 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Health crisis looming as Gaza heads towards rainy season, warns WHO",
-    "link": "https://www.aljazeera.com/news/2026/9/1/health-crisis-looming-as-gaza-heads-towards-rainy-season-warns-who?traffic_source=rss",
-    "description": "Water quality in embattled Palestinian enclave already poor; flooding will exacerbate threat to health, says UN agency.",
-    "pubDate": "Tue, 01 Sep 2026 18:22:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Vanuatu takes France to ICJ over Matthew and Hunter islands dispute",
-    "link": "https://www.aljazeera.com/news/2026/9/1/vanuatu-pushes-france-to-accept-icj-jurisdiction-in-pacific-islands-dispute?traffic_source=rss",
-    "description": "Vanuatu says French control of islands is relic of colonial past, as France’s far right uses case as a political weapon.",
-    "pubDate": "Tue, 01 Sep 2026 18:21:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "A newborn and child reportedly died of measles; CDC isn't counting them",
     "link": "https://arstechnica.com/health/2026/09/cdc-reported-then-deleted-two-measles-deaths-that-were-questioned-by-rfk-jr/",
     "description": "Historically, state health departments determine cases and deaths, not the CDC.",
@@ -3432,59 +3936,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "Apple accuses OpenAI of destroying evidence",
-    "link": "https://www.theverge.com/tech/987575/apple-openai-destroying-evidence-trade-secrets-lawsuit",
-    "description": "Apple is pushing for \"expedited discovery\" in its legal battle against OpenAI over concerns the company is actively destroying evidence, as reported earlier by Bloomberg. In a filing on Monday, Apple alleges OpenAI only just handed over a MacBook used by a former employee at the center of the lawsui",
-    "pubDate": "2026-09-01T18:19:26.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Nepal rescuers race to reach 900 missing hydropower workers",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/1/nepal-rescuers-race-to-reach-900-missing-hydropower-workers?traffic_source=rss",
-    "description": "Rescuers in Nepal are prioritising the search for at least 900 workers missing from 12 hydropower projects.",
-    "pubDate": "Tue, 01 Sep 2026 18:18:16 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Deep-sea search begins for 20 people missing in Cyprus ferry disaster",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/1/deep-sea-search-begins-for-20-people-missing-in-cyprus-ferry-disaster?traffic_source=rss",
-    "description": "A deep-sea vessel from Turkiye joined the search on Tuesday for 20 people missing for two days.",
-    "pubDate": "Tue, 01 Sep 2026 18:15:56 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "US and Iran trade fire as hostilities flare again",
-    "link": "https://www.france24.com/en/middle-east/20260901-us-and-iran-trade-fire-as-hostilities-flare-again",
-    "description": "The US military hit targets in Iran on Tuesday as Tehran reponded with retaliatory strikes as hostilities between the two countries flared once again in an intermittent war that has lasted more than six months. One US strike hit a home hosting a wedding, killing four people and wounding dozens, loca",
-    "pubDate": "Tue, 01 Sep 2026 18:15:13 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
     "title": "I rode Juiced’s 70 MPH Nomadix electric dirt bike, and the $2,495 price is a steal",
     "link": "https://electrek.co/2026/09/01/i-rode-juiceds-70-mph-nomadix-electric-dirt-bike-and-the-2495-price-is-a-steal/",
     "description": "The electric dirt bike/e-moto market has developed a pretty obvious split over the last few years. On one end, there’s a seemingly endless supply of inexpensive no-name machines with questionable components and varying levels of quality. On the other, there are legitimately impressive machines from ",
     "pubDate": "Tue, 01 Sep 2026 18:07:35 +0000",
     "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "As Michigan Senate race heats up, Vance calls El-Sayed 'evil' ",
-    "link": "https://www.bbc.co.uk/news/articles/cn9w39py48xo?at_medium=RSS&at_campaign=rss",
-    "description": "El-Sayed faces Trump ally Mike Rogers in what has quickly become a senate race characterised by personal attacks and insults between the two.",
-    "pubDate": "Tue, 01 Sep 2026 18:06:58 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Who is John Ternus, the new Apple CEO?",
-    "link": "https://techcrunch.com/2026/09/01/who-is-john-ternus-the-incoming-apple-ceo/",
-    "description": "Starting on September 1, Ternus will lead one of the world's most valuable companies, but if you're not a dedicated Apple enthusiast, you've probably never heard of this man, who has largely remained out of the spotlight until now.",
-    "pubDate": "Tue, 01 Sep 2026 18:02:00 +0000",
-    "source": "TechCrunch",
     "category": "ai-tech"
   },
   {
@@ -3504,67 +3960,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "Google Find Hub will soon help you locate things without a tracker",
-    "link": "https://www.theverge.com/tech/987339/google-september-android-drop-motion-assist-gemini-find-hub",
-    "description": "Google announced new features coming to Android devices as part of this month's feature drop update. Among the highlights are the introduction of Motion Assist - Android's version of Apple's Motion Cues feature, which tries to reduce motion sickness by overlaying dots on your screen that move in res",
-    "pubDate": "2026-09-01T18:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Berlin: \"Russland wollte Leipzig mit Drohne angreifen\"",
-    "link": "https://www.dw.com/de/berlin-russland-wollte-leipzig-mit-drohne-angreifen/a-78639889?maca=de-rss-de-all-1119-rdf",
-    "description": "Die deutsche Regierung ist sich sicher: Russland hat versucht, den Flughafen Leipzig mit Drohnen anzugreifen. Als Antwort wird unter anderen das russische Generalkonsulat geschlossen. Für Putin ein \"schwerer Fehler\".",
-    "pubDate": "2026-09-01T17:58:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
     "title": "FTC alleges Amazon illegally made $20 billion by rigging billions of ad auctions",
     "link": "https://arstechnica.com/tech-policy/2026/09/ftc-alleges-amazon-illegally-made-20-billion-by-rigging-billions-of-ad-auctions/",
     "description": "FTC says firm replaces actual ad-auction results \"with higher prices set by Amazon.\"",
     "pubDate": "Tue, 01 Sep 2026 17:51:17 +0000",
     "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "US health authorities contradict state officials on measles-related deaths",
-    "link": "https://www.aljazeera.com/news/2026/9/1/us-health-authorities-contradict-state-officials-on-measles-related-deaths?traffic_source=rss",
-    "description": "Clash with Pennsylvania comes as US records highest number of measles cases in decades.",
-    "pubDate": "Tue, 01 Sep 2026 17:48:28 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "The US military began striking targets in Iran, CENTCOM says",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/1/the-us-military-began-striking-targets-in-iran-centcom-says?traffic_source=rss",
-    "description": "The US military said it has begun striking targets in Iran.",
-    "pubDate": "Tue, 01 Sep 2026 17:39:29 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Manufacturing growth slows in August as economic concerns loom: ISM",
-    "link": "https://www.supplychaindive.com/news/manufacturing-growth-slows-in-august-as-economic-concerns-loom-ism/829327/",
-    "description": "Although the sector remained in expansion, \"warning signs\" are starting to appear, said Susan Spence, chair of the Institute for Supply Management.",
-    "pubDate": "Tue, 01 Sep 2026 13:39:00 -0400",
-    "source": "Supply Chain Dive - Latest News",
-    "category": "supply-chain"
-  },
-  {
-    "title": "John Ternus succeeds Tim Cook as Apple CEO after 15 years",
-    "link": "https://www.aljazeera.com/economy/2026/9/1/john-ternus-succeeds-tim-cook-as-apple-ceo-after-15-years?traffic_source=rss",
-    "description": "Apple gears up for innovation under Ternus before a new product launch event that could include foldable phones.",
-    "pubDate": "Tue, 01 Sep 2026 17:36:33 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Google’s answer to Canva is an AI tool where you prompt instead of design",
-    "link": "https://techcrunch.com/2026/09/01/googles-answer-to-canva-is-an-ai-tool-where-you-prompt-instead-of-design/",
-    "description": "With Google Pics, Google is pushing deeper into the creative software market dominated by Canva and Adobe, but with a distinctly AI-first approach.",
-    "pubDate": "Tue, 01 Sep 2026 17:35:37 +0000",
-    "source": "TechCrunch",
     "category": "ai-tech"
   },
   {
@@ -3576,36 +3976,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Pitso Mosimane appointed by South Africa ahead of AFCON qualifiers",
-    "link": "https://www.aljazeera.com/sports/2026/9/1/pitso-mosimane-appointed-by-south-africa-ahead-of-afcon-qualifiers?traffic_source=rss",
-    "description": "Pitso Mosimane replaces Hugo Broos as manager of the South Africa national football team following World Cup exit.",
-    "pubDate": "Tue, 01 Sep 2026 17:25:45 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Here’s what Volkswagen’s new EV camper looks like in person [Video]",
     "link": "https://electrek.co/2026/09/01/volkswagens-new-ev-camper-in-person-video/",
     "description": "The ID. California Cruise, Volkswagen’s first fully electric California camper, looks ready for your next adventure.\nmore…",
     "pubDate": "Tue, 01 Sep 2026 17:24:31 +0000",
     "source": "Electrek",
     "category": "ai-tech"
-  },
-  {
-    "title": "Lindsay Clancy: The trial putting postpartum mental illness in the spotlight",
-    "link": "https://www.france24.com/en/video/20260901-lindsay-clancy-the-trial-putting-postpartum-mental-illness-in-the-spotlight",
-    "description": "Jurors in the murder trial of Lindsay Clancy notified the judge ​on September 1 that they were unable to reach a unanimous decision on whether to convict her for killing her three young children at her home in ​2023 – a ‌tragedy her attorney contends occurred while she was suffering ⁠from postpartum",
-    "pubDate": "Tue, 01 Sep 2026 17:11:37 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Germany blames Russia for Leipzig airport drone attack, orders Russian consulate closed",
-    "link": "https://www.france24.com/en/europe/20260901-germany-blames-russia-for-leipzig-airport-drone-attack-orders-russian-consulate-closed",
-    "description": "Germany's government on Tuesday blamed Russia for an attempted attack at Leipzig/Halle Airport on 4 August using an explosive-laden drone, and announced that it would shut down a Russian consulate among other measures against Moscow. French ​President Emmanuel Macron ​said he supported the ​adoption",
-    "pubDate": "Tue, 01 Sep 2026 17:00:58 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "Keysight ADS Enables First-Pass Silicon at 3 THz for AttoTude",
@@ -3616,390 +3992,11 @@
     "category": "semiconductor"
   },
   {
-    "title": "ChatGPT Health adds Epic integration for clinicians to import patient data",
-    "link": "https://techcrunch.com/2026/09/01/chatgpt-health-adds-epic-integration-for-clinicians-to-import-patient-data/",
-    "description": "OpenAI said that the integration provides read-only access to health records for clinicians.",
-    "pubDate": "Tue, 01 Sep 2026 17:00:00 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
     "title": "How AI-native companies turn workflows into operating capability",
     "link": "https://openai.com/index/ai-native-company-workflows",
     "description": "Basis, Clay, and Exa Labs use AI agents to improve onboarding, account management, and developer integrations. See what enterprise leaders can apply.",
     "pubDate": "Tue, 01 Sep 2026 17:00:00 GMT",
     "source": "OpenAI News",
     "category": "ai-tech"
-  },
-  {
-    "title": "Homey just made the smart home controller I hoped Apple would build",
-    "link": "https://www.theverge.com/tech/987462/homey-lg-smart-portal-smart-home-controller-price-specs-release-date",
-    "description": "Smart homes have gotten really good at making things really complicated. Turning on a light can involve multiple steps, compared to just flipping a switch. Homey, the Dutch-based smart home platform owned by LG, thinks it has a solution. This week it launched the Homey Portal, a touchscreen smart ho",
-    "pubDate": "2026-09-01T17:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "China’s Xi makes first visit to Egypt in a decade, amid regional turmoil",
-    "link": "https://www.aljazeera.com/economy/2026/9/1/chinas-xi-makes-first-visit-to-egypt-in-a-decade-amid-regional-turmoil?traffic_source=rss",
-    "description": "Chinese President Xi visits Egypt to deepen economic ties and align strategies amid Middle East crises.",
-    "pubDate": "Tue, 01 Sep 2026 16:59:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Ousted UK Prime Minister Keir Starmer to quit domestic politics",
-    "link": "https://www.aljazeera.com/news/2026/9/1/ousted-uk-prime-minister-keir-starmer-to-quit-domestic-politics?traffic_source=rss",
-    "description": "Departed Labour Party leader now plans to focus on international affairs.",
-    "pubDate": "Tue, 01 Sep 2026 16:56:08 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Waymo goes on offense ahead of Tesla’s Cybercab launch",
-    "link": "https://techcrunch.com/2026/09/01/waymo-goes-on-offense-ahead-of-teslas-cybercab-launch/",
-    "description": "Waymo argued that fully autonomous vehicles aren't possible without using a mix of sensors and warned that pure end-to-end AI systems aren't safe enough.",
-    "pubDate": "Tue, 01 Sep 2026 16:49:12 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Samsung’s Galaxy Z Fold 8 Ultra hits its lowest price since launch",
-    "link": "https://www.theverge.com/gadgets/987490/galaxy-z-fold-8-ultra-remarkable-paper-pro-move-deal-sale",
-    "description": "If you missed the release promotions for the recent round of Samsung Galaxy phones, you’re in luck. The Samsung Galaxy Z Fold 8 Ultra is $300 off at Best Buy, the best deal we’ve seen since the phone launched last month. The phone impressed us with its rear triple camera setup, excellent battery lif",
-    "pubDate": "2026-09-01T16:48:45.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Learn how physical AI is being used to do real work at RoboBusiness",
-    "link": "https://www.therobotreport.com/learn-how-physical-ai-is-being-used-to-do-real-work-at-robobusiness/",
-    "description": "Leaders at Amazon Robotics, Teradyne Robotics, and Cobot will discuss how they're applying physical AI to robots operating in customer environments.\nThe post Learn how physical AI is being used to do real work at RoboBusiness appeared first on The Robot Report.",
-    "pubDate": "Tue, 01 Sep 2026 16:48:33 +0000",
-    "source": "The Robot Report",
-    "category": "ai-tech"
-  },
-  {
-    "title": "GoPro has been acquired and is getting into &#8216;defense, government, robotics and aerospace&#8217;",
-    "link": "https://www.theverge.com/news/987494/gopro-starman-holding-merger-aquisition",
-    "description": "GoPro suddenly looks like a very different company than it did just last week. First, YouTuber Mark \"Markiplier\" Fischbach became the company's single largest shareholder, without disclosing that in a sponsored review that came out a week later. Now, almost the entire company has been bought by Star",
-    "pubDate": "2026-09-01T16:46:08.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Iran promises to respond to new wave of US strikes despite Trump’s threats",
-    "link": "https://www.aljazeera.com/news/2026/9/1/us-military-says-launching-new-attacks-on-iran?traffic_source=rss",
-    "description": "Trump says the US attacks were 'large and powerful' and warns that Iran would be hit 'much harder' if it retaliates.",
-    "pubDate": "Tue, 01 Sep 2026 16:45:56 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Destroyed desalination plant worsens Gaza’s drinking water crisis",
-    "link": "https://www.aljazeera.com/features/2026/9/1/destroyed-desalination-plant-worsens-gazas-drinking-water-crisis?traffic_source=rss",
-    "description": "After a newly built desalination plant was destroyed, displaced families in northern Gaza struggle to find clean water.",
-    "pubDate": "Tue, 01 Sep 2026 16:45:35 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Trump says US position on Falklands 'one of many' under review",
-    "link": "https://www.bbc.co.uk/news/articles/cm2q1qgg542o?at_medium=RSS&at_campaign=rss",
-    "description": "The UK says Falkland islanders \"are British with a right to determine their own future\".",
-    "pubDate": "Tue, 01 Sep 2026 16:35:28 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Pistol in a lake gives hope for French cold case",
-    "link": "https://www.bbc.co.uk/news/articles/c74eklrm344o?at_medium=RSS&at_campaign=rss",
-    "description": "Saad al-Hilli was shot dead with his wife and mother-in-law while holidaying in eastern France in September 2012.",
-    "pubDate": "Tue, 01 Sep 2026 16:33:29 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "How AI Is Reshaping the Global Semiconductor Patent Landscape",
-    "link": "https://www.eetimes.com/how-ai-is-reshaping-the-global-semiconductor-patent-landscape/",
-    "description": "AI is turning chip patents into a geopolitical battle for dominance, from Nvidia’s CUDA moat to China’s filing surge.\nThe post How AI Is Reshaping the Global Semiconductor Patent Landscape appeared first on EE Times.",
-    "pubDate": "Tue, 01 Sep 2026 16:32:49 +0000",
-    "source": "EE Times",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Sequoia-incubated Empirik launches with $21M to predict outages before they happen",
-    "link": "https://techcrunch.com/2026/09/01/sequoia-incubated-empirik-launches-with-21m-to-predict-outages-before-they-happen/",
-    "description": "The startup wants to do for IT infrastructure what Cursor did for software engineering.",
-    "pubDate": "Tue, 01 Sep 2026 16:31:04 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Germany accuses Russia of drone attack on Leipzig airport",
-    "link": "https://www.aljazeera.com/news/2026/9/1/germany-accuses-russia-of-drone-attack-on-leipzig-airport?traffic_source=rss",
-    "description": "Findings announced as European countries report an increase in sabotage attacks and attempts that they blame on Russia.",
-    "pubDate": "Tue, 01 Sep 2026 16:24:36 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "UK Foreign Secretary condemns Israeli settlements in the occupied West Bank",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/1/uk-foreign-secretary-condemns-israeli-settlements-in-the-occupied-west-bank?traffic_source=rss",
-    "description": "UK Foreign Secretary condemns Israeli settlements in the occupied West Bank",
-    "pubDate": "Tue, 01 Sep 2026 16:15:01 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "River water smashed into tunnel and chased me for 20 minutes, Nepal worker tells BBC",
-    "link": "https://www.bbc.co.uk/news/articles/cg49590v6k1o?at_medium=RSS&at_campaign=rss",
-    "description": "Major efforts to rescue hydropower workers continue as Nepal's death toll exceeds 1,000.",
-    "pubDate": "Tue, 01 Sep 2026 16:11:18 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Plug and Play plans US$100 million Taiwan fund, hopes one of its next five unicorns is Taiwanese",
-    "link": "https://www.digitimes.com/news/a20260901VL221/taiwan-taipei-business-software-google.html",
-    "description": "Saeed Amidi has been in Taiwan for about 20 hours, and he has been asking everyone the same question.",
-    "pubDate": "Tue, 1 Sep 2026 16:05:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "John Deere launched an AI chatbot for farmers",
-    "link": "https://www.theverge.com/ai-artificial-intelligence/987486/john-deere-jd-ai-chatbot",
-    "description": "John Deere is testing a new \"JD\" AI assistant that it says can help farmers make more money, with answers about best practices and historical trends that are based on their own data. It uses their \"field, machine and operational data\" to answer questions on topics like equipment settings, fuel usage",
-    "pubDate": "2026-09-01T16:00:52.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Visko launches Orbis live model and closes pre-seed funding round",
-    "link": "https://www.therobotreport.com/visko-launches-orbis-live-model-closes-pre-seed-funding-round/",
-    "description": "Visko says Orbis streams 4K video at 24 frames per second, responds to user intervention, and sustains hour-scale generation without drift.\nThe post Visko launches Orbis live model and closes pre-seed funding round appeared first on The Robot Report.",
-    "pubDate": "Tue, 01 Sep 2026 16:00:01 +0000",
-    "source": "The Robot Report",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Sony’s new party speakers have more bass, more LEDs, and more connectivity",
-    "link": "https://www.theverge.com/tech/986839/sony-ult-power-sound-speaker-tower-max-5-7-xlr-leds",
-    "description": "Sony announced three new tower-style party speakers that will now be the largest options in its ULT Power Sound lineup. The new ULT Tower Max, ULT Tower 7, and ULT Tower 5 all feature expanded connectivity including USB-C, RCA, and XLR ports for connecting to audio gear using physical cables. The ne",
-    "pubDate": "2026-09-01T16:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Google Pics is like Canva, but with even more AI",
-    "link": "https://www.theverge.com/tech/987423/google-pics-ai-image-editor-generator",
-    "description": "Google has a new suite of creative design tools for Workspace users called Google Pics, which aims to make editing and generating \"professional-grade\" AI images less cumbersome for businesses. Built around Gemini and the Nano Banana generative AI model, Google Pics is designed to give more granular ",
-    "pubDate": "2026-09-01T16:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "GoPro to be acquired for $285M, will remain a public company",
-    "link": "https://techcrunch.com/2026/09/01/gopro-to-be-acquired-for-285m-will-remain-a-public-company/",
-    "description": "GoPro is merging with a company that builds AI infrastructure, and will continue supporting existing consumer products.",
-    "pubDate": "Tue, 01 Sep 2026 15:57:23 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "'I have fired 40 of my agents for being corrupt', says Nigeria's anti-corruption chief",
-    "link": "https://www.bbc.co.uk/news/articles/c9863817xzpo?at_medium=RSS&at_campaign=rss",
-    "description": "The EFCC boss says more than five of the dismissed officials are already facing prosecution.",
-    "pubDate": "Tue, 01 Sep 2026 15:57:18 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "‘No one else like him’: Argentinians rally for Lionel Messi",
-    "link": "https://www.aljazeera.com/news/2026/9/1/no-one-else-like-him-argentinians-rally-for-lionel-messi?traffic_source=rss",
-    "description": "Residents of Buenos Aires say they will miss the football legend who won the 2022 World Cup for Argentina.",
-    "pubDate": "Tue, 01 Sep 2026 15:57:14 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Iran and Russia vow to stand against US ‘unilateralism’",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/1/iran-and-russia-vow-to-stand-against-us?traffic_source=rss",
-    "description": "Iranian President Pezeshkian thanked Putin for Moscow’s support, vowing to resist US 'unilateralism'.",
-    "pubDate": "Tue, 01 Sep 2026 15:55:25 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Volvo’s cheapest EV can now power a campsite or coffee maker",
-    "link": "https://electrek.co/2026/09/01/volvos-cheapest-ev-power-campsite-coffee-maker/",
-    "description": "Volvo launched a software update that gives the EX30 new capabilities, including the ability to power external electronics with vehicle-to-load (V2L).\nmore…",
-    "pubDate": "Tue, 01 Sep 2026 15:51:56 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Amazon Alexa can now alert you when something new might tempt you to shop",
-    "link": "https://techcrunch.com/2026/09/01/amazon-alexa-can-now-alert-you-when-something-new-might-tempt-you-to-shop/",
-    "description": "Amazon is adding a new Alexa-powered feature called “Update Me When” that can send personalized alerts about product launches, tours, books, shows, and other events that could trigger a purchase.",
-    "pubDate": "Tue, 01 Sep 2026 15:51:55 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Woman killed in Times Square stabbing, suspect shot dead by police",
-    "link": "https://www.bbc.co.uk/news/articles/ckgvrm5nxexo?at_medium=RSS&at_campaign=rss",
-    "description": "Police say the double stabbing, which injured another person, was random and the suspect had a mental health history.",
-    "pubDate": "Tue, 01 Sep 2026 15:48:38 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "AIR raises $50M to help companies vet the skills and add-ons AI agents use",
-    "link": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use/",
-    "description": "AIR's platform can discover agents running at a company, continuously vets any skills and add-ons they use, and blocks any unwanted behavior.",
-    "pubDate": "Tue, 01 Sep 2026 15:45:51 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Six days of Russian strikes push Kyiv residents to consider leaving",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/1/six-days-of-russian-strikes-push-kyiv-residents-to-consider-leaving?traffic_source=rss",
-    "description": "Russia has launched strikes almost continuously on Kyiv and surrounding areas for six straight days.",
-    "pubDate": "Tue, 01 Sep 2026 15:45:18 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "3899 元！戴森发布 AI 牙刷：有水牙线不够，还要塞个摄像头",
-    "link": "https://www.ifanr.com/1678053?utm_source=rss&utm_medium=rss&utm_campaign=",
-    "description": "电动牙刷，还能有什么新花样？\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
-    "pubDate": "Tue, 01 Sep 2026 15:44:53 +0000",
-    "source": "爱范儿",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Bank of America VP identified as victim in Times Square stabbing",
-    "link": "https://www.aljazeera.com/news/2026/9/1/bank-of-america-vice-president-identified-as-killed-in-times-square-attack?traffic_source=rss",
-    "description": "Erin Piacenti identified as one of two victims in daytime stabbing on New York City thoroughfare.",
-    "pubDate": "Tue, 01 Sep 2026 15:41:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "What to know about the new UK PM's agenda as he faces lawmakers",
-    "link": "https://www.france24.com/en/what-to-know-about-the-new-uk-pm-s-agenda-as-he-faces-lawmakers",
-    "description": "Since taking office on July 20, Burnham has traveled around the country promising to deliver renewed national optimism after the downbeat two-year tenure of his predecessor Keir Starmer. Now, it's time for him to face lawmakers for the first time since he has taken office after an unusually long tim",
-    "pubDate": "Tue, 01 Sep 2026 15:39:39 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Mansouri rocked by Israeli strikes as residents flee again",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/1/mansouri-rocked-by-israeli-strikes-as-residents-flee-again?traffic_source=rss",
-    "description": "A large explosion shook Mansouri in southern Lebanon on Tuesday amid renewed Israeli airstrikes",
-    "pubDate": "Tue, 01 Sep 2026 15:36:08 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Germany set to blame Russia for airport explosive-laden drone incident",
-    "link": "https://www.france24.com/en/video/20260901-germany-set-to-blame-russia-for-airport-explosive-laden-drone-incident",
-    "description": "Berlin is set to formally blame Russia for an incident involving drones at a strategic airport on the night of August 4-5, including one that was found carrying explosives. Foreign Minister Johann Wadephul and Interior Minister Alexander Dobrindt are expected to accuse a Russian intelligence service",
-    "pubDate": "Tue, 01 Sep 2026 15:35:40 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Photos: Nepal begins burying flood victims in mass graves",
-    "link": "https://www.aljazeera.com/gallery/2026/9/1/photos-nepal-buries-flood-victims-in-mass-grave?traffic_source=rss",
-    "description": "The Hindu rituals of death, cremation, prayer and final farewell have been overwhelmed by the scale of the disaster.",
-    "pubDate": "Tue, 01 Sep 2026 15:35:20 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Sexual assaults happening almost every day in Ceuta, prosecutors say",
-    "link": "https://www.bbc.co.uk/news/articles/c3v4pgk7gweo?at_medium=RSS&at_campaign=rss",
-    "description": "Most migrants have returned to neighbouring Morocco, but as many as 5,000 remain in the Spanish exclave.",
-    "pubDate": "Tue, 01 Sep 2026 15:33:14 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Qatar says efforts under way to end Iran-US war and reopen Strait of Hormuz",
-    "link": "https://www.aljazeera.com/news/2026/9/1/qatar-says-efforts-under-way-to-end-iran-us-war-and-reopen-strait-of-hormuz?traffic_source=rss",
-    "description": "Qatar accuses Israel of exploiting regional conflicts to impose new realities in Palestine, Lebanon, and Syria.",
-    "pubDate": "Tue, 01 Sep 2026 15:29:48 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Microsoft 365 outage drags on, but things are improving",
-    "link": "https://techcrunch.com/2026/09/01/microsoft-365-outage-drags-on-but-things-are-improving/",
-    "description": "Microsoft 365 and Outlook are still seeing service degradations on Tuesday, the company's status page indicates.",
-    "pubDate": "Tue, 01 Sep 2026 15:23:15 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Replay: UK PM Andy Burnham faces lawmakers for first time since taking office",
-    "link": "https://www.france24.com/en/replay-uk-pm-andy-burnham-faces-lawmakers-for-first-time-since-taking-office",
-    "description": "Rewatch UK Prime Minister Andy Burnham's first speech to parliament since taking office six weeks prior.",
-    "pubDate": "Tue, 01 Sep 2026 15:22:49 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Waymo opens robotaxi rides to the public in 3 new cities, now 14 total",
-    "link": "https://electrek.co/2026/09/01/waymo-public-robotaxi-denver-san-diego-tampa/",
-    "description": "Waymo opened its driverless ride-hailing service to the general public in Denver, San Diego, and Tampa on Monday, bringing the Alphabet-owned company to 14 US cities.\nTens of thousands of people in each market had already signed up before the doors opened, and Waymo says it will let them in graduall",
-    "pubDate": "Tue, 01 Sep 2026 15:22:13 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Jerusalem schools strike after Israel enforces curriculum and bans teachers",
-    "link": "https://www.aljazeera.com/news/2026/9/1/jerusalem-schools-strike-after-israel-enforces-curriculum-and-bans-teachers?traffic_source=rss",
-    "description": "East Jerusalem schools strike as Israeli permit bans and forced curricula plunge the academic year into chaos.",
-    "pubDate": "Tue, 01 Sep 2026 15:19:46 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Shelly’s new $50 security camera watches your home without a subscription",
-    "link": "https://www.theverge.com/tech/987436/shelly-smart-home-hd-security-camera-automation",
-    "description": "After launching a budget-friendly flood sensor last month with impressive battery life, Shelly announced a new $49.99 security camera today that can be used without any additional subscription fees - although that's still an option if you want to expand its capabilities. The Shelly Camera will be av",
-    "pubDate": "2026-09-01T15:19:17.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Niger's thwarted mutiny highlights junta's dependence on Russia",
-    "link": "https://www.france24.com/en/africa/20260901-what-russia-helping-niger-junta-stop-mutiny-means-for-its-sovereignty",
-    "description": "A failed mutiny in Niger over the weekend shows how important Russia's Africa Corps mercenaries are in the country, according to analysts. They argue that the failed mutiny on Saturday shows how the country's security landscape has worsened and contradicts claims from Niger's junta about the country",
-    "pubDate": "Tue, 01 Sep 2026 15:16:08 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "France targets Shein and Temu with fast fashion fees",
-    "link": "https://www.bbc.co.uk/news/articles/cm2792pendro?at_medium=RSS&at_campaign=rss",
-    "description": "The levy on \"ultra-fast fashion\" items could reach almost €20 per garment by 2030.",
-    "pubDate": "Tue, 01 Sep 2026 15:15:57 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Fambot introduces an ‘AI chief of staff’ for families",
-    "link": "https://techcrunch.com/2026/09/01/fambot-introduces-an-ai-chief-of-staff-for-families/",
-    "description": "Fambot is building an AI “chief of staff” to help families manage the emails, calendars, school updates, sports schedules, and other logistics of raising kids.",
-    "pubDate": "Tue, 01 Sep 2026 15:10:58 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech",
-    "_stale": true
   }
 ]
