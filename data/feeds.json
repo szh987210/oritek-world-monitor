@@ -1,5 +1,149 @@
 [
   {
+    "title": "Reinforcement Learning Cuts Routing Violations in Dense Chip Layouts  (NYU)",
+    "link": "https://semiengineering.com/reinforcement-learning-cuts-routing-violations-in-dense-chip-layouts-nyu/",
+    "description": "Researchers at New York University published a technical paper titled “Routing Dense Layouts with History-Aware Offline Reinforcement Learning using LSTM.” Abstract Excerpt: “Detailed routing remains a dominant runtime bottleneck in physical design due to increasing complexity of design rules. Moder",
+    "pubDate": "Sat, 19 Sep 2026 18:54:29 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Chiplet Co-Design Framework Reduces Energy and Design Costs for AI Accelerators (University of Michigan)",
+    "link": "https://semiengineering.com/chiplet-co-design-framework-reduces-energy-and-design-costs-for-ai-accelerators-university-of-michigan/",
+    "description": "Researchers at the University of Michigan published a technical paper titled “Fengshui: Demystifying Chiplet Ecosystem and Bespoke Neural Network Accelerator Codesign.” Abstract Excerpt: “This paper introduces Fengshui, a chiplet ecosystem and accelerator co-design framework that jointly optimizes c",
+    "pubDate": "Sat, 19 Sep 2026 18:44:42 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Open Benchmark Evaluates AI Thermal Models for 2.5D and 3D ICs (UTS, TU Munich, ShanghaiTech)",
+    "link": "https://semiengineering.com/open-benchmark-evaluates-ai-thermal-models-for-2-5d-and-3d-ics-uts-tu-munich-shanghaitech/",
+    "description": "Researchers at the University of Technology Sydney, ShanghaiTech University, and Technical University of Munich published a technical paper titled “IC-ThermBench: An Open, Progressive Benchmark for Generalizable 2.5D/3D-IC Thermal Learning.” Abstract Excerpt: “We introduce IC-ThermBench, an open and",
+    "pubDate": "Sat, 19 Sep 2026 18:37:45 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Iran says conditions to re-engage in talks, end war sent to US via Qatar",
+    "link": "https://www.aljazeera.com/news/2026/9/19/iran-says-conditions-to-re-engage-in-talks-end-war-sent-to-us-via-qatar?traffic_source=rss",
+    "description": "Mohsen Rezaei, secretary of Iran’s Supreme National Security Council, tells Al Jazeera Tehran awaiting Trump response.",
+    "pubDate": "Sat, 19 Sep 2026 18:32:30 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "AI in Chip Design: From Code Generation to EDA Orchestration (University of Edinburgh)",
+    "link": "https://semiengineering.com/ai-in-chip-design-from-code-generation-to-eda-orchestration-university-of-edinburgh/",
+    "description": "Researchers at the University of Edinburgh published a technical perspective titled “LLMs in Digital EDA: A perspective on shifting roles from Generation to Orchestration.” Abstract Excerpt: “In this Perspective, we instead define three hierarchical roles that reveal how capability accumulates: a Ge",
+    "pubDate": "Sat, 19 Sep 2026 18:30:22 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Unified Chiplet Network Scales Neuromorphic Computing Systems (Heidelberg University)",
+    "link": "https://semiengineering.com/unified-chiplet-network-scales-neuromorphic-computing-systems-heidelberg-university/",
+    "description": "Researchers at Heidelberg University published a technical paper titled “A Unified Interconnection Network for Chiplet-Based Scaling of the BrainScaleS Neuromorphic System.” Abstract Excerpt: “To overcome the challenges of scaling analog designs, chiplet-based designs offer a promising approach with",
+    "pubDate": "Sat, 19 Sep 2026 18:23:56 +0000",
+    "source": "Semiconductor Engineering",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Israel targets paramedics in southern Lebanon",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/19/israel-targets-paramedics-in-southern-lebanon?traffic_source=rss",
+    "description": "Two back-to-back Israeli air strikes hit Nabatieh in Lebanon, while a third strike targeted an ambulance team.",
+    "pubDate": "Sat, 19 Sep 2026 18:06:52 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Cuba works to restore power after another major nationwide blackout",
+    "link": "https://www.aljazeera.com/news/2026/9/19/cuba-works-to-restore-power-after-another-major-nationwide-blackout?traffic_source=rss",
+    "description": "The outage marks at least the sixth one this year after a United States-imposed energy blockade went into effect.",
+    "pubDate": "Sat, 19 Sep 2026 17:59:57 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Dutch riot police break up violent far-right protest in The Hague",
+    "link": "https://www.aljazeera.com/news/2026/9/19/dutch-riot-police-break-up-violent-far-right-protest-in-the-hague?traffic_source=rss",
+    "description": "Justice minister condemns 'Hitler salutes, antisemitic slogans, violence' at the anti-immigration rally.",
+    "pubDate": "Sat, 19 Sep 2026 17:55:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Houthis claim attack on Saudi capital after smoke seen rising near Riyadh airport",
+    "link": "https://www.bbc.co.uk/news/articles/cwly5d9v7r43o?at_medium=RSS&at_campaign=rss",
+    "description": "The King Khalid International Airport incident caused hours of flight disruptions and comes amid an escalating conflict with Houthi rebels in Yemen.",
+    "pubDate": "Sat, 19 Sep 2026 17:50:14 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "A ‘ban on the free press’: White House bars journalists from three outlets",
+    "link": "https://www.aljazeera.com/news/2026/9/19/a-ban-on-the-free-press-white-house-bars-journalists-from-three-outlets?traffic_source=rss",
+    "description": "Reporters from CNN, MS NOW, and Politico were denied access to White House on Saturday.",
+    "pubDate": "Sat, 19 Sep 2026 17:48:18 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Greenland Deal: Greenland: A Trump Win or Danish Masterclass?",
+    "link": "https://www.france24.com/en/tv-shows/spotlight/20260919-greenland-deal-greenland-a-trump-win-or-danish-masterclass",
+    "description": "Is there a resolution on Greenland?\n \nPresident Trump’s pressure campaign began in December 2024, right after he won re-election, when he began talking about the need for U.S. ownership and control of the semi-autonomous Danish territory.",
+    "pubDate": "Sat, 19 Sep 2026 17:37:20 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Google’s Gemini is the latest AI model to hack other companies",
+    "link": "https://techcrunch.com/2026/09/19/googles-gemini-is-the-latest-ai-model-to-hack-other-companies/",
+    "description": "Google said Gemini had \"acted appropriately\" by ending each hack immediately.",
+    "pubDate": "Sat, 19 Sep 2026 17:30:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Ed Sheeran concert set to go ahead after outcry over Gaza",
+    "link": "https://www.aljazeera.com/news/2026/9/19/ed-sheeran-concert-set-to-go-ahead-after-outcry-over-gaza?traffic_source=rss",
+    "description": "Sheeran may perform solo after musicians dropped out of tour over expulsion of Macklemore for supporting Palestine.",
+    "pubDate": "Sat, 19 Sep 2026 17:14:45 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Trump treads further on free speech with new journalist bans",
+    "link": "https://www.theverge.com/policy/997805/trump-cnn-msnow-politico-ban",
+    "description": "On Friday, the president threatened to ban CNN, MS Now, and Politico from the White House. It could have just been another one of his Truth Social fever dreams, but it turns out it's very real. All three publications were turned away from the White House this morning, NPR reports, marking an escalat",
+    "pubDate": "2026-09-19T17:10:21.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "CNN, MS NOW, Politico reporters blocked from White House after Trump ban",
+    "link": "https://www.france24.com/en/americas/20260919-cnn-ms-now-politico-reporters-blocked-from-white-house-after-trump-ban",
+    "description": "White House correspondents for CNN, MS NOW and Politico on Saturday were blocked from entering the US president's office and residence a day after President Donald Trump announced he was banning the three media outlets for what he called \"fake news\" coverage. News organisations and press freedom gro",
+    "pubDate": "Sat, 19 Sep 2026 17:02:47 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Even mid-sprint to a secret flight, the Navy’s tech chief has a pitch for investors",
+    "link": "https://techcrunch.com/2026/09/19/even-mid-sprint-to-a-secret-flight-the-navys-tech-chief-had-a-pitch-for-investors/",
+    "description": "Navy CTO Justin Fanelli talks co-investing alongside VCs instead of funding early research himself, recent buys like a $562 million autonomous refueling deal, and the Navy's updated wish list — from AI to quantum — for where founders should be building next.",
+    "pubDate": "Sat, 19 Sep 2026 17:00:00 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Brighton beat Arsenal 3-0 as Man City top Premier League without playing",
+    "link": "https://www.aljazeera.com/sports/2026/9/19/brighton-beat-arsenal-3-0-as-man-city-top-premier-league-without-playing?traffic_source=rss",
+    "description": "Arsenal suffer shock 3-0 loss at Brighton to lose top spot in the Premier League on goal difference to Manchester City.",
+    "pubDate": "Sat, 19 Sep 2026 16:42:26 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "Here’s all the dumb oil wars that electric cars have nothing to do with",
     "link": "https://electrek.co/2026/09/19/heres-all-the-dumb-oil-wars-that-electric-cars-have-nothing-to-do-with/",
     "description": "We’ve all heard about the Strait of Hormuz, currently closed to most ship traffic as a result of a now six month long war of choice that seems to have no real strategy attached.\nBut that’s just one of many oil conflicts that are currently affecting oil availability… and electric cars have nothing to",
@@ -48,6 +192,22 @@
     "category": "international"
   },
   {
+    "title": "Germany braces for key state elections where far right party AfD seeks another breakthrough",
+    "link": "https://www.france24.com/en/germany-braces-for-key-state-elections-where-far-right-party-afd-seeks-another-breakthrough",
+    "description": "Germany is gearing up for two more pivotal state elections on Sunday: in the capital Berlin and in the largely rural region of Mecklenburg-Western Pomerania. All eyes are on the far-right AfD, which after recording its best ever result in the recent Saxony-Anhalt elections, is hoping to once again m",
+    "pubDate": "Sat, 19 Sep 2026 15:28:23 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Macron visits remote French territory in the North America, a first in over a decade",
+    "link": "https://www.france24.com/en/macron-visits-remote-french-territory-in-the-north-america-a-first-in-over-a-decade",
+    "description": "President Emmanuel Macron embarks on a rare and symbolic visit to a remote French territory in the North Atlantic on Saturday, hosting Canadian Prime Minister Mark Carney at a time of growing tensions with Washington. The three-day visit to Saint Pierre and Miquelon, a three-island archipelago of un",
+    "pubDate": "Sat, 19 Sep 2026 15:25:40 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
     "title": "Gemini went rogue, hacked three companies, and Google hid it",
     "link": "https://www.theverge.com/ai-artificial-intelligence/997795/google-gemini-rogue-ai-hack",
     "description": "In May, Gemini broke containment and hacked three different companies, but Google didn't disclose the incident until the Wall Street Journal approached the company. The hacks happened during a test of the model's cybersecurity capabilities run by third-party Irregular, which was also involved in sim",
@@ -56,11 +216,27 @@
     "category": "ai-tech"
   },
   {
+    "title": "Journalists denied White House access after Trump banned some media outlets",
+    "link": "https://www.bbc.co.uk/news/articles/cj4gklz9dxplo?at_medium=RSS&at_campaign=rss",
+    "description": "CNN, MS NOW and Politico reporters' White House press badges were confiscated, the outlets reported.",
+    "pubDate": "Sat, 19 Sep 2026 15:19:39 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
     "title": "Russia reports ‘powerful’ cyberattacks on second day of parliamentary vote",
     "link": "https://www.aljazeera.com/news/2026/9/19/russia-reports-powerful-cyberattacks-on-second-day-of-parliamentary-vote?traffic_source=rss",
     "description": "This is Russia's first election since it invaded Ukraine, and is expected to gauge public support for the ongoing war.",
     "pubDate": "Sat, 19 Sep 2026 15:18:00 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Black smoke seen near Riyadh amid air raid alerts in Saudi Arabia",
+    "link": "https://www.france24.com/en/black-smoke-seen-near-riyadh-amid-air-raid-alerts-in-saudi-arabia",
+    "description": "⁠Flames and plumes of smoke ‌were ⁠seen ‌rising near ⁠Riyadh airport this afternoon with flights cancelled and delayed. This as fighting between Saudi-backed government forces and Iran-backed Houthi rebels has killed 48 people in recent hours. The rebels staged a lightning offensive this month, seiz",
+    "pubDate": "Sat, 19 Sep 2026 15:16:03 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -141,6 +317,14 @@
     "description": "Unai Emery's side get first league win of season with goals from Johan Manzambi, Nicolas Jackson and Emi Buendia.",
     "pubDate": "Sat, 19 Sep 2026 14:35:01 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Converse pulls 'deeply upsetting' advert after backlash",
+    "link": "https://www.bbc.co.uk/news/articles/crwyzj53pl1lo?at_medium=RSS&at_campaign=rss",
+    "description": "Social media users say an image from the brand's Instagram account resembled a KKK hood and hanging.",
+    "pubDate": "Sat, 19 Sep 2026 14:05:01 GMT",
+    "source": "BBC News",
     "category": "international"
   },
   {
@@ -448,19 +632,19 @@
     "category": "ai-tech"
   },
   {
-    "title": "East Asia: How AI is changing the way we bid farewell to loved ones",
-    "link": "https://www.aljazeera.com/video/101-east/2026/9/19/east-asia-how-ai-is-changing-the-way-we-bid-farewell-to-loved-ones?traffic_source=rss",
-    "description": "101 East meets innovators across East Asia using digital technology to transform how we grieve those we love.",
-    "pubDate": "Sat, 19 Sep 2026 11:30:00 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Faktencheck: Fake-Video diskreditiert Briefwahl in Berlin",
     "link": "https://www.dw.com/de/faktencheck-fake-video-diskreditiert-briefwahl-in-berlin/a-79337386?maca=de-rss-de-all-1119-rdf",
     "description": "Ein Video zeigt, wie vor der Wahl in Berlin angeblich Briefwahlstimmen für die AfD zerstört werden. Es geht viral. Der DW-Faktencheck untersucht das Material und die Konten, die es verbreiten.",
     "pubDate": "2026-09-19T11:30:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "East Asia: How AI is changing the way we bid farewell to loved ones",
+    "link": "https://www.aljazeera.com/video/101-east/2026/9/19/east-asia-how-ai-is-changing-the-way-we-bid-farewell-to-loved-ones?traffic_source=rss",
+    "description": "101 East meets innovators across East Asia using digital technology to transform how we grieve those we love.",
+    "pubDate": "Sat, 19 Sep 2026 11:30:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
@@ -1928,44 +2112,12 @@
     "category": "international"
   },
   {
-    "title": "Pentagon resumes paused testosterone policy amid medical experts’ concerns",
-    "link": "https://www.aljazeera.com/news/2026/9/18/pentagon-resumes-paused-testosterone-policy-amid-medical-experts-concerns?traffic_source=rss",
-    "description": "New policy mandates testosterone testing for US service members over 30, citing readiness while experts warn of risks.",
-    "pubDate": "Fri, 18 Sep 2026 18:54:12 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "A new kind of AI model from a ChatGPT inventor is thrilling developers",
     "link": "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/",
     "description": "Jev, a new kind of AI model, is showing developers a cheaper and faster path to software intelligence.",
     "pubDate": "Fri, 18 Sep 2026 18:49:30 +0000",
     "source": "TechCrunch",
     "category": "ai-tech"
-  },
-  {
-    "title": "Mexico’s Sheinbaum says she spoke with Trump as trade negotiations continue",
-    "link": "https://www.aljazeera.com/news/2026/9/18/mexicos-sheinbaum-says-she-spoke-with-trump-as-trade-negotiations-continue?traffic_source=rss",
-    "description": "Mexican president says she is seeking a decrease in tariffs as both countries seek new bilateral trade deal.",
-    "pubDate": "Fri, 18 Sep 2026 18:46:51 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Do elections in Russia make a difference?",
-    "link": "https://www.aljazeera.com/video/inside-story/2026/9/18/do-elections-in-russia-make-a-difference?traffic_source=rss",
-    "description": "Millions of people are choosing a new lower house of Parliament.",
-    "pubDate": "Fri, 18 Sep 2026 18:45:30 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Warren Buffett steps down as Berkshire Hathaway chairman",
-    "link": "https://www.aljazeera.com/economy/2026/9/18/warren-buffett-steps-down-as-berkshire-hathaway-chairman?traffic_source=rss",
-    "description": "Buffett will become chairman emeritus immediately and his son Howard will become chairman.",
-    "pubDate": "Fri, 18 Sep 2026 18:32:24 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "Virginia governor creates an AI task force and moves to restrain data centers",
@@ -1982,30 +2134,6 @@
     "pubDate": "2026-09-18T18:27:04.000Z",
     "source": "The Verge",
     "category": "ai-tech"
-  },
-  {
-    "title": "Russia’s drones threaten Kyiv-bound Western officials as war effort stalls",
-    "link": "https://www.aljazeera.com/news/2026/9/18/russia-targets-ukraines-peaceful-borders?traffic_source=rss",
-    "description": "Russia strikes Ukraine’s border crossings with Poland and Moldova as its offensives peter out in the east.",
-    "pubDate": "Fri, 18 Sep 2026 18:19:47 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Police clear Ceuta migrants off beaches in Spanish enclave",
-    "link": "https://www.aljazeera.com/news/2026/9/18/police-clear-ceuta-migrants-off-beaches-in-spanish-enclave?traffic_source=rss",
-    "description": "At least 10,000 of the 72,000 migrants who broke through fence from Morocco in July remain in the Spanish enclave.",
-    "pubDate": "Fri, 18 Sep 2026 18:16:20 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Early in-person voting begins in the 2026 US midterm elections in Virginia",
-    "link": "https://www.aljazeera.com/news/2026/9/18/early-in-person-voting-begins-in-the-2026-us-midterm-elections-in-virginia?traffic_source=rss",
-    "description": "Virginia leads the way for in-person voting, reflecting a nationwide trend towards casting ballots before Election Day.",
-    "pubDate": "Fri, 18 Sep 2026 18:15:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "Hyundai warns the US may be next in line for a wave of cheaper Chinese EVs",
@@ -2054,14 +2182,6 @@
     "pubDate": "Fri, 18 Sep 2026 17:57:41 +0000",
     "source": "Ars Technica - All content",
     "category": "ai-tech"
-  },
-  {
-    "title": "Sweden’s left-wing opposition leader begins efforts to form government",
-    "link": "https://www.aljazeera.com/news/2026/9/18/swedens-left-wing-opposition-leader-begins-efforts-to-form-government?traffic_source=rss",
-    "description": "Magdalena Andersson will likely face several challenges as she tries to get Sweden's other left-wing parties to unite.",
-    "pubDate": "Fri, 18 Sep 2026 17:55:38 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "GlobalFoundries and Marvell Expand Collaboration for Next-Generation Optical Connectivity",
@@ -2128,30 +2248,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Iranians rally in biggest show of defiance against US since war began",
-    "link": "https://www.aljazeera.com/news/2026/9/18/iranians-rally-in-biggest-show-of-defiance-against-us-since-war-began?traffic_source=rss",
-    "description": "Volunteers rallied through downtown Tehran to join campaign highlighting 'self-sacrifice' for Iran.",
-    "pubDate": "Fri, 18 Sep 2026 17:23:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "North Korean anthem played for South Korea at Asian Games",
-    "link": "https://www.bbc.co.uk/sport/hockey/articles/cmx2zg85gq03o?at_medium=RSS&at_campaign=rss",
-    "description": "Organisers have apologised for playing the North Korean national anthem for the South Korean men's hockey team at the Asian Games in Japan.",
-    "pubDate": "Fri, 18 Sep 2026 17:18:09 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Warren Buffett steps down after six decades at Berkshire - 'Father Time always wins' ",
-    "link": "https://www.bbc.co.uk/news/articles/cvj64dl1w6yno?at_medium=RSS&at_campaign=rss",
-    "description": "Since taking control in 1965, Buffett grew a struggling textile mill into a global conglomerate.",
-    "pubDate": "Fri, 18 Sep 2026 17:15:02 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "SoftBank agrees to acquire Robotics and AI Institute",
     "link": "https://www.therobotreport.com/softbank-agrees-to-acquire-robotics-and-ai-institute/",
     "description": "The deal has been rumored for a couple of months, but it is now being reviewed by the Committee on Foreign Investment in the United States.\nThe post SoftBank agrees to acquire Robotics and AI Institute appeared first on The Robot Report.",
@@ -2168,68 +2264,12 @@
     "category": "international"
   },
   {
-    "title": "Dario Amodei and other AI leaders want to ‘Pace the Frontier’ but…how?",
-    "link": "https://techcrunch.com/video/dario-amodei-and-other-ai-leaders-want-to-pace-the-frontier-buthow/",
-    "description": "A week after an Anthropic researcher’s doomsday warning rattled the AI world, the company’s CEO Dario Amodei has outlined his plan to “pace the frontier” of AI development. The proposal leans on independent safety evaluators and coordination between AI labs in democratic countries, and it’s already ",
-    "pubDate": "Fri, 18 Sep 2026 17:09:56 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "The real story of the iPhone 18 Pro&#8217;s camera",
-    "link": "https://www.theverge.com/podcast/997366/the-real-story-of-the-iphone-18-pros-camera",
-    "description": "It's one of the most fascinating years in a while when it comes to iPhone camera upgrades. The big story of the iPhone 18 Pro is the variable aperture main lens, which lets you open the aperture up wider for better low light shots and make the aperture smaller for better depth of field in [&#8230;]",
-    "pubDate": "2026-09-18T17:06:37.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Gavin Newsom is pushing for an AI kill switch",
-    "link": "https://www.theverge.com/policy/997516/california-governor-newsom-ai-kill-switch",
-    "description": "California Gov. Gavin Newsom (D) is positioning the state to take the lead on AI oversight, including the potential to mandate a \"kill switch\" for frontier models, with a new executive order issued Friday. Newsom's order directs the state to convene a group of experts that will deliver recommendatio",
-    "pubDate": "2026-09-18T17:04:51.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "War in Iran 'jeopardises the Trump presidency', ex-Obama National Security Council member says",
-    "link": "https://www.france24.com/en/tv-shows/t%C3%AAte-%C3%A0-t%C3%AAte/20260918-war-in-iran-jeopardises-the-trump-presidency-ex-obama-national-security-council-member-says",
-    "description": "In an interview with FRANCE 24, former Obama administration National Security Council member Charles Kupchan said the war in Iran \"in many respects jeopardises the Trump presidency\", calling it \"yet another failed war of choice\" that has driven up fuel and living costs ahead of the midterms. Trump's",
-    "pubDate": "Fri, 18 Sep 2026 17:01:29 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "UEFA, CONCACAF challenge FIFA on reserves and demand $10m payout to members",
-    "link": "https://www.aljazeera.com/sports/2026/9/18/uefa-concacaf-challenge-fifa-on-reserves-and-demand-10m-payout-to-members?traffic_source=rss",
-    "description": "Confederation chiefs call on Gianni Infantino to make $2.1bn payout to all FIFA's 211 member associations.",
-    "pubDate": "Fri, 18 Sep 2026 16:59:38 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Wie die Ukraine ihre Züge vor russischen Drohnen schützt",
     "link": "https://www.dw.com/de/wie-die-ukraine-ihre-züge-vor-russischen-drohnen-schützt/a-79326914?maca=de-rss-de-all-1119-rdf",
     "description": "Die Eisenbahn ist eine Lebensader der Ukraine: Sie bringt Menschen in Sicherheit, versorgt das Land und hält wichtige Handelswege offen. Russland greift deshalb immer häufiger Lokomotiven und Bahnhöfe an.",
     "pubDate": "2026-09-18T16:56:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
     "category": "international"
-  },
-  {
-    "title": "REPLAY: Zidane names first squad as France manager",
-    "link": "https://www.france24.com/en/video/20260918-replay-zidane-names-first-squad-as-france-manager",
-    "description": "Zinedine Zidane named his first squad since taking over from Didier Deschamps as head coach of the French man's football team Friday. His selection included five new players and but excluded former squad members Aurélien Tchouaméni and Khéphren Thuram. Kylian Mbappé has been named captain.",
-    "pubDate": "Fri, 18 Sep 2026 16:47:43 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Manus seeks $4B valuation in new $500M fundraise as it resumes independent ops",
-    "link": "https://techcrunch.com/2026/09/18/manus-seeks-4b-valuation-in-new-500m-fundraise-as-it-resumes-independent-ops/",
-    "description": "Manus, which earlier this year had to break off a merger with Meta, is in discussions to raise $500M at a $4B valuation.",
-    "pubDate": "Fri, 18 Sep 2026 16:35:49 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
   },
   {
     "title": "BMW begins iX3 deliveries early in the US as demand surges",
@@ -2270,14 +2310,6 @@
     "pubDate": "Fri, 18 Sep 2026 15:50:20 +0000",
     "source": "量子位",
     "category": "ai-tech"
-  },
-  {
-    "title": "Dozens of suspected illegal miners die in Nigerian custody",
-    "link": "https://www.bbc.co.uk/news/articles/cw980qp2n3p4o?at_medium=RSS&at_campaign=rss",
-    "description": "Authorities linked the deaths to disease, but this has been disputed by intelligence reports and relatives of the accused.",
-    "pubDate": "Fri, 18 Sep 2026 15:47:28 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "XPeng shops its self-driving tech to automakers — Tesla found no takers",
@@ -2472,14 +2504,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Ronaldo named in first Portugal squad since World Cup - at age of 41",
-    "link": "https://www.bbc.co.uk/sport/football/articles/cmeq8v8e3ql7o?at_medium=RSS&at_campaign=rss",
-    "description": "Cristiano Ronaldo is named in the first squad selected by new Portugal coach Jorge Jesus for their upcoming Nations League games.",
-    "pubDate": "Fri, 18 Sep 2026 12:45:25 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "Dutzende Festgenommene sterben in Nigeria in Haft",
     "link": "https://www.dw.com/de/dutzende-festgenommene-sterben-in-nigeria-in-haft/a-79328204?maca=de-rss-de-all-1119-rdf",
     "description": "Nach Razzien gegen illegalen Bergbau sind im nigerianischen Bundesstaat Niger 37 Männer in Gewahrsam gestorben. Überlebende berichten von extremer Enge, Hitze und Sauerstoffmangel. Die Behörden ermitteln.",
@@ -2512,28 +2536,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Shots heard as police start moving migrants from Ceuta beaches",
-    "link": "https://www.bbc.co.uk/news/articles/c6vgy80ge1z7o?at_medium=RSS&at_campaign=rss",
-    "description": "Police reportedly fired into the air on Friday morning as they struggled to contain crowds jostling to secure a place at the tented site.",
-    "pubDate": "Fri, 18 Sep 2026 11:59:42 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "DERA LIVES! House votes to fund Diesel Emissions Reduction Act through 2029",
     "link": "https://electrek.co/2026/09/18/dera-lives-house-votes-to-fund-diesel-emissions-reduction-act-through-2029/",
     "description": "This week, the US House of Representatives voted overwhelmingly in a bipartisan vote to renew funding for the Diesel Emissions Reduction Act (DERA), passing the measure 343-79 and extending federal funding for cleaner medium- and heavy-duty vehicles through 2029.\nmore…",
     "pubDate": "Fri, 18 Sep 2026 11:54:22 +0000",
     "source": "Electrek",
     "category": "ai-tech"
-  },
-  {
-    "title": "Lindsay Clancy holdout juror says he had no doubt she deliberately killed her children",
-    "link": "https://www.bbc.co.uk/news/articles/c54g7jdmw032o?at_medium=RSS&at_campaign=rss",
-    "description": "It is the first time the juror, who refused to side with the others and acquit Clancy, has spoken publicly about his decision.",
-    "pubDate": "Fri, 18 Sep 2026 11:49:46 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Deutsch-russische Beziehungen am Gefrierpunkt",
@@ -2574,14 +2582,6 @@
     "pubDate": "Fri, 18 Sep 2026 11:07:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
-  },
-  {
-    "title": "Three dead and eight injured in Philippines school shooting",
-    "link": "https://www.bbc.co.uk/news/articles/c6x2z4dlzyr0o?at_medium=RSS&at_campaign=rss",
-    "description": "The gunman is among the dead in what is the third school shooting in the country since June.",
-    "pubDate": "Fri, 18 Sep 2026 11:01:46 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Rocket Report: China wants a Raptor 3 engine; SpaceX set for big Starship test",
@@ -2960,17 +2960,17 @@
     "category": "ai-tech"
   },
   {
-    "title": "iRobot Promo Code: 15% Off",
-    "link": "https://www.wired.com/story/irobot-promo-code/",
-    "description": "Save on iRobot products, including robot vacuums and mops designed to handle pet hair, daily messes, and hands-free cleaning with smart home integration.",
+    "title": "25% Off Adidas Promo Code | September 2026",
+    "link": "https://www.wired.com/story/adidas-promo-code/",
+    "description": "Save 15% or 30% with Adidas promo codes, plus explore Adidas deals for 40% off trendy sneakers.",
     "pubDate": "Fri, 18 Sep 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
   },
   {
-    "title": "25% Off Adidas Promo Code | September 2026",
-    "link": "https://www.wired.com/story/adidas-promo-code/",
-    "description": "Save 15% or 30% with Adidas promo codes, plus explore Adidas deals for 40% off trendy sneakers.",
+    "title": "iRobot Promo Code: 15% Off",
+    "link": "https://www.wired.com/story/irobot-promo-code/",
+    "description": "Save on iRobot products, including robot vacuums and mops designed to handle pet hair, daily messes, and hands-free cleaning with smart home integration.",
     "pubDate": "Fri, 18 Sep 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -3008,12 +3008,174 @@
     "category": "ai-tech"
   },
   {
+    "title": "Pentagon resumes paused testosterone policy amid medical experts’ concerns",
+    "link": "https://www.aljazeera.com/news/2026/9/18/pentagon-resumes-paused-testosterone-policy-amid-medical-experts-concerns?traffic_source=rss",
+    "description": "New policy mandates testosterone testing for US service members over 30, citing readiness while experts warn of risks.",
+    "pubDate": "Fri, 18 Sep 2026 18:54:12 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Mexico’s Sheinbaum says she spoke with Trump as trade negotiations continue",
+    "link": "https://www.aljazeera.com/news/2026/9/18/mexicos-sheinbaum-says-she-spoke-with-trump-as-trade-negotiations-continue?traffic_source=rss",
+    "description": "Mexican president says she is seeking a decrease in tariffs as both countries seek new bilateral trade deal.",
+    "pubDate": "Fri, 18 Sep 2026 18:46:51 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Do elections in Russia make a difference?",
+    "link": "https://www.aljazeera.com/video/inside-story/2026/9/18/do-elections-in-russia-make-a-difference?traffic_source=rss",
+    "description": "Millions of people are choosing a new lower house of Parliament.",
+    "pubDate": "Fri, 18 Sep 2026 18:45:30 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Warren Buffett steps down as Berkshire Hathaway chairman",
+    "link": "https://www.aljazeera.com/economy/2026/9/18/warren-buffett-steps-down-as-berkshire-hathaway-chairman?traffic_source=rss",
+    "description": "Buffett will become chairman emeritus immediately and his son Howard will become chairman.",
+    "pubDate": "Fri, 18 Sep 2026 18:32:24 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Russia’s drones threaten Kyiv-bound Western officials as war effort stalls",
+    "link": "https://www.aljazeera.com/news/2026/9/18/russia-targets-ukraines-peaceful-borders?traffic_source=rss",
+    "description": "Russia strikes Ukraine’s border crossings with Poland and Moldova as its offensives peter out in the east.",
+    "pubDate": "Fri, 18 Sep 2026 18:19:47 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Police clear Ceuta migrants off beaches in Spanish enclave",
+    "link": "https://www.aljazeera.com/news/2026/9/18/police-clear-ceuta-migrants-off-beaches-in-spanish-enclave?traffic_source=rss",
+    "description": "At least 10,000 of the 72,000 migrants who broke through fence from Morocco in July remain in the Spanish enclave.",
+    "pubDate": "Fri, 18 Sep 2026 18:16:20 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Early in-person voting begins in the 2026 US midterm elections in Virginia",
+    "link": "https://www.aljazeera.com/news/2026/9/18/early-in-person-voting-begins-in-the-2026-us-midterm-elections-in-virginia?traffic_source=rss",
+    "description": "Virginia leads the way for in-person voting, reflecting a nationwide trend towards casting ballots before Election Day.",
+    "pubDate": "Fri, 18 Sep 2026 18:15:32 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Sweden’s left-wing opposition leader begins efforts to form government",
+    "link": "https://www.aljazeera.com/news/2026/9/18/swedens-left-wing-opposition-leader-begins-efforts-to-form-government?traffic_source=rss",
+    "description": "Magdalena Andersson will likely face several challenges as she tries to get Sweden's other left-wing parties to unite.",
+    "pubDate": "Fri, 18 Sep 2026 17:55:38 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Iranians rally in biggest show of defiance against US since war began",
+    "link": "https://www.aljazeera.com/news/2026/9/18/iranians-rally-in-biggest-show-of-defiance-against-us-since-war-began?traffic_source=rss",
+    "description": "Volunteers rallied through downtown Tehran to join campaign highlighting 'self-sacrifice' for Iran.",
+    "pubDate": "Fri, 18 Sep 2026 17:23:23 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "North Korean anthem played for South Korea at Asian Games",
+    "link": "https://www.bbc.co.uk/sport/hockey/articles/cmx2zg85gq03o?at_medium=RSS&at_campaign=rss",
+    "description": "Organisers have apologised for playing the North Korean national anthem for the South Korean men's hockey team at the Asian Games in Japan.",
+    "pubDate": "Fri, 18 Sep 2026 17:18:09 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Warren Buffett steps down after six decades at Berkshire - 'Father Time always wins' ",
+    "link": "https://www.bbc.co.uk/news/articles/cvj64dl1w6yno?at_medium=RSS&at_campaign=rss",
+    "description": "Since taking control in 1965, Buffett grew a struggling textile mill into a global conglomerate.",
+    "pubDate": "Fri, 18 Sep 2026 17:15:02 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Dario Amodei and other AI leaders want to ‘Pace the Frontier’ but…how?",
+    "link": "https://techcrunch.com/video/dario-amodei-and-other-ai-leaders-want-to-pace-the-frontier-buthow/",
+    "description": "A week after an Anthropic researcher’s doomsday warning rattled the AI world, the company’s CEO Dario Amodei has outlined his plan to “pace the frontier” of AI development. The proposal leans on independent safety evaluators and coordination between AI labs in democratic countries, and it’s already ",
+    "pubDate": "Fri, 18 Sep 2026 17:09:56 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "The real story of the iPhone 18 Pro&#8217;s camera",
+    "link": "https://www.theverge.com/podcast/997366/the-real-story-of-the-iphone-18-pros-camera",
+    "description": "It's one of the most fascinating years in a while when it comes to iPhone camera upgrades. The big story of the iPhone 18 Pro is the variable aperture main lens, which lets you open the aperture up wider for better low light shots and make the aperture smaller for better depth of field in [&#8230;]",
+    "pubDate": "2026-09-18T17:06:37.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Gavin Newsom is pushing for an AI kill switch",
+    "link": "https://www.theverge.com/policy/997516/california-governor-newsom-ai-kill-switch",
+    "description": "California Gov. Gavin Newsom (D) is positioning the state to take the lead on AI oversight, including the potential to mandate a \"kill switch\" for frontier models, with a new executive order issued Friday. Newsom's order directs the state to convene a group of experts that will deliver recommendatio",
+    "pubDate": "2026-09-18T17:04:51.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "War in Iran 'jeopardises the Trump presidency', ex-Obama National Security Council member says",
+    "link": "https://www.france24.com/en/tv-shows/t%C3%AAte-%C3%A0-t%C3%AAte/20260918-war-in-iran-jeopardises-the-trump-presidency-ex-obama-national-security-council-member-says",
+    "description": "In an interview with FRANCE 24, former Obama administration National Security Council member Charles Kupchan said the war in Iran \"in many respects jeopardises the Trump presidency\", calling it \"yet another failed war of choice\" that has driven up fuel and living costs ahead of the midterms. Trump's",
+    "pubDate": "Fri, 18 Sep 2026 17:01:29 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "UEFA, CONCACAF challenge FIFA on reserves and demand $10m payout to members",
+    "link": "https://www.aljazeera.com/sports/2026/9/18/uefa-concacaf-challenge-fifa-on-reserves-and-demand-10m-payout-to-members?traffic_source=rss",
+    "description": "Confederation chiefs call on Gianni Infantino to make $2.1bn payout to all FIFA's 211 member associations.",
+    "pubDate": "Fri, 18 Sep 2026 16:59:38 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "REPLAY: Zidane names first squad as France manager",
+    "link": "https://www.france24.com/en/video/20260918-replay-zidane-names-first-squad-as-france-manager",
+    "description": "Zinedine Zidane named his first squad since taking over from Didier Deschamps as head coach of the French man's football team Friday. His selection included five new players and but excluded former squad members Aurélien Tchouaméni and Khéphren Thuram. Kylian Mbappé has been named captain.",
+    "pubDate": "Fri, 18 Sep 2026 16:47:43 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "Jerusalem Daily: Netanyahu says he will ‘change the face of the Middle East",
     "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/jerusalem-daily-netanyahu-says-he-will-change-the-face-of-the-middle-east?traffic_source=rss",
     "description": "Israeli Prime Minister Benjamin Netanyahu says he will ‘change the face of the Middle East’",
     "pubDate": "Fri, 18 Sep 2026 16:38:10 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Manus seeks $4B valuation in new $500M fundraise as it resumes independent ops",
+    "link": "https://techcrunch.com/2026/09/18/manus-seeks-4b-valuation-in-new-500m-fundraise-as-it-resumes-independent-ops/",
+    "description": "Manus, which earlier this year had to break off a merger with Meta, is in discussions to raise $500M at a $4B valuation.",
+    "pubDate": "Fri, 18 Sep 2026 16:35:49 +0000",
+    "source": "TechCrunch",
+    "category": "ai-tech",
     "_stale": true
   },
   {
@@ -3059,6 +3221,15 @@
     "pubDate": "Fri, 18 Sep 2026 16:00:00 +0000",
     "source": "TechCrunch",
     "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Dozens of suspected illegal miners die in Nigerian custody",
+    "link": "https://www.bbc.co.uk/news/articles/cw980qp2n3p4o?at_medium=RSS&at_campaign=rss",
+    "description": "Authorities linked the deaths to disease, but this has been disputed by intelligence reports and relatives of the accused.",
+    "pubDate": "Fri, 18 Sep 2026 15:47:28 GMT",
+    "source": "BBC News",
+    "category": "international",
     "_stale": true
   },
   {
@@ -3485,6 +3656,15 @@
     "_stale": true
   },
   {
+    "title": "Ronaldo named in first Portugal squad since World Cup - at age of 41",
+    "link": "https://www.bbc.co.uk/sport/football/articles/cmeq8v8e3ql7o?at_medium=RSS&at_campaign=rss",
+    "description": "Cristiano Ronaldo is named in the first squad selected by new Portugal coach Jorge Jesus for their upcoming Nations League games.",
+    "pubDate": "Fri, 18 Sep 2026 12:45:25 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "How fantasy fans are keeping a Turkish blacksmithing tradition alive",
     "link": "https://www.aljazeera.com/features/longform/2026/9/18/how-fantasy-fans-are-keeping-a-turkish-blacksmithing-tradition-alive?traffic_source=rss",
     "description": "In Izmir’s historic Kemeralti bazaar, the Akdemir family is finding new customers for a four-generation craft.",
@@ -3548,6 +3728,24 @@
     "_stale": true
   },
   {
+    "title": "Shots heard as police start moving migrants from Ceuta beaches",
+    "link": "https://www.bbc.co.uk/news/articles/c6vgy80ge1z7o?at_medium=RSS&at_campaign=rss",
+    "description": "Police reportedly fired into the air on Friday morning as they struggled to contain crowds jostling to secure a place at the tented site.",
+    "pubDate": "Fri, 18 Sep 2026 11:59:42 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Lindsay Clancy holdout juror says he had no doubt she deliberately killed her children",
+    "link": "https://www.bbc.co.uk/news/articles/c54g7jdmw032o?at_medium=RSS&at_campaign=rss",
+    "description": "It is the first time the juror, who refused to side with the others and acquit Clancy, has spoken publicly about his decision.",
+    "pubDate": "Fri, 18 Sep 2026 11:49:46 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "Prized Aztec codex returns to Mexico on loan",
     "link": "https://www.france24.com/en/video/20260918-prized-aztec-codex-returns-to-mexico-on-loan",
     "description": "A cherished 16th-century Mexican manuscript that tells the history of the Aztecs in pictograms went on display Thursday in Mexico City, nearly two centuries after it was whisked off to France. France's National Library, which has maintained possession of it for over a century, loaned it to Mexico to",
@@ -3589,6 +3787,15 @@
     "description": "The biggest AI companies want to slow development together. The real question is what power they gain in return.",
     "pubDate": "Fri, 18 Sep 2026 11:04:01 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Three dead and eight injured in Philippines school shooting",
+    "link": "https://www.bbc.co.uk/news/articles/c6x2z4dlzyr0o?at_medium=RSS&at_campaign=rss",
+    "description": "The gunman is among the dead in what is the third school shooting in the country since June.",
+    "pubDate": "Fri, 18 Sep 2026 11:01:46 GMT",
+    "source": "BBC News",
     "category": "international",
     "_stale": true
   },
@@ -3914,213 +4121,6 @@
     "pubDate": "Fri, 18 Sep 2026 16:25:06 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "'Election without meaningful competition': Russia’s results won't measure support for Putin or war",
-    "link": "https://www.france24.com/en/election-without-meaningful-competition-russia-s-results-won-t-measure-support-for-putin-or-war",
-    "description": "Alison Sargent is pleased to welcome Grégoire Roos, Director of the Europe and Russia and Eurasia Programmes at Chatham House. According to Roos, Russia’s parliamentary election is revealing because of what the electoral process can still tell us about the political system Vladimir Putin has constru",
-    "pubDate": "Fri, 18 Sep 2026 08:14:24 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "硅谷也开启AI办公大战了",
-    "link": "https://www.tmtpost.com/8144624.html",
-    "description": "AI办公之站，打到硅谷",
-    "pubDate": "Fri, 18 Sep 2026 16:05:35 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "23 岁，10 万用户，估值 100 亿美元：硅谷 VC 正在批量生产“纸面独角兽”",
-    "link": "https://www.tmtpost.com/8143708.html",
-    "description": "制造泡沫的人，从来不持有泡沫——他们只收取过路费，而速度越快，过路费越丰厚。",
-    "pubDate": "Fri, 18 Sep 2026 16:05:32 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "豆包手机想得美",
-    "link": "https://www.tmtpost.com/8144534.html",
-    "description": "流量是命根子，凭什么给豆包让路？",
-    "pubDate": "Fri, 18 Sep 2026 16:05:28 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "从谷歌到字节，每个大厂，终将拥有一家药厂",
-    "link": "https://www.tmtpost.com/8144446.html",
-    "description": "薛定谔的Anew Labs，字节跳动的第二战场",
-    "pubDate": "Fri, 18 Sep 2026 16:05:20 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Anthropic之恶",
-    "link": "https://www.tmtpost.com/8144519.html",
-    "description": "Anthropic口中的“AI安全”，越来越像一门生意。",
-    "pubDate": "Fri, 18 Sep 2026 16:05:18 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "固态电池未来3年的剧本大抵是这样的",
-    "link": "https://www.tmtpost.com/8144404.html",
-    "description": "第4级的固态电池，第9级的市场预期",
-    "pubDate": "Fri, 18 Sep 2026 16:05:16 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Indonesia acquires first aircraft carrier amid military upgrade",
-    "link": "https://www.aljazeera.com/news/2026/9/18/indonesia-acquires-first-aircraft-carrier-amid-military-upgrade?traffic_source=rss",
-    "description": "Indonesia says vessel will be used to aid disaster relief across the archipelago.",
-    "pubDate": "Fri, 18 Sep 2026 07:54:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Philippines school shooting: At least three killed including gunman",
-    "link": "https://www.aljazeera.com/news/2026/9/18/philippines-school-shooting-kills-at-least-two?traffic_source=rss",
-    "description": "At least eight people were also injured in the country's third deadly school shooting since June.",
-    "pubDate": "Fri, 18 Sep 2026 07:47:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "French PM vows to cut public spending by €54 billion to reduce deficit",
-    "link": "https://www.france24.com/en/france/20260918-french-pm-vows-to-cut-public-spending-by-%E2%82%AC54-billion-to-reduce-deficit",
-    "description": "Prime Minister Sébastien Lecornu said on Thursday that France will cut public spending by €54 billion next year to reduce the country's deficit. The announcement comes seven months ahead of the country's presidential election, and the government is wary of a new wave of demonstrations with a jump in",
-    "pubDate": "Fri, 18 Sep 2026 07:23:41 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Japan raises interest rate to new 31-year high to curb rising prices",
-    "link": "https://www.bbc.co.uk/news/articles/cqn74jeek06no?at_medium=RSS&at_campaign=rss",
-    "description": "Central banks around the world have hiked rates as high energy prices are pushing up inflation.",
-    "pubDate": "Fri, 18 Sep 2026 07:14:57 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "零样本干活！Figure 机器人走进 30 个陌生家庭，整理客厅、折毛巾、铺床",
-    "link": "https://www.tmtpost.com/8144641.html",
-    "description": "美国人形机器人公司Figure发布Helix 2.5，将其称为最先进的神经网络。",
-    "pubDate": "Fri, 18 Sep 2026 15:08:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "‘Outrageous lies’: How Israeli voters are shrugging off Western sanctions",
-    "link": "https://www.aljazeera.com/news/2026/9/18/outrageous-lies-how-israeli-voters-are-shrugging-off-western-sanctions?traffic_source=rss",
-    "description": "New sanctions highlight Israel's isolation, yet analysts say they won't sway voters before October's elections.",
-    "pubDate": "Fri, 18 Sep 2026 06:48:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "In Yemen, war at home and in the region drives up prices",
-    "link": "https://www.aljazeera.com/features/2026/9/18/in-yemen-war-at-home-and-in-the-region-drives-up-prices?traffic_source=rss",
-    "description": "Families in Sanaa brace for higher food and transport costs after first fuel price increase in four years.",
-    "pubDate": "Fri, 18 Sep 2026 06:45:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Nigerian police probe death in custody of 37 illegal mining suspects",
-    "link": "https://www.aljazeera.com/news/2026/9/18/nigerian-police-probe-death-in-custody-of-37-illegal-mining-suspects?traffic_source=rss",
-    "description": "Officials blame disease outbreak for deaths as survivor suggests they suffocated.",
-    "pubDate": "Fri, 18 Sep 2026 06:45:05 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "US approves $24.3 billion sale of 48 F-35 warplanes to Saudi Arabia",
-    "link": "https://www.france24.com/en/middle-east/20260918-us-approves-24-3-billion-sale-of-48-f-35-warplanes-to-saudi-arabia",
-    "description": "The United States on Thursday said it had approved a $24.3 billion sale of 48 F-35 stealth warplanes to Saudi Arabia. Israel has previously voiced concerns about Riyadh buying F-35s, despite a push to normalise relations.",
-    "pubDate": "Fri, 18 Sep 2026 06:29:47 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Early voting begins in US midterms that could see Republicans lose control of Congress",
-    "link": "https://www.france24.com/en/americas/20260918-early-voting-begins-in-us-midterms-that-could-see-republicans-lose-control-of-congress",
-    "description": "In-person early voting for the US midterm elections begins Friday, six weeks ahead of the final November 3 vote, which will determine whether Republicans will maintain their majority in the US House and Senate. Some of the main issues American voters are deciding on are how to navigate the cost-of-l",
-    "pubDate": "Fri, 18 Sep 2026 06:15:48 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "AGI最难一战，竟在医院！中国AI登上Science，医生不怕失业还催着上线",
-    "link": "https://www.qbitai.com/2026/09/491875.html",
-    "description": "用通用AI去啃最硬的骨头，这条路走得通",
-    "pubDate": "Fri, 18 Sep 2026 06:11:06 +0000",
-    "source": "量子位",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Oman oil escape route: How ship-to-ship transfers work — despite big risks",
-    "link": "https://www.aljazeera.com/news/2026/9/18/oman-oil-escape-route-how-ship-to-ship-transfers-work-despite-big?traffic_source=rss",
-    "description": "Oman’s Sohar port is becoming a popular spot for ship-to-ship oil transfers amid continued Hormuz blockade.",
-    "pubDate": "Fri, 18 Sep 2026 06:02:08 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "主营天花板板材的阿姆斯特朗世界工业，股票并不平淡",
-    "link": "https://www.tmtpost.com/8144615.html",
-    "description": "由于市场担心建筑行业支出将趋于收紧，阿姆斯特朗公司的股价受到了冲击。但这些担忧被夸大了。",
-    "pubDate": "Fri, 18 Sep 2026 13:50:51 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Russia votes in parliamentary election as war in Ukraine drags on",
-    "link": "https://www.france24.com/en/europe/20260918-russia-votes-in-wartime-parliamentary-election-set-to-secure-the-kremlin-power",
-    "description": "Polls opened in Russia's Far East on Friday as the country began three days of voting for its parliamentary election, the first since Moscow launched its full-scale invasion of Ukraine. The Kremlin's main party, United Russia, is poised to keep its grip on power alongside other parties aligned with ",
-    "pubDate": "Fri, 18 Sep 2026 05:38:20 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Russia’s parliamentary election: Who’s on the ballot, and why it matters",
-    "link": "https://www.aljazeera.com/news/2026/9/18/russias-parliamentary-election-whos-on-the-ballot-and-why-it-matters?traffic_source=rss",
-    "description": "United Russia won more than two-thirds of the Duma's seats in the 2021 election and is poised to dominate the body again",
-    "pubDate": "Fri, 18 Sep 2026 05:37:46 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "UN mission alleges crimes against humanity in Iranian protest crackdown",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/9/18/un-mission-alleges-crimes-against-humanity-in-iranian-protest-crackdown?traffic_source=rss",
-    "description": "A UN fact-finding mission has concluded Iranian forces committed crimes against humanity.",
-    "pubDate": "Fri, 18 Sep 2026 05:26:51 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
     "_stale": true
   }
 ]
