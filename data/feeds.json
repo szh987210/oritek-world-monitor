@@ -1,5 +1,525 @@
 [
   {
+    "title": "Kyiv bridge hit in further Russian drone attack as German chancellor makes surprise visit",
+    "link": "https://www.bbc.co.uk/news/articles/ckreyjzzzywqo?at_medium=RSS&at_campaign=rss",
+    "description": "Footage shows a drone hitting the Pivnichyi (Northern) Bridge as vehicles move across it, creating a large fireball.",
+    "pubDate": "Sun, 04 Oct 2026 12:09:04 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Brasilien-Wahl: Bolsonaro-Sohn fordert Präsident Lula heraus",
+    "link": "https://www.dw.com/de/brasilien-wahl-bolsonaro-sohn-fordert-präsident-lula-heraus/a-79537018?maca=de-rss-de-all-1119-rdf",
+    "description": "Luiz Inácio Lula da Silva oder Flávio Bolsonaro? 159 Millionen Brasilianer sind an diesem Sonntag aufgerufen, ihren neuen Präsidenten zu bestimmen. Eine Richtungsentscheidung mit möglicherweise weltweiten Auswirkungen.",
+    "pubDate": "2026-10-04T12:09:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "West Bank: Palestinians ‘harassed’ by settlers’ increasing use of drones",
+    "link": "https://www.france24.com/en/middle-east/20261004-occupied-west-bank-palestinians-harassed-settlers-drones",
+    "description": "Palestinians and activists report an increased use of drones in the occupied West Bank, particularly by the army and settlers, to whom the government supplies the drones directly. The drones are used to intimidate, monitor, demolish and make daily life unbearable.",
+    "pubDate": "Sun, 04 Oct 2026 12:01:27 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "The forgotten Chromebook that started it all",
+    "link": "https://www.theverge.com/podcast/1001215/the-forgotten-chromebook-that-started-it-all",
+    "description": "Google didn't even call the first Chromebook a \"Chromebook.\" The Cr-48 had no interesting design and no bright logos - it wasn't even designed to be a product you could buy. Instead, it was a portal to a big new idea about computers. In this week's episode of Version History, The Verge's Nilay Patel",
+    "pubDate": "2026-10-04T12:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "The rise, fall, and rise of portable MP3 players",
+    "link": "https://www.theverge.com/column/1003566/history-apple-ipod-mp3-music-player",
+    "description": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on the collapse and the resurgence of the portable media player, follow Terrence O'Brien. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How ",
+    "pubDate": "2026-10-04T12:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Amazon’s colorful and sturdy new Kindles",
+    "link": "https://www.theverge.com/tech/1004199/amazon-kindle-openai-dots-witcher-3-remastered-bose-wired-headphones",
+    "description": "Hi, friends! Welcome to Installer No. 146, your guide to the best and Verge-iest stuff in the world. (If you're new here, welcome, it's October already?, and also you can read all the old editions at the Installer homepage.) This week, I'm wishing I could do Walmart potato drone delivery in Portland",
+    "pubDate": "2026-10-04T12:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Lula and Bolsonaro face off in Brazil presidential race",
+    "link": "https://www.france24.com/en/lula-and-bolsonaro-face-off-in-brazil-presidential-race",
+    "description": "Twelve candidates are on the ballot, but the presidential race is centred on two rivals: President Luiz Inacio Lula da Silva and Flavio Bolsonaro. Lula is seeking a fourth and final term, warning that Brazil’s sovereignty is at stake amid pressure from Donald Trump. Bolsonaro, meanwhile, has highlig",
+    "pubDate": "Sun, 04 Oct 2026 11:56:08 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Cornell president breaks silence over alleged campus rape",
+    "link": "https://www.france24.com/en/cornell-president-breaks-silence-over-alleged-campus-rape",
+    "description": "Cornell University remains at the centre of controversy over an alleged gang rape at a fraternity on campus, with the university president now breaking his silence. In an eight-minute video statement released Saturday night, Michael Kotlikoff called the allegations, made by a woman known as Jane Doe",
+    "pubDate": "Sun, 04 Oct 2026 11:53:09 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Rivian’s delayed ALSO e-bikes are finally arriving to first customers, with mixed early feedback",
+    "link": "https://electrek.co/2026/10/04/rivians-delayed-also-e-bikes-are-finally-arriving-to-first-customers-with-mixed-early-feedback/",
+    "description": "After months of delays, missed delivery windows, and increasingly impatient reservation holders, Rivian spinout ALSO is finally putting its electric bikes into the hands of actual customers.\nmore…",
+    "pubDate": "Sun, 04 Oct 2026 11:42:00 +0000",
+    "source": "Electrek",
+    "category": "ai-tech"
+  },
+  {
+    "title": "\n        Jev 之后，中国团队开始深挖 AI 的「直觉层」\n      ",
+    "link": "http://www.geekpark.net/news/372081",
+    "description": "作者｜桦林舞王\n编辑｜靖宇\n \n9 月 15 日，前 OpenAI 研究员 Diogo Almeida 创办的 TypeSafe AI 发布了 Jev。这款模型不写一个字，只做判断。\n两周之后，整个行业都在做同一件事。OpenAI 在开发者日上推出 Decisions API，Cloudflare 在 10 月 1 日开源了 Clef，亚马逊也放出了 Strands Decider。\n国内同样没闲着，上海人工智能实验室开源了多模态决策模型 Intern-Decision。\n9 月 30 日，一家成立不到五个月的上海公司 StartLux（原点星辉）发布了开源的 StartLux-Decisio",
+    "pubDate": "Sun, 04 Oct 2026 19:41:48 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Brazil heads to the polls for high-stakes election between Lula and Flavio Bolsonaro",
+    "link": "https://www.france24.com/en/americas/20261004-brazilians-start-voting-in-tight-election-between-lula-and-flavio-bolsonaro",
+    "description": "Brazilians began casting their votes on Sunday in a closely watch presidential election pitting incumbent President Luiz Inacio Lula da Silva against right-wing Senator Flavio Bolsonaro, son of former president Jair Bolsonaro. Nearly 160 million voters will also pick lawmakers, senators and governor",
+    "pubDate": "Sun, 04 Oct 2026 11:17:45 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Brazil votes in deeply polarised election pitting Lula against Bolsonaro",
+    "link": "https://www.aljazeera.com/news/2026/10/4/brazil-votes-in-deeply-polarised-election-pitting-lula-against-bolsonaro?traffic_source=rss",
+    "description": "Close race expected as left-wing leader Lula seeks fourth nonconsecutive term against right-wing Flavio Bolsonaro.",
+    "pubDate": "Sun, 04 Oct 2026 11:15:34 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Iran says Hormuz to remain closed until US meets conditions",
+    "link": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions?traffic_source=rss",
+    "description": "Tehran says reopening Strait of Hormuz has been its main goal, while the US continues to focus on nuclear talks.",
+    "pubDate": "Sun, 04 Oct 2026 11:11:30 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Ethiopian government forces seize Tigray capital Mekelle as TPLF withdraws",
+    "link": "https://www.aljazeera.com/news/2026/10/4/government-forces-seize-capital-of-ethiopias-tigray-region-from-rebels?traffic_source=rss",
+    "description": "Federal troops and allied fighters seen in control of the city after capturing main regional airport.",
+    "pubDate": "Sun, 04 Oct 2026 11:05:02 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "What to know about Brazil's election pitting Lula against Flávio Bolsonaro",
+    "link": "https://www.bbc.co.uk/news/articles/c6wyz0r2n0djo?at_medium=RSS&at_campaign=rss",
+    "description": "Polls suggest the election will be a closely run contest between the left-wing incumbent and his right-wing rival.",
+    "pubDate": "Sun, 04 Oct 2026 11:03:20 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "15 Best Office Chairs of 2026—We Tested 70 to Pick Them",
+    "link": "https://www.wired.com/gallery/best-office-chairs/",
+    "description": "Upgrade your WFH setup and work in style with these comfy, WIRED-tested seats.",
+    "pubDate": "Sun, 04 Oct 2026 11:03:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Red Bull’s Verstappen wins rain-delayed Bahrain GP F1 race in Sepang",
+    "link": "https://www.aljazeera.com/sports/2026/10/4/red-bulls-verstappen-wins-rain-delayed-bahrain-gp-f1-race-in-sepang?traffic_source=rss",
+    "description": "Championship leader Kimi Antonelli of Mercedes and Ferrari's Lewis Hamilton finish second and third.",
+    "pubDate": "Sun, 04 Oct 2026 11:02:33 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The Best Gifts Under $25 for Everyone on Your List (2026)",
+    "link": "https://www.wired.com/story/best-gifts-under-25-2026/",
+    "description": "We found genuinely good presents for home cooks, teens, coffee lovers, and the person who already has everything.",
+    "pubDate": "Sun, 04 Oct 2026 11:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Israel prepares to mark October 7",
+    "link": "https://www.france24.com/en/israel-prepares-to-mark-october-7",
+    "description": "An Israeli strike on a civilian vehicle in Gaza on Sunday killed one Palestinian and wounded at least 11 others. Israel’s military said it was targeting a Hamas militant. Palestinians have reported a surge in Israeli fire and airstrikes across Gaza over the past month, with more than 75,000 people k",
+    "pubDate": "Sun, 04 Oct 2026 10:59:38 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Is the Sudanese army gaining momentum against the RSF?",
+    "link": "https://www.aljazeera.com/news/2026/10/4/is-the-sudanese-army-gaining-momentum-against-the-rsf?traffic_source=rss",
+    "description": "The SAF claims victory in a vital North Kordofan town, weakening RSF’s access to fighters and supply routes.",
+    "pubDate": "Sun, 04 Oct 2026 10:56:12 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Will Brazil’s Lula halt the right-wing wave sweeping Latin America?",
+    "link": "https://www.aljazeera.com/news/2026/10/4/will-brazils-lula-halt-the-right-wing-wave-sweeping-latin-america?traffic_source=rss",
+    "description": "Lula has remained a symbol for much of the global left amid the rise of the far right in Latin America.",
+    "pubDate": "Sun, 04 Oct 2026 10:55:40 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Russia’s nuclear plants are ageing. Who will pay to dismantle them?",
+    "link": "https://www.aljazeera.com/opinions/2026/10/4/russias-nuclear-plants-are-ageing-who-will-pay-to-dismantle-them?traffic_source=rss",
+    "description": "Moscow faces a huge decommissioning bill at home even as it expands its nuclear industry abroad.",
+    "pubDate": "Sun, 04 Oct 2026 10:44:23 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The Best Online Gift Cards and Digital Gift Ideas (2026)",
+    "link": "https://www.wired.com/story/gift-cards-and-digital-gift-ideas/",
+    "description": "Forget the wrapping paper and shipping. Go digital this year with subscriptions, ebooks, apps, and more.",
+    "pubDate": "Sun, 04 Oct 2026 10:30:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Meta Glasses Nova (Gen 3) Review: Not Much New",
+    "link": "https://www.wired.com/review/meta-glasses-gen-3/",
+    "description": "Meta and Ray-Ban’s new smart glasses have slightly better batteries and mics. And yes, they still have cameras.",
+    "pubDate": "Sun, 04 Oct 2026 10:30:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Zahl der Asylanträge in der EU um fast ein Viertel gesunken",
+    "link": "https://www.dw.com/de/zahl-der-asylanträge-in-der-eu-um-fast-ein-viertel-gesunken/a-79536199?maca=de-rss-de-all-1119-rdf",
+    "description": "Die Asylzahlen in Europa sind im bisherigen Jahresverlauf deutlich zurückgegangen. Das geht nach einem Bericht der \"Welt am Sonntag\" aus EU-Zahlen hervor. Deutschland steht dabei als Zielland nur noch an dritter Stelle.",
+    "pubDate": "2026-10-04T10:30:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Spain protests flare after housing bill rejected: Will it cause snap poll?",
+    "link": "https://www.aljazeera.com/news/2026/10/4/spain-protests-flare-after-housing-bill-rejected-will-it-cause-snap-poll?traffic_source=rss",
+    "description": "Measures pushed by Spain's leftist government fail to pass parliament as the protests spread.",
+    "pubDate": "Sun, 04 Oct 2026 10:16:49 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Netanyahu’s fight to own the election narrative",
+    "link": "https://www.aljazeera.com/video/the-listening-post/2026/10/4/netanyahus-fight-to-own-the-election-narrative?traffic_source=rss",
+    "description": "What did Netanyahu know about October 7 before it happened?",
+    "pubDate": "Sun, 04 Oct 2026 10:05:53 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Tributes as Bosnian football star Edin Dzeko retires",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/4/tributes-as-bosnian-football-star-edin-dzeko-retires?traffic_source=rss",
+    "description": "Bosnia and Herzegovina's legendary striker Edin Dzeko has bid farewell to international football after a final match.",
+    "pubDate": "Sun, 04 Oct 2026 10:04:54 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Ukraine: Kanzler Merz in Kyjiw - Drohne trifft Nordbrücke",
+    "link": "https://www.dw.com/de/ukraine-kanzler-merz-in-kyjiw-drohne-trifft-nordbrücke/a-79535157?maca=de-rss-de-all-1119-rdf",
+    "description": "Ungeachtet neuer Drohungen aus Russland sind Bundeskanzler Merz und Wirtschaftsministerin Reiche nach Kyjiw gereist. Kurz nach ihrer Ankunft in der Hauptstadt der Ukraine beschädigt eine Drohne eine Brücke.",
+    "pubDate": "2026-10-04T10:04:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Rural Data Centers Are in for a Big Federal Tax Break",
+    "link": "https://www.wired.com/story/rural-data-centers-are-in-for-a-big-federal-tax-break/",
+    "description": "Under the One Big Beautiful Bill Act,  data center projects in rural areas could be eligible for major tax benefits starting next year. Some hyperscalers do not seem eager to take the free cash.",
+    "pubDate": "Sun, 04 Oct 2026 10:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Brazil elections live: Lula faces Bolsonaro in close presidential race",
+    "link": "https://www.aljazeera.com/news/liveblog/2026/10/4/brazil-elections-live-voters-head-to-polls-for-close-presidential-race?traffic_source=rss",
+    "description": "Voting begins in Brazil as Lula seeks a historic fourth term, facing strong opposition from Flavio Bolsonaro.",
+    "pubDate": "Sun, 04 Oct 2026 10:00:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Flydubai: What happens when a plane plunges 17,000 feet?",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/4/flydubai-what-happens-when-a-plane-plunges-17000-feet?traffic_source=rss",
+    "description": "A flight instructor recreates the Flydubai jet’s near-vertical 17,000 foot dive in a simulator.",
+    "pubDate": "Sun, 04 Oct 2026 09:53:39 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Russian strike hits Kyiv amid Chancellor Merz visit",
+    "link": "https://www.france24.com/en/russian-strike-hits-kyiv-amid-chancellor-merz-visit",
+    "description": "Moscow has once again bombed one of Kyiv’s bridges, despite the presence of German Chancellor Friedrich Merz in the Ukrainian capital. The visit was unplanned, but Merz says it was intended to show Germany’s support for Ukraine. France 24 correspondent Gulliver Cragg, reporting from Kyiv, says traff",
+    "pubDate": "Sun, 04 Oct 2026 09:52:14 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Brazil: A portrait of Flavio Bolsonaro",
+    "link": "https://www.france24.com/en/brazil-a-portrait-of-flavio-bolsonaro",
+    "description": "Brazilians are voting for governors and lawmakers, but the biggest stakes are in the presidential race. Twelve candidates are on the ballot, but the contest is seen as a toss-up between President Luiz Inacio Lula da Silva and Flavio Bolsonaro. Lula is seeking a fourth and final term, warning that Br",
+    "pubDate": "Sun, 04 Oct 2026 09:49:19 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "The story of a book in Gaza: A treasured possession given new lease of life",
+    "link": "https://www.aljazeera.com/features/2026/10/4/the-story-of-a-book-in-gaza-a-treasured-possession-given-new-lease-of-life?traffic_source=rss",
+    "description": "With libraries, schools and homes destroyed in Gaza, surviving books have become treasured possessions.",
+    "pubDate": "Sun, 04 Oct 2026 09:46:48 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Lettland: Pro-EU-Partei des Premiers klare Wahlgewinnerin",
+    "link": "https://www.dw.com/de/lettland-pro-eu-partei-des-premiers-klare-wahlgewinnerin/a-79536290?maca=de-rss-de-all-1119-rdf",
+    "description": "Die Letten haben gewählt. Angesichts der Bedrohung durch Russland und wachsender wirtschaftlicher Sorgen stärken sie der Partei von Regierungschef Andris Kulbergs den Rücken. Doch er muss eine neue Koalition schmieden.",
+    "pubDate": "2026-10-04T09:44:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
+  },
+  {
+    "title": "Who are the mystery pilots who successfully landed endangered Flydubai flight 1073?",
+    "link": "https://www.france24.com/en/middle-east/20261004-who-are-the-mystery-pilots-who-successfully-landed-endangered-flydubai-flight-1073",
+    "description": "A passenger on Flydubai flight 1073 has described the actions of on-duty crew members who rushed into the cockpit to stabilise and land the plane after the co-pilot attacked the captain with a crash axe. The flight carrying 182 people en route to Israel was able to make an emergency landing in Saudi",
+    "pubDate": "Sun, 04 Oct 2026 09:36:47 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Keurig Alta First-Look: No More Plastic K-Cups",
+    "link": "https://www.wired.com/story/keurig-alta-coffee-brewer/",
+    "description": "Keurig is ready to ditch the K-Cup with a compostable and plastic- and aluminum-free coffee pod, but the price is steep.",
+    "pubDate": "Sun, 04 Oct 2026 09:30:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Photos: Community unites in Senegal’s Dakar to clean dilapidated school",
+    "link": "https://www.aljazeera.com/gallery/2026/10/4/photos-dakar-community-unites-to-clean-school-ahead-of-academic-year?traffic_source=rss",
+    "description": "Volunteers and students prepare safer, cleaner classrooms in advance of the academic year in Senegal's capital.",
+    "pubDate": "Sun, 04 Oct 2026 09:09:08 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Elusive ‘Geoneutrinos’ Are Building a New Map of Earth’s Volatile Interior",
+    "link": "https://www.wired.com/story/elusive-geoneutrinos-are-building-a-new-map-of-earths-volatile-interior/",
+    "description": "A global network of detectors are reporting some of the most substantial measurements yet of neutrinos created deep underground by the radioactive elements that power our planet’s tectonic activity.",
+    "pubDate": "Sun, 04 Oct 2026 09:00:00 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Tsar Samuel laid to rest in Sofia",
+    "link": "https://www.france24.com/en/tsar-samuel-laid-to-rest-in-sofia",
+    "description": "In Bulgaria, the remains of medieval ruler Tsar Samuel have been laid to rest in the capital Sofia, after being flown back from the border with Greece by Bulgarian fighter jets. Their return follows decades of negotiations with Athens, in exchange for the return of religious artefacts. Nicholas Rush",
+    "pubDate": "Sun, 04 Oct 2026 08:40:00 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "当AI开始制造AI",
+    "link": "https://www.tmtpost.com/8158979.html",
+    "description": "当AI开始参与制造下一代AI，研发成果可能反过来加快研发，递归自我改进成为巨头争夺的新方向。但更快未必更好，谁定义进步，谁守住安全边界？企业害怕落后的理由，也不能替代我们对这场加速是否值得的独立判断。",
+    "pubDate": "Sun, 04 Oct 2026 16:38:42 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Bosnia votes in one of world’s most complicated general elections",
+    "link": "https://www.aljazeera.com/news/2026/10/4/economic-woes-ethnic-rivalries-shape-bosnias-closely-watched-elections?traffic_source=rss",
+    "description": "Voters cast their ballots for a dizzying number of officials across multiple tiers of government.",
+    "pubDate": "Sun, 04 Oct 2026 08:36:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "RSI再创奇迹！StartLux推出开源决策模型StartLux-Decision，38项基准中31项高于Jev",
+    "link": "https://www.tmtpost.com/8158976.html",
+    "description": "在独立的Decision Index 0.2.1评测中，27B版本得分63.88，38项基准中有31项高于Jev 1.13；在上海人工智能实验室（上海AI实验室）发布Intern-Decision时采用的七项评测中，27B平均准确率达到91.82%，同样高于Jev的88.74%。",
+    "pubDate": "Sun, 04 Oct 2026 16:32:03 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Inside the ‘kill box’: The Yemenis who stayed behind in Houthi-held Mocha",
+    "link": "https://www.aljazeera.com/features/2026/10/4/inside-the-kill-box-the-yemenis-who-stayed-behind-in-houthi-held-mocha?traffic_source=rss",
+    "description": "Yemenis trapped in the Red Sea port city speak of deteriorating conditions there.",
+    "pubDate": "Sun, 04 Oct 2026 08:31:29 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Ireland–Israel nations League clash overshadowed by political tensions",
+    "link": "https://www.france24.com/en/video/20261004-ireland%E2%80%93israel-nations-league-clash-overshadowed-by-political-tensions",
+    "description": "Ireland and Israel are set to face off in the second leg of their Nations League matchup, with political tensions overshadowing the football. During last week’s first game in Bulgaria, Irish players wore black armbands in support of Gaza and pointedly lowered their heads during the Israeli national ",
+    "pubDate": "Sun, 04 Oct 2026 08:27:07 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Brazil polls open in a few hours",
+    "link": "https://www.france24.com/en/brazil-polls-open-in-a-few-hours",
+    "description": "Brazil's President Luiz Inacio Lula da Silva and his main challenger Flavio Bolsonaro wrapped up their campaigns on Saturday in the powerhouse state of Sao Paulo, where a fifth of the nation's vote is based, seeking to rally supporters and convince the undecided on the eve of Sunday's nail-biter ele",
+    "pubDate": "Sun, 04 Oct 2026 08:25:26 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Flock's AI tracking sparks privacy fears and violence",
+    "link": "https://www.france24.com/en/flock-s-ai-tracking-sparks-privacy-fears-and-violence",
+    "description": "In the US, Flock Security cameras form an AI-powered surveillance network that records licence plates and other vehicle information. Their controversial use has become a political issue ahead of the midterm elections, and the cameras are increasingly being targeted by vandals. Caitlin Brown explains",
+    "pubDate": "Sun, 04 Oct 2026 08:23:37 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "人山人海，为何没换来盆满钵满？",
+    "link": "https://www.tmtpost.com/8158922.html",
+    "description": "经济压力没有把大家留在家里，它只是让越来越多人在出门之前，先打开了计算器。",
+    "pubDate": "Sun, 04 Oct 2026 16:22:54 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Yemen’s Houthis claim attacks on Aramco facilities in Riyadh",
+    "link": "https://www.france24.com/en/yemen-s-houthis-claim-attacks-on-aramco-facilities-in-riyadh",
+    "description": "Yemen’s Houthi rebels have claimed responsibility for attacks in Riyadh, including on facilities belonging to Aramco, the world’s largest oil company. This follows reports from residents of flames and smoke rising from an oil facility on the outskirts of the Saudi capital. Meanwhile, the Houthis hav",
+    "pubDate": "Sun, 04 Oct 2026 08:21:37 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Sabalenka, Rybakina handed shock defeats at China Open tennis",
+    "link": "https://www.aljazeera.com/sports/2026/10/4/sabalenka-rybakina-handed-shock-defeats-at-china-open-tennis?traffic_source=rss",
+    "description": "The Belarusian’s exit follows top seed Rybakina losing to unseeded Charaeva in her first match as world number one.",
+    "pubDate": "Sun, 04 Oct 2026 08:04:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Gaza’s Christians mourn mother and daughter killed in Israeli attack",
+    "link": "https://www.aljazeera.com/news/2026/10/4/gazas-christians-mourn-mother-and-daughter-killed-in-israeli-attack?traffic_source=rss",
+    "description": "Maysa Abu Daoud and her daughter Mary al-Najjar among five Palestinians killed in Gaza City attack.",
+    "pubDate": "Sun, 04 Oct 2026 08:02:38 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Germany's Merz visits Kyiv as Russia steps up attacks on Ukrainian cities",
+    "link": "https://www.france24.com/en/germany-s-merz-visits-kyiv-as-russia-steps-up-attacks-on-ukrainian-cities",
+    "description": "German Chancellor Friedrich Merz arrived in Ukraine's capital Kyiv on Sunday on an unannounced visit in a show of support for the country in its war with Russia. Merz's visit comes just a day after Russia warned foreigners and diplomats to leave the Ukrainian capital, saying that \"massive\" new airst",
+    "pubDate": "Sun, 04 Oct 2026 07:58:36 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Saudi-led coalition dismisses ‘misleading’ Houthi claim of Riyadh attack",
+    "link": "https://www.aljazeera.com/news/2026/10/4/houthi-claims-of-targeting-riyadh-are-misleading-saudi-led?traffic_source=rss",
+    "description": "The Saudi-led coalition spokesman says the Yemeni armed group is 'attempting to divert attention' from its losses.",
+    "pubDate": "Sun, 04 Oct 2026 07:39:04 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Live: New Russian strikes hit Kyiv bridge as Germany's Merz visits",
+    "link": "https://www.france24.com/en/europe/20261004-live-germany-s-merz-in-kyiv-for-talks-with-zelensky",
+    "description": "Kyiv’s North bridge was hit in a new Russian attack on Sunday, Mayor Vitali Klitschko said, soon after German Chancellor Friedrich Merz arrived in Ukraine's capital. Merz is on a surprise visit to demonstrate European support in the face of an upsurge in Russian attacks on Ukrainian infrastructure. ",
+    "pubDate": "Sun, 04 Oct 2026 07:28:07 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Ossoff and El-Sayed: Two Senate races and what they say about the Democratic Party",
+    "link": "https://www.france24.com/en/americas/20261004-ossoff-and-el-sayed-two-senate-races-and-what-they-say-about-the-democratic-party",
+    "description": "Senator Jon Ossoff, a Democratic favourite, is running for re-election in Georgia in the 2026 US midterms while Abdul El-Sayed is a Senate candidate in the battleground state of Michigan. The two Democrats have very different profiles and platforms, underscoring divergences within the party. They co",
+    "pubDate": "Sun, 04 Oct 2026 07:21:26 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Fury to invite US President Trump to lead ring walk before Joshua fight",
+    "link": "https://www.aljazeera.com/sports/2026/10/4/fury-to-invite-us-president-trump-to-lead-ring-walk-before-joshua-fight?traffic_source=rss",
+    "description": "Tyson Fury is keen for his 'old pal' to join his procession to the ring for the fight on December 11 in Cardiff.",
+    "pubDate": "Sun, 04 Oct 2026 07:21:19 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "OpenAI元老的一封离职信，揭开了奥特曼最不想承认的真相",
+    "link": "https://www.ifanr.com/1682922?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "description": "教会 AI 善待人类前，先学会善待人\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Sun, 04 Oct 2026 07:08:18 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Bosnia votes in general election with wartime divisions still dominating",
+    "link": "https://www.france24.com/en/bosnia-votes-in-general-election-with-wartime-divisions-still-dominating",
+    "description": "Bosnia is heading to the polls on Sunday after a general election campaign dominated by parties that identify closely with the ethnic divisions of its 1990s war. Voters will elect a vast number of officials across multiple tiers of government, in a complex system that has held the partitioned countr",
+    "pubDate": "Sun, 04 Oct 2026 06:51:38 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Yamal scores stunning goal in Spain’s 3-1 Nations League win over Czechia",
+    "link": "https://www.aljazeera.com/sports/2026/10/4/yamal-scores-stunning-goal-in-spains-3-1-nations-league-win-over-czechia?traffic_source=rss",
+    "description": "Lamine Yamal is the first player to score within the first 10 minutes of each of three consecutive men's football games.",
+    "pubDate": "Sun, 04 Oct 2026 06:24:28 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Australia investigating Flydubai co-pilot's links to country",
+    "link": "https://www.bbc.co.uk/news/articles/cxly4nym57q9o?at_medium=RSS&at_campaign=rss",
+    "description": "State police and the country's security agency are looking into the co-pilot, who attempted to take control of a Flydubai plane travelling to Israel.",
+    "pubDate": "Sun, 04 Oct 2026 06:19:17 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "AI算力硬合作，马斯克还是更相信中国制造",
+    "link": "https://www.qbitai.com/2026/10/501605.html",
+    "description": "一种混搭的可能：英特尔继续供先进工艺，即前端用14A；后端再接台积电，来补工厂运营、良率、封装这些能力。",
+    "pubDate": "Sun, 04 Oct 2026 06:12:22 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "最火AI岗位FDE：月薪5万，都干这些…",
+    "link": "https://www.qbitai.com/2026/10/501506.html",
+    "description": "什么是FDE？它会一直存在吗？",
+    "pubDate": "Sun, 04 Oct 2026 06:05:35 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Bosnians vote as pro-Russian politician looms large and ethnic tensions simmer",
+    "link": "https://www.france24.com/en/europe/20261004-polls-open-in-bosnia-and-herzegovina-as-pro-russian-politician-looms-large-over-race",
+    "description": "Bosnians head to the polls Sunday in elections that ​could impact how much influence Russia has over the small Balkan nation, with separatist Serb leader Milorad Dodik dominating the campaign despite his ban from public office. Bosnia and Herzegovina, a country marred by ethnic tensions, has struggl",
+    "pubDate": "Sun, 04 Oct 2026 05:55:38 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "《Dream it Possible》旋律再起，全新华为Mate 90系列踏光而来！",
+    "link": "https://www.leiphone.com/category/industrynews/eqLySNuJ8LMHKrTe.html",
+    "description": "在10月1日的华为Mate 90系列及全场景新品发布会上，开场曲《Dream it Possible》全新版本旋律响起，瞬间把全场的记忆拉回那些与历代Mate同行的岁月。而华为Mate 90系列核心精神内核“踏光向前”，就藏在这首歌与Mate共同写下的故事里。\n\n\n回头看，这首歌的每次唱响都踩在Mate的关键节点上，与品牌理念同频共振。2015年华为Mate 8发布会是起点，彼时唱的还只是普通人追梦的倔强；2020年华为Mate 40系列“在一起就可以”与“胡杨精神”是坚持与顽强，全新“曙光版”表达的是突围的底气；华为Mate 50系列“跨越山海，终见曙光”，致敬极境中的敢为。\n2023年，华",
+    "pubDate": "Sun, 04 Oct 2026 13:48:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
     "title": "West Indies beat India in record chase as Hope hits 162 in third ODI",
     "link": "https://www.aljazeera.com/sports/2026/10/4/west-indies-beat-india-in-record-chase-as-hope-hit-162-in-third-odi?traffic_source=rss",
     "description": "Shai Hope's 162 leads the West Indies to a record cricket run chase as they beat India by five wickets in the third ODI.",
@@ -14,6 +534,14 @@
     "pubDate": "Sun, 04 Oct 2026 13:27:14 +0800",
     "source": "极客公园",
     "category": "ai-tech"
+  },
+  {
+    "title": "Irland boykottiert erneut - dennoch befindet sich der Eurovision Song Contest weiter auf Expansionskurs",
+    "link": "https://www.dw.com/de/irland-boykottiert-erneut-dennoch-befindet-sich-der-eurovision-song-contest-weiter-auf-expansionskurs/a-79497576?maca=de-rss-de-all-1119-rdf",
+    "description": "Der Eurovision Song Contest 2026 wurde von Boykotten überschattet: Mehrere Länder protestierten wegen des Gaza-Kriegs gegen die Teilnahme Israels. Trotzdem will der Wettbewerb weiter wachsen.",
+    "pubDate": "2026-10-04T05:20:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international"
   },
   {
     "title": "\n        Claude Code 的「乐高」模式，让程序员彻底玩「上头」了\n      ",
@@ -88,6 +616,14 @@
     "category": "international"
   },
   {
+    "title": "无人机已经是优等生，机器人为什么还要载人",
+    "link": "https://www.tmtpost.com/8158866.html",
+    "description": "机器人终究没有放过欢乐谷，很多人看到了关羽骑着机器牛马招摇过市，只不过，这速度还没我奶奶遛弯快？",
+    "pubDate": "Sun, 04 Oct 2026 11:50:27 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
     "title": "Debris found from plane that went missing off US coast",
     "link": "https://www.bbc.co.uk/news/articles/cme3x85013llo?at_medium=RSS&at_campaign=rss",
     "description": "The aircraft lost communication with flight controllers after significantly dropping in altitude, according to flight data.",
@@ -110,6 +646,30 @@
     "pubDate": "Sun, 04 Oct 2026 03:33:49 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
+  },
+  {
+    "title": "中国等不来Muse",
+    "link": "https://www.tmtpost.com/8158821.html",
+    "description": "三个小循环，整合不出一个大循环",
+    "pubDate": "Sun, 04 Oct 2026 11:19:38 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "女掌门人带队，3年吸金21亿，河南爆火景区要IPO了",
+    "link": "https://www.tmtpost.com/8158804.html",
+    "description": "游客量一年超960万人次，这座河南乐园火出圈",
+    "pubDate": "Sun, 04 Oct 2026 11:19:36 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "【数智周报】中国大模型首次进入OpenAI企业付费结算体系；AMD斥资82亿美元收购李飞飞世界模型公司；Anthropic上市文件披露对亚马逊、谷歌依赖加深，2025年营收近46亿美元……",
+    "link": "https://www.tmtpost.com/8158700.html",
+    "description": "（9月28日-10月3日）美国拟限制中国光模块进入国家安全系统；Manus将重新开拓中国市场；谷歌发布Gemini 4模型；Anthropic据悉计划在感恩节假期前进行大规模IPO； 博通筹集600亿美元，用于为Anthropic供应芯片……",
+    "pubDate": "Sun, 04 Oct 2026 11:16:19 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
   },
   {
     "title": "Ballots reach remote Indigenous Brazilians ahead of presidential election",
@@ -149,6 +709,14 @@
     "description": "专业3D模型反而更稀缺了",
     "pubDate": "Sun, 04 Oct 2026 00:53:29 +0000",
     "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "李飞飞不等了",
+    "link": "https://www.tmtpost.com/8158797.html",
+    "description": "“世界模型”被用滥了。",
+    "pubDate": "Sun, 04 Oct 2026 08:38:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech"
   },
   {
@@ -200,6 +768,14 @@
     "category": "international"
   },
   {
+    "title": "Edge AI Daily 早报（10月4日）",
+    "link": "https://www.tmtpost.com/8158829.html",
+    "description": "arXiv因AI论文暴涨6倍实施限投，学术基础设施承压。亚马逊、OpenAI两周内齐推决策模型，标志Agent从全能向分工进化。Tavus发布视频交互模型虽通过图灵测试但可靠性存疑，身份验证防线动摇。Meta开源Muse Gadgets硬件生态，赠送芯片布局入口。苹果homeOS弃App Store以Siri AI为核心，开启AI原生操作系统。Anthropic投1亿美元培养万名部署工程师，争夺企业AI落地定价权。AWS推出裁决式查询设计模式，生成式AI转向合规裁决工具。",
+    "pubDate": "Sun, 04 Oct 2026 07:50:31 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
     "title": "Why pastors may not be seen - or heard - preaching on Ghana's buses for much longer",
     "link": "https://www.bbc.co.uk/news/articles/cwnvln99v2ygo?at_medium=RSS&at_campaign=rss",
     "description": "Ghana is a predominantly Christian country where preaching on public transport is widespread.",
@@ -232,6 +808,14 @@
     "category": "international"
   },
   {
+    "title": "US father and son arrested after 'gas station heroin' deaths",
+    "link": "https://www.bbc.co.uk/news/articles/c6qjnlk4r2jjo?at_medium=RSS&at_campaign=rss",
+    "description": "They are accused of selling at least one student derivatives of kratom, often called \"gas station heroin\" in the US.",
+    "pubDate": "Sat, 03 Oct 2026 22:39:06 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
     "title": "Israeli settlers attack Palestinian farmers during olive harvest",
     "link": "https://www.aljazeera.com/video/2026/10/3/israeli-settlers-attack-palestinian-farmers-during-olive-harvest-2?traffic_source=rss",
     "description": "Israeli settlers attack Palestinian farmers during olive harvest",
@@ -256,9 +840,9 @@
     "category": "international"
   },
   {
-    "title": "Latvia partial election results put PM's pro-Ukraine party ahead but coalition partners stumble",
+    "title": "Latvia's PM on track to lead pro-Ukraine coalition after parliamentary election victory",
     "link": "https://www.france24.com/en/europe/20261003-latvia-elections-pm-kulbergs-pro-ukraine-party-ahead-coalition-partners-stumble",
-    "description": "Latvian Prime Minister Andris Kulbergs' pro-Ukraine and pro-Europe party was seen winning a parliamentary election on Saturday by an unexpectedly wide margin, partial results showed, even as projected results for other coalition parties suggested the centrist PM would have to form a new ruling coali",
+    "description": "Latvian ​Prime Minister Andris Kulbergs was set to retain power and form a coalition after his centrist United List won parliamentary elections on Sunday, the biggest in the country's post-independence history. While the result is expected to reinforce the Baltic country’s pro-European and pro-Ukrai",
     "pubDate": "Sat, 03 Oct 2026 20:58:30 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
@@ -285,6 +869,14 @@
     "description": "Funeral prayers were held at Gaza City’s Saint Porphyrius Greek Orthodox Church for a Palestinian mother and daughter.",
     "pubDate": "Sat, 03 Oct 2026 20:10:17 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Lula and Bolsonaro in final push for votes ahead of Brazil's knife-edge election",
+    "link": "https://www.france24.com/en/video/20261003-lula-and-bolsonaro-in-final-push-for-votes-ahead-of-brazil-s-knife-edge-election",
+    "description": "Brazil's President Luiz Inacio Lula da Silva and his main challenger Flavio Bolsonaro made their final pitch to voters Saturday with rallies in the pivotal state of Sao Paulo ahead of a nail-biter election that has been marred by scandals and mudslinging.",
+    "pubDate": "Sat, 03 Oct 2026 20:10:15 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -768,28 +1360,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "World No 1 Sinner withdraws from Shanghai Masters as knee injury lingers",
-    "link": "https://www.aljazeera.com/sports/2026/10/3/world-no-1-sinner-withdraws-from-shanghai-masters-as-knee-injury-lingers?traffic_source=rss",
-    "description": "Italy's Jannik Sinner has not played since Wimbledon win in July, missing US Open and ongoing ATP 500 event in Beijing.",
-    "pubDate": "Sat, 03 Oct 2026 11:51:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "《Gran Turismo 7》迎来首台中国VGT  同时GT史上30年首次新增电车驾驶教学",
     "link": "https://www.leiphone.com/category/industrynews/YE7qzr0QKUUwu5eL.html",
     "description": "新加坡，2026 年 10 月 3 日 —— 今日，在新加坡 Gran Turismo World Series（GT World Series）赛事现场，Gran Turismo系列游戏制作人山内一典与小米汽车欧洲研发中心设计负责人Jean-Arthur Madelaine现场联合宣布：Xiaomi Vision Gran Turismo（小米 Vision GT）即将于10月正式上线《Gran Turismo 7》（GT7），成为该系列历史上首台来自中国品牌的 VGT（Vision Gran Turismo）车型。现场双方还联合官宣推出GT赛车史上首个电车驾驶教学，玩家可通过驾驶小米 SU",
     "pubDate": "Sat, 03 Oct 2026 19:39:00 +0800",
     "source": "雷峰网",
     "category": "ai-tech"
-  },
-  {
-    "title": "The double standards of a failed execution",
-    "link": "https://www.aljazeera.com/opinions/2026/10/3/the-double-standards-of-a-failed-execution?traffic_source=rss",
-    "description": "Had Christa Pike faced the death penalty in the Middle East, there would be relentless outrage and condemnations.",
-    "pubDate": "Sat, 03 Oct 2026 11:32:42 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "How to Collect CDs",
@@ -800,28 +1376,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Ethiopia’s government forces retake airport from Tigray rebels in Mekelle",
-    "link": "https://www.aljazeera.com/news/2026/10/3/rebels-pulling-back-as-addis-ababas-forces-advance-reports-say?traffic_source=rss",
-    "description": "The rebels have been seen leaving the capital of the northern Tigray region, according to local sources.",
-    "pubDate": "Sat, 03 Oct 2026 11:16:43 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "The dawn of the age of the exoskeleton",
     "link": "https://arstechnica.com/science/2026/10/the-dawn-of-the-age-of-the-exoskeleton/",
     "description": "The devices continue to show noticeable benefits for users in various real-world tasks.",
     "pubDate": "Sat, 03 Oct 2026 11:15:33 +0000",
     "source": "Ars Technica - All content",
     "category": "ai-tech"
-  },
-  {
-    "title": "Palestinians gather for football amid Gaza’s ruins",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/palestinians-gather-for-football-amid-gazas-ruins?traffic_source=rss",
-    "description": "Displaced Palestinians gathered to watch a friendly football match in Gaza’s Khan Younis.",
-    "pubDate": "Sat, 03 Oct 2026 11:08:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "The Best E-Readers That Aren't a Kindle (2026): Kobo, Boox",
@@ -840,43 +1400,11 @@
     "category": "international"
   },
   {
-    "title": "How AI is helping Mexico detect breast cancer earlier",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/10-3-mexico-ai-breast-cancer-julia-pkg?traffic_source=rss",
-    "description": "Mexico is turning to AI to speed up breast cancer detection as long waits and a shortage of specialists hamper screening",
-    "pubDate": "Sat, 03 Oct 2026 10:55:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "A Yemeni family spends a week on the road fleeing another Houthi offensive",
-    "link": "https://www.aljazeera.com/features/2026/10/3/a-yemeni-family-spend-a-week-on-the-road-fleeing-another-houthi-offensive?traffic_source=rss",
-    "description": "Displaced Yemenis are fleeing again, as the Houthis capture the Red Sea coast.",
-    "pubDate": "Sat, 03 Oct 2026 10:48:28 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Pakistan summons Indian diplomat over border killing of two Pakistanis",
-    "link": "https://www.aljazeera.com/news/2026/10/3/pakistan-summons-indian-diplomat-over-border-killing-of-two-pakistanis?traffic_source=rss",
-    "description": "Foreign Ministry says it summoned India's ⁠charge d'affaires to lodge 'strong protest' over killing of two civilians.",
-    "pubDate": "Sat, 03 Oct 2026 10:46:20 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Flydubai-Copilot galt schon früher als Sicherheitsrisiko",
     "link": "https://www.dw.com/de/flydubai-copilot-galt-schon-früher-als-sicherheitsrisiko/a-79529327?maca=de-rss-de-all-1119-rdf",
     "description": "Nach der Gewalttat in einem Flugzeug der emiratischen Gesellschaft Flydubai kommen neue Details ans Licht. Laut US-Medien fiel der Copilot, der den Kapitän der Maschine angriff, schon bei seinem vorigen Arbeitgeber auf.",
     "pubDate": "2026-10-03T10:46:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "What is FC Barcelona’s Negreira case, and what are the charges?",
-    "link": "https://www.aljazeera.com/sports/2026/10/3/what-is-fc-barcelonas-negreira-case-and-what-are-the-charges?traffic_source=rss",
-    "description": "Real Madrid accuse Barcelona of paying former refereeing official Jose Maria Enriquez Negreira between 2001 and 2018.",
-    "pubDate": "Sat, 03 Oct 2026 10:12:14 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
@@ -888,28 +1416,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Red Bull’s Verstappen grabs pole position for Bahrain GP in Malaysia",
-    "link": "https://www.aljazeera.com/sports/2026/10/3/red-bulls-verstappen-grabs-pole-position-for-bahrain-gp-in-malaysia?traffic_source=rss",
-    "description": "Lewis Hamilton of Ferrari to start second on the grid in Sepang with Red Bull's ⁠Isack Hadjar third.",
-    "pubDate": "Sat, 03 Oct 2026 10:03:40 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Best Mosquito Repellents for Your Yard: What Works and What Doesn’t (2026)",
     "link": "https://www.wired.com/story/best-mosquito-repellents/",
     "description": "After years of testing repellents, traps, and sprays, I found a few ways to keep the bugs at bay—and plenty that aren’t worth the effort.",
     "pubDate": "Sat, 03 Oct 2026 10:03:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
-  },
-  {
-    "title": "Flavio Bolsonaro: In the name of the father, sons, and holy ideology",
-    "link": "https://www.france24.com/en/americas/20261003-flavio-bolsonaro-in-the-name-of-the-father-sons-and-holy-ideology",
-    "description": "The first round of Brazil’s presidential election on Sunday pits two well-known names in the political ring: Lula vs. Bolsonaro. But it’s not former president Jair Bolsonaro facing off against the incumbent head of state – it’s his eldest son, Flavio Bolsonaro. He’s less charismatic than his father ",
-    "pubDate": "Sat, 03 Oct 2026 09:48:12 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "Trump: Diesel-Drohung war nicht ernst gemeint",
@@ -936,30 +1448,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "G7 to release 100 million barrels of oil and diesel, will it curb prices?",
-    "link": "https://www.aljazeera.com/news/2026/10/3/g7-to-release-100-million-barrels-of-oil-and-diesel-will-it-curb-prices?traffic_source=rss",
-    "description": "Global energy prices have soared due to the US and Israel's war on Iran and Russia's war on Ukraine.",
-    "pubDate": "Sat, 03 Oct 2026 09:27:38 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Barricades & the blame game: the French school protests",
-    "link": "https://www.france24.com/en/tv-shows/the-debate/20261003-barricades-the-blame-game-the-french-school-protests",
-    "description": "In a week that’s seen the heroism of the captain, crew and passengers on board FlyDubai flight 1073 heralded, eye witnesses report seeing the co-pilot trying to kill the pilot and destroying the cockpit controls in order to crash the plane. Despite being stabbed repeatedly, Captan Smit Machchhar man",
-    "pubDate": "Sat, 03 Oct 2026 09:25:58 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Who is the mystery co-pilot behind the Flydubai attack?",
-    "link": "https://www.aljazeera.com/news/2026/10/3/who-is-the-mystery-co-pilot-behind-the-flydubai-attack?traffic_source=rss",
-    "description": "Accused pilot Hamam al-Hammami reportedly barred from flying in Oman due to concerns over extremist views.",
-    "pubDate": "Sat, 03 Oct 2026 09:25:31 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "A Decade-Long Experiment Is Unlocking the Mysteries of the Ocean’s ‘Deep Reefs’",
     "link": "https://www.wired.com/story/inside-decade-long-experiment-to-understand-oceans-mysterious-deep-reefs/",
     "description": "Scientists left structures up to 100 meters under the surface. Here’s what they found when they retrieved them 10 years later.",
@@ -976,59 +1464,11 @@
     "category": "international"
   },
   {
-    "title": "Yemen’s army claims over 1,500 Houthi casualties, attacks Sanaa",
-    "link": "https://www.aljazeera.com/news/2026/10/3/over-1500-houthi-casualties-in-past-24-hours-yemeni-army-says?traffic_source=rss",
-    "description": "Government forces close a key crossing connecting Houthi-held al-Houban to government-held Taiz city.",
-    "pubDate": "Sat, 03 Oct 2026 08:36:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Polls open in Latvia against backdrop of perceived Russia threat",
-    "link": "https://www.aljazeera.com/news/2026/10/3/latvians-head-to-polls-with-security-and-cost-of-living-in-focus?traffic_source=rss",
-    "description": "Latvia is not expected to shift its pro-Europe and pro-Ukraine trajectory, but coalition negotiations could be complex.",
-    "pubDate": "Sat, 03 Oct 2026 08:21:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "No fairytale return for Zidane as Italy hold France at the Stade de France",
-    "link": "https://www.france24.com/en/tv-shows/sports/20261003-no-fairytale-return-for-zidane-as-italy-hold-france-at-the-stade-de-france",
-    "description": "The Stade de France was filled to capacity as the new French national team manager, Zinedine Zidane, prepared to make his home debut. The very side against whom he had ended his playing career in 2006 was once again the opponent he faced. Despite Michael Olise’s splendid free kick, the French were q",
-    "pubDate": "Sat, 03 Oct 2026 08:20:56 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Turkish court detains football refereeing chief pending corruption trial",
-    "link": "https://www.aljazeera.com/sports/2026/10/3/turkish-court-detains-football-refereeing-chief-pending-corruption-trial?traffic_source=rss",
-    "description": "Seven officials face an investigation over allegations of manipulation of the referee administration process.",
-    "pubDate": "Sat, 03 Oct 2026 08:19:33 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "No handshakes and a delayed ceremony as India beat Pakistan at Asian Games",
-    "link": "https://www.aljazeera.com/sports/2026/10/3/india-beat-arch-rivals-pakistan-to-win-asian-games-t20-cricket-gold?traffic_source=rss",
-    "description": "India beat Pakistan by 19 runs in gold medal match at Asian Games as Hasan Nawaz's 96 in vain in reply to 211-6.",
-    "pubDate": "Sat, 03 Oct 2026 08:18:40 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "Depression: Autoritäre Erziehung macht Kinder krank",
     "link": "https://www.dw.com/de/depression-autoritäre-erziehung-macht-kinder-krank/a-79497580?maca=de-rss-de-all-1119-rdf",
     "description": "Ob Depressionen oder Verhaltensstörungen - psychische Probleme von Kindern hängen oft mit der Erziehung zusammen. Eltern können nicht alles richtig machen, aber es gibt ein paar Dinge, die sie wirklich nicht tun sollten.",
     "pubDate": "2026-10-03T08:00:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Ethiopia's Tigray rebels abandon regional capital Mekelle as government forces enter city",
-    "link": "https://www.france24.com/en/africa/20261003-ethiopia-s-tigray-rebels-abandon-regional-capital-of-mekelle-as-pro-government-forces-advance",
-    "description": "Ethiopian federal forces have entered the capital of the northern Tigray region and seized its airport, witnesses said Saturday, reversing a takeover by rebels from the Tigray People's Liberation Front (TPLF) that prompted the suspension of commercial flights last month. The TPLF has been fighting a",
-    "pubDate": "Sat, 03 Oct 2026 07:58:45 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -1048,28 +1488,12 @@
     "category": "international"
   },
   {
-    "title": "News kompakt: G7 geben Rohöl- und Diesel-Reserven frei",
-    "link": "https://www.dw.com/de/news-kompakt-g7-geben-rohöl-und-diesel-reserven-frei/a-79526644?maca=de-rss-de-all-1119-rdf",
-    "description": "Bis zu 100 Millionen Fass Diesel und Rohöl wollen die G7-Staaten aus ihren Vorräten freigeben. In Bremen finden die Feiern zum Tag der Deutschen Einheit statt. Der DW-Nachrichtenüberblick.",
-    "pubDate": "2026-10-03T07:30:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
     "title": "国庆出游用AI，第一批人已经被坑惨了",
     "link": "https://www.tmtpost.com/8158647.html",
     "description": "基础信息出错少，真实情况全靠“猜”。",
     "pubDate": "Sat, 03 Oct 2026 15:19:24 +0800",
     "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech"
-  },
-  {
-    "title": "🔴 UAE investigators say Flydubai co-pilot was planning 'terrorist act'",
-    "link": "https://www.france24.com/en/middle-east/20261003-co-pilot-on-flydubai-flight-was-banned-from-flying-by-oman-for-holding-extremist-views",
-    "description": "",
-    "pubDate": "Sat, 03 Oct 2026 07:14:58 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "Joker persona helps Cong 'feel the fear' in opponents",
@@ -1088,20 +1512,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Russia strikes another Kyiv bridge, deepening travel chaos in Ukraine's capital",
-    "link": "https://www.france24.com/en/europe/20261003-russia-strikes-another-major-bridge-in-kyiv",
-    "description": "Kyiv's Northern Bridge across the Dnipro river was hit by a Russian air attack, Mayor Vitali Klitschko said Saturday, deepening travel chaos amid an escalation in strikes ​on ‌infrastructure in the Ukrainian capital. The latest attack comes a day after the city's Southern Bridge was hit by several s",
-    "pubDate": "Sat, 03 Oct 2026 06:40:29 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "UAE investigators say Omani Flydubai co-pilot was planning 'terrorist' attack",
-    "link": "https://www.france24.com/en/middle-east/20261003-co-pilot-on-flydubai-flight-was-banned-from-flying-by-oman-for-holding-extremist-views",
-    "description": "The Omani co-pilot accused of attacking the captain aboard a Flydubai flight to Israel on September 30 attempted to carry out a \"terrorist\" attack, the United Arab Emirates prosecutor general said ​Saturday. The alleged assailant, identified as Omani national Hamam al-Hammami, had been barred from f",
-    "pubDate": "Sat, 03 Oct 2026 06:17:45 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
+    "title": "国庆开电车，车主们集体兼职“调度员”",
+    "link": "https://www.tmtpost.com/8158629.html",
+    "description": "新能源车主慢慢学会了一套类似库存管理的思维。",
+    "pubDate": "Sat, 03 Oct 2026 13:47:25 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
   },
   {
     "title": "50% Off DoorDash Promo Code | October 2026",
@@ -1136,17 +1552,17 @@
     "category": "ai-tech"
   },
   {
-    "title": "Chewy Promo Codes: $20 Off October 2026",
-    "link": "https://www.wired.com/story/chewy-promo-code/",
-    "description": "Explore Chewy coupon codes for $30 off, $20 off your first order of $49, 50% off pet food, and more October 2026 discounts.",
+    "title": "Hoka Coupon Codes: 30% Off in October 2026",
+    "link": "https://www.wired.com/story/hoka-coupon-code/",
+    "description": "Unlock free expedited shipping or 10% off with today’s Hoka discount codes, plus save up to 30% with the best discounts for October 2026.",
     "pubDate": "Sat, 03 Oct 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
   },
   {
-    "title": "Hoka Coupon Codes: 30% Off in October 2026",
-    "link": "https://www.wired.com/story/hoka-coupon-code/",
-    "description": "Unlock free expedited shipping or 10% off with today’s Hoka discount codes, plus save up to 30% with the best discounts for October 2026.",
+    "title": "Chewy Promo Codes: $20 Off October 2026",
+    "link": "https://www.wired.com/story/chewy-promo-code/",
+    "description": "Explore Chewy coupon codes for $30 off, $20 off your first order of $49, 50% off pet food, and more October 2026 discounts.",
     "pubDate": "Sat, 03 Oct 2026 05:00:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
@@ -1168,14 +1584,6 @@
     "category": "international"
   },
   {
-    "title": "North Korea launches ballistic missile as tensions with Seoul grow over border mine blasts",
-    "link": "https://www.france24.com/en/asia-pacific/20261003-north-korea-fires-ballistic-missile-after-seoul-s-apology-demand",
-    "description": "North Korea launched a ballistic missile Saturday morning from the Wonsan area on its east coast into the Sea of Japan, according to South Korea's military. The launch comes amid renewed tensions between Pyongyang and Seoul, with the latter demanding an apology for a blast that wounded three South K",
-    "pubDate": "Sat, 03 Oct 2026 02:40:43 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
     "title": "Jev估值100亿美元！创始人Diogo Almeida回答一切",
     "link": "https://www.qbitai.com/2026/10/500148.html",
     "description": "",
@@ -1184,20 +1592,28 @@
     "category": "ai-tech"
   },
   {
-    "title": "EV drivers love their cars, but some passengers feel sick - this could be why",
-    "link": "https://www.bbc.co.uk/news/articles/c3y0zx822wlzo?at_medium=RSS&at_campaign=rss",
-    "description": "Research shows there are several reasons people might experience motion sickness in electric vehicles.",
-    "pubDate": "Sat, 03 Oct 2026 02:36:19 GMT",
-    "source": "BBC News",
-    "category": "international"
+    "title": "苏姿丰抬头，李飞飞低头",
+    "link": "https://www.tmtpost.com/8158564.html",
+    "description": "AMD 买下的，是一个没被定义的市场。",
+    "pubDate": "Sat, 03 Oct 2026 09:42:32 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
   },
   {
-    "title": "Cornell frat house rape accuser 'under siege' online, says lawyer",
-    "link": "https://www.bbc.co.uk/news/articles/c6ly0ljypzrdo?at_medium=RSS&at_campaign=rss",
-    "description": "A lawyer for Jane Doe says she is \"not doing well\" amid attempts to uncover her identity.",
-    "pubDate": "Sat, 03 Oct 2026 02:23:07 GMT",
-    "source": "BBC News",
-    "category": "international"
+    "title": "大模型一体机，开始缩水了",
+    "link": "https://www.tmtpost.com/8158443.html",
+    "description": "大模型一体机市场，劈成了两半。",
+    "pubDate": "Sat, 03 Oct 2026 09:38:50 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Edge AI Daily 早报（10月3日）",
+    "link": "https://www.tmtpost.com/8158562.html",
+    "description": "洛克希德将F-35核心算法交予OpenAI，军事AI关键转折；白宫签署AI自愿承诺但出现拼写错误，治理实效受质疑；谷歌高管呼吁集体意志而非行业自律。欧盟拒绝柴油禁令，能源安全与盟友信任挂钩；纽约实施退订新规填补联邦空白。AWS警告数据中心禁令将输掉AI竞赛并宣布10亿投资。东芝扩产HDD应对AI需求。Stability AI转型音乐AI获版权方投资。泰国750亿补贴光伏，中国组件出口受益。",
+    "pubDate": "Sat, 03 Oct 2026 09:30:02 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "policy"
   },
   {
     "title": "\n        英伟达股价创新高，逼近 6 万亿美元；限制 AI 助手，苹果收紧 MacOS 磁盘访问权限；arXiv 每人每月仅允许投递 2 篇论文\n      ",
@@ -1272,22 +1688,6 @@
     "category": "international"
   },
   {
-    "title": "Women given shorts at Oktoberfest to prevent upskirting",
-    "link": "https://www.bbc.co.uk/news/articles/cjwyzyqvx1zxo?at_medium=RSS&at_campaign=rss",
-    "description": "The step at the Munich festival comes after thousands of voyeuristic videos emerged on social media.",
-    "pubDate": "Fri, 02 Oct 2026 23:16:03 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "US road rage killer's sentence quashed because AI video of victim was shown in court",
-    "link": "https://www.bbc.co.uk/news/articles/cwgkvygg5nzvo?at_medium=RSS&at_campaign=rss",
-    "description": "The Arizona appeals court ruled that airing an AI message from the dead victim \"crossed that line\".",
-    "pubDate": "Fri, 02 Oct 2026 23:06:00 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "Apple changes full-disk access permissions to curb abuse from AI agents",
     "link": "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/",
     "description": "Meta says FDA isn't sufficient to Muse reading messages. Apple begs to differ.",
@@ -1304,36 +1704,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "The vanishing world of India's street magicians",
-    "link": "https://www.bbc.co.uk/news/articles/ck7v4v8pmzdeo?at_medium=RSS&at_campaign=rss",
-    "description": "India's street performers are struggling to survive as audiences shrink and public spaces become harder to access.",
-    "pubDate": "Fri, 02 Oct 2026 22:59:05 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "Tracing Hardware Design From Physical Devices to RTL (Infineon, TU Munich)",
     "link": "https://semiengineering.com/tracing-hardware-design-from-physical-devices-to-rtl-infineon-tu-munich/",
     "description": "Researchers at Infineon Technologies and Technical University of Munich published a technical paper titled “From Physical Devices to RTL Models: Abstraction and Validation in Hardware Engineering.” Abstract: “This paper introduces the foundational principles underlying hardware engineering models an",
     "pubDate": "Fri, 02 Oct 2026 22:46:46 +0000",
     "source": "Semiconductor Engineering",
     "category": "semiconductor"
-  },
-  {
-    "title": "Semiconductor Quantum-Dot Resonator Improves Single-Photon Quality for Quantum Systems",
-    "link": "https://www.semiconductor-digest.com/semiconductor-quantum-dot-resonator-improves-single-photon-quality-for-quantum-systems/?utm_source=rss&utm_medium=rss&utm_campaign=semiconductor-quantum-dot-resonator-improves-single-photon-quality-for-quantum-systems",
-    "description": "Working in close collaboration, researchers from Paderborn University, the University of Basel and Ruhr University Bochum have made a significant breakthrough in the field of quantum communication.\nThe post Semiconductor Quantum-Dot Resonator Improves Single-Photon Quality for Quantum Systems appear",
-    "pubDate": "Fri, 02 Oct 2026 21:50:04 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor"
-  },
-  {
-    "title": "French media respond to M. Le Pen’s ‘Kevlar suit’ comments against investigative outlet",
-    "link": "https://www.france24.com/en/france/20261002-french-media-react-to-m-le-pen-s-kevlar-suit-comments-against-investigative-press-outlet",
-    "description": "The editorial committees of 39 French media outlets, including FRANCE 24 and RFI, on Friday released a joint statement condemning National Rally (RN) party leader and presidential candidate Marine Le Pen’s recent comments targeting investigative outlet Médiapart as “violent attempts at intimidation”",
-    "pubDate": "Fri, 02 Oct 2026 21:37:11 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "Someone got Doom in an SQL database",
@@ -1384,51 +1760,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "Hawaii's iconic 550-year-old Hōlei Sea Arch collapses ",
-    "link": "https://www.bbc.co.uk/news/articles/crd6dy4xepgyo?at_medium=RSS&at_campaign=rss",
-    "description": "The lava rock formation protruding from the rocky cliffs of Volcanoes National Park crumbled some time last weekend.",
-    "pubDate": "Fri, 02 Oct 2026 21:00:41 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "The Anime Art of Mappa: Fifteenth Anniversary Expo Takes Visitors Deep Into the Hits",
     "link": "https://www.nippon.com/en/guide-to-japan/p01995/",
     "description": "In the 16 years since its launch, the anime studio Mappa has produced numerous global hits. A new show in Yūrakuchō, Tokyo, puts its art on full display, from the characters in its works to the techniques behind the scenes.",
     "pubDate": "Sat, 03 Oct 2026 06:00:00 +0900 ",
     "source": "nippon.com / en ",
-    "category": "international"
-  },
-  {
-    "title": "Crystal Design Controls Spin-Polarized Photocurrent in 2D Hybrid Perovskites",
-    "link": "https://www.semiconductor-digest.com/crystal-design-controls-spin-polarized-photocurrent-in-2d-hybrid-perovskites/?utm_source=rss&utm_medium=rss&utm_campaign=crystal-design-controls-spin-polarized-photocurrent-in-2d-hybrid-perovskites",
-    "description": "Researchers demonstrate that internal crystal structure is key in regulating generated light-induced current.\nThe post Crystal Design Controls Spin-Polarized Photocurrent in 2D Hybrid Perovskites appeared first on Semiconductor Digest.",
-    "pubDate": "Fri, 02 Oct 2026 20:59:56 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Nations League: France held by Italy despite Olise stunner",
-    "link": "https://www.france24.com/en/sport/20261002-france-held-by-italy-in-zidane-s-homecoming-after-olise-stunner",
-    "description": "After two wins in two away games, Zinedine Zidane’s return to the Stade de France as coach was not exactly a success, as Les Bleus were held to a 1-1 draw by Italy on Friday in the UEFA Nations League.",
-    "pubDate": "Fri, 02 Oct 2026 20:58:45 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Northrop Grumman Rebrands Wideband GaN Technology as FORTITUDE, Targets RF System Integration",
-    "link": "https://www.semiconductor-digest.com/northrop-grumman-rebrands-wideband-gan-technology-as-fortitude-targets-rf-system-integration/?utm_source=rss&utm_medium=rss&utm_campaign=northrop-grumman-rebrands-wideband-gan-technology-as-fortitude-targets-rf-system-integration",
-    "description": "A universal boost for today’s systems that delivers the speed tomorrow’s networks demand.\nThe post Northrop Grumman Rebrands Wideband GaN Technology as FORTITUDE, Targets RF System Integration appeared first on Semiconductor Digest.",
-    "pubDate": "Fri, 02 Oct 2026 20:47:36 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Ethiopian army pushes back Tigrayan rebels",
-    "link": "https://www.france24.com/en/tv-shows/eye-on-africa/20261002-ethiopian-army-pushes-back-tigrayan-rebels",
-    "description": "First, Ethiopia and Eritrea have severed ties and now with tensions spreading across the region, the African Union is urging all sides to show restraint. Meanwhile, Ethiopia's army is advancing toward the Tigrayan capital as fighting intensifies and new explosions rock Addis Ababa. Then, from boardr",
-    "pubDate": "Fri, 02 Oct 2026 20:46:00 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -1438,14 +1774,6 @@
     "pubDate": "Fri, 02 Oct 2026 20:37:34 GMT",
     "source": "BBC News",
     "category": "international"
-  },
-  {
-    "title": "EMD Electronics Opens New R&D Facility in Wisconsin",
-    "link": "https://www.semiconductor-digest.com/emd-electronics-opens-new-rd-facility-in-wisconsin/?utm_source=rss&utm_medium=rss&utm_campaign=emd-electronics-opens-new-rd-facility-in-wisconsin",
-    "description": "EMD Electronics opened new 38,000-square-foot research and development facility in Sheboygan Falls, WI.\nThe post EMD Electronics Opens New R&D Facility in Wisconsin appeared first on Semiconductor Digest.",
-    "pubDate": "Fri, 02 Oct 2026 20:37:13 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor"
   },
   {
     "title": "Amazon’s $1B plan to combat data center backlash draws more backlash",
@@ -1472,27 +1800,11 @@
     "category": "semiconductor"
   },
   {
-    "title": "Apple will limit Mac disk access as AI agents ‘substantially’ increase risk",
-    "link": "https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents",
-    "description": "Apple will add new limits for \"full disk access\" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch. In an update on Friday, Apple says it's rolling out new controls to \"ensure that users who genuinely wish to grant an app this extraordinary level of access can only do",
-    "pubDate": "2026-10-02T20:08:40.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
     "title": "Patient-zero drill put health facilities to the test—40% of them failed",
     "link": "https://arstechnica.com/health/2026/10/patient-zero-drill-put-health-facilities-to-the-test-40-of-them-failed/",
     "description": "Actors with makeup and fake symptoms staggered into 73 healthcare facilities.",
     "pubDate": "Fri, 02 Oct 2026 20:07:59 +0000",
     "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Sling TV drops its one-day cable passes",
-    "link": "https://www.theverge.com/streaming/1004300/sling-tv-pass-cable-drops",
-    "description": "Dish-owned Sling TV will no longer be offering its Sling Pass feature that allowed people to buy a single day of cable TV programming at a time, as reported by The Desk. The feature was announced last year and offered a day pass, a weekend pass, and a week-long pass option to be able to [&#8230;]",
-    "pubDate": "2026-10-02T20:00:20.000Z",
-    "source": "The Verge",
     "category": "ai-tech"
   },
   {
@@ -1526,14 +1838,6 @@
     "pubDate": "Fri, 02 Oct 2026 19:52:03 +0000",
     "source": "Electrek",
     "category": "ai-tech"
-  },
-  {
-    "title": "On the run for 20 years, Ugandan warlord Kony still 'active' within the Lord's Resistance Army",
-    "link": "https://www.france24.com/en/africa/20261002-on-the-run-for-20-years-ugandan-warlord-kony-still-active-within-the-lord-s-resistance-army",
-    "description": "In recent months, the eastern Central African Republic has been hit by several attacks attributed to the Lord’s Resistance Army (LRA), a Ugandan militia infamous for its massacres and mass abductions of children in the 1990s and 2000s. The group's leader, Joseph Kony, wanted by the International Cri",
-    "pubDate": "Fri, 02 Oct 2026 19:31:27 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "Jeep’s off-road electric SUV managed just 160 miles in a real-world highway range test",
@@ -1592,14 +1896,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "French Unrest: Are we witnessing a new 'Yellow Vests' movement?",
-    "link": "https://www.france24.com/en/tv-shows/spotlight/20261002-french-unrest-are-we-witnessing-a-new-yellow-vests-movement",
-    "description": "It's been 18 days since we first reported on isolated cases of schools protests at a high school in Rennes in Brittany, in Caen in Normandy and Villeneueve d'Asque on the suburbs of Lille. The complaints were similar in theme, overloaded timetables, staffing problems, poor facilities. It spread to S",
-    "pubDate": "Fri, 02 Oct 2026 18:54:00 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
     "title": "US arrests tech CEO accused of smuggling $300M in Nvidia chips into China",
     "link": "https://arstechnica.com/tech-policy/2026/10/us-arrests-tech-ceo-accused-of-smuggling-300m-in-nvidia-chips-into-china/",
     "description": "Nvidia’s chip-smuggling problem won’t go away as arrests continue.",
@@ -1645,14 +1941,6 @@
     "description": "Apple says it will add new controls around macOS’s Full Disk Access permission, warning that increasingly capable AI agents make broad access to users’ files, messages, mail, and browsing history riskier.",
     "pubDate": "Fri, 02 Oct 2026 18:11:27 +0000",
     "source": "TechCrunch",
-    "category": "ai-tech"
-  },
-  {
-    "title": "OpenAI’s Dot agent is enterprise software that can also order your dinner",
-    "link": "https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent",
-    "description": "It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like using workplace software that happens to be able to order you a burrito - emphasis on work. OpenAI ann",
-    "pubDate": "2026-10-02T18:00:00.000Z",
-    "source": "The Verge",
     "category": "ai-tech"
   },
   {
@@ -1744,28 +2032,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Brazil’s Lula gears up for ‘last dance’ with run for fourth presidential term",
-    "link": "https://www.france24.com/en/americas/20261002-brazil-s-lula-gears-up-for-last-dance-with-run-for-fourth-presidential-term",
-    "description": "President Luiz Inacio Lula da Silva will stand for re-election in Brazil on Sunday. At 80, the former steelworker hopes to capitalise on his popularity and economic successes to win a fourth term in office but is neck-and-neck in the polls with far-right rival Flavio Bolsonaro.",
-    "pubDate": "Fri, 02 Oct 2026 16:20:06 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
     "title": "A model guide for the GPT-6 family",
     "link": "https://openai.com/index/practical-guide-building-gpt-6",
     "description": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
     "pubDate": "Fri, 02 Oct 2026 16:15:00 GMT",
     "source": "OpenAI News",
     "category": "ai-tech"
-  },
-  {
-    "title": "Ethiopia and Eritrea cut diplomatic ties as northern conflict escalates",
-    "link": "https://www.bbc.co.uk/news/articles/crpd0d0jl0y0o?at_medium=RSS&at_campaign=rss",
-    "description": "The diplomatic fallout comes as Ethiopian forces battle rebel fighters across its northern region.",
-    "pubDate": "Fri, 02 Oct 2026 16:08:25 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Cybertruck sales in free fall as Tesla reports mediocre sales for Q3",
@@ -1790,14 +2062,6 @@
     "pubDate": "Fri, 02 Oct 2026 15:58:50 +0000",
     "source": "EE Times",
     "category": "semiconductor"
-  },
-  {
-    "title": "'We have to close defence gaps urgently': EU Parliament Foreign Affairs Committee chief McAllister",
-    "link": "https://www.france24.com/en/tv-shows/talking-europe/20261002-we-have-to-close-defence-gaps-urgently-eu-parliament-foreign-affairs-committee-chief-mcallister",
-    "description": "We sit down with David McAllister, the chair of the European Parliament’s Foreign Affairs Committee. He talks to us about the security threats facing Europe, and what defence gaps the EU urgently needs to close. For McAllister, the EU is \"not at war with the Russian Federation, but we are no longer ",
-    "pubDate": "Fri, 02 Oct 2026 15:57:55 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "Paramount and Warner Bros. Discovery to become Skydance",
@@ -1840,27 +2104,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "What’s in the October Issue?",
-    "link": "https://www.semiconductor-digest.com/whats-in-the-october-issue-6/?utm_source=rss&utm_medium=rss&utm_campaign=whats-in-the-october-issue-6",
-    "description": "Each issue of Semiconductor Digest has articles found only in the magazine. Click on the links to read the articles in the October issue. If you are attending SEMICON West, pick up the October issue in print. You can find it at booth #3402 or in the publication bins. We hope to see you there!\nThe po",
-    "pubDate": "Fri, 02 Oct 2026 15:26:28 +0000",
-    "source": "Semiconductor Digest",
-    "category": "semiconductor"
-  },
-  {
     "title": "Warum Kyjiws Südbrücke Ziel russischer Angriffe ist",
     "link": "https://www.dw.com/de/warum-kyjiws-südbrücke-ziel-russischer-angriffe-ist/a-79520959?maca=de-rss-de-all-1119-rdf",
     "description": "Russische Drohnen haben wiederholt die Südbrücke in Kyjiw angegriffen. Sie wird von der U-Bahn und einem Großteil des Auto- und Güterverkehrs genutzt. Wie lassen sich die Brücken der ukrainischen Hauptstadt schützen?",
     "pubDate": "2026-10-02T15:19:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "Brazil: The craze for candidate merch ahead of elections",
-    "link": "https://www.france24.com/en/video/20261002-brazil-the-craze-for-candidate-merch-ahead-of-elections",
-    "description": "Nearly 159 million Brazilians will head to the polling booths on Sunday to vote in general elections. They will elect their new MPs, see two-thirds of the Senate change ranks and, most importantly, vote for their next president.Though the vote is held by secret ballot, people wear their support on t",
-    "pubDate": "Fri, 02 Oct 2026 15:17:39 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -1870,14 +2118,6 @@
     "pubDate": "Fri, 02 Oct 2026 15:17:16 +0000",
     "source": "Electrek",
     "category": "ai-tech"
-  },
-  {
-    "title": "Spanish lawmakers vote down affordable housing bills in blow to Sanchez’s government",
-    "link": "https://www.france24.com/en/europe/20261002-spanish-lawmakers-vote-down-affordable-housing-bills-in-blow-to-sanchez-s-government",
-    "description": "Demonstrators protesting against Spain's housing crisis reacted with fury on Friday after the country's parliament rejected two bills put forward by the government that centre-left Prime Minister Pedro Sanchez hoped would address their concerns. Rents have doubled over the past decade, with average ",
-    "pubDate": "Fri, 02 Oct 2026 15:12:47 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "TSMC OIP Ecosystem Forum 2026: Spotlight on Emerging Technologies",
@@ -1952,22 +2192,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "Irland boykottiert erneut - dennoch befindet sich der Eurovision Song Contest weiter auf Expansionskurs",
-    "link": "https://www.dw.com/de/irland-boykottiert-erneut-dennoch-befindet-sich-der-eurovision-song-contest-weiter-auf-expansionskurs/a-79497576?maca=de-rss-de-all-1119-rdf",
-    "description": "Der Eurovision Song Contest 2026 wurde von Boykotten überschattet: Mehrere Länder protestierten wegen des Gaza-Kriegs gegen die Teilnahme Israels. Trotzdem will der Wettbewerb weiter wachsen.",
-    "pubDate": "2026-10-02T14:09:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "I've seen nearly 500 executions - but never one like Christa Pike's",
-    "link": "https://www.bbc.co.uk/news/articles/c6d949gq47x9o?at_medium=RSS&at_campaign=rss",
-    "description": "Texas reporter Michael Graczyk has seen botched executions in his time, but not one in which an inmate survived.",
-    "pubDate": "Fri, 02 Oct 2026 14:01:09 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "Calling robotics startups: Submissions for the 2026 Robotics Startup Radar close soon",
     "link": "https://www.therobotreport.com/calling-all-robotics-startups-apply-now-2026-robotics-startup-radar/",
     "description": "Submit now to be part of the Robotics Startup Radar, which brings together some of the most promising robotics startups.\nThe post Calling robotics startups: Submissions for the 2026 Robotics Startup Radar close soon appeared first on The Robot Report.",
@@ -2029,14 +2253,6 @@
     "description": "Rassistische Kommentare begleiten die DFB-Elf seit Tagen. Rund um das Spiel gegen Serbien antwortet jeder auf seine Weise: Klopp mit klaren Worten, sein Team mit starkem Auftritt und die Fans mit viel Schwarz-Rot-Gold.",
     "pubDate": "2026-10-02T12:57:00.000Z",
     "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
-  },
-  {
-    "title": "School protests send shivers down French government's spine",
-    "link": "https://www.bbc.co.uk/news/articles/c69wzjjxex8po?at_medium=RSS&at_campaign=rss",
-    "description": "A movement that started nearly two weeks ago has spread, and in France young people on the streets spells trouble, writes Hugh Schofield.",
-    "pubDate": "Fri, 02 Oct 2026 12:43:02 GMT",
-    "source": "BBC News",
     "category": "international"
   },
   {
@@ -2102,14 +2318,6 @@
     "pubDate": "Fri, 02 Oct 2026 07:09:00 -0400",
     "source": "Supply Chain Dive - Latest News",
     "category": "supply-chain"
-  },
-  {
-    "title": "Chef von arabisch-israelischer Partei kandidiert doch nicht",
-    "link": "https://www.dw.com/de/chef-von-arabisch-israelischer-partei-kandidiert-doch-nicht/a-79513054?maca=de-rss-de-all-1119-rdf",
-    "description": "Mehrere Parteien und arabischstämmige Politiker sollten von der kommenden Parlamentswahl in Israel ausgeschlossen werden. Ein kritisierter Kandidat zog Konsequenzen. Die anderen dürfen antreten.",
-    "pubDate": "2026-10-02T11:09:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
   },
   {
     "title": "30 Jahre nach Dayton steht Bosnien und Herzegowina zwischen ethnischen Spaltungen, internationaler Aufsicht und dem europäischen Weg",
@@ -2198,14 +2406,6 @@
     "pubDate": "Fri, 02 Oct 2026 09:30:00 +0000",
     "source": "WIRED",
     "category": "ai-tech"
-  },
-  {
-    "title": "'I was not going to let others die' - pilot of Flydubai flight describes cockpit attack by co-pilot",
-    "link": "https://www.bbc.co.uk/news/articles/c639m98gde00o?at_medium=RSS&at_campaign=rss",
-    "description": "Capt Smit Machchhar tells Indian Prime Minister Narendra Modi he opened the cockpit door to let others in during the attack.",
-    "pubDate": "Fri, 02 Oct 2026 09:08:06 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Bull's France factory doubles capacity to capture growing orders as EU pushes AI sovereignty",
@@ -2302,14 +2502,6 @@
     "pubDate": "Fri, 2 Oct 2026 08:34:00 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
-  },
-  {
-    "title": "Frankreich: Gewalt bei Schulprotesten wird zum Politikum",
-    "link": "https://www.dw.com/de/frankreich-gewalt-bei-schulprotesten-wird-zum-politikum/a-79510982?maca=de-rss-de-all-1119-rdf",
-    "description": "Baufällige Gebäude, Lehrermangel, überfüllte Klassen an weiterführenden Schulen: Seit Tagen gehen Jugendliche in Frankreich auf die Straße - oftmals begleitet von Gewalt. Die Regierung sieht eine Partei dahinter.",
-    "pubDate": "2026-10-02T08:30:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
   },
   {
     "title": "Stellantis to pause four French plants amid EV battery shortages",
@@ -2504,14 +2696,6 @@
     "category": "semiconductor"
   },
   {
-    "title": "Japan's first mayor to take maternity leave lands on TIME100 Next list",
-    "link": "https://www.bbc.co.uk/news/articles/cqj3d3d37nxgo?at_medium=RSS&at_campaign=rss",
-    "description": "Shoko Kawata's maternity leave drew mixed reactions in Japan, a country struggling to lift birth rates.",
-    "pubDate": "Fri, 02 Oct 2026 05:53:51 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "California tech exec arrested in US$300M Nvidia AI server smuggling case",
     "link": "https://www.digitimes.com/news/a20261002PD225/california-nvidia-chips-technology-2023.html",
     "description": "US federal prosecutors on October 1 arrested a 38-year-old California man accused of violating US export controls by smuggling computer servers containing US$300 million worth of Nvidia artificial intelligence chips to China.",
@@ -2616,151 +2800,237 @@
     "category": "ai-tech"
   },
   {
-    "title": "AMD bets on AI demand by buying World Labs",
-    "link": "https://www.digitimes.com/news/a20261001PD243/amd-lisa-su-demand-nvidia-market.html",
-    "description": "Under Lisa Su's 12-year tenure at Advanced Micro Devices (AMD), the company has gradually moved beyond its role as Intel's challenger in the CPU market. But in the accelerator market for training and running AI models, old rival Nvidia still holds the upper hand.",
-    "pubDate": "Fri, 2 Oct 2026 04:34:21 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Australia says platforms like Steam and Roblox have 'significant' child safety gaps",
-    "link": "https://www.bbc.co.uk/news/articles/cjvgygzzy6lro?at_medium=RSS&at_campaign=rss",
-    "description": "Fortnite and Minecraft also told to 'lift their game' by online safety regulator.",
-    "pubDate": "Fri, 02 Oct 2026 04:21:31 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Seoul warns 'further action' if Ukraine does not apologise over prisoner-of-war row",
-    "link": "https://www.bbc.co.uk/news/articles/cm1dld14weero?at_medium=RSS&at_campaign=rss",
-    "description": "President Lee Jae Myung also accused Kyiv of \"attempting to provoke a war on the Korean Peninsula\".",
-    "pubDate": "Fri, 02 Oct 2026 03:09:13 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "连败6场遭强制执行 寒武纪前高管无端再提天价索赔 谁最受伤？",
-    "link": "https://www.leiphone.com/category/industrynews/kf23Cq1EQJfpwbcX.html",
-    "description": "寒武纪9月30日晚间发布公告称，在2025年11月、2026年8月，北京市海淀区人民法院、北京市第一中级人民法院分别做出一审、二审（终审）判决，梁军均败诉。案件走向也进入司法强制执行阶段。\n不止如此，在双方的股权诉讼纠纷中，梁军已经接连输掉6起诉讼。多起案件共同指向其诉求的核心事实与法律定性，已有司法定论，寒武纪及其相关方的合法权益获得法律支持。\n梁军方面并不愿正视既定司法结果。就在近期，梁军修改其诉讼请求，调整诉讼金额，企图以劳动纠纷，索取赔偿。\n从事实层面来看，其本质上仍是围绕同一笔激励股权衍生的重复争议，并无全新的证据与法理支撑。\n原告方提交诉讼修改请求，几乎是零成本、无限制的。而对上市",
-    "pubDate": "Fri, 02 Oct 2026 09:39:00 +0800",
-    "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Tesla Model 3 gets range and performance boost, plus a new 16-inch screen in US",
-    "link": "https://electrek.co/2026/10/01/tesla-model-3-us-16-inch-screen-performance-528-hp/",
-    "description": "Tesla is now putting its larger 16-inch center touchscreen in every Model 3 sold in the US, Puerto Rico, and Mexico, a day after it rolled out the same upgrade in China.\nThe Model 3 Performance also gets a black headliner, 316 miles of range, and 528 hp, while the Premium AWD now does 0 to 60 mph in",
-    "pubDate": "Fri, 02 Oct 2026 00:54:04 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "\n        苹果首款触屏 Macbook 或 10 月发布；AI 能力成本三年下降数千倍创纪录；美人形机器人跳入熔炉，致敬《终结者 2》\n      ",
-    "link": "http://www.geekpark.net/news/372069",
-    "description": "华为 Mate90 系列发布，售价 5999 元起\n10 月 1 日，华为 Mate90 系列手机正式发布。华为 Mate90 售价 5999 元起，华为 Mate90 Pro 售价 6999 元起，华为 Mate90 Pro Max 售价 9499 元起，华为 Mate90 Pro Max 典藏版售价 10999 元起，华为 Mate90 RS 非凡大师售价 12999 元起。\n\n影像系统是本次迭代的核心亮点。华为 Mate90 系列全系搭载第三代红枫原色摄像头，标配红外光学镀膜技术，有效提升夜景画面纯净度与通透感。新机新增烟花人像、柔光人像、星芒特效等多元拍摄风格，依托原生原片直出的优质画",
-    "pubDate": "Fri, 02 Oct 2026 08:28:26 +0800",
-    "source": "极客公园",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Chatham scales its capital markets expertise with OpenAI",
-    "link": "https://openai.com/index/chatham-financial",
-    "description": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
-    "pubDate": "Fri, 02 Oct 2026 00:00:00 GMT",
-    "source": "OpenAI News",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Crypto thieves attack man in home and threaten to kill pregnant wife's baby in 'horrific' robbery",
-    "link": "https://www.bbc.co.uk/news/articles/c6eq84eygz0qo?at_medium=RSS&at_campaign=rss",
-    "description": "The man was beaten with hammers until he transferred hundreds of thousands of pounds of cryptocurrency.",
-    "pubDate": "Thu, 01 Oct 2026 23:45:06 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "How NVIDIA GPUs Help Accelerate OpenAI’s GPT-6 Astra Ultrafast",
-    "link": "https://blogs.nvidia.com/blog/gpus-openai-gpt-6-astra-ultrafast/",
-    "description": "GPT-6 Astra Ultrafast, running on NVIDIA Blackwell GPUs, is available now in the OpenAI API and to eligible ChatGPT Work and Codex users.  Accelerated by inference optimizations through OpenAI’s models that tap into the capabilities of the NVIDIA Blackwell architecture, Ultrafast offers up to 8x fas",
-    "pubDate": "Thu, 01 Oct 2026 23:44:13 +0000",
-    "source": "NVIDIA Blog",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Spain and China are cosying up - to the anger of many in the EU",
-    "link": "https://www.bbc.co.uk/news/articles/c6vgyg824m02o?at_medium=RSS&at_campaign=rss",
-    "description": "Amid global tumult, the two countries' alliance is not the only unlikely pairing.",
-    "pubDate": "Thu, 01 Oct 2026 23:42:33 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Tesla launches capability to drive away while plugged in after deadly Supercharger shooting",
-    "link": "https://electrek.co/2026/10/01/tesla-emergency-drive-away-supercharger-shooting/",
-    "description": "Tesla launched a new feature called “Emergency Drive Away” that lets drivers shift into Drive and leave while still plugged into a Supercharger.\nThe update comes two months after a gunman shot three people in Teslas at a Supercharger station in Twin Falls, Idaho. And Tesla is limiting it to the US.\n",
-    "pubDate": "Thu, 01 Oct 2026 23:28:32 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
-  },
-  {
-    "title": "The wealthy Cuban Americans ready and waiting for Havana to fall",
-    "link": "https://www.bbc.co.uk/news/articles/ckrerylrlg9vo?at_medium=RSS&at_campaign=rss",
-    "description": "Cuban exiles in Florida are increasingly hopeful that regime change in Cuba is now on the horizon.",
-    "pubDate": "Thu, 01 Oct 2026 23:00:05 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Venus' mysterious haze is actually cosmic dust",
-    "link": "https://arstechnica.com/science/2026/10/venus-mysterious-haze-is-actually-cosmic-dust/",
-    "description": "A physical model show that iron dust and sulfuric acid create the right properties.",
-    "pubDate": "Thu, 01 Oct 2026 22:27:04 +0000",
-    "source": "Ars Technica - All content",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Whatever AI Safety Is, It’s Not This",
-    "link": "https://www.wired.com/story/whatever-ai-safety-looks-like-its-not-this/",
-    "description": "Asking AI companies to self-regulate is a great way to pretend like you’ve accomplished something.",
-    "pubDate": "Thu, 01 Oct 2026 22:10:42 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
-  },
-  {
-    "title": "国庆开电车，车主们集体兼职“调度员”",
-    "link": "https://www.tmtpost.com/8158629.html",
-    "description": "新能源车主慢慢学会了一套类似库存管理的思维。",
-    "pubDate": "Sat, 03 Oct 2026 13:47:25 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
+    "title": "World No 1 Sinner withdraws from Shanghai Masters as knee injury lingers",
+    "link": "https://www.aljazeera.com/sports/2026/10/3/world-no-1-sinner-withdraws-from-shanghai-masters-as-knee-injury-lingers?traffic_source=rss",
+    "description": "Italy's Jannik Sinner has not played since Wimbledon win in July, missing US Open and ongoing ATP 500 event in Beijing.",
+    "pubDate": "Sat, 03 Oct 2026 11:51:22 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
     "_stale": true
   },
   {
-    "title": "苏姿丰抬头，李飞飞低头",
-    "link": "https://www.tmtpost.com/8158564.html",
-    "description": "AMD 买下的，是一个没被定义的市场。",
-    "pubDate": "Sat, 03 Oct 2026 09:42:32 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
+    "title": "The double standards of a failed execution",
+    "link": "https://www.aljazeera.com/opinions/2026/10/3/the-double-standards-of-a-failed-execution?traffic_source=rss",
+    "description": "Had Christa Pike faced the death penalty in the Middle East, there would be relentless outrage and condemnations.",
+    "pubDate": "Sat, 03 Oct 2026 11:32:42 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
     "_stale": true
   },
   {
-    "title": "大模型一体机，开始缩水了",
-    "link": "https://www.tmtpost.com/8158443.html",
-    "description": "大模型一体机市场，劈成了两半。",
-    "pubDate": "Sat, 03 Oct 2026 09:38:50 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
+    "title": "Ethiopia’s government forces retake airport from Tigray rebels in Mekelle",
+    "link": "https://www.aljazeera.com/news/2026/10/3/rebels-pulling-back-as-addis-ababas-forces-advance-reports-say?traffic_source=rss",
+    "description": "The rebels have been seen leaving the capital of the northern Tigray region, according to local sources.",
+    "pubDate": "Sat, 03 Oct 2026 11:16:43 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
     "_stale": true
   },
   {
-    "title": "Edge AI Daily 早报（10月3日）",
-    "link": "https://www.tmtpost.com/8158562.html",
-    "description": "洛克希德将F-35核心算法交予OpenAI，军事AI关键转折；白宫签署AI自愿承诺但出现拼写错误，治理实效受质疑；谷歌高管呼吁集体意志而非行业自律。欧盟拒绝柴油禁令，能源安全与盟友信任挂钩；纽约实施退订新规填补联邦空白。AWS警告数据中心禁令将输掉AI竞赛并宣布10亿投资。东芝扩产HDD应对AI需求。Stability AI转型音乐AI获版权方投资。泰国750亿补贴光伏，中国组件出口受益。",
-    "pubDate": "Sat, 03 Oct 2026 09:30:02 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "policy",
+    "title": "Palestinians gather for football amid Gaza’s ruins",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/palestinians-gather-for-football-amid-gazas-ruins?traffic_source=rss",
+    "description": "Displaced Palestinians gathered to watch a friendly football match in Gaza’s Khan Younis.",
+    "pubDate": "Sat, 03 Oct 2026 11:08:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "How AI is helping Mexico detect breast cancer earlier",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/3/10-3-mexico-ai-breast-cancer-julia-pkg?traffic_source=rss",
+    "description": "Mexico is turning to AI to speed up breast cancer detection as long waits and a shortage of specialists hamper screening",
+    "pubDate": "Sat, 03 Oct 2026 10:55:32 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "A Yemeni family spends a week on the road fleeing another Houthi offensive",
+    "link": "https://www.aljazeera.com/features/2026/10/3/a-yemeni-family-spend-a-week-on-the-road-fleeing-another-houthi-offensive?traffic_source=rss",
+    "description": "Displaced Yemenis are fleeing again, as the Houthis capture the Red Sea coast.",
+    "pubDate": "Sat, 03 Oct 2026 10:48:28 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Pakistan summons Indian diplomat over border killing of two Pakistanis",
+    "link": "https://www.aljazeera.com/news/2026/10/3/pakistan-summons-indian-diplomat-over-border-killing-of-two-pakistanis?traffic_source=rss",
+    "description": "Foreign Ministry says it summoned India's ⁠charge d'affaires to lodge 'strong protest' over killing of two civilians.",
+    "pubDate": "Sat, 03 Oct 2026 10:46:20 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "What is FC Barcelona’s Negreira case, and what are the charges?",
+    "link": "https://www.aljazeera.com/sports/2026/10/3/what-is-fc-barcelonas-negreira-case-and-what-are-the-charges?traffic_source=rss",
+    "description": "Real Madrid accuse Barcelona of paying former refereeing official Jose Maria Enriquez Negreira between 2001 and 2018.",
+    "pubDate": "Sat, 03 Oct 2026 10:12:14 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Red Bull’s Verstappen grabs pole position for Bahrain GP in Malaysia",
+    "link": "https://www.aljazeera.com/sports/2026/10/3/red-bulls-verstappen-grabs-pole-position-for-bahrain-gp-in-malaysia?traffic_source=rss",
+    "description": "Lewis Hamilton of Ferrari to start second on the grid in Sepang with Red Bull's ⁠Isack Hadjar third.",
+    "pubDate": "Sat, 03 Oct 2026 10:03:40 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Flavio Bolsonaro: In the name of the father, sons, and holy ideology",
+    "link": "https://www.france24.com/en/americas/20261003-flavio-bolsonaro-in-the-name-of-the-father-sons-and-holy-ideology",
+    "description": "The first round of Brazil’s presidential election on Sunday pits two well-known names in the political ring: Lula vs. Bolsonaro. But it’s not former president Jair Bolsonaro facing off against the incumbent head of state – it’s his eldest son, Flavio Bolsonaro. He’s less charismatic than his father ",
+    "pubDate": "Sat, 03 Oct 2026 09:48:12 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "G7 to release 100 million barrels of oil and diesel, will it curb prices?",
+    "link": "https://www.aljazeera.com/news/2026/10/3/g7-to-release-100-million-barrels-of-oil-and-diesel-will-it-curb-prices?traffic_source=rss",
+    "description": "Global energy prices have soared due to the US and Israel's war on Iran and Russia's war on Ukraine.",
+    "pubDate": "Sat, 03 Oct 2026 09:27:38 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Barricades & the blame game: the French school protests",
+    "link": "https://www.france24.com/en/tv-shows/the-debate/20261003-barricades-the-blame-game-the-french-school-protests",
+    "description": "In a week that’s seen the heroism of the captain, crew and passengers on board FlyDubai flight 1073 heralded, eye witnesses report seeing the co-pilot trying to kill the pilot and destroying the cockpit controls in order to crash the plane. Despite being stabbed repeatedly, Captan Smit Machchhar man",
+    "pubDate": "Sat, 03 Oct 2026 09:25:58 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Who is the mystery co-pilot behind the Flydubai attack?",
+    "link": "https://www.aljazeera.com/news/2026/10/3/who-is-the-mystery-co-pilot-behind-the-flydubai-attack?traffic_source=rss",
+    "description": "Accused pilot Hamam al-Hammami reportedly barred from flying in Oman due to concerns over extremist views.",
+    "pubDate": "Sat, 03 Oct 2026 09:25:31 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Yemen’s army claims over 1,500 Houthi casualties, attacks Sanaa",
+    "link": "https://www.aljazeera.com/news/2026/10/3/over-1500-houthi-casualties-in-past-24-hours-yemeni-army-says?traffic_source=rss",
+    "description": "Government forces close a key crossing connecting Houthi-held al-Houban to government-held Taiz city.",
+    "pubDate": "Sat, 03 Oct 2026 08:36:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Polls open in Latvia against backdrop of perceived Russia threat",
+    "link": "https://www.aljazeera.com/news/2026/10/3/latvians-head-to-polls-with-security-and-cost-of-living-in-focus?traffic_source=rss",
+    "description": "Latvia is not expected to shift its pro-Europe and pro-Ukraine trajectory, but coalition negotiations could be complex.",
+    "pubDate": "Sat, 03 Oct 2026 08:21:23 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "No fairytale return for Zidane as Italy hold France at the Stade de France",
+    "link": "https://www.france24.com/en/tv-shows/sports/20261003-no-fairytale-return-for-zidane-as-italy-hold-france-at-the-stade-de-france",
+    "description": "The Stade de France was filled to capacity as the new French national team manager, Zinedine Zidane, prepared to make his home debut. The very side against whom he had ended his playing career in 2006 was once again the opponent he faced. Despite Michael Olise’s splendid free kick, the French were q",
+    "pubDate": "Sat, 03 Oct 2026 08:20:56 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Turkish court detains football refereeing chief pending corruption trial",
+    "link": "https://www.aljazeera.com/sports/2026/10/3/turkish-court-detains-football-refereeing-chief-pending-corruption-trial?traffic_source=rss",
+    "description": "Seven officials face an investigation over allegations of manipulation of the referee administration process.",
+    "pubDate": "Sat, 03 Oct 2026 08:19:33 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "No handshakes and a delayed ceremony as India beat Pakistan at Asian Games",
+    "link": "https://www.aljazeera.com/sports/2026/10/3/india-beat-arch-rivals-pakistan-to-win-asian-games-t20-cricket-gold?traffic_source=rss",
+    "description": "India beat Pakistan by 19 runs in gold medal match at Asian Games as Hasan Nawaz's 96 in vain in reply to 211-6.",
+    "pubDate": "Sat, 03 Oct 2026 08:18:40 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Ethiopia's Tigray rebels abandon regional capital Mekelle as government forces enter city",
+    "link": "https://www.france24.com/en/africa/20261003-ethiopia-s-tigray-rebels-abandon-regional-capital-of-mekelle-as-pro-government-forces-advance",
+    "description": "Ethiopian federal forces have entered the capital of the northern Tigray region and seized its airport, witnesses said Saturday, reversing a takeover by rebels from the Tigray People's Liberation Front (TPLF) that prompted the suspension of commercial flights last month. The TPLF has been fighting a",
+    "pubDate": "Sat, 03 Oct 2026 07:58:45 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "News kompakt: G7 geben Rohöl- und Diesel-Reserven frei",
+    "link": "https://www.dw.com/de/news-kompakt-g7-geben-rohöl-und-diesel-reserven-frei/a-79526644?maca=de-rss-de-all-1119-rdf",
+    "description": "Bis zu 100 Millionen Fass Diesel und Rohöl wollen die G7-Staaten aus ihren Vorräten freigeben. In Bremen finden die Feiern zum Tag der Deutschen Einheit statt. Der DW-Nachrichtenüberblick.",
+    "pubDate": "2026-10-03T07:30:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "🔴 UAE investigators say Flydubai co-pilot was planning 'terrorist act'",
+    "link": "https://www.france24.com/en/middle-east/20261003-co-pilot-on-flydubai-flight-was-banned-from-flying-by-oman-for-holding-extremist-views",
+    "description": "",
+    "pubDate": "Sat, 03 Oct 2026 07:14:58 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Russia strikes another Kyiv bridge, deepening travel chaos in Ukraine's capital",
+    "link": "https://www.france24.com/en/europe/20261003-russia-strikes-another-major-bridge-in-kyiv",
+    "description": "Kyiv's Northern Bridge across the Dnipro river was hit by a Russian air attack, Mayor Vitali Klitschko said Saturday, deepening travel chaos amid an escalation in strikes ​on ‌infrastructure in the Ukrainian capital. The latest attack comes a day after the city's Southern Bridge was hit by several s",
+    "pubDate": "Sat, 03 Oct 2026 06:40:29 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "UAE investigators say Omani Flydubai co-pilot was planning 'terrorist' attack",
+    "link": "https://www.france24.com/en/middle-east/20261003-co-pilot-on-flydubai-flight-was-banned-from-flying-by-oman-for-holding-extremist-views",
+    "description": "The Omani co-pilot accused of attacking the captain aboard a Flydubai flight to Israel on September 30 attempted to carry out a \"terrorist\" attack, the United Arab Emirates prosecutor general said ​Saturday. The alleged assailant, identified as Omani national Hamam al-Hammami, had been barred from f",
+    "pubDate": "Sat, 03 Oct 2026 06:17:45 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "North Korea launches ballistic missile as tensions with Seoul grow over border mine blasts",
+    "link": "https://www.france24.com/en/asia-pacific/20261003-north-korea-fires-ballistic-missile-after-seoul-s-apology-demand",
+    "description": "North Korea launched a ballistic missile Saturday morning from the Wonsan area on its east coast into the Sea of Japan, according to South Korea's military. The launch comes amid renewed tensions between Pyongyang and Seoul, with the latter demanding an apology for a blast that wounded three South K",
+    "pubDate": "Sat, 03 Oct 2026 02:40:43 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "EV drivers love their cars, but some passengers feel sick - this could be why",
+    "link": "https://www.bbc.co.uk/news/articles/c3y0zx822wlzo?at_medium=RSS&at_campaign=rss",
+    "description": "Research shows there are several reasons people might experience motion sickness in electric vehicles.",
+    "pubDate": "Sat, 03 Oct 2026 02:36:19 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Cornell frat house rape accuser 'under siege' online, says lawyer",
+    "link": "https://www.bbc.co.uk/news/articles/c6ly0ljypzrdo?at_medium=RSS&at_campaign=rss",
+    "description": "A lawyer for Jane Doe says she is \"not doing well\" amid attempts to uncover her identity.",
+    "pubDate": "Sat, 03 Oct 2026 02:23:07 GMT",
+    "source": "BBC News",
+    "category": "international",
     "_stale": true
   },
   {
@@ -2768,6 +3038,33 @@
     "link": "https://www.bbc.co.uk/news/articles/cm3eqegwpzl4o?at_medium=RSS&at_campaign=rss",
     "description": "The discovery of 12 women's bodies near Johannesburg has again highlighted South Africa's problem with violence against women.",
     "pubDate": "Fri, 02 Oct 2026 23:56:21 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Women given shorts at Oktoberfest to prevent upskirting",
+    "link": "https://www.bbc.co.uk/news/articles/cjwyzyqvx1zxo?at_medium=RSS&at_campaign=rss",
+    "description": "The step at the Munich festival comes after thousands of voyeuristic videos emerged on social media.",
+    "pubDate": "Fri, 02 Oct 2026 23:16:03 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "US road rage killer's sentence quashed because AI video of victim was shown in court",
+    "link": "https://www.bbc.co.uk/news/articles/cwgkvygg5nzvo?at_medium=RSS&at_campaign=rss",
+    "description": "The Arizona appeals court ruled that airing an AI message from the dead victim \"crossed that line\".",
+    "pubDate": "Fri, 02 Oct 2026 23:06:00 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "The vanishing world of India's street magicians",
+    "link": "https://www.bbc.co.uk/news/articles/ck7v4v8pmzdeo?at_medium=RSS&at_campaign=rss",
+    "description": "India's street performers are struggling to survive as audiences shrink and public spaces become harder to access.",
+    "pubDate": "Fri, 02 Oct 2026 22:59:05 GMT",
     "source": "BBC News",
     "category": "international",
     "_stale": true
@@ -2818,6 +3115,24 @@
     "_stale": true
   },
   {
+    "title": "Semiconductor Quantum-Dot Resonator Improves Single-Photon Quality for Quantum Systems",
+    "link": "https://www.semiconductor-digest.com/semiconductor-quantum-dot-resonator-improves-single-photon-quality-for-quantum-systems/?utm_source=rss&utm_medium=rss&utm_campaign=semiconductor-quantum-dot-resonator-improves-single-photon-quality-for-quantum-systems",
+    "description": "Working in close collaboration, researchers from Paderborn University, the University of Basel and Ruhr University Bochum have made a significant breakthrough in the field of quantum communication.\nThe post Semiconductor Quantum-Dot Resonator Improves Single-Photon Quality for Quantum Systems appear",
+    "pubDate": "Fri, 02 Oct 2026 21:50:04 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "French media respond to M. Le Pen’s ‘Kevlar suit’ comments against investigative outlet",
+    "link": "https://www.france24.com/en/france/20261002-french-media-react-to-m-le-pen-s-kevlar-suit-comments-against-investigative-press-outlet",
+    "description": "The editorial committees of 39 French media outlets, including FRANCE 24 and RFI, on Friday released a joint statement condemning National Rally (RN) party leader and presidential candidate Marine Le Pen’s recent comments targeting investigative outlet Médiapart as “violent attempts at intimidation”",
+    "pubDate": "Fri, 02 Oct 2026 21:37:11 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "France held 1-1 by Italy in Zidane home debut after Olise stunner",
     "link": "https://www.aljazeera.com/sports/2026/10/2/france-held-by-italy-in-zidanes-homecoming-after-olise-stunner?traffic_source=rss",
     "description": "Italy's Alessandro Bastoni cancels out Michael Olise's opener for France in 1-1 UEFA Nations League draw in Saint-Denis.",
@@ -2841,6 +3156,33 @@
     "description": "Israeli Gen. Nitzan Alon told a Washington Institute forum that all Gaza captives could've been freed a year earlier.",
     "pubDate": "Fri, 02 Oct 2026 21:15:58 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Hawaii's iconic 550-year-old Hōlei Sea Arch collapses ",
+    "link": "https://www.bbc.co.uk/news/articles/crd6dy4xepgyo?at_medium=RSS&at_campaign=rss",
+    "description": "The lava rock formation protruding from the rocky cliffs of Volcanoes National Park crumbled some time last weekend.",
+    "pubDate": "Fri, 02 Oct 2026 21:00:41 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Crystal Design Controls Spin-Polarized Photocurrent in 2D Hybrid Perovskites",
+    "link": "https://www.semiconductor-digest.com/crystal-design-controls-spin-polarized-photocurrent-in-2d-hybrid-perovskites/?utm_source=rss&utm_medium=rss&utm_campaign=crystal-design-controls-spin-polarized-photocurrent-in-2d-hybrid-perovskites",
+    "description": "Researchers demonstrate that internal crystal structure is key in regulating generated light-induced current.\nThe post Crystal Design Controls Spin-Polarized Photocurrent in 2D Hybrid Perovskites appeared first on Semiconductor Digest.",
+    "pubDate": "Fri, 02 Oct 2026 20:59:56 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Nations League: France held by Italy despite Olise stunner",
+    "link": "https://www.france24.com/en/sport/20261002-france-held-by-italy-in-zidane-s-homecoming-after-olise-stunner",
+    "description": "After two wins in two away games, Zinedine Zidane’s return to the Stade de France as coach was not exactly a success, as Les Bleus were held to a 1-1 draw by Italy on Friday in the UEFA Nations League.",
+    "pubDate": "Fri, 02 Oct 2026 20:58:45 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
     "_stale": true
   },
@@ -2869,6 +3211,33 @@
     "pubDate": "Fri, 02 Oct 2026 20:52:29 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Northrop Grumman Rebrands Wideband GaN Technology as FORTITUDE, Targets RF System Integration",
+    "link": "https://www.semiconductor-digest.com/northrop-grumman-rebrands-wideband-gan-technology-as-fortitude-targets-rf-system-integration/?utm_source=rss&utm_medium=rss&utm_campaign=northrop-grumman-rebrands-wideband-gan-technology-as-fortitude-targets-rf-system-integration",
+    "description": "A universal boost for today’s systems that delivers the speed tomorrow’s networks demand.\nThe post Northrop Grumman Rebrands Wideband GaN Technology as FORTITUDE, Targets RF System Integration appeared first on Semiconductor Digest.",
+    "pubDate": "Fri, 02 Oct 2026 20:47:36 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Ethiopian army pushes back Tigrayan rebels",
+    "link": "https://www.france24.com/en/tv-shows/eye-on-africa/20261002-ethiopian-army-pushes-back-tigrayan-rebels",
+    "description": "First, Ethiopia and Eritrea have severed ties and now with tensions spreading across the region, the African Union is urging all sides to show restraint. Meanwhile, Ethiopia's army is advancing toward the Tigrayan capital as fighting intensifies and new explosions rock Addis Ababa. Then, from boardr",
+    "pubDate": "Fri, 02 Oct 2026 20:46:00 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "EMD Electronics Opens New R&D Facility in Wisconsin",
+    "link": "https://www.semiconductor-digest.com/emd-electronics-opens-new-rd-facility-in-wisconsin/?utm_source=rss&utm_medium=rss&utm_campaign=emd-electronics-opens-new-rd-facility-in-wisconsin",
+    "description": "EMD Electronics opened new 38,000-square-foot research and development facility in Sheboygan Falls, WI.\nThe post EMD Electronics Opens New R&D Facility in Wisconsin appeared first on Semiconductor Digest.",
+    "pubDate": "Fri, 02 Oct 2026 20:37:13 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor",
     "_stale": true
   },
   {
@@ -2908,6 +3277,33 @@
     "_stale": true
   },
   {
+    "title": "Apple will limit Mac disk access as AI agents ‘substantially’ increase risk",
+    "link": "https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents",
+    "description": "Apple will add new limits for \"full disk access\" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch. In an update on Friday, Apple says it's rolling out new controls to \"ensure that users who genuinely wish to grant an app this extraordinary level of access can only do",
+    "pubDate": "2026-10-02T20:08:40.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Sling TV drops its one-day cable passes",
+    "link": "https://www.theverge.com/streaming/1004300/sling-tv-pass-cable-drops",
+    "description": "Dish-owned Sling TV will no longer be offering its Sling Pass feature that allowed people to buy a single day of cable TV programming at a time, as reported by The Desk. The feature was announced last year and offered a day pass, a weekend pass, and a week-long pass option to be able to [&#8230;]",
+    "pubDate": "2026-10-02T20:00:20.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "On the run for 20 years, Ugandan warlord Kony still 'active' within the Lord's Resistance Army",
+    "link": "https://www.france24.com/en/africa/20261002-on-the-run-for-20-years-ugandan-warlord-kony-still-active-within-the-lord-s-resistance-army",
+    "description": "In recent months, the eastern Central African Republic has been hit by several attacks attributed to the Lord’s Resistance Army (LRA), a Ugandan militia infamous for its massacres and mass abductions of children in the 1990s and 2000s. The group's leader, Joseph Kony, wanted by the International Cri",
+    "pubDate": "Fri, 02 Oct 2026 19:31:27 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "Arab party leader withdraws from Israeli elections",
     "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/arab-party-leader-withdraws-from-israeli-elections?traffic_source=rss",
     "description": "Palestinian politician Sami Abu Shehadeh withdrew from Israel’s upcoming election.",
@@ -2922,6 +3318,15 @@
     "description": "US President Donald Trump says Europe agreed to release a ‘massive amount’ of diesel from emergency stockpiles.",
     "pubDate": "Fri, 02 Oct 2026 19:01:45 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "French Unrest: Are we witnessing a new 'Yellow Vests' movement?",
+    "link": "https://www.france24.com/en/tv-shows/spotlight/20261002-french-unrest-are-we-witnessing-a-new-yellow-vests-movement",
+    "description": "It's been 18 days since we first reported on isolated cases of schools protests at a high school in Rennes in Brittany, in Caen in Normandy and Villeneueve d'Asque on the suburbs of Lille. The complaints were similar in theme, overloaded timetables, staffing problems, poor facilities. It spread to S",
+    "pubDate": "Fri, 02 Oct 2026 18:54:00 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
     "_stale": true
   },
@@ -2950,6 +3355,15 @@
     "pubDate": "Fri, 02 Oct 2026 18:11:37 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "OpenAI’s Dot agent is enterprise software that can also order your dinner",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent",
+    "description": "It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like using workplace software that happens to be able to order you a burrito - emphasis on work. OpenAI ann",
+    "pubDate": "2026-10-02T18:00:00.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
     "_stale": true
   },
   {
@@ -3052,6 +3466,24 @@
     "_stale": true
   },
   {
+    "title": "Brazil’s Lula gears up for ‘last dance’ with run for fourth presidential term",
+    "link": "https://www.france24.com/en/americas/20261002-brazil-s-lula-gears-up-for-last-dance-with-run-for-fourth-presidential-term",
+    "description": "President Luiz Inacio Lula da Silva will stand for re-election in Brazil on Sunday. At 80, the former steelworker hopes to capitalise on his popularity and economic successes to win a fourth term in office but is neck-and-neck in the polls with far-right rival Flavio Bolsonaro.",
+    "pubDate": "Fri, 02 Oct 2026 16:20:06 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Ethiopia and Eritrea cut diplomatic ties as northern conflict escalates",
+    "link": "https://www.bbc.co.uk/news/articles/crpd0d0jl0y0o?at_medium=RSS&at_campaign=rss",
+    "description": "The diplomatic fallout comes as Ethiopian forces battle rebel fighters across its northern region.",
+    "pubDate": "Fri, 02 Oct 2026 16:08:25 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "Three in four households go hungry in parts of Yemen amid fighting: UN",
     "link": "https://www.aljazeera.com/news/2026/10/2/three-in-four-households-go-hungry-in-parts-of-yemen-amid-fighting-un?traffic_source=rss",
     "description": "World Food Programme warns of 'devastating' impact as conflict displaces thousands and cuts off food supplies.",
@@ -3075,6 +3507,15 @@
     "description": "US university Cornell’s handling of sexual assault allegations is under scrutiny.",
     "pubDate": "Fri, 02 Oct 2026 16:02:39 +0000",
     "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "'We have to close defence gaps urgently': EU Parliament Foreign Affairs Committee chief McAllister",
+    "link": "https://www.france24.com/en/tv-shows/talking-europe/20261002-we-have-to-close-defence-gaps-urgently-eu-parliament-foreign-affairs-committee-chief-mcallister",
+    "description": "We sit down with David McAllister, the chair of the European Parliament’s Foreign Affairs Committee. He talks to us about the security threats facing Europe, and what defence gaps the EU urgently needs to close. For McAllister, the EU is \"not at war with the Russian Federation, but we are no longer ",
+    "pubDate": "Fri, 02 Oct 2026 15:57:55 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
     "_stale": true
   },
@@ -3120,6 +3561,33 @@
     "description": "Vitaliy Klitschko says Ukraine's capital is in a \"very dramatic situation\" as Russia hits critical infrastructure.",
     "pubDate": "Fri, 02 Oct 2026 15:26:37 GMT",
     "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "What’s in the October Issue?",
+    "link": "https://www.semiconductor-digest.com/whats-in-the-october-issue-6/?utm_source=rss&utm_medium=rss&utm_campaign=whats-in-the-october-issue-6",
+    "description": "Each issue of Semiconductor Digest has articles found only in the magazine. Click on the links to read the articles in the October issue. If you are attending SEMICON West, pick up the October issue in print. You can find it at booth #3402 or in the publication bins. We hope to see you there!\nThe po",
+    "pubDate": "Fri, 02 Oct 2026 15:26:28 +0000",
+    "source": "Semiconductor Digest",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Brazil: The craze for candidate merch ahead of elections",
+    "link": "https://www.france24.com/en/video/20261002-brazil-the-craze-for-candidate-merch-ahead-of-elections",
+    "description": "Nearly 159 million Brazilians will head to the polling booths on Sunday to vote in general elections. They will elect their new MPs, see two-thirds of the Senate change ranks and, most importantly, vote for their next president.Though the vote is held by secret ballot, people wear their support on t",
+    "pubDate": "Fri, 02 Oct 2026 15:17:39 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Spanish lawmakers vote down affordable housing bills in blow to Sanchez’s government",
+    "link": "https://www.france24.com/en/europe/20261002-spanish-lawmakers-vote-down-affordable-housing-bills-in-blow-to-sanchez-s-government",
+    "description": "Demonstrators protesting against Spain's housing crisis reacted with fury on Friday after the country's parliament rejected two bills put forward by the government that centre-left Prime Minister Pedro Sanchez hoped would address their concerns. Rents have doubled over the past decade, with average ",
+    "pubDate": "Fri, 02 Oct 2026 15:12:47 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
     "_stale": true
   },
@@ -3219,6 +3687,15 @@
     "description": "They could have filled a stadium or two for this golden anniversary, but U2 decided to go back to their roots and mark 50 years as a band with a few low-key gigs in their hometown of Dublin. We take a closer look.",
     "pubDate": "Fri, 02 Oct 2026 14:12:34 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "I've seen nearly 500 executions - but never one like Christa Pike's",
+    "link": "https://www.bbc.co.uk/news/articles/c6d949gq47x9o?at_medium=RSS&at_campaign=rss",
+    "description": "Texas reporter Michael Graczyk has seen botched executions in his time, but not one in which an inmate survived.",
+    "pubDate": "Fri, 02 Oct 2026 14:01:09 GMT",
+    "source": "BBC News",
     "category": "international",
     "_stale": true
   },
@@ -3457,6 +3934,15 @@
     "_stale": true
   },
   {
+    "title": "School protests send shivers down French government's spine",
+    "link": "https://www.bbc.co.uk/news/articles/c69wzjjxex8po?at_medium=RSS&at_campaign=rss",
+    "description": "A movement that started nearly two weeks ago has spread, and in France young people on the streets spells trouble, writes Hugh Schofield.",
+    "pubDate": "Fri, 02 Oct 2026 12:43:02 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "Moment mother bear slams into car to protect cub",
     "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/2-10-clip-mother-bear-crashes-into-a-car-in-japan-jp?traffic_source=rss",
     "description": "This mother bear was not going to let a driver in Japan pass her cub without a warning.",
@@ -3619,6 +4105,15 @@
     "_stale": true
   },
   {
+    "title": "Chef von arabisch-israelischer Partei kandidiert doch nicht",
+    "link": "https://www.dw.com/de/chef-von-arabisch-israelischer-partei-kandidiert-doch-nicht/a-79513054?maca=de-rss-de-all-1119-rdf",
+    "description": "Mehrere Parteien und arabischstämmige Politiker sollten von der kommenden Parlamentswahl in Israel ausgeschlossen werden. Ein kritisierter Kandidat zog Konsequenzen. Die anderen dürfen antreten.",
+    "pubDate": "2026-10-02T11:09:00.000Z",
+    "source": "Deutsche Welle: DW.com Deutsch",
+    "category": "international",
+    "_stale": true
+  },
+  {
     "title": "Brazil's election: Lula or Bolsonaro Jr?",
     "link": "https://www.france24.com/en/tv-shows/press-review/20261002-brazil-s-election-lula-or-bolsonaro-jr",
     "description": "PRESS REVIEW – Friday, October 2: We look at reactions in the French papers after high school blockades turned violent across France. We also look ahead to Brazil's two-round presidential election, which begins this weekend. The electoral campaign culminated with the cancellation of a presidential d",
@@ -3652,510 +4147,6 @@
     "pubDate": "Fri, 02 Oct 2026 10:54:32 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Indian authorities clamp down as ‘cockroach’ movement launches new protests",
-    "link": "https://www.aljazeera.com/news/2026/10/2/indian-authorities-clamp-down-as-cockroach-movement-launches-new-protests?traffic_source=rss",
-    "description": "Demonstrators gather in Mumbai and New Delhi to demand the resignation of Election Commission chief.",
-    "pubDate": "Fri, 02 Oct 2026 10:46:47 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Protests disrupt Ireland football match with ‘Palestine tennis balls’",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/02-10-sv-ireland-austria-game-tennis-balls-ie?traffic_source=rss",
-    "description": "Protesters interrupted Ireland’s match against Austria with tennis balls and Palestine flags.",
-    "pubDate": "Fri, 02 Oct 2026 10:35:21 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Why Brazil's gun lobby is backing Bolsonaro as country heads to polls",
-    "link": "https://www.france24.com/en/video/20261002-why-brazil-s-gun-lobby-is-backing-bolsonaro-as-country-heads-to-polls",
-    "description": "As Brazil heads to the polls, one issue that could influence votes particularly in the rural south is access to firearms. Under Jair Bolsonaro, Brazil became more heavily armed than ever before: the number of registered hunters, shooters and collectors – known by the acronym ‘CACs’ – increased seven",
-    "pubDate": "Fri, 02 Oct 2026 10:19:07 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "How can Jordan respond to Israel’s escalation across the West Bank?",
-    "link": "https://www.aljazeera.com/opinions/2026/10/2/how-can-jordan-respond-to-israels-escalation-across-the-west-bank?traffic_source=rss",
-    "description": "Settlement expansion, displacement and growing Israeli control would have direct consequences for Jordan.",
-    "pubDate": "Fri, 02 Oct 2026 10:17:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "'America is leaving Iraq, but Iran isn't: Withdrawal a massive strategic and tactical mistake'",
-    "link": "https://www.france24.com/en/video/20261002-america-is-leaving-iraq-but-iran-isn-t-withdrawal-a-massive-strategic-and-tactical-mistake-1",
-    "description": "Erin Ogunkeye is pleased to welcome Bamo Nouri, investigative journalist and also Honorary Research Fellow with the Department of International Politics at City Saint George's University of London. He sees the end of the American military presence in Iraq as a profound shift in the balance of power ",
-    "pubDate": "Fri, 02 Oct 2026 10:11:15 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Amid French school protests, students seek 'respect, dignity and decent working conditions'",
-    "link": "https://www.france24.com/en/amid-french-school-protests-students-seek-respect-dignity-and-decent-working-conditions",
-    "description": "Alison Sargent is pleased to welcome Éric Fassin, a sociologist and professor at Paris VIII University. He sees these student protests first and foremost as a demand for equality, dignity and recognition. Students from working-class suburbs are asking for the basic conditions that make studying poss",
-    "pubDate": "Fri, 02 Oct 2026 10:02:33 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Cornell students gather to voice anger over alleged gang rape",
-    "link": "https://www.bbc.co.uk/news/articles/cm0e3ed1er1yo?at_medium=RSS&at_campaign=rss",
-    "description": "Students tell the BBC that the tension on campus has become palpable since allegations from 2024 resurfaced.",
-    "pubDate": "Fri, 02 Oct 2026 10:00:24 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "As Europe's balance of power shifts eastward, France & Spain seek to 'reinforce their own positions'",
-    "link": "https://www.france24.com/en/video/20261002-as-europe-s-balance-of-power-shifts-eastward-france-spain-seek-to-reinforce-their-own-positions-1",
-    "description": "Delano D'Souza is pleased to welcome Carlos Mascarell Vilar, political scientist based in Spain. From his own perspective, Emmanuel Macron's visit to Spain needs to be understood by European power, political legacy, and geoeconomics. France and Spain are seeking to reinforce their bilateral relation",
-    "pubDate": "Fri, 02 Oct 2026 09:49:33 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Matisse comes to Amsterdam in major new show",
-    "link": "https://www.france24.com/en/video/20261002-matisse-comes-to-amsterdam-in-major-new-show",
-    "description": "From the October 3 visitors to Amsterdam's H'ART museum will be able to see an extensive collection of works by artist Henri Matisse alongside pieces inspired by his legacy, including Mark Rothko, Barnett Newman, and Pablo Picasso. The new exhibition was organised in collaboration with the Pompidou ",
-    "pubDate": "Fri, 02 Oct 2026 09:48:56 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Lula and Bolsonaro in dead heat as Brazil goes to polls",
-    "link": "https://www.france24.com/en/video/20261002-lula-and-bolsonaro-in-dead-heat-as-brazil-goes-to-polls",
-    "description": "Brazilian presidential candidate Flavio Bolsonaro on Thursday bowed out of the final debate ahead of elections pitting him against leader Luiz Inacio Lula da Silva, who also declined to attend. Lula, on the cusp of 81, will face off against the son of ex-leader Jair Bolsonaro in a first-round vote o",
-    "pubDate": "Fri, 02 Oct 2026 09:47:20 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "大宗商品的权力博弈：谁在影响全球铜、石油和粮食价格？",
-    "link": "https://www.tmtpost.com/8148614.html",
-    "description": "他们不制定价格，但价格的形成，绕不开他们的资源、物流与交易。",
-    "pubDate": "Fri, 02 Oct 2026 17:38:25 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "新势力9月洗牌：小鹏小米上4万，鸿蒙理想回落",
-    "link": "https://www.tmtpost.com/8158341.html",
-    "description": "新车越上越多，销量没有普涨。",
-    "pubDate": "Fri, 02 Oct 2026 17:38:22 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "11部电影扎堆国庆，黎叔、王长田争锋，谁在闷声发大财？",
-    "link": "https://www.tmtpost.com/8155421.html",
-    "description": "国庆档影片背后，资本暗流涌动。",
-    "pubDate": "Fri, 02 Oct 2026 17:38:19 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Health Care Workers Are Tired of Cleaning Up Palantir’s Mess",
-    "link": "https://www.wired.com/story/healthcare-workers-are-tired-of-cleaning-up-palantirs-mess/",
-    "description": "A hospital giant and radiology network turned to Palantir to streamline scheduling, but nurses and other staff say the new software is causing errors, burnout, and frustration.",
-    "pubDate": "Fri, 02 Oct 2026 09:30:00 +0000",
-    "source": "WIRED",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Muse狂飙，龙虾退潮",
-    "link": "https://www.tmtpost.com/8158280.html",
-    "description": "别找了，没有中国版Muse",
-    "pubDate": "Fri, 02 Oct 2026 17:10:20 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "万万没想到！中国科幻，122岁啦",
-    "link": "https://www.tmtpost.com/8158310.html",
-    "description": "未来的人们或可将其称之为：中国科幻流浪计划。",
-    "pubDate": "Fri, 02 Oct 2026 17:10:18 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "US pressures Europe to release diesel reserves as Trump threatens export ban",
-    "link": "https://www.bbc.co.uk/news/articles/c5zjzjgdeneeo?at_medium=RSS&at_campaign=rss",
-    "description": "President Donald Trump has threatened to ban diesel exports in a bid to ease prices in the US ahead of the November elections.",
-    "pubDate": "Fri, 02 Oct 2026 08:54:00 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "AI杀不死咨询公司",
-    "link": "https://www.tmtpost.com/8158278.html",
-    "description": "下一代咨询公司真正值钱的能力是什么？",
-    "pubDate": "Fri, 02 Oct 2026 16:50:15 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Watch: Emotional pilot recounts moment of Flydubai attack",
-    "link": "https://www.bbc.co.uk/news/videos/c914d43y7xn4o?at_medium=RSS&at_campaign=rss",
-    "description": "He has been hailed a hero for opening the cockpit door, allowing passengers to overpower his co-pilot.",
-    "pubDate": "Fri, 02 Oct 2026 08:46:37 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "US delivers F-16V fighter jets to Taiwan as island eyes threat from China",
-    "link": "https://www.aljazeera.com/news/2026/10/2/us-delivers-f-16v-fighter-jets-to-taiwan-as-island-eyes-threat-from-china?traffic_source=rss",
-    "description": "Amid threats from China, Taipai is growing concerned about the Trump administration's commitment to arming the island.",
-    "pubDate": "Fri, 02 Oct 2026 08:26:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "‘They are crying’: Refugees in Malaysia in fear amid Myanmar deportation",
-    "link": "https://www.aljazeera.com/features/2026/10/2/they-are-crying-refugees-in-malaysia-in-fear-amid-myanmar-deportation?traffic_source=rss",
-    "description": "Shrinking resources for refugee support groups in Malaysia collide with increasing hostility towards the Rohingya.",
-    "pubDate": "Fri, 02 Oct 2026 08:14:18 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "France unveils cost-cutting budget amid protests",
-    "link": "https://www.france24.com/en/tv-shows/business/20261002-france-unveils-cost-cutting-budget-amid-protests",
-    "description": "The French government is seeking €54 billion in savings in its 2027 budget proposal, as it faces pressure over its ballooning public debt. But it's likely to face opposition, especially on proposals that would cap pension increases. Meanwhile, protests by high school students over resources and cond",
-    "pubDate": "Fri, 02 Oct 2026 08:08:51 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Russia tries to freeze Ukraine as it suffers record casualties and retreats",
-    "link": "https://www.aljazeera.com/news/2026/10/2/russia-tries-to-freeze-ukraine-as-it-suffers-record-casualties-and-retreats?traffic_source=rss",
-    "description": "Moscow has suffered further losses of occupied territory, but is using new drones to beat Ukraine's defences.",
-    "pubDate": "Fri, 02 Oct 2026 08:03:02 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Indian police detain politicians at protests over election chief",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/02-10-clip-india-protests-election-jantar-mantar-in-mp4?traffic_source=rss",
-    "description": "Police in New Delhi have detained opposition politicians and demonstrators during protests.",
-    "pubDate": "Fri, 02 Oct 2026 07:59:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Lawyers for US inmate who survived lethal injections demand release",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/clip-christia-pike-execution-mp4?traffic_source=rss",
-    "description": "Christa Pike is in critical condition after two failed attempts to execute her by lethal injection, her lawyer says.",
-    "pubDate": "Fri, 02 Oct 2026 07:58:08 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Will AI write our books? Row over bestseller fuels fear over future of literature",
-    "link": "https://www.france24.com/en/tv-shows/the-debate/20261002-will-ai-write-our-books-row-over-bestseller-fuels-fear-over-future-of-literature",
-    "description": "France still very much takes its literary prize-giving season seriously. So when a Haitian-born Canadian writer was accused of infusing his best-selling breakout novel with artificial intelligence, it got ugly in a hurry. We wade into the Thélyson Orélien affair with its subsequent accusations of ra",
-    "pubDate": "Fri, 02 Oct 2026 07:28:03 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "How the fighting in Ethiopia spread beyond Tigray, in maps and charts",
-    "link": "https://www.aljazeera.com/news/2026/10/2/how-the-fighting-in-ethiopia-spread-beyond-tigray-in-maps-and-charts?traffic_source=rss",
-    "description": "Old rivalries, territorial disputes and new alliances are reshaping the conflict in Ethiopia’s north.",
-    "pubDate": "Fri, 02 Oct 2026 07:17:02 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "News kompakt: US-Mörderin Pike nach Exekution im Hospital",
-    "link": "https://www.dw.com/de/news-kompakt-us-mörderin-pike-nach-exekution-im-hospital/a-79510518?maca=de-rss-de-all-1119-rdf",
-    "description": "Die Anwälte von Christa Pike fordern lebenslange Haft für die US-Todeskandidatin. In Frankreich führt die Protestwelle zu Schulschließungen. Der DW-Nachrichtenüberblick.",
-    "pubDate": "2026-10-02T07:03:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Miami judge rules federal noncitizen voting law violates US Constitution",
-    "link": "https://www.aljazeera.com/news/2026/10/2/miami-judge-rules-federal-noncitizen-voting-law-violates-us-constitution?traffic_source=rss",
-    "description": "Judge Leibowitz's decision underscores state jurisdiction over voter qualifications.",
-    "pubDate": "Fri, 02 Oct 2026 06:26:48 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Hundreds of French schools remain closed as student protests turn violent",
-    "link": "https://www.france24.com/en/france/20261002-hundreds-of-french-schools-remain-closed-as-student-protests-turn-violent",
-    "description": "Some 400 French schools have been closed and will remain shuttered on Friday as the student protests that began in high schools in the Paris region last week have spread across France and grown increasingly violent. The students are protesting grievances including teacher shortages and dilapidated s",
-    "pubDate": "Fri, 02 Oct 2026 06:24:24 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Greece pushes EU to suspend asylum during mass migration surges",
-    "link": "https://www.aljazeera.com/news/2026/10/2/greece-pushes-eu-to-suspend-asylum-during-mass-migration-surges?traffic_source=rss",
-    "description": "EU migration pact improvements face criticism for insufficient tools to manage large-scale migration emergencies.",
-    "pubDate": "Fri, 02 Oct 2026 06:16:14 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Election debate cancelled in Brazil, bomb scare outside Supreme Court",
-    "link": "https://www.aljazeera.com/news/2026/10/2/election-debate-cancelled-in-brazil-bomb-scare-outside-supreme-court?traffic_source=rss",
-    "description": "Brazilian president and opposition candidate snub the final debate ahead of the presidential election.",
-    "pubDate": "Fri, 02 Oct 2026 06:09:57 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Egypt warned Israel of 'major' Hamas attack:  'No world' where Netanyahu's not aware (Vivian Salama)",
-    "link": "https://www.france24.com/en/tv-shows/spotlight/20261002-egypt-warned-israel-of-major-hamas-attack-no-world-where-netanyahu-s-not-aware-vivian-salama",
-    "description": "François Picard is pleased to welcome Vivian Salama from Washington. An attorney and staff writer at The Atlantic, Salama has reported from more than 85 countries. Her latest investigation takes us back to September 26, 2023. As Israel's national security establishment gathered to commemorate the 50",
-    "pubDate": "Fri, 02 Oct 2026 06:08:44 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Asian Games 2026: Taiwan’s gender-row boxer Lin Yu-ting wins gold medal",
-    "link": "https://www.aljazeera.com/sports/2026/10/2/asian-games-aichi-nagoya-2026-boxing-taiwan-lin-yu-ting-gold?traffic_source=rss",
-    "description": "Lin bags her second Asian Games gold medal, three years on from her success in Hangzhou in the 57kg class.",
-    "pubDate": "Fri, 02 Oct 2026 06:03:19 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Nations League: Zidane returns to face Italy and the Stade de France",
-    "link": "https://www.france24.com/en/tv-shows/sports/20261002-nations-league-zidane-returns-to-face-italy-and-the-stade-de-france",
-    "description": "Twenty years after the 2006 World Cup final, Zinedine Zidane faces Italy again on Friday, this time as France manager, on matchday three of the Nations League. For his first match in France as coach, he also returns to the Stade de France, where he experienced several defining moments of his career.",
-    "pubDate": "Fri, 02 Oct 2026 05:49:44 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Lula and Bolsonaro’s mudslinging heats up ahead of weekend vote",
-    "link": "https://www.france24.com/en/americas/20261002-lula-and-bolsonaro-s-mudslinging-heats-up-ahead-of-weekend-vote",
-    "description": "The mudslinging between Brazil’s incumbent President Luiz Inacio Lula da Silva and his election rival, Flavio Bolsonaro, has heated up ahead of what is expected to be an extremely close vote this weekend. From stating loose rumours as facts, to taking comments completely out of their context, they a",
-    "pubDate": "Fri, 02 Oct 2026 05:44:44 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Live: Russia hits Kyiv’s Southern Bridge again as Moscow continues to pound capital",
-    "link": "https://www.france24.com/en/europe/20261002-live-russia-hits-kyiv-s-southern-bridge-as-moscow-continues-to-pound-capital",
-    "description": "Russian drones on Friday hit Kyiv’s Southern Bridge for a fourth time in 24 hours, forcing authorities to close traffic on it. “They keep hitting it in the same place,” FRANCE 24’s Ukraine correspondent said, noting that it is one of Kyiv’s seven bridges and is extremely important to the life of the",
-    "pubDate": "Fri, 02 Oct 2026 05:30:42 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "9月车市冷热分化：大盘承压，头部车企继续走强",
-    "link": "https://www.tmtpost.com/8158147.html",
-    "description": "9月车市未现全面回暖，头部车企却继续增长，市场竞争正加速从增量争夺转向存量重分配。",
-    "pubDate": "Fri, 02 Oct 2026 13:16:33 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "How Switzerland lost 20 percent of its ice in five years",
-    "link": "https://www.aljazeera.com/news/2026/10/2/how-switzerland-lost-20-percent-of-its-ice-in-five-years?traffic_source=rss",
-    "description": "Swiss glaciers have lost more than 5 percent of their ice, threatening the country’s alpine economy.",
-    "pubDate": "Fri, 02 Oct 2026 04:59:58 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Nepal avalanche kills at least 15 expedition workers",
-    "link": "https://www.aljazeera.com/news/2026/10/2/nepal-avalanche-kills-at-least-15-expedition-workers?traffic_source=rss",
-    "description": "Rescuers recovered eight more bodies on Thursday from the area of an avalanche that swept through a mountain camp.",
-    "pubDate": "Fri, 02 Oct 2026 04:53:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Student protests in Chile turn to violent clashes with police",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/student-protests-in-chile-turn-to-violent-clashes-with-police?traffic_source=rss",
-    "description": "Riot police in Chile’s capital deployed tear gas and water cannons to disperse hundreds of students.",
-    "pubDate": "Fri, 02 Oct 2026 04:49:52 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Arab-Israeli party leader drops election bid",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/arab-israeli-party-leader-drops-election-bid?traffic_source=rss",
-    "description": "Balad party leader Sami Abu Shehadeh has withdrawn from the October 27 Knesset election.",
-    "pubDate": "Fri, 02 Oct 2026 04:41:21 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Eritrea severs diplomatic ties with Ethiopia in row over Tigray",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/eritrea-severs-diplomatic-ties-with-ethiopia-in-row-over-tigray?traffic_source=rss",
-    "description": "Eritrea has severed diplomatic ties with Ethiopia after Addis Ababa closed its embassy in Asmara",
-    "pubDate": "Fri, 02 Oct 2026 04:40:14 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Iran urges Iraq to lift flight ban amid US sanctions",
-    "link": "https://www.aljazeera.com/news/2026/10/2/iran-urges-iraq-to-lift-flight-ban-amid-us-sanctions?traffic_source=rss",
-    "description": "Iran calls on Iraq to remove flight curbs after US sanctions, in a move that has strained bilateral ties.",
-    "pubDate": "Fri, 02 Oct 2026 04:34:33 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Tesla cuts AI5, AI6 memory specs to protect Optimus",
-    "link": "https://www.digitimes.com/news/a20261002PD222/tesla-optimus-production-ceo-elon-musk.html",
-    "description": "Facing a prolonged memory supply crunch, Tesla CEO Elon Musk has announced steep cuts to the memory specifications of the company's AI5 and AI6 chips to secure enough memory for Optimus mass production. Musk said the downgrades will not affect the humanoid robot's performance.",
-    "pubDate": "Fri, 2 Oct 2026 04:21:34 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Huawei turns to LogicFolding to keep its flagship chip race alive",
-    "link": "https://www.digitimes.com/news/a20261002VL209/huawei-kirin-flagship-foldable-smartphone-performance.html",
-    "description": "Huawei Technologies has unveiled its Mate 90 smartphone series, expanding the use of self-developed Kirin processors and HarmonyOS 7 as it looks to sustain flagship performance under US restrictions on access to advanced chipmaking technology.",
-    "pubDate": "Fri, 2 Oct 2026 04:20:27 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Google's first Suncatcher satellite reaches orbit to test AI chips in space",
-    "link": "https://www.digitimes.com/news/a20261002VL205/google-satellite-ai-chip-data-center-hardware.html",
-    "description": "Google has moved its orbital AI data center ambitions from paper to hardware. A prototype satellite carrying the company's Tensor Processing Units (TPUs) reached orbit on October 1, 2026, and the data it returns over the coming weeks will help decide whether Project Suncatcher's vision of solar-powe",
-    "pubDate": "Fri, 2 Oct 2026 04:11:27 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "China AI infrastructure spreads to mid-sized firms",
-    "link": "https://www.digitimes.com/news/a20261002PD218/infrastructure-investment-2026-market-sk-hynix.html",
-    "description": "China's AI investment is increasingly turning into server purchases and data center construction, and the wave that began with large tech companies is now spreading to mid-sized firms. South Korean media say the expanding China AI demand could open new markets for Samsung Electronics and SK Hynix.",
-    "pubDate": "Fri, 2 Oct 2026 04:05:55 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "FAO official says he lost his job for criticising Israeli policies in Gaza",
-    "link": "https://www.aljazeera.com/news/2026/10/2/fao-official-says-he-lost-his-job-for-criticising-israeli-policies-in-gaza?traffic_source=rss",
-    "description": "The FAO official said he was told his contract would not be renewed over an alleged breach of impartiality on Gaza.",
-    "pubDate": "Fri, 02 Oct 2026 04:02:44 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "China financing chain linked to Nvidia Blackwell chips, 32 Asus servers exposed",
-    "link": "https://www.digitimes.com/news/a20261002PD219/chips-nvidia-financing-asus-blackwell.html",
-    "description": "A China-backed leasing firm appears to have helped Chinese companies buy restricted Nvidia Blackwell platform chips through financial leasing, according to a recent report. The transactions involved 32 Asus servers equipped with B300 chips, highlighting how US export controls face circumvention risk",
-    "pubDate": "Fri, 2 Oct 2026 03:58:34 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "UNEEC shifts ODM focus to racks as L11 rises to 18%",
-    "link": "https://www.digitimes.com/news/a20261002PD217/2026-odm-president-revenue-plant.html",
-    "description": "Chenming Electronic Tech (UNEEC) president Charles Lo said the fourth quarter is a traditional peak season and that new models such as VR200 will enter mass production in the fourth quarter, helping revenue recover toward the company's former monthly level of more than NT$1 billion (US$31.3 million)",
-    "pubDate": "Fri, 2 Oct 2026 03:52:03 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Indian artist takes ‘deleted voter’ song to Cockroach protest",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/10/2/indian-artist-takes-deleted-voter-song-to-cockroach-protest?traffic_source=rss",
-    "description": "An Indian artist tells Al Jazeera the Modi government changed his voting status. Now he’ll join 'Cockroach' protests.",
-    "pubDate": "Fri, 02 Oct 2026 03:49:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "TSMC mulls multi-fab Texas campus beyond Arizona, with Singapore also in talks",
-    "link": "https://www.digitimes.com/news/a20261002VL208/tsmc-texas-expansion-manufacturing-arizona.html",
-    "description": "TSMC is reportedly weighing a new manufacturing campus in Texas that could add tens of billions of dollars to its US expansion, potentially creating a second major American production hub alongside Arizona as AI chip demand continues to strain advanced-node capacity.",
-    "pubDate": "Fri, 2 Oct 2026 03:47:47 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "Taiwan government backs 7 semiconductor schools to upgrade equipment",
-    "link": "https://www.digitimes.com/news/a20261002PD209/taiwan-semiconductors-talent-nstc-ntu.html",
-    "description": "To address chip talent shortages, Taiwan has a law in place to promote industry-academia collaboration by establishing semiconductor schools. However, the current financing scheme jointly supported by the National Development Fund (NDF) and contracted companies is deemed insufficient to meet the nee",
-    "pubDate": "Fri, 2 Oct 2026 03:47:33 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "JCET Group partners with Wuxi to advance 2.5D advanced packaging facilities",
-    "link": "https://www.digitimes.com/news/a20261002VL207/jcet-packaging-high-end-manufacturing-silicon.html",
-    "description": "JCET Group signed an agreement on September 29 for a high-end advanced packaging and testing project in Wuxi, Jiangsu Province. Wuxi municipal leadership pledged operational support to help JCET scale its manufacturing footprint, promoting regional integration and supporting China's semiconductor ec",
-    "pubDate": "Fri, 2 Oct 2026 03:44:39 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
-    "_stale": true
-  },
-  {
-    "title": "DIGITIMES Insight: Intel, TSMC, Samsung converge on backside power &mdash; packaging becomes the next divide",
-    "link": "https://www.digitimes.com/news/a20261002PD215/intel-tsmc-samsung-packaging-accelerator.html",
-    "description": "Data center AI accelerator package power has climbed from about 500W in the A100 generation to roughly 3,500–4,000W for Rubin Ultra-class products expected in 2027, pushing supply current into the thousands of amperes. In conventional frontside power delivery, current must cross the full metal inter",
-    "pubDate": "Fri, 2 Oct 2026 03:21:24 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor",
     "_stale": true
   }
 ]
