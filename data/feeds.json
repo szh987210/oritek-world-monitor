@@ -1,5 +1,701 @@
 [
   {
+    "title": "Major Thanksgiving storm brings flooding, flight delays across US",
+    "link": "https://www.bbc.co.uk/news/articles/ckm2mz3prq77o?at_medium=RSS&at_campaign=rss",
+    "description": "Almost one million customers in the US had no power on Thursday evening as storms descended on both US coasts, bringing wind gusts, heavy rain and flooding.",
+    "pubDate": "Fri, 27 Nov 2026 05:15:26 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "腾讯阿里百度集体交账，AI进入兑现期",
+    "link": "https://www.tmtpost.com/8219613.html",
+    "description": "AI投入热，何以要算长远账。",
+    "pubDate": "Fri, 27 Nov 2026 12:52:19 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "从410亿美元收购，看MNC“算账”哲学",
+    "link": "https://www.tmtpost.com/8219437.html",
+    "description": "“410亿美元是一个标准估值”",
+    "pubDate": "Fri, 27 Nov 2026 12:51:55 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "时隔一年，小鹏机器人再登台，何小鹏又哽咽了！",
+    "link": "https://www.tmtpost.com/8219499.html",
+    "description": "时隔一年，小鹏机器人再登台，何小鹏又哽咽了！",
+    "pubDate": "Fri, 27 Nov 2026 12:51:53 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "实测智谱GLM5.4｜雷霆大思考：想得确实多，干活确实慢",
+    "link": "https://www.tmtpost.com/8219494.html",
+    "description": "思考得像睡着了",
+    "pubDate": "Fri, 27 Nov 2026 12:51:52 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Estonia closing land borders with Russia to keep out spies",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/estonia-closing-land-borders-with-russia-to-keep-out-spies?traffic_source=rss",
+    "description": "Estonia is set to close its land border crossings to Russia by December 1.",
+    "pubDate": "Fri, 27 Nov 2026 04:46:15 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Global smartphone shipments to fall a further 6% in 2027 as memory squeeze persists",
+    "link": "https://www.digitimes.com/news/a20261127PR201/smartphone-shipments-forecast-market-2027.html",
+    "description": "Global smartphone shipments are forecast to decline 13.9% year-over-year in 2026 and fall a further 6% in 2027, according to Counterpoint Research's latest Smartphone Market Outlook Tracker, released on November 25. The research firm expects a 6% rebound in 2028, but said the market will not regain ",
+    "pubDate": "Fri, 27 Nov 2026 04:45:22 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "India's festive smartphone sales fall 22% as memory costs push prices up: Counterpoint",
+    "link": "https://www.digitimes.com/news/a20261127PR200/india-smartphone-sales-price-demand-2026.html",
+    "description": "India's smartphone sales during the 2026 festive season, which ran from October 8 to November 10, fell an estimated 22% year-over-year, according to preliminary post-festive checks by Counterpoint Research. The decline was much steeper than the research firm's pre-festive forecast of 12%. Market val",
+    "pubDate": "Fri, 27 Nov 2026 04:37:38 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Thanksgiving storms leave nearly a million without power across the US",
+    "link": "https://www.aljazeera.com/news/2026/11/27/thanksgiving-storms-leave-nearly-a-million-without-power-across-the-us?traffic_source=rss",
+    "description": "Severe weather across the US causes outages and flight delays as families and friends gather for the annual holiday.",
+    "pubDate": "Fri, 27 Nov 2026 04:34:43 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "China's Weimob to form Nvidia RTX PRO 5500 cluster as chip export restrictions loom",
+    "link": "https://www.digitimes.com/news/a20261127VL210/nvidia-rtx-chips-software-production.html",
+    "description": "Weimob, a Chinese provider of cloud-based commerce software and marketing services, announced its planned purchase of 5,000 Nvidia RTX PRO 5500 graphics cards for its own AI-powered services as well as possibly leasing compute. The upcoming purchase reflects a drive among Chinese companies to acquir",
+    "pubDate": "Fri, 27 Nov 2026 04:27:44 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "SpaceX million-satellite plan exposes hurdles to space-based data centers",
+    "link": "https://www.digitimes.com/news/a20261127PD211/spacex-data-fcc-launch-capacity.html",
+    "description": "The US Federal Communications Commission (FCC) has approved SpaceX's plan to deploy one million space-based data center satellites, paving the way for AI infrastructure to extend beyond Earth.",
+    "pubDate": "Fri, 27 Nov 2026 04:13:09 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "DIGITIMES Insight: KV cache growth will not translate one-for-one into CXL memory demand",
+    "link": "https://www.digitimes.com/news/a20261126PD215/cxl-memory-dram-data-demand-growth.html",
+    "description": "The rapid growth of KV cache in AI inference will not translate proportionally into demand for CXL memory, because host DRAM usually takes the data moved out of HBM first, according to DIGITIMES. CXL becomes necessary only when host DRAM is constrained, the data is worth reusing, and the service dep",
+    "pubDate": "Fri, 27 Nov 2026 04:12:57 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Can AI resist temptation? Anthropic finds lower violation rates in new Claude models",
+    "link": "https://www.digitimes.com/news/a20261127PD203/anthropic-claude-data-security.html",
+    "description": "Anthropic has used simulated tests to assess whether artificial intelligence (AI) can resist temptation and follow rules. The results found that its new-generation Claude models still attempted to cross boundaries, but violations involving the use of external data fell substantially.",
+    "pubDate": "Fri, 27 Nov 2026 04:09:08 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "At least 13 Niger soldiers killed in Sanam armed attack",
+    "link": "https://www.aljazeera.com/news/2026/11/27/at-least-13-niger-soldiers-killed-in-sanam-armed-attack?traffic_source=rss",
+    "description": "It remains unclear who carried out the attack on Niger's National Guard in Tillaberi, near the Mali border.",
+    "pubDate": "Fri, 27 Nov 2026 04:06:52 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "20个AI Agents组队，4天狂跑350次实验，超越ClickBench最佳公开成绩",
+    "link": "https://www.qbitai.com/2026/11/513163.html",
+    "description": "Quickwit查询总耗时降31%，最高降87%",
+    "pubDate": "Fri, 27 Nov 2026 03:53:49 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Gem Terminal expects new copper materials to make up half of revenue in 2027, with copper prices the key risk",
+    "link": "https://www.digitimes.com/news/a20261126PD222/copper-materials-revenue-2027-2026.html",
+    "description": "Taiwan-based terminal and copper materials processor Gem Terminal Industry expects its advanced copper materials to account for 50% of revenue in 2027, up from around 30% in 2026, overtaking traditional terminals as its largest product line, president Yu-min Lin said at an investor conference on Nov",
+    "pubDate": "Fri, 27 Nov 2026 03:53:33 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Claude Code 灵魂人物，开始反思 Vibe Coding 的未来了",
+    "link": "https://www.ifanr.com/1695671?utm_source=rss&utm_medium=rss&utm_campaign",
+    "description": "AI 既是一场工业革命，也是一场文艺复兴。\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Fri, 27 Nov 2026 03:49:58 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Trump downplays Russia, China support for Iran during talks with US troops",
+    "link": "https://www.aljazeera.com/news/2026/11/27/trump-downplays-russia-china-support-for-iran-during-talks-with-us-troops?traffic_source=rss",
+    "description": "Trump praises US troops for their role in the war on Iran and says he has spoken to Netanyahu in recent days.",
+    "pubDate": "Fri, 27 Nov 2026 03:49:08 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "腾讯混元发布 Hy3D 3.6：高模表面更整洁、结构更清晰、刻画更细腻",
+    "link": "https://www.qbitai.com/2026/11/513155.html",
+    "description": "3D生成的竞争重点正在从“能看”转向“能用”",
+    "pubDate": "Fri, 27 Nov 2026 03:45:19 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Asian stock markets rise after earlier tech rout",
+    "link": "https://www.aljazeera.com/economy/2026/11/27/asian-stock-markets-rise-after-earlier-tech-rout?traffic_source=rss",
+    "description": "Indices in Japan, South Korea, Australia and Hong Kong rise as New Zealand stocks dip on election uncertainty.",
+    "pubDate": "Fri, 27 Nov 2026 03:42:16 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Analog IC shortages persist despite AI uncertainty as supply becomes key concern for 2027",
+    "link": "https://www.digitimes.com/news/a20261126PD208/analog-ic-capacity-financing-2027.html",
+    "description": "Market concerns over circular financing in AI remain unresolved following the turmoil surrounding Nvidia CEO Jensen Huang's resignation on November 12 and subsequent return. Supply chain players across AI chips, memory, and power-related sectors could all be affected, fueling uncertainty over the br",
+    "pubDate": "Fri, 27 Nov 2026 03:40:56 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "US chip rules, anti-distillation efforts force delays on China's flagship AI models",
+    "link": "https://www.digitimes.com/news/a20261127VL208/flagship-moonshot-training-data-claude.html",
+    "description": "A coordinated push by Washington and leading American artificial intelligence labs is beginning to bottleneck China's rapid AI progress. By tightening access to offshore computing clusters and erecting technical barriers against unauthorized model training, US policymakers and tech giants have force",
+    "pubDate": "Fri, 27 Nov 2026 03:40:10 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "具身公司抱团回应：通用大模型跨维打击？没那么简单",
+    "link": "https://www.qbitai.com/2026/11/513125.html",
+    "description": "",
+    "pubDate": "Fri, 27 Nov 2026 03:33:11 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Samsung chip fabs could deploy over 10,000 robots by 2030",
+    "link": "https://www.digitimes.com/news/a20261127VL209/samsung-2030-equipment-2026-manufacturing.html",
+    "description": "The number of robots operating in Samsung Electronics' semiconductor facilities could rise from about 100 in 2026 to more than 10,000 by 2030 as the South Korean chipmaker seeks to automate tasks that still require human labor.",
+    "pubDate": "Fri, 27 Nov 2026 03:30:56 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "TSMC lifts pure-play foundry share to 75% as sector grows 36% in third quarter",
+    "link": "https://www.digitimes.com/news/a20261127PR203/tsmc-pure-play-foundry-market-revenue-2026.html",
+    "description": "TSMC's hold on the pure-play foundry market tightened further in the third quarter of 2026, as the AI-driven upturn continued to reward the market leader more than its rivals. TSMC's share climbed to 75% from 73% in each of the previous two quarters, while the sector grew 36% year-over-year and 13% ",
+    "pubDate": "Fri, 27 Nov 2026 03:30:38 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "New Zealand's ruling coalition falls short of parliamentary majority by one seat",
+    "link": "https://www.bbc.co.uk/news/articles/c670278qk879o?at_medium=RSS&at_campaign=rss",
+    "description": "The right-leaning ruling bloc led by the National Party has fallen short of the majority needed to govern.",
+    "pubDate": "Fri, 27 Nov 2026 03:28:15 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "一场物理AI闭门会里的三层“温差”",
+    "link": "https://www.tmtpost.com/8218564.html",
+    "description": "一份调研、四道考题，和“一手托两方”的答案",
+    "pubDate": "Fri, 27 Nov 2026 11:27:53 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "百亿具身独角兽破壁，玩家集体涌向它的牌桌",
+    "link": "https://www.qbitai.com/2026/11/513101.html",
+    "description": "",
+    "pubDate": "Fri, 27 Nov 2026 03:23:25 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "白酒的“去库存周期”走到哪了？",
+    "link": "https://www.tmtpost.com/8219964.html",
+    "description": "所有的局部暖意，都只是长周期阵痛中的序曲",
+    "pubDate": "Fri, 27 Nov 2026 11:16:06 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "江行智能基模 CTO 陈龙：当「物理 AI 大脑」进厂，如何实现可靠落地？| ACM MM 2026",
+    "link": "https://www.leiphone.com/category/private/O7QLSVU8zvpfzY6B.html",
+    "description": "工业现场不需要“最聪明”的模型，够用、可靠、可验证才是硬道理。\n\n\n\n\n\n    作者丨董雨頔\n\n    编辑丨徐晓飞\n                                                                                                       \n\n\n在工业现场，模型识别出异常，只是第一步。\n它还要把每一次传感器或相机观测对应到正确的设备、位置和任务状态，规划下一步行动，控制机器人完成操作，并验证动作是否真正满足了客户要求、规程和监管规则。\n这正是工业物理AI与单纯感知系统之间的一道分界线：它不仅要感知环境、识别目",
+    "pubDate": "Fri, 27 Nov 2026 11:07:00 +0800",
+    "source": "雷峰网",
+    "category": "policy"
+  },
+  {
+    "title": "华为 Mate X8 评测：终局之战",
+    "link": "https://www.ifanr.com/1695642?utm_source=rss&utm_medium=rss&utm_campaign",
+    "description": "七年之期已到……\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Fri, 27 Nov 2026 03:06:45 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Samsung bolsters M&amp;A team as it eyes robotics, AI",
+    "link": "https://www.digitimes.com/news/a20261127VL207/samsung-cooling-data-center-equipment-2026.html",
+    "description": "Samsung Electronics is strengthening its mergers and acquisitions (M&A) operations as it seeks growth in robotics, artificial intelligence (AI), and data center cooling to offset weakness in its consumer electronics businesses.",
+    "pubDate": "Fri, 27 Nov 2026 03:04:17 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "功臣不封侯，字节无山头",
+    "link": "https://www.tmtpost.com/8219495.html",
+    "description": "字节用一套高度理性的现代工程化管理，消解传统互联网的江湖人情与领地意识。它让这台庞大的机器在面对时代剧变时依然保持着敏捷，也让身处其中的每一个人，都必须习惯没有领地的奔跑。",
+    "pubDate": "Fri, 27 Nov 2026 11:03:58 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "独家 |  在看不见“真人”的红果，人怎么赚钱",
+    "link": "https://www.tmtpost.com/8220004.html",
+    "description": "红果的未来是自主生成短剧，而不需要靠真人",
+    "pubDate": "Fri, 27 Nov 2026 11:00:06 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "比亚迪开始买欧洲工厂：中国汽车出海，进入下半场",
+    "link": "https://www.tmtpost.com/8219833.html",
+    "description": "11月24日，比亚迪宣布，与英国英力士汽车（INEOS Automotive）就收购法国汉巴赫（Hambach）汽车工厂进入独家谈判。",
+    "pubDate": "Fri, 27 Nov 2026 10:59:55 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "炎症性肠病之争，绕不开的艾伯维",
+    "link": "https://www.tmtpost.com/8219400.html",
+    "description": "一座大山的形成",
+    "pubDate": "Fri, 27 Nov 2026 10:59:53 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "马云，走进芯片时代",
+    "link": "https://www.tmtpost.com/8219379.html",
+    "description": "从2018年的云栖大会，到2026年平头哥的办公区，马云还是那个马云，阿里的生意却发生了很大的变化。",
+    "pubDate": "Fri, 27 Nov 2026 10:59:51 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "ALO趁火打劫Lululemon",
+    "link": "https://www.tmtpost.com/8219789.html",
+    "description": "一场新老对手的好戏，算是拉开了幕。",
+    "pubDate": "Fri, 27 Nov 2026 10:59:48 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Spain and Morocco under-17 stars target World Cup 2030",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/spain-and-morocco-under-17-stars-target-world-cup-2030?traffic_source=rss",
+    "description": "Spain and Morocco are two of the co-hosts of the next 2030 World Cup, and they faced off at the under-17 World Cup.",
+    "pubDate": "Fri, 27 Nov 2026 02:58:48 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Exclusive: Oxford-based LUX bets on 3D heat-exchanger geometry to break AI data center cooling limits",
+    "link": "https://www.digitimes.com/news/a20261120VL210/3d-cooling-data-center-uk-taiwan.html",
+    "description": "As AI data centers push toward ever-denser racks, cooling is becoming a problem measured not only in megawatts, but in kilograms and cubic meters.",
+    "pubDate": "Fri, 27 Nov 2026 02:58:22 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "xAI 三杰造了台「互联网时光机」：AI 能预测未来，才是真正的智能？",
+    "link": "https://www.leiphone.com/category/yanxishe/e60A2os7y71EKeLI.html",
+    "description": "90 天搭出万亿级历史索引，他们先做出 AI 预测“训练场”\n\n\n\n\n\n    作者丨高允毅\n\n    编辑丨岑   峰\n                                                                                                       \n\n\n\n达里奥又被人骂“虚伪”了。\n先是前 Meta 首席 AI 科学家杨立昆指责 Anthropic CEO 达里奥炒作 AI 危险论，并直言他当年离开 OpenAI，不过是因为无法掌握控制权。昨天，达里奥在 X 发万字长文回应，称“向 AI 交出人类自由意志”的指控纯",
+    "pubDate": "Fri, 27 Nov 2026 10:58:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "84 million GDDR7 chips at stake: Nvidia's RTX Pro 5500 China cancellations test Samsung, SK Hynix",
+    "link": "https://www.digitimes.com/news/a20261126PD213/nvidia-rtx-sk-hynix-samsung-chips.html",
+    "description": "Nvidia's push into China's AI market has stalled. That adds uncertainty to the GDDR7 demand growth Samsung Electronics and SK Hynix had been counting on.",
+    "pubDate": "Fri, 27 Nov 2026 02:57:33 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "第三批嘉宾来袭！速戳报名MEET2027，驭见AI新共识！",
+    "link": "https://www.qbitai.com/2026/11/513091.html",
+    "description": "倒计时两周，报名从速！",
+    "pubDate": "Fri, 27 Nov 2026 02:56:03 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "EmBestor's earnings soar 15-fold on the memory rally, but its real bet is industrial AI",
+    "link": "https://www.digitimes.com/news/a20261127PD201/industrial-demand-price-gross-margin-revenue.html",
+    "description": "EmBestor Technology makes industrial-grade flash memory and data storage products. Higher memory prices drove its revenue and gross margin to record levels. For the first three quarters of 2026, it reported revenue of NT$841 million (approx. US$26 million), a gross margin of 58.52% and after-tax ear",
+    "pubDate": "Fri, 27 Nov 2026 02:51:51 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "RoboScience 机器科学发布 GenSight：如何在一个模型，搞定生成和感知？",
+    "link": "https://www.leiphone.com/category/ai/yVUjZ1Pgo80vJ5T0.html",
+    "description": "热潮褪去之后，世界模型的研究该转向何处？\n\n\n\n\n\n    作者丨邓哲敏\n\n    编辑丨齐铖湧\n                                                                                                       \n\n\n\n今年上半年，世界模型是具身智能领域最风光的叙事。资本蜂拥而入，仿佛只要模型能把未来视频生成得足够逼真，机器人就自然能学会理解世界、规划行动。\n热潮来得快，走得也快。问题首先出在概念本身，李飞飞团队今年 6 月专门撰文，说世界模型已经成为 AI 领域最重要、也最被滥用的术语之一。更根本的质",
+    "pubDate": "Fri, 27 Nov 2026 10:48:00 +0800",
+    "source": "雷峰网",
+    "category": "ai-tech"
+  },
+  {
+    "title": "China's year-end cash crunch sparks a memory fire sale &mdash; Samsung, SK Hynix hold the line on contract prices",
+    "link": "https://www.digitimes.com/news/a20261126PD209/sk-hynix-samsung-market-dram-2026.html",
+    "description": "After a rapid surge, memory prices had split into two tiers by late 2026. The industry describes the market as \"fat at the top, thin at the bottom.\" Upstream suppliers are still highly profitable, and their capacity still falls short of demand. Consumer electronics, by contrast, are in a slump. In C",
+    "pubDate": "Fri, 27 Nov 2026 02:46:23 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "黑五开考：直邮已死，谁获新生？",
+    "link": "https://www.tmtpost.com/8219884.html",
+    "description": "两张税单，一次大迁徙，和一场黑五大考。",
+    "pubDate": "Fri, 27 Nov 2026 10:44:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "German chemicals maker Wevo opens Singapore plant for electronics materials",
+    "link": "https://www.digitimes.com/news/a20261127PR202/chemical-materials-electronics-plant-singapore.html",
+    "description": "German specialty chemicals manufacturer WEVO-CHEMIE GmbH officially opened a production facility in Singapore's Tuas industrial area on November 25, investing more than EUR10 million (approx. US$10.96 million) in the site to supply customers across Asia-Pacific. The plant has started producing potti",
+    "pubDate": "Fri, 27 Nov 2026 02:43:16 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Starlink demand drives Wonderful Hi-Tech to record profit, and its next cables are bound for orbit",
+    "link": "https://www.digitimes.com/news/a20261127PD200/2027-cables-revenue-satellites--leo-wonderful-hi-tech.html",
+    "description": "Taiwanese cable maker Wonderful Hi-Tech posted record quarterly profit in the third quarter of 2026. At its investor conference on November 26, the company credited strong orders for low-Earth orbit (LEO) satellite ground terminals, higher shipments of high-margin products such as Power over Etherne",
+    "pubDate": "Fri, 27 Nov 2026 02:38:29 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "光伏2026这一年：亏损周期里继续“反内卷”，集体押注储能、技术和AI",
+    "link": "https://www.tmtpost.com/8219738.html",
+    "description": "真能突围吗？",
+    "pubDate": "Fri, 27 Nov 2026 10:37:16 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Kyocera targets JPY2.6 trillion revenue by fiscal 2031, bets on AI components, solutions growth",
+    "link": "https://www.digitimes.com/news/a20261127VL205/kyocera-revenue-growth-infrastructure-operating-profit.html",
+    "description": "Kyocera plans to increase revenue to JPY2.6 trillion (US$16.3 billion) and more than double operating profit to JPY320 billion by the fiscal year ending March 2031, as the Japanese electronics manufacturer steps up investment in artificial intelligence (AI) infrastructure components, semiconductor p",
+    "pubDate": "Fri, 27 Nov 2026 02:32:35 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Samsung revamps memory R&amp;D in custom HBM push",
+    "link": "https://www.digitimes.com/news/a20261127VL206/samsung-development-hbm-lsi-design.html",
+    "description": "Samsung Electronics is streamlining its memory development operations and setting up a dedicated logic design team as it seeks to expand its presence in the market for customized high-bandwidth memory (HBM) used in AI accelerators.",
+    "pubDate": "Fri, 27 Nov 2026 02:23:43 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Huawei's Tau EDA fixes China's real chip design weakness &mdash; tools that never worked together",
+    "link": "https://www.digitimes.com/news/a20261127VL203/huawei-eda-design-software-chips.html",
+    "description": "Huawei and a group of Chinese electronic design automation (EDA) vendors say they have built China's first interoperable domestic EDA toolchain. Called Tau EDA, it is designed for chips made under Huawei's Tau Scaling Law. The chain targets the main weakness of China's chip design software sector: i",
+    "pubDate": "Fri, 27 Nov 2026 02:20:32 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "乾崑共创者计划发布：加入乾崑生态，共创出行未来！",
+    "link": "https://www.qbitai.com/2026/11/513087.html",
+    "description": "11月26日，“乾崑生态 共赴热爱”华为乾崑生态大会在广州南沙体育馆举行。",
+    "pubDate": "Fri, 27 Nov 2026 02:19:12 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Zelenskyy warns of major Russian attack as Trump urges Putin to ‘pull back’",
+    "link": "https://www.aljazeera.com/news/2026/11/27/zelenskyy-warns-of-major-russian-attack-as-trump-urges-putin-to-pull-back?traffic_source=rss",
+    "description": "Trump says he urged Putin to 'pull back' military aggression in Europe amid escalating Russian and Ukrainian attacks.",
+    "pubDate": "Fri, 27 Nov 2026 02:14:25 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "舜宇智行：三年分红39.11亿超累计净利，关联交易、募资补流引争议",
+    "link": "https://www.tmtpost.com/8216831.html",
+    "description": "2023-2025年公司累计现金分红39.11亿元，分红总额甚至超出同期累计净利润，在刚刚完成大额分红的背景下，公司拟通过IPO募资补充营运资金，该项募资安排的必要性与合理性，备受市场热议。",
+    "pubDate": "Fri, 27 Nov 2026 10:13:02 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "FCS Group trims 2027 MLPC revenue target as capacitor, glass-substrate projects slip",
+    "link": "https://www.digitimes.com/news/a20261126PD201/fcs-2027-revenue-injection-molding-equipment.html",
+    "description": "Taiwan-based injection molding machine maker FCS Group has slightly lowered its 2027 revenue target for multilayer polymer capacitors (MLPC), as validation and capacity build-out for both its MLPC business and its glass-substrate equipment venture have fallen behind the original schedule, the compan",
+    "pubDate": "Fri, 27 Nov 2026 02:11:34 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "普祺医药：九年累计亏损超6亿元，公司目前已资不抵债",
+    "link": "https://www.tmtpost.com/8216839.html",
+    "description": "截至2026年4月末，普祺医药净资产由正转负，陷入资不抵债状态。",
+    "pubDate": "Fri, 27 Nov 2026 10:10:43 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "消费级显卡正在变成一门边缘生意",
+    "link": "https://www.tmtpost.com/8219460.html",
+    "description": "消费者还能买到平价显卡吗？",
+    "pubDate": "Fri, 27 Nov 2026 10:05:26 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech"
+  },
+  {
+    "title": "陶哲轩下场验证黎曼猜想！“AI批量吐证明就像发电厂排核废料”",
+    "link": "https://www.qbitai.com/2026/11/513075.html",
+    "description": "担心课题被AI抢先，该怎么办？",
+    "pubDate": "Fri, 27 Nov 2026 02:03:10 +0000",
+    "source": "量子位",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Column: Robot precision components, bottlenecks",
+    "link": "https://www.digitimes.com/news/a20261126PD204/robot-switzerland-germany.html",
+    "description": "A robot's joints do not all use the same motors and reducers. Each joint is built around its load, speed, and precision requirements. Before looking at the key components and bottlenecks for each type of robot, this installment outlines what the most important components do and how they differ.",
+    "pubDate": "Fri, 27 Nov 2026 02:01:30 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "US and Chinese robotaxi markets enter explosive growth; 2026 output value gain at 100%; estimated total at US$850 million",
+    "link": "https://www.digitimes.com/news/a20261123RS400/robotaxi-2026-growth-market-waymo.html?chid=2",
+    "description": "Robotaxi commercialization is gaining momentum in the US and China, as industry players explore new approaches to autonomous mobility. Discover the competitive dynamics and business strategies shaping this emerging market.",
+    "pubDate": "Fri, 27 Nov 2026 01:55:13 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Trump says the US has ‘close to 50%’ of world’s oil",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/trump-says-the-us-has-close-to-50-of-worlds-oil?traffic_source=rss",
+    "description": "On a call to soldiers deployed to the Gulf, Donald Trump claimed that the US does not ‘need Middle East oil'.",
+    "pubDate": "Fri, 27 Nov 2026 01:44:02 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "LG Energy Solution prepares LMR battery lines for GM at Tennessee joint venture, report says",
+    "link": "https://www.digitimes.com/news/a20261126VL204/lges-general-motors-production-joint-venture-lithium.html",
+    "description": "LG Energy Solution is preparing mass production lines for lithium manganese-rich (LMR) batteries at its Ultium Cells joint venture with General Motors (GM), and will soon begin equipment bidding, according to a report by The Elec citing industry sources on November 25, 2026.",
+    "pubDate": "Fri, 27 Nov 2026 01:38:20 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Taiwan seeks to lock in 15% US tariff to shield AI server and chip exports",
+    "link": "https://www.digitimes.com/news/a20261126PD232/taiwan-exports-2026-taipei-investigation.html",
+    "description": "Taiwan's government is confident the US will set its final tariff rate on Taiwanese goods at 15%, Vice Premier Li-chiun Cheng said, after the Office of the US Trade Representative (USTR) released the findings of its latest Section 301 investigation.",
+    "pubDate": "Fri, 27 Nov 2026 01:36:26 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Clashes halt match as Turkiye football fans raise Palestinian flags",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/clashes-halt-match-as-turkiye-football-fans-raise-palestinian-flags?traffic_source=rss",
+    "description": "Clashes broke out between Georgian police and Turkish club Besiktas supporters during a UEFA match.",
+    "pubDate": "Fri, 27 Nov 2026 01:36:23 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Musk, SpaceX pledge two shares for every US child's Trump Account",
+    "link": "https://www.digitimes.com/news/a20261127VL200/spacex-elon-musk.html",
+    "description": "Elon Musk's pledge to give every American child two SpaceX shares, worth close to US$18 billion, could make tens of millions of children shareholders in his space and AI company. But SpaceX's own announcement ties the gift to active Trump Accounts, and some analysts see publicity as much as philanth",
+    "pubDate": "Fri, 27 Nov 2026 01:31:17 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "MediaTek confirms 2027 flagship mobile SoC launch, dismisses cancellation rumors",
+    "link": "https://www.digitimes.com/news/a20261126PD210/flagship-mediatek-soc-mobile-launch.html",
+    "description": "MediaTek has denied market rumors that it may not launch a Dimensity 9700 flagship smartphone system-on-chip (SoC) in 2027, saying development of its next Dimensity flagship has not been interrupted and that a new flagship SoC will arrive in 2027 as originally planned.",
+    "pubDate": "Fri, 27 Nov 2026 01:23:21 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "US Section 301 tariffs spare key chip markets, but Vietnam clouds Taiwan's 2027 outlook",
+    "link": "https://www.digitimes.com/news/a20261127PD210/taiwan-2027-manufacturing-investigation-chips.html",
+    "description": "The Office of the US Trade Representative (USTR) released the findings of its Section 301 investigation into \"structural overcapacity\" on November 25, 2026, US Eastern time, proposing additional tariffs on 14 economies, including Taiwan, China, the European Union, Japan, and South Korea.",
+    "pubDate": "Fri, 27 Nov 2026 01:21:23 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Transtouch targets aerospace, memory to drive 2027 growth",
+    "link": "https://www.digitimes.com/news/a20261126PD229/transtouch-technology-2027-growth-niche-revenue.html",
+    "description": "Niche touch-panel maker Transtouch Technology returned to profit in the first three quarters of 2026, posting earnings per share of NT$0.87 (US$0.03) against a loss of NT$6.78 million a year earlier, helped by a better product mix and its strategic investment in memory module maker E-plux Electronic",
+    "pubDate": "Fri, 27 Nov 2026 01:20:43 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Kioxia, Nvidia test SSDs as petabyte-scale extension of GPU memory",
+    "link": "https://www.digitimes.com/news/a20261127VL201/kioxia-nvidia-gpu-hbm-testing.html",
+    "description": "Kioxia is testing with Nvidia whether solid-state drives can take on part of the work of high-bandwidth memory (HBM) in AI servers, a move that would give the Japanese flash maker a larger role in a memory market led by South Korean suppliers.",
+    "pubDate": "Fri, 27 Nov 2026 01:12:33 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Global news agency AFP reports cyberattack, shuts down content platform",
+    "link": "https://www.aljazeera.com/news/2026/11/27/global-news-agency-afp-reports-cyberattack-shuts-down-content-platform?traffic_source=rss",
+    "description": "France's cybersecurity chief urges collective action to combat unprecedented threat levels in the nation.",
+    "pubDate": "Fri, 27 Nov 2026 01:07:44 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "The Best Black Friday Deals Are Now Live: Our Expert Picks for 2026",
+    "link": "https://www.wired.com/story/best-black-friday-deals-11-26-2026/",
+    "description": "The early bird gets the worm. Here are the best Black Friday deals for 2026 you can get right now.",
+    "pubDate": "Fri, 27 Nov 2026 00:56:52 +0000",
+    "source": "WIRED",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Met Police ruined my life, says Kenyan man wrongly sentenced over attack on UK couple",
+    "link": "https://www.bbc.co.uk/news/articles/cqvg2nlr8kd8o?at_medium=RSS&at_campaign=rss",
+    "description": "Evidence from a British police officer helped convict Ali Kololo over a 2011 attack in the Kenyan resort of Lamu.",
+    "pubDate": "Fri, 27 Nov 2026 00:48:11 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Sheikh Hasina's planned return puts Bangladesh on edge - and India in a bind",
+    "link": "https://www.bbc.co.uk/news/articles/cx30g71rev23o?at_medium=RSS&at_campaign=rss",
+    "description": "The ousted prime minister's December homecoming plan deepens Dhaka-Delhi tensions and risks fresh unrest.",
+    "pubDate": "Fri, 27 Nov 2026 00:47:43 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Inside Ukraine’s power crisis amid its war with Russia",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/inside-ukraines-power-crisis-amid-its-war-with-russia?traffic_source=rss",
+    "description": "Electricity and water shortages have become part of daily life in Ukraine’s capital.",
+    "pubDate": "Fri, 27 Nov 2026 00:46:19 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "\n        智谱辟谣 GLM-5.5 延期；特斯拉和 SpaceX 冲刺年底合并；18 家平台完成算法协商，覆盖 2500 万新就业形态劳动者｜极客早知道\n      ",
+    "link": "http://www.geekpark.net/news/374546",
+    "description": "智谱辟谣 GLM-5.5 延期：性能 Fable 级、上万张国产 AI 卡进展顺利\n11 月 26 日，智谱高管杨昊翊公开辟谣，称此前流传的 GLM-5.5 跳票相关爆料均为假消息。\n此前有外媒发布消息称，原计划 12 月发布的智谱 GLM-5.5 将延期至 2027 年第一季度推出，同时月之暗面旗下的 Kimi K4 也将跳票，还声称跳票原因是海外头部 AI 厂商对蒸馏技术设限，阻碍了国产大模型的研发进度。\n智谱高管杨昊翊在朋友圈辟谣，表示今天下午的所谓爆料新闻都是假消息，算是否认了跳票的消息。\n至于 GLM-5.5 的情况，虽然他没有公布进度，但此前大摩参与的路演会议上提到的还是 12 月",
+    "pubDate": "Fri, 27 Nov 2026 08:43:10 +0800",
+    "source": "极客公园",
+    "category": "ai-tech"
+  },
+  {
+    "title": "America’s Thanksgiving holiday seen through different eyes",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/27/americas-thanksgiving-holiday-seen-through-different-eyes?traffic_source=rss",
+    "description": "As millions of Americans celebrate Thanksgiving, Indigenous people gather in Plymouth for the National Day of Mourning.",
+    "pubDate": "Fri, 27 Nov 2026 00:41:28 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Tatung secures 345 kV transformer order in US, lands first modular AIDC turnkey project",
+    "link": "https://www.digitimes.com/news/a20261126PD235/tatung-aidc-2026-business-equipment.html",
+    "description": "Tatung has secured orders for 345kV large transformers in Texas and California and won its first turnkey edge AI data center order, the company said at its joint investor conference for the third quarter of 2026 on November 26. It named power, computing and land as its three main growth drivers.",
+    "pubDate": "Fri, 27 Nov 2026 00:25:01 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Argentina bars Central Bank from printing money to fund government spending",
+    "link": "https://www.aljazeera.com/news/2026/11/27/argentina-bars-central-bank-from-printing-money-to-fund-government-spending?traffic_source=rss",
+    "description": "The South American country's Senate also advances proposal to suspend primary elections ahead of 2027 presidential race.",
+    "pubDate": "Fri, 27 Nov 2026 00:11:16 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "早报｜双11手机销量降17%，前五都是iPhone/马斯克：美国每名儿童赠送两股SpaceX/小红书处置逾万篇虚假人设笔记",
+    "link": "https://www.ifanr.com/1695611?utm_source=rss&utm_medium=rss&utm_campaign",
+    "description": "· 腾讯《英雄联盟电竞经理》将于明年 1 月停运\r\n· 小米中国区总裁王晓雁将分管生态链与大家电\r\n· 华为引望发布星驰辅助驾驶，预计明年搭载到逾 10 款新车\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Fri, 27 Nov 2026 00:08:31 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
+    "title": "Etron chairman urges Taiwan sovereign AI fund, dismisses 2027 economic concerns",
+    "link": "https://www.digitimes.com/news/a20261126PD236/taiwan-market-chairman-2027-development.html",
+    "description": "Etron Technology chairman Nicky Lu called on Taiwan's academia and industry to draw up a sovereign AI development plan and set up a Taiwan sovereign AI fund to build an independent AI hardware and software ecosystem and edge AI systems, dismissing concerns about the 2027 economy despite recent swing",
+    "pubDate": "Fri, 27 Nov 2026 00:07:41 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "EU's EUR50 billion tech fund targets the missing link between research and industrial scale",
+    "link": "https://www.digitimes.com/news/a20261126VL218/industrial-europe-eu-financing-funding.html",
+    "description": "As technological advances accelerate and the urgency around technological sovereignty ripples across industries worldwide, Europe is intensifying its push into strategic technology sectors to narrow the competitive gap with the US and China.",
+    "pubDate": "Fri, 27 Nov 2026 00:02:24 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Why is there a shortage of 'wizard' elevator mechanics?",
+    "link": "https://www.bbc.co.uk/news/articles/c52e8k19y94mo?at_medium=RSS&at_campaign=rss",
+    "description": "The pay is good and there's lots of work, so what's behind the shortage of elevator mechanics?",
+    "pubDate": "Fri, 27 Nov 2026 00:02:19 GMT",
+    "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Iran war live: Iran’s Araghchi calls deadly Kuwait attack ‘suspicious’",
+    "link": "https://www.aljazeera.com/news/liveblog/2026/11/27/iran-war-live-irans-araghchi-calls-deadly-kuwait-attack-suspicious?traffic_source=rss",
+    "description": "Iran's FM Abbas Araghchi says the deadly Kuwait incident is \"suspicious\" and looks like a \"pre-cooked recipe\" for war.",
+    "pubDate": "Fri, 27 Nov 2026 00:00:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
+    "title": "Huawei pitches Ascend AI chips to South Korean customers",
+    "link": "https://www.digitimes.com/news/a20261126VL214/huawei-ascend-chips-nvidia-atlas.html",
+    "description": "Huawei Technologies has begun marketing its self-developed Ascend AI chips in South Korea, seeking a foothold in a market where Nvidia is expanding its business through partnerships with domestic chipmakers.",
+    "pubDate": "Thu, 26 Nov 2026 23:57:02 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor"
+  },
+  {
+    "title": "Georgian police clash with Turkiye’s Besiktas fans over Palestinian flag",
+    "link": "https://www.aljazeera.com/sports/2026/11/26/georgian-police-clash-with-turkiyes-besiktas-fans-over-palestinian-flag?traffic_source=rss",
+    "description": "Match between Besiktas and Hapoel Beer-Sheva suspended for 30 minutes after confrontation between fans and police.",
+    "pubDate": "Thu, 26 Nov 2026 23:37:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international"
+  },
+  {
     "title": "【钛晨报】部署7方面25项重点任务，《服务贸易发展“十五五”规划》印发；英伟达据悉暂停向四个东南亚国家出货服务器；四大商业银行已与上市公司签订股票回购增持贷款合同超6000亿元",
     "link": "https://www.tmtpost.com/8219586.html",
     "description": "爱奇艺触发退市警告，回应：暂不停牌，180日内整改；美团、淘宝闪购官宣：全面取消超时扣款处罚；祝丽丹起诉娃哈哈商业股份有限公司案件未开庭，法院工作人员称“已撤诉”；SpaceX官宣儿童赠股计划，马斯克个人捐赠等额匹配；三部委：积极推进5G-A网络规模覆盖，适时开展6G网络建设；五部门部署推进技工教育高质量特色发展，将建设100个优质专业；国家数据局：人工智能企业不得侵害他人隐私、商业秘密、著作权等合法权益；有饮料可以不标生产日期？市场监管总局回应；中国央行1000亿元人民币2个月国库现金定期存款定于12月1日招投标；中上协：以10月收盘价计算，上市公司境内股份总市值100万亿元；中信证券：11",
@@ -29,6 +725,14 @@
     "description": "The city marks a year since a huge blaze tore through seven apartment blocks, killing 168 people.",
     "pubDate": "Thu, 26 Nov 2026 23:03:16 GMT",
     "source": "BBC News",
+    "category": "international"
+  },
+  {
+    "title": "Black Friday hype stems from a desire 'to be part of a collective event', expert says",
+    "link": "https://www.france24.com/en/video/20261126-black-friday-hype-stems-from-a-desire-to-be-part-of-a-collective-event-expert-says",
+    "description": "Once a strictly US affair, it's become a truly global phenomenon. From shoppers hunting for bargains in Louisiana, to queues forming outside stores in Venezuela, the Black Friday sales event has become the biggest day of the year for retail foot traffic. FRANCE 24's Sharon Gaffney speaks with Olaya ",
+    "pubDate": "Thu, 26 Nov 2026 22:54:11 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
   },
   {
@@ -182,6 +886,30 @@
     "pubDate": "Thu, 26 Nov 2026 22:32:19 GMT",
     "source": "DIGITIMES: News and Insight of the Global Supply Chain",
     "category": "semiconductor"
+  },
+  {
+    "title": "RN’s antisemitic past ‘coming back to haunt them’: Will Le Pen ‘distance herself’ from Bardella?",
+    "link": "https://www.france24.com/en/rn-s-antisemitic-past-coming-back-to-haunt-them-will-le-pen-distance-herself-from-bardella",
+    "description": "Could new allegations of antisemitism damage Jordan Bardella’s standing and the far-right National Rally’s electoral prospects? Charli James is pleased to welcome Paul Smith, Associate Professor in French and Francophone Studies at the University of Nottingham. Smith examines the far-right leader’s ",
+    "pubDate": "Thu, 26 Nov 2026 22:25:03 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "Is Spain's snap election being rigged? Debunking viral claims",
+    "link": "https://www.france24.com/en/tv-shows/truth-or-fake/20261126-is-spain-s-snap-election-being-rigged-debunking-viral-claims",
+    "description": "Ahead of Spain's snap election on Sunday, allegations of vote rigging - known in Spanish as \"pucherazo\" - are spreading widely on social media. From claims that undocumented migrants are being illegally registered to vote, to allegations that postal ballots and vote counts could be manipulated, inte",
+    "pubDate": "Thu, 26 Nov 2026 22:17:06 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
+  },
+  {
+    "title": "'Citizens angry with the establishment' as Spain heads to the polls",
+    "link": "https://www.france24.com/en/tv-shows/a-propos/20261126-citizens-angry-with-the-establishment-as-spain-heads-to-the-polls",
+    "description": "Three party leaders are vying in Spain's general election on Sunday, which leftist Prime Minister Pedro Sanchez called following a parliamentary setback over housing legislation that underscored the fragility of his minority coalition government. Speaking with FRANCE 24's Sharon Gaffney, Javier Carb",
+    "pubDate": "Thu, 26 Nov 2026 22:16:50 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international"
   },
   {
     "title": "Report: CIA tortured more people with waterboarding than US agency admitted",
@@ -462,14 +1190,6 @@
     "pubDate": "Thu, 26 Nov 2026 18:51:47 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international"
-  },
-  {
-    "title": "The Best Black Friday Deals Are Now Live: Our Expert Picks for 2026",
-    "link": "https://www.wired.com/story/best-black-friday-deals-11-26-2026/",
-    "description": "The early bird gets the worm. Here are the best Black Friday deals for 2026 you can get right now.",
-    "pubDate": "Thu, 26 Nov 2026 18:49:47 +0000",
-    "source": "WIRED",
-    "category": "ai-tech"
   },
   {
     "title": "Reporters Without Borders demands suspension of controversial French TV channel CNews",
@@ -1062,14 +1782,6 @@
     "pubDate": "Thu, 26 Nov 2026 13:10:00 +0000",
     "source": "MIT Technology Review",
     "category": "ai-tech"
-  },
-  {
-    "title": "Miami runway incident disrupts flights on Thanksgiving eve",
-    "link": "https://www.bbc.co.uk/news/articles/ckm2mz3prq77o?at_medium=RSS&at_campaign=rss",
-    "description": "A FedEx aircraft overran a runway, prompting disruption on one of the busiest travel days of the year.",
-    "pubDate": "Thu, 26 Nov 2026 13:09:15 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "Is UBI the solution to mass unemployment in an AI economy?",
@@ -1728,6 +2440,14 @@
     "category": "international"
   },
   {
+    "title": "ChatGPT即将到来的大更新，为何让老用户集体破防",
+    "link": "https://www.ifanr.com/1695589?utm_source=rss&utm_medium=rss&utm_campaign",
+    "description": "20 美元的会员费，养不起一个全天候工作的 AI\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+    "pubDate": "Thu, 26 Nov 2026 09:51:52 +0000",
+    "source": "爱范儿",
+    "category": "ai-tech"
+  },
+  {
     "title": "Politics and peek-a-boo in Australian parliament as senator brings baby to work",
     "link": "https://www.bbc.co.uk/news/videos/cmvg23djw8v9o?at_medium=RSS&at_campaign=rss",
     "description": "Senator Lidia Thorpe kept 6-month-old Aaliyah entertained, as her mum Senator Fatima Payman, participated in an online safety bill debate.",
@@ -2200,68 +2920,12 @@
     "category": "international"
   },
   {
-    "title": "Tata Electronics reportedly opens talks with contractors for phase 2 of Assam chip packaging plant",
-    "link": "https://www.digitimes.com/news/a20261126VL205/tata-group-india-fab-chips-packaging-plant-cleanroom.html",
-    "description": "Tata Electronics is lining up the second phase of its semiconductor assembly and test plant in Assam before the facility has been formally inaugurated, extending a project described as India's first indigenous semiconductor assembly and test facility.",
-    "pubDate": "Thu, 26 Nov 2026 04:51:49 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Huawei offers free chip patent licenses to take on Nvidia",
-    "link": "https://www.digitimes.com/news/a20261126VL211/huawei-ascend-patent-ip-nvidia.html",
-    "description": "Huawei Technologies is offering free patent licenses for its UnifiedBus chip interconnect technology and has set up dedicated semiconductor and artificial intelligence (AI) patent teams as it seeks to attract overseas hardware suppliers and build a computing ecosystem to rival Nvidia's.",
-    "pubDate": "Thu, 26 Nov 2026 04:30:14 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "US warns of memory glut as Samsung, SK Hynix expand",
-    "link": "https://www.digitimes.com/news/a20261126VL217/samsung-sk-hynix-demand-investment-expansion.html",
-    "description": "The US has warned that South Korea's government-backed memory chip expansion could lead to a glut even as AI demand strains global supplies. The findings name Samsung Electronics and SK Hynix, although memory chips are excluded from the proposed tariffs.",
-    "pubDate": "Thu, 26 Nov 2026 04:29:11 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "荣耀 700 Pro 上手：4099 元起，主流价位档里的手机异类",
     "link": "https://www.ifanr.com/1695371?utm_source=rss&utm_medium=rss&utm_campaign",
     "description": "有诚意、有新意\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
     "pubDate": "Thu, 26 Nov 2026 04:28:11 +0000",
     "source": "爱范儿",
     "category": "ai-tech"
-  },
-  {
-    "title": "SpaceX's million-satellite approval pushes AI infrastructure into a new supply-chain frontier",
-    "link": "https://www.digitimes.com/news/a20261126VL209/infrastructure-spacex-management-financing-fcc.html",
-    "description": "As aggressive AI infrastructure buildouts continue to stretch the limits of power availability, land, and thermal management, SpaceX's longstanding ambition to extend the competitive boundaries of AI computing beyond Earth is moving closer to realization.",
-    "pubDate": "Thu, 26 Nov 2026 04:22:25 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Racecourse office blown away in Brazil",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/racecourse-office-blown-away-in-brazil?traffic_source=rss",
-    "description": "A powerful storm shattered windows and sent debris flying inside a racetrack office in Brazil.",
-    "pubDate": "Thu, 26 Nov 2026 04:17:31 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "SK Hynix eyes 100-layer 3D DRAM production by 2031",
-    "link": "https://www.digitimes.com/news/a20261126VL216/dram-sk-hynix-3d-production-manufacturing.html",
-    "description": "SK Hynix aims to mass-produce 100-layer 3D DRAM within four to five years as the South Korean chipmaker looks to overcome the limits of conventional memory scaling.",
-    "pubDate": "Thu, 26 Nov 2026 04:15:07 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "US announces new tariffs on host of countries including China",
-    "link": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss",
-    "description": "The new levies would hit many of America's biggest trading partners, including China and the EU.",
-    "pubDate": "Thu, 26 Nov 2026 04:10:58 GMT",
-    "source": "BBC News",
-    "category": "international"
   },
   {
     "title": "首款鸿蒙小折叠电脑正式发布，生态创新重新定义折叠电脑体验",
@@ -2272,52 +2936,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Macy's postpones Thanksgiving parade due to severe weather",
-    "link": "https://www.bbc.co.uk/news/articles/cwkgr38l2g9yo?at_medium=RSS&at_campaign=rss",
-    "description": "The move represents the first postponement of the iconic event, and comes after a forecast of strong winds and heavy rain.",
-    "pubDate": "Thu, 26 Nov 2026 04:04:14 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Trump's overcapacity tariffs target chips, EVs, solar in 14 economies; China calls it 'false proposition'",
-    "link": "https://www.digitimes.com/news/a20261126PD218/us-china-trade-war-overcapacity-tariffs-industrial-manufacturing-solar.html",
-    "description": "The Trump administration plans to impose new tariffs on 14 major trading partners over alleged \"excess capacity,\" with China among the main targets.",
-    "pubDate": "Thu, 26 Nov 2026 04:03:50 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "OPPO Reno17 Pro 体验：在手机里装进一只猫，分几步？",
     "link": "https://www.ifanr.com/1691222?utm_source=rss&utm_medium=rss&utm_campaign",
     "description": "哈基米，浮出机面\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
     "pubDate": "Thu, 26 Nov 2026 04:02:09 +0000",
     "source": "爱范儿",
     "category": "ai-tech"
-  },
-  {
-    "title": "Sanan Optoelectronics' new chief inherits a swing to loss, 68% share slump",
-    "link": "https://www.digitimes.com/news/a20261126VL213/sanan-optoelectronics-loss-chairman-2026-sina.html",
-    "description": "Sanan Optoelectronics has appointed Zhidong Lin as general manager. The move comes days after Kechuang Lin resigned as vice chairman and general manager for health reasons. The board approved the appointment on November 25, and Zhidong Lin will serve until the current 11th board's term ends.",
-    "pubDate": "Thu, 26 Nov 2026 03:58:26 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "“得Agent开发者，得天下”，70+技术大咖共探AI技术演进与生态变革，2026奇点智能技术大会圆满收官！",
-    "link": "https://www.tmtpost.com/8217882.html",
-    "description": "为期两天的「2026 奇点智能技术大会」与「2026 C++ 及系统软件技术大会」圆满落幕。",
-    "pubDate": "Thu, 26 Nov 2026 11:55:49 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "BOE eyes Visionox takeover as CNY4.6 billion funding crunch looms",
-    "link": "https://www.digitimes.com/news/a20261125PD231/visionox-boe-display-takeover-government.html",
-    "description": "China's display giant BOE Technology is considering acquiring fellow panel maker Visionox, expanding the target from a single OLED production line to the entire company. Reports from The Elec and DealSite said BOE executives and senior officials from the Hefei municipal government have met to discus",
-    "pubDate": "Thu, 26 Nov 2026 03:55:29 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
   },
   {
     "title": "专访《影之刃零》梁其伟：我想让年轻人觉得，中国功夫很酷丨多样性公司",
@@ -2328,187 +2952,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "被红果改写的Q3财报季",
-    "link": "https://www.tmtpost.com/8216958.html",
-    "description": "二线大厂的冬天：砍成本，赌AI",
-    "pubDate": "Thu, 26 Nov 2026 11:38:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Topco Technologies targets double-digit AI materials revenue share",
-    "link": "https://www.digitimes.com/news/a20261125PD230/topco-materials-revenue-adas-business.html",
-    "description": "Topco Technologies aims to raise AI materials to a double-digit share of revenue from current levels of 9% to 10%, while expanding into materials for humanoid robots, advanced driver-assistance systems (ADAS), energy storage, and cosmetics, chairman Chen-cheng Pan said. The company expects its optic",
-    "pubDate": "Thu, 26 Nov 2026 03:35:03 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "How new US export controls and fragile trade truces triggered sell-off in China's domestic GPU sector",
-    "link": "https://www.digitimes.com/news/a20261126VL212/us-china-trade-war-gpu-supply-chain-demand-2026.html",
-    "description": "On November 25, 2026, China's leading domestic GPU developers, including MetaX, Moore Threads, Biren Technology, and Iluvatar CoreX, suffered a sharp, synchronized sell-off. By market close, three of the four stocks hit all-time lows.",
-    "pubDate": "Thu, 26 Nov 2026 03:25:25 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "任少卿带着世界模型3.0来了！蔚来智驾训练提效5倍，座舱也用上强化学习",
-    "link": "https://www.qbitai.com/2026/11/512897.html",
-    "description": "李斌坦言：不做AI变革可能活不下去",
-    "pubDate": "Thu, 26 Nov 2026 03:23:35 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Colombian president taunts arrested supermarket hostage-takers",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/colombian-president-taunts-arrested-supermarket-hostage-takers?traffic_source=rss",
-    "description": "Colombia’s president has confronted the men who held 76 people hostage at a Cartagena supermarket.",
-    "pubDate": "Thu, 26 Nov 2026 03:23:24 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Anthropic CEO Amodei denies wanting humanity to ‘surrender’ free will to AI",
-    "link": "https://www.aljazeera.com/economy/2026/11/26/anthropic-ceo-amodei-denies-wanting-humanity-to-surrender-free-will-to-ai?traffic_source=rss",
-    "description": "Dario Amodei's remarks come amid predictions that AI may soon match or surpass human intelligence.",
-    "pubDate": "Thu, 26 Nov 2026 03:20:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "沈向洋刚讲了好多AI非共识啊",
-    "link": "https://www.qbitai.com/2026/11/512840.html",
-    "description": "“灵巧手是人类最后的尊严”",
-    "pubDate": "Thu, 26 Nov 2026 03:13:16 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "US authorizes SpaceX to launch up to one million satellites for orbital data centers",
-    "link": "https://www.france24.com/en/technology/20261126-us-authorizes-spacex-to-launch-up-to-one-million-satellites-for-orbital-data-centers",
-    "description": "The US Federal Communications Commission has approved SpaceX's plan to deploy up to one million satellites to build data centers in orbit, giving Elon Musk's company a major foothold in the industry. The authorization runs through 2040, as tech firms race to move computing infrastructure into space ",
-    "pubDate": "Thu, 26 Nov 2026 03:02:37 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "小米三季报：手机开始高端化，汽车还没走出亏损",
-    "link": "https://www.tmtpost.com/8217508.html",
-    "description": "小米能不能在继续投入新业务的同时，让旧业务保持足够的造血能力？",
-    "pubDate": "Thu, 26 Nov 2026 11:02:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "FIFA turns to influencers to promote U17 World Cup",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/fifa-turns-to-influencers-to-promote-u17-world-cup?traffic_source=rss",
-    "description": "FIFA has enlisted social media influencers to promote the Under-17 World Cup in Qatar.",
-    "pubDate": "Thu, 26 Nov 2026 03:00:51 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Japan reportedly weighs supply chain diversification requirements for critical goods",
-    "link": "https://www.digitimes.com/news/a20261126VL208/supply-chain-government-security-semiconductors-materials.html",
-    "description": "Japan is considering requiring companies that depend on semiconductors and other strategically important products to diversify their supply chains, as the government seeks to strengthen economic security and reduce reliance on individual countries and suppliers.",
-    "pubDate": "Thu, 26 Nov 2026 02:58:00 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "中产减脂流行新三件套：盒马选购、Keep训练、体脂秤验收",
-    "link": "https://www.tmtpost.com/8218241.html",
-    "description": "不买代餐了。",
-    "pubDate": "Thu, 26 Nov 2026 10:55:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "AI影视高地正在北影海淀一带崛起，「一人制片厂」基建搭好了",
-    "link": "https://www.qbitai.com/2026/11/512828.html",
-    "description": "叠满海淀最强AI Buff。",
-    "pubDate": "Thu, 26 Nov 2026 02:53:14 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "从两轮到轻四轮，一家柏林公司的出行探索",
-    "link": "https://www.tmtpost.com/8217928.html",
-    "description": "从电助力自行车到轻四轮车，Lemmo探索汽车之外的城市短途出行市场。",
-    "pubDate": "Thu, 26 Nov 2026 10:51:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "BOSS直聘Q3：营收增11.7%，利润率守住44%",
-    "link": "https://www.tmtpost.com/8217700.html",
-    "description": "BOSS直聘Q3利润坚挺，但需应对招聘需求转弱挑战。",
-    "pubDate": "Thu, 26 Nov 2026 10:48:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "从山水酒店到青乐文旅：中青旅“甩卖”背后的利润焦虑",
-    "link": "https://www.tmtpost.com/8218234.html",
-    "description": "“国家队”旅企的文旅困境。",
-    "pubDate": "Thu, 26 Nov 2026 10:43:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
     "title": "从婴儿睡袋到时尚孕产服饰，Nest Designs在  Shopee 找到了新机会",
     "link": "https://www.leiphone.com/category/industrynews/3zKYASqpb5PEKGwC.html",
     "description": "柔软的面料、利落的剪裁，带着几分运动休闲服的时尚感。如果不看产品介绍，你或许很难第一眼认出，这是一件专为孕期和产后女性设计的服装。\n对于越来越多的年轻妈妈而言，怀孕并不意味着要放弃原本的穿衣风格。她们既想要舒适自在，也希望在特殊的人生阶段，依然能够穿得好看、有个性。\n这份看似细微的消费需求，却让母婴品牌 Nest Designs 在东南亚收获了意外惊喜。\n过去，婴幼儿睡袋、睡衣一直是品牌的核心产品。出乎品牌预期的是 ，推出仅两年左右的孕产服饰，已成为东南亚市场的重要品类之一 ：在品牌全球其他主要市场，孕产服饰的销售额占比通常只有 8%至 10%，而在东南亚，这一比例最高可达 25%至 30%。",
     "pubDate": "Thu, 26 Nov 2026 10:40:00 +0800",
     "source": "雷峰网",
-    "category": "ai-tech"
-  },
-  {
-    "title": "4000亿鸡蛋市场，为何孵不出一个龙头？",
-    "link": "https://www.tmtpost.com/8218254.html",
-    "description": "品牌化、市场集中化严重不足。",
-    "pubDate": "Thu, 26 Nov 2026 10:37:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Nvidia leadership turmoil puts customer due diligence in spotlight across AI supply chain",
-    "link": "https://www.digitimes.com/news/a20261126PD205/nvidia-supply-chain-ceo-development.html",
-    "description": "Know your customer (KYC) has become a buzzword across the AI supply chain following the recent controversy surrounding Nvidia CEO Jensen Huang. Suppliers are increasingly cautious about crossing geopolitical red lines while seeking to avoid financial risks arising from hastily accepted orders.",
-    "pubDate": "Thu, 26 Nov 2026 02:34:08 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "ByteDance's Short-Video Platform Hongguo Forces Second-Tier Platforms to Bet on AI",
-    "link": "https://www.tmtpost.com/8218450.html",
-    "description": "China's second-tier entertainment companies are scrambling to cut costs and go all in on artificial intelligence.",
-    "pubDate": "Thu, 26 Nov 2026 10:31:04 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "理想汽车三季报：销量回来了，利润还没回来",
-    "link": "https://www.tmtpost.com/8217859.html",
-    "description": "现在，它需要证明自己能够在更激烈的竞争中，再做成一次。",
-    "pubDate": "Thu, 26 Nov 2026 10:31:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "YMTC now licenses NAND tech to Samsung, SK Hynix: Inside the Xtacking patent wall reshaping 400-layer memory",
-    "link": "https://www.digitimes.com/news/a20261126VL210/samsung-sk-hynix-ymtc-nand-patent.html",
-    "description": "Samsung Electronics and SK Hynix are adopting parts of Xtacking, the 3D NAND stacking technology first developed by China's Yangtze Memory Technologies Co. (YMTC), through cross-licensing deals. Nikkei Asia reported the arrangement, citing three people briefed on the matter. A Chinese company founde",
-    "pubDate": "Thu, 26 Nov 2026 02:26:05 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "腾讯音乐的尽头，是粉丝经济？",
-    "link": "https://www.tmtpost.com/8217733.html",
-    "description": "腾讯音乐的超级会员权益清单，越来越像一张景区通票。",
-    "pubDate": "Thu, 26 Nov 2026 10:26:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
     "category": "ai-tech"
   },
   {
@@ -2528,30 +2976,6 @@
     "category": "ai-tech"
   },
   {
-    "title": "字节跳动到底值多少钱？",
-    "link": "https://www.tmtpost.com/8217239.html",
-    "description": "6000亿美元是“好价格”，那字节跳动当下到底值多少钱？",
-    "pubDate": "Thu, 26 Nov 2026 10:21:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "神舟二十四号，重新分配太空里的时间",
-    "link": "https://www.tmtpost.com/8218010.html",
-    "description": "三个座位不变，如何兼顾一年驻留与短访？",
-    "pubDate": "Thu, 26 Nov 2026 10:16:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "HP and Dell see weak PC market as memory prices rise in 2027",
-    "link": "https://www.digitimes.com/news/a20261126PD212/dell-hp-pc-market-memory-2027.html",
-    "description": "HP and Dell, two leading US PC brands, expect memory prices to continue rising in 2027, though at a slower pace, while warning that the PC market will remain weak. HP said the corporate PC replacement cycle has largely ended, with the downturn that began in the second half of 2026 extending into 202",
-    "pubDate": "Thu, 26 Nov 2026 02:13:51 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "独家 | 华人 CV 先驱权龙二次创业，成立空间与物理 AI 公司「Envision AI」",
     "link": "https://www.leiphone.com/category/academic/S12DTjaFWmIPkwCk.html",
     "description": "融合语言、逻辑、几何、物理规律，要做统一和通用的空间物理原生基模。\n\n\n\n\n\n    作者丨幸丽娟\n\n    编辑丨岑   峰\n                                                                                                       \n\n\n\nAI科技评论独家获悉，香港科技大学计算机科学与工程系教授、前苹果空间智能首席科学家权龙二次创业，成立公司“Envision AI”（格秩科技），进军空间与物理 AI 赛道。\n公司的目标，是打造一个通用的空间物理原生基模：基于大语言模型，从视觉出发，把文本、图",
@@ -2560,188 +2984,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "Resonac targets 2027 production of photosensitive film for panel packaging",
-    "link": "https://www.digitimes.com/news/a20261126PR202/resonac-packaging-production-2027-demand.html",
-    "description": "Resonac has developed a photosensitive insulating film for panel-level semiconductor packaging, targeting mass production in 2027 as chipmakers look to larger package formats for high-performance devices.",
-    "pubDate": "Thu, 26 Nov 2026 02:08:45 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "影石会走GoPro的老路吗？",
-    "link": "https://www.tmtpost.com/8217862.html",
-    "description": "影石能超越GoPro，别人也能超越影石。",
-    "pubDate": "Thu, 26 Nov 2026 10:08:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "As foreign troops withdraw from Somalia, could al-Shabab take over?",
-    "link": "https://www.bbc.co.uk/news/articles/ck62y23z58yeo?at_medium=RSS&at_campaign=rss",
-    "description": "Somalia relies heavily on foreign funding and military support for its very survival.",
-    "pubDate": "Thu, 26 Nov 2026 02:06:10 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Southeast Asian governments treat new US excess-capacity tariffs as opening bid",
-    "link": "https://www.digitimes.com/news/a20261126VL207/tariffs-southeast-asia-manufacturing-capacity-2027.html?chid=10",
-    "description": "Southeast Asia's manufacturing exporters are treating Washington's latest tariff proposal as the start of a negotiation rather than a final bill. Vietnam, which has yet to sign a reciprocal trade agreement with the US, faces the steepest proposed rate. Thailand and Indonesia, which have struck deals",
-    "pubDate": "Thu, 26 Nov 2026 02:05:15 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Kim Jong Un says North Korea should widen deployment of tactical nukes",
-    "link": "https://www.aljazeera.com/news/2026/11/26/kim-jong-un-says-north-korea-should-widen-deployment-of-tactical-nukes?traffic_source=rss",
-    "description": "North Korean leader warns attempts to deny country's nuclear status will be seen as \"an open declaration of war\".",
-    "pubDate": "Thu, 26 Nov 2026 02:03:03 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "刚果（金）全面暂停钴矿出口，但这次市场只买账一天，钴的稀缺故事讲到头了",
-    "link": "https://www.tmtpost.com/8217929.html",
-    "description": "刚果（金）钴禁令难托价，钴定价锚转向下游需求。",
-    "pubDate": "Thu, 26 Nov 2026 10:03:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "从聊天助手到主动Agent，字节和腾讯再次走上对立面",
-    "link": "https://www.tmtpost.com/8217934.html",
-    "description": "大厂的另一条“战争”之路。",
-    "pubDate": "Thu, 26 Nov 2026 09:59:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "LEO satellite boom, space-based AI fuel Lightel KY 's 2027 growth outlook as capacity expansion accelerates",
-    "link": "https://www.digitimes.com/news/a20261125PD205/leo-2027-growth-laser-data.html",
-    "description": "The accelerating pace of global low-Earth-orbit (LEO) satellite launches, combined with growing interest among satellite operators in space-based AI data centers, is driving demand for laser communication terminals (LCTs) and related optical components.",
-    "pubDate": "Thu, 26 Nov 2026 01:57:31 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "ISSCC 2027 selects 10 Taiwan papers",
-    "link": "https://www.digitimes.com/news/a20261125PD209/isscc-ieee-taiwan-2027-chairman.html",
-    "description": "The IEEE International Solid-State Circuits Conference (ISSCC), known as the Olympics of chip design, has announced its 2027 paper selections. Taiwan submitted 58 papers and had 10 accepted, while China including Hong Kong and Macao submitted 460 and had 124 accepted, ranking first among all countri",
-    "pubDate": "Thu, 26 Nov 2026 01:57:22 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Acer CEO uneasy over NT$100 billion inventory, stays cautious on memory prices",
-    "link": "https://www.digitimes.com/news/a20261125PD221/acer-inventory-pc-2026.html",
-    "description": "While third-party market researchers project global PC unit shipments to decline in 2027, rising component costs are driving up average selling prices, enabling revenue and operating performance to outpace unit volume trends, according to Acer Group Chairman and CEO Jason Chen. Having outperformed t",
-    "pubDate": "Thu, 26 Nov 2026 01:56:13 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Brightek's automotive revenue set to top 50% in 2026 as Japan, South Korea, robotics deals gain traction",
-    "link": "https://www.digitimes.com/news/a20261125PD223/brightek-automotive-revenue-2026-market.html",
-    "description": "Despite China's sluggish consumer sentiment and a cooling auto market, LED packaging specialist Brightek Optoelectronic continues to deepen its penetration among tier-one Chinese automakers. With several major OEMs and supply chain partners having completed audits of its new Nantong plant, Brightek ",
-    "pubDate": "Thu, 26 Nov 2026 01:55:57 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Jih Lin Technology targets AI server PSUs with Clip leadframes",
-    "link": "https://www.digitimes.com/news/a20261125PD226/ai-server-revenue-psu-market-2026.html",
-    "description": "Power leadframe maker Jih Lin Technology is entering the AI server power supply unit (PSU) market with its Clip leadframe products, which are being validated by six customers. The company said recovering industrial automation and automotive demand, along with growing AI data center shipments, drove ",
-    "pubDate": "Thu, 26 Nov 2026 01:55:39 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "AI-driven automation is reshaping factory design, driving demand for larger sites, says Gudeng chairman",
-    "link": "https://www.digitimes.com/news/a20261125PD227/demand-automation-manufacturing-chairman-investment.html",
-    "description": "AI is driving investment across the global semiconductor and technology industries, fueling demand for new manufacturing facilities in Taiwan.",
-    "pubDate": "Thu, 26 Nov 2026 01:55:29 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "EnliTech's semiconductor inspection share nears 50% as NT$1 billion plant targets SiPh mass production",
-    "link": "https://www.digitimes.com/news/a20261125PD228/inspection-siph-production-demand-plant.html",
-    "description": "Surging demand for high-speed optical transmission in AI data centers is propelling silicon photonics (SiPh) from R&D into volume production, marking a pivotal operational shift for optical inspection equipment maker EnliTech. On November 25, the company broke ground on a new facility in the Kaohsiu",
-    "pubDate": "Thu, 26 Nov 2026 01:55:19 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "China launches 6G pilot program across eight provinces as standards work enters final stretch",
-    "link": "https://www.digitimes.com/news/a20261126VL202/6g-miit-it-development-shanghai.html",
-    "description": "China's Ministry of Industry and Information Technology (MIIT) has launched a ministry-province collaborative pilot program for 6G innovation and development, with Beijing, Hebei, Shanghai, Jiangsu, Zhejiang, Anhui, Hubei, and Guangdong approved to take part, as the country positions itself ahead of",
-    "pubDate": "Thu, 26 Nov 2026 01:54:06 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "欧洲车企对技术外包上瘾了",
-    "link": "https://www.tmtpost.com/8217936.html",
-    "description": "决定欧洲工厂价值的，正在变成中国技术。",
-    "pubDate": "Thu, 26 Nov 2026 09:53:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "最大赢家成中国厂商，SMA、SolarEdge 相继退出澳洲，户用光储市场中企狂飙突进",
-    "link": "https://www.tmtpost.com/8217930.html",
-    "description": "两家外资逆变器商收缩澳洲户用光储，中国品牌凭价格、电池配套和渠道优势占优，补贴退坡后考验本地服务与利润。",
-    "pubDate": "Thu, 26 Nov 2026 09:50:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "policy"
-  },
-  {
-    "title": "豆包也要上餐桌",
-    "link": "https://www.tmtpost.com/8217897.html",
-    "description": "抖音生服在向AI要业绩。",
-    "pubDate": "Thu, 26 Nov 2026 09:45:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "单卡3小时干翻128张卡7天：伯克利CoRL最佳论文把机器人训练成本砍掉1000倍",
-    "link": "https://www.tmtpost.com/8218079.html",
-    "description": "伯克利CoRL 2026最佳论文SuperMimic用一个可微世界模型，单卡GPU训练3小时打败128卡集群跑7天的SOTA，把人形机器人控制的算力成本砍掉1000倍。",
-    "pubDate": "Thu, 26 Nov 2026 09:43:00 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Photos: Storms and an El Nino-charged king tide batter California’s coast",
-    "link": "https://www.aljazeera.com/gallery/2026/11/26/photos-storms-and-an-el-nino-charged-king-tide-batter-californias-coast?traffic_source=rss",
-    "description": "Meteorologists have warned that the king tide could pair with high surf to bring historic surges to parts of the state.",
-    "pubDate": "Thu, 26 Nov 2026 01:40:13 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Ukraine attacks Russian military base, says five planes struck",
-    "link": "https://www.aljazeera.com/news/2026/11/26/ukraine-attacks-russian-military-base-says-five-planes-struck?traffic_source=rss",
-    "description": "The Ukrainian General Staff says its forces struck an airbase in the Nizhny Novgorod region east of Moscow.",
-    "pubDate": "Thu, 26 Nov 2026 01:39:46 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
     "title": "机器人量产背后，物理AI开始算新账：研发底座何必各自建？",
     "link": "https://www.leiphone.com/category/chips/HQvbSEUnkDy0Tos9.html",
     "description": "2026年，人形机器人加速走出实验室。\n但是让机器人在真实世界产生价值，依然复杂而成本高昂。\n从数据采集、物理仿真到模型训练、真机验证，机器人每掌握一项新技能，背后都可能是一整套研发流程的反复运转。\n更复杂的是，这些能力分散在不同的专业厂商手中。产业分工越来越细，如何将分散的技术能力组织起来，反而成了一道新的难题。\n当机器人开始规模化交付，产业需要解决的不只是如何造出更多机器人，还有如何让更多企业以更低的成本训练机器人。\n这也让物理AI产业出现了一个新的机会：谁有能力将分散的研发资源组织成可复用的基础设施，谁就有机会成为产业链上的重要组织者。\n九章云极正尝试从算力供应商向物理AI开发平台延伸，",
     "pubDate": "Thu, 26 Nov 2026 09:35:00 +0800",
     "source": "雷峰网",
     "category": "ai-tech"
-  },
-  {
-    "title": "ICE officers smash car window, pepper spray bystanders",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/ice-officers-smash-car-window-pepper-spray-bystanders?traffic_source=rss",
-    "description": "Masked ICE agents smashed a car window and forcibly opened its door to arrest a man in California.",
-    "pubDate": "Thu, 26 Nov 2026 01:33:50 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
   },
   {
     "title": "一月只开工两三天！奥迪中国回应长春工厂产能利用率跌破10%；Anthropic创始人兄妹上市次日套现37亿；小鹏智驾拟开启全球付费订阅",
@@ -2760,123 +3008,11 @@
     "category": "ai-tech"
   },
   {
-    "title": "Seoul Semiconductor begins mass production of WICOP Pixel RGB backlights for LCD TVs",
-    "link": "https://www.digitimes.com/news/a20261126PR201/seoul-semiconductor-production-lcd-technology-tv.html",
-    "description": "Seoul Semiconductor said it has entered full-scale mass production of WICOP Pixel, an RGB backlight technology developed by its subsidiary Seoul Viosys, and has begun expanding supply to global TV manufacturers, pitching the technology as a way for standard LCD panels to deliver picture quality beyo",
-    "pubDate": "Thu, 26 Nov 2026 01:26:28 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "At least 31 killed in Cairo fire after fuel truck overturns on busy highway",
-    "link": "https://www.france24.com/en/africa/20261126-at-least-31-killed-in-cairo-fire-after-fuel-truck-overturns-on-busy-highway",
-    "description": "At least 31 people were killed and 15 injured when a fuel truck overturned and burst into flames on a busy highway in Cairo on Wednesday, engulfing nearby vehicles, Egyptian authorities said.",
-    "pubDate": "Thu, 26 Nov 2026 01:25:54 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "California warns of flooding as King Tides peak over Thanksgiving",
-    "link": "https://www.bbc.co.uk/news/articles/ckn806qq760po?at_medium=RSS&at_campaign=rss",
-    "description": "Parts of the Canadian province of British Columbia may also be affected by the storms and flooding, which come as millions of people travel for the holiday.",
-    "pubDate": "Thu, 26 Nov 2026 01:22:55 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Samsung Display to become ams OSRAM's largest shareholder in microLED push",
-    "link": "https://www.digitimes.com/news/a20261126PR200/sdc-microled-technology-investment-partnership.html",
-    "description": "Samsung Display has signed an agreement to acquire a 9.1% equity interest in Ams Osram for approximately EUR210 million (US$230.14 million), a deal that is expected to make it the largest shareholder in the light-emission and optical-sensing semiconductor company, Samsung Display announced in Seoul ",
-    "pubDate": "Thu, 26 Nov 2026 01:14:43 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Powerful US storm forces historic postponement of New York's Thanksgiving Day Parade",
-    "link": "https://www.france24.com/en/americas/20261126-powerful-us-storm-forces-historic-postponement-of-thanksgiving-day-parade-in-new-york",
-    "description": "A powerful storm forecast to bring fierce winds and heavy rain to the northeastern United States has forced the unprecedented postponement of the city's 100th annual Thanksgiving Day Parade, with the event rescheduled for Saturday. Officials warned that Thursday's conditions could bring down tree li",
-    "pubDate": "Thu, 26 Nov 2026 01:11:05 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
-  },
-  {
-    "title": "Judges recommend prosecutors end corruption case against Netanyahu",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/judges-recommend-prosecutors-end-corruption-case-against-netanyahu?traffic_source=rss",
-    "description": "Israeli judges have ruled there is little prospect Benjamin Netanyahu will be convicted of corruption.",
-    "pubDate": "Thu, 26 Nov 2026 01:08:43 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Storms push Macy’s Thanksgiving Day Parade in New York City to Saturday",
-    "link": "https://www.aljazeera.com/news/2026/11/26/storms-push-macys-thanksgiving-day-parade-in-new-york-city-to-saturday?traffic_source=rss",
-    "description": "The parade, which marks its 100th edition, got a last-minute rain check ahead of heavy gusts on Thursday.",
-    "pubDate": "Thu, 26 Nov 2026 00:52:56 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "ISIL blamed for multiple suicide attacks in Syria",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/isil-blamed-for-multiple-suicide-attacks-in-syria?traffic_source=rss",
-    "description": "ISIL suicide attack kills two in an assault on a security post in northeastern Syria.",
-    "pubDate": "Thu, 26 Nov 2026 00:51:17 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Two Syrian security personnel killed in ISIL suicide attack",
-    "link": "https://www.aljazeera.com/news/2026/11/26/two-syrian-security-personnel-killed-in-isil-suicide-attack?traffic_source=rss",
-    "description": "Syrian forces say the attack in northeastern Syria's city of Hasakah involved four assailants who were all killed.",
-    "pubDate": "Thu, 26 Nov 2026 00:41:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "刚刚，黎曼猜想证明代码暴砍了99.5%！只剩7.6万行",
-    "link": "https://www.qbitai.com/2026/11/512819.html",
-    "description": "合着全让A➗揽了",
-    "pubDate": "Thu, 26 Nov 2026 00:40:37 +0000",
-    "source": "量子位",
-    "category": "ai-tech"
-  },
-  {
-    "title": "The US pastor who wants to see women's right to vote overturned",
-    "link": "https://www.bbc.co.uk/news/articles/cwe89jyz4012o?at_medium=RSS&at_campaign=rss",
-    "description": "The movement to repeal women's right to vote has gained traction amongst some very conservative Christians.",
-    "pubDate": "Thu, 26 Nov 2026 00:24:25 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Spanish elections: What you need to know and what's at stake",
-    "link": "https://www.bbc.co.uk/news/articles/c6wy4ejnyvdyo?at_medium=RSS&at_campaign=rss",
-    "description": "After eight years of Socialist-led rule, snap elections are taking place on Sunday with conservative Alberto Núñez Feijóo vying to win office.",
-    "pubDate": "Thu, 26 Nov 2026 00:23:49 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
     "title": "France's political mainstream risks presidential vote debacle with no clear candidate",
     "link": "https://www.bbc.co.uk/news/articles/cq772vedgepro?at_medium=RSS&at_campaign=rss",
     "description": "Hard-right and hard-left candidates dominate the polls ahead of next year's presidential election.",
     "pubDate": "Thu, 26 Nov 2026 00:23:27 GMT",
     "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Has global jihadism failed, or is it simply changing shape?",
-    "link": "https://www.bbc.co.uk/news/articles/cmx2x4e0n5jro?at_medium=RSS&at_campaign=rss",
-    "description": "Jihadist groups appear to be focusing on local issues rather than global terror. Does it signify a real change?",
-    "pubDate": "Thu, 26 Nov 2026 00:22:18 GMT",
-    "source": "BBC News",
-    "category": "international"
-  },
-  {
-    "title": "Zambia bans protest against push to remove presidential term limits",
-    "link": "https://www.aljazeera.com/news/2026/11/26/zambia-bans-protest-against-push-to-remove-presidential-term-limits?traffic_source=rss",
-    "description": "Critics fear the campaign could undermine democratic safeguards as senior opposition figures remain behind bars.",
-    "pubDate": "Thu, 26 Nov 2026 00:22:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
     "category": "international"
   },
   {
@@ -2888,108 +3024,12 @@
     "category": "ai-tech"
   },
   {
-    "title": "A meeting with Democrats over healthcare? Trump says he’s open to it",
-    "link": "https://www.aljazeera.com/news/2026/11/26/a-meeting-with-democrats-over-healthcare-trump-says-hes-open-to-it?traffic_source=rss",
-    "description": "Experts tell Al Jazeera they are sceptical that Trump would back Medicare for All, a proposal for national healthcare.",
-    "pubDate": "Thu, 26 Nov 2026 00:18:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Tesla-SpaceX merger talks advance, but China exposure tests Musk's vertical integration ambitions",
-    "link": "https://www.digitimes.com/news/a20261125VL224/tesla-spacex-merger-vertical-integration-elon-musk.html",
-    "description": "As Tesla and SpaceX move from conceptual discussions toward formal merger negotiations, the prospect of what could become the largest corporate merger in history is lending further momentum to Elon Musk's ambitions to consolidate his sprawling technology businesses.",
-    "pubDate": "Thu, 26 Nov 2026 00:08:48 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Samsung returns to package substrates with Exynos 2700",
-    "link": "https://www.digitimes.com/news/a20261125VL227/samsung-exynos-ap-business-mobile-substrate.html",
-    "description": "Samsung Electronics is reportedly returning to conventional package substrates for its Exynos 2700 mobile processor after nearly three years, bringing new business to affiliate Samsung Electro-Mechanics (Semco) as the smartphone maker seeks to expand the use of its own chips.",
-    "pubDate": "Thu, 26 Nov 2026 00:07:19 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "LG Display's overseas patents rise 32.5% as Chinese OLED rivals expand",
-    "link": "https://www.digitimes.com/news/a20261125VL230/lg-display-patent-oled-panel-2026.html",
-    "description": "LG Display (LGD) increased its overseas patent registrations by 32.5% in the first nine months of 2026 as Chinese display makers expand beyond smartphone OLED panels into notebooks and tablets.",
-    "pubDate": "Thu, 26 Nov 2026 00:06:54 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "China AI server records reveal US$270 million in assets linked to Alice Huang",
-    "link": "https://www.digitimes.com/news/a20261125VL231/nvidia-equipment-financing-investment-capacity.html?chid=10",
-    "description": "Companies linked to Alice Huang, who formerly controlled Singapore-based Megaspeed, used hundreds of AI servers and computing modules to obtain financing in China, highlighting the role of equipment leasing and asset-backed lending in the country's AI infrastructure expansion.",
-    "pubDate": "Thu, 26 Nov 2026 00:06:11 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "US Section 301 proposal puts Vietnam and India at top of tariff ladder, ties rates to trade deals",
-    "link": "https://www.digitimes.com/news/a20261126VL200/tariffs.html?chid=10",
-    "description": "The US Trade Representative's proposed tariffs on 14 economies over manufacturing overcapacity would leave Taiwan, Japan and South Korea on the lowest-rate tier while placing the steepest headline rates on Vietnam and India. These two economies have yet to conclude trade agreements with Washington.",
-    "pubDate": "Thu, 26 Nov 2026 00:05:38 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "US proposes tariffs of up to 25% on Indian goods; New Delhi rejects excess-capacity finding",
-    "link": "https://www.digitimes.com/news/a20261126VL201/capacity-manufacturing-investigation-2026-government.html?chid=10",
-    "description": "The US has proposed tariffs of up to 25% on all goods from India after concluding a Section 301 investigation into structural excess capacity in manufacturing, prompting India's Ministry of Commerce and Industry to reject the finding and call for the issue to be settled in bilateral trade talks.",
-    "pubDate": "Thu, 26 Nov 2026 00:04:40 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
-    "title": "Now Google’s Familiar Faces AI feature works on Walmart’s $35 smart home camera too",
-    "link": "https://www.theverge.com/tech/1042938/google-home-familiar-faces-onn-cameras",
-    "description": "A couple of Walmart's budget-friendly smart home cameras will be able to recognize people around your house now using Google's familiar face detection feature. A new Google Home update brings Familiar Faces support to the $35 Onn Outdoor Camera Plug-In and $77 Onn Floodlight Camera Hardwired. Howeve",
-    "pubDate": "2026-11-26T00:04:34.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "US Section 301 plan keeps Taiwan at 15% but raises stakes for Taiwanese factories in Southeast Asia",
-    "link": "https://www.digitimes.com/news/a20261126VL203/taiwan-asia-production-overcapacity-exports.html",
-    "description": "Taiwan has secured a place in the lowest tier of Washington's proposed overcapacity tariffs. Still, Taiwanese manufacturers that moved production to Southeast Asia face higher proposed rates in their host countries, because the duties are set by where goods are made rather than where a company is li",
-    "pubDate": "Thu, 26 Nov 2026 00:03:37 GMT",
-    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
-    "category": "semiconductor"
-  },
-  {
     "title": "早报｜手机厂商集体下调明年出货目标，曝小米降幅达25%/小鹏悠游开启主驾无人载客/宕机后，微软进入「红色警报」",
     "link": "https://www.ifanr.com/1695128?utm_source=rss&utm_medium=rss&utm_campaign",
     "description": "· Counterpoint：2027 年全球智能手机出货量预计再降 6%，2028 年反弹 6%\r\n· 理想汽车 2026 年 Q3 营收 288.34 亿元，经营与自由现金流转正\r\n· 26.99 万元起，宝马首款国产新世代车型 iX3 上市并开始交付\n#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
     "pubDate": "Thu, 26 Nov 2026 00:02:57 +0000",
     "source": "爱范儿",
     "category": "ai-tech"
-  },
-  {
-    "title": "Iran war live: Explosion rocks Sanaa; missiles intercepted over Riyadh",
-    "link": "https://www.aljazeera.com/news/liveblog/2026/11/26/iran-war-live-explosion-rocks-sanaa-missiles-intercepted-over-riyadh?traffic_source=rss",
-    "description": "A blast hits Sanaa after air strikes near the airport, as the Saudi coalition intercepts missiles over Riyadh.",
-    "pubDate": "Thu, 26 Nov 2026 00:00:00 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international"
-  },
-  {
-    "title": "Amazon loses its latest attempt to get out of handling more recall notices",
-    "link": "https://www.theverge.com/tech/1042870/amazon-recall-order-cpsc",
-    "description": "Amazon is on the hook to recall more than 400,000 hazardous products after losing its legal battle against the US Consumer Product Safety Commission (CPSC). The US District Court for the District of Maryland ruled in favor of the CPSC, which argued that Amazon is a distributor of goods, not a logist",
-    "pubDate": "2026-11-25T23:56:44.000Z",
-    "source": "The Verge",
-    "category": "ai-tech"
-  },
-  {
-    "title": "Duran Duran guitarist Andy Taylor dies aged 65",
-    "link": "https://www.france24.com/en/culture/20261125-duran-duran-guitarist-andy-taylor-dies-aged-65",
-    "description": "Andy Taylor, whose guitar riffs helped shape Duran Duran's distinctive sound and propel the British band to global fame in the 1980s, has died aged 65 after a long battle with prostate cancer, the band and his family said Wednesday.",
-    "pubDate": "Wed, 25 Nov 2026 23:37:18 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international"
   },
   {
     "title": "A renovation was meant to improve these Hong Kong homes - it ended in a blaze that killed 168",
@@ -3224,220 +3264,769 @@
     "category": "ai-tech"
   },
   {
-    "title": "How Vention is cutting factory programming from weeks to minutes",
-    "link": "https://www.therobotreport.com/how-vention-is-cutting-factory-programming-from-weeks-to-minutes/",
-    "description": "Etienne Lacroix explains why AI deployment—not just better models—will define the future of industrial automation.\nThe post How Vention is cutting factory programming from weeks to minutes appeared first on The Robot Report.",
-    "pubDate": "Wed, 25 Nov 2026 18:24:42 +0000",
-    "source": "The Robot Report",
-    "category": "ai-tech"
+    "title": "Tata Electronics reportedly opens talks with contractors for phase 2 of Assam chip packaging plant",
+    "link": "https://www.digitimes.com/news/a20261126VL205/tata-group-india-fab-chips-packaging-plant-cleanroom.html",
+    "description": "Tata Electronics is lining up the second phase of its semiconductor assembly and test plant in Assam before the facility has been formally inaugurated, extending a project described as India's first indigenous semiconductor assembly and test facility.",
+    "pubDate": "Thu, 26 Nov 2026 04:51:49 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "The FCC has authorized SpaceX to deploy 1 million satellites",
-    "link": "https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/",
-    "description": "This constellation would increase the number of satellites in orbit by roughly 50-fold.",
-    "pubDate": "Wed, 25 Nov 2026 18:22:38 +0000",
-    "source": "Ars Technica",
-    "category": "ai-tech"
+    "title": "Huawei offers free chip patent licenses to take on Nvidia",
+    "link": "https://www.digitimes.com/news/a20261126VL211/huawei-ascend-patent-ip-nvidia.html",
+    "description": "Huawei Technologies is offering free patent licenses for its UnifiedBus chip interconnect technology and has set up dedicated semiconductor and artificial intelligence (AI) patent teams as it seeks to attract overseas hardware suppliers and build a computing ecosystem to rival Nvidia's.",
+    "pubDate": "Thu, 26 Nov 2026 04:30:14 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "Want to buy your kid an AI toy this Christmas? Not in New York",
-    "link": "https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/",
-    "description": "New York has banned AI chatbot toys for five years as new research from Common Sense Media reveals troubling safety failures, including exposure to inappropriate content and risks to emotional development.",
-    "pubDate": "Wed, 25 Nov 2026 18:11:46 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "US warns of memory glut as Samsung, SK Hynix expand",
+    "link": "https://www.digitimes.com/news/a20261126VL217/samsung-sk-hynix-demand-investment-expansion.html",
+    "description": "The US has warned that South Korea's government-backed memory chip expansion could lead to a glut even as AI demand strains global supplies. The findings name Samsung Electronics and SK Hynix, although memory chips are excluded from the proposed tariffs.",
+    "pubDate": "Thu, 26 Nov 2026 04:29:11 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "CXO Interview with Osman Chaudry of yieldWerx",
-    "link": "https://semiwiki.com/eda/yieldwerx/376626-cxo-interview-with-osman-chaudry-of-yieldwerx/",
-    "description": "Osman Chaudry is a business and technology leader with over 25 years of experience in software development, investment management, and e-commerce. With a Bachelor of Engineering (BEng) in Information Systems Engineering from Imperial College London, he has a proven track record of driving success in",
-    "pubDate": "Wed, 25 Nov 2026 18:00:37 +0000",
-    "source": "SemiWiki",
-    "category": "semiconductor"
+    "title": "SpaceX's million-satellite approval pushes AI infrastructure into a new supply-chain frontier",
+    "link": "https://www.digitimes.com/news/a20261126VL209/infrastructure-spacex-management-financing-fcc.html",
+    "description": "As aggressive AI infrastructure buildouts continue to stretch the limits of power availability, land, and thermal management, SpaceX's longstanding ambition to extend the competitive boundaries of AI computing beyond Earth is moving closer to realization.",
+    "pubDate": "Thu, 26 Nov 2026 04:22:25 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "Turning Optical Telemetry into Cluster Reliability: Integrating Link Health Data into Monitoring and Ticketing",
-    "link": "https://www.eetimes.com/turning-optical-telemetry-into-cluster-reliability-integrating-link-health-data-into-monitoring-and-ticketing/",
-    "description": "Explore how integrating optical link health data into monitoring and ticketing can help teams improve cluster reliability.\nThe post Turning Optical Telemetry into Cluster Reliability: Integrating Link Health Data into Monitoring and Ticketing appeared first on EE Times.",
-    "pubDate": "Wed, 25 Nov 2026 18:00:22 +0000",
-    "source": "EE Times",
-    "category": "semiconductor"
+    "title": "Racecourse office blown away in Brazil",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/racecourse-office-blown-away-in-brazil?traffic_source=rss",
+    "description": "A powerful storm shattered windows and sent debris flying inside a racetrack office in Brazil.",
+    "pubDate": "Thu, 26 Nov 2026 04:17:31 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "The Suzuki Ignis is back, and this time it will be a low-cost EV sold globally [Images]",
-    "link": "https://electrek.co/2026/11/25/suzuki-revives-ignis-low-cost-global-ev-images/",
-    "description": "Suzuki offered a first look at the all-new Ignis, its first compact EV designed specifically for global markets.\nmore…",
-    "pubDate": "Wed, 25 Nov 2026 17:46:20 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
+    "title": "SK Hynix eyes 100-layer 3D DRAM production by 2031",
+    "link": "https://www.digitimes.com/news/a20261126VL216/dram-sk-hynix-3d-production-manufacturing.html",
+    "description": "SK Hynix aims to mass-produce 100-layer 3D DRAM within four to five years as the South Korean chipmaker looks to overcome the limits of conventional memory scaling.",
+    "pubDate": "Thu, 26 Nov 2026 04:15:07 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "DOJ accuses former cyber executive of defrauding ransomware victims by secretly paying hackers",
-    "link": "https://techcrunch.com/2026/11/25/doj-accuses-former-cyber-executive-of-defrauding-ransomware-victims-by-secretly-paying-hackers/",
-    "description": "U.S. prosecutors accused the former executive of defrauding victims of ransomware by paying the hackers, charging victims more, and pocketing the difference.",
-    "pubDate": "Wed, 25 Nov 2026 17:36:51 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "US announces new tariffs on host of countries including China",
+    "link": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss",
+    "description": "The new levies would hit many of America's biggest trading partners, including China and the EU.",
+    "pubDate": "Thu, 26 Nov 2026 04:10:58 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Character.AI’s plan to auction off users’ private chats challenged by state AGs",
-    "link": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/",
-    "description": "The proposed Character.ai bankruptcy sale includes sensitive personal data from more than 21 million U.S. accounts, including 2.1 million registered to minors, the state AGs said.",
-    "pubDate": "Wed, 25 Nov 2026 17:35:58 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "Macy's postpones Thanksgiving parade due to severe weather",
+    "link": "https://www.bbc.co.uk/news/articles/cwkgr38l2g9yo?at_medium=RSS&at_campaign=rss",
+    "description": "The move represents the first postponement of the iconic event, and comes after a forecast of strong winds and heavy rain.",
+    "pubDate": "Thu, 26 Nov 2026 04:04:14 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "AI Makes Formal Verification Practical",
-    "link": "https://www.eetimes.com/ai-makes-formal-verification-practical/",
-    "description": "AI model startup Harmonic is expanding into formal verification for software and hardware.\nThe post AI Makes Formal Verification Practical appeared first on EE Times.",
-    "pubDate": "Wed, 25 Nov 2026 17:34:58 +0000",
-    "source": "EE Times",
-    "category": "semiconductor"
+    "title": "Trump's overcapacity tariffs target chips, EVs, solar in 14 economies; China calls it 'false proposition'",
+    "link": "https://www.digitimes.com/news/a20261126PD218/us-china-trade-war-overcapacity-tariffs-industrial-manufacturing-solar.html",
+    "description": "The Trump administration plans to impose new tariffs on 14 major trading partners over alleged \"excess capacity,\" with China among the main targets.",
+    "pubDate": "Thu, 26 Nov 2026 04:03:50 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "Ladybird browser's first downloadable alpha is surprisingly capable",
-    "link": "https://arstechnica.com/gadgets/2026/11/ladybirds-new-alpha-shows-theres-life-beyond-chromium/",
-    "description": "An independent browser engine arrives on Linux and macOS, and we've tried it.",
-    "pubDate": "Wed, 25 Nov 2026 17:33:30 +0000",
-    "source": "Ars Technica",
-    "category": "ai-tech"
+    "title": "Sanan Optoelectronics' new chief inherits a swing to loss, 68% share slump",
+    "link": "https://www.digitimes.com/news/a20261126VL213/sanan-optoelectronics-loss-chairman-2026-sina.html",
+    "description": "Sanan Optoelectronics has appointed Zhidong Lin as general manager. The move comes days after Kechuang Lin resigned as vice chairman and general manager for health reasons. The board approved the appointment on November 25, and Zhidong Lin will serve until the current 11th board's term ends.",
+    "pubDate": "Thu, 26 Nov 2026 03:58:26 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "X’s latest update for creators focuses on vertical video",
-    "link": "https://techcrunch.com/2026/11/25/xs-latest-update-for-creators-focuses-on-vertical-video/",
-    "description": "As short-form video ramps up in popularity, X's new creation tools are part of its effort to compete with YouTube and Instagram.",
-    "pubDate": "Wed, 25 Nov 2026 17:28:29 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "“得Agent开发者，得天下”，70+技术大咖共探AI技术演进与生态变革，2026奇点智能技术大会圆满收官！",
+    "link": "https://www.tmtpost.com/8217882.html",
+    "description": "为期两天的「2026 奇点智能技术大会」与「2026 C++ 及系统软件技术大会」圆满落幕。",
+    "pubDate": "Thu, 26 Nov 2026 11:55:49 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Etsy clarifies AI terms after seller backlash",
-    "link": "https://arstechnica.com/tech-policy/2026/11/etsy-clarifies-ai-terms-after-seller-backlash/",
-    "description": "One veteran illustrator dismisses revisions as \"sugar coating.\"",
-    "pubDate": "Wed, 25 Nov 2026 17:12:57 +0000",
-    "source": "Ars Technica",
-    "category": "ai-tech"
+    "title": "BOE eyes Visionox takeover as CNY4.6 billion funding crunch looms",
+    "link": "https://www.digitimes.com/news/a20261125PD231/visionox-boe-display-takeover-government.html",
+    "description": "China's display giant BOE Technology is considering acquiring fellow panel maker Visionox, expanding the target from a single OLED production line to the entire company. Reports from The Elec and DealSite said BOE executives and senior officials from the Hefei municipal government have met to discus",
+    "pubDate": "Thu, 26 Nov 2026 03:55:29 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "FCC should focus on robot security, not country of origin",
-    "link": "https://www.therobotreport.com/fcc-should-focus-on-robot-security-not-country-of-origin/",
-    "description": "Where a robot was assembled tells you little about who controls it once it's deployed, writes Brain Corp CEO David Pinn.\nThe post FCC should focus on robot security, not country of origin appeared first on The Robot Report.",
-    "pubDate": "Wed, 25 Nov 2026 17:00:07 +0000",
-    "source": "The Robot Report",
-    "category": "ai-tech"
+    "title": "被红果改写的Q3财报季",
+    "link": "https://www.tmtpost.com/8216958.html",
+    "description": "二线大厂的冬天：砍成本，赌AI",
+    "pubDate": "Thu, 26 Nov 2026 11:38:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "How data centers are driving a US natural-gas boom",
-    "link": "https://www.technologyreview.com/2026/11/25/1149836/data-centers-gas-power-plants/",
-    "description": "In May 2025, my colleague David Rotman wrote a feature story describing how AI could keep us dependent on natural gas. Just 18 months later, I’ve lost count of how many times he’s already been proved right. Sure, it’s technically possible to meet the world’s rising electricity demand with other powe",
-    "pubDate": "Wed, 25 Nov 2026 17:00:00 +0000",
-    "source": "MIT Technology Review",
-    "category": "ai-tech"
+    "title": "Topco Technologies targets double-digit AI materials revenue share",
+    "link": "https://www.digitimes.com/news/a20261125PD230/topco-materials-revenue-adas-business.html",
+    "description": "Topco Technologies aims to raise AI materials to a double-digit share of revenue from current levels of 9% to 10%, while expanding into materials for humanoid robots, advanced driver-assistance systems (ADAS), energy storage, and cosmetics, chairman Chen-cheng Pan said. The company expects its optic",
+    "pubDate": "Thu, 26 Nov 2026 03:35:03 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "WhatsApp now lets you schedule messages in group and individual chats",
-    "link": "https://techcrunch.com/2026/11/25/whatsapp-now-lets-you-schedule-messages-in-group-and-individual-chats/",
-    "description": "Users can schedule messages from 10 minutes later to after 14 days.",
-    "pubDate": "Wed, 25 Nov 2026 16:57:51 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "How new US export controls and fragile trade truces triggered sell-off in China's domestic GPU sector",
+    "link": "https://www.digitimes.com/news/a20261126VL212/us-china-trade-war-gpu-supply-chain-demand-2026.html",
+    "description": "On November 25, 2026, China's leading domestic GPU developers, including MetaX, Moore Threads, Biren Technology, and Iluvatar CoreX, suffered a sharp, synchronized sell-off. By market close, three of the four stocks hit all-time lows.",
+    "pubDate": "Thu, 26 Nov 2026 03:25:25 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "Ars Live recap: Don’t expect military attacks on data centers to stop",
-    "link": "https://arstechnica.com/gadgets/2026/11/ars-live-recap-dont-expect-military-attacks-on-data-centers-to-stop/",
-    "description": "Militaries have many reasons to target data centers and the cloud in wartime.",
-    "pubDate": "Wed, 25 Nov 2026 16:47:14 +0000",
-    "source": "Ars Technica",
-    "category": "ai-tech"
+    "title": "任少卿带着世界模型3.0来了！蔚来智驾训练提效5倍，座舱也用上强化学习",
+    "link": "https://www.qbitai.com/2026/11/512897.html",
+    "description": "李斌坦言：不做AI变革可能活不下去",
+    "pubDate": "Thu, 26 Nov 2026 03:23:35 +0000",
+    "source": "量子位",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "US readies tariffs over manufacturing capacity, production concerns",
-    "link": "https://www.supplychaindive.com/news/us-readies-tariffs-over-manufacturing-capacity-production-concerns/875639/",
-    "description": "The proposed levies, ranging from 15% to 35%, target goods from China, the European Union and 12 other partners following a Section 301 probe earlier this year.",
-    "pubDate": "Wed, 25 Nov 2026 11:34:26 -0500",
-    "source": "Supply Chain Dive - Latest News",
-    "category": "supply-chain"
+    "title": "Colombian president taunts arrested supermarket hostage-takers",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/colombian-president-taunts-arrested-supermarket-hostage-takers?traffic_source=rss",
+    "description": "Colombia’s president has confronted the men who held 76 people hostage at a Cartagena supermarket.",
+    "pubDate": "Thu, 26 Nov 2026 03:23:24 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Guilty: Huawei faces steep penalties for stealing T-Mobile, Cisco trade secrets",
-    "link": "https://arstechnica.com/tech-policy/2026/11/jury-convicts-huawei-of-stealing-us-trade-secrets-evading-iran-sanctions/",
-    "description": "Huawei didn’t try very hard to hide thefts of US trade secrets, DOJ says.",
-    "pubDate": "Wed, 25 Nov 2026 16:33:45 +0000",
-    "source": "Ars Technica",
-    "category": "ai-tech"
+    "title": "Anthropic CEO Amodei denies wanting humanity to ‘surrender’ free will to AI",
+    "link": "https://www.aljazeera.com/economy/2026/11/26/anthropic-ceo-amodei-denies-wanting-humanity-to-surrender-free-will-to-ai?traffic_source=rss",
+    "description": "Dario Amodei's remarks come amid predictions that AI may soon match or surpass human intelligence.",
+    "pubDate": "Thu, 26 Nov 2026 03:20:23 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "PETA alleges animal abuse in PepsiCo’s supply chain",
-    "link": "https://www.supplychaindive.com/news/peta-alleges-animal-abuse-in-pepsicos-supply-chain/875654/",
-    "description": "The group submitted a proposal on behalf of two PepsiCo shareholders that alleges its sugar sourcing practices pose risks to animal welfare.",
-    "pubDate": "Wed, 25 Nov 2026 11:17:00 -0500",
-    "source": "Supply Chain Dive - Latest News",
-    "category": "supply-chain"
+    "title": "沈向洋刚讲了好多AI非共识啊",
+    "link": "https://www.qbitai.com/2026/11/512840.html",
+    "description": "“灵巧手是人类最后的尊严”",
+    "pubDate": "Thu, 26 Nov 2026 03:13:16 +0000",
+    "source": "量子位",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Mammotion LUBA Mini 2 AWD robot mower $1,599 low, EGO Multi-Head string trimmer $300 low + portable area light $199, more",
-    "link": "https://electrek.co/2026/11/25/mammotion-luba-mini-2-awd-robot-mower-ego-multi-head-string-trimmer-portable-area-light-more/",
-    "description": "The Amazon Black Friday Sale is in full swing, and with it comes a large amount of tool deals, some of which are featured below, while the rest can all be found within our Black Friday Green Deals hub. There’s an autonomous upgrade in the Mammotion 2026 LUBA Mini 2 AWD 1500H Robot Lawn Mower down at",
-    "pubDate": "Wed, 25 Nov 2026 16:06:34 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
+    "title": "US authorizes SpaceX to launch up to one million satellites for orbital data centers",
+    "link": "https://www.france24.com/en/technology/20261126-us-authorizes-spacex-to-launch-up-to-one-million-satellites-for-orbital-data-centers",
+    "description": "The US Federal Communications Commission has approved SpaceX's plan to deploy up to one million satellites to build data centers in orbit, giving Elon Musk's company a major foothold in the industry. The authorization runs through 2040, as tech firms race to move computing infrastructure into space ",
+    "pubDate": "Thu, 26 Nov 2026 03:02:37 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "USA wollen neuen 15-Prozent-Zoll für EU-Importe",
-    "link": "https://www.dw.com/de/usa-wollen-neuen-15-prozent-zoll-für-eu-importe/a-80045806?maca=de-rss-de-all-1119-rdf",
-    "description": "Der US-Handelsbeauftragte bestätigt Berichte, wonach der Zollkonflikt zwischen den USA und deren wichtigsten Handelspartnern in die nächste Runde geht. Für etliche Länder könnte es teuer werden.",
-    "pubDate": "2026-11-25T15:57:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "小米三季报：手机开始高端化，汽车还没走出亏损",
+    "link": "https://www.tmtpost.com/8217508.html",
+    "description": "小米能不能在继续投入新业务的同时，让旧业务保持足够的造血能力？",
+    "pubDate": "Thu, 26 Nov 2026 11:02:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "EU pushes back Tesla ‘Full Self-Driving’ vote meeting again, now set for December 15",
-    "link": "https://electrek.co/2026/11/25/eu-delays-tesla-fsd-vote-december-15-tcmv/",
-    "description": "The EU committee that could approve Tesla’s “Full Self-Driving,” now sold in Europe as Tesla Assisted Driving, across the whole bloc won’t meet on December 1 as planned. The meeting is now December 15.\nA European Commission spokesperson confirmed the new date to Reuters. The Technical Committee on M",
-    "pubDate": "Wed, 25 Nov 2026 15:45:37 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
+    "title": "FIFA turns to influencers to promote U17 World Cup",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/fifa-turns-to-influencers-to-promote-u17-world-cup?traffic_source=rss",
+    "description": "FIFA has enlisted social media influencers to promote the Under-17 World Cup in Qatar.",
+    "pubDate": "Thu, 26 Nov 2026 03:00:51 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
   },
   {
-    "title": "Volkswagen’s new affordable electric SUV gets a sporty upgrade with GTI DNA",
-    "link": "https://electrek.co/2026/11/25/vws-affordable-electric-suv-sporty-upgrade-gti-dna/",
-    "description": "Volkswagen gave its entry-level electric SUV a sporty makeover with GTI-inspired performance. The new ID. Cross R-Line tops the range with added power and style, but there’s more to it than meets the eye.\nmore…",
-    "pubDate": "Wed, 25 Nov 2026 15:44:05 +0000",
-    "source": "Electrek",
-    "category": "ai-tech"
+    "title": "Japan reportedly weighs supply chain diversification requirements for critical goods",
+    "link": "https://www.digitimes.com/news/a20261126VL208/supply-chain-government-security-semiconductors-materials.html",
+    "description": "Japan is considering requiring companies that depend on semiconductors and other strategically important products to diversify their supply chains, as the government seeks to strengthen economic security and reduce reliance on individual countries and suppliers.",
+    "pubDate": "Thu, 26 Nov 2026 02:58:00 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
   },
   {
-    "title": "Lead azide detonation sends clouds over Iowa as questions of health risks swirl",
-    "link": "https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/",
-    "description": "Prior modeling estimated the plume would cover hundreds of square miles.",
-    "pubDate": "Wed, 25 Nov 2026 15:35:17 +0000",
-    "source": "Ars Technica",
-    "category": "ai-tech"
+    "title": "中产减脂流行新三件套：盒马选购、Keep训练、体脂秤验收",
+    "link": "https://www.tmtpost.com/8218241.html",
+    "description": "不买代餐了。",
+    "pubDate": "Thu, 26 Nov 2026 10:55:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "EU-Kommission wegen Untätigkeit bei Käfighaltung verurteilt",
-    "link": "https://www.dw.com/de/eu-kommission-wegen-untätigkeit-bei-käfighaltung-verurteilt/a-80049946?maca=de-rss-de-all-1119-rdf",
-    "description": "Aktivisten hatten vor einigen Jahren rund 1,4 Millionen Unterschriften für ein Verbot der Käfighaltung gesammelt. Die EU-Kommission reagierte allerdings zu zögerlich, wie das EU-Gericht in Luxemburg feststellte.",
-    "pubDate": "2026-11-25T15:19:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "AI影视高地正在北影海淀一带崛起，「一人制片厂」基建搭好了",
+    "link": "https://www.qbitai.com/2026/11/512828.html",
+    "description": "叠满海淀最强AI Buff。",
+    "pubDate": "Thu, 26 Nov 2026 02:53:14 +0000",
+    "source": "量子位",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Allstate suffers multiday tech outage ahead of Thanksgiving",
-    "link": "https://techcrunch.com/2026/11/25/allstate-suffers-multi-day-tech-outage-ahead-of-thanksgiving/",
-    "description": "The disruption comes at a particularly bad time for the insurance giant, as millions of Americans prepare to travel for the Thanksgiving holiday weekend.",
-    "pubDate": "Wed, 25 Nov 2026 15:08:37 +0000",
-    "source": "TechCrunch",
-    "category": "ai-tech"
+    "title": "从两轮到轻四轮，一家柏林公司的出行探索",
+    "link": "https://www.tmtpost.com/8217928.html",
+    "description": "从电助力自行车到轻四轮车，Lemmo探索汽车之外的城市短途出行市场。",
+    "pubDate": "Thu, 26 Nov 2026 10:51:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
   },
   {
-    "title": "Ungarn-Ukraine: Peter Magyar und Wolodymyr Selenskyj wagen Neustart",
-    "link": "https://www.dw.com/de/ungarn-ukraine-peter-magyar-und-wolodymyr-selenskyj-wagen-neustart/a-80048613?maca=de-rss-de-all-1119-rdf",
-    "description": "Lange vergiftete Viktor Orbans prorussischer Kurs Ungarns Verhältnis zur Ukraine. Nun schaffen Premier Magyar und Präsident Selenskyj bei einem Treffen eine neue Vertrauensbasis - und vereinbaren konkrete Schritte.",
-    "pubDate": "2026-11-25T14:52:00.000Z",
-    "source": "Deutsche Welle: DW.com Deutsch",
-    "category": "international"
+    "title": "BOSS直聘Q3：营收增11.7%，利润率守住44%",
+    "link": "https://www.tmtpost.com/8217700.html",
+    "description": "BOSS直聘Q3利润坚挺，但需应对招聘需求转弱挑战。",
+    "pubDate": "Thu, 26 Nov 2026 10:48:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "从山水酒店到青乐文旅：中青旅“甩卖”背后的利润焦虑",
+    "link": "https://www.tmtpost.com/8218234.html",
+    "description": "“国家队”旅企的文旅困境。",
+    "pubDate": "Thu, 26 Nov 2026 10:43:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "4000亿鸡蛋市场，为何孵不出一个龙头？",
+    "link": "https://www.tmtpost.com/8218254.html",
+    "description": "品牌化、市场集中化严重不足。",
+    "pubDate": "Thu, 26 Nov 2026 10:37:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Nvidia leadership turmoil puts customer due diligence in spotlight across AI supply chain",
+    "link": "https://www.digitimes.com/news/a20261126PD205/nvidia-supply-chain-ceo-development.html",
+    "description": "Know your customer (KYC) has become a buzzword across the AI supply chain following the recent controversy surrounding Nvidia CEO Jensen Huang. Suppliers are increasingly cautious about crossing geopolitical red lines while seeking to avoid financial risks arising from hastily accepted orders.",
+    "pubDate": "Thu, 26 Nov 2026 02:34:08 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "ByteDance's Short-Video Platform Hongguo Forces Second-Tier Platforms to Bet on AI",
+    "link": "https://www.tmtpost.com/8218450.html",
+    "description": "China's second-tier entertainment companies are scrambling to cut costs and go all in on artificial intelligence.",
+    "pubDate": "Thu, 26 Nov 2026 10:31:04 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "理想汽车三季报：销量回来了，利润还没回来",
+    "link": "https://www.tmtpost.com/8217859.html",
+    "description": "现在，它需要证明自己能够在更激烈的竞争中，再做成一次。",
+    "pubDate": "Thu, 26 Nov 2026 10:31:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "YMTC now licenses NAND tech to Samsung, SK Hynix: Inside the Xtacking patent wall reshaping 400-layer memory",
+    "link": "https://www.digitimes.com/news/a20261126VL210/samsung-sk-hynix-ymtc-nand-patent.html",
+    "description": "Samsung Electronics and SK Hynix are adopting parts of Xtacking, the 3D NAND stacking technology first developed by China's Yangtze Memory Technologies Co. (YMTC), through cross-licensing deals. Nikkei Asia reported the arrangement, citing three people briefed on the matter. A Chinese company founde",
+    "pubDate": "Thu, 26 Nov 2026 02:26:05 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "腾讯音乐的尽头，是粉丝经济？",
+    "link": "https://www.tmtpost.com/8217733.html",
+    "description": "腾讯音乐的超级会员权益清单，越来越像一张景区通票。",
+    "pubDate": "Thu, 26 Nov 2026 10:26:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "字节跳动到底值多少钱？",
+    "link": "https://www.tmtpost.com/8217239.html",
+    "description": "6000亿美元是“好价格”，那字节跳动当下到底值多少钱？",
+    "pubDate": "Thu, 26 Nov 2026 10:21:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "神舟二十四号，重新分配太空里的时间",
+    "link": "https://www.tmtpost.com/8218010.html",
+    "description": "三个座位不变，如何兼顾一年驻留与短访？",
+    "pubDate": "Thu, 26 Nov 2026 10:16:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "HP and Dell see weak PC market as memory prices rise in 2027",
+    "link": "https://www.digitimes.com/news/a20261126PD212/dell-hp-pc-market-memory-2027.html",
+    "description": "HP and Dell, two leading US PC brands, expect memory prices to continue rising in 2027, though at a slower pace, while warning that the PC market will remain weak. HP said the corporate PC replacement cycle has largely ended, with the downturn that began in the second half of 2026 extending into 202",
+    "pubDate": "Thu, 26 Nov 2026 02:13:51 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Resonac targets 2027 production of photosensitive film for panel packaging",
+    "link": "https://www.digitimes.com/news/a20261126PR202/resonac-packaging-production-2027-demand.html",
+    "description": "Resonac has developed a photosensitive insulating film for panel-level semiconductor packaging, targeting mass production in 2027 as chipmakers look to larger package formats for high-performance devices.",
+    "pubDate": "Thu, 26 Nov 2026 02:08:45 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "影石会走GoPro的老路吗？",
+    "link": "https://www.tmtpost.com/8217862.html",
+    "description": "影石能超越GoPro，别人也能超越影石。",
+    "pubDate": "Thu, 26 Nov 2026 10:08:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "As foreign troops withdraw from Somalia, could al-Shabab take over?",
+    "link": "https://www.bbc.co.uk/news/articles/ck62y23z58yeo?at_medium=RSS&at_campaign=rss",
+    "description": "Somalia relies heavily on foreign funding and military support for its very survival.",
+    "pubDate": "Thu, 26 Nov 2026 02:06:10 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Southeast Asian governments treat new US excess-capacity tariffs as opening bid",
+    "link": "https://www.digitimes.com/news/a20261126VL207/tariffs-southeast-asia-manufacturing-capacity-2027.html?chid=10",
+    "description": "Southeast Asia's manufacturing exporters are treating Washington's latest tariff proposal as the start of a negotiation rather than a final bill. Vietnam, which has yet to sign a reciprocal trade agreement with the US, faces the steepest proposed rate. Thailand and Indonesia, which have struck deals",
+    "pubDate": "Thu, 26 Nov 2026 02:05:15 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Kim Jong Un says North Korea should widen deployment of tactical nukes",
+    "link": "https://www.aljazeera.com/news/2026/11/26/kim-jong-un-says-north-korea-should-widen-deployment-of-tactical-nukes?traffic_source=rss",
+    "description": "North Korean leader warns attempts to deny country's nuclear status will be seen as \"an open declaration of war\".",
+    "pubDate": "Thu, 26 Nov 2026 02:03:03 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "刚果（金）全面暂停钴矿出口，但这次市场只买账一天，钴的稀缺故事讲到头了",
+    "link": "https://www.tmtpost.com/8217929.html",
+    "description": "刚果（金）钴禁令难托价，钴定价锚转向下游需求。",
+    "pubDate": "Thu, 26 Nov 2026 10:03:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "从聊天助手到主动Agent，字节和腾讯再次走上对立面",
+    "link": "https://www.tmtpost.com/8217934.html",
+    "description": "大厂的另一条“战争”之路。",
+    "pubDate": "Thu, 26 Nov 2026 09:59:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "LEO satellite boom, space-based AI fuel Lightel KY 's 2027 growth outlook as capacity expansion accelerates",
+    "link": "https://www.digitimes.com/news/a20261125PD205/leo-2027-growth-laser-data.html",
+    "description": "The accelerating pace of global low-Earth-orbit (LEO) satellite launches, combined with growing interest among satellite operators in space-based AI data centers, is driving demand for laser communication terminals (LCTs) and related optical components.",
+    "pubDate": "Thu, 26 Nov 2026 01:57:31 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "ISSCC 2027 selects 10 Taiwan papers",
+    "link": "https://www.digitimes.com/news/a20261125PD209/isscc-ieee-taiwan-2027-chairman.html",
+    "description": "The IEEE International Solid-State Circuits Conference (ISSCC), known as the Olympics of chip design, has announced its 2027 paper selections. Taiwan submitted 58 papers and had 10 accepted, while China including Hong Kong and Macao submitted 460 and had 124 accepted, ranking first among all countri",
+    "pubDate": "Thu, 26 Nov 2026 01:57:22 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Acer CEO uneasy over NT$100 billion inventory, stays cautious on memory prices",
+    "link": "https://www.digitimes.com/news/a20261125PD221/acer-inventory-pc-2026.html",
+    "description": "While third-party market researchers project global PC unit shipments to decline in 2027, rising component costs are driving up average selling prices, enabling revenue and operating performance to outpace unit volume trends, according to Acer Group Chairman and CEO Jason Chen. Having outperformed t",
+    "pubDate": "Thu, 26 Nov 2026 01:56:13 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Brightek's automotive revenue set to top 50% in 2026 as Japan, South Korea, robotics deals gain traction",
+    "link": "https://www.digitimes.com/news/a20261125PD223/brightek-automotive-revenue-2026-market.html",
+    "description": "Despite China's sluggish consumer sentiment and a cooling auto market, LED packaging specialist Brightek Optoelectronic continues to deepen its penetration among tier-one Chinese automakers. With several major OEMs and supply chain partners having completed audits of its new Nantong plant, Brightek ",
+    "pubDate": "Thu, 26 Nov 2026 01:55:57 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Jih Lin Technology targets AI server PSUs with Clip leadframes",
+    "link": "https://www.digitimes.com/news/a20261125PD226/ai-server-revenue-psu-market-2026.html",
+    "description": "Power leadframe maker Jih Lin Technology is entering the AI server power supply unit (PSU) market with its Clip leadframe products, which are being validated by six customers. The company said recovering industrial automation and automotive demand, along with growing AI data center shipments, drove ",
+    "pubDate": "Thu, 26 Nov 2026 01:55:39 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "AI-driven automation is reshaping factory design, driving demand for larger sites, says Gudeng chairman",
+    "link": "https://www.digitimes.com/news/a20261125PD227/demand-automation-manufacturing-chairman-investment.html",
+    "description": "AI is driving investment across the global semiconductor and technology industries, fueling demand for new manufacturing facilities in Taiwan.",
+    "pubDate": "Thu, 26 Nov 2026 01:55:29 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "EnliTech's semiconductor inspection share nears 50% as NT$1 billion plant targets SiPh mass production",
+    "link": "https://www.digitimes.com/news/a20261125PD228/inspection-siph-production-demand-plant.html",
+    "description": "Surging demand for high-speed optical transmission in AI data centers is propelling silicon photonics (SiPh) from R&D into volume production, marking a pivotal operational shift for optical inspection equipment maker EnliTech. On November 25, the company broke ground on a new facility in the Kaohsiu",
+    "pubDate": "Thu, 26 Nov 2026 01:55:19 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "China launches 6G pilot program across eight provinces as standards work enters final stretch",
+    "link": "https://www.digitimes.com/news/a20261126VL202/6g-miit-it-development-shanghai.html",
+    "description": "China's Ministry of Industry and Information Technology (MIIT) has launched a ministry-province collaborative pilot program for 6G innovation and development, with Beijing, Hebei, Shanghai, Jiangsu, Zhejiang, Anhui, Hubei, and Guangdong approved to take part, as the country positions itself ahead of",
+    "pubDate": "Thu, 26 Nov 2026 01:54:06 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "欧洲车企对技术外包上瘾了",
+    "link": "https://www.tmtpost.com/8217936.html",
+    "description": "决定欧洲工厂价值的，正在变成中国技术。",
+    "pubDate": "Thu, 26 Nov 2026 09:53:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "最大赢家成中国厂商，SMA、SolarEdge 相继退出澳洲，户用光储市场中企狂飙突进",
+    "link": "https://www.tmtpost.com/8217930.html",
+    "description": "两家外资逆变器商收缩澳洲户用光储，中国品牌凭价格、电池配套和渠道优势占优，补贴退坡后考验本地服务与利润。",
+    "pubDate": "Thu, 26 Nov 2026 09:50:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "policy",
+    "_stale": true
+  },
+  {
+    "title": "豆包也要上餐桌",
+    "link": "https://www.tmtpost.com/8217897.html",
+    "description": "抖音生服在向AI要业绩。",
+    "pubDate": "Thu, 26 Nov 2026 09:45:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "单卡3小时干翻128张卡7天：伯克利CoRL最佳论文把机器人训练成本砍掉1000倍",
+    "link": "https://www.tmtpost.com/8218079.html",
+    "description": "伯克利CoRL 2026最佳论文SuperMimic用一个可微世界模型，单卡GPU训练3小时打败128卡集群跑7天的SOTA，把人形机器人控制的算力成本砍掉1000倍。",
+    "pubDate": "Thu, 26 Nov 2026 09:43:00 +0800",
+    "source": "钛媒体：引领未来商业与生活新知",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Photos: Storms and an El Nino-charged king tide batter California’s coast",
+    "link": "https://www.aljazeera.com/gallery/2026/11/26/photos-storms-and-an-el-nino-charged-king-tide-batter-californias-coast?traffic_source=rss",
+    "description": "Meteorologists have warned that the king tide could pair with high surf to bring historic surges to parts of the state.",
+    "pubDate": "Thu, 26 Nov 2026 01:40:13 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Ukraine attacks Russian military base, says five planes struck",
+    "link": "https://www.aljazeera.com/news/2026/11/26/ukraine-attacks-russian-military-base-says-five-planes-struck?traffic_source=rss",
+    "description": "The Ukrainian General Staff says its forces struck an airbase in the Nizhny Novgorod region east of Moscow.",
+    "pubDate": "Thu, 26 Nov 2026 01:39:46 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "ICE officers smash car window, pepper spray bystanders",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/ice-officers-smash-car-window-pepper-spray-bystanders?traffic_source=rss",
+    "description": "Masked ICE agents smashed a car window and forcibly opened its door to arrest a man in California.",
+    "pubDate": "Thu, 26 Nov 2026 01:33:50 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Seoul Semiconductor begins mass production of WICOP Pixel RGB backlights for LCD TVs",
+    "link": "https://www.digitimes.com/news/a20261126PR201/seoul-semiconductor-production-lcd-technology-tv.html",
+    "description": "Seoul Semiconductor said it has entered full-scale mass production of WICOP Pixel, an RGB backlight technology developed by its subsidiary Seoul Viosys, and has begun expanding supply to global TV manufacturers, pitching the technology as a way for standard LCD panels to deliver picture quality beyo",
+    "pubDate": "Thu, 26 Nov 2026 01:26:28 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "At least 31 killed in Cairo fire after fuel truck overturns on busy highway",
+    "link": "https://www.france24.com/en/africa/20261126-at-least-31-killed-in-cairo-fire-after-fuel-truck-overturns-on-busy-highway",
+    "description": "At least 31 people were killed and 15 injured when a fuel truck overturned and burst into flames on a busy highway in Cairo on Wednesday, engulfing nearby vehicles, Egyptian authorities said.",
+    "pubDate": "Thu, 26 Nov 2026 01:25:54 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "California warns of flooding as King Tides peak over Thanksgiving",
+    "link": "https://www.bbc.co.uk/news/articles/ckn806qq760po?at_medium=RSS&at_campaign=rss",
+    "description": "Parts of the Canadian province of British Columbia may also be affected by the storms and flooding, which come as millions of people travel for the holiday.",
+    "pubDate": "Thu, 26 Nov 2026 01:22:55 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Samsung Display to become ams OSRAM's largest shareholder in microLED push",
+    "link": "https://www.digitimes.com/news/a20261126PR200/sdc-microled-technology-investment-partnership.html",
+    "description": "Samsung Display has signed an agreement to acquire a 9.1% equity interest in Ams Osram for approximately EUR210 million (US$230.14 million), a deal that is expected to make it the largest shareholder in the light-emission and optical-sensing semiconductor company, Samsung Display announced in Seoul ",
+    "pubDate": "Thu, 26 Nov 2026 01:14:43 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Powerful US storm forces historic postponement of New York's Thanksgiving Day Parade",
+    "link": "https://www.france24.com/en/americas/20261126-powerful-us-storm-forces-historic-postponement-of-thanksgiving-day-parade-in-new-york",
+    "description": "A powerful storm forecast to bring fierce winds and heavy rain to the northeastern United States has forced the unprecedented postponement of the city's 100th annual Thanksgiving Day Parade, with the event rescheduled for Saturday. Officials warned that Thursday's conditions could bring down tree li",
+    "pubDate": "Thu, 26 Nov 2026 01:11:05 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Judges recommend prosecutors end corruption case against Netanyahu",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/judges-recommend-prosecutors-end-corruption-case-against-netanyahu?traffic_source=rss",
+    "description": "Israeli judges have ruled there is little prospect Benjamin Netanyahu will be convicted of corruption.",
+    "pubDate": "Thu, 26 Nov 2026 01:08:43 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Storms push Macy’s Thanksgiving Day Parade in New York City to Saturday",
+    "link": "https://www.aljazeera.com/news/2026/11/26/storms-push-macys-thanksgiving-day-parade-in-new-york-city-to-saturday?traffic_source=rss",
+    "description": "The parade, which marks its 100th edition, got a last-minute rain check ahead of heavy gusts on Thursday.",
+    "pubDate": "Thu, 26 Nov 2026 00:52:56 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "ISIL blamed for multiple suicide attacks in Syria",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/26/isil-blamed-for-multiple-suicide-attacks-in-syria?traffic_source=rss",
+    "description": "ISIL suicide attack kills two in an assault on a security post in northeastern Syria.",
+    "pubDate": "Thu, 26 Nov 2026 00:51:17 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Two Syrian security personnel killed in ISIL suicide attack",
+    "link": "https://www.aljazeera.com/news/2026/11/26/two-syrian-security-personnel-killed-in-isil-suicide-attack?traffic_source=rss",
+    "description": "Syrian forces say the attack in northeastern Syria's city of Hasakah involved four assailants who were all killed.",
+    "pubDate": "Thu, 26 Nov 2026 00:41:49 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "刚刚，黎曼猜想证明代码暴砍了99.5%！只剩7.6万行",
+    "link": "https://www.qbitai.com/2026/11/512819.html",
+    "description": "合着全让A➗揽了",
+    "pubDate": "Thu, 26 Nov 2026 00:40:37 +0000",
+    "source": "量子位",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "The US pastor who wants to see women's right to vote overturned",
+    "link": "https://www.bbc.co.uk/news/articles/cwe89jyz4012o?at_medium=RSS&at_campaign=rss",
+    "description": "The movement to repeal women's right to vote has gained traction amongst some very conservative Christians.",
+    "pubDate": "Thu, 26 Nov 2026 00:24:25 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Spanish elections: What you need to know and what's at stake",
+    "link": "https://www.bbc.co.uk/news/articles/c6wy4ejnyvdyo?at_medium=RSS&at_campaign=rss",
+    "description": "After eight years of Socialist-led rule, snap elections are taking place on Sunday with conservative Alberto Núñez Feijóo vying to win office.",
+    "pubDate": "Thu, 26 Nov 2026 00:23:49 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Has global jihadism failed, or is it simply changing shape?",
+    "link": "https://www.bbc.co.uk/news/articles/cmx2x4e0n5jro?at_medium=RSS&at_campaign=rss",
+    "description": "Jihadist groups appear to be focusing on local issues rather than global terror. Does it signify a real change?",
+    "pubDate": "Thu, 26 Nov 2026 00:22:18 GMT",
+    "source": "BBC News",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Zambia bans protest against push to remove presidential term limits",
+    "link": "https://www.aljazeera.com/news/2026/11/26/zambia-bans-protest-against-push-to-remove-presidential-term-limits?traffic_source=rss",
+    "description": "Critics fear the campaign could undermine democratic safeguards as senior opposition figures remain behind bars.",
+    "pubDate": "Thu, 26 Nov 2026 00:22:15 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "A meeting with Democrats over healthcare? Trump says he’s open to it",
+    "link": "https://www.aljazeera.com/news/2026/11/26/a-meeting-with-democrats-over-healthcare-trump-says-hes-open-to-it?traffic_source=rss",
+    "description": "Experts tell Al Jazeera they are sceptical that Trump would back Medicare for All, a proposal for national healthcare.",
+    "pubDate": "Thu, 26 Nov 2026 00:18:49 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Tesla-SpaceX merger talks advance, but China exposure tests Musk's vertical integration ambitions",
+    "link": "https://www.digitimes.com/news/a20261125VL224/tesla-spacex-merger-vertical-integration-elon-musk.html",
+    "description": "As Tesla and SpaceX move from conceptual discussions toward formal merger negotiations, the prospect of what could become the largest corporate merger in history is lending further momentum to Elon Musk's ambitions to consolidate his sprawling technology businesses.",
+    "pubDate": "Thu, 26 Nov 2026 00:08:48 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Samsung returns to package substrates with Exynos 2700",
+    "link": "https://www.digitimes.com/news/a20261125VL227/samsung-exynos-ap-business-mobile-substrate.html",
+    "description": "Samsung Electronics is reportedly returning to conventional package substrates for its Exynos 2700 mobile processor after nearly three years, bringing new business to affiliate Samsung Electro-Mechanics (Semco) as the smartphone maker seeks to expand the use of its own chips.",
+    "pubDate": "Thu, 26 Nov 2026 00:07:19 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "LG Display's overseas patents rise 32.5% as Chinese OLED rivals expand",
+    "link": "https://www.digitimes.com/news/a20261125VL230/lg-display-patent-oled-panel-2026.html",
+    "description": "LG Display (LGD) increased its overseas patent registrations by 32.5% in the first nine months of 2026 as Chinese display makers expand beyond smartphone OLED panels into notebooks and tablets.",
+    "pubDate": "Thu, 26 Nov 2026 00:06:54 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "China AI server records reveal US$270 million in assets linked to Alice Huang",
+    "link": "https://www.digitimes.com/news/a20261125VL231/nvidia-equipment-financing-investment-capacity.html?chid=10",
+    "description": "Companies linked to Alice Huang, who formerly controlled Singapore-based Megaspeed, used hundreds of AI servers and computing modules to obtain financing in China, highlighting the role of equipment leasing and asset-backed lending in the country's AI infrastructure expansion.",
+    "pubDate": "Thu, 26 Nov 2026 00:06:11 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "US Section 301 proposal puts Vietnam and India at top of tariff ladder, ties rates to trade deals",
+    "link": "https://www.digitimes.com/news/a20261126VL200/tariffs.html?chid=10",
+    "description": "The US Trade Representative's proposed tariffs on 14 economies over manufacturing overcapacity would leave Taiwan, Japan and South Korea on the lowest-rate tier while placing the steepest headline rates on Vietnam and India. These two economies have yet to conclude trade agreements with Washington.",
+    "pubDate": "Thu, 26 Nov 2026 00:05:38 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "US proposes tariffs of up to 25% on Indian goods; New Delhi rejects excess-capacity finding",
+    "link": "https://www.digitimes.com/news/a20261126VL201/capacity-manufacturing-investigation-2026-government.html?chid=10",
+    "description": "The US has proposed tariffs of up to 25% on all goods from India after concluding a Section 301 investigation into structural excess capacity in manufacturing, prompting India's Ministry of Commerce and Industry to reject the finding and call for the issue to be settled in bilateral trade talks.",
+    "pubDate": "Thu, 26 Nov 2026 00:04:40 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Now Google’s Familiar Faces AI feature works on Walmart’s $35 smart home camera too",
+    "link": "https://www.theverge.com/tech/1042938/google-home-familiar-faces-onn-cameras",
+    "description": "A couple of Walmart's budget-friendly smart home cameras will be able to recognize people around your house now using Google's familiar face detection feature. A new Google Home update brings Familiar Faces support to the $35 Onn Outdoor Camera Plug-In and $77 Onn Floodlight Camera Hardwired. Howeve",
+    "pubDate": "2026-11-26T00:04:34.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "US Section 301 plan keeps Taiwan at 15% but raises stakes for Taiwanese factories in Southeast Asia",
+    "link": "https://www.digitimes.com/news/a20261126VL203/taiwan-asia-production-overcapacity-exports.html",
+    "description": "Taiwan has secured a place in the lowest tier of Washington's proposed overcapacity tariffs. Still, Taiwanese manufacturers that moved production to Southeast Asia face higher proposed rates in their host countries, because the duties are set by where goods are made rather than where a company is li",
+    "pubDate": "Thu, 26 Nov 2026 00:03:37 GMT",
+    "source": "DIGITIMES: News and Insight of the Global Supply Chain",
+    "category": "semiconductor",
+    "_stale": true
+  },
+  {
+    "title": "Iran war live: Explosion rocks Sanaa; missiles intercepted over Riyadh",
+    "link": "https://www.aljazeera.com/news/liveblog/2026/11/26/iran-war-live-explosion-rocks-sanaa-missiles-intercepted-over-riyadh?traffic_source=rss",
+    "description": "A blast hits Sanaa after air strikes near the airport, as the Saudi coalition intercepts missiles over Riyadh.",
+    "pubDate": "Thu, 26 Nov 2026 00:00:00 +0000",
+    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "category": "international",
+    "_stale": true
+  },
+  {
+    "title": "Amazon loses its latest attempt to get out of handling more recall notices",
+    "link": "https://www.theverge.com/tech/1042870/amazon-recall-order-cpsc",
+    "description": "Amazon is on the hook to recall more than 400,000 hazardous products after losing its legal battle against the US Consumer Product Safety Commission (CPSC). The US District Court for the District of Maryland ruled in favor of the CPSC, which argued that Amazon is a distributor of goods, not a logist",
+    "pubDate": "2026-11-25T23:56:44.000Z",
+    "source": "The Verge",
+    "category": "ai-tech",
+    "_stale": true
+  },
+  {
+    "title": "Duran Duran guitarist Andy Taylor dies aged 65",
+    "link": "https://www.france24.com/en/culture/20261125-duran-duran-guitarist-andy-taylor-dies-aged-65",
+    "description": "Andy Taylor, whose guitar riffs helped shape Duran Duran's distinctive sound and propel the British band to global fame in the 1980s, has died aged 65 after a long battle with prostate cancer, the band and his family said Wednesday.",
+    "pubDate": "Wed, 25 Nov 2026 23:37:18 GMT",
+    "source": "France 24 - International breaking news, top stories and headlines",
+    "category": "international",
+    "_stale": true
   },
   {
     "title": "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate",
@@ -3498,573 +4087,6 @@
     "link": "https://www.france24.com/en/le-pen-party-leaks-prefect-dismissed-paris-deputy-prosecutor-placed-under-investigation",
     "description": "Two senior figures in France have been caught up in an investigation into suspected leaks to the far-right party of Marine Le Pen, the National Rally. The prefect of the Loiret, Hugues Moutouh, a former top official at the Interior Ministry, has been removed from his post after being suspected of pa",
     "pubDate": "Wed, 25 Nov 2026 22:28:58 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Israeli lawmakers advance October 7 inquiry opposed by Netanyahu",
-    "link": "https://www.france24.com/en/israeli-lawmakers-advance-october-7-inquiry-opposed-by-netanyahu",
-    "description": "Israel's new parliament on Wednesday took a first step to set up a state commission of inquiry into the security failures that led to Hamas's unprecedented October 7, 2023 attack, a move long opposed by caretaker Prime Minister Benjamin Netanyahu. FRANCE 24's Selina Sykes reports.",
-    "pubDate": "Wed, 25 Nov 2026 22:26:40 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Thirty-one killed in massive fire as fuel tanker crashes on Cairo highway",
-    "link": "https://www.bbc.co.uk/news/articles/cqy7rn30v314o?at_medium=RSS&at_campaign=rss",
-    "description": "Another 21 are injured after the tanker reportedly overturns on a busy ring road in the Egyptian capital.",
-    "pubDate": "Wed, 25 Nov 2026 22:18:06 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Man United denied at Sporting as referee overshadows Fernandes double",
-    "link": "https://www.aljazeera.com/sports/2026/11/25/man-united-denied-at-sporting-as-referee-overshadows-fernandes-double?traffic_source=rss",
-    "description": "Bruno Fernandes nets twice in Lisbon, but referee's decisions in spotlight as Mauricio Pochettino denied first win.",
-    "pubDate": "Wed, 25 Nov 2026 22:15:59 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "New US tariffs: 'Trump lashing out really indiscriminately', expert says",
-    "link": "https://www.france24.com/en/tv-shows/a-propos/20261125-new-us-tariffs-trump-lashing-out-really-indiscriminately-expert-says",
-    "description": "The United States on Wednesday unveiled proposed tariffs on 14 economies including the European Union and China, after a months-long probe into alleged excess production. Speaking with FRANCE 24's Sharon Gaffney, Dean Baker, Senior Economist at the Centre for Economic and Policy Research, says that ",
-    "pubDate": "Wed, 25 Nov 2026 22:13:28 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Google’s patent for custom AI video feeds paints a bleak picture of entertainment’s future",
-    "link": "https://www.theverge.com/entertainment/1042221/google-my-channel-ai-video-patent",
-    "description": "Last year, Google filed a patent for a system called My Channel that's designed to create feeds filled with personalized, AI-generated videos and advertisements based on information the company knows about its users. The patent has been rejected, but unfortunately, Google might appeal or resubmit an",
-    "pubDate": "2026-11-25T21:51:26.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "North Korea expels Swiss diplomat in sanctions row",
-    "link": "https://www.bbc.co.uk/news/articles/cq0l34e4kkr5o?at_medium=RSS&at_campaign=rss",
-    "description": "Swiss officials said relations would be kept through North Korea's embassy in Bern, and its own embassy in Beijing.",
-    "pubDate": "Wed, 25 Nov 2026 21:51:17 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The Verge’s 2026 holiday gift guide for travelers",
-    "link": "https://www.theverge.com/gadgets/1021917/best-gifts-for-travelers-2026",
-    "description": "Everyone has that traveler in their life. That person who feels more at home on a 14-hour train ride than a quiet Sunday on the couch. They speak multiple languages, have a gut like a goat, and make friends wherever they go. Whether they're your kindred spirit or the person you live vicariously thro",
-    "pubDate": "2026-11-25T21:48:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "US stocks fall further as fears over AI intensify",
-    "link": "https://www.bbc.co.uk/news/articles/cq0md8g14zryo?at_medium=RSS&at_campaign=rss",
-    "description": "All three main US indexes were down in early trading, with the tech-dominated Nasdaq down almost 4%.",
-    "pubDate": "Wed, 25 Nov 2026 21:43:18 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Cape Town court shuts down Ramaphosa's Farmgate scandal",
-    "link": "https://www.france24.com/en/cape-town-court-shuts-down-ramaphosa-s-farmgate-scandal",
-    "description": "In tonight's edition, South Africa's president sidesteps an impeachment bid by the opposition. Also, we hear from some of the Malagasy women fighting for an overhaul of reproductive rights in their country. And in eastern Democratic Republic of Congo,  the CRP  rebel group halts its advance after co",
-    "pubDate": "Wed, 25 Nov 2026 21:41:01 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Winter rains threaten 1,000 Gaza shelter sites, councils warn",
-    "link": "https://www.aljazeera.com/news/2026/11/25/winter-rains-threaten-1000-gaza-shelter-sites-councils-warn?traffic_source=rss",
-    "description": "About 200,000 tents need replacing, Gaza’s municipalities say, as the EU urges Israel to reopen all crossings.",
-    "pubDate": "Wed, 25 Nov 2026 21:03:51 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "US Education Department probes Virginia schools after sexual abuse scandal",
-    "link": "https://www.aljazeera.com/news/2026/11/25/us-education-department-probes-virginia-schools-after-sexual-abuse-scandal?traffic_source=rss",
-    "description": "Virginia schools face scrutiny after revelations of abuse and widespread failures in mandatory staff background checks.",
-    "pubDate": "Wed, 25 Nov 2026 20:52:32 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Baby Aliyah steals the show during Australian Senate debate",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/25/baby-aliyah-steals-the-show-during-australian-senate-debate?traffic_source=rss",
-    "description": "Australian Senator Fatima Payman addressed the Senate with her six-month-old daughter, Aliyah, in her arms",
-    "pubDate": "Wed, 25 Nov 2026 20:42:41 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Did GTA 6 really recreate Charlie Kirk's assassination?",
-    "link": "https://www.france24.com/en/tv-shows/truth-or-fake/20261125-did-gta-6-really-recreate-charlie-kirk-s-assassination",
-    "description": "Just days after its release, Grand Theft Auto 6 has become a vehicle for political misinformation. Viral footage falsely claims the game features a mission recreating Charlie Kirk’s assassination, while pro-Russian accounts are sharing fake screenshots containing anti-Ukrainian messages. Meanwhile, ",
-    "pubDate": "Wed, 25 Nov 2026 20:38:28 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "WhatsApp’s new scheduled messages let you choose the right time to send",
-    "link": "https://www.theverge.com/tech/1042532/whatsapp-scheduled-messages",
-    "description": "WhatsApp's 3 billion users are getting an option that Meta says is one of the most requested features, with the ability to schedule messages in advance for both private conversations and group chats. Most messaging platforms have had this for a very long time, but now it's on WhatsApp too. If you th",
-    "pubDate": "2026-11-25T20:31:48.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "What’s behind Europe’s protests?",
-    "link": "https://www.aljazeera.com/video/inside-story/2026/11/25/whats-behind-europes-protests?traffic_source=rss",
-    "description": "Increase in protests and industrial disputes across EU and UK.",
-    "pubDate": "Wed, 25 Nov 2026 20:30:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Netanyahu says corruption trial ‘must end’ as court suggests dropping case",
-    "link": "https://www.aljazeera.com/news/2026/11/25/netanyahu-says-corruption-trial-must-end-as-court-suggests-dropping-case?traffic_source=rss",
-    "description": "The judges' recommendations came as Israel's longest-serving prime minister fights for his political survival.",
-    "pubDate": "Wed, 25 Nov 2026 20:29:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Migrant wrongly deported by Trump leaves US for Spain",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/25/migrant-wrongly-deported-by-trump-leaves-us-for-spain?traffic_source=rss",
-    "description": "Kilmar Abrego Garcia has arrived in Spain with his wife after a 20-month legal battle with the Trump administration.",
-    "pubDate": "Wed, 25 Nov 2026 20:14:28 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Elderly man with Alzheimer’s rescued after 11 days in Amazon jungle",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/25/aje-onl-nf_man-with-alzheimers-rescued-after-11-days-in-amazon-251126?traffic_source=rss",
-    "description": "A 74-year-old man with Alzheimer's has been found alive after missing for 11 days in Brazil's Amazon rainforest.",
-    "pubDate": "Wed, 25 Nov 2026 19:57:08 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Campaign rules for influencers? French regulator targets content creators",
-    "link": "https://www.france24.com/en/tv-shows/the-debate/20261125-campaign-rules-for-influencers-french-regulator-targets-content-creators",
-    "description": "Ever since 1965 when the French first got to cast a ballot by universal suffrage for their president, they've valued campaign rules that guarantee ‘equal time’ for candidates. But what does equal time mean when you're closing in on 2027? Last week a bombshell announcement ahead of next Spring’s pres",
-    "pubDate": "Wed, 25 Nov 2026 19:55:03 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "EU says 'strongly' rejects premise of new US tariffs",
-    "link": "https://www.france24.com/en/eu-says-strongly-rejects-premise-of-new-us-tariffs",
-    "description": "The EU said Wednesday that it rejected the premise of new tariffs on its exports proposed by the United States and expected Washington to stick by a deal struck with Brussels last year. The US unveiled proposed tariffs on 14 economies including the European Union and China, after a months-long probe",
-    "pubDate": "Wed, 25 Nov 2026 19:48:32 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Israeli judges recommend dropping most serious charges against Netanyahu",
-    "link": "https://www.bbc.co.uk/news/articles/cxj05mv723r2o?at_medium=RSS&at_campaign=rss",
-    "description": "The Israeli PM says his trial should end after judges said there was little chance of conviction in one of three cases.",
-    "pubDate": "Wed, 25 Nov 2026 19:47:39 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "EPA reports ‘zero’ airborne lead following controlled Army detonation in Iowa",
-    "link": "https://www.theverge.com/science/1042109/us-army-detonation-lead-azide-explosives-iowa-ammunition-plant",
-    "description": "Saying it was necessary to prevent the possible spontaneous explosion of a stockpile of material used in igniters and blasting caps, the US Army conducted a controlled detonation of over 9,700 pounds of lead azide today at the Iowa Army Ammunition Plant (IAAAP) in Middletown, Iowa. Videos of the det",
-    "pubDate": "2026-11-25T19:45:51.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "US Army declares Iowa lead azide detonation ‘tremendously successful’",
-    "link": "https://www.aljazeera.com/news/2026/11/25/us-army-declares-iowa-lead-azide-detonation-tremendously-successful?traffic_source=rss",
-    "description": "Army hails Iowa's lead azide disposal operation as some experts warn of potentially hidden toxins.",
-    "pubDate": "Wed, 25 Nov 2026 19:41:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Dozens killed in Egypt vehicle fire",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/25/aje-onl-nf_dozens-killed-in-egypt-vehicle-fire-251126?traffic_source=rss",
-    "description": "At least 30 have been ⁠killed and ⁠15 injured when a vehicle carrying ‌petroleum products caught fire in Egypt.",
-    "pubDate": "Wed, 25 Nov 2026 19:41:14 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "What we know about Trump's Thanksgiving tariffs",
-    "link": "https://www.bbc.co.uk/news/videos/c3x29v11ed1xo?at_medium=RSS&at_campaign=rss",
-    "description": "Donald Trump is targeting China, the European Union and 12 other jurisdictions in a new round of tariffs.",
-    "pubDate": "Wed, 25 Nov 2026 19:38:05 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "In boost for Netanyahu, judges question corruption trial charges",
-    "link": "https://www.france24.com/en/in-boost-for-netanyahu-judges-question-corruption-trial-charges",
-    "description": "Judges in the long-running corruption trial of Israeli caretaker Prime Minister Benjamin Netanyahu handed his defence a major boost on Wednesday in recommending the prosecution drop one of the cases in which he is accused of bribery. The recommendations, which came as Israel's longest-serving prime ",
-    "pubDate": "Wed, 25 Nov 2026 19:28:13 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Bellingham’s wondergoal sparks Zidane comparisons",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/25/bellinghams-wondergoal-sparks-zidane-comparisons?traffic_source=rss",
-    "description": "Jude Bellingham’s spectacular goal in Real Madrid’s 5-1 thrashing of PSV has prompted comparisons with club legend.",
-    "pubDate": "Wed, 25 Nov 2026 19:27:56 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Two children among six dead after plane crash off Mississippi coast",
-    "link": "https://www.bbc.co.uk/news/articles/c6z74l1017zpo?at_medium=RSS&at_campaign=rss",
-    "description": "Divers found the bodies of three adult, one teenager aged 16, and two boys, aged 12 and 10, in the wreckage.",
-    "pubDate": "Wed, 25 Nov 2026 19:26:44 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Poland says will create no-fly zone at Ukraine border after repeated airspace violations",
-    "link": "https://www.france24.com/en/poland-says-will-create-no-fly-zone-at-ukraine-border-after-repeated-airspace-violations",
-    "description": "Poland will soon create a no-fly zone near the Ukrainian border, a deputy defence minister announced on Wednesday, after several incursions into its airspace it blamed on Russia. Poland backs Ukraine as it fights off Russia's near five-year invasion and has repeatedly accused Moscow of seeking to ta",
-    "pubDate": "Wed, 25 Nov 2026 19:22:43 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Ukrainian laser downs Russian jet-powered drone in world first",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/25/ukrainian-laser-downs-russian-jet-powered-drone-in-world-first?traffic_source=rss",
-    "description": "Ukraine says that its Blysk laser system has intercepted a Russian jet-powered drone in combat for the first time",
-    "pubDate": "Wed, 25 Nov 2026 19:16:15 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Could renewed strikes on Hodeidah port worsen Yemen’s humanitarian crisis?",
-    "link": "https://www.aljazeera.com/news/2026/11/25/could-renewed-strikes-on-hodeidah-port-worsen-yemens-humanitarian-crisis?traffic_source=rss",
-    "description": "Disruptions at Yemen's largest seaport could exacerbate hardships for millions of Yemenis, aid experts warn.",
-    "pubDate": "Wed, 25 Nov 2026 19:15:52 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "US unveils proposed tariffs on major partners, including EU and China",
-    "link": "https://www.france24.com/en/us-unveils-proposed-tariffs-on-major-partners-including-eu-and-china",
-    "description": "The United States on Wednesday unveiled proposed tariffs on 14 economies including the European Union and China, after a months-long probe into alleged excess production -- the latest move by US President Donald Trump to remake Washington's trade relationships. The duties, proposed at up to 20 perce",
-    "pubDate": "Wed, 25 Nov 2026 19:15:03 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "UK military ‘moving aircraft to hangars in case of drone attacks’",
-    "link": "https://www.aljazeera.com/news/2026/11/25/uk-military-moving-aircraft-to-hangars-in-case-of-drone-attacks?traffic_source=rss",
-    "description": "Experts say the move is a 'logical response' if there is intelligence suggesting a likely drone threat.",
-    "pubDate": "Wed, 25 Nov 2026 19:15:01 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "US grants SpaceX approval for 1 million space data centres",
-    "link": "https://www.aljazeera.com/news/2026/11/25/us-grants-spacex-approval-for-1-million-space-data-centres?traffic_source=rss",
-    "description": "Elon Musk hails FCC's approval of SpaceX's Starmind project as 'a  great asset to America and the world.'",
-    "pubDate": "Wed, 25 Nov 2026 19:13:02 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "1Password breach leaked customer names and emails, but not passwords",
-    "link": "https://www.theverge.com/tech/1042409/1password-data-breach-leak",
-    "description": "1Password says a hacker stole customer names and email addresses after gaining access to its backend systems. The breach didn't expose passwords or other information stored in customer vaults, but could put users at risk of phishing attempts, according to a post disclosing the incident. It's unclear",
-    "pubDate": "2026-11-25T19:10:15.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "The ‘French Milei’? Presidential candidate David Lisnard aims to reshape France’s right wing",
-    "link": "https://www.france24.com/en/france/20261125-french-milei-presidential-candidate-david-lisnard-aims-reshape-france-right-wing",
-    "description": "Having secured reelection victory Wednesday as leader of France's mayors, Cannes Mayor David Lisnard turns once more to build on his recent bid for the Élysée. As his Nouvelle Énergie movement gains momentum, questions swirl over whether his campaign will reshape the French political landscape, or i",
-    "pubDate": "Wed, 25 Nov 2026 18:59:26 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "World reacts to Trump’s new tariffs as US stocks tumble",
-    "link": "https://www.aljazeera.com/economy/2026/11/25/world-reacts-to-trumps-new-tariffs-as-us-stocks-tumble?traffic_source=rss",
-    "description": "The new levies come after an eight-month investigation launched by the United States Trade Representative.",
-    "pubDate": "Wed, 25 Nov 2026 18:59:26 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "At least 30 killed in Egypt vehicle fire, health ministry says",
-    "link": "https://www.aljazeera.com/news/2026/11/25/at-least-30-killed-in-egypt-vehicle-fire-health-ministry-says?traffic_source=rss",
-    "description": "An additional 15 were injured in blaze after vehicle carrying petroleum products flipped on a major road.",
-    "pubDate": "Wed, 25 Nov 2026 18:55:23 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Colombian police storm supermarket to free 76 held hostage for 17 hours",
-    "link": "https://www.bbc.co.uk/news/articles/ckp80mjr9emyo?at_medium=RSS&at_campaign=rss",
-    "description": "One gunman was killed after what the country's president described as a robbery of a cash-laden armoured car gone wrong.",
-    "pubDate": "Wed, 25 Nov 2026 18:41:33 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Nigeria’s Tinubu pledges to bring peace to rebellion-hit border region",
-    "link": "https://www.aljazeera.com/news/2026/11/25/nigerias-tinubu-pledges-to-bring-peace-to-insurgency-hit-northeast-region?traffic_source=rss",
-    "description": "Tinubu is under pressure to convince voters that military operations in the country's northeast will deliver security.",
-    "pubDate": "Wed, 25 Nov 2026 18:14:44 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The Fairphone 6 Plus is modular, repairable, and $100 off right now",
-    "link": "https://www.theverge.com/gadgets/1041460/fairphone-6-plus-repairable-phone-black-friday-2026-deal-sale",
-    "description": "Unlike most smartphones, the Fairphone 6 Plus is designed for home repair, with easily replaceable parts that could help extend its lifespan well into the future. That makes its midrange price point easier to justify, especially now that it&#8217;s dropped to a new low of $552.49 (about $98 off) at ",
-    "pubDate": "2026-11-25T18:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "The loneliest peptide party in New York",
-    "link": "https://www.theverge.com/column/1041761/optimizer-peptide-parties-afterglow",
-    "description": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. On a rainy fall evening, an experimental art venue in Chelsea Market had a small lin",
-    "pubDate": "2026-11-25T18:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Ecuador and US review joint military operations, official says",
-    "link": "https://www.aljazeera.com/news/2026/11/25/ecuador-and-us-review-joint-military-operations-official-says?traffic_source=rss",
-    "description": "Joint military efforts have been paused as the US investigates a lethal operation carried out by Ecuador.",
-    "pubDate": "Wed, 25 Nov 2026 17:50:41 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "After Novelty Wears off, How can Companion Robots Actually be Put to Use?",
-    "link": "https://www.tmtpost.com/8217942.html",
-    "description": "After freshness is gone, how many of these companionship-oriented robots will stay and who are willing to pay for them?",
-    "pubDate": "Thu, 26 Nov 2026 01:49:10 +0800",
-    "source": "钛媒体：引领未来商业与生活新知",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
-    "link": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
-    "description": "In an announcement on Wednesday, the FCC says it authorized SpaceX to deploy up to 1 million AI chip-equipped satellites as part of the Elon Musk-owned company's \"Starmind\" initiative. With several others also pursuing the idea of putting AI data centers in space, including Google and Blue Origin, t",
-    "pubDate": "2026-11-25T17:44:51.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Images of asteroid targeted to test Earth's defences reveal stadium-sized crater",
-    "link": "https://www.bbc.co.uk/news/articles/cw8dv112r5gmo?at_medium=RSS&at_campaign=rss",
-    "description": "The asteroid's surface was transformed after a spacecraft was deliberately crashed into it four years ago",
-    "pubDate": "Wed, 25 Nov 2026 17:30:16 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Iraq’s top court rules government can take over Kurdish borders, oil fields",
-    "link": "https://www.aljazeera.com/news/2026/11/25/iraqs-top-court-rules-government-can-take-over-kurdish-borders-oil-fields?traffic_source=rss",
-    "description": "The ruling comes a day after Kurdish authorities accused Baghdad of an 'assault' on the region's constitutional rights.",
-    "pubDate": "Wed, 25 Nov 2026 17:29:51 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Turkey's deadly factory blast: 'Investing in safety costs more than letting people die'",
-    "link": "https://www.france24.com/en/europe/20261125-factory-blast-turkey-izmir",
-    "description": "An explosion at a steel factory on November 9 in Turkey's Aliaga, near Izmir, killed 19 people. This tragedy follows several others and highlights the issues surrounding workers’ safety in Turkey, our Observers say. They also condemn the repressive responses from the government and the company.",
-    "pubDate": "Wed, 25 Nov 2026 17:28:33 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Maduro turns 64 behind bars, son leads celebrations in Caracas",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/25/maduro-turns-64-behind-bars-son-leads-celebrations-in-caracas?traffic_source=rss",
-    "description": "Nicolas Maduro’s son led birthday celebrations in Caracas as the abducted former Venezuelan president turned 64",
-    "pubDate": "Wed, 25 Nov 2026 17:05:35 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Sporting Lisbon vs Manchester United LIVE: UEFA Champions League",
-    "link": "https://www.aljazeera.com/sports/liveblog/2026/11/25/sporting-lisbon-vs-manchester-united-live-uefa-champions-league?traffic_source=rss",
-    "description": "Follow all the build-up and team news coverage from our live text commentary stream as Bruno Fernandes headlines.",
-    "pubDate": "Wed, 25 Nov 2026 17:01:26 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "The Verge’s guide to the best gifts under $100",
-    "link": "https://www.theverge.com/gadgets/1028004/best-gifts-under-100-2026",
-    "description": "Even in an era of inflation like the one we're living through now, $100 can still buy a lot… if you know where to look. In fact, it's enough to get something useful and well-made, but not so pricey that it's likely to leave you with lingering guilt or lead to insurmountable debt. As reviewers, [&#82",
-    "pubDate": "2026-11-25T17:00:00.000Z",
-    "source": "The Verge",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Djibouti: The Man Who Dared",
-    "link": "https://www.aljazeera.com/video/al-jazeera-world/2026/11/25/djibouti-the-man-who-dared?traffic_source=rss",
-    "description": "War hero turned nationalist, Mahmoud Harbi defied colonial rule to fight for independence in today’s Djibouti.",
-    "pubDate": "Wed, 25 Nov 2026 17:00:00 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Switzerland forced to close office in North Korea over sanctions feud",
-    "link": "https://www.aljazeera.com/news/2026/11/25/switzerland-regrets-closure-of-north-korea-office-over-sanctions-feud?traffic_source=rss",
-    "description": "The closure came after North Korea condemned Switzerland for adding a children’s camp to its sanctions list.",
-    "pubDate": "Wed, 25 Nov 2026 16:58:49 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Paris takes on masculinist movements",
-    "link": "https://www.france24.com/en/video/20261125-paris-takes-on-masculinist-movements",
-    "description": "As masculinist movements face their first major trial in Paris, the city has announced several initiatives to combat this ideology. The campaign aims to call attention to the real-world danger posed by misogynist groups online. FRANCE 24's Gabrielle Nadler takes a closer look.",
-    "pubDate": "Wed, 25 Nov 2026 16:52:22 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Colombian forces rescue all hostages after supermarket siege",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/25/colombian-forces-rescue-all-hostages-after-supermarket-siege?traffic_source=rss",
-    "description": "All hostages have been rescued by Colombian forces after a 17-hour siege in Cartagena supermarket.",
-    "pubDate": "Wed, 25 Nov 2026 16:44:22 +0000",
-    "source": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Trump's accounts traded Nvidia shares 44 times this year, records show",
-    "link": "https://www.bbc.co.uk/news/articles/cq772vk664yvo?at_medium=RSS&at_campaign=rss",
-    "description": "A review of the US president's financial disclosures shows Donald Trump's investment portfolios have regularly traded shares in the tech giant.",
-    "pubDate": "Wed, 25 Nov 2026 16:42:11 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "'Free' land and thriving businesses: French village defies rural decline",
-    "link": "https://www.france24.com/en/video/20261125-free-land-and-thriving-businesses-french-village-defies-rural-decline",
-    "description": "As France's mayors gather in Paris for their annual convention, the decline in living standards and public services in both urban and rural areas is high on the agenda. Rural mayors, in particular, are concerned about the shrinking populations of their communities. But one small French town bucking ",
-    "pubDate": "Wed, 25 Nov 2026 16:37:37 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Moldova launches national preparedness campaign after drone incursions",
-    "link": "https://www.france24.com/en/moldova-launches-national-preparedness-campaign-after-drone-incursions",
-    "description": "Moldova is urging its citizens to prepare for emergencies as the war in neighbouring Ukraine brings new risks across its border. The “Moldova Ready” campaign, launched in Chisinau, includes a display of the remains of a drone carrying 52kg of explosives after it crashed in the country last month. FR",
-    "pubDate": "Wed, 25 Nov 2026 16:34:45 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "我以为这是摄影作品，你告诉我这是最新的国产AI？！",
-    "link": "https://www.qbitai.com/2026/11/512748.html",
-    "description": "商汤SenseNova U1.6",
-    "pubDate": "Wed, 25 Nov 2026 16:34:09 +0000",
-    "source": "量子位",
-    "category": "ai-tech",
-    "_stale": true
-  },
-  {
-    "title": "Top Spanish court closes case against Catalan separatist leader",
-    "link": "https://www.france24.com/en/video/20261125-top-spanish-court-closes-case-against-catalan-separatist-leader",
-    "description": "Spain's Supreme Court has applied a controversial amnesty law to former Catalan separatist leader Carles Puigdemont, closing criminal proceedings against him over his role in the region's failed 2017 independence bid. The ruling, which comes ahead of a snap general election on Sunday, marks the fina",
-    "pubDate": "Wed, 25 Nov 2026 16:25:28 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Huang's return fails to dispel doubts as Nvidia shares drop",
-    "link": "https://www.france24.com/en/video/20261125-huang-s-return-fails-to-dispel-doubts-as-nvidia-shares-drop",
-    "description": "A rally sparked by Jensen Huang's return as Nvidia's chief executive faded on Tuesday, with the company's shares falling as doubts persisted over the probes he faces and the fate of the AI investment boom. After vaulting more than 30 percent on Monday following Huang's shock comeback, Nvidia fell al",
-    "pubDate": "Wed, 25 Nov 2026 16:24:17 GMT",
-    "source": "France 24 - International breaking news, top stories and headlines",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Greatest catch ever? Man on motorbike takes incredible grab",
-    "link": "https://www.bbc.co.uk/sport/cricket/videos/cwx2e0g93l3eo?at_medium=RSS&at_campaign=rss",
-    "description": "A passenger on a motorbike pulled off a remarkable one-handed catch after the ball was hit out of the ground for six in the Swat Premier League in Pakistan.",
-    "pubDate": "Wed, 25 Nov 2026 16:23:03 GMT",
-    "source": "BBC News",
-    "category": "international",
-    "_stale": true
-  },
-  {
-    "title": "Iranian family seeks release of twin sisters facing death penalty and 25 years in prison",
-    "link": "https://www.france24.com/en/video/20261125-iranian-family-seeks-release-of-twin-sisters-facing-death-penalty-and-25-years-in-prison",
-    "description": "Twin sisters Taraneh and Romina Rahimi are awaiting their sentences in Iran. They were arrested in January 2026, at the age of just 19, for taking part in protests against the Iranian regime. Taraneh is facing the death penalty, while Romina has been sentenced to 25 years in prison. Their family has",
-    "pubDate": "Wed, 25 Nov 2026 16:20:57 GMT",
     "source": "France 24 - International breaking news, top stories and headlines",
     "category": "international",
     "_stale": true
